@@ -11,6 +11,7 @@
     <style>
         :root {
             --primary: #ff4655;
+            --gt-orange: #ff8c00; 
             --bg: #060b10;
             --card-bg: #111b24;
             --text: #ffffff;
@@ -118,9 +119,14 @@
         .info-list li { margin-bottom: 10px; color: #ccc; display: flex; align-items: center; gap: 12px; font-size: 0.85rem; }
         .info-list i { color: var(--primary); width: 20px; text-align: center; }
 
+        .partner-banner { text-align: center; margin: 40px 0 20px; }
+        .partner-banner img { max-width: 300px; transition: 0.3s; border-radius: 5px; filter: drop-shadow(0 0 10px rgba(255, 140, 0, 0.2)); }
+        .partner-banner img:hover { transform: scale(1.05); }
+
         .socials { text-align: center; margin: 40px 0; display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; }
         .btn { padding: 15px 35px; border-radius: 5px; text-decoration: none; font-weight: bold; color: white; display: inline-flex; align-items: center; gap: 12px; transition: 0.3s; text-transform: uppercase; font-size: 0.85rem; }
         .btn-discord { background: #5865F2; }
+        .btn-gamertransfer { background: var(--gt-orange); }
         .btn-x { background: #000000; border: 1px solid rgba(255,255,255,0.2); }
 
         footer { text-align: center; padding: 50px; color: #888; font-size: 0.75rem; border-top: 1px solid rgba(255,255,255,0.05); }
@@ -180,12 +186,21 @@
             </div>
         </div>
 
+        <div class="partner-banner reveal">
+            <a href="https://gamertransfer.com" target="_blank">
+                <img src="https://gamertransfer.com/banner/banner300_w.png" alt="spielersuche" border="0" />
+            </a>
+        </div>
+
         <div class="socials reveal">
             <a href="https://x.com/BloomEver85575" class="btn btn-x" target="_blank">
                 <i class="fa-brands fa-x-twitter"></i> X / Twitter
             </a>
             <a href="https://discord.gg/Cp2J72hesH" class="btn btn-discord" target="_blank">
                 <i class="fa-brands fa-discord"></i> Discord
+            </a>
+            <a href="https://gamertransfer.com/_everbloom_gc-team-24582-view1" class="btn btn-gamertransfer" target="_blank">
+                <i class="fas fa-handshake"></i> Our Gamertransfer
             </a>
         </div>
     </div>
