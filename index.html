@@ -57,7 +57,7 @@
         #volume-slider::-webkit-slider-thumb { -webkit-appearance: none; width: 12px; height: 12px; background: var(--primary); border-radius: 50%; }
 
         header { padding: 60px 20px 20px; text-align: center; }
-        .logo-main { width: 120px; filter: drop-shadow(0 0 15px var(--primary)); }
+        .logo-main { width: 120px; height: 120px; filter: drop-shadow(0 0 15px var(--primary)); }
         h1 { font-size: 3.5rem; margin: 10px 0 0; letter-spacing: 10px; text-transform: uppercase; font-weight: 900; }
         .tagline { color: var(--primary); letter-spacing: 5px; text-transform: uppercase; font-size: 0.9rem; font-weight: bold; }
         
@@ -73,7 +73,9 @@
         .about-text { color: #ccc; font-size: 1.05rem; line-height: 1.8; margin-bottom: 15px; }
         .about-highlight { color: #fff; font-weight: 600; font-style: italic; }
 
-        .roster-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 15px; margin: 40px 0 40px; }
+        .section-title { text-align: center; text-transform: uppercase; letter-spacing: 5px; color: var(--text); margin: 40px 0 20px; font-size: 1.5rem; }
+
+        .roster-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 15px; margin: 0 0 40px; }
         @media (max-width: 1100px) { .roster-grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); } }
 
         .player-card {
@@ -150,9 +152,8 @@
         .info-list li { margin-bottom: 10px; color: #ccc; display: flex; align-items: center; gap: 12px; font-size: 0.85rem; }
         .info-list i { color: var(--primary); width: 20px; text-align: center; }
 
-        /* PARTNER & SOCIALS AREA */
         .partner-banner { text-align: center; margin: 40px 0 20px; }
-        .partner-banner img { max-width: 300px; transition: 0.3s; border-radius: 5px; }
+        .partner-banner img { max-width: 300px; height: auto; transition: 0.3s; border-radius: 5px; }
 
         .socials { text-align: center; margin: 40px 0; display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; }
         .btn { padding: 15px 35px; border-radius: 5px; text-decoration: none; font-weight: bold; color: white; display: inline-flex; align-items: center; gap: 12px; transition: 0.3s; text-transform: uppercase; font-size: 0.85rem; }
@@ -168,8 +169,8 @@
 <body>
 
     <div class="audio-controls">
-        <i id="mute-icon" class="fas fa-volume-mute"></i>
-        <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0">
+        <i id="mute-icon" class="fas fa-volume-mute" role="button" aria-label="Mute Toggle"></i>
+        <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0" aria-label="Volume Control">
     </div>
 
     <video loop playsinline autoplay muted id="video-bg">
@@ -178,7 +179,7 @@
     <div class="video-overlay"></div>
 
     <header class="reveal">
-        <img src="everbloomlogo.png" alt="Everbloom Logo" class="logo-main">
+        <img src="everbloomlogo.png" alt="Everbloom Logo" class="logo-main" width="120" height="120">
         <h1>EVERBLOOM</h1>
         <div class="tagline">Bloom or Decay | Est. 2026</div>
     </header>
@@ -194,6 +195,7 @@
             </p>
         </div>
 
+        <h2 class="section-title reveal">Current Roster</h2>
         <div class="roster-grid" id="roster"></div>
 
         <div class="apply-section reveal">
@@ -225,7 +227,7 @@
 
         <div class="partner-banner reveal">
             <a href="https://gamertransfer.com" target="_blank">
-                <img src="https://gamertransfer.com/banner/banner300_w.png" alt="Gamertransfer" border="0" />
+                <img src="https://gamertransfer.com/banner/banner300_w.png" alt="Gamertransfer Official Partner" border="0" width="300" height="100">
             </a>
         </div>
 
@@ -266,7 +268,7 @@
 
             return `
             <div class="player-card reveal">
-                <img src="${p.img}" class="agent-img" alt="${p.agent}">
+                <img src="${p.img}" class="agent-img" alt="${p.agent}" width="200" height="350">
                 <div class="card-content">
                     <span class="role">${p.role}</span>
                     <div class="player-name">${p.name}</div>
@@ -311,6 +313,3 @@
     </script>
 </body>
 </html>
-
-
-
