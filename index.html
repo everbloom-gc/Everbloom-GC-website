@@ -26,18 +26,19 @@
             overflow-x: hidden;
         }
 
-        /* --- VIDEO & HEADER (Behalten wie sie waren) --- */
         #video-bg {
             position: fixed; top: 50%; left: 50%;
             min-width: 100%; min-height: 100%;
             z-index: -2; transform: translateX(-50%) translateY(-50%);
             object-fit: cover; filter: brightness(0.3) saturate(0.8);
         }
+
         .video-overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: radial-gradient(circle at 50% 0%, rgba(6, 11, 16, 0.4) 0%, rgba(6, 11, 16, 0.9) 100%);
             z-index: -1;
         }
+
         .audio-controls {
             position: fixed; top: 20px; right: 20px;
             z-index: 100; background: rgba(17, 27, 36, 0.8);
@@ -46,39 +47,52 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
         }
+
+        .audio-controls i { color: var(--primary); width: 20px; text-align: center; cursor: pointer; }
+        #volume-slider { -webkit-appearance: none; width: 80px; height: 4px; background: rgba(255, 255, 255, 0.2); border-radius: 2px; outline: none; cursor: pointer; }
+        #volume-slider::-webkit-slider-thumb { -webkit-appearance: none; width: 12px; height: 12px; background: var(--primary); border-radius: 50%; }
+
         header { padding: 60px 20px 20px; text-align: center; }
         .logo-main { width: 120px; height: auto; filter: drop-shadow(0 0 15px var(--primary)); }
         h1 { font-size: 3.5rem; margin: 10px 0 0; letter-spacing: 10px; text-transform: uppercase; font-weight: 900; }
         .tagline { color: var(--primary); letter-spacing: 5px; text-transform: uppercase; font-size: 0.9rem; font-weight: bold; }
+        
         .container { max-width: 1300px; margin: auto; padding: 20px; }
 
-        /* --- ROSTER SEKTION (NEU: Swiper Support) --- */
+        .about-top {
+            max-width: 850px; margin: 0 auto 50px; text-align: center;
+            background: rgba(17, 27, 36, 0.6); backdrop-filter: blur(10px);
+            padding: 40px; border-radius: 12px; border-bottom: 3px solid var(--primary);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .about-top h3 { color: var(--primary); text-transform: uppercase; letter-spacing: 3px; margin-top: 0; font-size: 1.4rem; }
+        .about-text { color: #ccc; font-size: 1.05rem; line-height: 1.8; margin-bottom: 15px; }
+        .about-highlight { color: #fff; font-weight: 600; font-style: italic; }
+
         .section-title { text-align: center; text-transform: uppercase; letter-spacing: 5px; color: var(--text); margin: 40px 0 20px; font-size: 1.5rem; }
 
-        /* Desktop: Normales Grid */
-        @media (min-width: 1025px) {
-            .roster-swiper { display: block; }
-            .swiper-wrapper {
-                display: grid;
-                grid-template-columns: repeat(5, 1fr);
-                gap: 15px;
-            }
-            .swiper-pagination { display: none; }
-        }
+        /* --- ROSTER GRID / SLIDER LOGIK --- */
+        .roster-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 15px; margin: 0 0 40px; }
 
-        /* Mobile: Slider-Stil */
-        @media (max-width: 1024px) {
-            .roster-swiper { width: 100%; padding-bottom: 40px !important; overflow: hidden; }
-            .swiper-slide { width: 85%; height: auto; }
-            .swiper-pagination-bullet { background: var(--primary) !important; }
+        /* Mobile Anpassung für Swiper */
+        @media (max-width: 1100px) { 
+            .swiper { width: 100%; padding-bottom: 30px; overflow: hidden; }
+            .roster-grid { 
+                display: flex; /* Swiper braucht Flex statt Grid */
+                margin: 0;
+            }
+            .swiper-slide { width: 85% !important; height: auto; }
         }
 
         .player-card {
             background-color: rgba(17, 27, 36, 0.8); backdrop-filter: blur(10px);
             border-radius: 12px; height: 460px;
-            position: relative; color: white; overflow: hidden; 
+            position: relative;
+            color: white; overflow: hidden; 
             border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.4s ease;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            /* Wichtig für Swiper */
+            width: 100%; 
         }
         .player-card:hover { transform: translateY(-12px); border-color: var(--primary); box-shadow: 0 0 30px var(--accent-glow); }
 
@@ -97,25 +111,41 @@
         }
 
         .role { font-size: 0.7rem; color: var(--primary); font-weight: bold; text-transform: uppercase; letter-spacing: 2px; }
-        .player-name { font-size: 1.4rem; margin: 2px 0; font-weight: 900; text-transform: uppercase; line-height: 1; }
+        .player-name { font-size: 1.4rem; margin: 2px 0; font-weight: 900; text-transform: uppercase; word-wrap: break-word; line-height: 1; }
         .rank-tag {
             background: rgba(255, 255, 255, 0.05); padding: 6px 10px; border-radius: 4px;
             font-size: 0.75rem; font-weight: 900; display: inline-block; margin: 10px 0;
             border-left: 3px solid #fff; text-transform: uppercase;
         }
 
-        /* --- RESTLICHE DESIGNS (Beibehalten) --- */
-        .apply-section { text-align: center; margin: 80px 0; padding: 40px; }
-        .apply-btn { background: var(--primary); color: white; padding: 18px 45px; border-radius: 4px; text-decoration: none; font-weight: 900; text-transform: uppercase; display: inline-flex; align-items: center; gap: 15px; }
-        .info-grid-bottom { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .player-socials { display: flex; gap: 20px; margin: 10px 0; align-items: center; }
+        .player-socials a { color: rgba(255,255,255,0.6); transition: 0.3s; text-decoration: none; display: flex; align-items: center; }
+        .player-socials a:hover { color: var(--primary); transform: scale(1.15); }
+        .valo-svg { width: 22px; height: 22px; fill: currentColor; }
+
+        /* Rest deines originalen Designs */
+        .apply-section { text-align: center; margin: 80px 0; padding: 40px; background: radial-gradient(circle, rgba(255, 70, 85, 0.05) 0%, transparent 70%); }
+        .apply-btn { background: var(--primary); color: white; padding: 18px 45px; border-radius: 4px; text-decoration: none; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; display: inline-flex; align-items: center; gap: 15px; transition: 0.3s; border: 2px solid transparent; box-shadow: 0 0 20px rgba(255, 70, 85, 0.2); }
+        .apply-btn:hover { background: transparent; border-color: var(--primary); box-shadow: 0 0 30px var(--accent-glow); transform: scale(1.05); }
+
+        .info-grid-bottom { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; }
         @media (max-width: 768px) { .info-grid-bottom { grid-template-columns: 1fr; } }
-        .info-card { background: rgba(17, 27, 36, 0.8); padding: 25px; border-radius: 12px; border-top: 3px solid var(--primary); }
-        .socials { text-align: center; margin: 40px 0; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
-        .btn { padding: 15px 35px; border-radius: 5px; text-decoration: none; font-weight: bold; color: white; display: inline-flex; align-items: center; gap: 12px; }
+        .info-card { background: rgba(17, 27, 36, 0.8); backdrop-filter: blur(10px); padding: 25px; border-radius: 12px; border-top: 3px solid var(--primary); }
+        .info-card h3 { color: var(--primary); margin: 0 0 15px; text-transform: uppercase; font-size: 1rem; letter-spacing: 1px; }
+        .info-list { list-style: none; padding: 0; margin: 0; }
+        .info-list li { margin-bottom: 10px; color: #ccc; display: flex; align-items: center; gap: 12px; font-size: 0.85rem; }
+        .info-list i { color: var(--primary); width: 20px; text-align: center; }
+
+        .partner-banner { text-align: center; margin: 40px 0 20px; }
+        .partner-banner img { max-width: 300px; height: auto; transition: 0.3s; border-radius: 5px; }
+
+        .socials { text-align: center; margin: 40px 0; display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; }
+        .btn { padding: 15px 35px; border-radius: 5px; text-decoration: none; font-weight: bold; color: white; display: inline-flex; align-items: center; gap: 12px; transition: 0.3s; text-transform: uppercase; font-size: 0.85rem; }
         .btn-discord { background: #5865F2; }
         .btn-gamertransfer { background: var(--gt-orange); }
-        .btn-x { background: #000; border: 1px solid rgba(255,255,255,0.2); }
-        footer { text-align: center; padding: 50px; color: #888; font-size: 0.75rem; }
+        .btn-x { background: #000000; border: 1px solid rgba(255,255,255,0.2); }
+
+        footer { text-align: center; padding: 50px; color: #888; font-size: 0.75rem; border-top: 1px solid rgba(255,255,255,0.05); }
         .reveal { opacity: 0; transform: translateY(30px); transition: 0.8s; }
         .reveal.active { opacity: 1; transform: translateY(0); }
     </style>
@@ -123,8 +153,8 @@
 <body>
 
     <div class="audio-controls">
-        <i id="mute-icon" class="fas fa-volume-mute"></i>
-        <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0">
+        <i id="mute-icon" class="fas fa-volume-mute" role="button" aria-label="Mute Toggle"></i>
+        <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0" aria-label="Volume Control">
     </div>
 
     <video loop playsinline autoplay muted id="video-bg">
@@ -133,48 +163,84 @@
     <div class="video-overlay"></div>
 
     <header class="reveal">
-        <img src="everbloomlogo.png" alt="Everbloom Logo" class="logo-main">
+        <img src="everbloomlogo.png" alt="Everbloom Logo" class="logo-main" width="120" height="120">
         <h1>EVERBLOOM</h1>
         <div class="tagline">Bloom or Decay | Est. 2026</div>
     </header>
 
     <div class="container">
+        <div class="about-top reveal">
+            <h3>Who We Are</h3>
+            <p class="about-text">
+                Everbloom is an independent E-Sport organization founded in 2026. We are a dedicated collective of players with a clear vision: <span class="about-highlight">Excellence through Discipline.</span> 
+            </p>
+            <p class="about-text">
+                We cultivate an environment where personal growth and collective victory go hand in hand. Whether we are analyzing replays or executing high-pressure site takes – we do it with the mindset: <span class="about-highlight">Bloom or Decay.</span>
+            </p>
+        </div>
+
         <h2 class="section-title reveal">Current Roster</h2>
+        
         <div class="swiper roster-swiper">
-            <div class="swiper-wrapper" id="roster">
-                </div>
+            <div class="roster-grid swiper-wrapper" id="roster"></div>
             <div class="swiper-pagination"></div>
         </div>
 
         <div class="apply-section reveal">
+            <h3 style="color: var(--primary); text-transform: uppercase; letter-spacing: 3px; margin-bottom: 20px;">Ready to join the squad?</h3>
             <a href="https://forms.gle/VeNmZo9DkJo35PR5A" target="_blank" class="apply-btn">
                 <i class="fas fa-file-signature"></i> Apply for Roster
             </a>
+            <p style="color: #666; font-size: 0.75rem; margin-top: 15px; text-transform: uppercase; letter-spacing: 2px;">Requirements: Discipline, Growth Mindset & Aim</p>
         </div>
 
         <div class="info-grid-bottom">
             <div class="info-card reveal">
                 <h3>Latest News</h3>
-                <p>• Rubyxcube hit Silver!</p>
-                <p>• Roster complete (5/5)</p>
+                <ul class="info-list">
+                    <li><i class="fas fa-trophy"></i> **Rubyxcube:** Hit Silver Rank!</li>
+                    <li><i class="fas fa-check"></i> Roster complete (5/5)</li>
+                    <li><i class="fas fa-star"></i> Brand Evolution 2026</li>
+                </ul>
             </div>
             <div class="info-card reveal">
                 <h3>Team Goals</h3>
-                <p>• Win a Tournament</p>
-                <p>• Premier Division Entry</p>
+                <ul class="info-list">
+                    <li><i class="fas fa-trophy"></i> Win a Tournament</li>
+                    <li><i class="fas fa-medal"></i> Premier Division Entry</li>
+                    <li><i class="fas fa-bolt"></i> Strong Mental Game</li>
+                </ul>
             </div>
         </div>
 
+        <div class="partner-banner reveal">
+            <a href="https://gamertransfer.com" target="_blank">
+                <img src="https://gamertransfer.com/banner/banner300_w.png" alt="Gamertransfer Official Partner" border="0" width="300" height="100">
+            </a>
+        </div>
+
         <div class="socials reveal">
-            <a href="https://x.com/BloomEver85575" class="btn btn-x" target="_blank"><i class="fa-brands fa-x-twitter"></i> X</a>
-            <a href="https://discord.gg/Cp2J72hesH" class="btn btn-discord" target="_blank"><i class="fa-brands fa-discord"></i> Discord</a>
+            <a href="https://x.com/BloomEver85575" class="btn btn-x" target="_blank">
+                <i class="fa-brands fa-x-twitter"></i> X / Twitter
+            </a>
+            <a href="https://discord.gg/Cp2J72hesH" class="btn btn-discord" target="_blank">
+                <i class="fa-brands fa-discord"></i> Discord
+            </a>
+            <a href="https://gamertransfer.com/_everbloom_gc-team-24582-view1" class="btn btn-gamertransfer" target="_blank">
+                <i class="fas fa-handshake"></i> Our Gamertransfer
+            </a>
         </div>
     </div>
 
     <footer>&copy; 2026 EVERBLOOM | Bloom or Decay</footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
     <script>
+        const video = document.getElementById('video-bg');
+        const volumeSlider = document.getElementById('volume-slider');
+        const muteIcon = document.getElementById('mute-icon');
+
         const team = [
             { name: "Rubyxcube", tag: "EBM", role: "Duelist", agent: "Jett", img: "jett.png", rank: "Silver 1", x: "https://x.com/x2_zelda" },
             { name: "Zylicent", tag: "2005", role: "Duelist", agent: "Iso", img: "iso.png", rank: "Bronze 3", x: "https://x.com/Eliyna_vlr" },
@@ -191,33 +257,57 @@
             if(p.rank.includes("Gold")) rCol = "#ffd700";
 
             return `
-            <div class="swiper-slide">
-                <div class="player-card">
-                    <img src="${p.img}" class="agent-img" alt="${p.agent}">
-                    <div class="card-content">
-                        <span class="role">${p.role}</span>
-                        <div class="player-name">${p.name}</div>
-                        <div class="rank-tag" style="border-left-color: ${rCol}; color: ${rCol};">${p.rank}</div>
-                        <div class="player-socials">
-                            <a href="${p.x}" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
-                        </div>
+            <div class="player-card reveal swiper-slide">
+                <img src="${p.img}" class="agent-img" alt="${p.agent}" width="400" height="600">
+                <div class="card-content">
+                    <span class="role">${p.role}</span>
+                    <div class="player-name">${p.name}</div>
+                    <div class="rank-tag" style="border-left-color: ${rCol}; color: ${rCol}; text-shadow: 0 0 10px ${rCol}55;">${p.rank}</div>
+                    
+                    <div class="player-socials">
+                        <a href="https://tracker.gg/valorant/profile/riot/${encodeURIComponent(p.name)}%23${p.tag}/overview" target="_blank" title="Tracker Stats">
+                            <svg class="valo-svg" viewBox="0 0 100 100">
+                                <path d="M12.3 10.4l34.8 79.2L87.7 10.4H65.5L47.1 56.6 28.7 10.4H12.3z"/>
+                            </svg>
+                        </a>
+                        <a href="${p.x}" target="_blank" class="x-link" title="Follow on X">
+                            <i class="fa-brands fa-x-twitter" style="font-size: 1.4rem;"></i>
+                        </a>
                     </div>
+                    <div style="font-size: 0.65rem; color: rgba(255,255,255,0.4); text-transform: uppercase;">Main: ${p.agent}</div>
                 </div>
             </div>
         `}).join('');
 
-        // Swiper Initialisierung
+        // NEU: Swiper nur initialisieren, wenn wir auf Mobile sind
         const swiper = new Swiper('.roster-swiper', {
             slidesPerView: "auto",
-            spaceBetween: 20,
+            spaceBetween: 15,
             centeredSlides: true,
             pagination: { el: '.swiper-pagination', clickable: true },
             breakpoints: {
-                1025: { enabled: false } // Deaktiviert Slider auf Desktop
+                1101: { enabled: false } // Über 1100px (Desktop) Slider aus!
             }
         });
 
-        // Reveal Animation & Audio (Dein originaler Code)
+        // Originaler Audio/Reveal Part
+        video.volume = 0;
+        volumeSlider.addEventListener('input', (e) => {
+            video.volume = e.target.value;
+            video.muted = (video.volume == 0);
+            muteIcon.className = video.volume == 0 ? 'fas fa-volume-mute' : 'fas fa-volume-up';
+        });
+
+        muteIcon.addEventListener('click', () => {
+            if(video.muted || video.volume == 0) {
+                video.muted = false; video.volume = 0.2; volumeSlider.value = 0.2;
+                muteIcon.className = 'fas fa-volume-up';
+            } else {
+                video.muted = true; video.volume = 0; volumeSlider.value = 0;
+                muteIcon.className = 'fas fa-volume-mute';
+            }
+        });
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
         }, { threshold: 0.1 });
