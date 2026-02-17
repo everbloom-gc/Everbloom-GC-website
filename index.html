@@ -57,11 +57,7 @@
         #volume-slider::-webkit-slider-thumb { -webkit-appearance: none; width: 12px; height: 12px; background: var(--primary); border-radius: 50%; }
 
         header { padding: 60px 20px 20px; text-align: center; }
-        .logo-main { 
-            width: 120px; 
-            height: auto; 
-            filter: drop-shadow(0 0 15px var(--primary)); 
-        }
+        .logo-main { width: 120px; height: auto; filter: drop-shadow(0 0 15px var(--primary)); }
         h1 { font-size: 3.5rem; margin: 10px 0 0; letter-spacing: 10px; text-transform: uppercase; font-weight: 900; }
         .tagline { color: var(--primary); letter-spacing: 5px; text-transform: uppercase; font-size: 0.9rem; font-weight: bold; }
         
@@ -84,7 +80,8 @@
 
         .player-card {
             background-color: rgba(17, 27, 36, 0.8); backdrop-filter: blur(10px);
-            border-radius: 12px; height: 420px; position: relative;
+            border-radius: 12px; height: 460px; /* Erhöht auf 460px für mehr Platz */
+            position: relative;
             color: white; overflow: hidden; 
             border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -92,7 +89,7 @@
         .player-card:hover { transform: translateY(-12px); border-color: var(--primary); box-shadow: 0 0 30px var(--accent-glow); }
 
         .agent-img {
-            position: absolute; left: 50%; bottom: 0; 
+            position: absolute; left: 50%; bottom: 5%; /* Etwas höher gezogen */
             height: 85%; width: auto;
             transform: translateX(-50%); z-index: 1; pointer-events: none;
             object-fit: contain; transition: 0.5s ease; 
@@ -102,15 +99,25 @@
         .card-content {
             position: relative; z-index: 2; padding: 20px; height: 100%;
             display: flex; flex-direction: column; justify-content: flex-end;
-            background: linear-gradient(to top, rgba(17, 27, 36, 1) 25%, rgba(17, 27, 36, 0) 65%);
+            background: linear-gradient(to top, rgba(17, 27, 36, 1) 30%, rgba(17, 27, 36, 0) 70%);
         }
 
         .role { font-size: 0.7rem; color: var(--primary); font-weight: bold; text-transform: uppercase; letter-spacing: 2px; }
-        .player-name { font-size: 1.5rem; margin: 2px 0; font-weight: 900; text-transform: uppercase; }
+        
+        /* Fix für lange Namen wie WalmartReyna */
+        .player-name { 
+            font-size: 1.4rem; 
+            margin: 2px 0; 
+            font-weight: 900; 
+            text-transform: uppercase;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            line-height: 1;
+        }
         
         .rank-tag {
-            background: rgba(255, 255, 255, 0.05); padding: 4px 10px; border-radius: 4px;
-            font-size: 0.75rem; font-weight: 900; display: inline-block; margin: 8px 0;
+            background: rgba(255, 255, 255, 0.05); padding: 6px 10px; border-radius: 4px;
+            font-size: 0.75rem; font-weight: 900; display: inline-block; margin: 10px 0;
             border-left: 3px solid #fff; text-transform: uppercase;
         }
 
