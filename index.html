@@ -57,7 +57,11 @@
         #volume-slider::-webkit-slider-thumb { -webkit-appearance: none; width: 12px; height: 12px; background: var(--primary); border-radius: 50%; }
 
         header { padding: 60px 20px 20px; text-align: center; }
-        .logo-main { width: 120px; height: 120px; filter: drop-shadow(0 0 15px var(--primary)); }
+        .logo-main { 
+            width: 120px; 
+            height: auto; 
+            filter: drop-shadow(0 0 15px var(--primary)); 
+        }
         h1 { font-size: 3.5rem; margin: 10px 0 0; letter-spacing: 10px; text-transform: uppercase; font-weight: 900; }
         .tagline { color: var(--primary); letter-spacing: 5px; text-transform: uppercase; font-size: 0.9rem; font-weight: bold; }
         
@@ -88,7 +92,8 @@
         .player-card:hover { transform: translateY(-12px); border-color: var(--primary); box-shadow: 0 0 30px var(--accent-glow); }
 
         .agent-img {
-            position: absolute; left: 50%; bottom: 0; height: 85%;
+            position: absolute; left: 50%; bottom: 0; 
+            height: 85%; width: auto;
             transform: translateX(-50%); z-index: 1; pointer-events: none;
             object-fit: contain; transition: 0.5s ease; 
             -webkit-mask-image: linear-gradient(to top, black 70%, transparent 100%);
@@ -210,8 +215,8 @@
             <div class="info-card reveal">
                 <h3>Latest News</h3>
                 <ul class="info-list">
+                    <li><i class="fas fa-trophy"></i> **CEO Milestone:** Hit Silver Rank!</li>
                     <li><i class="fas fa-check"></i> Roster complete (5/5)</li>
-                    <li><i class="fas fa-user-tag"></i> Active Scrim Search</li>
                     <li><i class="fas fa-star"></i> Brand Evolution 2026</li>
                 </ul>
             </div>
@@ -268,7 +273,7 @@
 
             return `
             <div class="player-card reveal">
-                <img src="${p.img}" class="agent-img" alt="${p.agent}" width="200" height="350">
+                <img src="${p.img}" class="agent-img" alt="${p.agent}" width="400" height="600">
                 <div class="card-content">
                     <span class="role">${p.role}</span>
                     <div class="player-name">${p.name}</div>
