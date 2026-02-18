@@ -61,10 +61,10 @@
 
         .diagonal-text {
             position: absolute; top: 45%; left: 50%; transform: translate(-50%, -50%) rotate(-45deg);
-            font-size: 2.4rem; font-weight: 900; color: var(--primary);
+            font-size: 2.2rem; font-weight: 900; color: var(--primary);
             text-shadow: 0 0 15px var(--primary);
             white-space: nowrap; pointer-events: none; text-transform: uppercase; letter-spacing: 4px; width: 160%; text-align: center; 
-            z-index: 1; opacity: 0.5;
+            z-index: 1; opacity: 0.4;
         }
 
         .agent-img { position: absolute; left: 50%; bottom: 15%; height: 80%; transform: translateX(-50%); z-index: 2; -webkit-mask-image: linear-gradient(to top, black 85%, transparent 100%); }
@@ -186,7 +186,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-        // WalmartReyna wurde entfernt, 4/5 Spielerinnen übrig
         const flintaPlayers = [
             { name: "Rubyxcube", tag: "EBM", role: "Duelist", agent: "Jett", img: "jett.png", rank: "Silver 1", x: "https://x.com/x2_zelda" },
             { name: "Zylicent", tag: "2005", role: "Duelist", agent: "Iso", img: "iso.png", rank: "Bronze 3", x: "https://x.com/Eliyna_vlr" },
@@ -219,7 +218,7 @@
                 </div>`;
             }).join('');
 
-            // FLINTA Open Slot hinzufügen
+            // FLINTA Open Slot (jetzt 4/5)
             fHtml += `
             <div class="swiper-slide">
                 <div class="player-card" style="border: 1px dashed var(--primary); opacity: 0.8;">
