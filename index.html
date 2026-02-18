@@ -59,18 +59,16 @@
         }
         .player-card:hover { transform: translateY(-15px); border-color: var(--primary); box-shadow: 0 0 40px var(--accent-glow); }
 
-        /* DIAGONAL TEXT - Z-INDEX 1 (HINTER DEM CONTENT) */
         .diagonal-text {
             position: absolute; top: 45%; left: 50%; transform: translate(-50%, -50%) rotate(-45deg);
-            font-size: 2.8rem; font-weight: 900; color: var(--primary);
-            text-shadow: 0 0 15px var(--primary), 0 0 35px var(--primary);
-            white-space: nowrap; pointer-events: none; text-transform: uppercase; letter-spacing: 6px; width: 160%; text-align: center; 
-            z-index: 1; opacity: 0.7;
+            font-size: 2.4rem; font-weight: 900; color: var(--primary);
+            text-shadow: 0 0 15px var(--primary);
+            white-space: nowrap; pointer-events: none; text-transform: uppercase; letter-spacing: 4px; width: 160%; text-align: center; 
+            z-index: 1; opacity: 0.5;
         }
 
         .agent-img { position: absolute; left: 50%; bottom: 15%; height: 80%; transform: translateX(-50%); z-index: 2; -webkit-mask-image: linear-gradient(to top, black 85%, transparent 100%); }
         
-        /* CONTENT - Z-INDEX 10 (VOR DEM DIAGONAL TEXT) */
         .card-content { 
             position: relative; z-index: 10; padding: 30px; height: 100%; 
             display: flex; flex-direction: column; justify-content: flex-end; 
@@ -90,16 +88,6 @@
         .player-socials { display: flex; gap: 20px; margin-top: 15px; }
         .player-socials a { color: rgba(255,255,255,0.7); transition: 0.3s; font-size: 1.3rem; }
         .player-socials a:hover { color: var(--primary); transform: scale(1.2); }
-
-        /* CUSTOM VALORANT ICON */
-        .fa-valorant {
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            background-color: currentColor;
-            -webkit-mask: url('https://raw.githubusercontent.com/FortAwesome/Font-Awesome/master/svgs/solid/v.svg') no-repeat center; /* Nutzt das stilisierte V */
-            mask: url('https://raw.githubusercontent.com/FortAwesome/Font-Awesome/master/svgs/solid/v.svg') no-repeat center;
-        }
 
         /* INFO GRID */
         .info-grid-bottom { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin: 80px 0; }
@@ -164,7 +152,7 @@
                 <h3>Latest News</h3>
                 <ul class="info-list">
                     <li><i class="fas fa-bullhorn"></i> Recruiting Male Roster!</li>
-                    <li><i class="fas fa-users"></i> FLINTA Roster 5/5 complete</li>
+                    <li><i class="fas fa-users"></i> FLINTA Roster 4/5 - LFM!</li>
                     <li><i class="fas fa-star"></i> Brand Evolution 2026</li>
                 </ul>
             </div>
@@ -198,17 +186,17 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
+        // WalmartReyna wurde entfernt, 4/5 Spielerinnen übrig
         const flintaPlayers = [
             { name: "Rubyxcube", tag: "EBM", role: "Duelist", agent: "Jett", img: "jett.png", rank: "Silver 1", x: "https://x.com/x2_zelda" },
             { name: "Zylicent", tag: "2005", role: "Duelist", agent: "Iso", img: "iso.png", rank: "Bronze 3", x: "https://x.com/Eliyna_vlr" },
             { name: "AURØRA", tag: "IGNIS", role: "Controller", agent: "Brimstone", img: "brim.png", rank: "Silver 2", x: "https://x.com/tqrmcc" },
-            { name: "Mondi", tag: "rawr", role: "Flex", agent: "Jett", img: "jett.png", rank: "Gold 2", x: "https://x.com/just_mondii" },
-            { name: "WalmartReyna", tag: "GOAT", role: "Flex", agent: "Reyna", img: "reyna.webp", rank: "Bronze 1", x: "https://x.com/wavvybecci" }
+            { name: "Mondi", tag: "rawr", role: "Flex", agent: "Jett", img: "jett.png", rank: "Gold 2", x: "https://x.com/just_mondii" }
         ];
 
         function renderRosters() {
             const fContainer = document.getElementById('flinta-roster');
-            fContainer.innerHTML = flintaPlayers.map(p => {
+            let fHtml = flintaPlayers.map(p => {
                 let rCol = "#fff";
                 if(p.rank.includes("Gold")) rCol = "#ffd700";
                 else if(p.rank.includes("Silver")) rCol = "#c0c0c0";
@@ -231,6 +219,20 @@
                 </div>`;
             }).join('');
 
+            // FLINTA Open Slot hinzufügen
+            fHtml += `
+            <div class="swiper-slide">
+                <div class="player-card" style="border: 1px dashed var(--primary); opacity: 0.8;">
+                    <div class="diagonal-text">WE WANT YOU</div>
+                    <div class="card-content">
+                        <span class="role">LFM</span>
+                        <div class="player-name">OPEN SLOT</div>
+                        <div class="rank-tag" style="border-left-color: var(--primary); color: var(--primary);">FLINTA Roster</div>
+                    </div>
+                </div>
+            </div>`;
+            fContainer.innerHTML = fHtml;
+
             const mContainer = document.getElementById('male-roster');
             let mHtml = "";
             for(let i=0; i<5; i++) {
@@ -251,11 +253,20 @@
 
         renderRosters();
 
-        const swiperConf = { slidesPerView: "auto", centeredSlides: true, spaceBetween: 25, grabCursor: true, pagination: { el: '.swiper-pagination', clickable: true }, breakpoints: { 1101: { enabled: false } } };
+        const swiperConf = { 
+            slidesPerView: "auto", 
+            centeredSlides: true, 
+            spaceBetween: 25, 
+            grabCursor: true, 
+            pagination: { el: '.swiper-pagination', clickable: true }, 
+            breakpoints: { 1101: { enabled: false } } 
+        };
         new Swiper('.flinta-swiper', swiperConf);
         new Swiper('.male-swiper', swiperConf);
 
-        const obs = new IntersectionObserver((es) => { es.forEach(e => { if(e.isIntersecting) e.target.classList.add('active'); })});
+        const obs = new IntersectionObserver((es) => { 
+            es.forEach(e => { if(e.isIntersecting) e.target.classList.add('active'); })
+        });
         document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
     </script>
 </body>
