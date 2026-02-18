@@ -1,2 +1,19 @@
+# ==========================================
+# Robots.txt für Everbloom-GC.com
+# ==========================================
+
 User-agent: *
+
+# Erlaube Suchmaschinen den Rest der Seite zu crawlen
+Allow: /
+
+# VERBIETE das Crawlen der rechtlichen Seiten (Privatsphäre-Schutz)
+Disallow: /impressum
+Disallow: /datenschutz
+Disallow: /legal.html
+Disallow: /admin/
+Disallow: /private/
+
+# Sitemaps (Falls du eine hast, ansonsten diese Zeile mit # auskommentieren)
+# Sitemap: https://everbloom-gc.com/sitemap.xmlUser-agent: *
 Allow: /
