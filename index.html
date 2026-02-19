@@ -39,14 +39,13 @@
         .logo-main { width: 160px; filter: drop-shadow(0 0 25px var(--primary)); margin-bottom: 25px; transition: 0.5s; }
         h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); margin: 0; letter-spacing: 12px; text-transform: uppercase; font-weight: 900; }
 
-        /* INFO CARDS & NEWS FIX */
+        /* INFO CARDS */
         .info-card { background: rgba(17, 27, 36, 0.85); padding: 40px; border-radius: 12px; border-top: 4px solid var(--primary); margin-bottom: 25px; backdrop-filter: blur(10px); }
         .info-card h3 { display: flex; align-items: center; gap: 15px; text-transform: uppercase; letter-spacing: 2px; margin-top: 0; color: var(--primary); }
         .info-list { list-style: none; padding: 0; margin-top: 20px; }
         .info-list li { margin-bottom: 15px; color: #ccc; display: flex; align-items: flex-start; gap: 15px; line-height: 1.4; }
         .info-list i { margin-top: 3px; color: var(--primary); }
 
-        /* MOBILE NEWS GRID FIX */
         .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
         @media (max-width: 600px) { .info-card { padding: 25px; } }
 
@@ -55,7 +54,7 @@
         .apply-btn { position: relative; display: inline-block; background: var(--primary); color: white; padding: 22px 65px; border-radius: 4px; text-decoration: none; font-weight: 900; text-transform: uppercase; letter-spacing: 4px; box-shadow: 0 0 25px rgba(255, 70, 85, 0.4); animation: pulse-glow 2.5s infinite; }
         @keyframes pulse-glow { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.02); box-shadow: 0 0 35px rgba(255, 70, 85, 0.7); } }
 
-        /* SWIPEABLE ROSTER SYSTEM */
+        /* SWIPEABLE ROSTER */
         .roster-grid { 
             display: flex; 
             gap: 20px; 
@@ -65,7 +64,6 @@
             scroll-snap-type: x mandatory;
             -webkit-overflow-scrolling: touch;
         }
-        /* Hide scrollbar but keep functionality */
         .roster-grid::-webkit-scrollbar { display: none; }
         
         .player-card { 
@@ -80,7 +78,6 @@
             scroll-snap-align: center;
         }
 
-        /* Desktop Grid Reset */
         @media (min-width: 1024px) {
             .roster-grid { flex-wrap: wrap; justify-content: center; overflow-x: visible; }
         }
@@ -102,8 +99,10 @@
 
         footer { text-align: center; padding: 60px 20px; background: rgba(0,0,0,0.8); border-top: 2px solid var(--primary); margin-top: 50px; }
         .impressum-link { color: var(--primary); text-decoration: none; font-weight: bold; cursor: pointer; }
-        .impressum-link:hover { text-decoration: underline; }
         .impressum-content { max-width: 800px; margin: 20px auto 0; font-size: 0.85rem; color: #888; line-height: 1.6; border-top: 1px solid #222; padding-top: 20px; }
+        
+        .page-section { display: none; min-height: 100vh; padding-bottom: 80px; }
+        .page-section.active { display: block; }
     </style>
 </head>
 <body>
@@ -158,16 +157,9 @@
                 </div>
             </div>
 
-            <div class="gt-banner-box" style="text-align:center; margin:30px 0;">
-                <a href="https://gamertransfer.com" target="_blank">
-                    <img src="https://gamertransfer.com/banner/banner300_w.png" alt="GamerTransfer" style="width:180px; opacity:0.8;">
-                </a>
-            </div>
-
             <div class="social-row">
                 <a href="https://x.com/BloomEver85575" target="_blank"><i class="fa-brands fa-x-twitter"></i> X / Twitter</a>
                 <a href="https://discord.gg/Cp2J72hesH" target="_blank" class="dc-link"><i class="fa-brands fa-discord"></i> Discord</a>
-                <a href="https://gamertransfer.com/_everbloom_gc-team-24582-view1" target="_blank" class="gt-link"><i class="fas fa-user-plus"></i> GT Profile</a>
             </div>
         </div>
     </section>
@@ -175,7 +167,6 @@
     <section id="roster" class="page-section">
         <div class="container" style="padding-top: 100px;">
             <h2 style="text-align:center; text-transform:uppercase; letter-spacing:10px; margin-bottom:40px;">The Rosters</h2>
-            <p style="text-align:center; color:var(--primary); margin-bottom:40px;" class="mobile-only">← Swipe to view players →</p>
             
             <h3 style="color:var(--primary); border-left:4px solid var(--primary); padding-left:15px; margin-bottom:20px;">FLINTA ROSTER</h3>
             <div class="roster-grid" id="flinta-roster"></div>
@@ -212,7 +203,9 @@
         };
 
         const trackerIconPath = "valotrackerlog.png";
+
         function toggleNav() { document.getElementById('navOverlay').classList.toggle('active'); }
+
         function showSection(id) {
             document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
             document.getElementById(id).classList.add('active');
@@ -224,6 +217,7 @@
         function renderRoster() {
             const emptyCard = `<div class="player-card" style="display:flex; justify-content:center; align-items:center; border: 4px dashed rgba(255,70,85,0.2);"><div style="font-weight:900; color:var(--primary); font-size:1.5rem;">JOIN US</div></div>`;
             
+            // Render FLINTA
             document.getElementById('flinta-roster').innerHTML = players.flinta.map(p => `
                 <div class="player-card">
                     <img src="${p.img}" class="agent-img">
@@ -235,8 +229,10 @@
                     </div>
                 </div>`).join('') + emptyCard;
 
+            // Render Male
             document.getElementById('male-roster').innerHTML = Array(5).fill('<div class="player-card" style="display:flex; justify-content:center; align-items:center; border: 4px dashed rgba(255,70,85,0.2); color:var(--primary); font-weight:900;">SCOUTING...</div>').join('');
             
+            // Render Staff
             document.getElementById('staff-roster').innerHTML = players.staff.map(p => `
                 <div class="player-card">
                     <img src="${p.img}" class="agent-img" style="height:45%; bottom:30%; opacity:0.5; filter: drop-shadow(0 0 10px rgba(255, 70, 85, 0.3));">
@@ -248,6 +244,11 @@
                     </div>
                 </div>`).join('');
         }
+
+        // Initialer Aufruf beim Laden der Seite
+        window.onload = () => {
+            renderRoster();
+        };
     </script>
 </body>
 </html>
