@@ -45,10 +45,11 @@
 
         /* CARDS & BUTTONS */
         .info-card { background: rgba(17, 27, 36, 0.85); padding: 40px; border-radius: 12px; border-top: 4px solid var(--primary); margin-bottom: 25px; backdrop-filter: blur(10px); }
+        .info-card h3 { margin-top: 0; color: var(--primary); text-transform: uppercase; letter-spacing: 2px; }
         .apply-btn { display: inline-block; background: var(--primary); color: white; padding: 20px 60px; border-radius: 4px; text-decoration: none; font-weight: 900; text-transform: uppercase; letter-spacing: 4px; animation: pulse-glow 2s infinite; }
         @keyframes pulse-glow { 0%, 100% { box-shadow: 0 0 15px rgba(255, 70, 85, 0.4); } 50% { box-shadow: 0 0 35px rgba(255, 70, 85, 0.7); } }
 
-        /* ROSTER GRID & SLIDER */
+        /* ROSTER GRID */
         .roster-grid { display: flex; gap: 20px; margin-top: 30px; padding-bottom: 20px; }
 
         @media (max-width: 768px) {
@@ -60,7 +61,7 @@
         }
 
         .player-card { background-color: rgba(17, 27, 36, 0.9); border-radius: 12px; min-height: 480px; width: 280px; position: relative; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); transition: 0.3s; }
-        .join-card { border: 4px dashed var(--primary) !important; background: rgba(255, 70, 85, 0.05); display: flex; align-items: center; justify-content: center; font-weight: 900; color: var(--primary); font-size: 1.5rem; letter-spacing: 2px; text-transform: uppercase; text-align: center; padding: 20px; }
+        .join-card { border: 4px dashed var(--primary) !important; background: rgba(255, 70, 85, 0.05); display: flex; align-items: center; justify-content: center; font-weight: 900; color: var(--primary); font-size: 1.5rem; letter-spacing: 2px; text-transform: uppercase; text-align: center; }
 
         .agent-img { position: absolute; left: 50%; bottom: 10%; height: 75%; transform: translateX(-50%); z-index: 2; -webkit-mask-image: linear-gradient(to top, black 80%, transparent 100%); }
         .card-content { position: relative; z-index: 10; padding: 25px; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; background: linear-gradient(to top, rgba(17, 27, 36, 1) 35%, transparent 100%); }
@@ -72,7 +73,7 @@
         .rank-bronze { border-color: var(--rank-bronze); color: var(--rank-bronze); box-shadow: 0 0 15px var(--rank-bronze); }
         .rank-staff { border-color: var(--primary); color: var(--primary); box-shadow: 0 0 15px var(--primary); }
 
-        /* TRACKER & SOCIAL LINKS */
+        /* SOCIAL LINKS */
         .tracker-link { display: flex; align-items: center; gap: 8px; color: white; text-decoration: none; font-size: 0.85rem; margin-top: 10px; transition: 0.3s; }
         .tracker-link:hover { color: var(--primary); }
         .tracker-img { width: 18px; height: 18px; object-fit: contain; }
@@ -81,7 +82,6 @@
         .card-socials a { color: white; transition: 0.3s; }
         .card-socials a:hover { color: var(--primary); }
 
-        /* SOCIAL COLORS (FOOTER) */
         .social-row a { padding: 15px 25px; border-radius: 5px; color: white; text-decoration: none; font-weight: bold; border: 1px solid rgba(255,255,255,0.1); transition: 0.3s; display: inline-flex; align-items: center; gap: 10px; }
         .btn-dc { background: rgba(88, 101, 242, 0.1); }
         .btn-dc:hover { background: var(--discord); border-color: var(--discord); box-shadow: 0 0 20px var(--discord); }
@@ -124,18 +124,38 @@
 
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
                 <div class="info-card">
-                    <h3><i class="fas fa-bullhorn"></i> Latest News</h3>
+                    <h3><i class="fas fa-bullhorn"></i> Team News</h3>
                     <ul style="list-style:none; padding:0; color:#ccc;">
-                        <li style="margin-bottom:15px;"><i class="fas fa-fire" style="color:var(--primary)"></i> Scouting: <b>Male Premier Roster</b> (Asc/Imm+) <b>ACTIVE</b></li>
-                        <li><i class="fas fa-venus-mars" style="color:var(--primary)"></i> FLINTA Roster building: 4/5 Members found!</li>
+                        <li style="margin-bottom:15px;">
+                            <i class="fas fa-venus-mars" style="color:var(--primary)"></i> 
+                            <b>FLINTA SQUAD:</b> 4 von 5 Plätzen belegt! Wir suchen noch das letzte Puzzleteil.
+                        </li>
+                        <li style="margin-bottom:15px;">
+                            <i class="fas fa-search" style="color:var(--primary)"></i> 
+                            <b>MALE PREMIER:</b> Scouting Phase gestartet. Bewerbt euch jetzt für das 2026 Roster!
+                        </li>
+                        <li>
+                            <i class="fas fa-shield-alt" style="color:var(--primary)"></i> 
+                            <b>STAFF:</b> Unser Management steht. Coaching-Strukturen werden aktuell finalisiert.
+                        </li>
                     </ul>
                 </div>
+
                 <div class="info-card">
-                    <h3><i class="fas fa-trophy"></i> Our Goals</h3>
+                    <h3><i class="fas fa-crosshairs"></i> Everbloom Goals</h3>
                     <ul style="list-style:none; padding:0; color:#ccc;">
-                        <li style="margin-bottom:15px;"><i class="fas fa-star" style="color:var(--primary)"></i> Premier Division Dominance</li>
-                        <li style="margin-bottom:15px;"><i class="fas fa-brain" style="color:var(--primary)"></i> Strong Mentality & Growth</li>
-                        <li><i class="fas fa-crown" style="color:var(--primary)"></i> Regional Challengers 2026</li>
+                        <li style="margin-bottom:15px;">
+                            <i class="fas fa-medal" style="color:var(--primary)"></i> 
+                            <b>Premier Dominance:</b> Qualifikation für die Play-offs in der kommenden Season.
+                        </li>
+                        <li style="margin-bottom:15px;">
+                            <i class="fas fa-handshake" style="color:var(--primary)"></i> 
+                            <b>Team Chemistry:</b> Aufbau einer stabilen, toxinfreien Trainings-Atmosphäre.
+                        </li>
+                        <li>
+                            <i class="fas fa-rocket" style="color:var(--primary)"></i> 
+                            <b>Organization Growth:</b> Etablierung als feste Größe in der DACH-Szene bis Ende 2026.
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -233,5 +253,3 @@
     </script>
 </body>
 </html>
-
-
