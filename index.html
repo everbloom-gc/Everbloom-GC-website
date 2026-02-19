@@ -205,6 +205,7 @@
         }
 
         function renderRoster() {
+            // FLINTA ROSTER
             document.getElementById('flinta-roster').innerHTML = players.flinta.map(p => `
                 <div class="player-card">
                     <img src="${p.img}" class="agent-img">
@@ -219,11 +220,13 @@
                     </div>
                 </div>`).join('') + `<div class="player-card empty-slot" style="font-weight:900; color:var(--primary); font-size:1.5rem;">JOIN US</div>`;
 
+            // MALE ROSTER
             document.getElementById('male-roster').innerHTML = Array(5).fill('<div class="player-card empty-slot" style="font-weight:900; color:var(--primary);">SCOUTING...</div>').join('');
             
+            // MANAGEMENT & COACHING (Logo jetzt besser sichtbar)
             document.getElementById('staff-roster').innerHTML = players.staff.map(p => `
                 <div class="player-card">
-                    <img src="${p.img}" class="agent-img" style="height:35%; bottom:35%; opacity:0.2">
+                    <img src="${p.img}" class="agent-img" style="height:45%; bottom:30%; opacity:0.5; filter: drop-shadow(0 0 10px rgba(255, 70, 85, 0.3));">
                     <div class="card-content">
                         <span style="font-size:0.7rem; color:var(--primary); font-weight:bold;">${p.role}</span>
                         <div style="font-size:1.4rem; font-weight:900;">${p.name}</div>
