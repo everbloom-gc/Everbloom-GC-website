@@ -27,11 +27,83 @@
         #video-bg { position: fixed; top: 50%; left: 50%; min-width: 100%; min-height: 100%; z-index: -2; transform: translateX(-50%) translateY(-50%); object-fit: cover; filter: brightness(0.15); }
         .video-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle, rgba(6,11,16,0.1), rgba(6,11,16,0.9)); z-index: -1; }
 
-        /* NAVIGATION */
-        .nav-toggle { position: fixed; top: 20px; right: 20px; z-index: 1000; background: rgba(255, 70, 85, 0.9); border: none; width: 50px; height: 50px; border-radius: 5px; cursor: pointer; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; }
-        .nav-overlay { position: fixed; top: 0; right: -100%; width: 100%; height: 100%; background: rgba(6, 11, 16, 0.98); z-index: 999; transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1); display: flex; flex-direction: column; align-items: center; justify-content: center; }
-        .nav-overlay.active { right: 0; }
-        .nav-overlay a { font-size: 2.5rem; color: white; text-decoration: none; text-transform: uppercase; font-weight: 900; letter-spacing: 5px; margin: 20px 0; cursor: pointer; }
+        /* ANIMATED BURGER BUTTON (LEFT) */
+        .nav-toggle { 
+            position: fixed; 
+            top: 20px; 
+            left: 20px; 
+            z-index: 1001; 
+            background: rgba(255, 70, 85, 0.9); 
+            border: none; 
+            width: 50px; 
+            height: 50px; 
+            border-radius: 5px; 
+            cursor: pointer; 
+            display: flex; 
+            flex-direction: column;
+            align-items: center; 
+            justify-content: center; 
+            gap: 5px;
+            transition: 0.3s ease;
+        }
+
+        .nav-toggle span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: white;
+            border-radius: 3px;
+            transition: 0.3s cubic-bezier(0.8, 0.5, 0.2, 1.4);
+        }
+
+        /* X Animation */
+        .nav-toggle.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+        .nav-toggle.active span:nth-child(2) { opacity: 0; transform: scale(0); }
+        .nav-toggle.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+        /* SIDE-PANEL OVERLAY */
+        .nav-overlay { 
+            position: fixed; 
+            top: 0; 
+            left: -320px; 
+            width: 300px; 
+            height: 100vh; 
+            background: rgba(6, 11, 16, 0.98); 
+            backdrop-filter: blur(15px);
+            z-index: 1000; 
+            transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1); 
+            display: flex; 
+            flex-direction: column; 
+            padding: 100px 40px;
+            border-right: 2px solid var(--primary);
+        }
+
+        .nav-overlay.active { left: 0; }
+
+        /* Dark Backdrop when menu is open */
+        .menu-bg-close {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.6);
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.3s;
+            z-index: 999;
+        }
+        .menu-bg-close.active { opacity: 1; visibility: visible; }
+
+        .nav-overlay a { 
+            font-size: 1.8rem; 
+            color: white; 
+            text-decoration: none; 
+            text-transform: uppercase; 
+            font-weight: 900; 
+            letter-spacing: 3px; 
+            margin: 20px 0; 
+            cursor: pointer; 
+            transition: 0.3s;
+        }
+        .nav-overlay a:hover { color: var(--primary); transform: translateX(10px); }
 
         /* SECTIONS */
         .page-section { display: none; padding-bottom: 80px; min-height: 100vh; width: 100%; }
@@ -64,23 +136,15 @@
         .join-card { border: 4px dashed var(--primary) !important; background: rgba(255, 70, 85, 0.05); display: flex; align-items: center; justify-content: center; font-weight: 900; color: var(--primary); font-size: 1.5rem; letter-spacing: 2px; text-transform: uppercase; text-align: center; }
 
         .agent-img { position: absolute; left: 50%; bottom: 10%; height: 75%; transform: translateX(-50%); z-index: 2; -webkit-mask-image: linear-gradient(to top, black 80%, transparent 100%); }
-        
-        /* Specialized Logo Background for Staff Cards */
         .staff-bg-logo { position: absolute; left: 50%; top: 40%; transform: translate(-50%, -50%); width: 70%; opacity: 0.25; z-index: 1; filter: drop-shadow(0 0 10px rgba(255, 70, 85, 0.3)); }
 
         .card-content { position: relative; z-index: 10; padding: 25px; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; background: linear-gradient(to top, rgba(17, 27, 36, 1) 35%, transparent 100%); }
 
-        /* RANK GLOWS */
         .rank-tag { padding: 6px 14px; border-radius: 4px; font-size: 0.8rem; border: 1px solid; margin: 10px 0; display: inline-block; font-weight: 800; text-transform: uppercase; }
         .rank-gold { border-color: var(--rank-gold); color: var(--rank-gold); box-shadow: 0 0 15px var(--rank-gold); }
         .rank-silver { border-color: var(--rank-silver); color: var(--rank-silver); box-shadow: 0 0 15px var(--rank-silver); }
         .rank-bronze { border-color: var(--rank-bronze); color: var(--rank-bronze); box-shadow: 0 0 15px var(--rank-bronze); }
         .rank-staff { border-color: var(--primary); color: var(--primary); box-shadow: 0 0 15px var(--primary); }
-
-        /* SOCIAL LINKS */
-        .tracker-link { display: flex; align-items: center; gap: 8px; color: white; text-decoration: none; font-size: 0.85rem; margin-top: 10px; transition: 0.3s; }
-        .tracker-link:hover { color: var(--primary); }
-        .tracker-img { width: 18px; height: 18px; object-fit: contain; }
 
         .card-socials { display: flex; gap: 15px; margin-top: 10px; font-size: 1.2rem; }
         .card-socials a { color: white; transition: 0.3s; }
@@ -100,9 +164,14 @@
     <video loop playsinline autoplay muted id="video-bg"><source src="valo background.mp4" type="video/mp4"></video>
     <div class="video-overlay"></div>
 
-    <div class="nav-toggle" onclick="toggleNav()"><i class="fas fa-bars"></i></div>
+    <div class="nav-toggle" id="menuBtn" onclick="toggleNav()">
+        <span></span><span></span><span></span>
+    </div>
+
+    <div class="menu-bg-close" id="menuCloseOverlay" onclick="toggleNav()"></div>
 
     <div class="nav-overlay" id="navOverlay">
+        <div style="color: var(--primary); font-weight: 900; font-size: 1.2rem; margin-bottom: 40px; letter-spacing: 5px;">EVERBLOOM</div>
         <a onclick="showSection('home')">Home</a>
         <a onclick="showSection('roster')">Roster</a>
     </div>
@@ -121,50 +190,12 @@
                     Founded in early 2026, <b>Everbloom</b> emerged from a vision to redefine the independent E-Sports landscape. We are more than just a collection of players; we are a high-performance ecosystem dedicated to tactical innovation and the personal growth of our athletes. 
                 </p>
                 <p style="color:#ccc; line-height:1.9; font-size: 1.1rem;">
-                    In a scene often dominated by short-term results, Everbloom prioritizes <b>"Mental Resilience"</b> and <b>"Strategic Depth."</b> Our name symbolizes our core belief: in the heat of competition, you either bloom through adaptation or decay through stagnation. We provide our rosters with the structural support, professional coaching, and the positive environment needed to compete at the highest regional levels of Valorant.
+                    In a scene often dominated by short-term results, Everbloom prioritizes <b>"Mental Resilience"</b> and <b>"Strategic Depth."</b> Our name symbolizes our core belief: in the heat of competition, you either bloom through adaptation or decay through stagnation.
                 </p>
             </div>
 
             <div class="apply-container" style="text-align: center; margin: 40px 0;">
                 <a href="https://forms.gle/VeNmZo9DkJo35PR5A" target="_blank" class="apply-btn">Apply Now</a>
-            </div>
-
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-                <div class="info-card">
-                    <h3><i class="fas fa-bullhorn"></i> Team News</h3>
-                    <ul style="list-style:none; padding:0; color:#ccc;">
-                        <li style="margin-bottom:15px;">
-                            <i class="fas fa-venus-mars" style="color:var(--primary)"></i> 
-                            <b>FLINTA SQUAD:</b> 4 out of 5 slots filled! We are currently trialing for our final core member.
-                        </li>
-                        <li>
-                            <i class="fas fa-shield-alt" style="color:var(--primary)"></i> 
-                            <b>MANAGEMENT:</b> Core staff is locked in. Our coaching framework is now being implemented for all squads.
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="info-card">
-                    <h3><i class="fas fa-crosshairs"></i> Everbloom Goals</h3>
-                    <ul style="list-style:none; padding:0; color:#ccc;">
-                        <li style="margin-bottom:15px;">
-                            <i class="fas fa-medal" style="color:var(--primary)"></i> 
-                            <b>Premier Dominance:</b> Consistent qualification for the Play-offs and Promotion tournaments.
-                        </li>
-                        <li style="margin-bottom:15px;">
-                            <i class="fas fa-brain" style="color:var(--primary)"></i> 
-                            <b>Training Mental Health:</b> Prioritizing psychological well-being to ensure long-term performance and stability.
-                        </li>
-                        <li>
-                            <i class="fas fa-rocket" style="color:var(--primary)"></i> 
-                            <b>Organization Growth:</b> Becoming a recognized household name in the DACH E-Sports scene by the end of 2026.
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div style="text-align: center; margin: 40px 0;">
-                <a href="https://gamertransfer.com"><img src="https://gamertransfer.com/banner/banner300_w.png" alt="player search" border="0" style="max-width: 100%;" /></a>
             </div>
 
             <div class="social-row" style="display:flex; justify-content:center; gap:15px; margin-top:40px; flex-wrap:wrap;">
@@ -192,10 +223,6 @@
 
     <footer>
         <p style="letter-spacing: 2px; font-weight: 900;">&copy; 2026 EVERBLOOM GAMING</p>
-        <div style="font-size: 0.8rem; color: #555; margin-top: 15px;">
-            <a href="legal.html" style="color:#888; text-decoration:none; text-transform:uppercase; font-weight:bold;">Imprint</a><br>
-            All game assets &copy; Riot Games.
-        </div>
     </footer>
 
     <script>
@@ -212,7 +239,11 @@
             ]
         };
 
-        function toggleNav() { document.getElementById('navOverlay').classList.toggle('active'); }
+        function toggleNav() { 
+            document.getElementById('navOverlay').classList.toggle('active'); 
+            document.getElementById('menuBtn').classList.toggle('active');
+            document.getElementById('menuCloseOverlay').classList.toggle('active');
+        }
         
         function showSection(id) {
             document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
@@ -223,7 +254,6 @@
         }
 
         function renderRoster() {
-            // FLINTA
             document.getElementById('flinta-roster').innerHTML = players.flinta.map(p => `
                 <div class="player-card">
                     <img src="${p.img}" class="agent-img">
@@ -238,13 +268,11 @@
                     </div>
                 </div>`).join('') + `<div class="player-card join-card">JOIN SQUAD</div>`;
 
-            // MALE
             document.getElementById('male-roster').innerHTML = Array(5).fill('<div class="player-card join-card">COMING SOON</div>').join('');
             
-            // STAFF (Hier wurde das Logo-Design verbessert)
             document.getElementById('staff-roster').innerHTML = players.staff.map(p => `
                 <div class="player-card">
-                    <img src="${p.img}" class="staff-bg-logo" alt="Logo Background">
+                    <img src="${p.img}" class="staff-bg-logo">
                     <div class="card-content">
                         <span style="font-size:0.7rem; color:var(--primary); font-weight:bold;">${p.role}</span>
                         <div style="font-size:1.4rem; font-weight:900;">${p.name}</div>
