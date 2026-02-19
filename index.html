@@ -79,7 +79,7 @@
         .social-btn.gt { background: rgba(255, 152, 0, 0.1); border-color: #ff9800; }
         .social-btn:hover { background: rgba(255,255,255,0.1); transform: translateY(-2px); }
 
-        /* ROSTER GLOW STYLE */
+        /* ROSTER STYLES */
         .rank-tag { 
             padding: 6px 15px; border-radius: 4px; font-size: 0.75rem; border: 1px solid; 
             margin: 8px 0; display: inline-block; font-weight: 800; text-transform: uppercase;
@@ -89,24 +89,24 @@
         .rank-bronze { border-color: var(--rank-bronze); color: var(--rank-bronze); box-shadow: 0 0 15px rgba(205, 127, 50, 0.5); }
         .rank-staff { border-color: var(--primary); color: var(--primary); box-shadow: 0 0 15px rgba(255, 70, 85, 0.5); }
 
+        .roster-grid { display: flex; gap: 20px; overflow-x: auto; padding: 20px 0; scroll-snap-type: x mandatory; }
+        .player-card { flex: 0 0 240px; background: rgba(10, 15, 20, 0.9); border-radius: 10px; min-height: 380px; position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); scroll-snap-align: start; }
+        .player-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.4; z-index: 1; transition: 0.3s; }
+        .player-card:hover .player-img { opacity: 0.6; transform: scale(1.05); }
+        .card-content { position: absolute; bottom: 0; width: 100%; padding: 20px; background: linear-gradient(transparent, #060b10); z-index: 10; }
+        .join-card { border: 2px dashed var(--primary); display: flex; align-items: center; justify-content: center; color: var(--primary); font-weight: 900; cursor: pointer; text-align: center; padding: 20px; }
+
+        .player-socials { display: flex; align-items: center; gap: 12px; margin-top: 10px; }
+        .player-socials a { color: white; opacity: 0.6; font-size: 1.1rem; transition: 0.3s; text-decoration: none; display: flex; align-items: center; }
+        .player-socials a:hover { opacity: 1; color: var(--primary); }
+        .tracker-icon { width: 18px; height: 18px; object-fit: contain; }
+
         /* FOOTER */
         footer { text-align: center; padding: 60px 20px; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 50px; }
         .footer-copy { font-weight: 900; letter-spacing: 3px; font-size: 0.8rem; opacity: 0.7; }
         .footer-legal { margin-top: 15px; }
         .footer-legal a { color: #666; text-decoration: none; font-size: 0.75rem; transition: 0.3s; }
         .footer-legal a:hover { color: var(--primary); }
-
-        .roster-grid { display: flex; gap: 20px; overflow-x: auto; padding: 20px 0; scroll-snap-type: x mandatory; }
-        .player-card { flex: 0 0 240px; background: rgba(10, 15, 20, 0.9); border-radius: 10px; min-height: 380px; position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); scroll-snap-align: start; }
-        .player-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.4; z-index: 1; transition: 0.3s; }
-        .player-card:hover .player-img { opacity: 0.6; transform: scale(1.05); }
-        .card-content { position: absolute; bottom: 0; width: 100%; padding: 20px; background: linear-gradient(transparent, #060b10); z-index: 10; }
-        .join-card { border: 2px dashed var(--primary); display: flex; align-items: center; justify-content: center; color: var(--primary); font-weight: 900; cursor: pointer; }
-
-        /* PLAYER SOCIAL ICONS */
-        .player-socials { display: flex; gap: 10px; margin-top: 10px; }
-        .player-socials a { color: white; opacity: 0.6; font-size: 1rem; transition: 0.3s; text-decoration: none; }
-        .player-socials a:hover { opacity: 1; color: var(--primary); }
 
         .page-section { display: none; }
         .page-section.active { display: block; animation: fadeIn 0.5s; }
@@ -190,6 +190,9 @@
             <h3 style="color:var(--primary); margin-top:40px;">FLINTA SQUAD</h3>
             <div class="roster-grid" id="flinta-roster"></div>
 
+            <h3 style="color:var(--primary); margin-top:40px;">MALE ROSTER</h3>
+            <div class="roster-grid" id="male-roster"></div>
+
             <h3 style="color:var(--primary); margin-top:40px;">MANAGEMENT & COACH</h3>
             <div class="roster-grid" id="staff-roster"></div>
         </div>
@@ -210,9 +213,10 @@
                 { name: "AURØRA", role: "Controller", img: "brim.png", rank: "Silver 2", rankClass: "rank-silver", twitter: "#", tracker: "#" },
                 { name: "Mondi", role: "Flex", img: "jett.png", rank: "Gold 2", rankClass: "rank-gold", twitter: "#", tracker: "#" }
             ],
+            male: [], // Platzhalter für Male Roster
             staff: [
                 { name: "WalmartReyna", role: "Manager", img: "everbloomlogo.png", rank: "Staff", rankClass: "rank-staff", twitter: "#", tracker: "" },
-                { name: "siiko", role: "Coach", img: "everbloomlogo.png", rank: "Staff", rankClass: "rank-staff", twitter: "#", tracker: "" }
+                { name: "siiko", role: "Coach", img: "everbloomlogo.png", rank: "Staff", rankClass: "rank-staff", twitter: "", tracker: "" }
             ]
         };
 
@@ -227,6 +231,7 @@
         }
 
         function renderRoster() {
+            // FLINTA
             document.getElementById('flinta-roster').innerHTML = players.flinta.map(p => `
                 <div class="player-card">
                     <img src="${p.img}" class="player-img" onerror="this.style.display='none'">
@@ -235,12 +240,16 @@
                         <div style="font-size:1.4rem; font-weight:900; margin-bottom:5px;">${p.name}</div>
                         <div class="rank-tag ${p.rankClass}">${p.rank}</div>
                         <div class="player-socials">
-                            ${p.twitter ? `<a href="${p.twitter}" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>` : ''}
-                            ${p.tracker ? `<a href="${p.tracker}" target="_blank"><i class="fas fa-chart-line"></i></a>` : ''}
+                            ${p.twitter && p.twitter !== "#" || p.twitter === "#" ? `<a href="${p.twitter}" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>` : ''}
+                            ${p.tracker ? `<a href="${p.tracker}" target="_blank"><img src="valotrackerlog.png" class="tracker-icon" alt="Tracker"></a>` : ''}
                         </div>
                     </div>
                 </div>`).join('') + '<div class="player-card join-card" onclick="window.open(\'https://forms.gle/VeNmZo9DkJo35PR5A\')">JOIN SQUAD</div>';
 
+            // MALE (COMING SOON)
+            document.getElementById('male-roster').innerHTML = '<div class="player-card join-card" style="flex: 0 0 100%; max-width: 300px; border-style: solid;">COMING SOON<br><small style="font-weight:normal; opacity:0.6; margin-top:10px;">Scouting in Progress</small></div>';
+
+            // STAFF
             document.getElementById('staff-roster').innerHTML = players.staff.map(p => `
                 <div class="player-card">
                     <img src="${p.img}" class="player-img" onerror="this.style.display='none'">
