@@ -48,45 +48,19 @@
         .apply-btn { display: inline-block; background: var(--primary); color: white; padding: 20px 60px; border-radius: 4px; text-decoration: none; font-weight: 900; text-transform: uppercase; letter-spacing: 4px; animation: pulse-glow 2s infinite; }
         @keyframes pulse-glow { 0%, 100% { box-shadow: 0 0 15px rgba(255, 70, 85, 0.4); } 50% { box-shadow: 0 0 35px rgba(255, 70, 85, 0.7); } }
 
-        /* ROSTER SLIDER & GRID */
-        .roster-grid { 
-            display: flex; 
-            gap: 20px; 
-            margin-top: 30px; 
-            padding-bottom: 20px;
-        }
+        /* ROSTER GRID & SLIDER */
+        .roster-grid { display: flex; gap: 20px; margin-top: 30px; padding-bottom: 20px; }
 
-        /* Mobile Slider Fix */
         @media (max-width: 768px) {
-            .roster-grid {
-                overflow-x: auto;
-                scroll-snap-type: x mandatory;
-                justify-content: flex-start;
-                -webkit-overflow-scrolling: touch;
-            }
+            .roster-grid { overflow-x: auto; scroll-snap-type: x mandatory; justify-content: flex-start; -webkit-overflow-scrolling: touch; }
             .player-card { scroll-snap-align: center; flex: 0 0 280px; }
         }
         @media (min-width: 769px) {
             .roster-grid { flex-wrap: wrap; justify-content: center; }
         }
 
-        /* PLAYER CARDS */
-        .player-card { 
-            background-color: rgba(17, 27, 36, 0.9); 
-            border-radius: 12px; 
-            min-height: 480px; 
-            width: 280px; 
-            position: relative; 
-            overflow: hidden; 
-            border: 1px solid rgba(255, 255, 255, 0.1); 
-            transition: 0.3s;
-        }
-        .join-card { 
-            border: 3px dashed var(--primary) !important; 
-            background: rgba(255, 70, 85, 0.05); 
-            display: flex; align-items: center; justify-content: center; 
-            font-weight: 900; color: var(--primary); font-size: 1.5rem; letter-spacing: 2px;
-        }
+        .player-card { background-color: rgba(17, 27, 36, 0.9); border-radius: 12px; min-height: 480px; width: 280px; position: relative; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); transition: 0.3s; }
+        .join-card { border: 4px dashed var(--primary) !important; background: rgba(255, 70, 85, 0.05); display: flex; align-items: center; justify-content: center; font-weight: 900; color: var(--primary); font-size: 1.5rem; letter-spacing: 2px; }
 
         .agent-img { position: absolute; left: 50%; bottom: 10%; height: 75%; transform: translateX(-50%); z-index: 2; -webkit-mask-image: linear-gradient(to top, black 80%, transparent 100%); }
         .card-content { position: relative; z-index: 10; padding: 25px; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; background: linear-gradient(to top, rgba(17, 27, 36, 1) 35%, transparent 100%); }
@@ -98,7 +72,16 @@
         .rank-bronze { border-color: var(--rank-bronze); color: var(--rank-bronze); box-shadow: 0 0 15px var(--rank-bronze); }
         .rank-staff { border-color: var(--primary); color: var(--primary); box-shadow: 0 0 15px var(--primary); }
 
-        /* SOCIAL COLORS */
+        /* TRACKER & SOCIAL LINKS */
+        .tracker-link { display: flex; align-items: center; gap: 8px; color: white; text-decoration: none; font-size: 0.85rem; margin-top: 10px; transition: 0.3s; }
+        .tracker-link:hover { color: var(--primary); }
+        .tracker-img { width: 18px; height: 18px; object-fit: contain; }
+
+        .card-socials { display: flex; gap: 15px; margin-top: 10px; font-size: 1.2rem; }
+        .card-socials a { color: white; transition: 0.3s; }
+        .card-socials a:hover { color: var(--primary); }
+
+        /* SOCIAL COLORS (FOOTER) */
         .social-row a { padding: 15px 25px; border-radius: 5px; color: white; text-decoration: none; font-weight: bold; border: 1px solid rgba(255,255,255,0.1); transition: 0.3s; display: inline-flex; align-items: center; gap: 10px; }
         .btn-dc { background: rgba(88, 101, 242, 0.1); }
         .btn-dc:hover { background: var(--discord); border-color: var(--discord); box-shadow: 0 0 20px var(--discord); }
@@ -143,7 +126,7 @@
                 <div class="info-card">
                     <h3><i class="fas fa-bullhorn"></i> Latest News</h3>
                     <ul style="list-style:none; padding:0; color:#ccc;">
-                        <li style="margin-bottom:15px;"><i class="fas fa-fire" style="color:var(--primary)"></i> Scouting: <b>Male Premier Roster</b> (Asc/Imm+)</li>
+                        <li style="margin-bottom:15px;"><i class="fas fa-fire" style="color:var(--primary)"></i> Scouting: <b>Male Premier Roster</b> (Asc/Imm+) <b>ACTIVE</b></li>
                         <li><i class="fas fa-venus-mars" style="color:var(--primary)"></i> FLINTA Roster building: 4/5 Members found!</li>
                     </ul>
                 </div>
@@ -155,6 +138,10 @@
                         <li><i class="fas fa-crown" style="color:var(--primary)"></i> Regional Challengers 2026</li>
                     </ul>
                 </div>
+            </div>
+
+            <div style="text-align: center; margin: 40px 0;">
+                <a href="https://gamertransfer.com"><img src="https://gamertransfer.com/banner/banner300_w.png" alt="spielersuche" border="0" style="max-width: 100%;" /></a>
             </div>
 
             <div class="social-row" style="display:flex; justify-content:center; gap:15px; margin-top:40px; flex-wrap:wrap;">
@@ -183,7 +170,7 @@
     <footer>
         <p style="letter-spacing: 2px; font-weight: 900;">&copy; 2026 EVERBLOOM GAMING</p>
         <div style="font-size: 0.8rem; color: #555; margin-top: 15px;">
-            <a href="impressum.html" style="color:#888; text-decoration:none; text-transform:uppercase; font-weight:bold;">Impressum</a><br>
+            <a href="legal.html" style="color:#888; text-decoration:none; text-transform:uppercase; font-weight:bold;">Impressum</a><br>
             All game assets &copy; Riot Games.
         </div>
     </footer>
@@ -191,14 +178,14 @@
     <script>
         const players = {
             flinta: [
-                { name: "Rubyxcube", role: "Duelist", agent: "Jett", img: "jett.png", rank: "Silver 1", rankClass: "rank-silver", tracker: "https://tracker.gg/valorant/profile/riot/rubyxcube%23000/overview" },
-                { name: "Zylicent", role: "Duelist", agent: "Iso", img: "iso.png", rank: "Bronze 3", rankClass: "rank-bronze", tracker: "https://tracker.gg/valorant/profile/riot/Zylicent%23vlr/overview" },
-                { name: "AURØRA", role: "Controller", agent: "Brimstone", img: "brim.png", rank: "Silver 2", rankClass: "rank-silver", tracker: "https://tracker.gg/valorant/profile/riot/AURØRA%23tqr/overview" },
-                { name: "Mondi", role: "Flex", agent: "Jett", img: "jett.png", rank: "Gold 2", rankClass: "rank-gold", tracker: "https://tracker.gg/valorant/profile/riot/Mondi%23666/overview" }
+                { name: "Rubyxcube", role: "Duelist", agent: "Jett", img: "jett.png", rank: "Silver 1", rankClass: "rank-silver", tracker: "https://tracker.gg/valorant/profile/riot/rubyxcube%23000/overview", x: "https://x.com/x2_zelda" },
+                { name: "Zylicent", role: "Duelist", agent: "Iso", img: "iso.png", rank: "Bronze 3", rankClass: "rank-bronze", tracker: "https://tracker.gg/valorant/profile/riot/Zylicent%23vlr/overview", x: "https://x.com/Eliyna_vlr" },
+                { name: "AURØRA", role: "Controller", agent: "Brimstone", img: "brim.png", rank: "Silver 2", rankClass: "rank-silver", tracker: "https://tracker.gg/valorant/profile/riot/AURØRA%23tqr/overview", x: "https://x.com/tqrmcc" },
+                { name: "Mondi", role: "Flex", agent: "Jett", img: "jett.png", rank: "Gold 2", rankClass: "rank-gold", tracker: "https://tracker.gg/valorant/profile/riot/Mondi%23666/overview", x: "https://x.com/just_mondii" }
             ],
             staff: [
-                { name: "WalmartReyna", role: "Manager", img: "everbloomlogo.png", rank: "Staff", rankClass: "rank-staff", tracker: "https://x.com/wavvybecci" },
-                { name: "siiko", role: "Coach", img: "everbloomlogo.png", rank: "Staff", rankClass: "rank-staff", tracker: "#" }
+                { name: "WalmartReyna", role: "Manager", img: "everbloomlogo.png", rank: "Staff", rankClass: "rank-staff", x: "https://x.com/wavvybecci" },
+                { name: "siiko", role: "Coach", img: "everbloomlogo.png", rank: "Staff", rankClass: "rank-staff", x: "" }
             ]
         };
 
@@ -221,11 +208,14 @@
                         <span style="font-size:0.7rem; color:var(--primary); font-weight:bold;">${p.role}</span>
                         <div style="font-size:1.4rem; font-weight:900;">${p.name}</div>
                         <div class="rank-tag ${p.rankClass}">${p.rank}</div>
-                        <a href="${p.tracker}" target="_blank" style="color:white; font-size:0.8rem; text-decoration:none;"><i class="fas fa-chart-line"></i> View Tracker</a>
+                        <div class="card-socials">
+                            <a href="${p.x}" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="${p.tracker}" target="_blank" class="tracker-link"><img src="valotrackerlog.png" class="tracker-img" alt="Tracker"></a>
+                        </div>
                     </div>
                 </div>`).join('') + `<div class="player-card join-card">JOIN SQUAD</div>`;
 
-            // MALE (Empty slots)
+            // MALE
             document.getElementById('male-roster').innerHTML = Array(5).fill('<div class="player-card join-card">SCOUTING</div>').join('');
             
             // STAFF
@@ -236,7 +226,7 @@
                         <span style="font-size:0.7rem; color:var(--primary); font-weight:bold;">${p.role}</span>
                         <div style="font-size:1.4rem; font-weight:900;">${p.name}</div>
                         <div class="rank-tag ${p.rankClass}">${p.rank}</div>
-                        ${p.name === 'siiko' ? '' : `<a href="${p.tracker}" target="_blank" style="color:white;"><i class="fa-brands fa-x-twitter"></i></a>`}
+                        ${p.x ? `<div class="card-socials"><a href="${p.x}" target="_blank"><i class="fa-brands fa-x-twitter"></i></a></div>` : ''}
                     </div>
                 </div>`).join('');
         }
