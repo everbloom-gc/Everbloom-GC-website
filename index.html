@@ -15,7 +15,7 @@
             --text: #ffffff;
             --accent-glow: rgba(255, 70, 85, 0.6);
             --discord: #5865F2;
-            --gt-orange: #ff9800;
+            --gt-orange: #ff9800; /* GamerTransfer Farbe */
             --rank-gold: #ffcf4b;
             --rank-silver: #ced4da;
             --rank-bronze: #cd7f32;
@@ -49,11 +49,6 @@
         .nav-overlay a { font-size: 2.5rem; color: white; text-decoration: none; text-transform: uppercase; font-weight: 900; letter-spacing: 5px; margin: 20px 0; transition: 0.3s; }
         .nav-overlay a:hover { color: var(--primary); text-shadow: 0 0 15px var(--primary); }
 
-        /* SECTIONS */
-        .page-section { display: none; padding-bottom: 80px; }
-        .page-section.active { display: block; animation: fadeIn 0.4s ease-in-out; }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-
         header { padding: 80px 20px 40px; text-align: center; }
         .logo-main { width: 110px; filter: drop-shadow(0 0 15px var(--primary)); margin-bottom: 20px; }
         h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); margin: 0; letter-spacing: 12px; text-transform: uppercase; font-weight: 900; }
@@ -62,16 +57,32 @@
 
         /* INFO CARDS */
         .info-card { background: rgba(17, 27, 36, 0.8); padding: 35px; border-radius: 12px; border-top: 4px solid var(--primary); margin-bottom: 20px; }
-        .info-card h3 { display: flex; align-items: center; gap: 15px; text-transform: uppercase; letter-spacing: 2px; margin-top: 0; }
-        .info-card h3 i { color: var(--primary); text-shadow: 0 0 10px var(--primary); }
+        .info-card h3 { display: flex; align-items: center; gap: 15px; text-transform: uppercase; letter-spacing: 2px; margin-top: 0; color: var(--primary); }
+        .info-card h3 i { text-shadow: 0 0 10px var(--primary); }
         
         .info-list { list-style: none; padding: 0; margin-top: 20px; }
         .info-list li { margin-bottom: 15px; color: #ccc; display: flex; align-items: center; gap: 15px; font-size: 1.05rem; }
         .info-list li i { color: var(--primary); text-shadow: 0 0 8px var(--primary); width: 20px; text-align: center; }
 
+        /* BUTTONS & SOCIALS */
         .apply-btn { display: block; width: fit-content; margin: 40px auto; background: var(--primary); color: white; padding: 18px 50px; border-radius: 4px; text-decoration: none; font-weight: 900; text-transform: uppercase; letter-spacing: 3px; transition: 0.3s; }
+        .apply-btn:hover { transform: scale(1.05); box-shadow: 0 0 20px var(--accent-glow); }
 
-        /* ROSTER SWIPE FOR MOBILE */
+        .social-row { display: flex; justify-content: center; gap: 15px; margin: 40px 0; flex-wrap: wrap; }
+        .social-row a { 
+            background: rgba(255,255,255,0.05); padding: 15px 25px; border-radius: 5px; color: white; 
+            text-decoration: none; font-weight: bold; border: 1px solid rgba(255,255,255,0.1); 
+            transition: 0.4s; display: inline-flex; align-items: center; gap: 10px; 
+        }
+        .social-row .dc-btn:hover { border-color: var(--discord); color: var(--discord); box-shadow: 0 0 20px rgba(88, 101, 242, 0.4); }
+        .social-row .x-btn:hover { border-color: #fff; box-shadow: 0 0 20px rgba(255,255,255,0.2); }
+        .social-row .gt-btn:hover { border-color: var(--gt-orange); color: var(--gt-orange); box-shadow: 0 0 20px rgba(255, 152, 0, 0.4); }
+
+        /* ROSTER SECTION & MOBILE SWIPE */
+        .page-section { display: none; padding-bottom: 80px; }
+        .page-section.active { display: block; animation: fadeIn 0.4s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
         .roster-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 30px; }
 
         @media (max-width: 768px) {
@@ -93,28 +104,15 @@
             color: white; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1);
             transition: 0.3s ease; display: flex; flex-direction: column;
         }
-        .player-card:hover { transform: translateY(-10px); border-color: var(--primary); box-shadow: 0 0 30px var(--accent-glow); }
         
         .agent-img { position: absolute; left: 50%; bottom: 10%; height: 75%; transform: translateX(-50%); z-index: 2; -webkit-mask-image: linear-gradient(to top, black 80%, transparent 100%); }
         .card-content { position: relative; z-index: 10; padding: 25px; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; background: linear-gradient(to top, rgba(17, 27, 36, 1) 35%, transparent 100%); flex-grow: 1; }
         
-        /* RANK TAGS WITH DYNAMIC GLOW */
         .rank-tag { padding: 6px 12px; border-radius: 4px; font-size: 0.75rem; border: 1px solid; margin: 8px 0; display: inline-block; font-weight: 800; text-transform: uppercase; }
-        .rank-gold { border-color: var(--rank-gold); color: var(--rank-gold); text-shadow: 0 0 10px var(--rank-gold); box-shadow: 0 0 12px rgba(255, 207, 75, 0.2); }
-        .rank-silver { border-color: var(--rank-silver); color: var(--rank-silver); text-shadow: 0 0 10px var(--rank-silver); box-shadow: 0 0 12px rgba(206, 212, 218, 0.2); }
-        .rank-bronze { border-color: var(--rank-bronze); color: var(--rank-bronze); text-shadow: 0 0 10px var(--rank-bronze); box-shadow: 0 0 12px rgba(205, 127, 50, 0.2); }
-        .rank-staff { border-color: var(--primary); color: var(--primary); text-shadow: 0 0 10px var(--primary); box-shadow: 0 0 12px rgba(255, 70, 85, 0.2); }
-
-        /* SOCIAL BAR */
-        .social-row { display: flex; justify-content: center; gap: 15px; margin: 40px 0; flex-wrap: wrap; }
-        .social-row a { 
-            background: rgba(255,255,255,0.05); padding: 15px 25px; border-radius: 5px; color: white; 
-            text-decoration: none; font-weight: bold; border: 1px solid rgba(255,255,255,0.1); 
-            transition: 0.4s; display: inline-flex; align-items: center; gap: 10px; 
-        }
-        .social-row .dc-btn:hover { border-color: var(--discord); box-shadow: 0 0 20px var(--discord); color: var(--discord); }
-        .social-row .x-btn:hover { border-color: #fff; box-shadow: 0 0 20px rgba(255,255,255,0.2); }
-        .social-row .gt-btn:hover { border-color: var(--gt-orange); box-shadow: 0 0 20px var(--gt-orange); color: var(--gt-orange); }
+        .rank-gold { border-color: var(--rank-gold); color: var(--rank-gold); text-shadow: 0 0 10px var(--rank-gold); }
+        .rank-silver { border-color: var(--rank-silver); color: var(--rank-silver); text-shadow: 0 0 10px var(--rank-silver); }
+        .rank-bronze { border-color: var(--rank-bronze); color: var(--rank-bronze); text-shadow: 0 0 10px var(--rank-bronze); }
+        .rank-staff { border-color: var(--primary); color: var(--primary); text-shadow: 0 0 10px var(--primary); }
 
         footer { text-align: center; padding: 60px; color: #444; font-size: 0.8rem; border-top: 1px solid rgba(255,255,255,0.05); }
     </style>
@@ -139,10 +137,9 @@
 
         <div class="container">
             <div class="info-card">
-                <h3 style="color:var(--primary);"><i class="fas fa-seedling"></i> Who We Are</h3>
+                <h3><i class="fas fa-seedling"></i> Who We Are</h3>
                 <p style="color:#ccc; line-height:1.8; font-size:1.05rem;">
-                    Everbloom is an independent E-Sports organization founded in 2026, built on the foundation of competitive integrity and relentless ambition. We are more than just a team; we are a collective of high-tier players dedicated to mastering the art of tactical shooters. <br><br>
-                    Our philosophy, <strong>"Bloom or Decay,"</strong> reflects our commitment to constant evolution. In the high-stakes world of Valorant, we provide our athletes with the structure and mental support needed to transcend their limits.
+                    Everbloom is an independent E-Sports organization founded in 2026, built on the foundation of competitive integrity and relentless ambition. In the high-stakes world of Valorant, we provide our athletes with the structure and mental support needed to transcend their limits.
                 </p>
             </div>
 
@@ -160,8 +157,7 @@
                     <h3><i class="fas fa-trophy"></i> Our Goals</h3>
                     <ul class="info-list">
                         <li><i class="fas fa-play-circle"></i> Reach the Premier Play-Offs.</li>
-                        <li><i class="fas fa-award"></i> Win a major tournament trophy.</li>
-                        <li><i class="fas fa-heartbeat"></i> Stable and strong team mentality.</li>
+                        <li><i class="fas fa-award"></i> Win major tournament trophies.</li>
                     </ul>
                 </div>
             </div>
@@ -176,21 +172,14 @@
 
     <section id="roster" class="page-section">
         <div class="container">
-            <h2 style="text-align:center; text-transform:uppercase; letter-spacing:5px;">Team Roster</h2>
-            <p style="text-align:center; color:var(--primary); font-size:0.8rem; margin-bottom:40px;">Swipe cards on mobile ➔</p>
-            
-            <h3 style="color:var(--primary); border-left:3px solid var(--primary); padding-left:15px; margin-bottom:20px;">FLINTA ROSTER</h3>
+            <h2 style="text-align:center; text-transform:uppercase; letter-spacing:5px; margin-bottom:40px;">Team Roster</h2>
             <div class="roster-grid" id="flinta-roster"></div>
-            
-            <h3 style="color:var(--primary); border-left:3px solid var(--primary); padding-left:15px; margin-top:60px; margin-bottom:20px;">MALE ROSTER</h3>
-            <div class="roster-grid" id="male-roster"></div>
-            
-            <h3 style="color:var(--primary); border-left:3px solid var(--primary); padding-left:15px; margin-top:60px; margin-bottom:20px;">STAFF</h3>
-            <div class="roster-grid" id="staff-roster"></div>
+            <div class="roster-grid" id="male-roster" style="margin-top:50px;"></div>
+            <div class="roster-grid" id="staff-roster" style="margin-top:50px;"></div>
         </div>
     </section>
 
-    <footer>&copy; 2026 EVERBLOOM GAMING | <a href="legal.html" style="color:#444; text-decoration:none">Impressum</a></footer>
+    <footer>&copy; 2026 EVERBLOOM GAMING</footer>
 
     <script>
         const players = {
