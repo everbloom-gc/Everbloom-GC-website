@@ -26,7 +26,7 @@
         #video-bg { position: fixed; top: 50%; left: 50%; min-width: 100%; min-height: 100%; z-index: -2; transform: translateX(-50%) translateY(-50%); object-fit: cover; filter: brightness(0.15); }
         .video-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle, rgba(6,11,16,0.1), rgba(6,11,16,0.9)); z-index: -1; }
 
-        /* NAVIGATION & GLASSY SIDEBAR */
+        /* NAVIGATION */
         .nav-toggle { 
             position: fixed; top: 20px; left: 20px; z-index: 1001; 
             background: rgba(255, 70, 85, 0.9); border: none; 
@@ -40,7 +40,7 @@
 
         .nav-overlay { 
             position: fixed; top: 0; left: -300px; width: 280px; height: 100vh; 
-            background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(25px); /* Rein glasig */
+            background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(25px);
             z-index: 1000; transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1); 
             display: flex; flex-direction: column; padding: 100px 30px; border-right: 1px solid rgba(255,255,255,0.1);
         }
@@ -48,12 +48,11 @@
         .nav-overlay a { font-size: 1.5rem; color: white; text-decoration: none; text-transform: uppercase; font-weight: 900; margin: 15px 0; cursor: pointer; transition: 0.3s; }
         .nav-overlay a:hover { color: var(--primary); padding-left: 10px; }
         
-        /* KEIN dunkler Hintergrund mehr, nur noch ein Klick-Fänger */
         .menu-bg-close { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 999; display: none; }
         .menu-bg-close.active { display: block; }
 
         /* MAIN CONTENT */
-        .container { max-width: 1100px; margin: auto; padding: 20px; }
+        .container { max-width: 1200px; margin: auto; padding: 20px; }
         header { padding: 60px 20px 30px; text-align: center; }
         .logo-main { width: 90px; filter: drop-shadow(0 0 15px var(--primary)); margin-bottom: 15px; }
         h1 { font-size: clamp(2rem, 7vw, 3.5rem); margin: 0; letter-spacing: 10px; text-transform: uppercase; font-weight: 900; }
@@ -64,21 +63,34 @@
         .apply-btn { display: inline-block; background: var(--primary); color: white; padding: 15px 40px; border-radius: 4px; text-decoration: none; font-weight: 900; text-transform: uppercase; letter-spacing: 3px; transition: 0.3s; font-size: 0.9rem; }
         .apply-btn:hover { transform: translateY(-3px); box-shadow: 0 5px 20px rgba(255, 70, 85, 0.4); }
 
-        /* ROSTER - Kleinere Kacheln */
-        .roster-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 15px; margin-top: 25px; }
+        /* ROSTER - EINE REIHE LAYOUT */
+        .roster-grid { 
+            display: flex; /* Alles in eine Reihe */
+            gap: 15px; 
+            margin-top: 25px; 
+            overflow-x: auto; /* Scrollen wenn zu lang */
+            padding-bottom: 20px; /* Platz für Scrollbar */
+            scroll-snap-type: x mandatory; /* Schönes Einrasten beim Scrollen */
+        }
+
+        /* Scrollbar Styling */
+        .roster-grid::-webkit-scrollbar { height: 6px; }
+        .roster-grid::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.05); border-radius: 10px; }
+        .roster-grid::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 10px; }
+
         .player-card { 
+            flex: 0 0 210px; /* Verhindert das Quetschen, Kacheln bleiben exakt 210px breit */
             background-color: rgba(10, 15, 20, 0.95); border-radius: 8px; min-height: 350px; 
             position: relative; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.05); 
+            scroll-snap-align: start;
         }
         
-        /* Agenten im Vordergrund (Z-INDEX HOCH) */
         .agent-img { 
             position: absolute; left: 50%; bottom: 0; height: 85%; 
-            transform: translateX(-50%); z-index: 5; /* Vordergrund */
+            transform: translateX(-50%); z-index: 5;
             pointer-events: none; transition: 0.3s;
         }
         .player-card:hover .agent-img { height: 90%; }
-
         .staff-bg-logo { position: absolute; left: 50%; top: 40%; transform: translate(-50%, -50%); width: 55%; opacity: 0.15; z-index: 1; }
         
         .card-content { 
@@ -98,7 +110,7 @@
         .card-socials a:hover { color: var(--primary); }
         .tracker-icon { width: 22px; height: auto; display: block; }
 
-        .join-card { border: 2px dashed rgba(255,70,85,0.4); display: flex; align-items: center; justify-content: center; color: var(--primary); font-weight: 900; font-size: 0.9rem; }
+        .join-card { border: 2px dashed rgba(255,70,85,0.4); display: flex; align-items: center; justify-content: center; color: var(--primary); font-weight: 900; font-size: 0.9rem; text-align: center; }
 
         .page-section { display: none; padding-bottom: 60px; }
         .page-section.active { display: block; animation: fadeIn 0.4s; }
@@ -184,13 +196,13 @@
         <div class="container" style="padding-top: 50px;">
             <h2 style="text-align:center; text-transform:uppercase; letter-spacing:8px; margin-bottom: 40px; font-size: 1.5rem;">The Rosters</h2>
             
-            <h3 style="color:var(--primary); border-left:3px solid var(--primary); padding-left:12px; margin: 30px 0 15px; font-size: 1rem;">FLINTA SQUAD</h3>
+            <h3 style="color:var(--primary); border-left:3px solid var(--primary); padding-left:12px; margin: 30px 0 10px; font-size: 1rem;">FLINTA SQUAD</h3>
             <div class="roster-grid" id="flinta-roster"></div>
 
-            <h3 style="color:var(--primary); border-left:3px solid var(--primary); padding-left:12px; margin: 30px 0 15px; font-size: 1rem;">MALE PREMIER</h3>
+            <h3 style="color:var(--primary); border-left:3px solid var(--primary); padding-left:12px; margin: 40px 0 10px; font-size: 1rem;">MALE PREMIER</h3>
             <div class="roster-grid" id="male-roster"></div>
 
-            <h3 style="color:var(--primary); border-left:3px solid var(--primary); padding-left:12px; margin: 30px 0 15px; font-size: 1rem;">MANAGEMENT & COACH</h3>
+            <h3 style="color:var(--primary); border-left:3px solid var(--primary); padding-left:12px; margin: 40px 0 10px; font-size: 1rem;">MANAGEMENT & COACH</h3>
             <div class="roster-grid" id="staff-roster"></div>
         </div>
     </section>
