@@ -38,6 +38,12 @@
         .logo-main { width: 110px; filter: drop-shadow(0 0 15px var(--primary)); margin-bottom: 20px; }
         h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); margin: 0; letter-spacing: 12px; text-transform: uppercase; font-weight: 900; }
 
+        /* INFO CARDS (Home Site) */
+        .info-card { background: rgba(17, 27, 36, 0.85); padding: 40px; border-radius: 12px; border-top: 4px solid var(--primary); margin-bottom: 25px; backdrop-filter: blur(10px); }
+        .info-card h3 { display: flex; align-items: center; gap: 15px; text-transform: uppercase; letter-spacing: 2px; margin-top: 0; color: var(--primary); }
+        .info-list { list-style: none; padding: 0; margin-top: 20px; }
+        .info-list li { margin-bottom: 15px; color: #ccc; display: flex; align-items: center; gap: 15px; }
+
         /* FANCY APPLY BUTTON */
         .apply-container { text-align: center; margin: 40px 0; }
         .apply-btn { 
@@ -77,7 +83,7 @@
         
         /* FETTE GESTRICHELTE SLOTS */
         .player-card.empty-slot {
-            border: 6px dashed rgba(255, 70, 85, 0.2); /* Fetter und weniger Striche durch höhere Pixel-Werte */
+            border: 6px dashed rgba(255, 70, 85, 0.2); 
             background: rgba(255, 70, 85, 0.03);
             justify-content: center;
             align-items: center;
@@ -130,8 +136,40 @@
         </header>
 
         <div class="container">
+            <div class="info-card">
+                <h3><i class="fas fa-seedling"></i> Who We Are</h3>
+                <p style="color:#ccc; line-height:1.9; font-size: 1.1rem;">
+                    Everbloom is an independent E-Sports organization founded in 2026, built on the pillars of competitive integrity, professional structure, and relentless ambition. In the high-stakes world of Valorant, we don't just play—we evolve. 
+                    <br><br>
+                    Our philosophy, <strong>"Bloom or Decay,"</strong> drives everything we do. We provide our athletes with more than just a tag; we offer a dedicated environment focused on tactical excellence and mental stability.
+                </p>
+            </div>
+
             <div class="apply-container">
                 <a href="https://forms.gle/VeNmZo9DkJo35PR5A" target="_blank" class="apply-btn">Apply Now</a>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                <div class="info-card">
+                    <h3><i class="fas fa-bullhorn"></i> Latest News</h3>
+                    <ul class="info-list">
+                        <li><i class="fas fa-fire"></i> Official Launch of the Everbloom Web Portal 2026!</li>
+                        <li><i class="fas fa-search"></i> Scouting for Male Premier Roster is <strong>OPEN</strong>.</li>
+                        <li><i class="fas fa-venus-mars"></i> FLINTA Roster currently at 4/5 members.</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <h3><i class="fas fa-trophy"></i> Our Goals</h3>
+                    <ul class="info-list">
+                        <li><i class="fas fa-star"></i> Establish dominance in the Premier Division.</li>
+                        <li><i class="fas fa-brain"></i> Cultivate a Strong Mentality within all rosters.</li>
+                        <li><i class="fas fa-crown"></i> Qualify for regional Challengers 2026.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="gt-section" style="text-align:center; margin-top:40px;">
+                <a href="https://gamertransfer.com"><img src="https://gamertransfer.com/banner/banner300_w.png" alt="spielersuche" border="0" /></a>
             </div>
 
             <div class="social-row">
@@ -162,7 +200,6 @@
         <div class="impressum-content">
             <strong>Impressum</strong><br>
             Everbloom E-Sports Team<br>
-            Represented by: [Dein Name/Manager Name]<br>
             Contact: Via Discord or X<br><br>
             <em>Disclaimer: Everbloom is not affiliated with or endorsed by Riot Games. All Valorant assets are property of Riot Games.</em>
         </div>
