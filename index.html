@@ -49,27 +49,30 @@
         .apply-btn { display: inline-block; background: var(--primary); color: white; padding: 20px 60px; border-radius: 4px; text-decoration: none; font-weight: 900; text-transform: uppercase; letter-spacing: 4px; transition: 0.4s; box-shadow: 0 0 20px rgba(255, 70, 85, 0.4); animation: pulse-glow 2s infinite; }
         @keyframes pulse-glow { 0%, 100% { box-shadow: 0 0 15px rgba(255, 70, 85, 0.4); } 50% { box-shadow: 0 0 35px rgba(255, 70, 85, 0.7); } }
 
-        /* INFO CARDS */
-        .info-card { background: rgba(17, 27, 36, 0.85); padding: 40px; border-radius: 12px; border-top: 4px solid var(--primary); margin-bottom: 25px; backdrop-filter: blur(10px); }
-        .info-card h3 { display: flex; align-items: center; gap: 15px; text-transform: uppercase; letter-spacing: 2px; margin-top: 0; color: var(--primary); }
-        .info-list { list-style: none; padding: 0; margin-top: 20px; }
-        .info-list li { margin-bottom: 15px; color: #ccc; display: flex; align-items: center; gap: 15px; }
-
-        /* ROSTER GRID */
+        /* ROSTER CARDS */
         .roster-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 30px; }
-        .player-card { background-color: rgba(17, 27, 36, 0.9); border-radius: 12px; min-height: 480px; width: 240px; position: relative; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); display: flex; flex-direction: column; }
+        .player-card { background-color: rgba(17, 27, 36, 0.9); border-radius: 12px; min-height: 480px; width: 240px; position: relative; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); display: flex; flex-direction: column; transition: 0.3s; }
+        .player-card:hover { border-color: var(--primary); transform: translateY(-5px); }
+        
+        /* GESTRICHELTE FREE SLOTS */
+        .free-slot { border: 2px dashed rgba(255, 70, 85, 0.3); background: rgba(255, 70, 85, 0.05); justify-content: center; align-items: center; color: var(--primary); font-weight: 900; letter-spacing: 2px; }
+
         .agent-img { position: absolute; left: 50%; bottom: 10%; height: 75%; transform: translateX(-50%); z-index: 2; -webkit-mask-image: linear-gradient(to top, black 80%, transparent 100%); }
         .card-content { position: relative; z-index: 10; padding: 25px; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; background: linear-gradient(to top, rgba(17, 27, 36, 1) 35%, transparent 100%); flex-grow: 1; }
+        
+        /* RANK GLOW EFFECTS */
         .rank-tag { padding: 6px 12px; border-radius: 4px; font-size: 0.75rem; border: 1px solid; margin: 8px 0; display: inline-block; font-weight: 800; text-transform: uppercase; }
-        .rank-gold { border-color: var(--rank-gold); color: var(--rank-gold); }
-        .rank-silver { border-color: var(--rank-silver); color: var(--rank-silver); }
-        .rank-bronze { border-color: var(--rank-bronze); color: var(--rank-bronze); }
-        .rank-staff { border-color: var(--primary); color: var(--primary); }
+        .rank-gold { border-color: var(--rank-gold); color: var(--rank-gold); box-shadow: 0 0 10px rgba(255, 207, 75, 0.3); }
+        .rank-silver { border-color: var(--rank-silver); color: var(--rank-silver); box-shadow: 0 0 10px rgba(206, 212, 218, 0.3); }
+        .rank-bronze { border-color: var(--rank-bronze); color: var(--rank-bronze); box-shadow: 0 0 10px rgba(205, 127, 50, 0.3); }
+        .rank-staff { border-color: var(--primary); color: var(--primary); box-shadow: 0 0 10px rgba(255, 70, 85, 0.3); }
 
-        /* SOCIALS & GT */
-        .gt-section { text-align: center; margin: 40px 0; }
-        .social-row { display: flex; justify-content: center; gap: 15px; margin: 40px 0; flex-wrap: wrap; }
-        .social-row a { background: rgba(255,255,255,0.05); padding: 15px 25px; border-radius: 5px; color: white; text-decoration: none; font-weight: bold; border: 1px solid rgba(255,255,255,0.1); transition: 0.4s; display: inline-flex; align-items: center; gap: 10px; }
+        /* TRACKER & SOCIAL ICONS */
+        .card-socials { display: flex; gap: 15px; margin-top: 10px; align-items: center; }
+        .card-socials a { color: white; text-decoration: none; transition: 0.3s; font-size: 1.1rem; }
+        .card-socials a:hover { color: var(--primary); transform: scale(1.2); }
+        .tracker-icon { width: 18px; height: 18px; filter: grayscale(1) brightness(2); }
+        .tracker-icon:hover { filter: none; }
 
         footer { text-align: center; padding: 60px 20px; background: rgba(0,0,0,0.6); border-top: 1px solid rgba(255,70,85,0.2); }
         .impressum { font-size: 0.8rem; color: #555; margin-top: 15px; }
@@ -126,14 +129,14 @@
                 </div>
             </div>
 
-            <div class="gt-section">
+            <div class="gt-section" style="text-align:center;">
                 <a href="https://gamertransfer.com"><img src="https://gamertransfer.com/banner/banner300_w.png" alt="spielersuche" border="0" /></a>
             </div>
 
-            <div class="social-row">
-                <a href="https://x.com/BloomEver85575" target="_blank"><i class="fa-brands fa-x-twitter"></i> X / Twitter</a>
-                <a href="https://discord.gg/Cp2J72hesH" target="_blank"><i class="fa-brands fa-discord"></i> Discord</a>
-                <a href="https://gamertransfer.com/_everbloom_gc-team-24582-view1" target="_blank"><i class="fas fa-user-plus"></i> GamerTransfer Profile</a>
+            <div class="social-row" style="display:flex; justify-content:center; gap:15px; flex-wrap:wrap; margin-top:30px;">
+                <a href="https://x.com/BloomEver85575" target="_blank" style="background:rgba(255,255,255,0.05); padding:15px 25px; border-radius:5px; color:white; text-decoration:none; border:1px solid rgba(255,255,255,0.1);"><i class="fa-brands fa-x-twitter"></i> X / Twitter</a>
+                <a href="https://discord.gg/Cp2J72hesH" target="_blank" style="background:rgba(255,255,255,0.05); padding:15px 25px; border-radius:5px; color:white; text-decoration:none; border:1px solid rgba(255,255,255,0.1);"><i class="fa-brands fa-discord"></i> Discord</a>
+                <a href="https://gamertransfer.com/_everbloom_gc-team-24582-view1" target="_blank" style="background:rgba(255,255,255,0.05); padding:15px 25px; border-radius:5px; color:white; text-decoration:none; border:1px solid rgba(255,255,255,0.1);"><i class="fas fa-user-plus"></i> GamerTransfer Profile</a>
             </div>
         </div>
     </section>
@@ -163,12 +166,15 @@
     </footer>
 
     <script>
+        // TRACKER ICON URL (SVG von FontAwesome oder Platzhalter)
+        const trackerImg = "https://trackercdn.com/cdn/tracker.gg/valorant/icons/v2/logo_white.svg";
+
         const players = {
             flinta: [
-                { name: "Rubyxcube", role: "Duelist", agent: "Jett", img: "jett.png", rank: "Silver 1", rankClass: "rank-silver", x: "https://x.com/x2_zelda" },
-                { name: "Zylicent", role: "Duelist", agent: "Iso", img: "iso.png", rank: "Bronze 3", rankClass: "rank-bronze", x: "https://x.com/Eliyna_vlr" },
-                { name: "AURØRA", role: "Controller", agent: "Brimstone", img: "brim.png", rank: "Silver 2", rankClass: "rank-silver", x: "https://x.com/tqrmcc" },
-                { name: "Mondi", role: "Flex", agent: "Jett", img: "jett.png", rank: "Gold 2", rankClass: "rank-gold", x: "https://x.com/just_mondii" }
+                { name: "Rubyxcube", role: "Duelist", agent: "jett.png", rank: "Silver 1", rankClass: "rank-silver", x: "https://x.com/x2_zelda", tracker: "https://tracker.gg" },
+                { name: "Zylicent", role: "Duelist", agent: "iso.png", rank: "Bronze 3", rankClass: "rank-bronze", x: "https://x.com/Eliyna_vlr", tracker: "https://tracker.gg" },
+                { name: "AURØRA", role: "Controller", agent: "brim.png", rank: "Silver 2", rankClass: "rank-silver", x: "https://x.com/tqrmcc", tracker: "https://tracker.gg" },
+                { name: "Mondi", role: "Flex", agent: "jett.png", rank: "Gold 2", rankClass: "rank-gold", x: "https://x.com/just_mondii", tracker: "https://tracker.gg" }
             ],
             staff: [
                 { name: "WalmartReyna", role: "Manager", img: "everbloomlogo.png", rank: "Staff", rankClass: "rank-staff", x: "https://x.com/wavvybecci" },
@@ -187,19 +193,25 @@
         }
 
         function renderRoster() {
+            // FLINTA
             document.getElementById('flinta-roster').innerHTML = players.flinta.map(p => `
                 <div class="player-card">
-                    <img src="${p.img}" class="agent-img">
+                    <img src="${p.agent}" class="agent-img">
                     <div class="card-content">
                         <span style="font-size:0.7rem; color:var(--primary); font-weight:bold;">${p.role}</span>
                         <div style="font-size:1.4rem; font-weight:900;">${p.name}</div>
                         <div class="rank-tag ${p.rankClass}">${p.rank}</div>
-                        <a href="${p.x}" target="_blank" style="color:white;"><i class="fa-brands fa-x-twitter"></i></a>
+                        <div class="card-socials">
+                            <a href="${p.x}" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="${p.tracker}" target="_blank"><img src="${trackerImg}" class="tracker-icon" title="Tracker.gg"></a>
+                        </div>
                     </div>
-                </div>`).join('') + `<div class="player-card" style="border:1px dashed var(--primary); opacity:0.3; justify-content:center; align-items:center; font-weight:900; color:var(--primary);">JOIN US</div>`;
+                </div>`).join('') + `<div class="player-card free-slot">JOIN US</div>`;
 
-            document.getElementById('male-roster').innerHTML = Array(5).fill('<div class="player-card" style="border:1px dashed var(--primary); opacity:0.3; justify-content:center; align-items:center; font-weight:900; color:var(--primary);">SCOUTING...</div>').join('');
+            // MALE (Leere gestrichelte Slots)
+            document.getElementById('male-roster').innerHTML = Array(5).fill('<div class="player-card free-slot">SCOUTING...</div>').join('');
             
+            // STAFF
             document.getElementById('staff-roster').innerHTML = players.staff.map(p => `
                 <div class="player-card">
                     <img src="${p.img}" class="agent-img" style="height:35%; bottom:35%; opacity:0.2">
@@ -207,7 +219,9 @@
                         <span style="font-size:0.7rem; color:var(--primary); font-weight:bold;">${p.role}</span>
                         <div style="font-size:1.4rem; font-weight:900;">${p.name}</div>
                         <div class="rank-tag ${p.rankClass}">${p.rank}</div>
-                        <a href="${p.x}" target="_blank" style="color:white;"><i class="fa-brands fa-x-twitter"></i></a>
+                        <div class="card-socials">
+                            <a href="${p.x}" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                        </div>
                     </div>
                 </div>`).join('');
         }
