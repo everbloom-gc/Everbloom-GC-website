@@ -208,14 +208,15 @@
     <script>
         const players = {
             flinta: [
-                { name: "Rubyxcube", role: "Duelist", img: "jett.png", rank: "Silver 1", rankClass: "rank-silver", twitter: "#", tracker: "#" },
+                // HIER KANNST DU DIE LINKS EINTRAGEN
+                { name: "Rubyxcube", role: "Duelist", img: "jett.png", rank: "Silver 1", rankClass: "rank-silver", twitter: "https://x.com/DEIN_NAME", tracker: "https://tracker.gg/valorant/profile/riot/NAME%23TAG" },
                 { name: "Zylicent", role: "Duelist", img: "iso.png", rank: "Bronze 3", rankClass: "rank-bronze", twitter: "#", tracker: "#" },
                 { name: "AURØRA", role: "Controller", img: "brim.png", rank: "Silver 2", rankClass: "rank-silver", twitter: "#", tracker: "#" },
                 { name: "Mondi", role: "Flex", img: "jett.png", rank: "Gold 2", rankClass: "rank-gold", twitter: "#", tracker: "#" }
             ],
-            male: [], // Platzhalter für Male Roster
+            male: [],
             staff: [
-                { name: "WalmartReyna", role: "Manager", img: "everbloomlogo.png", rank: "Staff", rankClass: "rank-staff", twitter: "#", tracker: "" },
+                { name: "WalmartReyna", role: "Manager", img: "everbloomlogo.png", rank: "Staff", rankClass: "rank-staff", twitter: "https://x.com/BloomEver85575", tracker: "" },
                 { name: "siiko", role: "Coach", img: "everbloomlogo.png", rank: "Staff", rankClass: "rank-staff", twitter: "", tracker: "" }
             ]
         };
@@ -240,8 +241,8 @@
                         <div style="font-size:1.4rem; font-weight:900; margin-bottom:5px;">${p.name}</div>
                         <div class="rank-tag ${p.rankClass}">${p.rank}</div>
                         <div class="player-socials">
-                            ${p.twitter && p.twitter !== "#" || p.twitter === "#" ? `<a href="${p.twitter}" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>` : ''}
-                            ${p.tracker ? `<a href="${p.tracker}" target="_blank"><img src="valotrackerlog.png" class="tracker-icon" alt="Tracker"></a>` : ''}
+                            ${p.twitter && p.twitter !== "" && p.twitter !== "#" ? `<a href="${p.twitter}" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>` : ''}
+                            ${p.tracker && p.tracker !== "" && p.tracker !== "#" ? `<a href="${p.tracker}" target="_blank"><img src="valotrackerlog.png" class="tracker-icon" alt="Tracker"></a>` : ''}
                         </div>
                     </div>
                 </div>`).join('') + '<div class="player-card join-card" onclick="window.open(\'https://forms.gle/VeNmZo9DkJo35PR5A\')">JOIN SQUAD</div>';
@@ -258,7 +259,7 @@
                         <div style="font-size:1.4rem; font-weight:900; margin-bottom:5px;">${p.name}</div>
                         <div class="rank-tag ${p.rankClass}">${p.rank}</div>
                         <div class="player-socials">
-                            ${p.twitter ? `<a href="${p.twitter}" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>` : ''}
+                            ${p.twitter && p.twitter !== "" ? `<a href="${p.twitter}" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>` : ''}
                         </div>
                     </div>
                 </div>`).join('');
