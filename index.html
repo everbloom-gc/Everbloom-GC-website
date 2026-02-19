@@ -208,15 +208,14 @@
     <script>
         const players = {
             flinta: [
-                // HIER KANNST DU DIE LINKS EINTRAGEN
-                { name: "Rubyxcube", role: "Duelist", img: "jett.png", rank: "Silver 1", rankClass: "rank-silver", twitter: "https://x.com/DEIN_NAME", tracker: "https://tracker.gg/valorant/profile/riot/NAME%23TAG" },
-                { name: "Zylicent", role: "Duelist", img: "iso.png", rank: "Bronze 3", rankClass: "rank-bronze", twitter: "#", tracker: "#" },
-                { name: "AURØRA", role: "Controller", img: "brim.png", rank: "Silver 2", rankClass: "rank-silver", twitter: "#", tracker: "#" },
-                { name: "Mondi", role: "Flex", img: "jett.png", rank: "Gold 2", rankClass: "rank-gold", twitter: "#", tracker: "#" }
+                { name: "Rubyxcube", role: "Duelist", img: "jett.png", rank: "Silver 1", rankClass: "rank-silver", twitter: "https://x.com/Rubyxcubee", tracker: "https://tracker.gg/valorant/profile/riot/Rubyxcube%23000/overview" },
+                { name: "Zylicent", role: "Duelist", img: "iso.png", rank: "Bronze 3", rankClass: "rank-bronze", twitter: "https://x.com/zylicent", tracker: "https://tracker.gg/valorant/profile/riot/Zylicent%23777/overview" },
+                { name: "AURØRA", role: "Controller", img: "brim.png", rank: "Silver 2", rankClass: "rank-silver", twitter: "https://x.com/AURORA_vlr", tracker: "https://tracker.gg/valorant/profile/riot/AURØRA%23vlr/overview" },
+                { name: "Mondi", role: "Flex", img: "jett.png", rank: "Gold 2", rankClass: "rank-gold", twitter: "https://x.com/mondii_vlr", tracker: "https://tracker.gg/valorant/profile/riot/mondi%23vlr/overview" }
             ],
             male: [],
             staff: [
-                { name: "WalmartReyna", role: "Manager", img: "everbloomlogo.png", rank: "Staff", rankClass: "rank-staff", twitter: "https://x.com/BloomEver85575", tracker: "" },
+                { name: "WalmartReyna", role: "Manager", img: "everbloomlogo.png", rank: "Staff", rankClass: "rank-staff", twitter: "https://x.com/BloomEver85575", tracker: "https://tracker.gg/valorant/profile/riot/WalmartReyna%23Bloom/overview" },
                 { name: "siiko", role: "Coach", img: "everbloomlogo.png", rank: "Staff", rankClass: "rank-staff", twitter: "", tracker: "" }
             ]
         };
@@ -247,7 +246,7 @@
                     </div>
                 </div>`).join('') + '<div class="player-card join-card" onclick="window.open(\'https://forms.gle/VeNmZo9DkJo35PR5A\')">JOIN SQUAD</div>';
 
-            // MALE (COMING SOON)
+            // MALE
             document.getElementById('male-roster').innerHTML = '<div class="player-card join-card" style="flex: 0 0 100%; max-width: 300px; border-style: solid;">COMING SOON<br><small style="font-weight:normal; opacity:0.6; margin-top:10px;">Scouting in Progress</small></div>';
 
             // STAFF
@@ -260,6 +259,7 @@
                         <div class="rank-tag ${p.rankClass}">${p.rank}</div>
                         <div class="player-socials">
                             ${p.twitter && p.twitter !== "" ? `<a href="${p.twitter}" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>` : ''}
+                            ${p.tracker && p.tracker !== "" ? `<a href="${p.tracker}" target="_blank"><img src="valotrackerlog.png" class="tracker-icon" alt="Tracker"></a>` : ''}
                         </div>
                     </div>
                 </div>`).join('');
