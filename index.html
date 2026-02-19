@@ -103,6 +103,11 @@
         .card-content { position: absolute; bottom: 0; width: 100%; padding: 20px; background: linear-gradient(transparent, #060b10); z-index: 10; }
         .join-card { border: 2px dashed var(--primary); display: flex; align-items: center; justify-content: center; color: var(--primary); font-weight: 900; cursor: pointer; }
 
+        /* PLAYER SOCIAL ICONS */
+        .player-socials { display: flex; gap: 10px; margin-top: 10px; }
+        .player-socials a { color: white; opacity: 0.6; font-size: 1rem; transition: 0.3s; text-decoration: none; }
+        .player-socials a:hover { opacity: 1; color: var(--primary); }
+
         .page-section { display: none; }
         .page-section.active { display: block; animation: fadeIn 0.5s; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
@@ -200,14 +205,14 @@
     <script>
         const players = {
             flinta: [
-                { name: "Rubyxcube", role: "Duelist", img: "jett.png", rank: "Silver 1", rankClass: "rank-silver" },
-                { name: "Zylicent", role: "Duelist", img: "iso.png", rank: "Bronze 3", rankClass: "rank-bronze" },
-                { name: "AURØRA", role: "Controller", img: "brim.png", rank: "Silver 2", rankClass: "rank-silver" },
-                { name: "Mondi", role: "Flex", img: "jett.png", rank: "Gold 2", rankClass: "rank-gold" }
+                { name: "Rubyxcube", role: "Duelist", img: "jett.png", rank: "Silver 1", rankClass: "rank-silver", twitter: "#", tracker: "#" },
+                { name: "Zylicent", role: "Duelist", img: "iso.png", rank: "Bronze 3", rankClass: "rank-bronze", twitter: "#", tracker: "#" },
+                { name: "AURØRA", role: "Controller", img: "brim.png", rank: "Silver 2", rankClass: "rank-silver", twitter: "#", tracker: "#" },
+                { name: "Mondi", role: "Flex", img: "jett.png", rank: "Gold 2", rankClass: "rank-gold", twitter: "#", tracker: "#" }
             ],
             staff: [
-                { name: "WalmartReyna", role: "Manager", img: "everbloomlogo.png", rank: "Staff", rankClass: "rank-staff" },
-                { name: "siiko", role: "Coach", img: "everbloomlogo.png", rank: "Staff", rankClass: "rank-staff" }
+                { name: "WalmartReyna", role: "Manager", img: "everbloomlogo.png", rank: "Staff", rankClass: "rank-staff", twitter: "#", tracker: "" },
+                { name: "siiko", role: "Coach", img: "everbloomlogo.png", rank: "Staff", rankClass: "rank-staff", twitter: "#", tracker: "" }
             ]
         };
 
@@ -229,6 +234,10 @@
                         <small style="color:var(--primary); font-weight:bold; text-transform:uppercase;">${p.role}</small>
                         <div style="font-size:1.4rem; font-weight:900; margin-bottom:5px;">${p.name}</div>
                         <div class="rank-tag ${p.rankClass}">${p.rank}</div>
+                        <div class="player-socials">
+                            ${p.twitter ? `<a href="${p.twitter}" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>` : ''}
+                            ${p.tracker ? `<a href="${p.tracker}" target="_blank"><i class="fas fa-chart-line"></i></a>` : ''}
+                        </div>
                     </div>
                 </div>`).join('') + '<div class="player-card join-card" onclick="window.open(\'https://forms.gle/VeNmZo9DkJo35PR5A\')">JOIN SQUAD</div>';
 
@@ -239,6 +248,9 @@
                         <small style="color:var(--primary); font-weight:bold; text-transform:uppercase;">${p.role}</small>
                         <div style="font-size:1.4rem; font-weight:900; margin-bottom:5px;">${p.name}</div>
                         <div class="rank-tag ${p.rankClass}">${p.rank}</div>
+                        <div class="player-socials">
+                            ${p.twitter ? `<a href="${p.twitter}" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>` : ''}
+                        </div>
                     </div>
                 </div>`).join('');
         }
