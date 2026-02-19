@@ -14,6 +14,7 @@
             --bg: #060b10;
             --text: #ffffff;
             --accent-glow: rgba(255, 70, 85, 0.5);
+            --discord: #5865F2;
         }
 
         html, body {
@@ -103,8 +104,12 @@
         .social-row { display: flex; justify-content: center; gap: 15px; margin: 40px 0; }
         .social-row a { background: rgba(255,255,255,0.05); padding: 15px 30px; border-radius: 5px; color: white; text-decoration: none; font-weight: bold; border: 1px solid rgba(255,255,255,0.1); transition: 0.3s; }
         .social-row a:hover { border-color: var(--primary); color: var(--primary); }
+        .social-row .dc-btn:hover { border-color: var(--discord); color: var(--discord); }
 
-        footer { text-align: center; padding: 50px; color: #555; font-size: 0.8rem; border-top: 1px solid rgba(255,255,255,0.05); }
+        footer { text-align: center; padding: 60px; color: #555; font-size: 0.8rem; border-top: 1px solid rgba(255,255,255,0.05); }
+        .footer-links { margin-top: 15px; display: flex; justify-content: center; gap: 20px; }
+        .footer-links a { color: #888; text-decoration: none; transition: 0.3s; }
+        .footer-links a:hover { color: var(--primary); }
     </style>
 </head>
 <body>
@@ -166,7 +171,7 @@
 
             <div class="social-row">
                 <a href="https://x.com/BloomEver85575" target="_blank"><i class="fa-brands fa-x-twitter"></i> Twitter</a>
-                <a href="https://discord.gg/Cp2J72hesH" target="_blank"><i class="fa-brands fa-discord"></i> Discord</a>
+                <a href="https://discord.gg/Cp2J72hesH" target="_blank" class="dc-btn"><i class="fa-brands fa-discord" style="color:#5865F2"></i> Discord</a>
             </div>
         </div>
     </section>
@@ -187,7 +192,11 @@
     </section>
 
     <footer>
-        &copy; 2026 EVERBLOOM GAMING | <a href="legal.html" style="color:#555; text-decoration:none">Legal Notice</a>
+        &copy; 2026 EVERBLOOM GAMING
+        <div class="footer-links">
+            <a href="https://gamertransfer.com/_everbloom_gc-team-24582-view1" target="_blank"><i class="fas fa-external-link-alt"></i> GamerTransfer Profile</a>
+            <a href="legal.html">Legal & Privacy</a>
+        </div>
     </footer>
 
     <script>
