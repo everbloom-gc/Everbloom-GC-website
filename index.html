@@ -15,6 +15,7 @@
             --text: #ffffff;
             --accent-glow: rgba(255, 70, 85, 0.6);
             --discord: #5865F2;
+            --gt-orange: #ff9800;
             --rank-gold: #ffcf4b;
             --rank-silver: #ced4da;
             --rank-bronze: #cd7f32;
@@ -47,6 +48,35 @@
         .nav-overlay.active { right: 0; }
         .nav-overlay a { font-size: 2.5rem; color: white; text-decoration: none; text-transform: uppercase; font-weight: 900; letter-spacing: 5px; margin: 20px 0; transition: 0.3s; }
 
+        /* FANCY APPLY BUTTON */
+        .apply-container { text-align: center; margin: 40px 0; }
+        .apply-btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 20px 60px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            position: relative;
+            overflow: hidden;
+            transition: 0.4s;
+            box-shadow: 0 0 20px rgba(255, 70, 85, 0.4);
+            animation: pulse-glow 2s infinite;
+        }
+        .apply-btn:hover {
+            transform: scale(1.05) translateY(-5px);
+            box-shadow: 0 0 40px var(--accent-glow);
+            letter-spacing: 6px;
+        }
+        @keyframes pulse-glow {
+            0% { box-shadow: 0 0 15px rgba(255, 70, 85, 0.4); }
+            50% { box-shadow: 0 0 35px rgba(255, 70, 85, 0.7); }
+            100% { box-shadow: 0 0 15px rgba(255, 70, 85, 0.4); }
+        }
+
         header { padding: 80px 20px 40px; text-align: center; }
         .logo-main { width: 110px; filter: drop-shadow(0 0 15px var(--primary)); margin-bottom: 20px; }
         h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); margin: 0; letter-spacing: 12px; text-transform: uppercase; font-weight: 900; }
@@ -60,11 +90,10 @@
         .info-list li { margin-bottom: 15px; color: #ccc; display: flex; align-items: center; gap: 15px; font-size: 1.05rem; }
         .info-list li i { color: var(--primary); width: 20px; text-align: center; }
 
-        /* GAMERTRANSFER BANNER */
-        .gt-banner-container { margin: 40px 0; text-align: center; }
-        .gt-banner-link { display: inline-block; transition: 0.3s transform; }
-        .gt-banner-link:hover { transform: scale(1.02); }
-        .gt-banner-img { max-width: 100%; width: 600px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 0 20px rgba(255, 152, 0, 0.2); }
+        /* GAMERTRANSFER BANNER (BACKLINK) */
+        .gt-banner-container { margin: 60px 0; text-align: center; }
+        .gt-banner-img { max-width: 100%; width: 600px; border-radius: 4px; border: 1px solid rgba(255, 255, 255, 0.1); transition: 0.3s; }
+        .gt-banner-img:hover { border-color: var(--gt-orange); transform: scale(1.01); }
 
         /* SOCIAL BAR */
         .social-row { display: flex; justify-content: center; gap: 15px; margin: 40px 0; flex-wrap: wrap; }
@@ -74,12 +103,14 @@
             transition: 0.4s; display: inline-flex; align-items: center; gap: 10px; 
         }
         .social-row .dc-btn:hover { border-color: var(--discord); color: var(--discord); box-shadow: 0 0 20px rgba(88, 101, 242, 0.4); }
+        .social-row .gt-btn:hover { border-color: var(--gt-orange); color: var(--gt-orange); box-shadow: 0 0 20px rgba(255, 152, 0, 0.4); }
 
-        /* ROSTER SECTION & MOBILE SWIPE */
+        /* SECTIONS */
         .page-section { display: none; padding-bottom: 80px; }
         .page-section.active { display: block; animation: fadeIn 0.4s ease-in-out; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
+        /* ROSTER GRID */
         .roster-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 30px; }
         @media (max-width: 768px) {
             .roster-grid { flex-wrap: nowrap; justify-content: flex-start; overflow-x: auto; padding: 20px 10px; scroll-snap-type: x mandatory; scrollbar-width: none; }
@@ -97,12 +128,15 @@
         .card-content { position: relative; z-index: 10; padding: 25px; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; background: linear-gradient(to top, rgba(17, 27, 36, 1) 35%, transparent 100%); flex-grow: 1; }
         
         .rank-tag { padding: 6px 12px; border-radius: 4px; font-size: 0.75rem; border: 1px solid; margin: 8px 0; display: inline-block; font-weight: 800; text-transform: uppercase; }
-        .rank-gold { border-color: var(--rank-gold); color: var(--rank-gold); text-shadow: 0 0 10px var(--rank-gold); }
-        .rank-silver { border-color: var(--rank-silver); color: var(--rank-silver); text-shadow: 0 0 10px var(--rank-silver); }
-        .rank-bronze { border-color: var(--rank-bronze); color: var(--rank-bronze); text-shadow: 0 0 10px var(--rank-bronze); }
+        .rank-gold { border-color: var(--rank-gold); color: var(--rank-gold); }
+        .rank-silver { border-color: var(--rank-silver); color: var(--rank-silver); }
+        .rank-bronze { border-color: var(--rank-bronze); color: var(--rank-bronze); }
         .rank-staff { border-color: var(--primary); color: var(--primary); }
 
-        footer { text-align: center; padding: 60px; color: #444; font-size: 0.8rem; border-top: 1px solid rgba(255,255,255,0.05); }
+        /* FOOTER & IMPRESSUM */
+        footer { text-align: center; padding: 60px; background: rgba(0,0,0,0.4); border-top: 1px solid rgba(255,255,255,0.05); }
+        .footer-legal { font-size: 0.8rem; color: #555; line-height: 1.6; margin-top: 20px; }
+        .footer-legal strong { color: #888; }
     </style>
 </head>
 <body>
@@ -127,8 +161,12 @@
             <div class="info-card">
                 <h3><i class="fas fa-seedling"></i> Who We Are</h3>
                 <p style="color:#ccc; line-height:1.8;">
-                    Everbloom is an independent E-Sports organization founded in 2026, built on the foundation of competitive integrity and relentless ambition. In the high-stakes world of tactical shooters, we provide our athletes with the structure and mental support needed to transcend their limits.
+                    Everbloom is an independent E-Sports organization founded in 2026, built on the foundation of competitive integrity and relentless ambition. In the high-stakes world of Valorant, we provide our athletes with the structure and mental support needed to transcend their limits.
                 </p>
+            </div>
+
+            <div class="apply-container">
+                <a href="https://forms.gle/VeNmZo9DkJo35PR5A" target="_blank" class="apply-btn">Apply Now</a>
             </div>
 
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
@@ -149,14 +187,15 @@
             </div>
 
             <div class="gt-banner-container">
-                <a href="https://gamertransfer.com/_everbloom_gc-team-24582-view1" target="_blank" class="gt-banner-link">
-                    <img src="https://gamertransfer.com/img/banners/banner_600x100.png" alt="Everbloom on GamerTransfer" class="gt-banner-img">
+                <a href="https://gamertransfer.com" target="_blank">
+                    <img src="https://gamertransfer.com/img/banners/banner_600x100.png" alt="GamerTransfer" class="gt-banner-img">
                 </a>
             </div>
 
             <div class="social-row">
                 <a href="https://x.com/BloomEver85575" target="_blank" class="x-btn"><i class="fa-brands fa-x-twitter"></i> X / Twitter</a>
                 <a href="https://discord.gg/Cp2J72hesH" target="_blank" class="dc-btn"><i class="fa-brands fa-discord"></i> Discord</a>
+                <a href="https://gamertransfer.com/_everbloom_gc-team-24582-view1" target="_blank" class="gt-btn"><i class="fas fa-user-plus"></i> GamerTransfer Profile</a>
             </div>
         </div>
     </section>
@@ -170,7 +209,16 @@
         </div>
     </section>
 
-    <footer>&copy; 2026 EVERBLOOM GAMING</footer>
+    <footer>
+        <p>&copy; 2026 EVERBLOOM GAMING</p>
+        <div class="footer-legal">
+            <strong>Impressum / Legal Notice</strong><br>
+            Everbloom E-Sports Project<br>
+            Contact: [DEINE E-MAIL]<br>
+            Represented by: [DEIN NAME]<br>
+            All game assets &copy; Riot Games.
+        </div>
+    </footer>
 
     <script>
         const players = {
