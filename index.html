@@ -34,8 +34,11 @@
         .nav-overlay a:hover { color: var(--primary); text-shadow: 0 0 15px var(--primary); }
 
         .container { max-width: 1200px; margin: auto; padding: 20px; }
-        header { padding: 80px 20px 40px; text-align: center; }
-        .logo-main { width: 110px; filter: drop-shadow(0 0 15px var(--primary)); margin-bottom: 20px; }
+        
+        /* HEADER MIT VERBESSERTEM LOGO */
+        header { padding: 100px 20px 40px; text-align: center; }
+        .logo-main { width: 160px; filter: drop-shadow(0 0 25px var(--primary)); margin-bottom: 25px; transition: 0.5s; }
+        .logo-main:hover { transform: scale(1.05); filter: drop-shadow(0 0 35px var(--primary)); }
         h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); margin: 0; letter-spacing: 12px; text-transform: uppercase; font-weight: 900; }
 
         /* INFO CARDS */
@@ -73,7 +76,7 @@
         .agent-img { position: absolute; left: 50%; bottom: 10%; height: 75%; transform: translateX(-50%); z-index: 2; -webkit-mask-image: linear-gradient(to top, black 80%, transparent 100%); pointer-events: none; }
         .card-content { position: relative; z-index: 10; padding: 25px; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; background: linear-gradient(to top, rgba(17, 27, 36, 1) 35%, transparent 100%); flex-grow: 1; }
         
-        /* RANK TAGS MIT GLOW */
+        /* RANKS MIT GLOW */
         .rank-tag { padding: 6px 12px; border-radius: 4px; font-size: 0.75rem; border: 1px solid; margin: 8px 0; display: inline-block; font-weight: 800; text-transform: uppercase; }
         .rank-gold { border-color: var(--rank-gold); color: var(--rank-gold); box-shadow: 0 0 12px var(--rank-gold); text-shadow: 0 0 5px var(--rank-gold); }
         .rank-silver { border-color: var(--rank-silver); color: var(--rank-silver); box-shadow: 0 0 12px var(--rank-silver); text-shadow: 0 0 5px var(--rank-silver); }
@@ -110,7 +113,9 @@
             <div class="info-card">
                 <h3><i class="fas fa-seedling"></i> Who We Are</h3>
                 <p style="color:#ccc; line-height:1.9; font-size: 1.1rem;">
-                    Everbloom is an independent E-Sports organization founded in 2026, built on the pillars of competitive integrity, professional structure, and relentless ambition. In the high-stakes world of Valorant, we don't just play—we evolve.
+                    Everbloom ist eine im Jahr 2026 gegründete E-Sports Organisation, die auf den Fundamenten von Disziplin, taktischer Raffinesse und einer unnachgiebigen Gewinnermentalität basiert. In der schnelllebigen und hochkompetitiven Welt von Valorant setzen wir neue Maßstäbe für professionelles Teammanagement und Spielerentwicklung.
+                    <br><br>
+                    Unsere Philosophie <strong>"Bloom or Decay"</strong> ist mehr als nur ein Motto – sie ist unser Leitbild. Wir glauben daran, dass Erfolg das Ergebnis von stetigem Wachstum und Anpassungsfähigkeit ist. Wer stehen bleibt, verfällt. Deshalb bieten wir unseren Talenten ein strukturiertes Umfeld, in dem sie über sich hinauswachsen können. Von gezieltem Coaching bis hin zur psychologischen Spielvorbereitung – bei Everbloom schaffen wir Champions, die nicht nur durch Aiming, sondern durch Intelligenz und Teamgeist überzeugen.
                 </p>
             </div>
 
