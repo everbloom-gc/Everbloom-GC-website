@@ -89,7 +89,18 @@
         .rank-bronze { border-color: var(--rank-bronze); color: var(--rank-bronze); box-shadow: 0 0 15px rgba(205, 127, 50, 0.5); }
         .rank-staff { border-color: var(--primary); color: var(--primary); box-shadow: 0 0 15px rgba(255, 70, 85, 0.5); }
 
-        .roster-grid { display: flex; gap: 20px; overflow-x: auto; padding: 20px 0; scroll-snap-type: x mandatory; }
+        .roster-grid { 
+            display: flex; 
+            gap: 20px; 
+            overflow-x: auto; 
+            padding: 20px 0; 
+            scroll-snap-type: x mandatory;
+            flex-wrap: wrap; /* Zeilenumbruch statt Slidebar */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* IE/Edge */
+        }
+        .roster-grid::-webkit-scrollbar { display: none; /* Chrome/Safari */ }
+
         .player-card { flex: 0 0 240px; background: rgba(10, 15, 20, 0.9); border-radius: 10px; min-height: 380px; position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); scroll-snap-align: start; }
         .player-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.4; z-index: 1; transition: 0.3s; }
         .player-card:hover .player-img { opacity: 0.6; transform: scale(1.05); }
