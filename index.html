@@ -64,6 +64,10 @@
         .join-card { border: 4px dashed var(--primary) !important; background: rgba(255, 70, 85, 0.05); display: flex; align-items: center; justify-content: center; font-weight: 900; color: var(--primary); font-size: 1.5rem; letter-spacing: 2px; text-transform: uppercase; text-align: center; }
 
         .agent-img { position: absolute; left: 50%; bottom: 10%; height: 75%; transform: translateX(-50%); z-index: 2; -webkit-mask-image: linear-gradient(to top, black 80%, transparent 100%); }
+        
+        /* Specialized Logo Background for Staff Cards */
+        .staff-bg-logo { position: absolute; left: 50%; top: 40%; transform: translate(-50%, -50%); width: 70%; opacity: 0.25; z-index: 1; filter: drop-shadow(0 0 10px rgba(255, 70, 85, 0.3)); }
+
         .card-content { position: relative; z-index: 10; padding: 25px; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; background: linear-gradient(to top, rgba(17, 27, 36, 1) 35%, transparent 100%); }
 
         /* RANK GLOWS */
@@ -234,13 +238,13 @@
                     </div>
                 </div>`).join('') + `<div class="player-card join-card">JOIN SQUAD</div>`;
 
-            // MALE (Coming Soon)
+            // MALE
             document.getElementById('male-roster').innerHTML = Array(5).fill('<div class="player-card join-card">COMING SOON</div>').join('');
             
-            // STAFF
+            // STAFF (Hier wurde das Logo-Design verbessert)
             document.getElementById('staff-roster').innerHTML = players.staff.map(p => `
                 <div class="player-card">
-                    <img src="${p.img}" class="agent-img" style="height:30%; bottom:35%; opacity:0.1">
+                    <img src="${p.img}" class="staff-bg-logo" alt="Logo Background">
                     <div class="card-content">
                         <span style="font-size:0.7rem; color:var(--primary); font-weight:bold;">${p.role}</span>
                         <div style="font-size:1.4rem; font-weight:900;">${p.name}</div>
