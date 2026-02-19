@@ -27,7 +27,7 @@
         #video-bg { position: fixed; top: 50%; left: 50%; min-width: 100%; min-height: 100%; z-index: -2; transform: translateX(-50%) translateY(-50%); object-fit: cover; filter: brightness(0.15); }
         .video-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle, rgba(6,11,16,0.1), rgba(6,11,16,0.9)); z-index: -1; }
 
-        /* NAVIGATION & ANIMATED BURGER */
+        /* NAVIGATION & SIDEBAR */
         .nav-toggle { 
             position: fixed; top: 20px; left: 20px; z-index: 1001; 
             background: rgba(255, 70, 85, 0.9); border: none; 
@@ -50,46 +50,53 @@
         .menu-bg-close { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); opacity: 0; visibility: hidden; transition: 0.3s; z-index: 999; }
         .menu-bg-close.active { opacity: 1; visibility: visible; }
 
-        /* CONTENT STRUCTURE */
+        /* MAIN CONTENT */
         .container { max-width: 1200px; margin: auto; padding: 20px; }
         header { padding: 80px 20px 40px; text-align: center; }
         .logo-main { width: 110px; filter: drop-shadow(0 0 15px var(--primary)); margin-bottom: 20px; }
         h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); margin: 0; letter-spacing: 12px; text-transform: uppercase; font-weight: 900; }
 
-        .info-card { background: rgba(17, 27, 36, 0.85); padding: 35px; border-radius: 12px; border-top: 4px solid var(--primary); margin-bottom: 25px; backdrop-filter: blur(10px); }
+        .info-card { background: rgba(17, 27, 36, 0.85); padding: 35px; border-radius: 12px; border-top: 4px solid var(--primary); margin-bottom: 25px; backdrop-filter: blur(10px); position: relative; }
         .info-card h3 { margin-top: 0; color: var(--primary); text-transform: uppercase; letter-spacing: 2px; display: flex; align-items: center; gap: 10px; }
         
-        .apply-btn { display: inline-block; background: var(--primary); color: white; padding: 18px 50px; border-radius: 4px; text-decoration: none; font-weight: 900; text-transform: uppercase; letter-spacing: 4px; transition: 0.3s; }
-        .apply-btn:hover { transform: scale(1.05); box-shadow: 0 0 25px var(--primary); }
+        .apply-btn { display: inline-block; background: var(--primary); color: white; padding: 20px 60px; border-radius: 4px; text-decoration: none; font-weight: 900; text-transform: uppercase; letter-spacing: 4px; animation: pulse-glow 2s infinite; }
+        @keyframes pulse-glow { 0%, 100% { box-shadow: 0 0 15px rgba(255, 70, 85, 0.4); } 50% { box-shadow: 0 0 35px rgba(255, 70, 85, 0.7); } }
 
-        /* ROSTER DESIGN FIX */
-        .roster-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; margin-top: 30px; }
+        /* ROSTER - Optimized Size & Layout */
+        .roster-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; margin-top: 30px; }
         .player-card { 
-            background-color: rgba(17, 27, 36, 0.9); border-radius: 12px; min-height: 450px; 
+            background-color: rgba(17, 27, 36, 0.9); border-radius: 10px; min-height: 400px; 
             position: relative; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); 
         }
-        .agent-img { position: absolute; left: 50%; bottom: 0; height: 85%; transform: translateX(-50%); z-index: 1; opacity: 0.8; pointer-events: none; }
-        .staff-bg-logo { position: absolute; left: 50%; top: 40%; transform: translate(-50%, -50%); width: 70%; opacity: 0.2; z-index: 1; }
+        .agent-img { position: absolute; left: 50%; bottom: 0; height: 80%; transform: translateX(-50%); z-index: 1; opacity: 0.7; pointer-events: none; }
+        .staff-bg-logo { position: absolute; left: 50%; top: 40%; transform: translate(-50%, -50%); width: 60%; opacity: 0.15; z-index: 1; }
+        .valo-v-bg { position: absolute; left: 50%; bottom: 10%; transform: translateX(-50%); width: 80%; opacity: 0.8; z-index: 2; }
         
         .card-content { 
-            position: relative; z-index: 10; padding: 25px; height: 100%; 
+            position: relative; z-index: 10; padding: 20px; height: 100%; 
             display: flex; flex-direction: column; justify-content: flex-end; 
-            background: linear-gradient(to top, rgba(17, 27, 36, 1) 30%, transparent 100%); 
+            background: linear-gradient(to top, rgba(17, 27, 36, 1) 35%, transparent 100%); 
         }
 
-        .rank-tag { padding: 6px 14px; border-radius: 4px; font-size: 0.8rem; border: 1px solid; margin: 10px 0; display: inline-block; font-weight: 800; text-transform: uppercase; }
-        .rank-gold { border-color: var(--rank-gold); color: var(--rank-gold); box-shadow: 0 0 10px var(--rank-gold); }
-        .rank-silver { border-color: var(--rank-silver); color: var(--rank-silver); box-shadow: 0 0 10px var(--rank-silver); }
-        .rank-bronze { border-color: var(--rank-bronze); color: var(--rank-bronze); box-shadow: 0 0 10px var(--rank-bronze); }
-        .rank-staff { border-color: var(--primary); color: var(--primary); }
+        .rank-tag { padding: 6px 12px; border-radius: 4px; font-size: 0.75rem; border: 1px solid; margin: 8px 0; display: inline-block; font-weight: 800; text-transform: uppercase; }
+        .rank-gold { border-color: var(--rank-gold); color: var(--rank-gold); box-shadow: 0 0 12px var(--rank-gold); }
+        .rank-silver { border-color: var(--rank-silver); color: var(--rank-silver); box-shadow: 0 0 12px var(--rank-silver); }
+        .rank-bronze { border-color: var(--rank-bronze); color: var(--rank-bronze); box-shadow: 0 0 12px var(--rank-bronze); }
+        .rank-staff { border-color: var(--primary); color: var(--primary); box-shadow: 0 0 12px var(--primary); }
 
-        .join-card { border: 3px dashed var(--primary); display: flex; align-items: center; justify-content: center; color: var(--primary); font-weight: 900; font-size: 1.2rem; }
+        .card-socials { display: flex; align-items: center; gap: 15px; margin-top: 10px; }
+        .card-socials a { color: white; font-size: 1.1rem; transition: 0.3s; text-decoration: none; }
+        .card-socials a:hover { color: var(--primary); }
+        .tracker-icon { width: 18px; filter: brightness(0) invert(1); }
+
+        .join-card { border: 3px dashed var(--primary); display: flex; align-items: center; justify-content: center; color: var(--primary); font-weight: 900; }
 
         .page-section { display: none; padding-bottom: 80px; }
         .page-section.active { display: block; animation: fadeIn 0.4s; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-        footer { text-align: center; padding: 50px 20px; border-top: 1px solid rgba(255,70,85,0.2); }
+        footer { text-align: center; padding: 60px 20px; border-top: 1px solid rgba(255,70,85,0.2); background: rgba(0,0,0,0.4); }
+        .legal-link { color: #666; text-decoration: none; font-size: 0.8rem; text-transform: uppercase; font-weight: bold; }
     </style>
 </head>
 <body>
@@ -118,27 +125,32 @@
 
         <div class="container">
             <div class="info-card">
-                <h3><i class="fas fa-seedling"></i> OUR ORIGIN & PHILOSOPHY</h3>
-                <p style="color:#ccc; line-height:1.8;">Founded in early 2026, Everbloom emerged from a vision to redefine the independent E-Sports landscape. We are a high-performance ecosystem dedicated to tactical innovation and the personal growth of our athletes. You either bloom through adaptation or decay through stagnation.</p>
+                <h3><i class="fas fa-seedling"></i> ABOUT US</h3>
+                <p style="color:#ccc; line-height:1.9; font-size: 1.05rem;">
+                    Founded in early 2026, <b>Everbloom</b> emerged from a vision to redefine the independent E-Sports landscape. We are more than just a collection of players; we are a high-performance ecosystem dedicated to tactical innovation and the personal growth of our athletes. 
+                </p>
+                <p style="color:#ccc; line-height:1.9; font-size: 1.05rem; margin-top: 15px;">
+                    In a scene often dominated by short-term results, Everbloom prioritizes <b>"Mental Resilience"</b> and <b>"Strategic Depth."</b> Our name symbolizes our core belief: in the heat of competition, you either bloom through adaptation or decay through stagnation. We provide our rosters with structural support, professional coaching, and a positive environment to compete at the highest regional levels.
+                </p>
             </div>
 
             <div style="text-align: center; margin: 40px 0;">
-                <a href="https://forms.gle/VeNmZo9DkJo35PR5A" target="_blank" class="apply-btn">Apply Now</a>
+                <a href="https://forms.gle/VeNmZo9DkJo35PR5A" target="_blank" class="apply-btn">APPLY NOW</a>
             </div>
 
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 40px;">
                 <div class="info-card">
                     <h3><i class="fas fa-bullhorn"></i> LATEST NEWS</h3>
-                    <ul style="list-style:none; padding:0; color:#ccc; line-height:2;">
+                    <ul style="list-style:none; padding:0; color:#ccc; line-height:2.2;">
                         <li><i class="fas fa-check-circle" style="color:var(--primary)"></i> Roster building in progress - Stay tuned!</li>
-                        <li><i class="fas fa-search" style="color:var(--primary)"></i> Scouting for <b>Male Roster</b> (Asc/Imm+)</li>
+                        <li><i class="fas fa-search" style="color:var(--primary)"></i> Scouting for <b>Male Roster</b> (Asc/Imm+) <span style="color:var(--primary); font-weight:bold;">ACTIVE</span></li>
                         <li><i class="fas fa-venus-mars" style="color:var(--primary)"></i> FLINTA Roster currently at 4/5 members.</li>
                     </ul>
                 </div>
 
                 <div class="info-card">
                     <h3><i class="fas fa-trophy"></i> OUR GOALS</h3>
-                    <ul style="list-style:none; padding:0; color:#ccc; line-height:2;">
+                    <ul style="list-style:none; padding:0; color:#ccc; line-height:2.2;">
                         <li><i class="fas fa-star" style="color:var(--primary)"></i> Establish dominance in Premier Division.</li>
                         <li><i class="fas fa-brain" style="color:var(--primary)"></i> Focus on Mental Health & Resilience.</li>
                         <li><i class="fas fa-rocket" style="color:var(--primary)"></i> Reach DACH household name status by 2027.</li>
@@ -146,16 +158,23 @@
                 </div>
             </div>
 
-            <div style="display:flex; justify-content:center; gap:15px; margin-top:40px; flex-wrap:wrap;">
-                <a href="https://x.com/BloomEver85575" target="_blank" style="color:white; text-decoration:none; padding:15px 25px; background:rgba(255,255,255,0.05); border-radius:5px;"><i class="fa-brands fa-x-twitter"></i> Twitter</a>
-                <a href="https://discord.gg/Cp2J72hesH" target="_blank" style="color:white; text-decoration:none; padding:15px 25px; background:rgba(88, 101, 242, 0.2); border-radius:5px;"><i class="fa-brands fa-discord"></i> Discord</a>
+            <div style="text-align: center; margin: 40px 0;">
+                <a href="https://gamertransfer.com/_everbloom_gc-team-24582-view1" target="_blank">
+                    <img src="https://gamertransfer.com/banner/banner300_w.png" alt="player search" border="0" style="max-width: 100%; border-radius: 8px; box-shadow: 0 0 20px rgba(255,152,0,0.2);">
+                </a>
+            </div>
+
+            <div style="display:flex; justify-content:center; gap:15px; flex-wrap:wrap; margin-bottom: 20px;">
+                <a href="https://x.com/BloomEver85575" target="_blank" style="color:white; text-decoration:none; padding:15px 30px; background:rgba(255,255,255,0.05); border-radius:5px; font-weight:bold;"><i class="fa-brands fa-x-twitter"></i> Twitter</a>
+                <a href="https://discord.gg/Cp2J72hesH" target="_blank" style="color:white; text-decoration:none; padding:15px 30px; background:rgba(88, 101, 242, 0.2); border-radius:5px; font-weight:bold;"><i class="fa-brands fa-discord"></i> Discord</a>
+                <a href="https://gamertransfer.com/_everbloom_gc-team-24582-view1" target="_blank" style="color:white; text-decoration:none; padding:15px 30px; background:rgba(255, 152, 0, 0.1); border-radius:5px; font-weight:bold; border: 1px solid rgba(255,152,0,0.3);"><i class="fas fa-user-plus"></i> GamerTransfer</a>
             </div>
         </div>
     </section>
 
     <section id="roster" class="page-section">
         <div class="container" style="padding-top: 60px;">
-            <h2 style="text-align:center; text-transform:uppercase; letter-spacing:10px;">The Rosters</h2>
+            <h2 style="text-align:center; text-transform:uppercase; letter-spacing:10px; margin-bottom: 50px;">The Rosters</h2>
             
             <h3 style="color:var(--primary); border-left:4px solid var(--primary); padding-left:15px; margin: 40px 0 20px;">FLINTA SQUAD</h3>
             <div class="roster-grid" id="flinta-roster"></div>
@@ -169,20 +188,24 @@
     </section>
 
     <footer>
-        <p>&copy; 2026 EVERBLOOM GAMING</p>
+        <p style="font-weight: 900; letter-spacing: 2px;">&copy; 2026 EVERBLOOM GAMING</p>
+        <div style="margin-top: 20px;">
+            <a href="legal.html" class="legal-link">Imprint / Impressum</a><br>
+            <small style="color:#444; margin-top:10px; display:block;">All game assets &copy; Riot Games.</small>
+        </div>
     </footer>
 
     <script>
         const players = {
             flinta: [
-                { name: "Rubyxcube", role: "Duelist", img: "jett.png", rank: "Silver 1", rankClass: "rank-silver" },
-                { name: "Zylicent", role: "Duelist", img: "iso.png", rank: "Bronze 3", rankClass: "rank-bronze" },
-                { name: "AURØRA", role: "Controller", img: "brim.png", rank: "Silver 2", rankClass: "rank-silver" },
-                { name: "Mondi", role: "Flex", img: "jett.png", rank: "Gold 2", rankClass: "rank-gold" }
+                { name: "Rubyxcube", role: "Duelist", img: "jett.png", rank: "Silver 1", rankClass: "rank-silver", x: "https://x.com/x2_zelda", tracker: "https://tracker.gg/valorant/profile/riot/rubyxcube%23000/overview" },
+                { name: "Zylicent", role: "Duelist", img: "iso.png", rank: "Bronze 3", rankClass: "rank-bronze", x: "https://x.com/Eliyna_vlr", tracker: "https://tracker.gg/valorant/profile/riot/Zylicent%23vlr/overview" },
+                { name: "AURØRA", role: "Controller", img: "brim.png", rank: "Silver 2", rankClass: "rank-silver", x: "https://x.com/tqrmcc", tracker: "https://tracker.gg/valorant/profile/riot/AURØRA%23tqr/overview" },
+                { name: "Mondi", role: "Flex", img: "jett.png", rank: "Gold 2", rankClass: "rank-gold", x: "https://x.com/just_mondii", tracker: "https://tracker.gg/valorant/profile/riot/Mondi%23666/overview" }
             ],
             staff: [
-                { name: "WalmartReyna", role: "Manager", img: "everbloomlogo.png", rank: "Staff", rankClass: "rank-staff" },
-                { name: "siiko", role: "Coach", img: "everbloomlogo.png", rank: "Staff", rankClass: "rank-staff" }
+                { name: "WalmartReyna", role: "Manager", img: "everbloomlogo.png", rank: "Staff", rankClass: "rank-staff", x: "https://x.com/wavvybecci" },
+                { name: "siiko", role: "Coach", img: "everbloomlogo.png", rank: "Staff", rankClass: "rank-staff", x: "" }
             ]
         };
 
@@ -201,18 +224,22 @@
         }
 
         function renderRoster() {
-            // Flinta
+            // Flinta mit X und Tracker
             document.getElementById('flinta-roster').innerHTML = players.flinta.map(p => `
                 <div class="player-card">
                     <img src="${p.img}" class="agent-img">
+                    <img src="valologowhite.png" class="valo-v-bg">
                     <div class="card-content">
-                        <small style="color:var(--primary)">${p.role}</small>
+                        <small style="color:var(--primary); font-weight:bold; text-transform:uppercase;">${p.role}</small>
                         <div style="font-size:1.5rem; font-weight:900;">${p.name}</div>
                         <div class="rank-tag ${p.rankClass}">${p.rank}</div>
+                        <div class="card-socials">
+                            <a href="${p.x}" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="${p.tracker}" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
+                        </div>
                     </div>
                 </div>`).join('') + '<div class="player-card join-card">JOIN SQUAD</div>';
 
-            // Male
             document.getElementById('male-roster').innerHTML = Array(5).fill('<div class="player-card join-card">COMING SOON</div>').join('');
 
             // Staff
@@ -220,9 +247,10 @@
                 <div class="player-card">
                     <img src="${p.img}" class="staff-bg-logo">
                     <div class="card-content">
-                        <small style="color:var(--primary)">${p.role}</small>
+                        <small style="color:var(--primary); font-weight:bold; text-transform:uppercase;">${p.role}</small>
                         <div style="font-size:1.5rem; font-weight:900;">${p.name}</div>
                         <div class="rank-tag ${p.rankClass}">${p.rank}</div>
+                        ${p.x ? `<div class="card-socials"><a href="${p.x}" target="_blank"><i class="fa-brands fa-x-twitter"></i></a></div>` : ''}
                     </div>
                 </div>`).join('');
         }
