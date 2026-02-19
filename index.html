@@ -44,14 +44,21 @@
         .info-list { list-style: none; padding: 0; margin-top: 20px; }
         .info-list li { margin-bottom: 15px; color: #ccc; display: flex; align-items: center; gap: 15px; }
 
+        /* APPLY BUTTON */
+        .apply-container { text-align: center; margin: 40px 0; }
+        .apply-btn { 
+            position: relative; display: inline-block; background: var(--primary); color: white; padding: 22px 65px; border-radius: 4px; text-decoration: none; font-weight: 900; text-transform: uppercase; letter-spacing: 4px; overflow: hidden; transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); box-shadow: 0 0 25px rgba(255, 70, 85, 0.4); animation: pulse-glow 2.5s infinite;
+        }
+        @keyframes pulse-glow { 0%, 100% { box-shadow: 0 0 15px rgba(255, 70, 85, 0.4); transform: scale(1); } 50% { box-shadow: 0 0 35px rgba(255, 70, 85, 0.7); transform: scale(1.02); } }
+
         /* SOCIALS */
         .social-row { display: flex; justify-content: center; gap: 15px; margin: 40px 0; flex-wrap: wrap; }
         .social-row a { background: rgba(255,255,255,0.05); padding: 15px 25px; border-radius: 5px; color: white; text-decoration: none; font-weight: bold; border: 1px solid rgba(255,255,255,0.1); transition: 0.3s; display: inline-flex; align-items: center; gap: 10px; }
-        .social-row a i.fa-x-twitter { color: white; } /* X Logo weiß */
+        .social-row a i.fa-x-twitter { color: white; }
         .social-row a.dc-link { border-color: var(--discord); color: var(--discord); }
         .social-row a.gt-link { border-color: var(--gt-orange); color: var(--gt-orange); }
         
-        /* GAMERTRANSFER BANNER VERKLEINERT */
+        /* GAMERTRANSFER BANNER */
         .gt-banner-box { text-align: center; margin: 30px 0; }
         .gt-banner-box img { width: 180px; transition: 0.3s; opacity: 0.8; }
         .gt-banner-box img:hover { opacity: 1; transform: scale(1.05); }
@@ -73,7 +80,7 @@
         .rank-bronze { border-color: var(--rank-bronze); color: var(--rank-bronze); box-shadow: 0 0 12px var(--rank-bronze); text-shadow: 0 0 5px var(--rank-bronze); }
         .rank-staff { border-color: var(--primary); color: var(--primary); box-shadow: 0 0 12px var(--primary); text-shadow: 0 0 5px var(--primary); }
         
-        .card-links a i.fa-x-twitter { color: white; } /* X Logo im Roster weiß */
+        .card-links a i.fa-x-twitter { color: white; }
         .tracker-v { height: 20px; width: auto; }
 
         footer { text-align: center; padding: 60px 20px; background: rgba(0,0,0,0.8); border-top: 2px solid var(--primary); margin-top: 50px; }
@@ -103,22 +110,20 @@
             <div class="info-card">
                 <h3><i class="fas fa-seedling"></i> Who We Are</h3>
                 <p style="color:#ccc; line-height:1.9; font-size: 1.1rem;">
-                    Everbloom is an independent E-Sports organization founded in 2026, built on the pillars of competitive integrity, professional structure, and relentless ambition.
+                    Everbloom is an independent E-Sports organization founded in 2026, built on the pillars of competitive integrity, professional structure, and relentless ambition. In the high-stakes world of Valorant, we don't just play—we evolve.
                 </p>
             </div>
 
-            <div class="gt-banner-box">
-                <a href="https://gamertransfer.com" target="_blank">
-                    <img src="https://gamertransfer.com/banner/banner300_w.png" alt="GamerTransfer">
-                </a>
+            <div class="apply-container">
+                <a href="https://forms.gle/VeNmZo9DkJo35PR5A" target="_blank" class="apply-btn">Apply Now</a>
             </div>
 
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
                 <div class="info-card">
                     <h3><i class="fas fa-bullhorn"></i> Latest News</h3>
                     <ul class="info-list">
-                        <li><i class="fas fa-fire"></i> Official Launch of the Everbloom Web Portal 2026!</li>
-                        <li><i class="fas fa-search"></i> Scouting for Male Roster is <strong>OPEN</strong>.</li>
+                        <li><i class="fas fa-check-circle"></i> Roster building in progress - Stay tuned!</li>
+                        <li><i class="fas fa-search"></i> Scouting for <strong>Male Roster</strong> (Asc/Imm+) is <strong>ACTIVE</strong>.</li>
                         <li><i class="fas fa-venus-mars"></i> FLINTA Roster currently at 4/5 members.</li>
                     </ul>
                 </div>
@@ -126,9 +131,16 @@
                     <h3><i class="fas fa-trophy"></i> Our Goals</h3>
                     <ul class="info-list">
                         <li><i class="fas fa-star"></i> Establish dominance in the Premier Division.</li>
+                        <li><i class="fas fa-brain"></i> Cultivate a <strong>Strong Mentality</strong> within all teams.</li>
                         <li><i class="fas fa-crown"></i> Qualify for regional Challengers 2026.</li>
                     </ul>
                 </div>
+            </div>
+
+            <div class="gt-banner-box">
+                <a href="https://gamertransfer.com" target="_blank">
+                    <img src="https://gamertransfer.com/banner/banner300_w.png" alt="GamerTransfer">
+                </a>
             </div>
 
             <div class="social-row">
