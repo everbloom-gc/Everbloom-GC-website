@@ -38,7 +38,7 @@
         .logo-main { width: 110px; filter: drop-shadow(0 0 15px var(--primary)); margin-bottom: 20px; }
         h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); margin: 0; letter-spacing: 12px; text-transform: uppercase; font-weight: 900; }
 
-        /* INFO CARDS (Home Site) */
+        /* INFO CARDS (Home) */
         .info-card { background: rgba(17, 27, 36, 0.85); padding: 40px; border-radius: 12px; border-top: 4px solid var(--primary); margin-bottom: 25px; backdrop-filter: blur(10px); }
         .info-card h3 { display: flex; align-items: center; gap: 15px; text-transform: uppercase; letter-spacing: 2px; margin-top: 0; color: var(--primary); }
         .info-list { list-style: none; padding: 0; margin-top: 20px; }
@@ -47,29 +47,9 @@
         /* FANCY APPLY BUTTON */
         .apply-container { text-align: center; margin: 40px 0; }
         .apply-btn { 
-            position: relative;
-            display: inline-block; 
-            background: var(--primary); 
-            color: white; 
-            padding: 22px 65px; 
-            border-radius: 4px; 
-            text-decoration: none; 
-            font-weight: 900; 
-            text-transform: uppercase; 
-            letter-spacing: 4px; 
-            overflow: hidden;
-            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
-            box-shadow: 0 0 25px rgba(255, 70, 85, 0.4);
-            animation: pulse-glow 2.5s infinite;
+            position: relative; display: inline-block; background: var(--primary); color: white; padding: 22px 65px; border-radius: 4px; text-decoration: none; font-weight: 900; text-transform: uppercase; letter-spacing: 4px; overflow: hidden; transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); box-shadow: 0 0 25px rgba(255, 70, 85, 0.4); animation: pulse-glow 2.5s infinite;
         }
-        .apply-btn::before {
-            content: '';
-            position: absolute;
-            top: 0; left: -100%;
-            width: 50%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-            animation: shine 3s infinite;
-        }
+        .apply-btn::before { content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent); animation: shine 3s infinite; }
         @keyframes shine { 0% { left: -100%; } 20% { left: 100%; } 100% { left: 100%; } }
         @keyframes pulse-glow { 0%, 100% { box-shadow: 0 0 15px rgba(255, 70, 85, 0.4); transform: scale(1); } 50% { box-shadow: 0 0 35px rgba(255, 70, 85, 0.7); transform: scale(1.02); } }
 
@@ -82,13 +62,7 @@
         .player-card { background-color: rgba(17, 27, 36, 0.9); border-radius: 12px; min-height: 480px; width: 240px; position: relative; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); display: flex; flex-direction: column; transition: 0.3s; }
         
         /* FETTE GESTRICHELTE SLOTS */
-        .player-card.empty-slot {
-            border: 6px dashed rgba(255, 70, 85, 0.2); 
-            background: rgba(255, 70, 85, 0.03);
-            justify-content: center;
-            align-items: center;
-            opacity: 0.8;
-        }
+        .player-card.empty-slot { border: 6px dashed rgba(255, 70, 85, 0.2); background: rgba(255, 70, 85, 0.03); justify-content: center; align-items: center; opacity: 0.8; }
 
         .agent-img { position: absolute; left: 50%; bottom: 10%; height: 75%; transform: translateX(-50%); z-index: 2; -webkit-mask-image: linear-gradient(to top, black 80%, transparent 100%); pointer-events: none; }
         .card-content { position: relative; z-index: 10; padding: 25px; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; background: linear-gradient(to top, rgba(17, 27, 36, 1) 35%, transparent 100%); flex-grow: 1; }
@@ -100,9 +74,10 @@
         .rank-bronze { border-color: var(--rank-bronze); color: var(--rank-bronze); box-shadow: 0 0 10px var(--rank-bronze); }
         .rank-staff { border-color: var(--primary); color: var(--primary); box-shadow: 0 0 10px var(--primary); }
 
-        .card-links { display: flex; gap: 15px; margin-top: 10px; }
-        .card-links a { color: white; text-decoration: none; transition: 0.3s; font-size: 1.1rem; }
-        .tracker-v { height: 18px; filter: brightness(2); }
+        .card-links { display: flex; gap: 15px; margin-top: 10px; align-items: center; }
+        .card-links a { color: white; text-decoration: none; transition: 0.3s; display: flex; align-items: center; }
+        .tracker-v { height: 20px; width: auto; transition: 0.3s; }
+        .card-links a:hover { transform: scale(1.2); }
 
         /* SOCIALS COLORED */
         .social-row { display: flex; justify-content: center; gap: 15px; margin: 40px 0; flex-wrap: wrap; }
@@ -110,10 +85,8 @@
         .social-row a.dc-link { border-color: var(--discord); color: var(--discord); }
         .social-row a.gt-link { border-color: var(--gt-orange); color: var(--gt-orange); }
 
-        /* FOOTER & IMPRESSUM */
         footer { text-align: center; padding: 60px 20px; background: rgba(0,0,0,0.8); border-top: 2px solid var(--primary); margin-top: 50px; }
         .impressum-content { max-width: 800px; margin: 20px auto 0; font-size: 0.85rem; color: #888; line-height: 1.6; border-top: 1px solid #222; padding-top: 20px; }
-        .impressum-content strong { color: #ccc; }
     </style>
 </head>
 <body>
@@ -168,10 +141,6 @@
                 </div>
             </div>
 
-            <div class="gt-section" style="text-align:center; margin-top:40px;">
-                <a href="https://gamertransfer.com"><img src="https://gamertransfer.com/banner/banner300_w.png" alt="spielersuche" border="0" /></a>
-            </div>
-
             <div class="social-row">
                 <a href="https://x.com/BloomEver85575" target="_blank"><i class="fa-brands fa-x-twitter"></i> X / Twitter</a>
                 <a href="https://discord.gg/Cp2J72hesH" target="_blank" class="dc-link"><i class="fa-brands fa-discord"></i> Discord</a>
@@ -210,8 +179,8 @@
             flinta: [
                 { name: "Rubyxcube", role: "Duelist", img: "jett.png", rank: "Silver 1", rankClass: "rank-silver", x: "https://x.com/x2_zelda", tracker: "https://tracker.gg/valorant/profile/riot/Rubyxcube%23000/overview" },
                 { name: "Zylicent", role: "Duelist", img: "iso.png", rank: "Bronze 3", rankClass: "rank-bronze", x: "https://x.com/Eliyna_vlr", tracker: "https://tracker.gg/valorant/profile/riot/Zylicent%23000/overview" },
-                { name: "AURØRA", role: "Controller", img: "brim.png", rank: "Silver 2", rankClass: "rank-silver", x: "https://x.com/tqrmcc", tracker: "#" },
-                { name: "Mondi", role: "Flex", img: "jett.png", rank: "Gold 2", rankClass: "rank-gold", x: "https://x.com/just_mondii", tracker: "#" }
+                { name: "AURØRA", role: "Controller", img: "brim.png", rank: "Silver 2", rankClass: "rank-silver", x: "https://x.com/tqrmcc", tracker: "https://tracker.gg/valorant/profile/riot/AURØRA%23IGNIS/overview?playlist=premier&platform=pc" },
+                { name: "Mondi", role: "Flex", img: "jett.png", rank: "Gold 2", rankClass: "rank-gold", x: "https://x.com/just_mondii", tracker: "https://tracker.gg/valorant/profile/riot/Mondi%23rawr/overview?playlist=premier&platform=pc" }
             ],
             staff: [
                 { name: "WalmartReyna", role: "Manager", img: "everbloomlogo.png", rank: "Staff", rankClass: "rank-staff", x: "https://x.com/wavvybecci" },
@@ -219,7 +188,7 @@
             ]
         };
 
-        const trackerIcon = `<img src="https://trackercdn.com/cdn/tracker.gg/valorant/icons/v2/logo_white.svg" class="tracker-v">`;
+        const trackerIconPath = "valotrackerlog.png";
 
         function toggleNav() { document.getElementById('navOverlay').classList.toggle('active'); }
         
@@ -242,15 +211,15 @@
                         <div class="rank-tag ${p.rankClass}">${p.rank}</div>
                         <div class="card-links">
                             <a href="${p.x}" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
-                            <a href="${p.tracker}" target="_blank">${trackerIcon}</a>
+                            <a href="${p.tracker}" target="_blank" title="Tracker.gg"><img src="${trackerIconPath}" class="tracker-v"></a>
                         </div>
                     </div>
                 </div>`).join('') + `<div class="player-card empty-slot" style="font-weight:900; color:var(--primary); font-size:1.5rem;">JOIN US</div>`;
 
-            // MALE
+            // MALE PREMIER
             document.getElementById('male-roster').innerHTML = Array(5).fill('<div class="player-card empty-slot" style="font-weight:900; color:var(--primary);">SCOUTING...</div>').join('');
             
-            // STAFF
+            // MANAGEMENT & COACHING
             document.getElementById('staff-roster').innerHTML = players.staff.map(p => `
                 <div class="player-card">
                     <img src="${p.img}" class="agent-img" style="height:35%; bottom:35%; opacity:0.2">
@@ -258,7 +227,9 @@
                         <span style="font-size:0.7rem; color:var(--primary); font-weight:bold;">${p.role}</span>
                         <div style="font-size:1.4rem; font-weight:900;">${p.name}</div>
                         <div class="rank-tag ${p.rankClass}">${p.rank}</div>
-                        <div class="card-links"><a href="${p.x}" target="_blank"><i class="fa-brands fa-x-twitter"></i></a></div>
+                        <div class="card-links">
+                            <a href="${p.x}" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                        </div>
                     </div>
                 </div>`).join('');
         }
