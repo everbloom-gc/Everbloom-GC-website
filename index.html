@@ -14,6 +14,7 @@
             --bg: #060b10;
             --card-bg: #111b24;
             --text: #ffffff;
+            --rank-platinum: #54cbff;
             --rank-gold: #ffcf4b;
             --rank-silver: #ced4da;
             --rank-bronze: #cd7f32;
@@ -84,6 +85,7 @@
             padding: 6px 15px; border-radius: 4px; font-size: 0.75rem; border: 1px solid; 
             margin: 8px 0; display: inline-block; font-weight: 800; text-transform: uppercase;
         }
+        .rank-platinum { border-color: var(--rank-platinum); color: var(--rank-platinum); box-shadow: 0 0 15px rgba(84, 203, 255, 0.5); }
         .rank-gold { border-color: var(--rank-gold); color: var(--rank-gold); box-shadow: 0 0 15px rgba(255, 207, 75, 0.5); }
         .rank-silver { border-color: var(--rank-silver); color: var(--rank-silver); box-shadow: 0 0 15px rgba(206, 212, 218, 0.5); }
         .rank-bronze { border-color: var(--rank-bronze); color: var(--rank-bronze); box-shadow: 0 0 15px rgba(205, 127, 50, 0.5); }
@@ -205,7 +207,7 @@
             <h3 style="text-align:center; color:var(--primary); margin-top:40px;">MALE ROSTER</h3>
             <div class="roster-grid" id="male-roster"></div>
 
-            <h3 style="text-align:center; color:var(--primary); margin-top:40px;">MANAGEMENT & COACH</h3>
+            <h3 style="text-align:center; color:var(--primary); margin-top:40px;">MANAGEMENT</h3>
             <div class="roster-grid" id="staff-roster"></div>
         </div>
     </section>
@@ -224,12 +226,11 @@
                 { name: "Zylicent", role: "Duelist", img: "iso.png", rank: "Bronze 3", rankClass: "rank-bronze", twitter: "https://x.com/Eliyna_vlr", tracker: "https://tracker.gg/valorant/profile/riot/Zylicent%232005/overview?platform=pc&playlist=competitive&season=3ea2b318-423b-cf86-25da-7cbb0eefbe2d" },
                 { name: "AURØRA", role: "Controller", img: "brim.png", rank: "Silver 2", rankClass: "rank-silver", twitter: "https://x.com/tqrmcc", tracker: "https://tracker.gg/valorant/profile/riot/AUR%C3%98RA%23IGNIS/overview?platform=pc&playlist=competitive&season=3ea2b318-423b-cf86-25da-7cbb0eefbe2d" },
                 { name: "Mondi", role: "Flex", img: "jett.png", rank: "Gold 2", rankClass: "rank-gold", twitter: "https://x.com/just_mondii", tracker: "https://tracker.gg/valorant/profile/riot/Mondi%23rawr/overview?playlist=premier&platform=pc" },
-                { name: "siiko", role: "Sentinel", img: "killjoy.png", rank: "Gold 1", rankClass: "rank-gold", twitter: "https://x.com/JoeyMattew52904", tracker: "https://tracker.gg/valorant/profile/riot/Siko%23Gold/overview?platform=pc&playlist=competitive&season=3ea2b318-423b-cf86-25da-7cbb0eefbe2d" }
+                { name: "siiko", role: "Coach & Sentinel", img: "killjoy.png", rank: "Platinum 1", rankClass: "rank-platinum", twitter: "https://x.com/JoeyMattew52904", tracker: "https://tracker.gg/valorant/profile/riot/Siko%23Gold/overview?platform=pc&playlist=competitive&season=3ea2b318-423b-cf86-25da-7cbb0eefbe2d" }
             ],
             male: [],
             staff: [
-                { name: "WalmartReyna", role: "Manager", img: "", rank: "Staff", rankClass: "rank-staff", twitter: "https://x.com/BloomEver85575", tracker: "https://tracker.gg/valorant/profile/riot/WalmartReyna%23Bloom/overview" },
-                { name: "siiko", role: "Coach", img: "everbloomlogo.png", rank: "Staff", rankClass: "rank-staff", twitter: "https://x.com/JoeyMattew52904", tracker: "https://tracker.gg/valorant/profile/riot/Siko%23Gold/overview?platform=pc&playlist=competitive&season=3ea2b318-423b-cf86-25da-7cbb0eefbe2d" }
+                { name: "WalmartReyna", role: "Manager", img: "", rank: "Staff", rankClass: "rank-staff", twitter: "https://x.com/BloomEver85575", tracker: "https://tracker.gg/valorant/profile/riot/WalmartReyna%23Bloom/overview" }
             ]
         };
 
