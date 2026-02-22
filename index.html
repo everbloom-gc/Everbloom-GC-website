@@ -96,7 +96,7 @@
             padding: 20px 0; 
             scroll-snap-type: x mandatory;
             flex-wrap: wrap; 
-            justify-content: center; /* Zentriert die Karten horizontal */
+            justify-content: center; 
             scrollbar-width: none; 
             -ms-overflow-style: none; 
         }
@@ -167,7 +167,7 @@
                     <ul style="list-style:none; padding:0; color:#ccc; line-height:2.2;">
                         <li><i class="fas fa-check-circle" style="color:var(--primary)"></i> Roster building in progress - Stay tuned!</li>
                         <li><i class="fas fa-search" style="color:var(--primary)"></i> Scouting for <b>Male Roster</b> (Asc/Imm+)</li>
-                        <li><i class="fas fa-venus-mars" style="color:var(--primary)"></i> FLINTA Roster currently at 4/5 members.</li>
+                        <li><i class="fas fa-venus-mars" style="color:var(--primary)"></i> FLINTA Roster currently at 5/5 members.</li>
                     </ul>
                 </div>
 
@@ -223,12 +223,13 @@
                 { name: "Rubyxcube", role: "Duelist", img: "jett.png", rank: "Silver 2", rankClass: "rank-silver", twitter: "https://x.com/x2_zelda", tracker: "https://tracker.gg/valorant/profile/riot/Rubyxcube%23EBM/overview?playlist=competitive&platform=pc" },
                 { name: "Zylicent", role: "Duelist", img: "iso.png", rank: "Bronze 3", rankClass: "rank-bronze", twitter: "https://x.com/Eliyna_vlr", tracker: "https://tracker.gg/valorant/profile/riot/Zylicent%232005/overview?platform=pc&playlist=competitive&season=3ea2b318-423b-cf86-25da-7cbb0eefbe2d" },
                 { name: "AURØRA", role: "Controller", img: "brim.png", rank: "Silver 2", rankClass: "rank-silver", twitter: "https://x.com/tqrmcc", tracker: "https://tracker.gg/valorant/profile/riot/AUR%C3%98RA%23IGNIS/overview?platform=pc&playlist=competitive&season=3ea2b318-423b-cf86-25da-7cbb0eefbe2d" },
-                { name: "Mondi", role: "Flex", img: "jett.png", rank: "Gold 2", rankClass: "rank-gold", twitter: "https://x.com/just_mondii", tracker: "https://tracker.gg/valorant/profile/riot/Mondi%23rawr/overview?playlist=premier&platform=pc" }
+                { name: "Mondi", role: "Flex", img: "jett.png", rank: "Gold 2", rankClass: "rank-gold", twitter: "https://x.com/just_mondii", tracker: "https://tracker.gg/valorant/profile/riot/Mondi%23rawr/overview?playlist=premier&platform=pc" },
+                { name: "siiko", role: "Sentinel", img: "killjoy.png", rank: "Gold 1", rankClass: "rank-gold", twitter: "https://x.com/JoeyMattew52904", tracker: "https://tracker.gg/valorant/profile/riot/Siko%23Gold/overview?platform=pc&playlist=competitive&season=3ea2b318-423b-cf86-25da-7cbb0eefbe2d" }
             ],
             male: [],
             staff: [
-                { name: "WalmartReyna", role: "Manager", img: "everbloomlogo.png", rank: "Staff", rankClass: "rank-staff", twitter: "https://x.com/BloomEver85575", tracker: "https://tracker.gg/valorant/profile/riot/WalmartReyna%23Bloom/overview" },
-                { name: "siiko", role: "Coach", img: "everbloomlogo.png", rank: "Staff", rankClass: "rank-staff", twitter: "", tracker: "" }
+                { name: "WalmartReyna", role: "Manager", img: "", rank: "Staff", rankClass: "rank-staff", twitter: "https://x.com/BloomEver85575", tracker: "https://tracker.gg/valorant/profile/riot/WalmartReyna%23Bloom/overview" },
+                { name: "siiko", role: "Coach", img: "everbloomlogo.png", rank: "Staff", rankClass: "rank-staff", twitter: "https://x.com/JoeyMattew52904", tracker: "https://tracker.gg/valorant/profile/riot/Siko%23Gold/overview?platform=pc&playlist=competitive&season=3ea2b318-423b-cf86-25da-7cbb0eefbe2d" }
             ]
         };
 
@@ -246,7 +247,7 @@
             // FLINTA
             document.getElementById('flinta-roster').innerHTML = players.flinta.map(p => `
                 <div class="player-card">
-                    <img src="${p.img}" class="player-img" onerror="this.style.display='none'">
+                    ${p.img ? `<img src="${p.img}" class="player-img" onerror="this.style.display='none'">` : ''}
                     <div class="card-content">
                         <small style="color:var(--primary); font-weight:bold; text-transform:uppercase;">${p.role}</small>
                         <div style="font-size:1.4rem; font-weight:900; margin-bottom:5px;">${p.name}</div>
@@ -256,7 +257,7 @@
                             ${p.tracker && p.tracker !== "" && p.tracker !== "#" ? `<a href="${p.tracker}" target="_blank"><img src="valotrackerlog.png" class="tracker-icon" alt="Tracker"></a>` : ''}
                         </div>
                     </div>
-                </div>`).join('') + '<div class="player-card join-card" onclick="window.open(\'https://forms.gle/VeNmZo9DkJo35PR5A\')">JOIN SQUAD</div>';
+                </div>`).join('') + (players.flinta.length < 5 ? '<div class="player-card join-card" onclick="window.open(\'https://forms.gle/VeNmZo9DkJo35PR5A\')">JOIN SQUAD</div>' : '');
 
             // MALE
             document.getElementById('male-roster').innerHTML = '<div class="player-card join-card" style="flex: 0 0 100%; max-width: 300px; border-style: solid;">COMING SOON<br><small style="font-weight:normal; opacity:0.6; margin-top:10px;">Scouting in Progress</small></div>';
@@ -264,7 +265,7 @@
             // STAFF
             document.getElementById('staff-roster').innerHTML = players.staff.map(p => `
                 <div class="player-card">
-                    <img src="${p.img}" class="player-img" onerror="this.style.display='none'">
+                    ${p.img ? `<img src="${p.img}" class="player-img" onerror="this.style.display='none'">` : ''}
                     <div class="card-content">
                         <small style="color:var(--primary); font-weight:bold; text-transform:uppercase;">${p.role}</small>
                         <div style="font-size:1.4rem; font-weight:900; margin-bottom:5px;">${p.name}</div>
@@ -279,5 +280,3 @@
     </script>
 </body>
 </html>
-
-
