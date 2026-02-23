@@ -77,6 +77,11 @@
         }
         .apply-btn:hover { transform: scale(1.05); box-shadow: 0 0 40px rgba(212, 23, 91, 0.7); }
         
+        /* GT Banner Styling */
+        .gt-banner-box { text-align: center; margin-top: 40px; }
+        .gt-banner-box img { max-width: 250px; opacity: 0.8; transition: 0.3s; border-radius: 4px; }
+        .gt-banner-box img:hover { opacity: 1; transform: scale(1.02); }
+
         .social-links { display: flex; justify-content: center; gap: 15px; margin-top: 20px; flex-wrap: wrap; }
         .social-btn { 
             padding: 12px 25px; border-radius: 5px; text-decoration: none; color: white; 
@@ -96,7 +101,6 @@
             transition: 0.3s;
         }
         
-        /* Glüheffekte für Ranks */
         .rank-radiant { border-color: var(--rank-radiant); color: var(--rank-radiant); box-shadow: 0 0 15px var(--rank-radiant); text-shadow: 0 0 5px var(--rank-radiant); }
         .rank-ascendant { border-color: var(--rank-ascendant); color: var(--rank-ascendant); box-shadow: 0 0 15px var(--rank-ascendant); text-shadow: 0 0 5px var(--rank-ascendant); }
         .rank-immortal { border-color: var(--rank-immortal); color: var(--rank-immortal); box-shadow: 0 0 15px var(--rank-immortal); text-shadow: 0 0 5px var(--rank-immortal); }
@@ -104,11 +108,11 @@
         .rank-gold { border-color: var(--rank-gold); color: var(--rank-gold); box-shadow: 0 0 8px var(--rank-gold); }
         .rank-silver { border-color: var(--rank-silver); color: var(--rank-silver); }
         .rank-bronze { border-color: var(--rank-bronze); color: var(--rank-bronze); }
-        .rank-staff { border-color: var(--primary); color: var(--primary); box-shadow: 0 0 15px var(--primary); text-shadow: 0 0 5px var(--primary); }
+        /* Reduziertes Glow für Staff */
+        .rank-staff { border-color: rgba(212, 23, 91, 0.5); color: var(--primary); font-weight: 700; box-shadow: none; text-shadow: none; }
 
         .roster-grid { display: flex; gap: 20px; overflow-x: auto; padding: 20px 0; flex-wrap: wrap; justify-content: center; scrollbar-width: none; }
         
-        /* Player Card Effekt */
         .player-card { 
             flex: 0 0 240px; background: rgba(10, 15, 20, 0.95); border-radius: 10px; 
             min-height: 380px; position: relative; overflow: hidden; 
@@ -168,10 +172,10 @@
             <div class="info-card">
                 <h3><i class="fas fa-seedling"></i> ABOUT US</h3>
                 <p style="color:#ccc; line-height:1.8; font-size: 1rem;">
-                    Founded in early 2026, <b>Everbloom</b> is an elite independent E-Sports organization dedicated to pushing the boundaries of competitive Valorant. We specialize in the <b>Ascendant to Radiant</b> tier, providing a professional infrastructure for high-potential players to refine their tactical prowess and individual skill.
+                    Founded in early 2026, <b>Everbloom</b> is an elite independent E-Sports organization dedicated to pushing the boundaries of competitive Valorant. We specialize in the <b>Ascendant to Radiant</b> tier.
                 </p>
                 <p style="color:#ccc; line-height:1.8; font-size: 1rem;">
-                    Our philosophy is simple: <b>"Bloom or Decay"</b>. In the ever-evolving landscape of tactical shooters, standing still is equivalent to falling behind.
+                    Unser Fokus liegt auf Professionalität und mentaler Stärke im DACH-Raum.
                 </p>
             </div>
 
@@ -183,20 +187,23 @@
                 <div class="info-card">
                     <h3><i class="fas fa-bullhorn"></i> LATEST NEWS</h3>
                     <ul style="list-style:none; padding:0; color:#ccc; line-height:2.2;">
-                        <li><i class="fas fa-search" style="color:var(--primary)"></i> Scouting <b>Male Roster</b> (High ELO)</li>
+                        <li><i class="fas fa-search" style="color:var(--primary)"></i> Scouting <b>Male Roster</b></li>
                         <li><i class="fas fa-check-circle" style="color:var(--primary)"></i> FLINTA Roster ready.</li>
-                        <li><i class="fas fa-calendar" style="color:var(--primary)"></i> Tryouts start <b>March 2026</b>.</li>
                     </ul>
                 </div>
-
                 <div class="info-card">
                     <h3><i class="fas fa-trophy"></i> TEAM GOALS</h3>
                     <ul style="list-style:none; padding:0; color:#ccc; line-height:2.2;">
-                        <li><i class="fas fa-star" style="color:var(--primary)"></i> Immortal/Radiant Avg. Rank.</li>
-                        <li><i class="fas fa-shield-alt" style="color:var(--primary)"></i> Tier-1 Scrim Culture.</li>
-                        <li><i class="fas fa-rocket" style="color:var(--primary)"></i> Qualify for DACH Challengers.</li>
+                        <li><i class="fas fa-star" style="color:var(--primary)"></i> Reach Elite Division.</li>
+                        <li><i class="fas fa-rocket" style="color:var(--primary)"></i> VRC DACH Qualification.</li>
                     </ul>
                 </div>
+            </div>
+
+            <div class="gt-banner-box">
+                <a href="https://gamertransfer.com" target="_blank">
+                    <img src="https://gamertransfer.com/banner/banner300_w.png" alt="spielersuche" border="0" />
+                </a>
             </div>
 
             <div class="social-links">
