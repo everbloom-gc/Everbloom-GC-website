@@ -70,61 +70,37 @@
         
         .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
 
-        /* Primary Button */
-        .apply-btn { 
-            display: inline-block; background: var(--primary); color: white; 
-            padding: 18px 50px; border-radius: 6px; text-decoration: none; 
-            font-weight: 900; text-transform: uppercase; letter-spacing: 4px; 
-            transition: 0.3s; box-shadow: 0 0 25px rgba(212, 23, 91, 0.4); 
-        }
-        .apply-btn:hover { transform: scale(1.05); box-shadow: 0 0 40px rgba(212, 23, 91, 0.7); }
+        /* GamerTransfer Banner */
+        .gt-banner-container { text-align: center; margin-top: 50px; }
+        .gt-banner-container img { max-width: 100%; height: auto; transition: 0.3s; filter: drop-shadow(0 0 10px rgba(212, 23, 91, 0.2)); }
+        .gt-banner-container img:hover { transform: scale(1.02); filter: drop-shadow(0 0 20px var(--primary)); }
 
         /* Socials */
-        .social-links { display: flex; justify-content: center; gap: 15px; margin-top: 40px; flex-wrap: wrap; }
+        .social-links { display: flex; justify-content: center; gap: 15px; margin-top: 20px; flex-wrap: wrap; }
         .social-btn { 
             padding: 12px 25px; border-radius: 5px; text-decoration: none; color: white; 
             font-weight: bold; display: flex; align-items: center; gap: 8px; font-size: 0.9rem;
             background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); transition: 0.3s;
         }
-        .social-btn.discord { background: rgba(88, 101, 242, 0.1); border-color: #5865F2; }
-        .social-btn.gt { background: rgba(255, 152, 0, 0.05); border-color: #ff9800; }
         .social-btn:hover { background: rgba(212, 23, 91, 0.15); border-color: var(--primary); transform: translateY(-3px); }
 
-        /* Roster Elements & INTENSE GLOW */
-        .rank-tag { 
-            padding: 6px 15px; border-radius: 4px; font-size: 0.75rem; border: 1px solid; 
-            margin: 8px 0; display: inline-block; font-weight: 800; text-transform: uppercase;
-        }
+        /* Rank GLOW Effects */
+        .rank-tag { padding: 6px 15px; border-radius: 4px; font-size: 0.75rem; border: 1px solid; margin: 8px 0; display: inline-block; font-weight: 800; text-transform: uppercase; }
         .rank-radiant { border-color: var(--rank-radiant); color: var(--rank-radiant); box-shadow: 0 0 20px rgba(255, 234, 174, 0.5); text-shadow: 0 0 5px var(--rank-radiant); }
         .rank-ascendant { border-color: var(--rank-ascendant); color: var(--rank-ascendant); box-shadow: 0 0 20px rgba(62, 240, 122, 0.5); text-shadow: 0 0 5px var(--rank-ascendant); }
         .rank-immortal { border-color: var(--rank-immortal); color: var(--rank-immortal); box-shadow: 0 0 20px rgba(180, 22, 62, 0.5); text-shadow: 0 0 5px var(--rank-immortal); }
         .rank-platinum { border-color: var(--rank-platinum); color: var(--rank-platinum); box-shadow: 0 0 10px rgba(84, 203, 255, 0.3); }
         .rank-gold { border-color: var(--rank-gold); color: var(--rank-gold); box-shadow: 0 0 10px rgba(255, 207, 75, 0.3); }
-        .rank-silver { border-color: var(--rank-silver); color: var(--rank-silver); }
-        .rank-bronze { border-color: var(--rank-bronze); color: var(--rank-bronze); }
         .rank-staff { border-color: var(--primary); color: var(--primary); box-shadow: 0 0 20px rgba(212, 23, 91, 0.5); text-shadow: 0 0 5px var(--primary); }
 
         .roster-grid { display: flex; gap: 20px; overflow-x: auto; padding: 20px 0; scroll-snap-type: x mandatory; flex-wrap: wrap; justify-content: center; scrollbar-width: none; }
-        .roster-grid::-webkit-scrollbar { display: none; }
-
-        .player-card { flex: 0 0 240px; background: rgba(10, 15, 20, 0.95); border-radius: 10px; min-height: 380px; position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); scroll-snap-align: start; transition: 0.3s; }
+        .player-card { flex: 0 0 240px; background: rgba(10, 15, 20, 0.95); border-radius: 10px; min-height: 380px; position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); transition: 0.3s; }
         .player-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.35; z-index: 1; transition: 0.4s; }
-        .player-card:hover .player-img { opacity: 0.6; transform: scale(1.08); }
         .card-content { position: absolute; bottom: 0; width: 100%; padding: 20px; background: linear-gradient(transparent, #060b10); z-index: 10; }
         
-        .join-card { border: 2px dashed var(--primary); display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--primary); font-weight: 900; cursor: pointer; text-align: center; padding: 25px; transition: 0.3s; }
-        .join-card:hover { background: rgba(212, 23, 91, 0.1); border-style: solid; box-shadow: inset 0 0 20px rgba(212, 23, 91, 0.2); }
+        .join-card { border: 2px dashed var(--primary); display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--primary); font-weight: 900; cursor: pointer; text-align: center; padding: 25px; }
 
-        .player-socials { display: flex; align-items: center; gap: 12px; margin-top: 10px; }
-        .player-socials a { color: white; opacity: 0.5; font-size: 1.1rem; transition: 0.3s; text-decoration: none; }
-        .player-socials a:hover { opacity: 1; color: var(--primary); }
-        .tracker-icon { width: 18px; height: 18px; object-fit: contain; }
-
-        /* Footer */
         footer { text-align: center; padding: 60px 20px; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 50px; }
-        .footer-copy { font-weight: 900; letter-spacing: 3px; font-size: 0.8rem; opacity: 0.6; }
-
-        /* Section Switching */
         .page-section { display: none; }
         .page-section.active { display: block; animation: fadeIn 0.6s ease-out; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
@@ -156,11 +132,11 @@
         <div class="container">
             <div class="info-card">
                 <h3><i class="fas fa-seedling"></i> ABOUT US</h3>
-                <p style="color:#ccc; line-height:1.8; font-size: 1rem;">
-                    Gegründet Anfang 2026, ist <b>Everbloom</b> weit mehr als nur ein Name – es ist ein Versprechen an die DACH E-Sports Szene. Wir sind eine unabhängige Organisation, die es sich zur Aufgabe gemacht hat, talentierte Spieler auf ihrem Weg von <b>Ascendant zu Radiant</b> zu begleiten und eine professionelle Struktur zu bieten, die man sonst nur bei großen Namen findet.
+                <p style="color:#ccc; line-height:1.8;">
+                    Founded in early 2026, <b>Everbloom</b> is more than just a name – it is a commitment to the DACH E-Sports scene. We are an independent organization dedicated to supporting talented players on their journey from <b>Ascendant to Radiant</b>, providing a professional structure usually only found in top-tier organizations.
                 </p>
-                <p style="color:#ccc; line-height:1.8; font-size: 1rem;">
-                    Unser Motto <b>"Bloom or Decay"</b> (Blühen oder Vergehen) treibt uns jeden Tag an. Im taktischen Shooter Valorant gibt es keinen Stillstand – wer sich nicht anpasst, wird abgehängt. Bei Everbloom setzen wir auf Disziplin, Teamgeist und eine unaufhaltsame Sieger-Mentalität. Wir schaffen eine Umgebung, in der taktisches Verständnis und individuelle Mechanik zu einer unschlagbaren Einheit verschmelzen.
+                <p style="color:#ccc; line-height:1.8;">
+                    Our motto <b>"Bloom or Decay"</b> drives us every day. In Valorant, there is no standing still – those who don't adapt are left behind. At Everbloom, we focus on discipline, team spirit, and an unstoppable winning mentality. We create an environment where tactical understanding and individual mechanics merge into a single, dominant force.
                 </p>
             </div>
 
@@ -173,25 +149,30 @@
                     <h3><i class="fas fa-bullhorn"></i> LATEST NEWS</h3>
                     <ul style="list-style:none; padding:0; color:#ccc; line-height:2.2;">
                         <li><i class="fas fa-search" style="color:var(--primary)"></i> Scouting <b>Male Roster</b> (High ELO)</li>
-                        <li><i class="fas fa-check-circle" style="color:var(--primary)"></i> FLINTA Roster vollständig & angemeldet.</li>
-                        <li><i class="fas fa-calendar-alt" style="color:var(--primary)"></i> Premier Season Start: <b>März 2026</b>.</li>
+                        <li><i class="fas fa-check-circle" style="color:var(--primary)"></i> FLINTA Roster fully assembled.</li>
+                        <li><i class="fas fa-calendar-alt" style="color:var(--primary)"></i> Premier Season Start: <b>March 2026</b>.</li>
                     </ul>
                 </div>
 
                 <div class="info-card">
                     <h3><i class="fas fa-trophy"></i> TEAM GOALS</h3>
                     <ul style="list-style:none; padding:0; color:#ccc; line-height:2.2;">
-                        <li><i class="fas fa-star" style="color:var(--primary)"></i> Erreichen der <b>Elite Division</b> in Premier.</li>
-                        <li><i class="fas fa-shield-alt" style="color:var(--primary)"></i> Aufbau einer festen Scrim-Kultur.</li>
-                        <li><i class="fas fa-rocket" style="color:var(--primary)"></i> Qualifikation für <b>VRC DACH</b>.</li>
+                        <li><i class="fas fa-star" style="color:var(--primary)"></i> Reach <b>Elite Division</b> in Premier.</li>
+                        <li><i class="fas fa-shield-alt" style="color:var(--primary)"></i> Establish a solid Scrim Culture.</li>
+                        <li><i class="fas fa-rocket" style="color:var(--primary)"></i> Qualify for <b>VRC DACH</b>.</li>
                     </ul>
                 </div>
             </div>
 
+            <div class="gt-banner-container">
+                <a href="https://gamertransfer.com/" target="_blank">
+                    <img src="https://gamertransfer.com/banner/banner300_w.png" alt="player search" border="0" />
+                </a>
+            </div>
+
             <div class="social-links">
                 <a href="https://x.com/BloomEver85575" target="_blank" class="social-btn"><i class="fa-brands fa-x-twitter"></i> Twitter</a>
-                <a href="https://discord.gg/Cp2J72hesH" target="_blank" class="social-btn discord"><i class="fa-brands fa-discord"></i> Discord</a>
-                <a href="https://gamertransfer.com/_everbloom_gc-team-24582-view1" target="_blank" class="social-btn gt"><i class="fas fa-user-plus"></i> GamerTransfer</a>
+                <a href="https://discord.gg/Cp2J72hesH" target="_blank" class="social-btn"><i class="fa-brands fa-discord"></i> Discord</a>
             </div>
         </div>
     </section>
@@ -199,13 +180,10 @@
     <section id="roster" class="page-section">
         <div class="container" style="padding-top: 60px;">
             <h2 style="text-align:center; text-transform:uppercase; letter-spacing:8px; margin-bottom:40px;">Team Lineups</h2>
-            
             <h3 style="text-align:center; color:var(--primary); text-transform:uppercase; letter-spacing:4px;">FLINTA Roster</h3>
             <div class="roster-grid" id="flinta-roster"></div>
-
             <h3 style="text-align:center; color:var(--primary); text-transform:uppercase; letter-spacing:4px; margin-top:50px;">Male Roster</h3>
             <div class="roster-grid" id="male-roster"></div>
-
             <h3 style="text-align:center; color:var(--primary); text-transform:uppercase; letter-spacing:4px; margin-top:50px;">Management</h3>
             <div class="roster-grid" id="staff-roster"></div>
         </div>
@@ -230,7 +208,6 @@
         };
 
         function toggleNav() { document.getElementById('navOverlay').classList.toggle('active'); }
-
         function showSection(id) {
             document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
             document.getElementById(id).classList.add('active');
@@ -245,7 +222,7 @@
                     <img src="${p.img}" class="player-img" onerror="this.style.opacity='0'">
                     <div class="card-content">
                         <small style="color:var(--primary); font-weight:bold;">${p.role}</small>
-                        <div style="font-size:1.4rem; font-weight:900; margin-bottom:5px;">${p.name}</div>
+                        <div style="font-size:1.4rem; font-weight:900;">${p.name}</div>
                         <div class="rank-tag ${p.rankClass}">${p.rank}</div>
                         <div class="player-socials">
                             <a href="${p.twitter}" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
@@ -266,7 +243,7 @@
                     <img src="${p.img}" class="player-img" style="opacity: 0.15; transform: scale(0.8); object-fit: contain;">
                     <div class="card-content">
                         <small style="color:var(--primary); font-weight:bold;">${p.role}</small>
-                        <div style="font-size:1.4rem; font-weight:900; margin-bottom:5px;">${p.name}</div>
+                        <div style="font-size:1.4rem; font-weight:900;">${p.name}</div>
                         <div class="rank-tag ${p.rankClass}">${p.rank}</div>
                         <div class="player-socials">
                             <a href="${p.twitter}" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
