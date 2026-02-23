@@ -77,7 +77,6 @@
         }
         .apply-btn:hover { transform: scale(1.05); box-shadow: 0 0 40px rgba(212, 23, 91, 0.7); }
         
-        /* GT Banner Styling */
         .gt-banner-box { text-align: center; margin-top: 40px; }
         .gt-banner-box img { max-width: 250px; opacity: 0.8; transition: 0.3s; border-radius: 4px; }
         .gt-banner-box img:hover { opacity: 1; transform: scale(1.02); }
@@ -94,7 +93,7 @@
         .social-btn.discord:hover { background: #5865F2; color: white; box-shadow: 0 0 20px rgba(88, 101, 242, 0.4); }
         .social-btn.gt:hover { background: #ff9800; color: white; box-shadow: 0 0 20px rgba(255, 152, 0, 0.4); }
 
-        /* Roster & Rank Glow */
+        /* Rank Glow restored */
         .rank-tag { 
             padding: 6px 15px; border-radius: 4px; font-size: 0.75rem; border: 1px solid; 
             margin: 8px 0; display: inline-block; font-weight: 800; text-transform: uppercase;
@@ -104,12 +103,11 @@
         .rank-radiant { border-color: var(--rank-radiant); color: var(--rank-radiant); box-shadow: 0 0 15px var(--rank-radiant); text-shadow: 0 0 5px var(--rank-radiant); }
         .rank-ascendant { border-color: var(--rank-ascendant); color: var(--rank-ascendant); box-shadow: 0 0 15px var(--rank-ascendant); text-shadow: 0 0 5px var(--rank-ascendant); }
         .rank-immortal { border-color: var(--rank-immortal); color: var(--rank-immortal); box-shadow: 0 0 15px var(--rank-immortal); text-shadow: 0 0 5px var(--rank-immortal); }
-        .rank-platinum { border-color: var(--rank-platinum); color: var(--rank-platinum); box-shadow: 0 0 8px var(--rank-platinum); }
-        .rank-gold { border-color: var(--rank-gold); color: var(--rank-gold); box-shadow: 0 0 8px var(--rank-gold); }
-        .rank-silver { border-color: var(--rank-silver); color: var(--rank-silver); }
-        .rank-bronze { border-color: var(--rank-bronze); color: var(--rank-bronze); }
-        /* Reduziertes Glow für Staff */
-        .rank-staff { border-color: rgba(212, 23, 91, 0.5); color: var(--primary); font-weight: 700; box-shadow: none; text-shadow: none; }
+        .rank-platinum { border-color: var(--rank-platinum); color: var(--rank-platinum); box-shadow: 0 0 10px var(--rank-platinum); }
+        .rank-gold { border-color: var(--rank-gold); color: var(--rank-gold); box-shadow: 0 0 10px var(--rank-gold); }
+        .rank-silver { border-color: var(--rank-silver); color: var(--rank-silver); box-shadow: 0 0 8px var(--rank-silver); }
+        .rank-bronze { border-color: var(--rank-bronze); color: var(--rank-bronze); box-shadow: 0 0 8px var(--rank-bronze); }
+        .rank-staff { border-color: var(--primary); color: var(--primary); box-shadow: 0 0 10px var(--primary); text-shadow: 0 0 3px var(--primary); }
 
         .roster-grid { display: flex; gap: 20px; overflow-x: auto; padding: 20px 0; flex-wrap: wrap; justify-content: center; scrollbar-width: none; }
         
@@ -175,7 +173,7 @@
                     Founded in early 2026, <b>Everbloom</b> is an elite independent E-Sports organization dedicated to pushing the boundaries of competitive Valorant. We specialize in the <b>Ascendant to Radiant</b> tier.
                 </p>
                 <p style="color:#ccc; line-height:1.8; font-size: 1rem;">
-                    Unser Fokus liegt auf Professionalität und mentaler Stärke im DACH-Raum.
+                    Our focus is on professionalism, tactical growth, and mental strength within the DACH region.
                 </p>
             </div>
 
@@ -187,15 +185,17 @@
                 <div class="info-card">
                     <h3><i class="fas fa-bullhorn"></i> LATEST NEWS</h3>
                     <ul style="list-style:none; padding:0; color:#ccc; line-height:2.2;">
-                        <li><i class="fas fa-search" style="color:var(--primary)"></i> Scouting <b>Male Roster</b></li>
-                        <li><i class="fas fa-check-circle" style="color:var(--primary)"></i> FLINTA Roster ready.</li>
+                        <li><i class="fas fa-search" style="color:var(--primary)"></i> Scouting <b>Male Roster</b> (High ELO)</li>
+                        <li><i class="fas fa-check-circle" style="color:var(--primary)"></i> FLINTA Roster finalized.</li>
+                        <li><i class="fas fa-calendar" style="color:var(--primary)"></i> Tryouts start <b>March 2026</b>.</li>
                     </ul>
                 </div>
                 <div class="info-card">
                     <h3><i class="fas fa-trophy"></i> TEAM GOALS</h3>
                     <ul style="list-style:none; padding:0; color:#ccc; line-height:2.2;">
-                        <li><i class="fas fa-star" style="color:var(--primary)"></i> Reach Elite Division.</li>
-                        <li><i class="fas fa-rocket" style="color:var(--primary)"></i> VRC DACH Qualification.</li>
+                        <li><i class="fas fa-star" style="color:var(--primary)"></i> Immortal/Radiant Avg. Rank.</li>
+                        <li><i class="fas fa-shield-alt" style="color:var(--primary)"></i> Tier-1 Scrim Culture.</li>
+                        <li><i class="fas fa-rocket" style="color:var(--primary)"></i> Qualify for DACH Challengers.</li>
                     </ul>
                 </div>
             </div>
@@ -207,7 +207,7 @@
             </div>
 
             <div class="social-links">
-                <a href="https://x.com/BloomEver85575" target="_blank" class="social-btn"><i class="fa-brands fa-x-twitter"></i> Twitter</a>
+                <a href="https://x.com/everbloom_gc" target="_blank" class="social-btn"><i class="fa-brands fa-x-twitter"></i> Twitter</a>
                 <a href="https://discord.gg/Cp2J72hesH" target="_blank" class="social-btn discord"><i class="fa-brands fa-discord"></i> Discord</a>
                 <a href="https://gamertransfer.com/_everbloom_gc-team-24582-view1" target="_blank" class="social-btn gt"><i class="fas fa-plus-circle"></i> GamerTransfer</a>
             </div>
@@ -241,7 +241,7 @@
                 { name: "siiko", role: "Coach & Sentinel", img: "killjoy.png", rank: "Platinum 1", rankClass: "rank-platinum", twitter: "https://x.com/JoeyMattew52904", tracker: "https://tracker.gg/valorant/profile/riot/Siko%23Gold/overview" }
             ],
             staff: [
-                { name: "WalmartReyna", role: "Manager", img: "everbloomlogo.svg", rank: "Staff", rankClass: "rank-staff", twitter: "https://x.com/BloomEver85575", tracker: "https://tracker.gg/valorant/profile/riot/WalmartReyna%23Bloom/overview" }
+                { name: "WalmartReyna", role: "Manager", img: "everbloomlogo.svg", rank: "Staff", rankClass: "rank-staff", twitter: "https://x.com/everbloom_gc", tracker: "https://tracker.gg/valorant/profile/riot/WalmartReyna%23Bloom/overview" }
             ]
         };
 
