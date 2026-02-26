@@ -203,7 +203,7 @@
                     <h3><i class="fas fa-bullhorn"></i> LATEST NEWS</h3>
                     <ul style="list-style:none; padding:0; color:#ccc; line-height:2.2;">
                         <li><i class="fas fa-search" style="color:var(--primary)"></i> Scouting <b>Male Roster</b> (High ELO)</li>
-                        <li><i class="fas fa-check-circle" style="color:var(--primary)"></i> FLINTA Roster finalized.</li>
+                        <li><i class="fas fa-user-plus" style="color:var(--primary)"></i> FLINTA Roster: <b>4/5 Players</b> (Searching)</li>
                         <li><i class="fas fa-calendar" style="color:var(--primary)"></i> Team Practice start <b>March 2026</b>.</li>
                     </ul>
                 </div>
@@ -254,8 +254,7 @@
                 { name: "Rubyxcube", role: "Duelist", img: "jett.png", rank: "Silver 2", rankClass: "rank-silver", twitter: "https://x.com/x2_zelda", tracker: "https://tracker.gg/valorant/profile/riot/Rubyxcube%23EBM/overview" },
                 { name: "Zylicent", role: "Duelist", img: "iso.png", rank: "Bronze 3", rankClass: "rank-bronze", twitter: "https://x.com/Eliyna_vlr", tracker: "https://tracker.gg/valorant/profile/riot/Zylicent%232005/overview" },
                 { name: "AURØRA", role: "Controller", img: "brim.png", rank: "Silver 3", rankClass: "rank-silver", twitter: "https://x.com/tqrmcc", tracker: "https://tracker.gg/valorant/profile/riot/AUR%C3%98RA%23IGNIS/overview" },
-                { name: "Mondi", role: "Flex", img: "jett.png", rank: "Gold 2", rankClass: "rank-gold", twitter: "https://x.com/just_mondii", tracker: "https://tracker.gg/valorant/profile/riot/Mondi%23rawr/overview" },
-                { name: "siiko", role: "Coach & Sentinel", img: "killjoy.png", rank: "Platinum 1", rankClass: "rank-platinum", twitter: "https://x.com/JoeyMattew52904", tracker: "https://tracker.gg/valorant/profile/riot/Siko%23Gold/overview" }
+                { name: "Mondi", role: "Flex", img: "jett.png", rank: "Gold 2", rankClass: "rank-gold", twitter: "https://x.com/just_mondii", tracker: "https://tracker.gg/valorant/profile/riot/Mondi%23rawr/overview" }
             ],
             staff: [
                 { name: "WalmartReyna", role: "Manager", img: "everbloomlogo.svg", rank: "Staff", rankClass: "rank-staff", twitter: "https://x.com/everbloom_gc", tracker: "https://tracker.gg/valorant/profile/riot/WalmartReyna%23Bloom/overview" }
@@ -272,7 +271,7 @@
         }
 
         function renderRoster() {
-            document.getElementById('flinta-roster').innerHTML = players.flinta.map(p => `
+            let flintaHtml = players.flinta.map(p => `
                 <div class="player-card">
                     <img src="${p.img}" class="player-img" onerror="this.style.opacity='0'">
                     <div class="card-content">
@@ -285,6 +284,15 @@
                         </div>
                     </div>
                 </div>`).join('');
+            
+            // Neuer Scouting Slot für FLINTA
+            flintaHtml += `
+                <div class="player-card join-card" onclick="window.open('https://forms.gle/VeNmZo9DkJo35PR5A')">
+                    <i class="fas fa-user-plus" style="font-size:2rem; margin-bottom:15px;"></i>
+                    SCOUTING 5th<br><small style="font-weight:normal; opacity:0.6; margin-top:10px;">Bronze - Gold Required</small>
+                </div>`;
+            
+            document.getElementById('flinta-roster').innerHTML = flintaHtml;
 
             document.getElementById('male-roster').innerHTML = `
                 <div class="player-card join-card" onclick="window.open('https://forms.gle/VeNmZo9DkJo35PR5A')">
