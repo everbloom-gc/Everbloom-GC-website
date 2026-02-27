@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
-    <title>EVERBLOOM | Elite Valorant Team 🌸</title>
+    <title>EVERBLOOM | Underdog Valorant Team 🌸</title>
     <meta name="description" content="Elite independent E-Sports organization specializing in Ascendant to Radiant tier. Bloom or Decay.">
     
     <link rel="icon" type="image/png" href="everbloomlogo.png"> 
@@ -250,17 +250,18 @@
     <script>
         const players = {
             flinta: [
-                { name: "Rubyxcube", role: "Duelist", img: "jett.png", rank: "Silver 2", rankClass: "rank-silver", twitter: "https://x.com/x2_zelda", tracker: "https://tracker.gg/valorant/profile/riot/Rubyxcube%23EBM/overview" },
-                { name: "Zylicent", role: "Duelist", img: "iso.png", rank: "Bronze 3", rankClass: "rank-bronze", twitter: "https://x.com/Eliyna_vlr", tracker: "https://tracker.gg/valorant/profile/riot/Zylicent%232005/overview" },
-                { name: "AURØRA", role: "Controller", img: "brim.png", rank: "Silver 3", rankClass: "rank-silver", twitter: "https://x.com/tqrmcc", tracker: "https://tracker.gg/valorant/profile/riot/AUR%C3%98RA%23IGNIS/overview" },
-                { name: "Mondi", role: "Flex", img: "jett.png", rank: "Gold 2", rankClass: "rank-gold", twitter: "https://x.com/just_mondii", tracker: "https://tracker.gg/valorant/profile/riot/Mondi%23rawr/overview" }
+                { name: "Rubyxcube", tag: "EBM", role: "Duelist", img: "jett.png", rank: "Silver 2", rankClass: "rank-silver", twitter: "https://x.com/x2_zelda", tracker: "https://tracker.gg/valorant/profile/riot/Rubyxcube%23EBM/overview" },
+                { name: "Zylicent", tag: "2005", role: "Duelist", img: "iso.png", rank: "Bronze 3", rankClass: "rank-bronze", twitter: "https://x.com/Eliyna_vlr", tracker: "https://tracker.gg/valorant/profile/riot/Zylicent%232005/overview" },
+                { name: "AURØRA", tag: "IGNIS", role: "Controller", img: "brim.png", rank: "Silver 3", rankClass: "rank-silver", twitter: "https://x.com/tqrmcc", tracker: "https://tracker.gg/valorant/profile/riot/AUR%C3%98RA%23IGNIS/overview" },
+                { name: "Mondi", tag: "rawr", role: "Flex", img: "jett.png", rank: "Gold 2", rankClass: "rank-gold", twitter: "https://x.com/just_mondii", tracker: "https://tracker.gg/valorant/profile/riot/Mondi%23rawr/overview" }
             ],
             staff: [
-                { name: "WalmartReyna", role: "Manager", img: "everbloomlogo.png", rank: "Staff", rankClass: "rank-staff", twitter: "https://x.com/everbloom_gc", tracker: "https://tracker.gg/valorant/profile/riot/WalmartReyna%23Bloom/overview" }
+                { name: "WalmartReyna", tag: "Bloom", role: "Manager", img: "everbloomlogo.png", rank: "Staff", rankClass: "rank-staff", twitter: "https://x.com/everbloom_gc", tracker: "https://tracker.gg/valorant/profile/riot/WalmartReyna%23Bloom/overview" }
             ]
         };
 
         function toggleNav() { document.getElementById('navOverlay').classList.toggle('active'); }
+
         function showSection(id) {
             document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
             document.getElementById(id).classList.add('active');
@@ -269,14 +270,52 @@
             window.scrollTo({top: 0, behavior: 'smooth'});
         }
 
+        // Hilfsfunktion zur Bestimmung der CSS-Klasse basierend auf dem API-Rank
+        function getRankClass(rankName) {
+            if (!rankName) return 'rank-staff';
+            const r = rankName.toLowerCase();
+            if (r.includes('radiant')) return 'rank-radiant';
+            if (r.includes('immortal')) return 'rank-immortal';
+            if (r.includes('ascendant')) return 'rank-ascendant';
+            if (r.includes('platinum')) return 'rank-platinum';
+            if (r.includes('gold')) return 'rank-gold';
+            if (r.includes('silver')) return 'rank-silver';
+            if (r.includes('bronze')) return 'rank-bronze';
+            return 'rank-staff';
+        }
+
+        async function updatePlayerRank(player, index, type) {
+            if (player.rank === "Staff") return;
+
+            const rankElement = document.getElementById(`rank-${type}-${index}`);
+            try {
+                // Abfrage an die HenrikDev API (EU Region)
+                const response = await fetch(`https://api.henrikdev.xyz/valorant/v1/mmr/eu/${player.name}/${player.tag}`);
+                const data = await response.json();
+
+                if (data.status === 200 && data.data.currenttierpatched) {
+                    const newRank = data.data.currenttierpatched;
+                    rankElement.innerText = newRank;
+                    rankElement.className = `rank-tag ${getRankClass(newRank)}`;
+                } else {
+                    // Fallback wenn Profil privat
+                    rankElement.innerText = player.rank; 
+                }
+            } catch (error) {
+                console.error(`Rank Update failed for ${player.name}:`, error);
+                rankElement.innerText = player.rank; // Fallback bei Fehler
+            }
+        }
+
         function renderRoster() {
-            let flintaHtml = players.flinta.map(p => `
+            // FLINTA Roster Render
+            let flintaHtml = players.flinta.map((p, i) => `
                 <div class="player-card">
                     <img src="${p.img}" class="player-img" onerror="this.style.opacity='0'">
                     <div class="card-content">
                         <small style="color:var(--primary); font-weight:bold;">${p.role}</small>
                         <div style="font-size:1.4rem; font-weight:900;">${p.name}</div>
-                        <div class="rank-tag ${p.rankClass}">${p.rank}</div>
+                        <div id="rank-flinta-${i}" class="rank-tag ${p.rankClass}">Loading...</div>
                         <div class="player-socials">
                             <a href="${p.twitter}" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
                             <a href="${p.tracker}" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
@@ -292,12 +331,14 @@
             
             document.getElementById('flinta-roster').innerHTML = flintaHtml;
 
+            // Male Roster Render
             document.getElementById('male-roster').innerHTML = `
                 <div class="player-card join-card" onclick="window.open('https://forms.gle/VeNmZo9DkJo35PR5A')">
                     <i class="fas fa-user-plus" style="font-size:2rem; margin-bottom:15px;"></i>
                     SCOUTING NOW<br><small style="font-weight:normal; opacity:0.6; margin-top:10px;">Ascendant - Radiant Required</small>
                 </div>`;
 
+            // Staff Render
             document.getElementById('staff-roster').innerHTML = players.staff.map(p => `
                 <div class="player-card">
                     <img src="${p.img}" class="player-img" style="opacity: 0.15; transform: scale(0.7); object-fit: contain;">
@@ -308,6 +349,9 @@
                         <div class="player-socials"><a href="${p.twitter}" target="_blank"><i class="fa-brands fa-x-twitter"></i></a></div>
                     </div>
                 </div>`).join('');
+
+            // Start API Updates
+            players.flinta.forEach((p, i) => updatePlayerRank(p, i, 'flinta'));
         }
     </script>
 </body>
