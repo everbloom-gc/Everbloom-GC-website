@@ -1,336 +1,205 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
     
-    <title>EVERBLOOM | Elite Valorant Team 🌸</title>
-    <meta name="description" content="Elite independent E-Sports organization specializing in Ascendant to Radiant tier. Bloom or Decay.">
-    
-    <link rel="icon" type="image/png" href="everbloomlogo.png"> 
-    <link rel="apple-touch-icon" href="everbloomlogo.png">
+    <title>EVERBLOOM | Elite Valorant Team 🌸</title> 
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <meta name="description" content="Elite independent E-Sports organization specializing in Ascendant to Radiant tier. Bloom or Decay."> 
     
-    <style>
-        :root {
-            --primary: #d4175b; 
-            --primary-glow: rgba(212, 23, 91, 0.4);
-            --bg: #060b10;
-            --card-bg: rgba(17, 27, 36, 0.7); /* Transparenter für Glass-Effekt */
-            --text: #ffffff;
+    <link rel="icon" type="image/png" href="everbloomlogo.png">  
+    <link rel="apple-touch-icon" href="everbloomlogo.png"> 
+
+    <meta property="og:type" content="website"> 
+    <meta property="og:url" content="https://everbloom-gc.com/"> 
+    <meta property="og:title" content="EVERBLOOM | Elite Valorant Team 🌸"> 
+    <meta property="og:description" content="Founded in early 2026, Everbloom is dedicated to tactical growth and professional Valorant."> 
+    <meta property="og:image" content="https://everbloom-gc.com/everbloomlogo.png"> 
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> 
+    
+    <style> 
+        :root { 
+            --primary: #d4175b;  
+            --bg: #060b10; 
+            --card-bg: #111b24; 
+            --text: #ffffff; 
             
-            /* Rank Colors */
-            --rank-radiant: #ffeaae;
-            --rank-ascendant: #3ef07a;
-            --rank-immortal: #b4163e;
-            --rank-platinum: #54cbff;
-            --rank-gold: #ffcf4b;
-            --rank-silver: #ced4da;
-            --rank-bronze: #cd7f32;
-        }
+            /* Rank Colors */ 
+            --rank-radiant: #ffeaae; 
+            --rank-ascendant: #3ef07a; 
+            --rank-immortal: #b4163e; 
+            --rank-platinum: #54cbff; 
+            --rank-gold: #ffcf4b; 
+            --rank-silver: #ced4da; 
+            --rank-bronze: #cd7f32; 
+        } 
 
-        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-        html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; background-color: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; } 
 
-        /* Scanline Effect Overlay */
-        body::before {
-            content: " ";
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), 
-                        linear-gradient(90deg, rgba(255, 0, 0, 0.02), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.02));
-            background-size: 100% 4px, 3px 100%;
-            z-index: 100;
-            pointer-events: none;
-            opacity: 0.3;
-        }
+        html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; background-color: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; scroll-behavior: smooth; } 
 
-        /* Background Video */
-        #video-bg { position: fixed; top: 50%; left: 50%; min-width: 100%; min-height: 100%; z-index: -2; transform: translateX(-50%) translateY(-50%); object-fit: cover; filter: brightness(0.12); }
-        .video-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle, rgba(6,11,16,0.1), rgba(6,11,16,0.95)); z-index: -1; }
+        #video-bg { position: fixed; top: 50%; left: 50%; min-width: 100%; min-height: 100%; z-index: -2; transform: translateX(-50%) translateY(-50%); object-fit: cover; filter: brightness(0.12); } 
 
-        /* Navigation */
-        .nav-toggle { 
-            position: fixed; top: 20px; left: 20px; z-index: 1001; 
-            background: var(--primary); border: none; 
-            width: 45px; height: 45px; border-radius: 5px; cursor: pointer; 
-            display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px;
-            box-shadow: 0 0 15px var(--primary-glow);
-        }
-        .nav-toggle span { display: block; width: 22px; height: 2px; background: white; border-radius: 2px; transition: 0.3s; }
-        .nav-overlay { 
-            position: fixed; top: 0; left: -300px; width: 280px; height: 100vh; 
-            background: rgba(6, 11, 16, 0.95); backdrop-filter: blur(20px);
-            z-index: 1000; transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1); 
-            display: flex; flex-direction: column; padding: 100px 30px; border-right: 1px solid rgba(212, 23, 91, 0.2);
-        }
-        .nav-overlay.active { left: 0; }
-        .nav-overlay a { font-size: 1.5rem; color: white; text-decoration: none; text-transform: uppercase; font-weight: 900; margin: 15px 0; cursor: pointer; transition: 0.2s; letter-spacing: 2px; }
-        .nav-overlay a:hover { color: var(--primary); padding-left: 10px; }
+        .video-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle, rgba(6,11,16,0.1), rgba(6,11,16,0.95)); z-index: -1; } 
 
-        /* Header & Glitch Effect */
-        header { padding: 100px 20px 60px; text-align: center; }
-        .logo-main { width: 140px; filter: drop-shadow(0 0 25px var(--primary)); margin-bottom: 20px; animation: float 4s ease-in-out infinite; }
+        /* Navigation */ 
+        .nav-toggle { position: fixed; top: 20px; left: 20px; z-index: 1001; background: var(--primary); border: none; width: 45px; height: 45px; border-radius: 5px; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; box-shadow: 0 0 15px rgba(212, 23, 91, 0.4); } 
+        .nav-toggle span { display: block; width: 22px; height: 2px; background: white; border-radius: 2px; transition: 0.3s; } 
+        .nav-overlay { position: fixed; top: 0; left: -300px; width: 280px; height: 100vh; background: rgba(6, 11, 16, 0.98); backdrop-filter: blur(25px); z-index: 1000; transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1); display: flex; flex-direction: column; padding: 100px 30px; border-right: 1px solid rgba(212, 23, 91, 0.2); } 
+        .nav-overlay.active { left: 0; } 
+        .nav-overlay a { font-size: 1.5rem; color: white; text-decoration: none; text-transform: uppercase; font-weight: 900; margin: 15px 0; cursor: pointer; transition: 0.2s; letter-spacing: 2px; } 
+        .nav-overlay a:hover { color: var(--primary); padding-left: 10px; } 
+
+        /* Header */ 
+        header { padding: 80px 20px 40px; text-align: center; } 
+        .logo-main { width: 130px; filter: drop-shadow(0 0 25px var(--primary)); margin-bottom: 20px; } 
+        h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); margin: 0; letter-spacing: 12px; text-transform: uppercase; font-weight: 900; } 
+        .tagline { color: var(--primary); letter-spacing: 5px; font-weight: bold; text-transform: uppercase; font-size: 0.85rem; margin-top: 10px; } 
+
+        /* Cards */ 
+        .container { max-width: 1000px; margin: auto; padding: 20px; } 
+        .info-card { background: var(--card-bg); padding: 35px; border-radius: 12px; border: 1px solid rgba(212, 23, 91, 0.15); border-top: 4px solid var(--primary); margin-bottom: 25px; backdrop-filter: blur(10px); box-shadow: 0 10px 30px rgba(0,0,0,0.5); } 
+        .info-card h3 { margin-top: 0; color: var(--primary); text-transform: uppercase; letter-spacing: 2px; display: flex; align-items: center; gap: 12px; } 
+        .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; } 
+
+        .apply-btn { display: inline-block; background: var(--primary); color: white; padding: 18px 50px; border-radius: 6px; text-decoration: none; font-weight: 900; text-transform: uppercase; letter-spacing: 4px; transition: 0.3s; box-shadow: 0 0 25px rgba(212, 23, 91, 0.4); } 
+        .apply-btn:hover { transform: scale(1.05); box-shadow: 0 0 40px rgba(212, 23, 91, 0.7); } 
+
+        /* Roster System */ 
+        .roster-grid { display: flex; gap: 20px; overflow-x: auto; padding: 20px 0; flex-wrap: wrap; justify-content: center; } 
+        .player-card { flex: 0 0 240px; background: rgba(10, 15, 20, 0.95); border-radius: 10px; min-height: 380px; position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); transition: 0.4s; } 
+        .player-card:hover { transform: translateY(-10px); border-color: var(--primary); box-shadow: 0 15px 40px rgba(212, 23, 91, 0.2); } 
         
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
+        .player-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.35; z-index: 1; transition: 0.5s; } 
+        .skin-overlay { position: absolute; top: 10px; right: 10px; font-size: 0.6rem; opacity: 0.4; z-index: 5; color: var(--primary); }
 
-        .glitch-title {
-            font-size: clamp(2.5rem, 8vw, 4.5rem);
-            margin: 0;
-            letter-spacing: 12px;
-            text-transform: uppercase;
-            font-weight: 900;
-            position: relative;
-            text-shadow: 0.05em 0 0 rgba(255,0,81,0.75), -0.025em -0.05em 0 rgba(0,255,255,0.75);
-            animation: glitch 1.5s infinite;
-        }
+        .card-content { position: absolute; bottom: 0; width: 100%; padding: 20px; background: linear-gradient(transparent, #060b10 80%); z-index: 10; } 
+        .rank-tag { padding: 6px 15px; border-radius: 4px; font-size: 0.75rem; border: 1px solid; margin: 8px 0; display: inline-block; font-weight: 800; text-transform: uppercase; } 
 
-        @keyframes glitch {
-            0% { text-shadow: 0.05em 0 0 rgba(255,0,81,0.75), -0.025em -0.05em 0 rgba(0,255,255,0.75); }
-            14% { text-shadow: 0.05em 0 0 rgba(255,0,81,0.75), -0.025em -0.05em 0 rgba(0,255,255,0.75); }
-            15% { text-shadow: -0.05em -0.025em 0 rgba(255,0,81,0.75), 0.025em 0.025em 0 rgba(0,255,255,0.75); }
-            49% { text-shadow: -0.05em -0.025em 0 rgba(255,0,81,0.75), 0.025em 0.025em 0 rgba(0,255,255,0.75); }
-            50% { text-shadow: 0.025em 0.05em 0 rgba(255,0,81,0.75), 0.05em 0 0 rgba(0,255,255,0.75); }
-            99% { text-shadow: 0.025em 0.05em 0 rgba(255,0,81,0.75), 0.05em 0 0 rgba(0,255,255,0.75); }
-            100% { text-shadow: -0.025em 0 0 rgba(255,0,81,0.75), -0.025em -0.025em 0 rgba(0,255,255,0.75); }
-        }
+        /* Rank Classes */
+        .rank-silver { border-color: var(--rank-silver); color: var(--rank-silver); box-shadow: 0 0 10px rgba(206, 212, 218, 0.3); }
+        .rank-bronze { border-color: var(--rank-bronze); color: var(--rank-bronze); box-shadow: 0 0 10px rgba(205, 127, 50, 0.3); }
+        .rank-staff { border-color: var(--primary); color: var(--primary); }
 
-        .tagline { color: var(--primary); letter-spacing: 5px; font-weight: bold; text-transform: uppercase; font-size: 0.85rem; margin-top: 10px; opacity: 0.8; }
+        .social-btn { padding: 12px 25px; border-radius: 5px; text-decoration: none; color: white; display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); transition: 0.3s; }
+        .social-btn.discord { border-color: #5865F2; }
 
-        /* Container & Glass Cards */
-        .container { max-width: 1000px; margin: auto; padding: 20px; }
-        
-        .info-card { 
-            background: var(--card-bg); 
-            padding: 35px; 
-            border-radius: 12px; 
-            border: 1px solid rgba(255, 255, 255, 0.1); 
-            border-left: 4px solid var(--primary); 
-            margin-bottom: 25px; 
-            backdrop-filter: blur(15px); 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            transition: 0.3s;
-        }
-        .info-card:hover { border-color: rgba(212, 23, 91, 0.4); background: rgba(17, 27, 36, 0.8); }
-        
-        .info-card h3 { margin-top: 0; color: var(--primary); text-transform: uppercase; letter-spacing: 2px; display: flex; align-items: center; gap: 12px; }
+        .page-section { display: none; } 
+        .page-section.active { display: block; animation: fadeIn 0.6s ease-out; } 
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } } 
+    </style> 
+</head> 
+<body> 
 
-        /* Bloom Section (New) */
-        .bloom-cta {
-            background: linear-gradient(rgba(212, 23, 91, 0.1), rgba(6, 11, 16, 0.8)), url('everbloomlogo.png');
-            background-size: cover;
-            background-position: center;
-            border-radius: 15px;
-            padding: 60px 20px;
-            text-align: center;
-            margin: 60px 0;
-            border: 1px solid var(--primary);
-            backdrop-filter: blur(5px);
-        }
-        .bloom-cta h2 { font-size: 2.5rem; letter-spacing: 5px; margin-bottom: 20px; }
+    <video loop playsinline autoplay muted id="video-bg"> 
+        <source src="valo background.mp4" type="video/mp4"> 
+    </video> 
+    <div class="video-overlay"></div> 
 
-        /* Buttons */
-        .apply-btn { 
-            display: inline-block; background: var(--primary); color: white; 
-            padding: 20px 60px; border-radius: 4px; text-decoration: none; 
-            font-weight: 900; text-transform: uppercase; letter-spacing: 4px; 
-            transition: 0.3s; box-shadow: 0 0 25px var(--primary-glow); 
-        }
-        .apply-btn:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 0 45px var(--primary); }
+    <button class="nav-toggle" onclick="toggleNav()"> 
+        <span></span><span></span><span></span> 
+    </button> 
 
-        /* Roster Grid & Player Cards */
-        .roster-grid { display: flex; gap: 25px; overflow-x: auto; padding: 20px 0; flex-wrap: wrap; justify-content: center; }
-        
-        .player-card { 
-            flex: 0 0 260px; background: rgba(255, 255, 255, 0.03); border-radius: 12px; 
-            min-height: 400px; position: relative; overflow: hidden; 
-            border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(10px);
-            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
-        }
-        
-        .player-card:hover { 
-            transform: translateY(-10px); 
-            border-color: var(--primary);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(212, 23, 91, 0.2);
-        }
+    <div class="nav-overlay" id="navOverlay"> 
+        <a onclick="showSection('home')">Home</a> 
+        <a onclick="showSection('roster')">Roster</a> 
+    </div> 
 
-        .player-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.3; z-index: 1; transition: 0.5s; }
-        .player-card:hover .player-img { opacity: 0.7; transform: scale(1.05); }
+    <section id="home" class="page-section active"> 
+        <header> 
+            <img src="everbloomlogo.png" alt="Everbloom Logo" class="logo-main"> 
+            <h1>EVERBLOOM</h1> 
+            <div class="tagline">Bloom or Decay | Est. 2026</div> 
+        </header> 
 
-        .card-content { position: absolute; bottom: 0; width: 100%; padding: 25px; background: linear-gradient(transparent, #060b10 90%); z-index: 10; }
-        
-        .rank-tag { 
-            padding: 6px 15px; border-radius: 4px; font-size: 0.75rem; border: 1px solid; 
-            margin: 10px 0; display: inline-block; font-weight: 800; text-transform: uppercase;
-        }
+        <div class="container"> 
+            <div class="info-card"> 
+                <h3><i class="fas fa-seedling"></i> ABOUT US</h3> 
+                <p style="color:#ccc; line-height:1.8;"> 
+                    Gegründet Anfang 2026, ist <b>Everbloom</b> eine E-Sports Organisation im Bereich <b>Ascendant bis Radiant</b>. 
+                    Unser Fokus liegt auf der DACH-Region und der Förderung von Talenten im FLINTA- und High-ELO Bereich.
+                </p> 
+            </div> 
 
-        /* Socials */
-        .social-links { display: flex; justify-content: center; gap: 15px; margin-top: 30px; }
-        .social-btn { 
-            padding: 12px 25px; border-radius: 5px; text-decoration: none; color: white; 
-            font-weight: bold; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); transition: 0.3s;
-        }
-        .social-btn:hover { background: var(--primary); border-color: var(--primary); transform: translateY(-2px); }
+            <div style="text-align: center; margin: 40px 0;"> 
+                <a href="https://forms.gle/VeNmZo9DkJo35PR5A" target="_blank" class="apply-btn">APPLY FOR TEAM</a> 
+            </div> 
+        </div> 
+    </section> 
 
-        footer { text-align: center; padding: 80px 20px; opacity: 0.6; font-size: 0.8rem; letter-spacing: 2px; }
+    <section id="roster" class="page-section"> 
+        <div class="container" style="padding-top: 60px;"> 
+            <h2 style="text-align:center; text-transform:uppercase; letter-spacing:8px; margin-bottom:40px;">Team Lineups</h2> 
+            
+            <h3 style="text-align:center; color:var(--primary); text-transform:uppercase;">FLINTA Roster</h3> 
+            <div class="roster-grid" id="flinta-roster"></div> 
 
-        .page-section { display: none; }
-        .page-section.active { display: block; animation: fadeIn 0.8s ease-out; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-    </style>
-</head>
-<body>
+            <h3 style="text-align:center; color:var(--primary); text-transform:uppercase; margin-top:50px;">Management</h3> 
+            <div class="roster-grid" id="staff-roster"></div> 
+        </div> 
+    </section> 
 
-    <video loop playsinline autoplay muted id="video-bg">
-        <source src="valo background.mp4" type="video/mp4">
-    </video>
-    <div class="video-overlay"></div>
-
-    <button class="nav-toggle" onclick="toggleNav()">
-        <span></span><span></span><span></span>
-    </button>
-
-    <div class="nav-overlay" id="navOverlay">
-        <a onclick="showSection('home')">Home</a>
-        <a onclick="showSection('roster')">Roster</a>
-    </div>
-
-    <section id="home" class="page-section active">
-        <header>
-            <img src="everbloomlogo.png" alt="Everbloom Logo" class="logo-main">
-            <h1 class="glitch-title">EVERBLOOM</h1>
-            <div class="tagline">Bloom or Decay | Est. 2026</div>
-        </header>
-
-        <div class="container">
-            <div class="info-card">
-                <h3><i class="fas fa-seedling"></i> ABOUT US</h3>
-                <p style="color:#ccc; line-height:1.8;">
-                    Founded in early 2026, <b>Everbloom</b> is an elite independent E-Sports organization dedicated to pushing the boundaries of competitive Valorant. Born from a vision of sustainable excellence, we specialize in the high-performance tier ranging from <b>Ascendant to Radiant</b>.
-                </p>
-            </div>
-
-            <div class="grid-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-                <div class="info-card">
-                    <h3><i class="fas fa-bullhorn"></i> LATEST NEWS</h3>
-                    <ul style="list-style:none; padding:0; color:#ccc; line-height:2.2;">
-                        <li><i class="fas fa-search" style="color:var(--primary)"></i> Scouting <b>Male Roster</b> (High ELO)</li>
-                        <li><i class="fas fa-user-plus" style="color:var(--primary)"></i> FLINTA Roster: <b>3/5 Players</b></li>
-                    </ul>
-                </div>
-                <div class="info-card">
-                    <h3><i class="fas fa-trophy"></i> TEAM GOALS</h3>
-                    <ul style="list-style:none; padding:0; color:#ccc; line-height:2.2;">
-                        <li><i class="fas fa-star" style="color:var(--primary)"></i> Immortal/Radiant Avg. Rank.</li>
-                        <li><i class="fas fa-rocket" style="color:var(--primary)"></i> Qualify for DACH Challengers.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="bloom-cta">
-                <h2 class="glitch-title" style="font-size: 2rem;">WANT TO BLOOM?</h2>
-                <p style="margin-bottom: 30px; opacity: 0.8;">We are always looking for exceptional talent to join our ranks.</p>
-                <a href="https://forms.gle/VeNmZo9DkJo35PR5A" target="_blank" class="apply-btn">APPLY FOR TEAM</a>
-            </div>
-
-            <div class="social-links">
-                <a href="https://x.com/everbloom_gc" target="_blank" class="social-btn"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="https://discord.gg/Cp2J72hesH" target="_blank" class="social-btn"><i class="fa-brands fa-discord"></i></a>
-            </div>
+    <footer> 
+        <div style="text-align: center; padding: 40px;">
+            © 2026 EVERBLOOM GAMING | <a href="legal.html" style="color: grey; text-decoration: none;">LEGAL</a>
         </div>
-    </section>
+    </footer> 
 
-    <section id="roster" class="page-section">
-        <div class="container" style="padding-top: 60px;">
-            <h2 style="text-align:center; text-transform:uppercase; letter-spacing:8px; margin-bottom:40px;">Team Lineups</h2>
-            <h3 style="text-align:center; color:var(--primary); text-transform:uppercase; letter-spacing:4px;">FLINTA Roster</h3>
-            <div class="roster-grid" id="flinta-roster"></div>
+    <script> 
+        // HIER SIND DIE NEUEN SACHEN (Skin-IDs Integration)
+        const players = { 
+            flinta: [ 
+                { name: "Rubyxcube", tag: "EBM", role: "Duelist", img: "jett.png", rank: "Silver 2", rankClass: "rank-silver", skinId: "YOUR_SKIN_ID_1", twitter: "https://x.com/x2_zelda", tracker: "https://tracker.gg/valorant/profile/riot/Rubyxcube%23EBM/overview" }, 
+                { name: "Zylicent", tag: "2005", role: "Duelist", img: "iso.png", rank: "Bronze 3", rankClass: "rank-bronze", skinId: "YOUR_SKIN_ID_2", twitter: "https://x.com/Eliyna_vlr", tracker: "https://tracker.gg/valorant/profile/riot/Zylicent%232005/overview" }, 
+                { name: "AURØRA", tag: "IGNIS", role: "Controller", img: "brim.png", rank: "Silver 3", rankClass: "rank-silver", skinId: "YOUR_SKIN_ID_3", twitter: "https://x.com/tqrmcc", tracker: "https://tracker.gg/valorant/profile/riot/AUR%C3%98RA%23IGNIS/overview" }
+            ], 
+            staff: [ 
+                { name: "WalmartReyna", tag: "Bloom", role: "Manager", img: "everbloomlogo.png", rank: "Staff", rankClass: "rank-staff", twitter: "https://x.com/everbloom_gc" } 
+            ] 
+        }; 
+
+        function toggleNav() { document.getElementById('navOverlay').classList.toggle('active'); } 
+
+        function showSection(id) { 
+            document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active')); 
+            document.getElementById(id).classList.add('active'); 
+            if(id === 'roster') renderRoster(); 
+            if(document.getElementById('navOverlay').classList.contains('active')) toggleNav(); 
+            window.scrollTo({top: 0, behavior: 'smooth'}); 
+        } 
+
+        function renderRoster() { 
+            // FLINTA Render mit Skin-ID Support
+            let flintaHtml = players.flinta.map((p, i) => ` 
+                <div class="player-card"> 
+                    <div class="skin-overlay">${p.skinId || ''}</div>
+                    <img src="${p.img}" class="player-img" onerror="this.style.opacity='0'"> 
+                    <div class="card-content"> 
+                        <small style="color:var(--primary); font-weight:bold;">${p.role}</small> 
+                        <div style="font-size:1.4rem; font-weight:900;">${p.name}</div> 
+                        <div class="rank-tag ${p.rankClass}">${p.rank}</div> 
+                        <div style="display:flex; gap:10px; margin-top:10px;"> 
+                            <a href="${p.twitter}" target="_blank" style="color:white;"><i class="fa-brands fa-x-twitter"></i></a> 
+                            <a href="${p.tracker}" target="_blank" style="color:white;"><i class="fas fa-chart-line"></i></a> 
+                        </div> 
+                    </div> 
+                </div>`).join(''); 
             
-            <h3 style="text-align:center; color:var(--primary); text-transform:uppercase; letter-spacing:4px; margin-top:50px;">Male Roster</h3>
-            <div class="roster-grid" id="male-roster"></div>
-            
-            <h3 style="text-align:center; color:var(--primary); text-transform:uppercase; letter-spacing:4px; margin-top:50px;">Management</h3>
-            <div class="roster-grid" id="staff-roster"></div>
-        </div>
-    </section>
+            document.getElementById('flinta-roster').innerHTML = flintaHtml; 
 
-    <footer>
-        <div class="footer-copy">© 2026 EVERBLOOM GAMING</div>
-        <div class="footer-legal" style="margin-top:10px;"><a href="legal.html" style="color: rgba(255,255,255,0.4); text-decoration: none;">IMPRESSUM / LEGAL NOTICE</a></div>
-    </footer>
-
-    <script>
-        const players = {
-            flinta: [
-                { name: "Rubyxcube", tag: "EBM", role: "Duelist", img: "jett.png", rank: "Silver 2", twitter: "https://x.com/x2_zelda", tracker: "https://tracker.gg/valorant/profile/riot/Rubyxcube%23EBM/overview" },
-                { name: "Zylicent", tag: "2005", role: "Duelist", img: "iso.png", rank: "Bronze 3", twitter: "https://x.com/Eliyna_vlr", tracker: "https://tracker.gg/valorant/profile/riot/Zylicent%232005/overview" },
-                { name: "AURØRA", tag: "IGNIS", role: "Controller", img: "brim.png", rank: "Silver 3", twitter: "https://x.com/tqrmcc", tracker: "https://tracker.gg/valorant/profile/riot/AUR%C3%98RA%23IGNIS/overview" }
-            ],
-            staff: [
-                { name: "WalmartReyna", tag: "Bloom", role: "Manager", img: "everbloomlogo.png", rank: "Staff", twitter: "https://x.com/everbloom_gc" }
-            ]
-        };
-
-        function toggleNav() { document.getElementById('navOverlay').classList.toggle('active'); }
-
-        function showSection(id) {
-            document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
-            document.getElementById(id).classList.add('active');
-            if(id === 'roster') renderRoster();
-            if(document.getElementById('navOverlay').classList.contains('active')) toggleNav();
-            window.scrollTo({top: 0, behavior: 'smooth'});
-        }
-
-        function getRankClass(rankName) {
-            const r = rankName.toLowerCase();
-            if (r.includes('radiant')) return 'rank-radiant';
-            if (r.includes('immortal')) return 'rank-immortal';
-            if (r.includes('ascendant')) return 'rank-ascendant';
-            if (r.includes('silver')) return 'rank-silver';
-            if (r.includes('bronze')) return 'rank-bronze';
-            return 'rank-staff';
-        }
-
-        function renderRoster() {
-            // Render FLINTA
-            let flintaHtml = players.flinta.map((p, i) => `
-                <div class="player-card">
-                    <img src="${p.img}" class="player-img">
-                    <div class="card-content">
-                        <small style="color:var(--primary); font-weight:bold;">${p.role}</small>
-                        <div style="font-size:1.4rem; font-weight:900;">${p.name}</div>
-                        <div id="rank-flinta-${i}" class="rank-tag ${getRankClass(p.rank)}">${p.rank}</div>
-                        <div class="player-socials">
-                            <a href="${p.twitter}" target="_blank" style="color:white; margin-right:10px;"><i class="fa-brands fa-x-twitter"></i></a>
-                        </div>
-                    </div>
-                </div>`).join('');
-            
-            flintaHtml += `<div class="player-card" style="display:flex; align-items:center; justify-content:center; border:2px dashed var(--primary); color:var(--primary); cursor:pointer;" onclick="window.open('https://forms.gle/VeNmZo9DkJo35PR5A')">
-                <div style="text-align:center;"><i class="fas fa-plus" style="font-size:2rem;"></i><br>JOIN US</div>
-            </div>`;
-            document.getElementById('flinta-roster').innerHTML = flintaHtml;
-
-            // Render Male
-            document.getElementById('male-roster').innerHTML = `<div class="player-card" style="display:flex; align-items:center; justify-content:center; border:2px dashed var(--primary); color:var(--primary); cursor:pointer;" onclick="window.open('https://forms.gle/VeNmZo9DkJo35PR5A')">
-                <div style="text-align:center;"><i class="fas fa-search" style="font-size:2rem;"></i><br>SCOUTING NOW</div>
-            </div>`;
-
-            // Render Staff
-            document.getElementById('staff-roster').innerHTML = players.staff.map(p => `
-                <div class="player-card">
-                    <img src="${p.img}" class="player-img" style="opacity:0.1; transform:scale(0.5);">
-                    <div class="card-content">
-                        <small style="color:var(--primary); font-weight:bold;">${p.role}</small>
-                        <div style="font-size:1.4rem; font-weight:900;">${p.name}</div>
-                        <div class="rank-tag rank-staff">STAFF</div>
-                    </div>
-                </div>`).join('');
-        }
-    </script>
-</body>
+            // Staff Render
+            document.getElementById('staff-roster').innerHTML = players.staff.map(p => ` 
+                <div class="player-card"> 
+                    <img src="${p.img}" class="player-img" style="opacity:0.1; transform:scale(0.8); object-fit:contain;"> 
+                    <div class="card-content"> 
+                        <small style="color:var(--primary); font-weight:bold;">${p.role}</small> 
+                        <div style="font-size:1.4rem; font-weight:900;">${p.name}</div> 
+                        <div class="rank-tag rank-staff">STAFF</div> 
+                    </div> 
+                </div>`).join(''); 
+        } 
+    </script> 
+</body> 
 </html>
