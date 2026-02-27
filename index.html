@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
-    <title>EVERBLOOM | Underdog Valorant Team 🌸</title>
+    <title>EVERBLOOM | Elite Valorant Team 🌸</title>
     <meta name="description" content="Elite independent E-Sports organization specializing in Ascendant to Radiant tier. Bloom or Decay.">
     
     <link rel="icon" type="image/png" href="everbloomlogo.png"> 
@@ -202,7 +202,7 @@
                     <h3><i class="fas fa-bullhorn"></i> LATEST NEWS</h3>
                     <ul style="list-style:none; padding:0; color:#ccc; line-height:2.2;">
                         <li><i class="fas fa-search" style="color:var(--primary)"></i> Scouting <b>Male Roster</b> (High ELO)</li>
-                        <li><i class="fas fa-user-plus" style="color:var(--primary)"></i> FLINTA Roster: <b>4/5 Players</b> (Searching)</li>
+                        <li><i class="fas fa-user-plus" style="color:var(--primary)"></i> FLINTA Roster: <b>3/5 Players</b> (Searching)</li>
                         <li><i class="fas fa-calendar" style="color:var(--primary)"></i> Team Practice start <b>March 2026</b>.</li>
                     </ul>
                 </div>
@@ -252,8 +252,7 @@
             flinta: [
                 { name: "Rubyxcube", tag: "EBM", role: "Duelist", img: "jett.png", rank: "Silver 2", rankClass: "rank-silver", twitter: "https://x.com/x2_zelda", tracker: "https://tracker.gg/valorant/profile/riot/Rubyxcube%23EBM/overview" },
                 { name: "Zylicent", tag: "2005", role: "Duelist", img: "iso.png", rank: "Bronze 3", rankClass: "rank-bronze", twitter: "https://x.com/Eliyna_vlr", tracker: "https://tracker.gg/valorant/profile/riot/Zylicent%232005/overview" },
-                { name: "AURØRA", tag: "IGNIS", role: "Controller", img: "brim.png", rank: "Silver 3", rankClass: "rank-silver", twitter: "https://x.com/tqrmcc", tracker: "https://tracker.gg/valorant/profile/riot/AUR%C3%98RA%23IGNIS/overview" },
-                { name: "Mondi", tag: "rawr", role: "Flex", img: "jett.png", rank: "Gold 2", rankClass: "rank-gold", twitter: "https://x.com/just_mondii", tracker: "https://tracker.gg/valorant/profile/riot/Mondi%23rawr/overview" }
+                { name: "AURØRA", tag: "IGNIS", role: "Controller", img: "brim.png", rank: "Silver 3", rankClass: "rank-silver", twitter: "https://x.com/tqrmcc", tracker: "https://tracker.gg/valorant/profile/riot/AUR%C3%98RA%23IGNIS/overview" }
             ],
             staff: [
                 { name: "WalmartReyna", tag: "Bloom", role: "Manager", img: "everbloomlogo.png", rank: "Staff", rankClass: "rank-staff", twitter: "https://x.com/everbloom_gc", tracker: "https://tracker.gg/valorant/profile/riot/WalmartReyna%23Bloom/overview" }
@@ -270,7 +269,6 @@
             window.scrollTo({top: 0, behavior: 'smooth'});
         }
 
-        // Hilfsfunktion zur Bestimmung der CSS-Klasse basierend auf dem API-Rank
         function getRankClass(rankName) {
             if (!rankName) return 'rank-staff';
             const r = rankName.toLowerCase();
@@ -289,7 +287,6 @@
 
             const rankElement = document.getElementById(`rank-${type}-${index}`);
             try {
-                // Abfrage an die HenrikDev API (EU Region)
                 const response = await fetch(`https://api.henrikdev.xyz/valorant/v1/mmr/eu/${player.name}/${player.tag}`);
                 const data = await response.json();
 
@@ -298,12 +295,11 @@
                     rankElement.innerText = newRank;
                     rankElement.className = `rank-tag ${getRankClass(newRank)}`;
                 } else {
-                    // Fallback wenn Profil privat
                     rankElement.innerText = player.rank; 
                 }
             } catch (error) {
                 console.error(`Rank Update failed for ${player.name}:`, error);
-                rankElement.innerText = player.rank; // Fallback bei Fehler
+                rankElement.innerText = player.rank; 
             }
         }
 
@@ -323,11 +319,14 @@
                     </div>
                 </div>`).join('');
             
-            flintaHtml += `
-                <div class="player-card join-card" onclick="window.open('https://forms.gle/VeNmZo9DkJo35PR5A')">
-                    <i class="fas fa-user-plus" style="font-size:2rem; margin-bottom:15px;"></i>
-                    SCOUTING 5th<br><small style="font-weight:normal; opacity:0.6; margin-top:10px;">Bronze - Gold Required</small>
-                </div>`;
+            // Add 2 Free Slots (for 4th and 5th player)
+            for(let k=0; k<2; k++) {
+                flintaHtml += `
+                    <div class="player-card join-card" onclick="window.open('https://forms.gle/VeNmZo9DkJo35PR5A')">
+                        <i class="fas fa-user-plus" style="font-size:2rem; margin-bottom:15px;"></i>
+                        SCOUTING Slot ${k+4}<br><small style="font-weight:normal; opacity:0.6; margin-top:10px;">Bronze - Gold Required</small>
+                    </div>`;
+            }
             
             document.getElementById('flinta-roster').innerHTML = flintaHtml;
 
@@ -350,7 +349,6 @@
                     </div>
                 </div>`).join('');
 
-            // Start API Updates
             players.flinta.forEach((p, i) => updatePlayerRank(p, i, 'flinta'));
         }
     </script>
