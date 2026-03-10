@@ -1,5 +1,5 @@
 <!DOCTYPE html> 
-<html lang="de"> 
+<html lang="en"> 
 <head> 
      <meta charset="UTF-8"> 
      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
@@ -21,7 +21,7 @@
               --color-discord: #5865F2;
               --color-gt: #ff5e00;
 
-              /* Rank Colors */
+              /* Rank Colors & Glows */
               --rank-bronze: #824a33;
               --rank-silver: #ced4da;
               --rank-gold: #ffcf4b;
@@ -34,30 +34,44 @@
           #video-bg { position: fixed; top: 50%; left: 50%; min-width: 100%; min-height: 100%; z-index: -2; transform: translate(-50%, -50%); object-fit: cover; filter: brightness(0.15); } 
           .video-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle, transparent, rgba(5,8,11,0.95)); z-index: -1; } 
 
-          /* Navigation */
+          /* Navigation with Pink Hover Glow */
           .nav-toggle { position: fixed; top: 20px; left: 20px; z-index: 1001; background: var(--primary); border: none; width: 45px; height: 45px; border-radius: 5px; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; } 
           .nav-toggle span { display: block; width: 22px; height: 2px; background: white; transition: 0.3s; } 
           .nav-overlay { position: fixed; top: 0; left: -300px; width: 280px; height: 100vh; background: rgba(5, 8, 11, 0.98); backdrop-filter: blur(20px); z-index: 1000; transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1); display: flex; flex-direction: column; padding: 100px 30px; border-right: 1px solid var(--primary); } 
           .nav-overlay.active { left: 0; } 
-          .nav-overlay a { font-size: 1.5rem; color: white; text-decoration: none; text-transform: uppercase; font-weight: 900; margin: 15px 0; cursor: pointer; letter-spacing: 2px; }
+          .nav-overlay a { font-size: 1.5rem; color: white; text-decoration: none; text-transform: uppercase; font-weight: 900; margin: 15px 0; cursor: pointer; letter-spacing: 2px; transition: 0.3s ease; }
+          .nav-overlay a:hover { color: var(--primary); text-shadow: 0 0 15px var(--primary); padding-left: 10px; }
 
           header { padding: 60px 20px 20px; text-align: center; } 
           .logo-main { width: 100px; filter: drop-shadow(0 0 15px var(--primary)); margin-bottom: 15px; } 
 
-          /* True Random Glitch Effect */
-          h1 { font-size: clamp(2.2rem, 10vw, 4.8rem); margin: 0; letter-spacing: 12px; text-transform: uppercase; font-weight: 900; position: relative; } 
-          .glitch-text { position: relative; display: inline-block; color: white; }
-          .glitch-text.active { animation: shake 0.25s ease-in-out; text-shadow: 3px 0 #0ff, -3px 0 #f0f; }
-          @keyframes shake { 0% { transform: translate(0); } 20% { transform: translate(-3px, 2px); } 40% { transform: translate(3px, -1px); } 60% { transform: translate(-2px, 1px); } 100% { transform: translate(0); } }
+          /* Permanent Glitch Effect */
+          h1 { font-size: clamp(2.2rem, 10vw, 4.8rem); margin: 0; letter-spacing: 12px; text-transform: uppercase; font-weight: 900; position: relative; color: white; } 
+          .permanent-glitch { position: relative; display: inline-block; animation: main-glitch 4s infinite; }
+          .permanent-glitch::before, .permanent-glitch::after { content: "EVERBLOOM"; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: transparent; clip: rect(0, 0, 0, 0); }
+          .permanent-glitch::before { left: -2px; text-shadow: 2px 0 #0ff; animation: glitch-anim 2s infinite linear alternate-reverse; }
+          .permanent-glitch::after { left: 2px; text-shadow: -2px 0 #f0f; animation: glitch-anim 3s infinite linear alternate-reverse; }
+
+          @keyframes glitch-anim {
+            0% { clip: rect(20px, 9999px, 10px, 0); }
+            20% { clip: rect(45px, 9999px, 80px, 0); }
+            40% { clip: rect(10px, 9999px, 30px, 0); }
+            60% { clip: rect(60px, 9999px, 100px, 0); }
+            80% { clip: rect(85px, 9999px, 20px, 0); }
+            100% { clip: rect(30px, 9999px, 50px, 0); }
+          }
 
           .container { max-width: 1100px; margin: auto; padding: 20px; } 
           .info-card { background: var(--card-bg); padding: 30px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); margin-bottom: 25px; backdrop-filter: blur(10px); } 
           .info-card h3 { color: var(--primary); text-transform: uppercase; letter-spacing: 2px; margin-top: 0; display: flex; align-items: center; gap: 10px; } 
 
-          /* Buttons */
+          /* Buttons & GT Banner */
           .apply-container { text-align: center; margin: 40px 0; }
           .apply-btn { display: inline-block; background: transparent; color: white; padding: 22px 60px; border-radius: 4px; text-decoration: none; font-weight: 900; text-transform: uppercase; letter-spacing: 5px; border: 2px solid var(--primary); transition: 0.4s; } 
           .apply-btn:hover { background: var(--primary); box-shadow: 0 0 35px var(--primary); transform: scale(1.05); } 
+
+          .gt-banner-card { background: linear-gradient(135deg, #ff5e00 0%, #222 100%); padding: 20px; border-radius: 12px; text-align: center; margin-bottom: 25px; border: 1px solid rgba(255,255,255,0.1); transition: 0.3s; cursor: pointer; text-decoration: none; display: block; }
+          .gt-banner-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(255, 94, 0, 0.3); }
 
           .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; } 
 
@@ -69,30 +83,23 @@
           .btn-tiktok { background: var(--color-tiktok); }
           .btn-twitch { background: var(--color-twitch); }
           .btn-discord { background: var(--color-discord); }
-          .btn-gt { background: var(--color-gt); }
-          .social-btn:hover { transform: translateY(-5px); filter: brightness(1.2); }
 
-          /* Roster Styling */
+          /* Roster & Glowing Ranks */
           .roster-grid { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; padding: 30px 0; } 
           .player-card { flex: 0 0 240px; background: #0d131a; border-radius: 12px; min-height: 380px; position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); transition: 0.4s; } 
           .player-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.4; } 
           .card-content { position: absolute; bottom: 0; width: 100%; padding: 20px; background: linear-gradient(transparent, #05080b 85%); z-index: 10; } 
           
-          .rank-tag { padding: 5px 10px; border-radius: 4px; font-size: 0.7rem; border: 1px solid; font-weight: bold; display: inline-block; margin: 8px 0; text-transform: uppercase; } 
-          .rank-bronze { border-color: var(--rank-bronze); color: var(--rank-bronze); text-shadow: 0 0 5px var(--rank-bronze); }
-          .rank-silver { border-color: var(--rank-silver); color: var(--rank-silver); }
-          .rank-gold { border-color: var(--rank-gold); color: var(--rank-gold); }
-          .rank-ascendant { border-color: var(--rank-ascendant); color: var(--rank-ascendant); box-shadow: 0 0 10px rgba(62, 240, 122, 0.2); }
+          .rank-tag { padding: 5px 12px; border-radius: 4px; font-size: 0.7rem; border: 1px solid; font-weight: 800; display: inline-block; margin: 8px 0; text-transform: uppercase; } 
+          .rank-bronze { border-color: var(--rank-bronze); color: var(--rank-bronze); box-shadow: 0 0 12px var(--rank-bronze); text-shadow: 0 0 5px var(--rank-bronze); }
+          .rank-silver { border-color: var(--rank-silver); color: var(--rank-silver); box-shadow: 0 0 12px var(--rank-silver); }
+          .rank-gold { border-color: var(--rank-gold); color: var(--rank-gold); box-shadow: 0 0 12px var(--rank-gold); }
+          .rank-ascendant { border-color: var(--rank-ascendant); color: var(--rank-ascendant); box-shadow: 0 0 15px var(--rank-ascendant); }
 
-          .player-socials { display: flex; gap: 15px; margin-top: 10px; }
-          .player-socials a { color: white; opacity: 0.6; font-size: 1.4rem; transition: 0.3s; }
-          .tracker-icon { width: 22px; height: 22px; vertical-align: middle; }
-
-          .join-card { border: 2px dashed var(--primary); display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--primary); cursor: pointer; text-align: center; } 
+          .join-card { border: 2px dashed var(--primary); display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--primary); cursor: pointer; text-align: center; font-weight: 900; } 
 
           footer { text-align: center; padding: 60px 20px; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 50px; }
-          .legal-link { color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.8rem; margin-top: 15px; display: inline-block; letter-spacing: 1px; transition: 0.3s; }
-          .legal-link:hover { color: var(--primary); }
+          .legal-link { color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.8rem; margin-top: 15px; display: inline-block; letter-spacing: 1px; }
 
           .page-section { display: none; } 
           .page-section.active { display: block; animation: fadeIn 0.6s ease; } 
@@ -116,15 +123,20 @@
      <section id="home" class="page-section active"> 
          <header> 
              <img src="everbloomlogo.png" alt="Everbloom" class="logo-main"> 
-             <h1><span class="glitch-text" id="glitch-title">EVERBLOOM</span></h1> 
+             <h1><span class="permanent-glitch">EVERBLOOM</span></h1> 
              <div style="color:var(--primary); letter-spacing:5px; font-weight:bold; font-size:0.75rem; margin-top:10px;">EST. 2026 | BLOOM OR DECAY</div> 
          </header> 
 
          <div class="container"> 
+             <a href="https://gamertransfer.com/_everbloom_gc-team-24582-view1" target="_blank" class="gt-banner-card">
+                <div style="font-weight: 900; letter-spacing: 2px; color: white;">OFFICIAL GAMERTRANSFER PROFILE</div>
+                <div style="font-size: 0.8rem; opacity: 0.8;">Find our team and recruitment details here</div>
+             </a>
+
              <div class="info-card"> 
                  <h3><i class="fas fa-heart"></i> ABOUT US</h3> 
                  <p class="about-text">
-                     Everbloom Gaming ist eine unabhängige E-Sports-Organisation aus der DACH-Region, die sich der Neudefinition der kompetitiven Valorant-Szene verschrieben hat. Gegründet Anfang 2026, ist es unsere Mission, ein strukturiertes Umfeld für High-Tier-Spieler zu schaffen. Wir glauben an nachhaltiges Wachstum durch Strategie, Chemie und Disziplin. Bei Everbloom spielen wir nicht nur – wir entwickeln uns weiter.
+                     Everbloom Gaming is an independent E-sports organization from the DACH region, dedicated to redefining the competitive Valorant scene. Founded in early 2026, our mission is to provide a structured environment for high-tier players. We believe in sustainable growth through strategy, chemistry, and discipline. At Everbloom, we don't just play – we evolve.
                  </p>
              </div> 
 
@@ -135,11 +147,11 @@
              <div class="grid-container"> 
                  <div class="info-card"> 
                      <h3><i class="fas fa-newspaper"></i> LATEST NEWS</h3> 
-                     <p>• Scouting für Male Roster (High ELO)<br>• FLINTA Roster aktuell: 3/5 Spieler<br>• Website Update v3.2 abgeschlossen</p> 
+                     <p>• Scouting for Male Roster (High ELO)<br>• FLINTA Roster status: 3/5 Players<br>• Website Update v3.5 completed</p> 
                  </div> 
                  <div class="info-card"> 
                      <h3><i class="fas fa-bullseye"></i> CURRENT GOALS</h3> 
-                     <p>• Lineups finalisieren<br>• Project V Division 4/3 Einstieg<br>• Scrim-Saison Start April 2026</p> 
+                     <p>• Finalize Lineups<br>• Entry into Project V Division 4/3<br>• Scrim Season Start: April 2026</p> 
                  </div> 
              </div> 
 
@@ -149,7 +161,6 @@
                  <a href="https://www.tiktok.com/@everbloom_gc" class="social-btn btn-tiktok" target="_blank"><i class="fa-brands fa-tiktok"></i> TikTok</a> 
                  <a href="https://www.twitch.tv/everbloomvalorant" class="social-btn btn-twitch" target="_blank"><i class="fa-brands fa-twitch"></i> Twitch</a> 
                  <a href="https://discord.gg/Cp2J72hesH" class="social-btn btn-discord" target="_blank"><i class="fa-brands fa-discord"></i> Discord</a> 
-                 <a href="https://gamertransfer.com/_everbloom_gc-team-24582-view1" class="social-btn btn-gt" target="_blank"><i class="fas fa-users"></i> GT Profile</a>
              </div> 
          </div> 
      </section> 
@@ -216,7 +227,7 @@
                      <div class="card-content">
                          <small style="color:var(--primary); font-weight: bold;">FOUNDER</small>
                          <div style="font-weight:900; font-size:1.4rem;">WalmartReyna</div>
-                         <div class="rank-tag" style="border-color:var(--primary); color:var(--primary);">Owner</div>
+                         <div class="rank-tag" style="border-color:var(--primary); color:var(--primary); box-shadow: 0 0 10px var(--primary);">Owner</div>
                          <div class="player-socials">
                              <a href="https://x.com/everbloom_gc" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
                          </div>
@@ -228,11 +239,10 @@
 
      <footer>
          <div style="opacity: 0.8;">© 2026 EVERBLOOM GAMING | BLOOM OR DECAY</div>
-         <a href="legal.html" class="legal-link">Impressum & Datenschutz</a>
+         <a href="legal.html" class="legal-link">Imprint & Privacy Policy</a>
      </footer> 
 
      <script>
-         // Navigation
          function toggleNav() { document.getElementById('navOverlay').classList.toggle('active'); } 
          function showSection(id) { 
              document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active')); 
@@ -240,17 +250,6 @@
              if(document.getElementById('navOverlay').classList.contains('active')) toggleNav(); 
              window.scrollTo({top: 0, behavior: 'smooth'}); 
          } 
-
-         // True Random Glitch Script
-         const title = document.getElementById('glitch-title');
-         function triggerGlitch() {
-             title.classList.add('active');
-             setTimeout(() => { title.classList.remove('active'); }, 250);
-             // Zufällige Pause zwischen 1.5 und 6.5 Sekunden
-             const nextGlitch = Math.random() * 5000 + 1500;
-             setTimeout(triggerGlitch, nextGlitch);
-         }
-         triggerGlitch();
      </script>
 </body> 
 </html>
