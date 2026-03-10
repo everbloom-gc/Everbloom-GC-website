@@ -20,11 +20,11 @@
               --color-discord: #5865F2;
               --color-gt: #ff5e00;
 
-              /* Rank Glow Colors */
-              --immortal: #b4163e;
-              --ascendant: #3ef07a;
-              --gold: #ffcf4b;
-              --silver: #ced4da;
+              /* Rank Colors */
+              --rank-bronze: #824a33;
+              --rank-silver: #ced4da;
+              --rank-gold: #ffcf4b;
+              --rank-ascendant: #3ef07a;
           } 
 
           * { box-sizing: border-box; } 
@@ -36,7 +36,7 @@
           /* Navigation */
           .nav-toggle { position: fixed; top: 20px; left: 20px; z-index: 1001; background: var(--primary); border: none; width: 45px; height: 45px; border-radius: 5px; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; } 
           .nav-toggle span { display: block; width: 22px; height: 2px; background: white; transition: 0.3s; } 
-          .nav-overlay { position: fixed; top: 0; left: -300px; width: 280px; height: 100vh; background: rgba(5, 8, 11, 0.98); backdrop-filter: blur(20px); z-index: 1000; transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1); display: flex; flex-direction: column; padding: 100px 30px; border-right: 1px solid var(--primary); } 
+          .nav-overlay { position: fixed; top: 0; left: -300px; width: 280px; height: 100vh; background: rgba(5, 8, 11, 0.98); backdrop-filter: blur(20px); z-index: 1000; transition: 0.5s; display: flex; flex-direction: column; padding: 100px 30px; border-right: 1px solid var(--primary); } 
           .nav-overlay.active { left: 0; } 
           .nav-overlay a { font-size: 1.5rem; color: white; text-decoration: none; text-transform: uppercase; font-weight: 900; margin: 15px 0; cursor: pointer; letter-spacing: 2px; }
 
@@ -53,13 +53,15 @@
           .info-card { background: var(--card-bg); padding: 30px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); margin-bottom: 25px; backdrop-filter: blur(10px); } 
           .info-card h3 { color: var(--primary); text-transform: uppercase; letter-spacing: 2px; margin-top: 0; display: flex; align-items: center; gap: 10px; } 
 
-          .apply-container { text-align: center; margin: 40px 0; }
-          .apply-btn { display: inline-block; background: transparent; color: white; padding: 22px 60px; border-radius: 4px; text-decoration: none; font-weight: 900; text-transform: uppercase; letter-spacing: 5px; border: 2px solid var(--primary); transition: 0.4s; } 
-          .apply-btn:hover { background: var(--primary); box-shadow: 0 0 35px var(--primary); transform: scale(1.05); } 
+          .apply-container { text-align: center; margin: 30px 0; }
+          .apply-btn { display: inline-block; background: transparent; color: white; padding: 20px 50px; border-radius: 4px; text-decoration: none; font-weight: 900; text-transform: uppercase; letter-spacing: 5px; border: 2px solid var(--primary); transition: 0.4s; } 
+          .apply-btn:hover { background: var(--primary); box-shadow: 0 0 30px var(--primary); transform: scale(1.05); } 
 
-          /* Social Buttons */
+          .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; } 
+
+          /* Socials */
           .social-links { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-top: 40px; } 
-          .social-btn { padding: 12px 20px; border-radius: 6px; text-decoration: none; color: white; font-size: 0.85rem; font-weight: bold; transition: 0.3s; display: flex; align-items: center; gap: 10px; } 
+          .social-btn { padding: 12px 18px; border-radius: 6px; text-decoration: none; color: white; font-size: 0.85rem; font-weight: bold; transition: 0.3s; display: flex; align-items: center; gap: 8px; border: 1px solid rgba(255,255,255,0.1); } 
           .btn-x { background: var(--color-x); }
           .btn-insta { background: var(--color-insta); }
           .btn-tiktok { background: var(--color-tiktok); }
@@ -68,28 +70,28 @@
           .btn-gt { background: var(--color-gt); }
           .social-btn:hover { transform: translateY(-5px); filter: brightness(1.2); }
 
-          /* Roster Styling */
+          /* Roster Card Styling */
           .roster-grid { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; padding: 30px 0; } 
-          .player-card { flex: 0 0 250px; background: #0d131a; border-radius: 12px; min-height: 400px; position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); transition: 0.4s; } 
+          .player-card { flex: 0 0 240px; background: #0d131a; border-radius: 12px; min-height: 380px; position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); transition: 0.4s; } 
           .player-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.4; } 
           .card-content { position: absolute; bottom: 0; width: 100%; padding: 20px; background: linear-gradient(transparent, #05080b 85%); z-index: 10; } 
           
-          .rank-tag { padding: 5px 12px; border-radius: 4px; font-size: 0.75rem; border: 1px solid; font-weight: bold; display: inline-block; margin: 10px 0; text-transform: uppercase; } 
-          .rank-immortal { border-color: var(--immortal); color: var(--immortal); box-shadow: 0 0 10px var(--immortal); }
-          .rank-ascendant { border-color: var(--ascendant); color: var(--ascendant); box-shadow: 0 0 10px var(--ascendant); }
-          .rank-gold { border-color: var(--gold); color: var(--gold); }
-          .rank-silver { border-color: var(--silver); color: var(--silver); }
-          
-          .player-socials { display: flex; gap: 15px; margin-top: 10px; }
-          .player-socials a { color: white; opacity: 0.6; font-size: 1.4rem; transition: 0.3s; }
-          .tracker-icon { width: 22px; height: 22px; vertical-align: middle; }
+          .rank-tag { padding: 5px 10px; border-radius: 4px; font-size: 0.7rem; border: 1px solid; font-weight: bold; display: inline-block; margin: 8px 0; text-transform: uppercase; } 
+          .rank-bronze { border-color: var(--rank-bronze); color: var(--rank-bronze); }
+          .rank-silver { border-color: var(--rank-silver); color: var(--rank-silver); }
+          .rank-gold { border-color: var(--rank-gold); color: var(--rank-gold); }
+          .rank-ascendant { border-color: var(--rank-ascendant); color: var(--rank-ascendant); }
 
-          .join-card { border: 2px dashed var(--primary); display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--primary); cursor: pointer; text-align: center; padding: 20px; } 
+          .tracker-icon { width: 20px; vertical-align: middle; }
+          .join-card { border: 2px dashed var(--primary); display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--primary); cursor: pointer; text-align: center; } 
 
-          footer { text-align: center; padding: 60px 20px; font-size: 0.8rem; opacity: 0.5; } 
+          footer { text-align: center; padding: 40px 20px; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 50px; }
+          .legal-link { color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.75rem; cursor: pointer; }
+          .legal-content { display: none; background: var(--card-bg); padding: 20px; border-radius: 8px; font-size: 0.85rem; line-height: 1.6; margin-top: 20px; text-align: left; }
+
           .page-section { display: none; } 
           .page-section.active { display: block; animation: fadeIn 0.6s ease; } 
-          @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } } 
+          @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } } 
      </style> 
 </head> 
 <body> 
@@ -116,14 +118,23 @@
          <div class="container"> 
              <div class="info-card"> 
                  <h3><i class="fas fa-heart"></i> ABOUT US</h3> 
-                 <p class="about-text">
-                     Everbloom Gaming is an independent E-Sports organization rooted in the DACH region, dedicated to redefining the competitive Valorant scene. Founded in early 2026, our mission is to provide a structured and professional environment for high-tier players. We believe that sustainable growth comes from a perfect balance of individual skill, tactical discipline, and a strong team chemistry. At Everbloom, we don't just play – we evolve.
-                 </p>
+                 <p>Everbloom Gaming ist eine unabhängige E-Sports-Organisation aus der DACH-Region, die sich der Neudefinition der kompetitiven Valorant-Szene verschrieben hat. Gegründet Anfang 2026, schaffen wir ein professionelles Umfeld für High-Tier-Spieler. Wir glauben an Strategie, Chemie und Disziplin.</p>
              </div> 
 
              <div class="apply-container">
                  <a href="https://forms.gle/VeNmZo9DkJo35PR5A" target="_blank" class="apply-btn">JOIN THE BLOOM</a> 
              </div>
+
+             <div class="grid-container"> 
+                 <div class="info-card"> 
+                     <h3><i class="fas fa-newspaper"></i> LATEST NEWS</h3> 
+                     <p>• Scouting für Male Roster (High ELO)<br>• FLINTA Roster aktuell: 3/5 Spieler<br>• Website v3.1 Live (Roster Update)</p> 
+                 </div> 
+                 <div class="info-card"> 
+                     <h3><i class="fas fa-bullseye"></i> CURRENT GOALS</h3> 
+                     <p>• Lineups finalisieren<br>• Project V Division 4/3 Einstieg<br>• Scrim-Saison Start April 2026</p> 
+                 </div> 
+             </div> 
 
              <div class="social-links"> 
                  <a href="https://x.com/everbloom_gc" class="social-btn btn-x" target="_blank"><i class="fa-brands fa-x-twitter"></i> Twitter</a> 
@@ -147,10 +158,22 @@
                      <div class="card-content">
                          <small style="color:var(--primary); font-weight: bold;">DUELIST</small>
                          <div style="font-weight:900; font-size:1.4rem;">Archer</div>
-                         <div class="rank-tag rank-immortal">Immortal 1</div>
+                         <div class="rank-tag rank-bronze">Bronze 3</div>
                          <div class="player-socials">
                              <a href="https://x.com/archerhh0" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
                              <a href="https://tracker.gg/valorant/profile/riot/c9%20%EC%98%A5%EC%8B%9C%230001/overview" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
+                         </div>
+                     </div>
+                 </div>
+                 <div class="player-card">
+                     <img src="jett.png" class="player-img">
+                     <div class="card-content">
+                         <small style="color:var(--primary); font-weight: bold;">DUELIST</small>
+                         <div style="font-weight:900; font-size:1.4rem;">Rubyxcube</div>
+                         <div class="rank-tag rank-silver">Silver 2</div>
+                         <div class="player-socials">
+                             <a href="https://x.com/x2_zelda" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                             <a href="https://tracker.gg/valorant/profile/riot/Rubyxcube%23EBM/overview" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
                          </div>
                      </div>
                  </div>
@@ -166,28 +189,27 @@
                          </div>
                      </div>
                  </div>
-                 <div class="player-card join-card" onclick="window.open('https://forms.gle/VeNmZo9DkJo35PR5A')"><i class="fas fa-plus-circle" style="font-size:2rem; margin-bottom:10px;"></i>FLINTA SLOT 3</div>
-                 <div class="player-card join-card" onclick="window.open('https://forms.gle/VeNmZo9DkJo35PR5A')"><i class="fas fa-plus-circle" style="font-size:2rem; margin-bottom:10px;"></i>FLINTA SLOT 4</div>
-                 <div class="player-card join-card" onclick="window.open('https://forms.gle/VeNmZo9DkJo35PR5A')"><i class="fas fa-plus-circle" style="font-size:2rem; margin-bottom:10px;"></i>FLINTA SLOT 5</div>
+                 <div class="player-card join-card" onclick="window.open('https://forms.gle/VeNmZo9DkJo35PR5A')">FLINTA SLOT 4</div>
+                 <div class="player-card join-card" onclick="window.open('https://forms.gle/VeNmZo9DkJo35PR5A')">FLINTA SLOT 5</div>
              </div>
 
-             <h3 style="text-align:center; color:var(--primary); text-transform: uppercase; margin-top: 50px;">Male Roster</h3> 
+             <h3 style="text-align:center; color:var(--primary); text-transform: uppercase; margin-top: 40px;">Male Roster</h3> 
              <div class="roster-grid">
-                 <div class="player-card join-card" style="width:100%; max-width:600px;" onclick="window.open('https://forms.gle/VeNmZo9DkJo35PR5A')">
-                     <i class="fas fa-search" style="font-size:2.5rem; margin-bottom:15px;"></i>
-                     <strong>RECRUITING FULL LINEUP</strong><br>
-                     <span class="rank-tag rank-ascendant" style="margin-top:10px;">Requirement: ASC - RADIANT</span>
+                 <div class="player-card join-card" style="width:100%; max-width:500px;" onclick="window.open('https://forms.gle/VeNmZo9DkJo35PR5A')">
+                     <i class="fas fa-search" style="font-size:2rem; margin-bottom:10px;"></i>
+                     RECRUITING FULL LINEUP<br>
+                     <span class="rank-tag rank-ascendant">REQ: ASC - RADIANT</span>
                  </div>
              </div>
 
-             <h3 style="text-align:center; color:var(--primary); text-transform: uppercase; margin-top: 50px;">Management</h3> 
+             <h3 style="text-align:center; color:var(--primary); text-transform: uppercase; margin-top: 40px;">Management</h3> 
              <div class="roster-grid">
                  <div class="player-card">
                      <img src="everbloomlogo.png" class="player-img" style="opacity: 0.1; transform: scale(0.6); object-fit: contain;">
                      <div class="card-content">
                          <small style="color:var(--primary); font-weight: bold;">FOUNDER</small>
                          <div style="font-weight:900; font-size:1.4rem;">WalmartReyna</div>
-                         <div class="rank-tag">Owner</div>
+                         <div class="rank-tag" style="border-color:var(--primary); color:var(--primary);">Owner</div>
                          <div class="player-socials">
                              <a href="https://x.com/everbloom_gc" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
                          </div>
@@ -197,7 +219,17 @@
          </div> 
      </section> 
 
-     <footer>© 2026 EVERBLOOM GAMING | BLOOM OR DECAY</footer> 
+     <footer>
+         <div style="opacity: 0.8; margin-bottom: 10px;">© 2026 EVERBLOOM GAMING | BLOOM OR DECAY</div>
+         <a class="legal-link" onclick="toggleLegal()">Impressum & Legal Notice</a>
+         <div id="legal-box" class="legal-content">
+             <strong>Impressum</strong><br>
+             Everbloom Gaming DACH<br>
+             E-Mail: everbloom.gc@gmail.com<br>
+             Verantwortlich für den Inhalt: WalmartReyna Management<br><br>
+             <em>Haftungsausschluss: Alle verwendeten Marken (VALORANT, Riot Games) sind Eigentum ihrer jeweiligen Inhaber. Dies ist eine unabhängige E-Sports Fan-Organisation.</em>
+         </div>
+     </footer> 
 
      <script>
          function toggleNav() { document.getElementById('navOverlay').classList.toggle('active'); } 
@@ -207,7 +239,10 @@
              if(document.getElementById('navOverlay').classList.contains('active')) toggleNav(); 
              window.scrollTo({top: 0, behavior: 'smooth'}); 
          } 
-
+         function toggleLegal() {
+             const box = document.getElementById('legal-box');
+             box.style.display = (box.style.display === 'block') ? 'none' : 'block';
+         }
          const title = document.getElementById('glitch-title');
          function triggerGlitch() {
              title.classList.add('active');
