@@ -36,7 +36,10 @@
           .nav-toggle span { display: block; width: 22px; height: 2px; background: white; transition: 0.3s; } 
           .nav-overlay { position: fixed; top: 0; left: -300px; width: 280px; height: 100vh; background: rgba(6, 11, 16, 0.98); backdrop-filter: blur(25px); z-index: 1000; transition: 0.5s; display: flex; flex-direction: column; padding: 100px 30px; border-right: 1px solid rgba(212, 23, 91, 0.2); } 
           .nav-overlay.active { left: 0; } 
-          .nav-overlay a { font-size: 1.5rem; color: white; text-decoration: none; text-transform: uppercase; font-weight: 900; margin: 15px 0; cursor: pointer; transition: 0.2s; letter-spacing: 2px; } 
+          
+          /* Pink Hover Effekt im Menü */
+          .nav-overlay a { font-size: 1.5rem; color: white; text-decoration: none; text-transform: uppercase; font-weight: 900; margin: 15px 0; cursor: pointer; transition: 0.3s; letter-spacing: 2px; position: relative; display: inline-block; width: fit-content; } 
+          .nav-overlay a:hover { color: var(--primary); text-shadow: 0 0 15px var(--primary); transform: translateX(10px); }
 
           header { padding: 80px 20px 40px; text-align: center; } 
           .logo-main { width: 130px; filter: drop-shadow(0 0 25px var(--primary)); margin-bottom: 20px; } 
@@ -56,7 +59,6 @@
           .apply-btn { display: inline-block; background: transparent; color: white; padding: 22px 65px; border-radius: 4px; text-decoration: none; font-weight: 900; text-transform: uppercase; letter-spacing: 6px; transition: 0.4s; border: 2px solid var(--primary); } 
           .apply-btn:hover { background: var(--primary); box-shadow: 0 0 35px var(--primary); transform: scale(1.05); } 
 
-          /* Roster Layout */
           .roster-grid-container { display: flex; flex-direction: column; gap: 20px; align-items: center; }
           .roster-row-top { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; width: 100%; }
           .roster-row-bottom { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; width: 66%; margin: 0 auto; }
@@ -70,7 +72,6 @@
           .player-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.35; z-index: 1; } 
           .card-content { position: absolute; bottom: 0; width: 100%; padding: 20px; background: linear-gradient(transparent, #060b10 85%); z-index: 10; } 
           
-          /* Player Socials & Tracker */
           .player-links { display: flex; gap: 12px; align-items: center; margin-top: 10px; }
           .tracker-icon { height: 18px; filter: brightness(1.2); transition: 0.3s; }
           .player-link-icon { color: white; font-size: 1.1rem; transition: 0.3s; text-decoration: none; }
@@ -175,8 +176,8 @@
                              <div style="font-weight:900; font-size:1.4rem;">Rubyxcube</div>
                              <div class="rank-tag rank-silver">Silver 2</div>
                              <div class="player-links">
-                                 <a href="#" target="_blank"><img src="valotrackerlog.png" class="tracker-icon" alt="Tracker"></a>
-                                 <a href="#" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
+                                 <a href="https://tracker.gg/valorant" target="_blank"><img src="valotrackerlog.png" class="tracker-icon" alt="Tracker"></a>
+                                 <a href="https://x.com/everbloom_gc" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
                              </div>
                          </div>
                      </div>
@@ -187,8 +188,8 @@
                              <div style="font-weight:900; font-size:1.4rem;">Archer</div>
                              <div class="rank-tag rank-bronze">Bronze 3</div>
                              <div class="player-links">
-                                 <a href="#" target="_blank"><img src="valotrackerlog.png" class="tracker-icon" alt="Tracker"></a>
-                                 <a href="#" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
+                                 <a href="https://tracker.gg/valorant" target="_blank"><img src="valotrackerlog.png" class="tracker-icon" alt="Tracker"></a>
+                                 <a href="https://x.com/everbloom_gc" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
                              </div>
                          </div>
                      </div>
@@ -199,8 +200,8 @@
                              <div style="font-weight:900; font-size:1.4rem;">AURØRA</div>
                              <div class="rank-tag rank-gold">Gold 1</div>
                              <div class="player-links">
-                                 <a href="#" target="_blank"><img src="valotrackerlog.png" class="tracker-icon" alt="Tracker"></a>
-                                 <a href="#" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
+                                 <a href="https://tracker.gg/valorant" target="_blank"><img src="valotrackerlog.png" class="tracker-icon" alt="Tracker"></a>
+                                 <a href="https://x.com/everbloom_gc" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
                              </div>
                          </div>
                      </div>
@@ -239,9 +240,9 @@
              <div class="footer-socials">
                  <a href="https://discord.gg/Cp2J72hesH" class="soc-link sl-discord" target="_blank"><i class="fa-brands fa-discord"></i></a>
                  <a href="https://x.com/everbloom_gc" class="soc-link sl-x" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
-                 <a href="#" class="soc-link sl-insta" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                 <a href="#" class="soc-link sl-tiktok" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
-                 <a href="#" class="soc-link sl-twitch" target="_blank"><i class="fa-brands fa-twitch"></i></a>
+                 <a href="https://instagram.com/everbloom.gc" class="soc-link sl-insta" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                 <a href="https://tiktok.com/@everbloom.gc" class="soc-link sl-tiktok" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+                 <a href="https://twitch.tv/everbloom_gc" class="soc-link sl-twitch" target="_blank"><i class="fa-brands fa-twitch"></i></a>
              </div>
 
              <div style="opacity: 0.4; font-size: 0.8rem;">© 2026 EVERBLOOM GAMING</div>
