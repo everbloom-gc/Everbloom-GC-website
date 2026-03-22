@@ -19,7 +19,7 @@
      <style> 
           :root { 
                --primary: #d4175b;  
-               --bg: #060b10;         
+               --bg: #060b10;          
                --card-bg: rgba(17, 27, 36, 0.6); 
                --text: #ffffff; 
                --color-x: #000000;
@@ -45,7 +45,6 @@
           .nav-overlay { position: fixed; top: 0; left: -300px; width: 280px; height: 100vh; background: rgba(6, 11, 16, 0.98); backdrop-filter: blur(25px); z-index: 1000; transition: 0.5s; display: flex; flex-direction: column; padding: 100px 30px; border-right: 1px solid rgba(212, 23, 91, 0.2); } 
           .nav-overlay.active { left: 0; } 
           
-          /* Pink Hover Effekt im Menü */
           .nav-overlay a { font-size: 1.5rem; color: white; text-decoration: none; text-transform: uppercase; font-weight: 900; margin: 15px 0; cursor: pointer; transition: 0.3s ease; letter-spacing: 2px; } 
           .nav-overlay a:hover { color: var(--primary); text-shadow: 0 0 15px var(--primary); transform: translateX(10px); }
 
@@ -108,7 +107,7 @@
           @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } } 
      </style> 
 
-     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com data:; img-src 'self' data: https://cdn.discordapp.com https://media.discordapp.net https://gamertransfer.com https://www.gamertransfer.com;">
+     <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com data:; img-src 'self' data: https://cdn.discordapp.com https://media.discordapp.net https://gamertransfer.com https://www.gamertransfer.com;">
      
 </head> 
 <body> 
@@ -259,7 +258,7 @@
               </div>
 
               <div style="opacity: 0.4; font-size: 0.8rem;">© 2026 EVERBLOOM GAMING</div>
-              <a href="./legal.html" style="color:rgba(255,255,255,0.4); text-decoration:none; font-size: 0.7rem; transition: 0.3s; display: inline-block; margin-top: 10px;">Legal Notice / Privacy Policy</a>
+              <a href="legal.html" target="_top" style="color:rgba(255,255,255,0.4); text-decoration:none; font-size: 0.7rem; transition: 0.3s; display: inline-block; margin-top: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">Legal Notice / Privacy Policy</a>
           </div>
      </footer> 
 
