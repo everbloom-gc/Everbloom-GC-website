@@ -6,13 +6,12 @@
      <title>EVERBLOOM | Valorant Team 🌸</title> 
 
      <link rel="icon" type="image/png" href="everbloomlogo.png">
-     <meta property="og:type" content="website">
-     <meta property="og:url" content="https://everbloom-gc.com/">
+
      <meta property="og:title" content="EVERBLOOM | Valorant Team 🌸">
-     <meta property="og:description" content="Official Everbloom-GC Website. Check out our rosters and join the bloom!">
-     <meta property="og:image" content="https://everbloom-gc.com/social-preview.png">
+     <meta property="og:description" content="Official Everbloom-GC Website. Join the bloom!">
+     <meta property="og:image" content="https://everbloom-gc.com/everbloomlogo.png">
+     <meta property="og:type" content="website">
      <meta name="twitter:card" content="summary_large_image">
-     <meta name="twitter:image" content="https://everbloom-gc.com/social-preview.png">
 
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> 
      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
@@ -46,6 +45,7 @@
           .nav-overlay { position: fixed; top: 0; left: -300px; width: 280px; height: 100vh; background: rgba(6, 11, 16, 0.98); backdrop-filter: blur(25px); z-index: 1000; transition: 0.5s; display: flex; flex-direction: column; padding: 100px 30px; border-right: 1px solid rgba(212, 23, 91, 0.2); } 
           .nav-overlay.active { left: 0; } 
           
+          /* Pink Hover Effekt im Menü */
           .nav-overlay a { font-size: 1.5rem; color: white; text-decoration: none; text-transform: uppercase; font-weight: 900; margin: 15px 0; cursor: pointer; transition: 0.3s ease; letter-spacing: 2px; } 
           .nav-overlay a:hover { color: var(--primary); text-shadow: 0 0 15px var(--primary); transform: translateX(10px); }
 
@@ -77,8 +77,7 @@
           }
 
           .player-card { background: rgba(10, 15, 20, 0.8); border-radius: 10px; min-height: 400px; position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); transition: 0.4s; width: 100%; } 
-          .player-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.35; z-index: 1; transition: 0.5s; } 
-          .player-card:hover .player-img { opacity: 0.6; transform: scale(1.05); }
+          .player-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.35; z-index: 1; } 
           .card-content { position: absolute; bottom: 0; width: 100%; padding: 20px; background: linear-gradient(transparent, #060b10 85%); z-index: 10; } 
           
           .player-links { display: flex; gap: 12px; align-items: center; margin-top: 10px; }
@@ -109,6 +108,8 @@
           @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } } 
      </style> 
 
+     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com data:; img-src 'self' data: https://cdn.discordapp.com https://media.discordapp.net https://gamertransfer.com https://www.gamertransfer.com;">
+     
 </head> 
 <body> 
 
@@ -124,7 +125,7 @@
 
      <section id="home" class="page-section active"> 
           <header> 
-              <img src="everbloomlogo.svg" alt="Logo" class="logo-main"> 
+              <img src="everbloomlogo.png" alt="Logo" class="logo-main"> 
               <h1><span class="glitch-text">EVERBLOOM</span></h1> 
               <div style="color:var(--primary); letter-spacing:5px; font-weight:bold; font-size:0.8rem;">EST. 2026 | BLOOM OR DECAY</div> 
           </header> 
@@ -167,7 +168,7 @@
               <h3 style="text-align:center; color:var(--primary); text-transform: uppercase; margin-bottom: 20px;">Management</h3> 
               <div style="display:flex; justify-content:center; margin-bottom: 50px;">
                   <div class="player-card" style="max-width: 300px;">
-                      <img src="everbloomlogo.svg" style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); width:85%; opacity:0.6; z-index:0; filter: drop-shadow(0 0 15px var(--primary));">
+                      <img src="everbloomlogo.png" style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); width:85%; opacity:0.6; z-index:0; filter: drop-shadow(0 0 15px var(--primary));">
                       <div class="card-content">
                           <small style="color:var(--primary); font-weight: bold;">FOUNDER / MANAGER</small>
                           <div style="font-weight:900; font-size:1.4rem;">Walmart Reyna</div>
