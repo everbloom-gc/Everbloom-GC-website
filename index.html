@@ -59,8 +59,7 @@
           .apply-btn:hover { background: var(--primary); box-shadow: 0 0 35px var(--primary); transform: scale(1.05); } 
 
           .roster-grid-container { display: flex; flex-direction: column; gap: 20px; align-items: center; }
-          .roster-row-top { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; width: 100%; }
-          .roster-row-bottom { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; width: 100%; }
+          .roster-row-top, .roster-row-bottom { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; width: 100%; }
 
           @media (max-width: 850px) {
                .roster-row-top, .roster-row-bottom { grid-template-columns: 1fr; width: 100%; }
@@ -73,13 +72,11 @@
           .player-links { display: flex; gap: 12px; align-items: center; margin-top: 10px; }
           .tracker-icon { height: 18px; filter: brightness(1.2); transition: 0.3s; }
           .player-link-icon { color: white; font-size: 1.1rem; transition: 0.3s; text-decoration: none; }
-          .player-link-icon:hover, .tracker-icon:hover { color: var(--primary); filter: drop-shadow(0 0 5px var(--primary)); transform: scale(1.1); }
+          .player-link-icon:hover { color: var(--primary); transform: scale(1.1); }
 
           .rank-tag { padding: 5px 12px; border-radius: 4px; font-size: 0.7rem; border: 1px solid; font-weight: 800; display: inline-block; margin: 8px 0; text-transform: uppercase; } 
-          .rank-bronze { color: var(--rank-bronze); border-color: var(--rank-bronze); box-shadow: 0 0 10px var(--rank-bronze); }
           .rank-silver { color: var(--rank-silver); border-color: var(--rank-silver); box-shadow: 0 0 10px var(--rank-silver); }
           .rank-gold { color: var(--rank-gold); border-color: var(--rank-gold); box-shadow: 0 0 10px var(--rank-gold); }
-          .rank-radiant { color: var(--rank-radiant); border-color: var(--rank-radiant); box-shadow: 0 0 15px var(--rank-radiant); }
 
           .slot-card { border: 2px dashed rgba(212, 23, 91, 0.3); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: rgba(255,255,255,0.4); }
 
@@ -92,8 +89,6 @@
           .sl-insta { background: var(--color-insta); }
           .sl-tiktok { background: var(--color-tiktok); border: 1px solid #333; }
           .sl-twitch { background: var(--color-twitch); }
-          
-          .gt-banner-container { margin-bottom: 30px; }
 
           .page-section { display: none; } 
           .page-section.active { display: block; animation: fadeIn 0.6s ease; } 
@@ -123,12 +118,9 @@
               <div class="info-card"> 
                   <h3><i class="fas fa-seedling"></i> ABOUT US</h3> 
                   <div style="line-height: 1.8;">
-                      <strong>Everbloom Gaming</strong> is an independent E-Sports organization established in 2026. 
-                      Operating under the motto <strong>"Bloom or Decay,"</strong> we are dedicated to transforming 
-                      ambitious talent into competitive excellence within the DACH region.
-                      <br><br>
-                      Our current focus is the development of our <strong>FLINTA Roster</strong> with the clear 
-                      objective of competing in the <strong>VALORANT Game Changers</strong> series.
+                      <strong>Everbloom Gaming</strong> ist eine unabhängige E-Sports Organisation. 
+                      Unter dem Motto <strong>"Bloom or Decay"</strong> verwandeln wir ambitionierte Talente 
+                      in kompetitive Exzellenz im DACH-Raum.
                   </div>
               </div> 
 
@@ -143,22 +135,33 @@
                   </div>
                   <div class="info-card"> 
                       <h3>CURRENT GOALS</h3> 
-                      <p>• Getting a full roster this year<br>• Project V entry<br>• Win in Premier</p> 
+                      <p>• Full Roster 2026<br>• Project V entry<br>• Win in Premier</p> 
                   </div>
               </div> 
 
               <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;"> 
-                  <div class="info-card" style="height: 500px; display: flex; flex-direction: column;"> 
+                  
+                  <div class="info-card" style="height: 600px; display: flex; flex-direction: column;"> 
                       <h3><i class="fa-brands fa-x-twitter"></i> UPDATES</h3> 
                       <div style="flex-grow: 1; overflow-y: auto; border-radius: 8px;">
-                          <a class="twitter-timeline" data-theme="dark" data-chrome="noheader nofooter transparent noborders" href="https://twitter.com/everbloom_gc">Loading Tweets...</a> 
+                          <a class="twitter-timeline" data-theme="dark" data-chrome="noheader nofooter transparent noborders" data-link-color="#d4175b" href="https://twitter.com/everbloom_gc">
+                            Loading Tweets...
+                          </a> 
                           <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                       </div>
                   </div> 
 
-                  <div class="info-card" style="height: 500px; display: flex; flex-direction: column;"> 
+                  <div class="info-card" style="height: 600px; display: flex; flex-direction: column;"> 
                       <h3><i class="fa-brands fa-discord"></i> COMMUNITY</h3> 
-                      <iframe src="https://discord.com/widget?id=1480523217079635998&theme=dark" width="100%" height="100%" style="flex-grow: 1; border-radius: 8px; border: none;" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+                      <div style="flex-grow: 1; border-radius: 8px; overflow: hidden; background: #2f3136;">
+                          <iframe src="https://e.widgetbot.io/channels/1480523217079635998/1480523220984795291" 
+                                  width="100%" 
+                                  height="100%" 
+                                  style="border:none;"
+                                  allowtransparency="true" 
+                                  frameborder="0">
+                          </iframe>
+                      </div>
                   </div> 
               </div>
           </div> 
@@ -248,16 +251,12 @@
                   <div class="rank-tag rank-radiant" style="margin: 15px 0;">ASCENDANT - RADIANT</div>
                   <p style="font-size: 0.8rem; color:rgba(255,255,255,0.7);">Looking for high-ELO talent. Apply via the home page.</p>
               </div>
+
           </div> 
      </section> 
 
      <footer>
           <div class="container">
-              <div class="gt-banner-container">
-                  <a href="https://gamertransfer.com/" target="_blank">
-                      <img src="https://gamertransfer.com/banner/banner300_w.png" alt="Gamertransfer Player Search" border="0" />
-                  </a>
-              </div>
               <div class="footer-socials">
                   <a href="https://discord.gg/bQ8phXAmSa" class="soc-link sl-discord" target="_blank"><i class="fa-brands fa-discord"></i></a>
                   <a href="https://x.com/everbloom_gc" class="soc-link sl-x" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
@@ -266,7 +265,7 @@
                   <a href="https://www.twitch.tv/everbloomvalorant" class="soc-link sl-twitch" target="_blank"><i class="fa-brands fa-twitch"></i></a>
               </div>
               <div style="opacity: 0.4; font-size: 0.8rem;">© 2026 EVERBLOOM GAMING</div>
-              <a href="legal.html" class="legal-link">Legal Notice / Privacy Policy</a>
+              <a href="legal.html" style="color:rgba(255,255,255,0.4); text-decoration: none; font-size: 0.7rem;">Legal Notice / Privacy Policy</a>
           </div>
      </footer> 
 
