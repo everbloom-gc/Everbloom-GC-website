@@ -97,8 +97,10 @@
           .page-section.active { display: block; animation: fadeIn 0.6s ease; } 
           @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } } 
 
-          .feed-container { max-height: 500px; overflow-y: auto; scrollbar-width: none; -ms-overflow-style: none; }
-          .feed-container::-webkit-scrollbar { display: none; }
+          /* Juicer Feed Container Anpassung */
+          .juicer-container { max-height: 500px; overflow-y: auto; overflow-x: hidden; border-radius: 8px; }
+          /* Versteckt das Juicer Branding (für ein cleaneres Design) */
+          .referral { display: none !important; }
      </style> 
 </head> 
 <body> 
@@ -127,9 +129,6 @@
                       <strong>Everbloom Gaming</strong> is an independent E-Sports organization established in 2026. 
                       Operating under the motto <strong>"Bloom or Decay,"</strong> we are dedicated to transforming 
                       ambitious talent into competitive excellence within the DACH region.
-                      <br><br>
-                      Our current focus is the development of our <strong>FLINTA Roster</strong> with the clear 
-                      objective of competing in the <strong>VALORANT Game Changers</strong> series.
                   </div>
               </div> 
 
@@ -141,14 +140,16 @@
                   <div class="info-card"> 
                       <h3><i class="fas fa-bullhorn"></i> LATEST NEWS</h3> 
                       <p>• Settie joined the team<br>• FLINTA Roster (4/5)<br>• First stream 03.29.2026</p> 
+                      
                       <h3 style="margin-top: 30px;"><i class="fas fa-tasks"></i> CURRENT GOALS</h3> 
                       <p>• Getting a full roster this year<br>• Project V entry<br>• Win in Premier</p> 
                   </div>
+                  
                   <div class="info-card"> 
-                      <h3><i class="fa-brands fa-x-twitter"></i> LATEST UPDATES</h3> 
-                      <div class="feed-container">
-                          <a class="twitter-timeline" data-height="450" data-theme="dark" data-chrome="noheader nofooter noborders transparent" href="https://twitter.com/everbloom_gc?ref_src=twsrc%5Etfw">Tweets by everbloom_gc</a> 
-                          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                      <h3><i class="fa-brands fa-x-twitter"></i> FEED</h3> 
+                      <div class="juicer-container">
+                          <ul class="juicer-feed" data-feed-id="everbloom_gc" data-per="5"></ul>
+                          <script type="text/javascript" src="https://www.juicer.io/embed/everbloom_gc/embed-code.js" async defer></script>
                       </div>
                   </div>
               </div> 
@@ -157,6 +158,7 @@
 
      <section id="roster" class="page-section"> 
           <div class="container" style="padding-top: 60px;"> 
+              
               <h3 style="text-align:center; color:var(--primary); text-transform: uppercase; margin-bottom: 20px;">Management</h3> 
               <div style="display:flex; justify-content:center; margin-bottom: 50px;">
                   <div class="player-card" style="max-width: 300px;">
