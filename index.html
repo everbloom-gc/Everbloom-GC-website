@@ -1,4 +1,4 @@
-	<!DOCTYPE html> 
+<!DOCTYPE html> 
 <html lang="en"> 
 <head> 
      <meta charset="UTF-8"> 
@@ -60,7 +60,6 @@
 
           .roster-grid-container { display: flex; flex-direction: column; gap: 20px; align-items: center; }
           .roster-row-top { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; width: 100%; }
-          /* Angepasst auf 3 Spalten für die untere Reihe (2 Spieler + 1 Slot) */
           .roster-row-bottom { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; width: 100%; }
 
           @media (max-width: 850px) {
@@ -97,6 +96,9 @@
           .page-section { display: none; } 
           .page-section.active { display: block; animation: fadeIn 0.6s ease; } 
           @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } } 
+
+          /* Feed Styling */
+          .feed-container { height: 400px; overflow-y: auto; border-radius: 8px; }
      </style> 
 </head> 
 <body> 
@@ -139,20 +141,24 @@
 
               <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;"> 
                   <div class="info-card"> 
-    <h3>LATEST NEWS</h3> 
-    <p>• Settie joined the team<br>• FLINTA Roster (4/5)<br>• First stream 03.29.2026</p> 
-</div>
+                    <h3><i class="fa-brands fa-x-twitter"></i> X FEED</h3> 
+                    <div class="feed-container">
+                        <a class="twitter-timeline" data-height="400" data-theme="dark" data-chrome="noheader nofooter noborders transparent" href="https://twitter.com/everbloom_gc?ref_src=twsrc%5Etfw">Tweets by everbloom_gc</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    </div>
+                  </div>
                   <div class="info-card"> 
-    <h3>CURRENT GOALS</h3> 
-    <p>• Getting a full roster this year<br>• Project V entry<br>• Win in Premier</p> 
-</div>
+                    <h3><i class="fa-brands fa-discord"></i> DISCORD</h3> 
+                    <div class="feed-container">
+                        <iframe src="https://discord.com/widget?id=1308354894220791858&theme=dark" width="100%" height="400" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+                    </div>
+                  </div>
               </div> 
           </div> 
      </section> 
 
      <section id="roster" class="page-section"> 
           <div class="container" style="padding-top: 60px;"> 
-              
+               
               <h3 style="text-align:center; color:var(--primary); text-transform: uppercase; margin-bottom: 20px;">Management</h3> 
               <div style="display:flex; justify-content:center; margin-bottom: 50px;">
                   <div class="player-card" style="max-width: 300px;">
