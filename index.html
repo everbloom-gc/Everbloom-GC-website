@@ -52,15 +52,14 @@
 
           .container { max-width: 1100px; margin: auto; padding: 20px; } 
           .info-card { background: var(--card-bg); padding: 35px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1); border-top: 4px solid var(--primary); margin-bottom: 25px; backdrop-filter: blur(15px); } 
-          .info-card h3 { margin-top: 0; color: var(--primary); text-transform: uppercase; } 
+          .info-card h3 { margin-top: 0; color: var(--primary); text-transform: uppercase; font-size: 1.2rem; letter-spacing: 2px; } 
 
           .apply-container { text-align: center; margin: 20px 0 40px; }
           .apply-btn { display: inline-block; background: transparent; color: white; padding: 22px 65px; border-radius: 4px; text-decoration: none; font-weight: 900; text-transform: uppercase; letter-spacing: 6px; transition: 0.4s; border: 2px solid var(--primary); } 
           .apply-btn:hover { background: var(--primary); box-shadow: 0 0 35px var(--primary); transform: scale(1.05); } 
 
           .roster-grid-container { display: flex; flex-direction: column; gap: 20px; align-items: center; }
-          .roster-row-top { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; width: 100%; }
-          .roster-row-bottom { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; width: 100%; }
+          .roster-row-top, .roster-row-bottom { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; width: 100%; }
 
           @media (max-width: 850px) {
                .roster-row-top, .roster-row-bottom { grid-template-columns: 1fr; width: 100%; }
@@ -76,31 +75,32 @@
           .player-link-icon:hover, .tracker-icon:hover { color: var(--primary); filter: drop-shadow(0 0 5px var(--primary)); transform: scale(1.1); }
 
           .rank-tag { padding: 5px 12px; border-radius: 4px; font-size: 0.7rem; border: 1px solid; font-weight: 800; display: inline-block; margin: 8px 0; text-transform: uppercase; } 
-          .rank-bronze { color: var(--rank-bronze); border-color: var(--rank-bronze); box-shadow: 0 0 10px var(--rank-bronze); }
-          .rank-silver { color: var(--rank-silver); border-color: var(--rank-silver); box-shadow: 0 0 10px var(--rank-silver); }
-          .rank-gold { color: var(--rank-gold); border-color: var(--rank-gold); box-shadow: 0 0 10px var(--rank-gold); }
+          .rank-bronze { color: var(--rank-bronze); border-color: var(--rank-bronze); }
+          .rank-silver { color: var(--rank-silver); border-color: var(--rank-silver); }
+          .rank-gold { color: var(--rank-gold); border-color: var(--rank-gold); }
           .rank-radiant { color: var(--rank-radiant); border-color: var(--rank-radiant); box-shadow: 0 0 15px var(--rank-radiant); }
 
           .slot-card { border: 2px dashed rgba(212, 23, 91, 0.3); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: rgba(255,255,255,0.4); }
 
+          /* Juicer Customizing */
+          .juicer-feed-container { max-height: 500px; overflow-y: auto; scrollbar-width: none; border-radius: 8px; }
+          .juicer-feed-container::-webkit-scrollbar { display: none; }
+          .referral { display: none !important; }
+
           footer { text-align: center; padding: 60px 20px; background: rgba(0,0,0,0.2); }
           .footer-socials { display: flex; justify-content: center; gap: 15px; margin-bottom: 30px; }
           .soc-link { width: 55px; height: 55px; display: flex; align-items: center; justify-content: center; border-radius: 50%; color: white; text-decoration: none; font-size: 1.8rem; transition: 0.3s; }
-          
           .sl-discord { background: var(--color-discord); }
           .sl-x { background: var(--color-x); border: 1px solid #333; }
           .sl-insta { background: var(--color-insta); }
           .sl-tiktok { background: var(--color-tiktok); border: 1px solid #333; }
           .sl-twitch { background: var(--color-twitch); }
 
+          .legal-link { color: rgba(255,255,255,0.3); text-decoration: none; font-size: 0.7rem; margin-top: 10px; display: block; }
+
           .page-section { display: none; } 
           .page-section.active { display: block; animation: fadeIn 0.6s ease; } 
           @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } } 
-
-          /* Juicer Feed Container Anpassung */
-          .juicer-container { max-height: 500px; overflow-y: auto; overflow-x: hidden; border-radius: 8px; }
-          /* Versteckt das Juicer Branding (für ein cleaneres Design) */
-          .referral { display: none !important; }
      </style> 
 </head> 
 <body> 
@@ -129,6 +129,9 @@
                       <strong>Everbloom Gaming</strong> is an independent E-Sports organization established in 2026. 
                       Operating under the motto <strong>"Bloom or Decay,"</strong> we are dedicated to transforming 
                       ambitious talent into competitive excellence within the DACH region.
+                      <br><br>
+                      Our current focus is the development of our <strong>FLINTA Roster</strong> with the clear 
+                      objective of competing in the <strong>VALORANT Game Changers</strong> series.
                   </div>
               </div> 
 
@@ -136,29 +139,33 @@
                   <a href="https://forms.gle/VeNmZo9DkJo35PR5A" target="_blank" class="apply-btn">JOIN THE BLOOM</a> 
               </div>
 
-              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;"> 
-                  <div class="info-card"> 
-                      <h3><i class="fas fa-bullhorn"></i> LATEST NEWS</h3> 
-                      <p>• Settie joined the team<br>• FLINTA Roster (4/5)<br>• First stream 03.29.2026</p> 
-                      
-                      <h3 style="margin-top: 30px;"><i class="fas fa-tasks"></i> CURRENT GOALS</h3> 
-                      <p>• Getting a full roster this year<br>• Project V entry<br>• Win in Premier</p> 
-                  </div>
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px;"> 
                   
+                  <div class="news-column">
+                      <div class="info-card"> 
+                          <h3><i class="fas fa-bullhorn"></i> LATEST NEWS</h3> 
+                          <p>• Settie joined the team<br>• FLINTA Roster (4/5)<br>• First stream 03.29.2026</p> 
+                      </div>
+                      <div class="info-card"> 
+                          <h3><i class="fas fa-tasks"></i> CURRENT GOALS</h3> 
+                          <p>• Getting a full roster this year<br>• Project V entry<br>• Win in Premier</p> 
+                      </div>
+                  </div>
+
                   <div class="info-card"> 
-                      <h3><i class="fa-brands fa-x-twitter"></i> FEED</h3> 
-                      <div class="juicer-container">
+                      <h3><i class="fa-brands fa-x-twitter"></i> SOCIAL UPDATES</h3> 
+                      <div class="juicer-feed-container">
                           <ul class="juicer-feed" data-feed-id="everbloom_gc" data-per="5"></ul>
                           <script type="text/javascript" src="https://www.juicer.io/embed/everbloom_gc/embed-code.js" async defer></script>
                       </div>
                   </div>
+
               </div> 
           </div> 
      </section> 
 
      <section id="roster" class="page-section"> 
           <div class="container" style="padding-top: 60px;"> 
-              
               <h3 style="text-align:center; color:var(--primary); text-transform: uppercase; margin-bottom: 20px;">Management</h3> 
               <div style="display:flex; justify-content:center; margin-bottom: 50px;">
                   <div class="player-card" style="max-width: 300px;">
@@ -183,7 +190,7 @@
                               <div style="font-weight:900; font-size:1.4rem;">Rubyxcube</div>
                               <div class="rank-tag rank-silver">Silver 1</div>
                               <div class="player-links">
-                                  <a href="https://tracker.gg/valorant/profile/riot/Rubyxcube%23EBM/overview" target="_blank"><img src="valotrackerlog.png" class="tracker-icon" alt="Tracker"></a>
+                                  <a href="https://tracker.gg/valorant/profile/riot/Rubyxcube%23EBM/overview" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
                                   <a href="https://x.com/x2_zelda" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
                               </div>
                           </div>
@@ -195,7 +202,7 @@
                               <div style="font-weight:900; font-size:1.4rem;">Archer</div>
                               <div class="rank-tag rank-silver">Silver 2</div>
                               <div class="player-links">
-                                  <a href="https://tracker.gg/valorant/profile/riot/c9%20%EC%98%A5%EC%8B%9C%230001/overview" target="_blank"><img src="valotrackerlog.png" class="tracker-icon" alt="Tracker"></a>
+                                  <a href="https://tracker.gg/valorant/profile/riot/c9%20%EC%98%A5%EC%8B%9C%230001/overview" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
                                   <a href="https://x.com/archerhh0" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
                               </div>
                           </div>
@@ -207,7 +214,7 @@
                               <div style="font-weight:900; font-size:1.4rem;">AURØRA</div>
                               <div class="rank-tag rank-gold">Gold 1</div>
                               <div class="player-links">
-                                  <a href="https://tracker.gg/valorant/profile/riot/AURØRA%23IGNIS/overview" target="_blank"><img src="valotrackerlog.png" class="tracker-icon" alt="Tracker"></a>
+                                  <a href="https://tracker.gg/valorant/profile/riot/AURØRA%23IGNIS/overview" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
                                   <a href="https://x.com/tqrmcc" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
                               </div>
                           </div>
@@ -221,7 +228,7 @@
                               <div style="font-weight:900; font-size:1.4rem;">Settie</div>
                               <div class="rank-tag rank-silver">Silver 1</div>
                               <div class="player-links">
-                                  <a href="https://tracker.gg/valorant/profile/riot/settie%23TTV/overview" target="_blank"><img src="valotrackerlog.png" class="tracker-icon" alt="Tracker"></a>
+                                  <a href="https://tracker.gg/valorant/profile/riot/settie%23TTV/overview" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
                                   <a href="https://x.com/Suns3tt_VLR" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
                               </div>
                           </div>
@@ -232,11 +239,23 @@
                       </div>
                   </div>
               </div>
+
+              <h3 style="text-align:center; color:var(--primary); text-transform: uppercase; margin-top: 60px;">Male Roster</h3> 
+              <div class="info-card" style="text-align: center;">
+                  <div style="font-weight:900; letter-spacing: 2px; color:white;">SCOUTING PHASE</div>
+                  <div class="rank-tag rank-radiant" style="margin: 15px 0;">ASCENDANT - RADIANT</div>
+                  <p style="font-size: 0.8rem; color:rgba(255,255,255,0.7);">Looking for high-ELO talent. Apply via the home page.</p>
+              </div>
           </div> 
      </section> 
 
      <footer>
           <div class="container">
+              <div style="margin-bottom: 25px;">
+                  <a href="https://gamertransfer.com/" target="_blank">
+                      <img src="https://gamertransfer.com/banner/banner300_w.png" alt="Gamertransfer" style="max-width: 200px; opacity: 0.7;">
+                  </a>
+              </div>
               <div class="footer-socials">
                   <a href="https://discord.gg/bQ8phXAmSa" class="soc-link sl-discord" target="_blank"><i class="fa-brands fa-discord"></i></a>
                   <a href="https://x.com/everbloom_gc" class="soc-link sl-x" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
