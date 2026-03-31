@@ -60,7 +60,6 @@
 
           .roster-grid-container { display: flex; flex-direction: column; gap: 20px; align-items: center; }
           .roster-row-top { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; width: 100%; }
-          /* Angepasst auf 3 Spalten für die untere Reihe (2 Spieler + 1 Slot) */
           .roster-row-bottom { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; width: 100%; }
 
           @media (max-width: 850px) {
@@ -93,6 +92,8 @@
           .sl-insta { background: var(--color-insta); }
           .sl-tiktok { background: var(--color-tiktok); border: 1px solid #333; }
           .sl-twitch { background: var(--color-twitch); }
+          
+          .gt-banner-container { margin-bottom: 30px; }
 
           .page-section { display: none; } 
           .page-section.active { display: block; animation: fadeIn 0.6s ease; } 
@@ -127,9 +128,7 @@
                       ambitious talent into competitive excellence within the DACH region.
                       <br><br>
                       Our current focus is the development of our <strong>FLINTA Roster</strong> with the clear 
-                      objective of competing in the <strong>VALORANT Game Changers</strong> series. We believe in 
-                      <strong>Quality Practice</strong>: establishing a routine of regular team play, in-depth 
-                      strategy discussions, and critical VOD reviews to eliminate mistakes and reach our full potential.
+                      objective of competing in the <strong>VALORANT Game Changers</strong> series.
                   </div>
               </div> 
 
@@ -137,16 +136,31 @@
                   <a href="https://forms.gle/VeNmZo9DkJo35PR5A" target="_blank" class="apply-btn">JOIN THE BLOOM</a> 
               </div>
 
-              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;"> 
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 20px;"> 
                   <div class="info-card"> 
-    <h3>LATEST NEWS</h3> 
-    <p>• Settie joined the team<br>• FLINTA Roster (4/5)<br>• First stream 03.29.2026</p> 
-</div>
+                      <h3>LATEST NEWS</h3> 
+                      <p>• Settie joined the team<br>• FLINTA Roster (4/5)<br>• First stream 03.29.2026</p> 
+                  </div>
                   <div class="info-card"> 
-    <h3>CURRENT GOALS</h3> 
-    <p>• Getting a full roster this year<br>• Project V entry<br>• Win in Premier</p> 
-</div>
+                      <h3>CURRENT GOALS</h3> 
+                      <p>• Getting a full roster this year<br>• Project V entry<br>• Win in Premier</p> 
+                  </div>
               </div> 
+
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;"> 
+                  <div class="info-card" style="height: 500px; display: flex; flex-direction: column;"> 
+                      <h3><i class="fa-brands fa-x-twitter"></i> UPDATES</h3> 
+                      <div style="flex-grow: 1; overflow-y: auto; border-radius: 8px;">
+                          <a class="twitter-timeline" data-theme="dark" data-chrome="noheader nofooter transparent noborders" href="https://twitter.com/everbloom_gc">Loading Tweets...</a> 
+                          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                      </div>
+                  </div> 
+
+                  <div class="info-card" style="height: 500px; display: flex; flex-direction: column;"> 
+                      <h3><i class="fa-brands fa-discord"></i> COMMUNITY</h3> 
+                      <iframe src="https://discord.com/widget?id=1480523217079635998&theme=dark" width="100%" height="100%" style="flex-grow: 1; border-radius: 8px; border: none;" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+                  </div> 
+              </div>
           </div> 
      </section> 
 
@@ -177,7 +191,7 @@
                               <div style="font-weight:900; font-size:1.4rem;">Rubyxcube</div>
                               <div class="rank-tag rank-silver">Silver 1</div>
                               <div class="player-links">
-                                  <a href="https://tracker.gg/valorant/profile/riot/Rubyxcube%23EBM/overview?platform=pc&playlist=competitive&season=3ea2b318-423b-cf86-25da-7cbb0eefbe2d" target="_blank"><img src="valotrackerlog.png" class="tracker-icon" alt="Tracker"></a>
+                                  <a href="https://tracker.gg/valorant/profile/riot/Rubyxcube%23EBM/overview" target="_blank"><img src="valotrackerlog.png" class="tracker-icon" alt="Tracker"></a>
                                   <a href="https://x.com/x2_zelda" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
                               </div>
                           </div>
@@ -189,7 +203,7 @@
                               <div style="font-weight:900; font-size:1.4rem;">Archer</div>
                               <div class="rank-tag rank-silver">Silver 2</div>
                               <div class="player-links">
-                                  <a href="https://tracker.gg/valorant/profile/riot/c9%20%EC%98%A5%EC%8B%9C%230001/overview?platform=pc&playlist=competitive&season=3ea2b318-423b-cf86-25da-7cbb0eefbe2d" target="_blank"><img src="valotrackerlog.png" class="tracker-icon" alt="Tracker"></a>
+                                  <a href="https://tracker.gg/valorant/profile/riot/c9%20%EC%98%A5%EC%8B%9C%230001/overview" target="_blank"><img src="valotrackerlog.png" class="tracker-icon" alt="Tracker"></a>
                                   <a href="https://x.com/archerhh0" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
                               </div>
                           </div>
@@ -201,7 +215,7 @@
                               <div style="font-weight:900; font-size:1.4rem;">AURØRA</div>
                               <div class="rank-tag rank-gold">Gold 1</div>
                               <div class="player-links">
-                                  <a href="https://tracker.gg/valorant/profile/riot/AURØRA%23IGNIS/overview?platform=pc&playlist=competitive&season=3ea2b318-423b-cf86-25da-7cbb0eefbe2d" target="_blank"><img src="valotrackerlog.png" class="tracker-icon" alt="Tracker"></a>
+                                  <a href="https://tracker.gg/valorant/profile/riot/AURØRA%23IGNIS/overview" target="_blank"><img src="valotrackerlog.png" class="tracker-icon" alt="Tracker"></a>
                                   <a href="https://x.com/tqrmcc" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
                               </div>
                           </div>
@@ -216,7 +230,7 @@
                               <div style="font-weight:900; font-size:1.4rem;">Settie</div>
                               <div class="rank-tag rank-silver">Silver 1</div>
                               <div class="player-links">
-                                  <a href="https://tracker.gg/valorant/profile/riot/settie%23TTV/overview?platform=pc&playlist=competitive&season=9d85c932-4820-c060-09c3-668636d4df1b" target="_blank"><img src="valotrackerlog.png" class="tracker-icon" alt="Tracker"></a>
+                                  <a href="https://tracker.gg/valorant/profile/riot/settie%23TTV/overview" target="_blank"><img src="valotrackerlog.png" class="tracker-icon" alt="Tracker"></a>
                                   <a href="https://x.com/Suns3tt_VLR" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
                               </div>
                           </div>
@@ -234,18 +248,16 @@
                   <div class="rank-tag rank-radiant" style="margin: 15px 0;">ASCENDANT - RADIANT</div>
                   <p style="font-size: 0.8rem; color:rgba(255,255,255,0.7);">Looking for high-ELO talent. Apply via the home page.</p>
               </div>
-
           </div> 
      </section> 
 
      <footer>
           <div class="container">
               <div class="gt-banner-container">
-                 <a href="https://gamertransfer.com/" target="_blank">
-                     <img src="https://gamertransfer.com/banner/banner300_w.png" alt="Gamertransfer Player Search" border="0" />
-                 </a>
+                  <a href="https://gamertransfer.com/" target="_blank">
+                      <img src="https://gamertransfer.com/banner/banner300_w.png" alt="Gamertransfer Player Search" border="0" />
+                  </a>
               </div>
-
               <div class="footer-socials">
                   <a href="https://discord.gg/bQ8phXAmSa" class="soc-link sl-discord" target="_blank"><i class="fa-brands fa-discord"></i></a>
                   <a href="https://x.com/everbloom_gc" class="soc-link sl-x" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
@@ -253,7 +265,6 @@
                   <a href="https://www.tiktok.com/@everbloomgc" class="soc-link sl-tiktok" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
                   <a href="https://www.twitch.tv/everbloomvalorant" class="soc-link sl-twitch" target="_blank"><i class="fa-brands fa-twitch"></i></a>
               </div>
-
               <div style="opacity: 0.4; font-size: 0.8rem;">© 2026 EVERBLOOM GAMING</div>
               <a href="legal.html" class="legal-link">Legal Notice / Privacy Policy</a>
           </div>
