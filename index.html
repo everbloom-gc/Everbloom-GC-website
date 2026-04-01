@@ -58,7 +58,7 @@
           .apply-btn { display: inline-block; background: transparent; color: white; padding: 22px 65px; border-radius: 4px; text-decoration: none; font-weight: 900; text-transform: uppercase; letter-spacing: 6px; transition: 0.4s; border: 2px solid var(--primary); } 
           .apply-btn:hover { background: var(--primary); box-shadow: 0 0 35px var(--primary); transform: scale(1.05); } 
 
-          /* Feed Container */
+          /* Feed Styling */
           .feed-container { max-height: 500px; overflow-y: auto; border-radius: 8px; }
           .referral { display: none !important; }
 
@@ -77,9 +77,9 @@
           .player-links { display: flex; gap: 12px; align-items: center; margin-top: 10px; }
           .tracker-icon { height: 18px; filter: brightness(1.2); transition: 0.3s; }
           .player-link-icon { color: white; font-size: 1.1rem; transition: 0.3s; text-decoration: none; }
+          .player-link-icon:hover, .tracker-icon:hover { color: var(--primary); filter: drop-shadow(0 0 5px var(--primary)); transform: scale(1.1); }
 
           .rank-tag { padding: 5px 12px; border-radius: 4px; font-size: 0.7rem; border: 1px solid; font-weight: 800; display: inline-block; margin: 8px 0; text-transform: uppercase; } 
-          .rank-bronze { color: var(--rank-bronze); border-color: var(--rank-bronze); box-shadow: 0 0 10px var(--rank-bronze); }
           .rank-silver { color: var(--rank-silver); border-color: var(--rank-silver); box-shadow: 0 0 10px var(--rank-silver); }
           .rank-gold { color: var(--rank-gold); border-color: var(--rank-gold); box-shadow: 0 0 10px var(--rank-gold); }
           .rank-radiant { color: var(--rank-radiant); border-color: var(--rank-radiant); box-shadow: 0 0 15px var(--rank-radiant); }
@@ -183,7 +183,7 @@
                               <div style="font-weight:900; font-size:1.4rem;">Rubyxcube</div>
                               <div class="rank-tag rank-silver">Silver 1</div>
                               <div class="player-links">
-                                  <a href="https://tracker.gg/valorant/profile/riot/Rubyxcube%23EBM/" target="_blank"><img src="valotrackerlog.png" class="tracker-icon" alt="Tracker"></a>
+                                  <a href="https://tracker.gg/valorant/profile/riot/Rubyxcube%23EBM/" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
                                   <a href="https://x.com/x2_zelda" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
                               </div>
                           </div>
@@ -195,7 +195,7 @@
                               <div style="font-weight:900; font-size:1.4rem;">Archer</div>
                               <div class="rank-tag rank-silver">Silver 2</div>
                               <div class="player-links">
-                                  <a href="https://tracker.gg/valorant/profile/riot/c9%20%EC%98%A5%EC%8B%9C%230001/" target="_blank"><img src="valotrackerlog.png" class="tracker-icon" alt="Tracker"></a>
+                                  <a href="https://tracker.gg/valorant/profile/riot/c9%20%EC%98%A5%EC%8B%9C%230001/" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
                                   <a href="https://x.com/archerhh0" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
                               </div>
                           </div>
@@ -207,7 +207,7 @@
                               <div style="font-weight:900; font-size:1.4rem;">AURØRA</div>
                               <div class="rank-tag rank-gold">Gold 1</div>
                               <div class="player-links">
-                                  <a href="https://tracker.gg/valorant/profile/riot/AURØRA%23IGNIS/" target="_blank"><img src="valotrackerlog.png" class="tracker-icon" alt="Tracker"></a>
+                                  <a href="https://tracker.gg/valorant/profile/riot/AURØRA%23IGNIS/" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
                                   <a href="https://x.com/tqrmcc" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
                               </div>
                           </div>
@@ -222,7 +222,7 @@
                               <div style="font-weight:900; font-size:1.4rem;">Settie</div>
                               <div class="rank-tag rank-silver">Silver 1</div>
                               <div class="player-links">
-                                  <a href="https://tracker.gg/valorant/profile/riot/settie%23TTV/" target="_blank"><img src="valotrackerlog.png" class="tracker-icon" alt="Tracker"></a>
+                                  <a href="https://tracker.gg/valorant/profile/riot/settie%23TTV/" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
                                   <a href="https://x.com/Suns3tt_VLR" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
                               </div>
                           </div>
@@ -233,11 +233,25 @@
                       </div>
                   </div>
               </div>
+
+              <h3 style="text-align:center; color:var(--primary); text-transform: uppercase; margin-top: 60px;">Male Roster</h3> 
+              <div class="info-card" style="text-align: center;">
+                  <div style="font-weight:900; letter-spacing: 2px; color:white;">SCOUTING PHASE</div>
+                  <div class="rank-tag rank-radiant" style="margin: 15px 0;">ASCENDANT - RADIANT</div>
+                  <p style="font-size: 0.8rem; color:rgba(255,255,255,0.7);">Looking for high-ELO talent. Apply via the home page.</p>
+              </div>
+
           </div> 
      </section> 
 
      <footer>
           <div class="container">
+              <div class="gt-banner-container">
+                 <a href="https://gamertransfer.com/" target="_blank">
+                     <img src="https://gamertransfer.com/banner/banner300_w.png" alt="Gamertransfer Player Search" border="0" />
+                 </a>
+              </div>
+
               <div class="footer-socials">
                   <a href="https://discord.gg/bQ8phXAmSa" class="soc-link sl-discord" target="_blank"><i class="fa-brands fa-discord"></i></a>
                   <a href="https://x.com/everbloom_gc" class="soc-link sl-x" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
@@ -245,7 +259,9 @@
                   <a href="https://www.tiktok.com/@everbloomgc" class="soc-link sl-tiktok" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
                   <a href="https://www.twitch.tv/everbloomvalorant" class="soc-link sl-twitch" target="_blank"><i class="fa-brands fa-twitch"></i></a>
               </div>
+
               <div style="opacity: 0.4; font-size: 0.8rem;">© 2026 EVERBLOOM GAMING</div>
+              <a href="legal.html" class="legal-link">Legal Notice / Privacy Policy</a>
           </div>
      </footer> 
 
