@@ -42,7 +42,17 @@
           .nav-overlay a:hover { color: var(--primary); text-shadow: 0 0 15px var(--primary); transform: translateX(10px); }
 
           header { padding: 80px 20px 40px; text-align: center; } 
-          .logo-main { width: 130px; filter: drop-shadow(0 0 25px var(--primary)); margin-bottom: 20px; } 
+          
+          /* --- LOGO STYLING --- */
+          .logo-main { 
+               width: 130px; 
+               filter: drop-shadow(0 0 25px var(--primary)); 
+               margin-bottom: 20px; 
+               transition: transform 0.3s ease;
+          } 
+          .logo-main:hover {
+               transform: scale(1.05);
+          }
           
           .glitch-text { font-size: clamp(2.5rem, 8vw, 4.5rem); font-weight: 900; text-transform: uppercase; position: relative; display: inline-block; letter-spacing: 12px; } 
           .glitch-text::before, .glitch-text::after { content: "EVERBLOOM"; position: absolute; top: 0; left: 0; width: 100%; height: 100%; } 
@@ -129,7 +139,9 @@
 
      <section id="home" class="page-section active"> 
           <header> 
-              <img src="everbloomlogo.png" alt="Logo" class="logo-main"> 
+              <a href="#home" style="text-decoration: none;">
+                  <img src="everbloomlogo.png" alt="Everbloom Logo" class="logo-main"> 
+              </a>
               <h1><span class="glitch-text">EVERBLOOM</span></h1> 
               <div style="color:var(--primary); letter-spacing:5px; font-weight:bold; font-size:0.8rem;">EST. 2026 | BLOOM OR DECAY</div> 
           </header> 
@@ -158,7 +170,7 @@
                           <h3>CURRENT GOALS</h3> 
                           <p style="line-height: 1.6;">• Getting a full roster this year<br>• Project V entry<br>• Win in Premier</p> 
                       </div>
-                  </div>
+                  </div> 
                   
                   <div class="info-card">
                       <h3><i class="fa-brands fa-x-twitter"></i> FEED</h3>
