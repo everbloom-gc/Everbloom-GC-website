@@ -11,7 +11,7 @@
      <style> 
           :root { 
                --primary: #d4175b;  
-               --bg: #060b10;         
+               --bg: #060b10;          
                --card-bg: rgba(17, 27, 36, 0.6); 
                --text: #ffffff; 
                --color-x: #000000;
@@ -20,10 +20,13 @@
                --color-twitch: #9146FF;
                --color-discord: #5865F2;
                
+               /* Rank Colors */
                --rank-bronze: #824a33;
                --rank-silver: #ced4da;
                --rank-gold: #ffcf4b;
-               --rank-radiant: #ffefad;
+               --rank-ascendant: #3ef2a9;  /* GRÜN */
+               --rank-immortal: #ff4655;   /* ROT */
+               --rank-radiant-gold: #ffefad; /* GOLD-WEISS GLOW */
           } 
 
           * { box-sizing: border-box; } 
@@ -58,16 +61,12 @@
           .apply-btn { display: inline-block; background: transparent; color: white; padding: 22px 65px; border-radius: 4px; text-decoration: none; font-weight: 900; text-transform: uppercase; letter-spacing: 6px; transition: 0.4s; border: 2px solid var(--primary); } 
           .apply-btn:hover { background: var(--primary); box-shadow: 0 0 35px var(--primary); transform: scale(1.05); } 
 
-          /* Feed Styling */
-          .feed-container { max-height: 500px; overflow-y: auto; border-radius: 8px; }
-          .referral { display: none !important; }
-
+          /* Roster Grid */
           .roster-grid-container { display: flex; flex-direction: column; gap: 20px; align-items: center; }
-          .roster-row-top { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; width: 100%; }
-          .roster-row-bottom { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; width: 100%; }
+          .roster-row-top, .roster-row-bottom { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; width: 100%; }
 
           @media (max-width: 850px) {
-               .roster-row-top, .roster-row-bottom { grid-template-columns: 1fr; width: 100%; }
+               .roster-row-top, .roster-row-bottom { grid-template-columns: 1fr; }
           }
 
           .player-card { background: rgba(10, 15, 20, 0.8); border-radius: 10px; min-height: 400px; position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); transition: 0.4s; width: 100%; } 
@@ -79,10 +78,18 @@
           .player-link-icon { color: white; font-size: 1.1rem; transition: 0.3s; text-decoration: none; }
           .player-link-icon:hover, .tracker-icon:hover { color: var(--primary); filter: drop-shadow(0 0 5px var(--primary)); transform: scale(1.1); }
 
+          /* Rank Tags Styling */
           .rank-tag { padding: 5px 12px; border-radius: 4px; font-size: 0.7rem; border: 1px solid; font-weight: 800; display: inline-block; margin: 8px 0; text-transform: uppercase; } 
-          .rank-silver { color: var(--rank-silver); border-color: var(--rank-silver); box-shadow: 0 0 10px var(--rank-silver); }
-          .rank-gold { color: var(--rank-gold); border-color: var(--rank-gold); box-shadow: 0 0 10px var(--rank-gold); }
-          .rank-radiant { color: var(--rank-radiant); border-color: var(--rank-radiant); box-shadow: 0 0 15px var(--rank-radiant); }
+          .rank-silver { color: var(--rank-silver); border-color: var(--rank-silver); box-shadow: 0 0 10px rgba(206, 212, 218, 0.2); }
+          .rank-gold { color: var(--rank-gold); border-color: var(--rank-gold); box-shadow: 0 0 10px rgba(255, 207, 75, 0.2); }
+          .rank-ascendant { color: var(--rank-ascendant); border-color: var(--rank-ascendant); box-shadow: 0 0 10px rgba(62, 242, 169, 0.3); }
+          .rank-immortal { color: var(--rank-immortal); border-color: var(--rank-immortal); box-shadow: 0 0 10px rgba(255, 70, 85, 0.3); }
+          .rank-radiant { 
+              color: var(--rank-radiant-gold); 
+              border-color: var(--rank-radiant-gold); 
+              background: linear-gradient(45deg, rgba(255,239,173,0.1), rgba(255,255,255,0.05));
+              box-shadow: 0 0 15px rgba(255, 239, 173, 0.4), inset 0 0 5px white; 
+          }
 
           .slot-card { border: 2px dashed rgba(212, 23, 91, 0.3); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: rgba(255,255,255,0.4); }
 
@@ -276,7 +283,7 @@
 
      <footer>
           <div class="container">
-              <div class="gt-banner-container">
+              <div class="gt-banner-container" style="margin-bottom: 20px;">
                  <a href="https://gamertransfer.com/" target="_blank">
                      <img src="https://gamertransfer.com/banner/banner300_w.png" alt="Gamertransfer Player Search" border="0" />
                  </a>
@@ -291,7 +298,7 @@
               </div>
 
               <div style="opacity: 0.4; font-size: 0.8rem;">© 2026 EVERBLOOM GAMING</div>
-              <a href="legal.html" class="legal-link">Legal Notice / Privacy Policy</a>
+              <a href="legal.html" style="color:white; opacity:0.4; font-size:0.7rem; text-decoration:none;">Legal Notice / Privacy Policy</a>
           </div>
      </footer> 
 
