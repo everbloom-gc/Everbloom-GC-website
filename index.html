@@ -71,6 +71,14 @@
           .info-card { background: var(--card-bg); padding: 35px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1); border-top: 4px solid var(--primary); margin-bottom: 25px; backdrop-filter: blur(15px); } 
           .info-card h3 { margin-top: 0; color: var(--primary); text-transform: uppercase; margin-bottom: 20px; } 
 
+          /* Fade-In Animation for About Section */
+          .fade-in-card { opacity: 0; transform: translateY(20px); }
+          .active .fade-in-card { animation: cardFadeIn 0.8s forwards; }
+
+          @keyframes cardFadeIn {
+               to { opacity: 1; transform: translateY(0); }
+          }
+
           .apply-container { text-align: center; margin: 20px 0 40px; }
           .apply-btn { display: inline-block; background: transparent; color: white; padding: 18px 45px; border-radius: 4px; text-decoration: none; font-weight: 900; text-transform: uppercase; letter-spacing: 3px; transition: 0.4s; border: 2px solid var(--primary); } 
           .apply-btn:hover { background: var(--primary); box-shadow: 0 0 35px var(--primary); transform: scale(1.05); } 
@@ -89,10 +97,7 @@
           .player-card { background: rgba(10, 15, 20, 0.8); border-radius: 10px; min-height: 420px; position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); transition: 0.4s; width: 100%; } 
           .player-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.35; z-index: 1; } 
           
-          /* FIX: Sage Resize */
-          .player-card img[src="sage.webp"] {
-               object-fit: contain;
-          }
+          .player-card img[src="sage.webp"] { object-fit: contain; }
 
           .card-content { position: absolute; bottom: 0; width: 100%; padding: 20px; background: linear-gradient(transparent, #060b10 85%); z-index: 10; } 
           
@@ -108,7 +113,6 @@
           .rank-ascendant { color: var(--rank-ascendant); border-color: var(--rank-ascendant); box-shadow: 0 0 10px var(--rank-ascendant); }
           .rank-immortal { color: var(--rank-immortal); border-color: var(--rank-immortal); box-shadow: 0 0 10px var(--rank-immortal); }
 
-          /* Partner Styles */
           .coming-soon-box { padding: 40px; text-align: center; border: 2px dashed rgba(255,255,255,0.1); border-radius: 10px; color: rgba(255,255,255,0.3); font-weight: 900; letter-spacing: 2px; text-transform: uppercase; }
 
           .footer-recruitment { margin-bottom: 30px; text-align: center; }
@@ -143,7 +147,7 @@
 
      <div class="nav-overlay" id="navOverlay"> 
           <a onclick="showSection('home')">Home</a> 
-          <a onclick="showSection('roster')">Roster</a> 
+          <a onclick="showSection('about')">About Us</a> <a onclick="showSection('roster')">Roster</a> 
           <a onclick="showSection('partners')">Partner</a> 
      </div> 
 
@@ -156,12 +160,11 @@
 
           <div class="container"> 
               <div class="info-card"> 
-                  <h3><i class="fas fa-seedling"></i> ABOUT US</h3> 
+                  <h3><i class="fas fa-seedling"></i> MISSION & VISION</h3> 
                   <p style="line-height: 1.8;">
-                      <strong>Everbloom Gaming</strong> is an independent E-Sports organization established in 2026. 
-                      Operating under the motto <strong>"Bloom or Decay,"</strong> we are dedicated to transforming 
-                      ambitious talent into competitive excellence within the DACH region.
+                      <strong>Everbloom Gaming</strong> was founded in 2026 as a highly structured esports organization. Our name is our promise: we create an environment where talent can <strong>bloom</strong> at any time and unfold its full potential. 
                   </p>
+                  <p style="font-size: 0.85rem; opacity: 0.7; margin-top: 10px; cursor: pointer; color: var(--primary);" onclick="showSection('about')">Read more about our philosophy →</p>
               </div> 
 
               <div class="apply-container">
@@ -189,6 +192,44 @@
               </div> 
           </div> 
      </section> 
+
+     <section id="about" class="page-section">
+        <div class="container" style="padding-top: 60px;">
+            <h3 style="text-align:center; color:var(--primary); text-transform: uppercase; margin-bottom: 40px; letter-spacing: 3px;">The Everbloom Philosophy</h3>
+            
+            <div class="info-card fade-in-card" style="animation-delay: 0.1s;">
+                <h4 style="color:var(--primary); margin-top: 0;">THE ART OF BLOOMING</h4>
+                <p style="line-height: 1.8; opacity: 0.9;">
+                    The name <strong>Everbloom</strong> represents a commitment: the ability to transcend oneself at any given moment. We believe that true potential is not a fixed endpoint, but a continuous process. In a competitive landscape often defined by short-term hype, we provide the foundation where talent can bloom sustainably—regardless of where they stand in their career.
+                </p>
+            </div>
+
+            <div class="info-card fade-in-card" style="animation-delay: 0.3s;">
+                <h4 style="color:var(--primary); margin-top: 0;">STRUCTURE AS OUR BACKBONE</h4>
+                <p style="line-height: 1.8; opacity: 0.9;">
+                    At Everbloom, professionalism isn't just a buzzword; it's our standard. We are designed as a highly structured organization, offering our players and partners clear processes, reliable communication, and a professional environment. We are convinced that peak performance in-game can only thrive where order, discipline, and a clear roadmap exist out-of-game.
+                </p>
+            </div>
+
+            <div class="info-card fade-in-card" style="animation-delay: 0.5s;">
+                <h4 style="color:var(--primary); margin-top: 0;">EQUALITY & DIVERSITY</h4>
+                <p style="line-height: 1.8; opacity: 0.9;">
+                    For us, esports is boundless. One of our core pillars is absolute equality. With our dedicated Male and FLINTA rosters, we create spaces where performance is the only currency. We foster a culture of respect where every player receives the same support, the same resources, and the same stage to reach their personal maximum.
+                </p>
+            </div>
+
+            <div class="info-card fade-in-card" style="animation-delay: 0.7s;">
+                <h4 style="color:var(--primary); margin-top: 0;">THE UNCONDITIONAL GRIND</h4>
+                <p style="line-height: 1.8; opacity: 0.9;">
+                    <strong>"Bloom or Decay"</strong>—this guiding principle is our engine. Success at Everbloom is the result of hard work, tireless training, and the hunger for constant improvement. We don't look for the easy way; we look for the right way. Our focus lies on the "grind"—the daily work on precision, tactics, and teamplay.
+                </p>
+            </div>
+
+            <div class="info-card fade-in-card" style="text-align:center; border-top: 2px solid var(--primary); animation-delay: 0.9s;">
+                <p style="font-size: 1.1rem; font-weight: 900; letter-spacing: 2px; margin: 0;">WE PROVIDE THE STRUCTURE – YOU UNFOLD THE POTENTIAL.</p>
+            </div>
+        </div>
+     </section>
 
      <section id="roster" class="page-section"> 
           <div class="container" style="padding-top: 60px;"> 
@@ -355,7 +396,9 @@
           function toggleNav() { document.getElementById('navOverlay').classList.toggle('active'); } 
           function showSection(id) { 
               document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active')); 
-              document.getElementById(id).classList.add('active'); 
+              const section = document.getElementById(id);
+              section.classList.add('active'); 
+              
               if(document.getElementById('navOverlay').classList.contains('active')) toggleNav(); 
               window.scrollTo({top: 0, behavior: 'smooth'}); 
           } 
