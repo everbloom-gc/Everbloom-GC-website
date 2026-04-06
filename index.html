@@ -23,6 +23,7 @@
                --rank-bronze: #824a33;
                --rank-silver: #ced4da;
                --rank-gold: #ffcf4b;
+               --rank-immortal: #b92f41; /* Farbe für Immortal */
                --rank-radiant: #ffefad;
           } 
 
@@ -84,7 +85,7 @@
 
           .player-card { background: rgba(10, 15, 20, 0.8); border-radius: 10px; min-height: 400px; position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); transition: 0.4s; width: 100%; } 
           .player-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.35; z-index: 1; } 
-          .card-content { position: absolute; bottom: 0; width: 100%; padding: 20px; background: linear-gradient(transparent, #060b10 85%); z-index: 10; } 
+          .card-content { position: absolute; bottom: 0; width: 100%; padding: 20px; background: linear-gradient(transparent, #060b10 85%); z-index: 10; display: flex; flex-direction: column; justify-content: flex-end; } 
           
           .player-links { display: flex; gap: 12px; align-items: center; margin-top: 10px; }
           .tracker-icon { height: 18px; filter: brightness(1.2); transition: 0.3s; }
@@ -94,6 +95,7 @@
           .rank-tag { padding: 5px 12px; border-radius: 4px; font-size: 0.7rem; border: 1px solid; font-weight: 800; display: inline-block; margin: 8px 0; text-transform: uppercase; } 
           .rank-silver { color: var(--rank-silver); border-color: var(--rank-silver); box-shadow: 0 0 10px var(--rank-silver); }
           .rank-gold { color: var(--rank-gold); border-color: var(--rank-gold); box-shadow: 0 0 10px var(--rank-gold); }
+          .rank-immortal { color: var(--rank-immortal); border-color: var(--rank-immortal); box-shadow: 0 0 10px var(--rank-immortal); }
           .rank-radiant { color: var(--rank-radiant); border-color: var(--rank-radiant); box-shadow: 0 0 15px var(--rank-radiant); }
 
           .slot-card { border: 2px dashed rgba(212, 23, 91, 0.3); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: rgba(255,255,255,0.4); }
@@ -250,12 +252,13 @@
               <div class="roster-grid-container">
                   <div class="roster-row-top">
                       <div class="player-card">
-                          <img src="Chamber.webp" class="player-img"> <div class="card-content">
+                          <img src="jett.png" class="player-img"> 
+                          <div class="card-content">
                               <small style="color:var(--primary); font-weight: bold;">DUELIST / IGL</small>
                               <div style="font-weight:900; font-size:1.4rem;">Noctra</div>
-                              <div class="rank-tag rank-radiant">Radiant</div>
+                              <div class="rank-tag rank-immortal">Immortal 1</div>
                               <div class="player-links">
-                                  <a href="HIER_TRACKER_LINK" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
+                                  <a href="https://tracker.gg/valorant/profile/riot/noctra%23000/overview" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
                                   <a href="https://x.com/Noctra_vlr" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
                               </div>
                           </div>
