@@ -44,7 +44,6 @@
           header { padding: 80px 20px 40px; text-align: center; } 
           .logo-main { width: 130px; filter: drop-shadow(0 0 25px var(--primary)); margin-bottom: 20px; transition: transform 0.3s ease; cursor: pointer; } 
 
-          /* --- GLITCH TEXT EFFECT --- */
           .glitch-text { 
                font-size: clamp(2.5rem, 8vw, 4.5rem); 
                font-weight: 900; 
@@ -78,12 +77,15 @@
           .home-grid { display: grid; grid-template-columns: 1fr 380px; gap: 25px; align-items: start; }
           @media (max-width: 1000px) { .home-grid { grid-template-columns: 1fr; } }
 
+          /* Roster & Management Grids */
           .roster-grid-container { display: flex; flex-direction: column; gap: 20px; align-items: center; width: 100%; }
           .roster-row-top, .roster-row-bottom { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; width: 100%; }
           .roster-2nd-row { grid-template-columns: repeat(2, 1fr); width: 66%; }
           @media (max-width: 850px) { .roster-row-top, .roster-row-bottom, .roster-2nd-row { grid-template-columns: 1fr; width: 100%; } }
 
-          .player-card { background: rgba(10, 15, 20, 0.8); border-radius: 10px; min-height: 420px; position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); transition: 0.4s; } 
+          .management-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; width: 100%; max-width: 900px; justify-items: center; }
+
+          .player-card { background: rgba(10, 15, 20, 0.8); border-radius: 10px; min-height: 420px; position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); transition: 0.4s; width: 100%; } 
           .player-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.35; z-index: 1; } 
           .card-content { position: absolute; bottom: 0; width: 100%; padding: 20px; background: linear-gradient(transparent, #060b10 85%); z-index: 10; } 
           
@@ -176,21 +178,23 @@
      <section id="roster" class="page-section"> 
           <div class="container" style="padding-top: 60px;"> 
               
-              <h3 style="text-align:center; color:var(--primary); text-transform: uppercase; margin-bottom: 20px;">Management</h3> 
-              <div style="display:flex; justify-content:center; margin-bottom: 50px;">
-                  <div class="player-card" style="max-width: 300px; min-height: 380px;">
-                      <img src="everbloomlogo.png" style="position:absolute; top:40%; left:50%; transform:translate(-50%, -50%); width:60%; opacity:0.15; z-index: 1;">
-                      <div class="card-content">
-                          <small style="color:var(--primary); font-weight: bold;">FOUNDER / MANAGER</small>
-                          <div style="font-weight:900; font-size:1.4rem;">Walmart Reyna</div>
-                          <div class="player-links">
-                              <a href="https://x.com/wavvybecci_" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
+              <h3 style="text-align:center; color:var(--primary); text-transform: uppercase; margin-bottom: 30px; letter-spacing: 3px;">Management</h3> 
+              <div style="display: flex; justify-content: center; margin-bottom: 60px;">
+                  <div class="management-grid">
+                      <div class="player-card" style="max-width: 300px; min-height: 380px;">
+                          <img src="everbloomlogo.png" style="position:absolute; top:40%; left:50%; transform:translate(-50%, -50%); width:60%; opacity:0.15; z-index: 1;">
+                          <div class="card-content">
+                              <small style="color:var(--primary); font-weight: bold; letter-spacing: 1px;">FOUNDER / MANAGER</small>
+                              <div style="font-weight:900; font-size:1.6rem; margin: 5px 0;">Walmart Reyna</div>
+                              <div class="player-links">
+                                  <a href="https://x.com/wavvybecci_" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
+                              </div>
                           </div>
                       </div>
                   </div>
               </div>
 
-              <h3 style="text-align:center; color:var(--primary); text-transform: uppercase;">FLINTA Roster</h3> 
+              <h3 style="text-align:center; color:var(--primary); text-transform: uppercase; margin-bottom: 20px;">FLINTA Roster</h3> 
               <div class="roster-grid-container">
                   <div class="roster-row-top">
                       <div class="player-card">
@@ -258,7 +262,7 @@
                   </div>
               </div>
 
-              <h3 style="text-align:center; color:var(--primary); text-transform: uppercase; margin-top: 60px;">Male Roster</h3> 
+              <h3 style="text-align:center; color:var(--primary); text-transform: uppercase; margin-top: 60px; margin-bottom: 20px;">Male Roster</h3> 
               <div class="roster-grid-container">
                   <div class="roster-row-top">
                       <div class="player-card">
