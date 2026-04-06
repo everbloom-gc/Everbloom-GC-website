@@ -109,11 +109,11 @@
           .rank-immortal { color: var(--rank-immortal); border-color: var(--rank-immortal); box-shadow: 0 0 10px var(--rank-immortal); }
 
           /* Partner Styles */
-          .partner-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; justify-items: center; }
-          .partner-item { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; padding: 20px; transition: 0.3s; width: 100%; display: flex; flex-direction: column; align-items: center; gap: 15px; }
-          .partner-item:hover { background: rgba(212, 23, 91, 0.05); border-color: var(--primary); transform: translateY(-5px); }
-          .partner-item img { max-width: 200px; border-radius: 4px; transition: 0.3s; }
-          .partner-item img:hover { filter: drop-shadow(0 0 10px var(--primary)); }
+          .coming-soon-box { padding: 40px; text-align: center; border: 2px dashed rgba(255,255,255,0.1); border-radius: 10px; color: rgba(255,255,255,0.3); font-weight: 900; letter-spacing: 2px; text-transform: uppercase; }
+
+          .footer-recruitment { margin-bottom: 30px; text-align: center; }
+          .footer-recruitment img { max-width: 250px; transition: 0.3s; filter: drop-shadow(0 0 5px rgba(0,0,0,0.5)); }
+          .footer-recruitment img:hover { transform: scale(1.05); filter: drop-shadow(0 0 15px var(--primary)); }
 
           .slot-card { border: 2px dashed rgba(212, 23, 91, 0.3); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: rgba(255,255,255,0.4); }
 
@@ -324,21 +324,21 @@
           <div class="container" style="padding-top: 60px;">
                <h3 style="text-align:center; color:var(--primary); text-transform: uppercase; margin-bottom: 40px; letter-spacing: 3px;">Our Partners</h3>
                <div class="info-card">
-                    <div class="partner-grid">
-                         <div class="partner-item">
-                              <a href="https://www.gamertransfer.com" target="_blank">
-                                   <img src="https://gamertransfer.com/banner/v5_373.png" alt="GamerTransfer">
-                              </a>
-                              <div style="font-weight: bold; color: var(--primary);">GamerTransfer</div>
-                              <p style="font-size: 0.8rem; text-align: center; opacity: 0.7;">Official Recruitment Partner</p>
-                         </div>
-                         </div>
+                    <div class="coming-soon-box">
+                         COMING SOON
+                    </div>
                </div>
           </div>
      </section>
 
      <footer>
           <div class="container">
+              <div class="footer-recruitment">
+                   <a href="https://www.gamertransfer.com" target="_blank">
+                        <img src="https://gamertransfer.com/banner/v5_373.png" alt="GamerTransfer Recruitment Partner">
+                   </a>
+              </div>
+
               <div class="footer-socials">
                   <a href="https://discord.gg/bQ8phXAmSa" class="soc-link sl-discord" target="_blank"><i class="fa-brands fa-discord"></i></a>
                   <a href="https://x.com/everbloom_gc" class="soc-link sl-x" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
