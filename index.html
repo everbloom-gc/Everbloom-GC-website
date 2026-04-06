@@ -58,7 +58,6 @@
           .apply-btn { display: inline-block; background: transparent; color: white; padding: 22px 65px; border-radius: 4px; text-decoration: none; font-weight: 900; text-transform: uppercase; letter-spacing: 6px; transition: 0.4s; border: 2px solid var(--primary); } 
           .apply-btn:hover { background: var(--primary); box-shadow: 0 0 35px var(--primary); transform: scale(1.05); } 
 
-          /* News & Feed Layout Fix */
           .home-grid { display: grid; grid-template-columns: 1fr 350px; gap: 25px; align-items: start; }
           .news-flex-container { display: flex; flex-direction: column; gap: 20px; }
 
@@ -75,7 +74,7 @@
           .feed-container { max-height: 500px; overflow-y: auto; border-radius: 8px; }
           .referral { display: none !important; }
 
-          .roster-grid-container { display: flex; flex-direction: column; gap: 20px; align-items: center; }
+          .roster-grid-container { display: flex; flex-direction: column; gap: 20px; align-items: center; width: 100%; }
           .roster-row-top { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; width: 100%; }
           .roster-row-bottom { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; width: 66%; }
 
@@ -248,10 +247,26 @@
               </div>
 
               <h3 style="text-align:center; color:var(--primary); text-transform: uppercase; margin-top: 60px;">Male Roster</h3> 
-              <div class="info-card" style="text-align: center;">
-                  <div style="font-weight:900; letter-spacing: 2px; color:white;">SCOUTING PHASE</div>
-                  <div class="rank-tag rank-radiant" style="margin: 15px 0;">ASCENDANT - RADIANT</div>
-                  <p style="font-size: 0.8rem; color:rgba(255,255,255,0.7);">Looking for high-ELO talent. Apply via the home page.</p>
+              <div class="roster-grid-container">
+                  <div class="roster-row-top">
+                      <div class="player-card">
+                          <img src="Chamber.webp" class="player-img"> <div class="card-content">
+                              <small style="color:var(--primary); font-weight: bold;">DUELIST / IGL</small>
+                              <div style="font-weight:900; font-size:1.4rem;">Noctra</div>
+                              <div class="rank-tag rank-radiant">Radiant</div>
+                              <div class="player-links">
+                                  <a href="HIER_TRACKER_LINK" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
+                                  <a href="https://x.com/Noctra_vlr" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="player-card slot-card">
+                          <div style="font-weight:900; color:white;">SLOT 2 <br> <span style="font-size: 0.7rem; color: var(--primary);">OPEN SPOT</span></div>
+                      </div>
+                      <div class="player-card slot-card">
+                          <div style="font-weight:900; color:white;">SLOT 3 <br> <span style="font-size: 0.7rem; color: var(--primary);">OPEN SPOT</span></div>
+                      </div>
+                  </div>
               </div>
 
           </div> 
