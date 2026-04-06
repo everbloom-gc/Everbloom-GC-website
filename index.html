@@ -82,6 +82,9 @@
 
           .player-card { background: rgba(10, 15, 20, 0.8); border-radius: 10px; min-height: 400px; position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); transition: 0.4s; width: 100%; } 
           .player-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.35; z-index: 1; } 
+          /* Spezialklasse für Sova/Contain-Bilder */
+          .player-img-contain { object-fit: contain; padding: 20px; opacity: 0.5; }
+          
           .card-content { position: absolute; bottom: 0; width: 100%; padding: 20px; background: linear-gradient(transparent, #060b10 85%); z-index: 10; } 
           
           .player-links { display: flex; gap: 12px; align-items: center; margin-top: 10px; }
@@ -126,7 +129,7 @@
 
      <section id="home" class="page-section active"> 
           <header> 
-              <a href="#home" style="text-decoration: none;">
+              <a onclick="showSection('home')" style="text-decoration: none; cursor: pointer;">
                   <img src="image_a9cb86.png" alt="Everbloom Logo" class="logo-main"> 
               </a>
               <h1><span class="glitch-text">EVERBLOOM</span></h1> 
@@ -249,7 +252,7 @@
               <div class="roster-grid-container">
                   <div class="roster-row-top">
                       <div class="player-card">
-                          <img src="Sova.webp" class="player-img"> 
+                          <img src="Sova.webp" class="player-img player-img-contain"> 
                           <div class="card-content">
                               <small style="color:var(--primary); font-weight: bold;">INITIATOR</small>
                               <div style="font-weight:900; font-size:1.4rem;">Norwin</div>
