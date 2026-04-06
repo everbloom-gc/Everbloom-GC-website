@@ -34,6 +34,7 @@
           #video-bg { position: fixed; top: 50%; left: 50%; min-width: 100%; min-height: 100%; z-index: -2; transform: translateX(-50%) translateY(-50%); object-fit: cover; filter: brightness(0.12); } 
           .video-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle, rgba(6,11,16,0.1), rgba(6,11,16,0.95)); z-index: -1; } 
 
+          /* Navigation */
           .nav-toggle { position: fixed; top: 20px; left: 20px; z-index: 1001; background: var(--primary); border: none; width: 45px; height: 45px; border-radius: 5px; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; } 
           .nav-toggle span { display: block; width: 22px; height: 2px; background: white; transition: 0.3s; } 
           .nav-overlay { position: fixed; top: 0; left: -300px; width: 280px; height: 100vh; background: rgba(6, 11, 16, 0.98); backdrop-filter: blur(25px); z-index: 1000; transition: 0.5s; display: flex; flex-direction: column; padding: 100px 30px; border-right: 1px solid rgba(212, 23, 91, 0.2); } 
@@ -107,6 +108,13 @@
           .rank-ascendant { color: var(--rank-ascendant); border-color: var(--rank-ascendant); box-shadow: 0 0 10px var(--rank-ascendant); }
           .rank-immortal { color: var(--rank-immortal); border-color: var(--rank-immortal); box-shadow: 0 0 10px var(--rank-immortal); }
 
+          /* Partner Styles */
+          .partner-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; justify-items: center; }
+          .partner-item { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; padding: 20px; transition: 0.3s; width: 100%; display: flex; flex-direction: column; align-items: center; gap: 15px; }
+          .partner-item:hover { background: rgba(212, 23, 91, 0.05); border-color: var(--primary); transform: translateY(-5px); }
+          .partner-item img { max-width: 200px; border-radius: 4px; transition: 0.3s; }
+          .partner-item img:hover { filter: drop-shadow(0 0 10px var(--primary)); }
+
           .slot-card { border: 2px dashed rgba(212, 23, 91, 0.3); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: rgba(255,255,255,0.4); }
 
           footer { text-align: center; padding: 60px 20px; background: rgba(0,0,0,0.3); border-top: 1px solid rgba(255,255,255,0.05); }
@@ -136,6 +144,7 @@
      <div class="nav-overlay" id="navOverlay"> 
           <a onclick="showSection('home')">Home</a> 
           <a onclick="showSection('roster')">Roster</a> 
+          <a onclick="showSection('partners')">Partner</a> 
      </div> 
 
      <section id="home" class="page-section active"> 
@@ -311,13 +320,25 @@
           </div> 
      </section> 
 
+     <section id="partners" class="page-section">
+          <div class="container" style="padding-top: 60px;">
+               <h3 style="text-align:center; color:var(--primary); text-transform: uppercase; margin-bottom: 40px; letter-spacing: 3px;">Our Partners</h3>
+               <div class="info-card">
+                    <div class="partner-grid">
+                         <div class="partner-item">
+                              <a href="https://www.gamertransfer.com" target="_blank">
+                                   <img src="https://gamertransfer.com/banner/v5_373.png" alt="GamerTransfer">
+                              </a>
+                              <div style="font-weight: bold; color: var(--primary);">GamerTransfer</div>
+                              <p style="font-size: 0.8rem; text-align: center; opacity: 0.7;">Official Recruitment Partner</p>
+                         </div>
+                         </div>
+               </div>
+          </div>
+     </section>
+
      <footer>
           <div class="container">
-              <div style="margin-bottom: 25px;">
-                  <a href="https://www.gamertransfer.com" target="_blank">
-                      <img src="https://gamertransfer.com/banner/v5_373.png" alt="GamerTransfer" style="max-width: 100%; border-radius: 4px; transition: 0.3s;" onmouseover="this.style.filter='drop-shadow(0 0 10px #ff5a00)'" onmouseout="this.style.filter='none'">
-                  </a>
-              </div>
               <div class="footer-socials">
                   <a href="https://discord.gg/bQ8phXAmSa" class="soc-link sl-discord" target="_blank"><i class="fa-brands fa-discord"></i></a>
                   <a href="https://x.com/everbloom_gc" class="soc-link sl-x" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
