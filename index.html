@@ -142,6 +142,24 @@
           .player-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.35; z-index: 1; transition: 0.5s; } 
           .player-card:hover .player-img { opacity: 0.5; transform: scale(1.05); }
           
+          /* REYNA VERGRÖSSERUNG */
+          #reyna-special { 
+              position: absolute; 
+              top: 35%; /* Leicht nach oben verschoben für besseren Fokus */
+              left: 50%; 
+              transform: translate(-50%, -50%) scale(1.4); /* SCALE ERHÖHT */
+              width: 100%; 
+              height: 100%; 
+              object-fit: contain; 
+              opacity: 0.45; 
+              z-index: 1; 
+              transition: 0.5s ease;
+          }
+          .player-card:hover #reyna-special {
+              transform: translate(-50%, -50%) scale(1.55); /* ZOOM BEI HOVER */
+              opacity: 0.6;
+          }
+
           .card-content { position: absolute; bottom: 0; width: 100%; padding: 20px; background: linear-gradient(transparent, #060b10 85%); z-index: 10; } 
           
           .player-links { display: flex; gap: 12px; align-items: center; margin-top: 10px; }
@@ -275,7 +293,7 @@
               <div style="display: flex; justify-content: center; margin-bottom: 60px;">
                   <div class="management-grid">
                       <div class="player-card" style="max-width: 300px; min-height: 380px;">
-                          <img src="reyna.webp" style="position:absolute; top:40%; left:50%; transform:translate(-50%, -50%); width:100%; height:80%; object-fit:contain; opacity:0.4; z-index: 1;">
+                          <img src="reyna.webp" id="reyna-special">
                           <div class="card-content">
                                   <small style="color:var(--primary); font-weight: bold; letter-spacing: 1px;">FOUNDER / MANAGER</small>
                                   <div style="font-weight:900; font-size:1.6rem; margin: 5px 0;">Raph</div>
@@ -463,6 +481,8 @@
               const section = document.getElementById(id);
               if(section) {
                   section.classList.add('active'); 
+                  // SPEICHERN IM LOCALSTORAGE
+                  localStorage.setItem('everbloom_last_section', id);
               }
               
               document.getElementById('navOverlay').classList.remove('active'); 
@@ -470,6 +490,14 @@
               
               window.scrollTo({top: 0, behavior: 'smooth'}); 
           } 
+
+          // BEIM LADEN DEN STATUS PRÜFEN
+          window.onload = function() {
+              const savedSection = localStorage.getItem('everbloom_last_section');
+              if(savedSection) {
+                  showSection(savedSection);
+              }
+          }
      </script>
 </body> 
 </html>
