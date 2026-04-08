@@ -35,14 +35,36 @@
           .video-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle, rgba(6,11,16,0.1), rgba(6,11,16,0.95)); z-index: -1; } 
 
           /* Navigation */
-          .nav-toggle { position: fixed; top: 20px; left: 20px; z-index: 1001; background: var(--primary); border: none; width: 45px; height: 45px; border-radius: 5px; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; } 
-          .nav-toggle span { display: block; width: 22px; height: 2px; background: white; transition: 0.3s; } 
-          .nav-overlay { position: fixed; top: 0; left: -300px; width: 280px; height: 100vh; background: rgba(6, 11, 16, 0.98); backdrop-filter: blur(25px); z-index: 1000; transition: 0.5s; display: flex; flex-direction: column; padding: 100px 30px; border-right: 1px solid rgba(212, 23, 91, 0.2); } 
-          .nav-overlay.active { left: 0; } 
-          .nav-overlay a { font-size: 1.5rem; color: white; text-decoration: none; text-transform: uppercase; font-weight: 900; margin: 15px 0; cursor: pointer; transition: 0.3s ease; letter-spacing: 2px; } 
-          .nav-overlay a:hover { color: var(--primary); text-shadow: 0 0 15px var(--primary); transform: translateX(10px); }
+          .nav-toggle { 
+              position: fixed; top: 20px; left: 20px; z-index: 1001; 
+              background: var(--primary); border: none; width: 45px; height: 45px; 
+              border-radius: 5px; cursor: pointer; display: flex; 
+              flex-direction: column; align-items: center; justify-content: center; gap: 5px; 
+          } 
+          
+          .nav-toggle span { 
+              display: block; width: 22px; height: 2px; background: white; 
+              transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1); position: relative;
+          } 
 
-          header { padding: 80px 20px 40px; text-align: center; } 
+          /* Burger zu X Animation */
+          .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+          .nav-toggle.open span:nth-child(2) { opacity: 0; transform: translateX(-10px); }
+          .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+          .nav-overlay { 
+              position: fixed; top: 0; left: -300px; width: 280px; height: 100vh; 
+              background: rgba(6, 11, 16, 0.98); backdrop-filter: blur(25px); 
+              z-index: 1000; transition: 0.5s; display: flex; flex-direction: column; 
+              padding: 100px 30px; border-right: 1px solid rgba(212, 23, 91, 0.2); 
+          } 
+          .nav-overlay.active { left: 0; } 
+          .nav-overlay a { 
+              font-size: 1.5rem; color: white; text-decoration: none; 
+              text-transform: uppercase; font-weight: 900; margin: 15px 0; 
+              cursor: pointer; transition: 0.3s ease; letter-spacing: 2px; 
+          } 
+          .nav-overlay a:hover { color: var(--primary); text-shadow: 0 0 15px var(--primary); transform: translateX(10px); }
           .logo-main { width: 130px; filter: drop-shadow(0 0 25px var(--primary)); margin-bottom: 20px; transition: transform 0.3s ease; cursor: pointer; } 
 
           .glitch-text { 
@@ -415,13 +437,22 @@
      </footer> 
 
      <script>
-          function toggleNav() { document.getElementById('navOverlay').classList.toggle('active'); } 
+          function toggleNav() { 
+              const nav = document.getElementById('navOverlay');
+              const btn = document.querySelector('.nav-toggle');
+              nav.classList.toggle('active'); 
+              btn.classList.toggle('open'); // Aktiviert die X-Animation
+          } 
+
           function showSection(id) { 
               document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active')); 
               const section = document.getElementById(id);
               section.classList.add('active'); 
               
-              if(document.getElementById('navOverlay').classList.contains('active')) toggleNav(); 
+              // Menü schließen und Icon zurückdrehen
+              document.getElementById('navOverlay').classList.remove('active'); 
+              document.querySelector('.nav-toggle').classList.remove('open');
+              
               window.scrollTo({top: 0, behavior: 'smooth'}); 
           } 
      </script>
