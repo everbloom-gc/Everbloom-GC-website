@@ -70,7 +70,6 @@
           } 
           .nav-overlay a:hover { color: var(--primary); text-shadow: 0 0 15px var(--primary); transform: translateX(10px); }
 
-          /* Header Zentrierung Fix */
           header {
               padding: 100px 20px 40px;
               display: flex;
@@ -97,7 +96,7 @@
                position: relative; 
                display: inline-block; 
                letter-spacing: 12px;
-               padding-left: 12px; /* Ausgleich für letter-spacing rechts */
+               padding-left: 12px; 
                color: white;
                text-shadow: 0.05em 0 0 rgba(255,0,0,0.75), -0.025em -0.05em 0 rgba(0,255,0,0.75), 0.025em 0.05em 0 rgba(0,0,255,0.75);
                animation: glitch 500ms infinite;
@@ -140,7 +139,8 @@
           .management-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; width: 100%; max-width: 900px; justify-items: center; }
 
           .player-card { background: rgba(10, 15, 20, 0.8); border-radius: 10px; min-height: 420px; position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); transition: 0.4s; width: 100%; } 
-          .player-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.35; z-index: 1; } 
+          .player-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.35; z-index: 1; transition: 0.5s; } 
+          .player-card:hover .player-img { opacity: 0.5; transform: scale(1.05); }
           
           .card-content { position: absolute; bottom: 0; width: 100%; padding: 20px; background: linear-gradient(transparent, #060b10 85%); z-index: 10; } 
           
@@ -275,13 +275,13 @@
               <div style="display: flex; justify-content: center; margin-bottom: 60px;">
                   <div class="management-grid">
                       <div class="player-card" style="max-width: 300px; min-height: 380px;">
-                     <img src="reyna.webp" style="position:absolute; top:42%; left:50%; transform:translate(-50%, -50%); width:130%; opacity:0.5; z-index: 1;">
-                    <div class="card-content">
-                              <small style="color:var(--primary); font-weight: bold; letter-spacing: 1px;">FOUNDER / MANAGER</small>
-                              <div style="font-weight:900; font-size:1.6rem; margin: 5px 0;">Raph</div>
-                              <div class="player-links">
-                                  <a href="https://x.com/wavvybecci_" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
-                              </div>
+                          <img src="reyna.webp" style="position:absolute; top:40%; left:50%; transform:translate(-50%, -50%); width:100%; height:80%; object-fit:contain; opacity:0.4; z-index: 1;">
+                          <div class="card-content">
+                                  <small style="color:var(--primary); font-weight: bold; letter-spacing: 1px;">FOUNDER / MANAGER</small>
+                                  <div style="font-weight:900; font-size:1.6rem; margin: 5px 0;">Raph</div>
+                                  <div class="player-links">
+                                      <a href="https://x.com/wavvybecci_" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
+                                  </div>
                           </div>
                       </div>
                   </div>
@@ -341,15 +341,12 @@
                           </div>
                       </div>
                       <div class="player-card">
-    <img src="sage.webp" class="player-img" style="width: 85%; height: auto; top: 45%; left: 50%; transform: translate(-50%, -50%); position: absolute;">
-    <div class="card-content">
-        <small style="color:var(--primary); font-weight: bold;">SENTINEL</small>
-        <div style="font-weight:900; font-size:1.4rem;">Vexa</div>
-        <div class="rank-tag rank-bronze">Bronze 2</div>
-        <div class="player-links">
-            </div>
-    </div>
-</div>
+                          <img src="sage.webp" class="player-img" style="object-fit: contain; padding: 30px;">
+                          <div class="card-content">
+                              <small style="color:var(--primary); font-weight: bold;">SENTINEL</small>
+                              <div style="font-weight:900; font-size:1.4rem;">Vexa</div>
+                              <div class="rank-tag rank-bronze">Bronze 2</div>
+                              <div class="player-links">
                                   <a href="https://tracker.gg/valorant/profile/riot/Vexa%23G220/overview" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
                                   <a href="https://x.com/vexaizy" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
                               </div>
@@ -406,8 +403,8 @@
             <h3 style="text-align:center; color:var(--primary); text-transform: uppercase; margin-bottom: 50px; letter-spacing: 3px;">Our Partners</h3>
             
             <div class="info-card fade-in-card" style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 60px 30px; margin-bottom: 50px;">
-                <a href="https://rostered.gg" target="_blank" style="text-decoration: none; margin-bottom: 30px; display: block;">
-                    <img src="rostered.png" alt="Rostered Logo" style="max-width: 450px; width: 100%; filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.1)); transition: 0.5s;" onmouseover="this.style.filter='drop-shadow(0 0 30px var(--primary))'" onmouseout="this.style.filter='drop-shadow(0 0 15px rgba(255, 255, 255, 0.1))'">
+                <a href="https://rostered.gg" target="_blank" style="text-decoration: none; margin-bottom: 30px; display: block; width: 100%;">
+                    <img src="rostered.png" alt="Rostered Logo" style="max-width: 400px; width: 80%; height: auto; object-fit: contain; filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.1)); transition: 0.5s;">
                 </a>
                 <h4 style="color:var(--primary); font-size: 1.8rem; margin: 0 0 15px 0; letter-spacing: 4px; font-weight: 900;">ROSTERED.GG</h4>
                 <p style="line-height: 2; opacity: 0.9; max-width: 800px; font-size: 1.1rem; margin-bottom: 30px;">
@@ -417,8 +414,8 @@
             </div>
 
             <div class="info-card fade-in-card" style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 60px 30px; margin-bottom: 50px;">
-                <a href="https://discord.gg/evolupe" target="_blank" style="text-decoration: none; margin-bottom: 30px; display: block;">
-                    <img src="evolupe%20white.png" alt="Evolupe Media Logo" style="max-width: 450px; width: 100%; filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.1)); transition: 0.5s;" onmouseover="this.style.filter='drop-shadow(0 0 30px var(--primary))'" onmouseout="this.style.filter='drop-shadow(0 0 15px rgba(255, 255, 255, 0.1))'">
+                <a href="https://discord.gg/evolupe" target="_blank" style="text-decoration: none; margin-bottom: 30px; display: block; width: 100%;">
+                    <img src="evolupe%20white.png" alt="Evolupe Media Logo" style="max-width: 400px; width: 80%; height: auto; object-fit: contain; filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.1)); transition: 0.5s;">
                 </a>
                 <h4 style="color:var(--primary); font-size: 1.8rem; margin: 0 0 15px 0; letter-spacing: 4px; font-weight: 900;">EVOLUPE MEDIA</h4>
                 <p style="line-height: 2; opacity: 0.9; max-width: 800px; font-size: 1.1rem; margin-bottom: 30px;">
