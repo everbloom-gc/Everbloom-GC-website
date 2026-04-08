@@ -29,13 +29,12 @@
           } 
 
           * { 
-    box-sizing: border-box; 
-    margin: 0; 
-    padding: 0; 
-}
+              box-sizing: border-box; 
+              margin: 0; 
+              padding: 0; 
+          }
 
-          * { box-sizing: border-box; } 
-          html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; background-color: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; } 
+          html, body { width: 100%; overflow-x: hidden; background-color: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; } 
 
           #video-bg { position: fixed; top: 50%; left: 50%; min-width: 100%; min-height: 100%; z-index: -2; transform: translateX(-50%) translateY(-50%); object-fit: cover; filter: brightness(0.12); } 
           .video-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle, rgba(6,11,16,0.1), rgba(6,11,16,0.95)); z-index: -1; } 
@@ -53,7 +52,6 @@
               transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1); position: relative;
           } 
 
-          /* Burger zu X Animation */
           .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
           .nav-toggle.open span:nth-child(2) { opacity: 0; transform: translateX(-10px); }
           .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
@@ -71,7 +69,26 @@
               cursor: pointer; transition: 0.3s ease; letter-spacing: 2px; 
           } 
           .nav-overlay a:hover { color: var(--primary); text-shadow: 0 0 15px var(--primary); transform: translateX(10px); }
-          .logo-main { width: 130px; filter: drop-shadow(0 0 25px var(--primary)); margin-bottom: 20px; transition: transform 0.3s ease; cursor: pointer; } 
+
+          /* Header Zentrierung Fix */
+          header {
+              padding: 100px 20px 40px;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              text-align: center;
+              width: 100%;
+          }
+
+          .logo-main { 
+              width: 130px; 
+              filter: drop-shadow(0 0 25px var(--primary)); 
+              margin-bottom: 20px; 
+              transition: transform 0.3s ease; 
+              cursor: pointer; 
+              display: block;
+          } 
 
           .glitch-text { 
                font-size: clamp(2.5rem, 8vw, 4.5rem); 
@@ -80,9 +97,11 @@
                position: relative; 
                display: inline-block; 
                letter-spacing: 12px;
+               padding-left: 12px; /* Ausgleich für letter-spacing rechts */
                color: white;
                text-shadow: 0.05em 0 0 rgba(255,0,0,0.75), -0.025em -0.05em 0 rgba(0,255,0,0.75), 0.025em 0.05em 0 rgba(0,0,255,0.75);
                animation: glitch 500ms infinite;
+               margin: 0 auto;
           }
 
           @keyframes glitch {
@@ -99,7 +118,6 @@
           .info-card { background: var(--card-bg); padding: 35px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1); border-top: 4px solid var(--primary); margin-bottom: 25px; backdrop-filter: blur(15px); } 
           .info-card h3 { margin-top: 0; color: var(--primary); text-transform: uppercase; margin-bottom: 20px; } 
 
-          /* Fade-In Animation for About Section */
           .fade-in-card { opacity: 0; transform: translateY(20px); }
           .active .fade-in-card { animation: cardFadeIn 0.8s forwards; }
 
@@ -108,13 +126,12 @@
           }
 
           .apply-container { text-align: center; margin: 20px 0 40px; }
-          .apply-btn { display: inline-block; background: transparent; color: white; padding: 18px 45px; border-radius: 4px; text-decoration: none; font-weight: 900; text-transform: uppercase; letter-spacing: 3px; transition: 0.4s; border: 2px solid var(--primary); } 
+          .apply-btn { display: inline-block; background: transparent; color: white; padding: 18px 45px; border-radius: 4px; text-decoration: none; font-weight: 900; text-transform: uppercase; letter-spacing: 3px; transition: 0.4s; border: 2px solid var(--primary); cursor: pointer; } 
           .apply-btn:hover { background: var(--primary); box-shadow: 0 0 35px var(--primary); transform: scale(1.05); } 
 
           .home-grid { display: grid; grid-template-columns: 1fr 380px; gap: 25px; align-items: start; }
           @media (max-width: 1000px) { .home-grid { grid-template-columns: 1fr; } }
 
-          /* Roster & Management Grids */
           .roster-grid-container { display: flex; flex-direction: column; gap: 20px; align-items: center; width: 100%; }
           .roster-row-top, .roster-row-bottom { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; width: 100%; }
           .roster-2nd-row { grid-template-columns: repeat(2, 1fr); width: 66%; }
@@ -125,8 +142,6 @@
           .player-card { background: rgba(10, 15, 20, 0.8); border-radius: 10px; min-height: 420px; position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); transition: 0.4s; width: 100%; } 
           .player-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.35; z-index: 1; } 
           
-          .player-card img[src="sage.webp"] { object-fit: contain; }
-
           .card-content { position: absolute; bottom: 0; width: 100%; padding: 20px; background: linear-gradient(transparent, #060b10 85%); z-index: 10; } 
           
           .player-links { display: flex; gap: 12px; align-items: center; margin-top: 10px; }
@@ -175,7 +190,8 @@
 
      <div class="nav-overlay" id="navOverlay"> 
           <a onclick="showSection('home')">Home</a> 
-          <a onclick="showSection('about')">About Us</a> <a onclick="showSection('roster')">Roster</a> 
+          <a onclick="showSection('about')">About Us</a> 
+          <a onclick="showSection('roster')">Roster</a> 
           <a onclick="showSection('partners')">Partner</a> 
      </div> 
 
@@ -183,7 +199,7 @@
           <header> 
               <img src="everbloomlogo.png" alt="Everbloom Logo" class="logo-main" onclick="showSection('home')"> 
               <h1><span class="glitch-text">EVERBLOOM</span></h1> 
-              <div style="color:var(--primary); letter-spacing:5px; font-weight:bold; font-size:0.8rem;">EST. 2026 | BLOOM OR DECAY</div> 
+              <div style="color:var(--primary); letter-spacing:5px; font-weight:bold; font-size:0.8rem; margin-top: 10px;">EST. 2026 | BLOOM OR DECAY</div> 
           </header> 
 
           <div class="container"> 
@@ -192,7 +208,7 @@
                   <p style="line-height: 1.8;">
                       <strong>Everbloom Gaming</strong> was founded in 2026 as a highly structured esports organization. Our name is our promise: we create an environment where talent can <strong>bloom</strong> at any time and unfold its full potential. 
                   </p>
-                  <p style="font-size: 0.85rem; opacity: 0.7; margin-top: 10px; cursor: pointer; color: var(--primary);" onclick="showSection('about')">Read more about our philosophy →</p>
+                  <p style="font-size: 0.85rem; opacity: 0.7; margin-top: 15px; cursor: pointer; color: var(--primary); font-weight: bold;" onclick="showSection('about')">Read more about our philosophy →</p>
               </div> 
 
               <div class="apply-container">
@@ -246,14 +262,7 @@
                 </p>
             </div>
 
-            <div class="info-card fade-in-card" style="animation-delay: 0.7s;">
-                <h4 style="color:var(--primary); margin-top: 0;">THE UNCONDITIONAL GRIND</h4>
-                <p style="line-height: 1.8; opacity: 0.9;">
-                    <strong>"Bloom or Decay"</strong>—this guiding principle is our engine. Success at Everbloom is the result of hard work, tireless training, and the hunger for constant improvement. We don't look for the easy way; we look for the right way. Our focus lies on the "grind"—the daily work on precision, tactics, and teamplay.
-                </p>
-            </div>
-
-            <div class="info-card fade-in-card" style="text-align:center; border-top: 2px solid var(--primary); animation-delay: 0.9s;">
+            <div class="info-card fade-in-card" style="text-align:center; border-top: 2px solid var(--primary); animation-delay: 0.7s;">
                 <p style="font-size: 1.1rem; font-weight: 900; letter-spacing: 2px; margin: 0;">WE PROVIDE THE STRUCTURE – YOU UNFOLD THE POTENTIAL.</p>
             </div>
         </div>
@@ -389,39 +398,38 @@
           </div> 
      </section> 
 
-    <section id="partners" class="page-section">
-    <div class="container" style="padding-top: 60px;">
-        <h3 style="text-align:center; color:var(--primary); text-transform: uppercase; margin-bottom: 50px; letter-spacing: 3px;">Our Partners</h3>
-        
-        <div class="info-card fade-in-card" style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 60px 30px; margin-bottom: 50px; border-bottom: 2px solid rgba(212, 23, 91, 0.2);">
-            <a href="https://rostered.gg" target="_blank" style="text-decoration: none; margin-bottom: 30px; display: block;">
-                <img src="rostered.png" alt="Rostered Logo" style="max-width: 450px; width: 100%; filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.1)); transition: 0.5s;" onmouseover="this.style.filter='drop-shadow(0 0 30px var(--primary))'" onmouseout="this.style.filter='drop-shadow(0 0 15px rgba(255, 255, 255, 0.1))'">
-            </a>
-            <h4 style="color:var(--primary); font-size: 1.8rem; margin: 0 0 15px 0; letter-spacing: 4px; font-weight: 900;">ROSTERED.GG</h4>
-            <p style="line-height: 2; opacity: 0.9; max-width: 800px; font-size: 1.1rem; margin-bottom: 30px;">
-                Everbloom is proud to work with <strong>Rostered</strong>, the leading platform for team management and professional player scouting. By integrating their structured ecosystem, we ensure our recruitment process remains elite and efficient.
-            </p>
-            <a href="https://rostered.gg" target="_blank" class="apply-btn" style="padding: 15px 40px;">VISIT ROSTERED</a>
-        </div>
+     <section id="partners" class="page-section">
+        <div class="container" style="padding-top: 60px;">
+            <h3 style="text-align:center; color:var(--primary); text-transform: uppercase; margin-bottom: 50px; letter-spacing: 3px;">Our Partners</h3>
+            
+            <div class="info-card fade-in-card" style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 60px 30px; margin-bottom: 50px;">
+                <a href="https://rostered.gg" target="_blank" style="text-decoration: none; margin-bottom: 30px; display: block;">
+                    <img src="rostered.png" alt="Rostered Logo" style="max-width: 450px; width: 100%; filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.1)); transition: 0.5s;" onmouseover="this.style.filter='drop-shadow(0 0 30px var(--primary))'" onmouseout="this.style.filter='drop-shadow(0 0 15px rgba(255, 255, 255, 0.1))'">
+                </a>
+                <h4 style="color:var(--primary); font-size: 1.8rem; margin: 0 0 15px 0; letter-spacing: 4px; font-weight: 900;">ROSTERED.GG</h4>
+                <p style="line-height: 2; opacity: 0.9; max-width: 800px; font-size: 1.1rem; margin-bottom: 30px;">
+                    Everbloom is proud to work with <strong>Rostered</strong>, the leading platform for team management and professional player scouting.
+                </p>
+                <a href="https://rostered.gg" target="_blank" class="apply-btn">VISIT ROSTERED</a>
+            </div>
 
-        <div class="info-card fade-in-card" style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 60px 30px; margin-bottom: 50px; border-bottom: 2px solid rgba(212, 23, 91, 0.2);">
-    <a href="https://discord.gg/evolupe" target="_blank" style="text-decoration: none; margin-bottom: 30px; display: block;">
-        <img src="evolupe%20white.png" alt="Evolupe Media Logo" style="max-width: 450px; width: 100%; filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.1)); transition: 0.5s;" onmouseover="this.style.filter='drop-shadow(0 0 30px var(--primary))'" onmouseout="this.style.filter='drop-shadow(0 0 15px rgba(255, 255, 255, 0.1))'">
-    </a>
-    <h4 style="color:var(--primary); font-size: 1.8rem; margin: 0 0 15px 0; letter-spacing: 4px; font-weight: 900;">EVOLUPE MEDIA</h4>
-    <p style="line-height: 2; opacity: 0.9; max-width: 800px; font-size: 1.1rem; margin-bottom: 30px;">
-        Our official partner for high-end creative solutions. <strong>Evolupe Media</strong> specializes in top-tier graphic design and video editing, playing a vital role in shaping the visual identity and content of Everbloom.
-    </p>
-    <a href="https://discord.gg/evolupe" target="_blank" class="apply-btn" style="padding: 15px 40px;">JOIN DISCORD</a>
-</div>
+            <div class="info-card fade-in-card" style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 60px 30px; margin-bottom: 50px;">
+                <a href="https://discord.gg/evolupe" target="_blank" style="text-decoration: none; margin-bottom: 30px; display: block;">
+                    <img src="evolupe%20white.png" alt="Evolupe Media Logo" style="max-width: 450px; width: 100%; filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.1)); transition: 0.5s;" onmouseover="this.style.filter='drop-shadow(0 0 30px var(--primary))'" onmouseout="this.style.filter='drop-shadow(0 0 15px rgba(255, 255, 255, 0.1))'">
+                </a>
+                <h4 style="color:var(--primary); font-size: 1.8rem; margin: 0 0 15px 0; letter-spacing: 4px; font-weight: 900;">EVOLUPE MEDIA</h4>
+                <p style="line-height: 2; opacity: 0.9; max-width: 800px; font-size: 1.1rem; margin-bottom: 30px;">
+                    Our official partner for high-end creative solutions specializing in top-tier graphic design and video editing.
+                </p>
+                <a href="https://discord.gg/evolupe" target="_blank" class="apply-btn">JOIN DISCORD</a>
+            </div>
 
-        <div class="info-card" style="margin-top: 40px;">
-            <div class="coming-soon-box">
-                MORE PARTNERS COMING SOON
+            <div class="info-card">
+                <div class="coming-soon-box">MORE PARTNERS COMING SOON</div>
             </div>
         </div>
-    </div>
-</section>
+     </section>
+
      <footer>
           <div class="container">
               <div class="footer-recruitment">
@@ -447,15 +455,16 @@
               const nav = document.getElementById('navOverlay');
               const btn = document.querySelector('.nav-toggle');
               nav.classList.toggle('active'); 
-              btn.classList.toggle('open'); // Aktiviert die X-Animation
+              btn.classList.toggle('open'); 
           } 
 
           function showSection(id) { 
               document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active')); 
               const section = document.getElementById(id);
-              section.classList.add('active'); 
+              if(section) {
+                  section.classList.add('active'); 
+              }
               
-              // Menü schließen und Icon zurückdrehen
               document.getElementById('navOverlay').classList.remove('active'); 
               document.querySelector('.nav-toggle').classList.remove('open');
               
