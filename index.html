@@ -171,7 +171,7 @@
           .slot-card { border: 2px dashed rgba(212, 23, 91, 0.3); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: rgba(255,255,255,0.4); }
 
           footer { text-align: center; padding: 60px 20px; background: rgba(0,0,0,0.3); border-top: 1px solid rgba(255,255,255,0.05); }
-          .footer-socials { display: flex; justify-content: center; gap: 15px; margin-bottom: 20px; }
+          .footer-socials { display: flex; justify-content: center; gap: 15px; margin-bottom: 20px; flex-wrap: wrap; }
           .soc-link { width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 50%; color: white; text-decoration: none; font-size: 1.5rem; transition: 0.3s; }
           .sl-discord { background: var(--color-discord); }
           .sl-x { background: var(--color-x); border: 1px solid #333; }
@@ -222,12 +222,7 @@
                   <div class="news-column">
                       <div class="info-card"> 
                           <h3>LATEST NEWS</h3> 
-                          <p style="line-height: 1.6;">
-                              • Dr0xvlr joined the Male Roster<br>
-                              • Vexa joined the FLINTA Roster<br>
-                              • Norwin joined the Male Roster<br>
-                              • Noctra joined the Male Roster
-                          </p> 
+                          <p style="line-height: 1.6;">• Dr0xvlr joined the Male Roster<br>• Vexa joined the FLINTA Roster<br>• Norwin joined the Male Roster<br>• Noctra joined the team</p> 
                       </div>
                       <div class="info-card"> 
                           <h3>CURRENT GOALS</h3> 
@@ -374,7 +369,7 @@
                           </div>
                       </div>
                       <div class="player-card">
-                          <img src="clove.webp" class="player-img" style="object-fit: contain; transform: scale(1.6); transform-origin: center;"> 
+                          <img src="clove.webp" class="player-img" style="object-fit: contain; transform: scale(1.6); transform-origin: center; transition: 0.5s ease;"> 
                           <div class="card-content">
                               <small style="color:var(--primary); font-weight: bold;">CONTROLLER</small>
                               <div style="font-weight:900; font-size:1.4rem;">Dr0xvlr</div>
@@ -412,12 +407,12 @@
      <footer>
           <div class="container">
               <div class="footer-socials">
-                   <a href="https://www.gamertransfer.com" target="_blank"> <img src="https://gamertransfer.com/banner/v5_373.png" alt="GamerTransfer Recruitment Partner"></a>
-                  <a href="https://discord.gg/bQ8phXAmSa" class="soc-link sl-discord" target="_blank"><i class="fa-brands fa-discord"></i></a>
-                  <a href="https://x.com/everbloom_gc" class="soc-link sl-x" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
-                  <a href="https://www.instagram.com/everbloom.gc" class="soc-link sl-insta" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                  <a href="https://www.tiktok.com/@everbloomgc" class="soc-link sl-tiktok" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
-                  <a href="https://www.twitch.tv/everbloomvalorant" class="soc-link sl-twitch" target="_blank"><i class="fa-brands fa-twitch"></i></a>
+                   <a href="https://www.gamertransfer.com" target="_blank"> <img src="https://gamertransfer.com/banner/v5_373.png" alt="GamerTransfer Recruitment Partner" style="height: 50px;"></a>
+                   <a href="https://discord.gg/bQ8phXAmSa" class="soc-link sl-discord" target="_blank"><i class="fa-brands fa-discord"></i></a>
+                   <a href="https://x.com/everbloom_gc" class="soc-link sl-x" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                   <a href="https://www.instagram.com/everbloom.gc" class="soc-link sl-insta" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                   <a href="https://www.tiktok.com/@everbloomgc" class="soc-link sl-tiktok" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+                   <a href="https://www.twitch.tv/everbloomvalorant" class="soc-link sl-twitch" target="_blank"><i class="fa-brands fa-twitch"></i></a>
               </div>
               <div style="opacity: 0.4; font-size: 0.8rem; margin-top: 20px;">© 2026 EVERBLOOM GAMING</div>
           </div>
