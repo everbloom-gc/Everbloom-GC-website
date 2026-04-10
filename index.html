@@ -26,6 +26,7 @@
                --rank-gold: #ffcf4b;
                --rank-ascendant: #22a970;
                --rank-immortal: #b92f41;
+               --rank-platinum: #38b6ff;
           } 
 
           * { 
@@ -117,13 +118,6 @@
           .info-card { background: var(--card-bg); padding: 35px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1); border-top: 4px solid var(--primary); margin-bottom: 25px; backdrop-filter: blur(15px); } 
           .info-card h3 { margin-top: 0; color: var(--primary); text-transform: uppercase; margin-bottom: 20px; } 
 
-          .fade-in-card { opacity: 0; transform: translateY(20px); }
-          .active .fade-in-card { animation: cardFadeIn 0.8s forwards; }
-
-          @keyframes cardFadeIn {
-               to { opacity: 1; transform: translateY(0); }
-          }
-
           .apply-container { text-align: center; margin: 20px 0 40px; }
           .apply-btn { display: inline-block; background: transparent; color: white; padding: 18px 45px; border-radius: 4px; text-decoration: none; font-weight: 900; text-transform: uppercase; letter-spacing: 3px; transition: 0.4s; border: 2px solid var(--primary); cursor: pointer; } 
           .apply-btn:hover { background: var(--primary); box-shadow: 0 0 35px var(--primary); transform: scale(1.05); } 
@@ -142,12 +136,11 @@
           .player-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.35; z-index: 1; transition: 0.5s; } 
           .player-card:hover .player-img { opacity: 0.5; transform: scale(1.05); }
           
-          /* REYNA VERGRÖSSERUNG */
           #reyna-special { 
               position: absolute; 
-              top: 35%; /* Leicht nach oben verschoben für besseren Fokus */
+              top: 35%; 
               left: 50%; 
-              transform: translate(-50%, -50%) scale(1.4); /* SCALE ERHÖHT */
+              transform: translate(-50%, -50%) scale(1.4); 
               width: 100%; 
               height: 100%; 
               object-fit: contain; 
@@ -156,7 +149,7 @@
               transition: 0.5s ease;
           }
           .player-card:hover #reyna-special {
-              transform: translate(-50%, -50%) scale(1.55); /* ZOOM BEI HOVER */
+              transform: translate(-50%, -50%) scale(1.55); 
               opacity: 0.6;
           }
 
@@ -171,6 +164,8 @@
           .rank-bronze { color: var(--rank-bronze); border-color: var(--rank-bronze); box-shadow: 0 0 10px var(--rank-bronze); }
           .rank-silver { color: var(--rank-silver); border-color: var(--rank-silver); box-shadow: 0 0 10px var(--rank-silver); }
           .rank-gold { color: var(--rank-gold); border-color: var(--rank-gold); box-shadow: 0 0 10px var(--rank-gold); }
+          .rank-platinum { color: var(--rank-platinum); border-color: var(--rank-platinum); box-shadow: 0 0 10px var(--rank-platinum); 
+}
           .rank-ascendant { color: var(--rank-ascendant); border-color: var(--rank-ascendant); box-shadow: 0 0 10px var(--rank-ascendant); }
           .rank-immortal { color: var(--rank-immortal); border-color: var(--rank-immortal); box-shadow: 0 0 10px var(--rank-immortal); }
 
@@ -237,7 +232,7 @@
                   <div class="news-column">
                       <div class="info-card"> 
                           <h3>LATEST NEWS</h3> 
-                          <p style="line-height: 1.6;">• Vexa joined the FLINTA Roster (5/5)<br>• Norwin joined the Male Roster<br>• Noctra joined the team<br>• Settie joined the team</p> 
+                          <p style="line-height: 1.6;">• Dr0xvlr joined the Male Roster<br>• Vexa joined the FLINTA Roster<br>• Norwin joined the Male Roster<br>• Noctra joined the team</p> 
                       </div>
                       <div class="info-card"> 
                           <h3>CURRENT GOALS</h3> 
@@ -258,30 +253,13 @@
      <section id="about" class="page-section">
         <div class="container" style="padding-top: 60px;">
             <h3 style="text-align:center; color:var(--primary); text-transform: uppercase; margin-bottom: 40px; letter-spacing: 3px;">The Everbloom Philosophy</h3>
-            
-            <div class="info-card fade-in-card" style="animation-delay: 0.1s;">
-                <h4 style="color:var(--primary); margin-top: 0;">THE ART OF BLOOMING</h4>
-                <p style="line-height: 1.8; opacity: 0.9;">
-                    The name <strong>Everbloom</strong> represents a commitment: the ability to transcend oneself at any given moment. We believe that true potential is not a fixed endpoint, but a continuous process. In a competitive landscape often defined by short-term hype, we provide the foundation where talent can bloom sustainably—regardless of where they stand in their career.
-                </p>
+            <div class="info-card">
+                <h4>THE ART OF BLOOMING</h4>
+                <p style="line-height: 1.8;">The name <strong>Everbloom</strong> represents a commitment: the ability to transcend oneself at any given moment. We believe that true potential is not a fixed endpoint, but a continuous process.</p>
             </div>
-
-            <div class="info-card fade-in-card" style="animation-delay: 0.3s;">
-                <h4 style="color:var(--primary); margin-top: 0;">STRUCTURE AS OUR BACKBONE</h4>
-                <p style="line-height: 1.8; opacity: 0.9;">
-                    At Everbloom, professionalism isn't just a buzzword; it's our standard. We are designed as a highly structured organization, offering our players and partners clear processes, reliable communication, and a professional environment. We are convinced that peak performance in-game can only thrive where order, discipline, and a clear roadmap exist out-of-game.
-                </p>
-            </div>
-
-            <div class="info-card fade-in-card" style="animation-delay: 0.5s;">
-                <h4 style="color:var(--primary); margin-top: 0;">EQUALITY & DIVERSITY</h4>
-                <p style="line-height: 1.8; opacity: 0.9;">
-                    For us, esports is boundless. One of our core pillars is absolute equality. With our dedicated Male and FLINTA rosters, we create spaces where performance is the only currency. We foster a culture of respect where every player receives the same support, the same resources, and the same stage to reach their personal maximum.
-                </p>
-            </div>
-
-            <div class="info-card fade-in-card" style="text-align:center; border-top: 2px solid var(--primary); animation-delay: 0.7s;">
-                <p style="font-size: 1.1rem; font-weight: 900; letter-spacing: 2px; margin: 0;">WE PROVIDE THE STRUCTURE – YOU UNFOLD THE POTENTIAL.</p>
+            <div class="info-card">
+                <h4>STRUCTURE AS OUR BACKBONE</h4>
+                <p style="line-height: 1.8;">At Everbloom, professionalism isn't just a buzzword; it's our standard. We are designed as a highly structured organization offering clear processes and reliable communication.</p>
             </div>
         </div>
      </section>
@@ -339,7 +317,7 @@
                               <div style="font-weight:900; font-size:1.4rem;">Mel</div>
                               <div class="rank-tag rank-gold">Gold 1</div>
                               <div class="player-links">
-                                  <a href="https://tracker.gg/valorant/profile/riot/NV%20Nyx%23NYX/overview?platform=pc&playlist=competitive&season=9d85c932-4820-c060-09c3-668636d4df1b" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
+                                  <a href="https://tracker.gg/valorant/profile/riot/NV%20Nyx%23NYX/overview" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
                                   <a href="https://x.com/tqrmcc" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
                               </div>
                           </div>
@@ -393,15 +371,24 @@
                           <div class="card-content">
                               <small style="color:var(--primary); font-weight: bold;">DUELIST</small>
                               <div style="font-weight:900; font-size:1.4rem;">Noctra</div>
-                              <div class="rank-tag rank-ascendant">Ascendant </div>
+                              <div class="rank-tag rank-ascendant">Ascendant</div>
                               <div class="player-links">
                                   <a href="https://tracker.gg/valorant/profile/riot/Jocelyn%20Flores%23kev/overview" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
                                   <a href="https://x.com/Noctravlr" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
                               </div>
                           </div>
                       </div>
-                      <div class="player-card slot-card">
-                          <div style="font-weight:900;">SLOT 3 <br> <span style="font-size: 0.7rem; color: var(--primary);">OPEN SPOT</span></div>
+                      <div class="player-card">
+                          <img src="omen.png" class="player-img" style="object-fit: contain; padding: 20px;"> 
+                          <div class="card-content">
+                              <small style="color:var(--primary); font-weight: bold;">CONTROLLER</small>
+                              <div style="font-weight:900; font-size:1.4rem;">Dr0xvlr</div>
+                              <div class="rank-tag rank-immortal">Platinum 1</div>
+                              <div class="player-links">
+                                  <a href="https://tracker.gg/valorant/profile/riot/budhaFPS%23EGO/overview" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
+                                  <a href="https://x.com/dr0xvlr" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
+                              </div>
+                          </div>
                       </div>
                   </div>
                   <div class="roster-row-bottom">
@@ -419,43 +406,16 @@
      <section id="partners" class="page-section">
         <div class="container" style="padding-top: 60px;">
             <h3 style="text-align:center; color:var(--primary); text-transform: uppercase; margin-bottom: 50px; letter-spacing: 3px;">Our Partners</h3>
-            
-            <div class="info-card fade-in-card" style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 60px 30px; margin-bottom: 50px;">
-                <a href="https://rostered.gg" target="_blank" style="text-decoration: none; margin-bottom: 30px; display: block; width: 100%;">
-                    <img src="rostered.png" alt="Rostered Logo" style="max-width: 400px; width: 80%; height: auto; object-fit: contain; filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.1)); transition: 0.5s;">
-                </a>
-                <h4 style="color:var(--primary); font-size: 1.8rem; margin: 0 0 15px 0; letter-spacing: 4px; font-weight: 900;">ROSTERED.GG</h4>
-                <p style="line-height: 2; opacity: 0.9; max-width: 800px; font-size: 1.1rem; margin-bottom: 30px;">
-                    Everbloom is proud to work with <strong>Rostered</strong>, the leading platform for team management and professional player scouting.
-                </p>
-                <a href="https://rostered.gg" target="_blank" class="apply-btn">VISIT ROSTERED</a>
-            </div>
-
-            <div class="info-card fade-in-card" style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 60px 30px; margin-bottom: 50px;">
-                <a href="https://discord.gg/evolupe" target="_blank" style="text-decoration: none; margin-bottom: 30px; display: block; width: 100%;">
-                    <img src="evolupe%20white.png" alt="Evolupe Media Logo" style="max-width: 400px; width: 80%; height: auto; object-fit: contain; filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.1)); transition: 0.5s;">
-                </a>
-                <h4 style="color:var(--primary); font-size: 1.8rem; margin: 0 0 15px 0; letter-spacing: 4px; font-weight: 900;">EVOLUPE MEDIA</h4>
-                <p style="line-height: 2; opacity: 0.9; max-width: 800px; font-size: 1.1rem; margin-bottom: 30px;">
-                    Our official partner for high-end creative solutions specializing in top-tier graphic design and video editing.
-                </p>
-                <a href="https://discord.gg/evolupe" target="_blank" class="apply-btn">JOIN DISCORD</a>
-            </div>
-
-            <div class="info-card">
-                <div class="coming-soon-box">MORE PARTNERS COMING SOON</div>
+            <div class="info-card" style="text-align: center;">
+                <img src="rostered.png" alt="Rostered Logo" style="max-width: 300px; margin-bottom: 20px;">
+                <h4 style="color:var(--primary);">ROSTERED.GG</h4>
+                <p>Official platform for team management.</p>
             </div>
         </div>
      </section>
 
      <footer>
           <div class="container">
-              <div class="footer-recruitment">
-                   <a href="https://www.gamertransfer.com" target="_blank">
-                        <img src="https://gamertransfer.com/banner/v5_373.png" alt="GamerTransfer Recruitment Partner">
-                   </a>
-              </div>
-
               <div class="footer-socials">
                   <a href="https://discord.gg/bQ8phXAmSa" class="soc-link sl-discord" target="_blank"><i class="fa-brands fa-discord"></i></a>
                   <a href="https://x.com/everbloom_gc" class="soc-link sl-x" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
@@ -463,8 +423,7 @@
                   <a href="https://www.tiktok.com/@everbloomgc" class="soc-link sl-tiktok" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
                   <a href="https://www.twitch.tv/everbloomvalorant" class="soc-link sl-twitch" target="_blank"><i class="fa-brands fa-twitch"></i></a>
               </div>
-              <div style="opacity: 0.4; font-size: 0.8rem;">© 2026 EVERBLOOM GAMING</div>
-              <a href="legal.html" class="legal-link">Legal Notice / Impressum</a>
+              <div style="opacity: 0.4; font-size: 0.8rem; margin-top: 20px;">© 2026 EVERBLOOM GAMING</div>
           </div>
      </footer> 
 
@@ -481,22 +440,16 @@
               const section = document.getElementById(id);
               if(section) {
                   section.classList.add('active'); 
-                  // SPEICHERN IM LOCALSTORAGE
                   localStorage.setItem('everbloom_last_section', id);
               }
-              
               document.getElementById('navOverlay').classList.remove('active'); 
               document.querySelector('.nav-toggle').classList.remove('open');
-              
               window.scrollTo({top: 0, behavior: 'smooth'}); 
           } 
 
-          // BEIM LADEN DEN STATUS PRÜFEN
           window.onload = function() {
-              const savedSection = localStorage.getItem('everbloom_last_section');
-              if(savedSection) {
-                  showSection(savedSection);
-              }
+              const last = localStorage.getItem('everbloom_last_section') || 'home';
+              showSection(last);
           }
      </script>
 </body> 
