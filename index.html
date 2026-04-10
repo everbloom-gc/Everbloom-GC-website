@@ -179,9 +179,17 @@
           .sl-tiktok { background: var(--color-tiktok); border: 1px solid #333; }
           .sl-twitch { background: var(--color-twitch); }
 
+          /* Animations */
           .page-section { display: none; } 
-          .page-section.active { display: block; animation: fadeIn 0.6s ease; } 
-          @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } } 
+          .page-section.active { 
+               display: block; 
+               animation: slideFadeIn 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; 
+          } 
+          
+          @keyframes slideFadeIn { 
+               from { opacity: 0; transform: translateY(30px); } 
+               to { opacity: 1; transform: translateY(0); } 
+          } 
      </style> 
 </head> 
 <body> 
@@ -209,9 +217,9 @@
               <div class="info-card"> 
                   <h3><i class="fas fa-seedling"></i> MISSION & VISION</h3> 
                   <p style="line-height: 1.8;">
-                      <strong>Everbloom Gaming</strong> was founded in 2026 as a highly structured esports organization. Our name is our promise: we create an environment where talent can <strong>bloom</strong> at any time and unfold its full potential. 
+                      <strong>Everbloom Gaming</strong> wurde 2026 als hochstrukturierte Esports-Organisation gegründet. Unser Name ist unser Versprechen: Wir schaffen ein Umfeld, in dem Talente jederzeit <strong>aufblühen</strong> und ihr volles Potenzial entfalten können. 
                   </p>
-                  <p style="font-size: 0.85rem; opacity: 0.7; margin-top: 15px; cursor: pointer; color: var(--primary); font-weight: bold;" onclick="showSection('about')">Read more about our philosophy →</p>
+                  <p style="font-size: 0.85rem; opacity: 0.7; margin-top: 15px; cursor: pointer; color: var(--primary); font-weight: bold;" onclick="showSection('about')">Mehr über unsere Philosophie lesen →</p>
               </div> 
 
               <div class="apply-container">
@@ -243,13 +251,30 @@
      <section id="about" class="page-section">
         <div class="container" style="padding-top: 60px;">
             <h3 style="text-align:center; color:var(--primary); text-transform: uppercase; margin-bottom: 40px; letter-spacing: 3px;">The Everbloom Philosophy</h3>
+            
             <div class="info-card">
-                <h4>THE ART OF BLOOMING</h4>
-                <p style="line-height: 1.8;">The name <strong>Everbloom</strong> represents a commitment: the ability to transcend oneself at any given moment. We believe that true potential is not a fixed endpoint, but a continuous process.</p>
+                <h4><i class="fas fa-heart"></i> THE ART OF BLOOMING</h4>
+                <p style="line-height: 1.8;">Der Name <strong>Everbloom</strong> repräsentiert ein Versprechen: die Fähigkeit, über sich selbst hinauszuwachsen. Wir glauben, dass wahres Potenzial kein Endpunkt ist, sondern ein kontinuierlicher Prozess der Entfaltung.</p>
             </div>
+
+            <div class="home-grid" style="grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div class="info-card">
+                    <h4><i class="fas fa-shield-halved"></i> STRUCTURE</h4>
+                    <p style="line-height: 1.6;">Professionalität ist bei uns kein Schlagwort, sondern Standard. Everbloom bietet eine hochstrukturierte Umgebung mit klaren Prozessen für alle Spieler.</p>
+                </div>
+                <div class="info-card">
+                    <h4><i class="fas fa-eye"></i> THE VISION</h4>
+                    <p style="line-height: 1.6;">Wir streben danach, eine Marke zu etablieren, die für Disziplin, Respekt und exzellentes Teamplay im DACH-Raum steht.</p>
+                </div>
+            </div>
+
             <div class="info-card">
-                <h4>STRUCTURE AS OUR BACKBONE</h4>
-                <p style="line-height: 1.8;">At Everbloom, professionalism isn't just a buzzword; it's our standard. We are designed as a highly structured organization offering clear processes and reliable communication.</p>
+                <h4><i class="fas fa-users"></i> OUR VALUES</h4>
+                <ul style="line-height: 2; list-style: none; padding-left: 0;">
+                    <li><span style="color: var(--primary); font-weight: bold;">01. GROWTH:</span> Stillstand ist keine Option. Wir lernen aus jeder Niederlage.</li>
+                    <li><span style="color: var(--primary); font-weight: bold;">02. UNITY:</span> Im Server sind wir eine Einheit. Außerhalb sind wir eine Community.</li>
+                    <li><span style="color: var(--primary); font-weight: bold;">03. RESPECT:</span> Wir fördern ein toxikfreies Umfeld, in dem jeder sein Bestes geben kann.</li>
+                </ul>
             </div>
         </div>
      </section>
@@ -396,10 +421,29 @@
      <section id="partners" class="page-section">
         <div class="container" style="padding-top: 60px;">
             <h3 style="text-align:center; color:var(--primary); text-transform: uppercase; margin-bottom: 50px; letter-spacing: 3px;">Our Partners</h3>
-            <div class="info-card" style="text-align: center;">
-                <img src="rostered.png" alt="Rostered Logo" style="max-width: 300px; margin-bottom: 20px;">
-                <h4 style="color:var(--primary);">ROSTERED.GG</h4>
-                <p>Official platform for team management.</p>
+            
+            <div class="home-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+                <div class="info-card" style="text-align: center; display: flex; flex-direction: column; justify-content: space-between; align-items: center;">
+                    <div>
+                        <img src="rostered.png" alt="Rostered Logo" style="max-width: 200px; margin-bottom: 20px;">
+                        <h4 style="color:var(--primary);">ROSTERED.GG</h4>
+                        <p style="font-size: 0.9rem; margin-bottom: 20px;">Offizielle Plattform für Team-Management und Organisation.</p>
+                    </div>
+                    <a href="https://rostered.gg" target="_blank" class="apply-btn" style="padding: 10px 20px; font-size: 0.7rem;">Website besuchen</a>
+                </div>
+
+                <div class="info-card" style="text-align: center; display: flex; flex-direction: column; justify-content: space-between; align-items: center;">
+                    <div>
+                        <div style="height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                            <span style="font-size: 2rem; font-weight: 900; letter-spacing: 2px;">EVOLUPE<span style="color:var(--primary);">MEDIA</span></span>
+                        </div>
+                        <h4 style="color:var(--primary);">EVOLUPE MEDIA</h4>
+                        <p style="font-size: 0.9rem; margin-bottom: 20px;">Digital Excellence & Creative Media Support.</p>
+                    </div>
+                    <a href="https://discord.gg/bQ8phXAmSa" target="_blank" class="apply-btn" style="padding: 10px 20px; font-size: 0.7rem; border-color: #5865F2; background: rgba(88, 101, 242, 0.1);">
+                        <i class="fab fa-discord"></i> Join Discord
+                    </a>
+                </div>
             </div>
         </div>
      </section>
