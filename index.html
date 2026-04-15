@@ -39,13 +39,37 @@
           }
 
           html { scroll-behavior: smooth; }
+
           body { 
               width: 100%; 
               overflow-x: hidden; 
               background-color: var(--bg); 
               color: var(--text); 
-              font-family: 'Inter', sans-serif; 
-          } 
+              font-family: 'Inter', sans-serif;
+              /* Animierter Grid-Hintergrund aus CSS Dokument 2 */
+              background-image: 
+                  linear-gradient(rgba(212, 23, 91, 0.05) 1px, transparent 1px),
+                  linear-gradient(90deg, rgba(212, 23, 91, 0.05) 1px, transparent 1px),
+                  radial-gradient(circle at 50% 50%, rgba(212, 23, 91, 0.15) 0%, transparent 70%),
+                  radial-gradient(circle at 50% 50%, transparent 20%, #060b10 100%);
+              background-size: 40px 40px, 40px 40px, 100% 100%, 100% 100%;
+              background-attachment: fixed;
+          }
+
+          /* Scanline-Effekt aus CSS Dokument 2 */
+          body::after {
+              content: "";
+              position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+              background: linear-gradient(to bottom, transparent 0%, rgba(212, 23, 91, 0.03) 50%, transparent 100%);
+              background-size: 100% 200px;
+              animation: scanline 8s linear infinite;
+              pointer-events: none; z-index: 999;
+          }
+
+          @keyframes scanline {
+              0% { background-position: 0 -200px; }
+              100% { background-position: 0 100vh; }
+          }
 
           /* Scrollbar Styling */
           ::-webkit-scrollbar { width: 8px; }
@@ -126,7 +150,7 @@
                49% { text-shadow: -0.05em -0.025em 0 rgba(255,0,0,0.75), 0.025em 0.025em 0 rgba(0,255,0,0.75), -0.05em -0.05em 0 rgba(0,0,255,0.75); }
                50% { text-shadow: 0.025em 0.05em 0 rgba(255,0,0,0.75), 0.05em 0 0 rgba(0,255,0,0.75), 0 -0.05em 0 rgba(0,0,255,0.75); }
                99% { text-shadow: 0.025em 0.05em 0 rgba(255,0,0,0.75), 0.05em 0 0 rgba(0,255,0,0.75), 0 -0.05em 0 rgba(0,0,255,0.75); }
-               100% { text-shadow: -0.025em 0 0 rgba(255,0,0,0.75), -0.025em -0.025em 0 rgba(0,255,0,0.75), -0.025em -0.05em 0 rgba(0,0,255,0.75); }
+               100% { text-shadow: -0.025em 0 0 rgba(255,0,0,0.75), -0.025em -0.025em 0 rgba(0,255,0,0.75), -0.025em -0.05em 0 rgba(0,255,0,0.75); }
           }
 
           .container { max-width: 1100px; margin: auto; padding: 20px; } 
