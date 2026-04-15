@@ -1,224 +1,231 @@
 <!DOCTYPE html> 
 <html lang="en"> 
 <head> 
-     <meta charset="UTF-8"> [cite: 1]
-     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> [cite: 1]
-     <title>EVERBLOOM | Valorant Team 🌸</title> [cite: 1, 2]
+     <meta charset="UTF-8"> 
+     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+     <title>EVERBLOOM | Valorant Team 🌸</title> 
 
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> [cite: 2]
-     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet"> [cite: 2]
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> 
+     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
      
      <style> 
           :root { 
-               --primary: #d4175b; [cite: 2, 3]
-               --bg: #060b10; [cite: 3]
-               --card-bg: rgba(17, 27, 36, 0.6); [cite: 3]
-               --text: #ffffff; [cite: 3]
-               --color-x: #000000; [cite: 3]
-               --color-insta: #E4405F; [cite: 3]
-               --color-tiktok: #000000; [cite: 3]
-               --color-twitch: #9146FF; [cite: 3]
-               --color-discord: #5865F2; [cite: 3]
+               --primary: #d4175b;  
+               --bg: #060b10;        
+               --card-bg: rgba(17, 27, 36, 0.6); 
+               --text: #ffffff; 
+               --color-x: #000000;
+               --color-insta: #E4405F;
+               --color-tiktok: #000000;
+               --color-twitch: #9146FF;
+               --color-discord: #5865F2;
                
                /* Rank Colors */
-               --rank-bronze: #824a33; [cite: 4]
-               --rank-silver: #ced4da; [cite: 5]
-               --rank-gold: #ffcf4b; [cite: 5]
-               --rank-ascendant: #22a970; [cite: 5]
-               --rank-immortal: #b92f41; [cite: 5]
-               --rank-diamond: #b784f2; [cite: 5]
-               --rank-platinum: #38b6ff; [cite: 5]
-               --rank-radiant: #ffeaae; [cite: 5]
-               --rank-diamond-glow: rgba(183, 132, 242, 0.5); [cite: 5]
-          } [cite: 6]
-
-          * { 
-              box-sizing: border-box; [cite: 6]
-              margin: 0; [cite: 7]
-              padding: 0; [cite: 7]
-          }
-
-          html { scroll-behavior: smooth; } [cite: 7, 8]
-
-          /* --- NEW EVERBLOOM BACKGROUND CSS --- */
-          body { 
-              width: 100%; [cite: 8]
-              overflow-x: hidden; [cite: 9]
-              background-color: var(--bg); [cite: 9]
-              color: var(--text); [cite: 9]
-              font-family: 'Inter', sans-serif; [cite: 9]
-              background-image: 
-                  linear-gradient(rgba(212, 23, 91, 0.05) 1px, transparent 1px),
-                  linear-gradient(90deg, rgba(212, 23, 91, 0.05) 1px, transparent 1px),
-                  radial-gradient(circle at 50% 50%, rgba(212, 23, 91, 0.15) 0%, transparent 70%),
-                  radial-gradient(circle at 50% 50%, transparent 20%, #060b10 100%);
-              background-size: 40px 40px, 40px 40px, 100% 100%, 100% 100%;
-              background-attachment: fixed;
+               --rank-bronze: #824a33;
+               --rank-silver: #ced4da;
+               --rank-gold: #ffcf4b;
+               --rank-ascendant: #22a970;
+               --rank-immortal: #b92f41;
+               --rank-diamond: #b784f2;
+               --rank-platinum: #38b6ff;
+               --rank-radiant: #ffeaae;
+               --rank-diamond-glow: rgba(183, 132, 242, 0.5);
           } 
 
-          /* Subtle Scanline Animation */
-          body::after {
-              content: "";
-              position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-              background: linear-gradient(to bottom, transparent 0%, rgba(212, 23, 91, 0.03) 50%, transparent 100%);
-              background-size: 100% 200px;
-              animation: scanline 8s linear infinite;
-              pointer-events: none; z-index: 999;
+          * { 
+              box-sizing: border-box; 
+              margin: 0; 
+              padding: 0; 
           }
 
-          @keyframes scanline {
-              0% { background-position: 0 -200px; }
-              100% { background-position: 0 100vh; }
-          }
+          html { scroll-behavior: smooth; }
+          body { 
+              width: 100%; 
+              overflow-x: hidden; 
+              background-color: var(--bg); 
+              color: var(--text); 
+              font-family: 'Inter', sans-serif; 
+          } 
 
           /* Scrollbar Styling */
-          ::-webkit-scrollbar { width: 8px; } [cite: 10]
-          ::-webkit-scrollbar-track { background: var(--bg); } [cite: 11]
-          ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 10px; } [cite: 12]
+          ::-webkit-scrollbar { width: 8px; }
+          ::-webkit-scrollbar-track { background: var(--bg); }
+          ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 10px; }
+
+          #video-bg { position: fixed; top: 50%; left: 50%; min-width: 100%; min-height: 100%; z-index: -2; transform: translateX(-50%) translateY(-50%); object-fit: cover; filter: brightness(0.12); } 
+          .video-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle, rgba(6,11,16,0.1), rgba(6,11,16,0.95)); z-index: -1; } 
 
           /* Navigation */
           .nav-toggle { 
-              position: fixed; [cite: 17]
-              top: 20px; left: 20px; z-index: 1001; [cite: 17]
-              background: var(--primary); border: none; width: 45px; height: 45px; [cite: 17]
-              border-radius: 5px; cursor: pointer; display: flex; [cite: 17, 18]
-              flex-direction: column; align-items: center; justify-content: center; gap: 5px; [cite: 18]
+              position: fixed; top: 20px; left: 20px; z-index: 1001; 
+              background: var(--primary); border: none; width: 45px; height: 45px; 
+              border-radius: 5px; cursor: pointer; display: flex; 
+              flex-direction: column; align-items: center; justify-content: center; gap: 5px; 
           } 
           
           .nav-toggle span { 
-              display: block; [cite: 19]
-              width: 22px; height: 2px; background: white; [cite: 19]
-              transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1); position: relative; [cite: 20]
+              display: block; width: 22px; height: 2px; background: white; 
+              transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1); position: relative;
           } 
 
-          .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); } [cite: 21]
-          .nav-toggle.open span:nth-child(2) { opacity: 0; transform: translateX(-10px); } [cite: 22]
-          .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); } [cite: 23]
+          .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+          .nav-toggle.open span:nth-child(2) { opacity: 0; transform: translateX(-10px); }
+          .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
           .nav-overlay { 
-              position: fixed; [cite: 24]
-              top: 0; left: -300px; width: 280px; height: 100vh; [cite: 24]
-              background: rgba(6, 11, 16, 0.98); backdrop-filter: blur(25px); [cite: 24]
-              z-index: 1000; transition: 0.5s; [cite: 25]
-              display: flex; flex-direction: column; [cite: 25]
-              padding: 100px 30px; border-right: 1px solid rgba(212, 23, 91, 0.2); [cite: 26]
+              position: fixed; top: 0; left: -300px; width: 280px; height: 100vh; 
+              background: rgba(6, 11, 16, 0.98); backdrop-filter: blur(25px); 
+              z-index: 1000; transition: 0.5s; display: flex; flex-direction: column; 
+              padding: 100px 30px; border-right: 1px solid rgba(212, 23, 91, 0.2); 
           } 
-          .nav-overlay.active { left: 0; } [cite: 27]
+          .nav-overlay.active { left: 0; } 
           .nav-overlay a { 
-              font-size: 1.5rem; [cite: 28]
-              color: white; text-decoration: none; [cite: 28]
-              text-transform: uppercase; font-weight: 900; margin: 15px 0; [cite: 29]
-              cursor: pointer; transition: 0.3s ease; letter-spacing: 2px; [cite: 29]
+              font-size: 1.5rem; color: white; text-decoration: none; 
+              text-transform: uppercase; font-weight: 900; margin: 15px 0; 
+              cursor: pointer; transition: 0.3s ease; letter-spacing: 2px; 
           } 
-          .nav-overlay a:hover { color: var(--primary); [cite: 30]
-              text-shadow: 0 0 15px var(--primary); transform: translateX(10px); } [cite: 30]
+          .nav-overlay a:hover { color: var(--primary); text-shadow: 0 0 15px var(--primary); transform: translateX(10px); }
 
           header {
-              padding: 100px 20px 40px; [cite: 31]
-              display: flex; [cite: 31]
-              flex-direction: column; [cite: 32]
-              align-items: center; [cite: 32]
-              justify-content: center; [cite: 32]
-              text-align: center; [cite: 32]
-              width: 100%; [cite: 32]
+              padding: 100px 20px 40px;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              text-align: center;
+              width: 100%;
           }
 
           .logo-main { 
-              width: 130px; [cite: 33]
-              filter: drop-shadow(0 0 25px var(--primary)); [cite: 33]
-              margin-bottom: 20px; [cite: 34]
-              transition: transform 0.3s ease; [cite: 34]
-              cursor: pointer; [cite: 34]
-              display: block; [cite: 34]
+              width: 130px; 
+              filter: drop-shadow(0 0 25px var(--primary)); 
+              margin-bottom: 20px; 
+              transition: transform 0.3s ease; 
+              cursor: pointer; 
+              display: block;
           } 
 
           .glitch-text { 
-               font-size: clamp(2.5rem, 8vw, 4.5rem); [cite: 35]
-               font-weight: 900; [cite: 36]
-               text-transform: uppercase; [cite: 36]
-               position: relative; [cite: 36]
-               display: inline-block; [cite: 36]
-               letter-spacing: 12px; [cite: 36]
-               padding-left: 12px; [cite: 36]
-               color: white; [cite: 36]
-               text-shadow: 0.05em 0 0 rgba(255,0,0,0.75), -0.025em -0.05em 0 rgba(0,255,0,0.75), 0.025em 0.05em 0 rgba(0,0,255,0.75); [cite: 37]
-               animation: glitch 500ms infinite; [cite: 37]
-               margin: 0 auto; [cite: 37]
+               font-size: clamp(2.5rem, 8vw, 4.5rem); 
+               font-weight: 900; 
+               text-transform: uppercase; 
+               position: relative; 
+               display: inline-block; 
+               letter-spacing: 12px;
+               padding-left: 12px; 
+               color: white;
+               text-shadow: 0.05em 0 0 rgba(255,0,0,0.75), -0.025em -0.05em 0 rgba(0,255,0,0.75), 0.025em 0.05em 0 rgba(0,0,255,0.75);
+               animation: glitch 500ms infinite;
+               margin: 0 auto;
           }
 
           @keyframes glitch {
-               0% { text-shadow: 0.05em 0 0 rgba(255,0,0,0.75), -0.05em -0.025em 0 rgba(0,255,0,0.75), -0.025em 0.05em 0 rgba(0,0,255,0.75); } [cite: 38]
-               14% { text-shadow: 0.05em 0 0 rgba(255,0,0,0.75), -0.05em -0.025em 0 rgba(0,255,0,0.75), -0.025em 0.05em 0 rgba(0,0,255,0.75); } [cite: 39]
-               15% { text-shadow: -0.05em -0.025em 0 rgba(255,0,0,0.75), 0.025em 0.025em 0 rgba(0,255,0,0.75), -0.05em -0.05em 0 rgba(0,0,255,0.75); } [cite: 40]
-               49% { text-shadow: -0.05em -0.025em 0 rgba(255,0,0,0.75), 0.025em 0.025em 0 rgba(0,255,0,0.75), -0.05em -0.05em 0 rgba(0,0,255,0.75); } [cite: 41]
-               50% { text-shadow: 0.025em 0.05em 0 rgba(255,0,0,0.75), 0.05em 0 0 rgba(0,255,0,0.75), 0 -0.05em 0 rgba(0,0,255,0.75); } [cite: 42]
-               99% { text-shadow: 0.025em 0.05em 0 rgba(255,0,0,0.75), 0.05em 0 0 rgba(0,255,0,0.75), 0 -0.05em 0 rgba(0,0,255,0.75); } [cite: 43]
-               100% { text-shadow: -0.025em 0 0 rgba(255,0,0,0.75), -0.025em -0.025em 0 rgba(0,255,0,0.75), -0.025em -0.05em 0 rgba(0,0,255,0.75); } [cite: 44]
+               0% { text-shadow: 0.05em 0 0 rgba(255,0,0,0.75), -0.05em -0.025em 0 rgba(0,255,0,0.75), -0.025em 0.05em 0 rgba(0,0,255,0.75); }
+               14% { text-shadow: 0.05em 0 0 rgba(255,0,0,0.75), -0.05em -0.025em 0 rgba(0,255,0,0.75), -0.025em 0.05em 0 rgba(0,0,255,0.75); }
+               15% { text-shadow: -0.05em -0.025em 0 rgba(255,0,0,0.75), 0.025em 0.025em 0 rgba(0,255,0,0.75), -0.05em -0.05em 0 rgba(0,0,255,0.75); }
+               49% { text-shadow: -0.05em -0.025em 0 rgba(255,0,0,0.75), 0.025em 0.025em 0 rgba(0,255,0,0.75), -0.05em -0.05em 0 rgba(0,0,255,0.75); }
+               50% { text-shadow: 0.025em 0.05em 0 rgba(255,0,0,0.75), 0.05em 0 0 rgba(0,255,0,0.75), 0 -0.05em 0 rgba(0,0,255,0.75); }
+               99% { text-shadow: 0.025em 0.05em 0 rgba(255,0,0,0.75), 0.05em 0 0 rgba(0,255,0,0.75), 0 -0.05em 0 rgba(0,0,255,0.75); }
+               100% { text-shadow: -0.025em 0 0 rgba(255,0,0,0.75), -0.025em -0.025em 0 rgba(0,255,0,0.75), -0.025em -0.05em 0 rgba(0,0,255,0.75); }
           }
 
-          .container { max-width: 1100px; [cite: 45] margin: auto; padding: 20px; } [cite: 45]
-          .info-card { background: var(--card-bg); [cite: 46] padding: 35px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1); border-top: 4px solid var(--primary); margin-bottom: 25px; backdrop-filter: blur(15px); } [cite: 47]
-          .info-card h3 { margin-top: 0; color: var(--primary); text-transform: uppercase; [cite: 48] margin-bottom: 20px; } [cite: 48]
+          .container { max-width: 1100px; margin: auto; padding: 20px; } 
+          .info-card { background: var(--card-bg); padding: 35px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1); border-top: 4px solid var(--primary); margin-bottom: 25px; backdrop-filter: blur(15px); } 
+          .info-card h3 { margin-top: 0; color: var(--primary); text-transform: uppercase; margin-bottom: 20px; } 
 
-          .apply-container { text-align: center; [cite: 49] margin: 20px 0 40px; } [cite: 49]
-          .apply-btn { display: inline-block; background: transparent; [cite: 50] color: white; padding: 18px 45px; border-radius: 4px; text-decoration: none; font-weight: 900; text-transform: uppercase; letter-spacing: 3px; transition: 0.4s; [cite: 51] border: 2px solid var(--primary); cursor: pointer; } [cite: 51]
-          .apply-btn:hover { background: var(--primary); [cite: 52] box-shadow: 0 0 35px var(--primary); transform: scale(1.05); } [cite: 52]
+          .apply-container { text-align: center; margin: 20px 0 40px; }
+          .apply-btn { display: inline-block; background: transparent; color: white; padding: 18px 45px; border-radius: 4px; text-decoration: none; font-weight: 900; text-transform: uppercase; letter-spacing: 3px; transition: 0.4s; border: 2px solid var(--primary); cursor: pointer; } 
+          .apply-btn:hover { background: var(--primary); box-shadow: 0 0 35px var(--primary); transform: scale(1.05); } 
 
-          .home-grid { display: grid; [cite: 53] grid-template-columns: 1fr 380px; gap: 25px; align-items: start; } [cite: 53]
-          @media (max-width: 1000px) { .home-grid { grid-template-columns: 1fr; } } [cite: 54]
+          .home-grid { display: grid; grid-template-columns: 1fr 380px; gap: 25px; align-items: start; }
+          @media (max-width: 1000px) { .home-grid { grid-template-columns: 1fr; } }
 
-          .partners-list { display: flex; [cite: 55] flex-direction: column; gap: 25px; width: 100%; } [cite: 55]
-          .partner-card-long { display: flex; [cite: 56] align-items: center; justify-content: space-between; gap: 30px; text-align: left; } [cite: 56]
-          @media (max-width: 768px) { .partner-card-long { flex-direction: column; [cite: 57] text-align: center; } } [cite: 57]
+          /* Long Partner Layout */
+          .partners-list { display: flex; flex-direction: column; gap: 25px; width: 100%; }
+          .partner-card-long { 
+              display: flex; 
+              align-items: center; 
+              justify-content: space-between; 
+              gap: 30px; 
+              text-align: left;
+          }
+          @media (max-width: 768px) {
+              .partner-card-long { flex-direction: column; text-align: center; }
+          }
 
-          .roster-grid-container { display: flex; [cite: 58] flex-direction: column; gap: 20px; align-items: center; width: 100%; } [cite: 58]
-          .roster-row-top, .roster-row-bottom { display: grid; [cite: 59] grid-template-columns: repeat(3, 1fr); gap: 20px; width: 100%; } [cite: 59]
-          .roster-2nd-row { grid-template-columns: repeat(2, 1fr); [cite: 60] width: 66%; } [cite: 60]
-          @media (max-width: 850px) { .roster-row-top, .roster-row-bottom, .roster-2nd-row { grid-template-columns: 1fr; [cite: 61] width: 100%; } } [cite: 61]
+          .roster-grid-container { display: flex; flex-direction: column; gap: 20px; align-items: center; width: 100%; }
+          .roster-row-top, .roster-row-bottom { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; width: 100%; }
+          .roster-2nd-row { grid-template-columns: repeat(2, 1fr); width: 66%; }
+          @media (max-width: 850px) { .roster-row-top, .roster-row-bottom, .roster-2nd-row { grid-template-columns: 1fr; width: 100%; } }
 
-          .management-grid { display: grid; [cite: 62] grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; width: 100%; max-width: 900px; justify-items: center; } [cite: 63]
+          .management-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; width: 100%; max-width: 900px; justify-items: center; }
 
-          .player-card { background: rgba(10, 15, 20, 0.8); border-radius: 10px; [cite: 64] min-height: 420px; position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); transition: 0.4s; width: 100%; } [cite: 65]
-          .player-img { position: absolute; top: 0; left: 0; [cite: 66] width: 100%; height: 100%; object-fit: cover; opacity: 0.35; z-index: 1; transition: 0.5s; } [cite: 67]
-          .player-card:hover .player-img { opacity: 0.5; transform: scale(1.05); } [cite: 68]
+          .player-card { background: rgba(10, 15, 20, 0.8); border-radius: 10px; min-height: 420px; position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); transition: 0.4s; width: 100%; } 
+          .player-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.35; z-index: 1; transition: 0.5s; } 
+          .player-card:hover .player-img { opacity: 0.5; transform: scale(1.05); }
           
-          #reyna-special { position: absolute; [cite: 69] top: 35%; left: 50%; transform: translate(-50%, -50%) scale(1.4); width: 100%; height: 100%; object-fit: contain; opacity: 0.45; z-index: 1; [cite: 70] transition: 0.5s ease; } [cite: 70]
-          .player-card:hover #reyna-special { transform: translate(-50%, -50%) scale(1.55); [cite: 71] opacity: 0.6; } [cite: 71]
+          #reyna-special { 
+              position: absolute; 
+              top: 35%; 
+              left: 50%; 
+              transform: translate(-50%, -50%) scale(1.4); 
+              width: 100%; 
+              height: 100%; 
+              object-fit: contain; 
+              opacity: 0.45; 
+              z-index: 1; 
+              transition: 0.5s ease;
+          }
+          .player-card:hover #reyna-special {
+              transform: translate(-50%, -50%) scale(1.55); 
+              opacity: 0.6;
+          }
 
-          .card-content { position: absolute; bottom: 0; width: 100%; [cite: 72] padding: 20px; background: linear-gradient(transparent, #060b10 85%); z-index: 10; } [cite: 72]
+          .card-content { position: absolute; bottom: 0; width: 100%; padding: 20px; background: linear-gradient(transparent, #060b10 85%); z-index: 10; } 
           
-          .player-links { display: flex; [cite: 73] gap: 12px; align-items: center; margin-top: 10px; } [cite: 73]
-          .tracker-icon { height: 18px; [cite: 74] filter: brightness(1.2); transition: 0.3s; } [cite: 74]
-          .player-link-icon { color: white; font-size: 1.1rem; [cite: 75] transition: 0.3s; text-decoration: none; } [cite: 75]
-          .player-link-icon:hover { color: var(--primary); } [cite: 76]
+          .player-links { display: flex; gap: 12px; align-items: center; margin-top: 10px; }
+          .tracker-icon { height: 18px; filter: brightness(1.2); transition: 0.3s; }
+          .player-link-icon { color: white; font-size: 1.1rem; transition: 0.3s; text-decoration: none; }
+          .player-link-icon:hover { color: var(--primary); }
 
-          .rank-tag { padding: 5px 12px; border-radius: 4px; font-size: 0.7rem; [cite: 77] border: 1px solid; font-weight: 800; display: inline-block; margin: 8px 0; text-transform: uppercase; } [cite: 78]
-          .rank-bronze { color: var(--rank-bronze); border-color: var(--rank-bronze); [cite: 79] box-shadow: 0 0 10px var(--rank-bronze); } [cite: 79]
-          .rank-silver { color: var(--rank-silver); [cite: 80] border-color: var(--rank-silver); box-shadow: 0 0 10px var(--rank-silver); } [cite: 80]
-          .rank-gold { color: var(--rank-gold); [cite: 81] border-color: var(--rank-gold); box-shadow: 0 0 10px var(--rank-gold); } [cite: 81]
-          .rank-diamond { color: var(--rank-diamond); [cite: 82] border-color: var(--rank-diamond); box-shadow: 0 0 15px var(--rank-diamond-glow); text-shadow: 0 0 5px var(--rank-diamond-glow);} [cite: 82]
-          .rank-platinum { color: var(--rank-platinum); [cite: 83] border-color: var(--rank-platinum); box-shadow: 0 0 10px var(--rank-platinum); } [cite: 83]
-          .rank-ascendant { color: var(--rank-ascendant); [cite: 84] border-color: var(--rank-ascendant); box-shadow: 0 0 10px var(--rank-ascendant); } [cite: 84]
-          .rank-immortal { color: var(--rank-immortal); [cite: 85] border-color: var(--rank-immortal); box-shadow: 0 0 10px var(--rank-immortal); } [cite: 85]
-          .rank-radiant { color: var(--rank-radiant); [cite: 86] border-color: var(--rank-radiant); box-shadow: 0 0 10px var(--rank-radiant); } [cite: 86]
+          .rank-tag { padding: 5px 12px; border-radius: 4px; font-size: 0.7rem; border: 1px solid; font-weight: 800; display: inline-block; margin: 8px 0; text-transform: uppercase; } 
+          .rank-bronze { color: var(--rank-bronze); border-color: var(--rank-bronze); box-shadow: 0 0 10px var(--rank-bronze); }
+          .rank-silver { color: var(--rank-silver); border-color: var(--rank-silver); box-shadow: 0 0 10px var(--rank-silver); }
+          .rank-gold { color: var(--rank-gold); border-color: var(--rank-gold); box-shadow: 0 0 10px var(--rank-gold); }
+          .rank-diamond { color: var(--rank-diamond); border-color: var(--rank-diamond); box-shadow: 0 0 15px var(--rank-diamond-glow); text-shadow: 0 0 5px var(--rank-diamond-glow);}
+          .rank-platinum { color: var(--rank-platinum); border-color: var(--rank-platinum); box-shadow: 0 0 10px var(--rank-platinum); }
+          .rank-ascendant { color: var(--rank-ascendant); border-color: var(--rank-ascendant); box-shadow: 0 0 10px var(--rank-ascendant); }
+          .rank-immortal { color: var(--rank-immortal); border-color: var(--rank-immortal); box-shadow: 0 0 10px var(--rank-immortal); }
+          .rank-radiant { color: var(--rank-radiant); border-color: var(--rank-radiant); box-shadow: 0 0 10px var(--rank-radiant); }
 
-          footer { text-align: center; [cite: 87] padding: 60px 20px; background: rgba(0,0,0,0.3); border-top: 1px solid rgba(255,255,255,0.05); } [cite: 87]
-          .footer-socials { display: flex; [cite: 88] justify-content: center; gap: 15px; margin-bottom: 20px; flex-wrap: wrap; } [cite: 88]
-          .soc-link { width: 50px; [cite: 89] height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 50%; color: white; text-decoration: none; font-size: 1.5rem; transition: 0.3s; } [cite: 90]
-          .sl-discord { background: var(--color-discord); } [cite: 91]
-          .sl-x { background: var(--color-x); border: 1px solid #333; } [cite: 92]
-          .sl-insta { background: var(--color-insta); } [cite: 93]
-          .sl-tiktok { background: var(--color-tiktok); border: 1px solid #333; } [cite: 94]
-          .sl-twitch { background: var(--color-twitch); } [cite: 95]
+          footer { text-align: center; padding: 60px 20px; background: rgba(0,0,0,0.3); border-top: 1px solid rgba(255,255,255,0.05); }
+          .footer-socials { display: flex; justify-content: center; gap: 15px; margin-bottom: 20px; flex-wrap: wrap; }
+          .soc-link { width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 50%; color: white; text-decoration: none; font-size: 1.5rem; transition: 0.3s; }
+          .sl-discord { background: var(--color-discord); }
+          .sl-x { background: var(--color-x); border: 1px solid #333; }
+          .sl-insta { background: var(--color-insta); }
+          .sl-tiktok { background: var(--color-tiktok); border: 1px solid #333; }
+          .sl-twitch { background: var(--color-twitch); }
 
-          .reveal { opacity: 0; [cite: 96] transform: translateY(30px); transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); } [cite: 96]
-          .reveal.active { opacity: 1; [cite: 97] transform: translateY(0); } [cite: 97]
+          /* Reveal Animation on Scroll */
+          .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+          }
+          .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+          }
 
-          .page-section { display: block; padding: 60px 0; } [cite: 98]
-          #home { min-height: 100vh; padding-top: 0; } [cite: 99]
+          .page-section { display: block; padding: 60px 0; } 
+          #home { min-height: 100vh; padding-top: 0; }
      </style> 
 </head> 
 <body> 
+
+     <video loop playsinline autoplay muted id="video-bg"><source src="valo background.mp4" type="video/mp4"></video> 
+     <div class="video-overlay"></div> 
 
      <button class="nav-toggle" onclick="toggleNav()"><span></span><span></span><span></span></button> 
 
@@ -227,23 +234,23 @@
           <a href="#about" onclick="toggleNav()">About Us</a> 
           <a href="#roster" onclick="toggleNav()">Roster</a> 
           <a href="#partners" onclick="toggleNav()">Partners</a> 
-          <a href="legal.html" onclick="toggleNav()">Legal Notice</a> [cite: 100]
+          <a href="legal.html" onclick="toggleNav()">Legal Notice</a>
      </div> 
 
      <section id="home"> 
           <header> 
               <img src="everbloomlogo.png" alt="Everbloom Logo" class="logo-main"> 
               <h1><span class="glitch-text">EVERBLOOM</span></h1> 
-              <div style="color:var(--primary); letter-spacing:5px; font-weight:bold; font-size:0.8rem; margin-top: 10px;">EST. 2026 | BLOOM OR DECAY</div> [cite: 101]
+              <div style="color:var(--primary); letter-spacing:5px; font-weight:bold; font-size:0.8rem; margin-top: 10px;">EST. 2026 | BLOOM OR DECAY</div> 
           </header> 
 
           <div class="container"> 
               <div class="info-card reveal active"> 
                   <h3><i class="fas fa-seedling"></i> MISSION & VISION</h3> 
                   <p style="line-height: 1.8;">
-                      <strong>Everbloom Gaming</strong> was founded in 2026 as a highly structured esports organization. Our name is our promise: we create an environment where talent can <strong>bloom</strong> at any time and unfold its full potential. [cite: 102]
+                      <strong>Everbloom Gaming</strong> was founded in 2026 as a highly structured esports organization. Our name is our promise: we create an environment where talent can <strong>bloom</strong> at any time and unfold its full potential. 
                   </p>
-                  <p style="font-size: 0.85rem; opacity: 0.7; margin-top: 15px; cursor: pointer; color: var(--primary); font-weight: bold;"><a href="#about" style="color: inherit; text-decoration: none;">Read more about our philosophy →</a> [cite: 103, 104]</p>
+                  <p style="font-size: 0.85rem; opacity: 0.7; margin-top: 15px; cursor: pointer; color: var(--primary); font-weight: bold;"><a href="#about" style="color: inherit; text-decoration: none;">Read more about our philosophy →</a></p>
               </div> 
 
               <div class="apply-container reveal">
@@ -251,233 +258,240 @@
               </div>
 
               <div class="home-grid"> 
-                  <div class="news-column reveal"> [cite: 105]
+                  <div class="news-column reveal">
                       <div class="info-card"> 
                           <h3>LATEST NEWS</h3> 
-                          <p style="line-height: 1.6;">• Dr0xvlr joined the Male Roster<br>• Vexa joined the FLINTA Roster<br>• Norwin joined the Male Roster<br>• Noctra joined the team</p> [cite: 106]
+                          <p style="line-height: 1.6;">• Dr0xvlr joined the Male Roster<br>• Vexa joined the FLINTA Roster<br>• Norwin joined the Male Roster<br>• Noctra joined the team</p> 
                       </div>
                       <div class="info-card reveal"> 
                           <h3>CURRENT GOALS</h3> 
-                          <p style="line-height: 1.6;">• Full roster 2026<br>• Project V entry<br>• Premier Victory</p> [cite: 107]
+                          <p style="line-height: 1.6;">• Full roster 2026<br>• Project V entry<br>• Premier Victory</p> 
                       </div>
                   </div> 
                   
-                  <div class="info-card reveal"> [cite: 108]
+                  <div class="info-card reveal">
                       <h3><i class="fa-brands fa-x-twitter"></i> FEED</h3>
-                      <div style="max-height: 550px; overflow-y: auto;"> [cite: 109]
+                      <div style="max-height: 550px; overflow-y: auto;">
                           <script src="https://elfsightcdn.com/platform.js" async></script>
                           <div class="elfsight-app-b9958379-f4dc-4204-9774-e259b3a7f1bf" data-elfsight-app-lazy></div>
                       </div>
                   </div>
-              </div> [cite: 110]
+              </div>
           </div>
      </section>
 
      <section id="about" class="reveal page-section">
         <div class="container">
-            <h3 style="text-align:center; color:var(--primary); text-transform: uppercase; margin-bottom: 40px; letter-spacing: 3px;">The Everbloom Philosophy</h3> [cite: 111]
+            <h3 style="text-align:center; color:var(--primary); text-transform: uppercase; margin-bottom: 40px; letter-spacing: 3px;">The Everbloom Philosophy</h3>
+            
             <div class="info-card">
                 <h4><i class="fas fa-heart"></i> THE ART OF BLOOMING</h4>
-                <p style="line-height: 1.8;">The name <strong>Everbloom</strong> represents a promise: the ability to grow beyond oneself. We believe that true potential is not an endpoint, but a continuous process of unfolding.</p> [cite: 112]
+                <p style="line-height: 1.8;">The name <strong>Everbloom</strong> represents a promise: the ability to grow beyond oneself. We believe that true potential is not an endpoint, but a continuous process of unfolding.</p>
             </div>
-            <div class="home-grid" style="grid-template-columns: 1fr 1fr; gap: 20px;"> [cite: 113]
+
+            <div class="home-grid" style="grid-template-columns: 1fr 1fr; gap: 20px;">
                 <div class="info-card reveal">
                     <h4><i class="fas fa-shield-halved"></i> STRUCTURE</h4>
-                    <p style="line-height: 1.6;">Professionalism is not just a buzzword for us; it is the standard. Everbloom offers a highly structured environment with clear processes for all players.</p> [cite: 114]
+                    <p style="line-height: 1.6;">Professionalism is not just a buzzword for us; it is the standard. Everbloom offers a highly structured environment with clear processes for all players.</p>
                 </div>
                 <div class="info-card reveal">
                     <h4><i class="fas fa-eye"></i> THE VISION</h4>
-                    <p style="line-height: 1.6;">We strive to establish a brand that stands for discipline, respect, and excellent teamwork within the DACH region.</p> [cite: 115]
+                    <p style="line-height: 1.6;">We strive to establish a brand that stands for discipline, respect, and excellent teamwork within the DACH region.</p>
                 </div>
             </div>
+
             <div class="info-card reveal">
                 <h4><i class="fas fa-users"></i> OUR VALUES</h4>
-                <ul style="line-height: 2; list-style: none; padding-left: 0;"> [cite: 116]
-                    <li><span style="color: var(--primary); font-weight: bold;">01. GROWTH:</span> Standing still is not an option. We learn from every defeat.</li> [cite: 117]
-                    <li><span style="color: var(--primary); font-weight: bold;">02. UNITY:</span> On the server, we are one unit. Outside, we are a community.</li> [cite: 118]
-                    <li><span style="color: var(--primary); font-weight: bold;">03. RESPECT:</span> We promote a toxic-free environment where everyone can give their best.</li> [cite: 119]
+                <ul style="line-height: 2; list-style: none; padding-left: 0;">
+                    <li><span style="color: var(--primary); font-weight: bold;">01. GROWTH:</span> Standing still is not an option. We learn from every defeat.</li>
+                    <li><span style="color: var(--primary); font-weight: bold;">02. UNITY:</span> On the server, we are one unit. Outside, we are a community.</li>
+                    <li><span style="color: var(--primary); font-weight: bold;">03. RESPECT:</span> We promote a toxic-free environment where everyone can give their best.</li>
                 </ul>
             </div>
         </div>
      </section>
 
      <section id="roster" class="reveal page-section"> 
-        <div class="container"> 
-            <h3 style="text-align:center; color:var(--primary); text-transform: uppercase; margin-bottom: 30px; letter-spacing: 3px;">Management</h3> [cite: 120]
-            <div style="display: flex; justify-content: center; margin-bottom: 60px;"> [cite: 121]
-                <div class="management-grid">
-                    <div class="player-card reveal" style="max-width: 300px; min-height: 380px;"> [cite: 122]
-                        <img src="reyna.webp" id="reyna-special">
-                        <div class="card-content">
-                            <small style="color:var(--primary); font-weight: bold; letter-spacing: 1px;">FOUNDER / MANAGER</small> [cite: 123]
-                            <div style="font-weight:900; font-size:1.6rem; margin: 5px 0;">Raph</div> [cite: 124]
-                            <div class="player-links">
-                                <a href="https://x.com/wavvybecci_" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
-                            </div>
-                        </div> [cite: 125]
+    <div class="container"> 
+        
+        <h3 style="text-align:center; color:var(--primary); text-transform: uppercase; margin-bottom: 30px; letter-spacing: 3px;">Management</h3> 
+        <div style="display: flex; justify-content: center; margin-bottom: 60px;">
+            <div class="management-grid">
+                <div class="player-card reveal" style="max-width: 300px; min-height: 380px;">
+                    <img src="reyna.webp" id="reyna-special">
+                    <div class="card-content">
+                        <small style="color:var(--primary); font-weight: bold; letter-spacing: 1px;">FOUNDER / MANAGER</small>
+                        <div style="font-weight:900; font-size:1.6rem; margin: 5px 0;">Raph</div>
+                        <div class="player-links">
+                            <a href="https://x.com/wavvybecci_" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h3 style="text-align:center; color:var(--primary); text-transform: uppercase; margin-bottom: 20px;">FLINTA Roster</h3> 
+        <div class="roster-grid-container">
+            <div class="roster-row-top">
+                <div class="player-card reveal">
+                    <img src="astra.png" class="player-img"> 
+                    <div class="card-content">
+                        <small style="color:var(--primary); font-weight: bold;">CONTROLLER</small>
+                        <div style="font-weight:900; font-size:1.4rem;">Ruby</div>
+                        <div class="rank-tag rank-silver">Silver 2</div>
+                        <div class="player-links">
+                            <a href="https://tracker.gg/valorant/profile/riot/Rubyxcube%23EBM/" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
+                            <a href="https://x.com/x2_zelda" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="player-card reveal">
+                    <img src="jett.png" class="player-img"> 
+                    <div class="card-content">
+                        <small style="color:var(--primary); font-weight: bold;">DUELIST</small>
+                        <div style="font-weight:900; font-size:1.4rem;">Archer</div>
+                        <div class="rank-tag rank-silver">Silver 2</div>
+                        <div class="player-links">
+                            <a href="https://tracker.gg/valorant/profile/riot/c9%20%EC%98%A5%EC%8B%9C%230001/" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
+                            <a href="https://x.com/archerhh0" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="player-card reveal">
+                    <img src="brim.png" class="player-img">
+                    <div class="card-content">
+                        <small style="color:var(--primary); font-weight: bold;">CONTROLLER</small>
+                        <div style="font-weight:900; font-size:1.4rem;">Mel</div>
+                        <div class="rank-tag rank-gold">Gold 1</div>
+                        <div class="player-links">
+                            <a href="https://tracker.gg/valorant/profile/riot/NV%20Nyx%23NYX/overview" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
+                            <a href="https://x.com/tqrmcc" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="roster-row-bottom roster-2nd-row">
+                <div class="player-card reveal">
+                    <img src="Chamber.webp" class="player-img">
+                    <div class="card-content">
+                        <small style="color:var(--primary); font-weight: bold;">SENTINEL</small>
+                        <div style="font-weight:900; font-size:1.4rem;">Settie</div>
+                        <div class="rank-tag rank-silver">Silver 1</div>
+                        <div class="player-links">
+                            <a href="https://tracker.gg/valorant/profile/riot/settie%23TTV/" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
+                            <a href="https://x.com/Suns3tt_VLR" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="player-card reveal">
+                    <img src="sage.webp" class="player-img" style="object-fit: contain; padding: 30px;">
+                    <div class="card-content">
+                        <small style="color:var(--primary); font-weight: bold;">SENTINEL</small>
+                        <div style="font-weight:900; font-size:1.4rem;">Vexa</div>
+                        <div class="rank-tag rank-silver">Silver 1</div>
+                        <div class="player-links">
+                            <a href="https://tracker.gg/valorant/profile/riot/Vexa%23G220/overview" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
+                            <a href="https://x.com/vexaizy" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h3 style="text-align:center; color:var(--primary); text-transform: uppercase; margin-top: 60px; margin-bottom: 20px;">Male Roster</h3> 
+        <div class="roster-grid-container">
+            <div class="roster-row-top">
+                <div class="player-card reveal">
+                    <img src="Sova.webp" class="player-img" style="object-fit: contain; padding: 20px;"> 
+                    <div class="card-content">
+                        <small style="color:var(--primary); font-weight: bold;">INITIATOR</small>
+                        <div style="font-weight:900; font-size:1.4rem;">Norwin</div>
+                        <div class="rank-tag rank-radiant">Radiant</div>
+                        <div class="player-links">
+                            <a href="https://tracker.gg/valorant/profile/riot/Radr%23Nope/overview" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
+                            <a href="https://x.com/norwin_w" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="player-card reveal">
+                    <img src="jett.png" class="player-img"> 
+                    <div class="card-content">
+                        <small style="color:var(--primary); font-weight: bold;">DUELIST</small>
+                        <div style="font-weight:900; font-size:1.4rem;">Noctra</div>
+                        <div class="rank-tag rank-ascendant">Ascendant 3</div>
+                        <div class="player-links">
+                            <a href="https://tracker.gg/valorant/profile/riot/Jocelyn%20Flores%23kev/overview" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
+                            <a href="https://x.com/Noctravlr" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="player-card reveal">
+                    <img src="clove.webp" class="player-img" style="object-fit: contain; transform: scale(1.6); transform-origin: center; transition: 0.5s ease;"> 
+                    <div class="card-content">
+                        <small style="color:var(--primary); font-weight: bold;">CONTROLLER</small>
+                        <div style="font-weight:900; font-size:1.4rem;">Dr0xvlr</div>
+                        <div class="rank-tag rank-platinum">Platinum 1</div>
+                        <div class="player-links">
+                            <a href="https://tracker.gg/valorant/profile/riot/budhaFPS%23EGO/overview" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
+                            <a href="https://x.com/dr0xvlr" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <h3 style="text-align:center; color:var(--primary); text-transform: uppercase; margin-bottom: 20px;">FLINTA Roster</h3> [cite: 126]
-            <div class="roster-grid-container">
-                <div class="roster-row-top">
-                    <div class="player-card reveal">
-                        <img src="astra.png" class="player-img"> 
-                        <div class="card-content"> [cite: 127]
-                            <small style="color:var(--primary); font-weight: bold;">CONTROLLER</small> [cite: 128]
-                            <div style="font-weight:900; font-size:1.4rem;">Ruby</div> [cite: 129]
-                            <div class="rank-tag rank-silver">Silver 2</div>
-                            <div class="player-links">
-                                <a href="https://tracker.gg/valorant/profile/riot/Rubyxcube%23EBM/" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
-                                <a href="https://x.com/x2_zelda" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a> [cite: 130]
-                            </div>
-                        </div>
-                    </div>
-                    <div class="player-card reveal"> [cite: 131]
-                        <img src="jett.png" class="player-img"> 
-                        <div class="card-content">
-                            <small style="color:var(--primary); font-weight: bold;">DUELIST</small> [cite: 132]
-                            <div style="font-weight:900; font-size:1.4rem;">Archer</div> [cite: 133]
-                            <div class="rank-tag rank-silver">Silver 2</div>
-                            <div class="player-links">
-                                <a href="https://tracker.gg/valorant/profile/riot/c9%20%EC%98%A5%EC%8B%9C%230001/" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
-                                <a href="https://x.com/archerhh0" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a> [cite: 134]
-                            </div>
-                        </div>
-                    </div>
-                    <div class="player-card reveal"> [cite: 135]
-                        <img src="brim.png" class="player-img">
-                        <div class="card-content">
-                            <small style="color:var(--primary); font-weight: bold;">CONTROLLER</small> [cite: 136]
-                            <div style="font-weight:900; font-size:1.4rem;">Mel</div> [cite: 137]
-                            <div class="rank-tag rank-gold">Gold 1</div>
-                            <div class="player-links">
-                                <a href="https://tracker.gg/valorant/profile/riot/NV%20Nyx%23NYX/overview" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
-                                <a href="https://x.com/tqrmcc" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a> [cite: 138]
-                            </div>
+            <div class="roster-row-bottom roster-2nd-row">
+                <div class="player-card reveal">
+                    <img src="raze.webp" class="player-img" style="object-fit: contain; transform: scale(1.6); transform-origin: center; transition: 0.5s ease;"> 
+                    <div class="card-content">
+                        <small style="color:var(--primary); font-weight: bold;">FLEX</small>
+                        <div style="font-weight:900; font-size:1.4rem;">Maxi</div>
+                        <div class="rank-tag rank-ascendant">Ascendant 1</div>
+                        <div class="player-links">
+                            <a href="https://tracker.gg/valorant/profile/riot/Max2mi%E3%83%83%23%E3%83%9E%E3%82%AD%E3%82%B7/overview" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
+                            <a href="https://twitter.com/Max2mi_" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
                         </div>
                     </div>
                 </div>
-                <div class="roster-row-bottom roster-2nd-row"> [cite: 139]
-                    <div class="player-card reveal">
-                        <img src="Chamber.webp" class="player-img">
-                        <div class="card-content">
-                            <small style="color:var(--primary); font-weight: bold;">SENTINEL</small> [cite: 140]
-                            <div style="font-weight:900; font-size:1.4rem;">Settie</div> [cite: 141]
-                            <div class="rank-tag rank-silver">Silver 1</div>
-                            <div class="player-links">
-                                <a href="https://tracker.gg/valorant/profile/riot/settie%23TTV/" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
-                                <a href="https://x.com/Suns3tt_VLR" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a> [cite: 142]
-                            </div>
-                        </div>
-                    </div>
-                    <div class="player-card reveal"> [cite: 143]
-                        <img src="sage.webp" class="player-img" style="object-fit: contain; padding: 30px;"> [cite: 144]
-                        <div class="card-content">
-                            <small style="color:var(--primary); font-weight: bold;">SENTINEL</small> [cite: 145]
-                            <div style="font-weight:900; font-size:1.4rem;">Vexa</div> [cite: 146]
-                            <div class="rank-tag rank-silver">Silver 1</div>
-                            <div class="player-links">
-                                <a href="https://tracker.gg/valorant/profile/riot/Vexa%23G220/overview" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
-                                <a href="https://x.com/vexaizy" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a> [cite: 147]
-                            </div>
+                <div class="player-card reveal">
+                    <img src="killjoy.png" class="player-img" style="object-fit: contain; transform: scale(1.6); transform-origin: center; transition: 0.5s ease;"> 
+                    <div class="card-content">
+                        <small style="color:var(--primary); font-weight: bold;">SENTINEL</small>
+                        <div style="font-weight:900; font-size:1.4rem;">Aff3</div>
+                        <div class="rank-tag rank-diamond">Diamond 1</div>
+                        <div class="player-links">
+                            <a href="https://tracker.gg/valorant/profile/riot/Aff3%23XuXu/overview" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
+                            <a href="https://x.com/AffenstarkJo" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <h3 style="text-align:center; color:var(--primary); text-transform: uppercase; margin-top: 60px; margin-bottom: 20px;">Male Roster</h3> [cite: 148, 149]
-            <div class="roster-grid-container">
-                <div class="roster-row-top">
-                    <div class="player-card reveal">
-                        <img src="Sova.webp" class="player-img" style="object-fit: contain; padding: 20px;"> [cite: 150]
-                        <div class="card-content">
-                            <small style="color:var(--primary); font-weight: bold;">INITIATOR</small> [cite: 151]
-                            <div style="font-weight:900; font-size:1.4rem;">Norwin</div> [cite: 152]
-                            <div class="rank-tag rank-radiant">Radiant</div>
-                            <div class="player-links">
-                                <a href="https://tracker.gg/valorant/profile/riot/Radr%23Nope/overview" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
-                                <a href="https://x.com/norwin_w" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a> [cite: 153]
-                            </div>
-                        </div>
-                    </div>
-                    <div class="player-card reveal"> [cite: 154]
-                        <img src="jett.png" class="player-img"> 
-                        <div class="card-content">
-                            <small style="color:var(--primary); font-weight: bold;">DUELIST</small> [cite: 155]
-                            <div style="font-weight:900; font-size:1.4rem;">Noctra</div> [cite: 156]
-                            <div class="rank-tag rank-ascendant">Ascendant 3</div>
-                            <div class="player-links">
-                                <a href="https://tracker.gg/valorant/profile/riot/Jocelyn%20Flores%23kev/overview" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
-                                <a href="https://x.com/Noctravlr" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a> [cite: 157]
-                            </div>
-                        </div>
-                    </div>
-                    <div class="player-card reveal"> [cite: 158]
-                        <img src="clove.webp" class="player-img" style="object-fit: contain; transform: scale(1.6); transform-origin: center; transition: 0.5s ease;"> [cite: 159]
-                        <div class="card-content">
-                            <small style="color:var(--primary); font-weight: bold;">CONTROLLER</small> [cite: 160]
-                            <div style="font-weight:900; font-size:1.4rem;">Dr0xvlr</div> [cite: 161]
-                            <div class="rank-tag rank-platinum">Platinum 1</div>
-                            <div class="player-links">
-                                <a href="https://tracker.gg/valorant/profile/riot/budhaFPS%23EGO/overview" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
-                                <a href="https://x.com/dr0xvlr" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a> [cite: 162]
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="roster-row-bottom roster-2nd-row"> [cite: 163]
-                    <div class="player-card reveal">
-                        <img src="raze.webp" class="player-img" style="object-fit: contain; transform: scale(1.6); transform-origin: center; transition: 0.5s ease;"> [cite: 164]
-                        <div class="card-content">
-                            <small style="color:var(--primary); font-weight: bold;">FLEX</small> [cite: 165]
-                            <div style="font-weight:900; font-size:1.4rem;">Maxi</div> [cite: 166]
-                            <div class="rank-tag rank-ascendant">Ascendant 1</div>
-                            <div class="player-links">
-                                <a href="https://tracker.gg/valorant/profile/riot/Max2mi%E3%83%83%23%E3%83%9E%E3%82%AD%E3%82%B7/overview" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
-                                <a href="https://twitter.com/Max2mi_" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a> [cite: 167]
-                            </div>
-                        </div>
-                    </div>
-                    <div class="player-card reveal"> [cite: 168]
-                        <img src="killjoy.png" class="player-img" style="object-fit: contain; transform: scale(1.6); transform-origin: center; transition: 0.5s ease;"> [cite: 169]
-                        <div class="card-content">
-                            <small style="color:var(--primary); font-weight: bold;">SENTINEL</small> [cite: 170]
-                            <div style="font-weight:900; font-size:1.4rem;">Aff3</div> [cite: 171]
-                            <div class="rank-tag rank-diamond">Diamond 1</div>
-                            <div class="player-links">
-                                <a href="https://tracker.gg/valorant/profile/riot/Aff3%23XuXu/overview" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
-                                <a href="https://x.com/AffenstarkJo" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a> [cite: 172]
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> [cite: 173]
-    </section>
+        </div>
+    </div>
+</section>
 
      <section id="partners" class="reveal page-section">
         <div class="container">
-            <h3 style="text-align:center; color:var(--primary); text-transform: uppercase; margin-bottom: 50px; letter-spacing: 3px;">Our Partners</h3> [cite: 174]
+            <h3 style="text-align:center; color:var(--primary); text-transform: uppercase; margin-bottom: 50px; letter-spacing: 3px;">Our Partners</h3>
+            
             <div class="partners-list">
                 <div class="info-card partner-card-long reveal">
                     <img src="rostered.png" alt="Rostered Logo" style="max-width: 180px;">
                     <div style="flex: 1;">
-                        <h4 style="color:var(--primary); margin-bottom: 10px;">ROSTERED.GG</h4> [cite: 175, 176]
+                        <h4 style="color:var(--primary); margin-bottom: 10px;">ROSTERED.GG</h4>
                         <p style="font-size: 0.95rem;">The official platform for team management and professional esports organization.</p>
                     </div>
-                    <a href="https://rostered.gg" target="_blank" class="apply-btn" style="padding: 12px 25px; font-size: 0.8rem; white-space: nowrap;">Visit Website</a> [cite: 177]
+                    <a href="https://rostered.gg" target="_blank" class="apply-btn" style="padding: 12px 25px; font-size: 0.8rem; white-space: nowrap;">Visit Website</a>
                 </div>
+
                 <div class="info-card partner-card-long reveal">
-                    <div style="width: 180px; text-align: center;"> [cite: 178]
-                        <span style="font-size: 1.5rem; font-weight: 900; letter-spacing: 1px;">EVOLUPE<span style="color:var(--primary);">MEDIA</span></span> [cite: 179]
+                    <div style="width: 180px; text-align: center;">
+                        <span style="font-size: 1.5rem; font-weight: 900; letter-spacing: 1px;">EVOLUPE<span style="color:var(--primary);">MEDIA</span></span>
                     </div>
                     <div style="flex: 1;">
-                        <h4 style="color:var(--primary); margin-bottom: 10px;">EVOLUPE MEDIA</h4> [cite: 180]
+                        <h4 style="color:var(--primary); margin-bottom: 10px;">EVOLUPE MEDIA</h4>
                         <p style="font-size: 0.95rem;">Providing digital excellence and creative media support for the next generation of gamers.</p>
                     </div>
-                    <a href="https://discord.gg/bQ8phXAmSa" target="_blank" class="apply-btn" style="padding: 12px 25px; font-size: 0.8rem; border-color: #5865F2; background: rgba(88, 101, 242, 0.1); white-space: nowrap;"> [cite: 181]
+                    <a href="https://discord.gg/bQ8phXAmSa" target="_blank" class="apply-btn" style="padding: 12px 25px; font-size: 0.8rem; border-color: #5865F2; background: rgba(88, 101, 242, 0.1); white-space: nowrap;">
                         <i class="fab fa-discord"></i> Join Discord
                     </a>
                 </div>
@@ -485,18 +499,18 @@
         </div>
      </section>
 
-     <footer> [cite: 182]
+     <footer>
           <div class="container">
               <div class="footer-socials">
                    <a href="https://www.gamertransfer.com" target="_blank"> <img src="https://gamertransfer.com/banner/v5_373.png" alt="GamerTransfer Recruitment Partner" style="height: 50px;"></a>
                    <a href="https://discord.gg/bQ8phXAmSa" class="soc-link sl-discord" target="_blank"><i class="fa-brands fa-discord"></i></a>
-                   <a href="https://x.com/everbloom_gc" class="soc-link sl-x" target="_blank"><i class="fa-brands fa-x-twitter"></i></a> [cite: 183]
+                   <a href="https://x.com/everbloom_gc" class="soc-link sl-x" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
                    <a href="https://www.instagram.com/everbloom.gc" class="soc-link sl-insta" target="_blank"><i class="fa-brands fa-instagram"></i></a>
                    <a href="https://www.tiktok.com/@everbloomgc" class="soc-link sl-tiktok" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
                    <a href="https://www.twitch.tv/everbloomvalorant" class="soc-link sl-twitch" target="_blank"><i class="fa-brands fa-twitch"></i></a>
               </div>
-              <div style="opacity: 0.4; font-size: 0.8rem; margin-top: 20px;"> [cite: 184, 185]
-                  © 2026 EVERBLOOM GAMING | <a href="legal.html" style="color: white; text-decoration: none; opacity: 0.8;">Legal Notice</a> [cite: 186]
+              <div style="opacity: 0.4; font-size: 0.8rem; margin-top: 20px;">
+                  © 2026 EVERBLOOM GAMING | <a href="legal.html" style="color: white; text-decoration: none; opacity: 0.8;">Legal Notice</a>
               </div>
           </div>
      </footer> 
@@ -505,20 +519,21 @@
           function toggleNav() { 
               const nav = document.getElementById('navOverlay');
               const btn = document.querySelector('.nav-toggle');
-              nav.classList.toggle('active'); [cite: 187]
-              btn.classList.toggle('open'); [cite: 187]
+              nav.classList.toggle('active'); 
+              btn.classList.toggle('open'); 
           } 
 
+          // Scroll Reveal Logic
           function reveal() {
             var reveals = document.querySelectorAll(".reveal");
             for (var i = 0; i < reveals.length; i++) {
-              var windowHeight = window.innerHeight; [cite: 188]
-              var elementTop = reveals[i].getBoundingClientRect().top; [cite: 188]
-              var elementVisible = 150; [cite: 188]
+              var windowHeight = window.innerHeight;
+              var elementTop = reveals[i].getBoundingClientRect().top;
+              var elementVisible = 150;
               if (elementTop < windowHeight - elementVisible) {
-                reveals[i].classList.add("active"); [cite: 188]
+                reveals[i].classList.add("active");
               }
-            } [cite: 189]
+            }
           }
 
           window.addEventListener("scroll", reveal);
