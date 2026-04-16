@@ -46,28 +46,44 @@
               background-color: var(--bg); 
               color: var(--text); 
               font-family: 'Inter', sans-serif;
-              /* Animierter Grid-Hintergrund aus CSS Dokument 2 */
               background-image: 
-                  linear-gradient(rgba(212, 23, 91, 0.05) 1px, transparent 1px),
-                  linear-gradient(90deg, rgba(212, 23, 91, 0.05) 1px, transparent 1px),
-                  radial-gradient(circle at 50% 50%, rgba(212, 23, 91, 0.15) 0%, transparent 70%),
-                  radial-gradient(circle at 50% 50%, transparent 20%, #060b10 100%);
-              background-size: 40px 40px, 40px 40px, 100% 100%, 100% 100%;
+                  linear-gradient(rgba(212, 23, 91, 0.18) 1px, transparent 1px),
+                  linear-gradient(90deg, rgba(212, 23, 91, 0.18) 1px, transparent 1px),
+                  radial-gradient(circle at 50% 30%, rgba(212, 23, 91, 0.35) 0%, transparent 60%),
+                  radial-gradient(circle at 80% 80%, rgba(212, 23, 91, 0.15) 0%, transparent 40%),
+                  radial-gradient(circle at 20% 70%, rgba(212, 23, 91, 0.1) 0%, transparent 35%);
+              background-size: 50px 50px, 50px 50px, 100% 100%, 100% 100%, 100% 100%;
               background-attachment: fixed;
           }
 
-          /* Scanline-Effekt aus CSS Dokument 2 */
+          /* Pulsierende Glow-Orbs im Hintergrund */
+          body::before {
+              content: "";
+              position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+              background:
+                  radial-gradient(circle at 15% 25%, rgba(212, 23, 91, 0.12) 0%, transparent 35%),
+                  radial-gradient(circle at 85% 60%, rgba(212, 23, 91, 0.10) 0%, transparent 30%);
+              animation: orb-pulse 6s ease-in-out infinite alternate;
+              pointer-events: none; z-index: -1;
+          }
+
+          @keyframes orb-pulse {
+              0%   { opacity: 0.5; transform: scale(1); }
+              100% { opacity: 1;   transform: scale(1.08); }
+          }
+
+          /* Scanline-Effekt */
           body::after {
               content: "";
               position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-              background: linear-gradient(to bottom, transparent 0%, rgba(212, 23, 91, 0.03) 50%, transparent 100%);
-              background-size: 100% 200px;
-              animation: scanline 8s linear infinite;
+              background: linear-gradient(to bottom, transparent 0%, rgba(212, 23, 91, 0.07) 50%, transparent 100%);
+              background-size: 100% 180px;
+              animation: scanline 5s linear infinite;
               pointer-events: none; z-index: 999;
           }
 
           @keyframes scanline {
-              0% { background-position: 0 -200px; }
+              0% { background-position: 0 -180px; }
               100% { background-position: 0 100vh; }
           }
 
@@ -244,6 +260,31 @@
 
           .page-section { display: block; padding: 60px 0; } 
           #home { min-height: 100vh; padding-top: 0; }
+
+          /* ============= MOBILE OPTIMIERUNGEN ============= */
+          @media (max-width: 600px) {
+              header { padding: 80px 15px 30px; }
+              .logo-main { width: 90px; }
+              .glitch-text { font-size: clamp(1.8rem, 11vw, 3rem); letter-spacing: 6px; }
+              .container { padding: 12px; }
+              .info-card { padding: 20px 16px; }
+              .apply-btn { padding: 14px 28px; font-size: 0.8rem; letter-spacing: 2px; }
+              .home-grid { grid-template-columns: 1fr !important; gap: 15px; }
+              .player-card { min-height: 280px; }
+              .card-content { padding: 14px; }
+              .rank-tag { font-size: 0.65rem; padding: 3px 8px; }
+              .roster-row-top, .roster-row-bottom, .roster-2nd-row { grid-template-columns: 1fr !important; width: 100% !important; }
+              .management-grid { grid-template-columns: 1fr; max-width: 100%; }
+              .partner-card-long { flex-direction: column; text-align: center; gap: 15px; }
+              .partner-card-long img { max-width: 130px !important; }
+              .footer-socials { gap: 10px; }
+              .soc-link { width: 42px; height: 42px; font-size: 1.2rem; }
+              .page-section { padding: 40px 0; }
+              .nav-overlay { width: 100%; left: -100%; }
+              .nav-overlay.active { left: 0; }
+              .nav-overlay a { font-size: 1.3rem; }
+          }
+          /* ================================================ */
      </style> 
 </head> 
 <body> 
