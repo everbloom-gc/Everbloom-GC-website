@@ -5,6 +5,10 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
      <title>EVERBLOOM | Valorant Team 🌸</title> 
 
+     <link rel="icon" type="image/svg+xml" href="everbloomlogo.svg">
+     <link rel="shortcut icon" href="everbloomlogo.svg">
+     <link rel="apple-touch-icon" href="everbloomlogo.svg">
+
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> 
      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
      
@@ -209,7 +213,7 @@
 
           .management-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; width: 100%; max-width: 900px; justify-items: center; }
 
-          .player-card { background: #080d12; border-radius: 10px; min-height: 420px; position: relative; overflow: hidden; border: 1px solid rgba(212, 23, 91, 0.15); transition: 0.4s; width: 100%; isolation: isolate; box-shadow: inset 0 0 30px rgba(0,0,0,0.8); } 
+          .player-card { background: #050810; border-radius: 10px; min-height: 420px; position: relative; overflow: hidden; border: 1px solid rgba(212, 23, 91, 0.25); transition: 0.4s; width: 100%; isolation: isolate; box-shadow: 0 0 0 2px rgba(0,0,0,0.8), inset 0 0 40px rgba(0,0,0,0.95); } 
           .player-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.35; z-index: 1; transition: 0.5s; } 
           .player-card:hover .player-img { opacity: 0.5; transform: scale(1.05); }
           
@@ -294,15 +298,150 @@
               .nav-overlay a { font-size: 1.3rem; }
           }
           /* ================================================ */
+
+          /* ===== SPLASH SCREEN ===== */
+          #splash {
+              position: fixed; inset: 0; z-index: 9999;
+              background: #060b10;
+              display: flex; flex-direction: column;
+              align-items: center; justify-content: center;
+              transition: opacity 0.8s ease, visibility 0.8s ease;
+          }
+          #splash.hidden { opacity: 0; visibility: hidden; }
+          #splash .splash-logo {
+              width: 120px;
+              filter: drop-shadow(0 0 40px var(--primary));
+              animation: splash-bloom 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+          }
+          #splash .splash-title {
+              font-size: 2rem; font-weight: 900; letter-spacing: 10px;
+              text-transform: uppercase; color: white; margin-top: 20px;
+              opacity: 0; animation: splash-fade 0.8s 0.6s ease forwards;
+          }
+          #splash .splash-sub {
+              color: var(--primary); letter-spacing: 4px; font-size: 0.75rem;
+              font-weight: bold; margin-top: 8px;
+              opacity: 0; animation: splash-fade 0.8s 1s ease forwards;
+          }
+          #splash .splash-bar {
+              width: 200px; height: 2px; background: rgba(255,255,255,0.1);
+              margin-top: 30px; border-radius: 2px; overflow: hidden;
+              opacity: 0; animation: splash-fade 0.5s 1.2s ease forwards;
+          }
+          #splash .splash-bar::after {
+              content: "";
+              display: block; height: 100%; width: 0;
+              background: var(--primary);
+              animation: splash-load 1.2s 1.3s ease forwards;
+              box-shadow: 0 0 10px var(--primary);
+          }
+          @keyframes splash-bloom {
+              0%   { transform: scale(0.3) rotate(-15deg); opacity: 0; }
+              60%  { transform: scale(1.15) rotate(5deg); opacity: 1; }
+              100% { transform: scale(1) rotate(0deg); opacity: 1; }
+          }
+          @keyframes splash-fade {
+              to { opacity: 1; }
+          }
+          @keyframes splash-load {
+              to { width: 100%; }
+          }
+
+          /* ===== BACK TO TOP ===== */
+          #back-to-top {
+              position: fixed; bottom: 90px; right: 20px; z-index: 1002;
+              width: 44px; height: 44px; border-radius: 50%;
+              background: var(--primary); border: none; color: white;
+              font-size: 1.2rem; cursor: pointer;
+              display: flex; align-items: center; justify-content: center;
+              opacity: 0; transform: translateY(20px);
+              transition: 0.3s ease; pointer-events: none;
+              box-shadow: 0 0 15px var(--primary);
+          }
+          #back-to-top.visible { opacity: 1; transform: translateY(0); pointer-events: all; }
+          #back-to-top:hover { transform: translateY(-3px); box-shadow: 0 0 25px var(--primary); }
+
+          /* ===== BOTTOM NAV (Mobile only) ===== */
+          #bottom-nav {
+              display: none;
+              position: fixed; bottom: 0; left: 0; width: 100%; z-index: 1002;
+              background: rgba(6, 11, 16, 0.97);
+              backdrop-filter: blur(20px);
+              border-top: 1px solid rgba(212, 23, 91, 0.3);
+              padding: 8px 0 calc(8px + env(safe-area-inset-bottom));
+          }
+          #bottom-nav ul {
+              display: flex; justify-content: space-around;
+              list-style: none; margin: 0; padding: 0;
+          }
+          #bottom-nav ul li a {
+              display: flex; flex-direction: column; align-items: center;
+              gap: 3px; color: rgba(255,255,255,0.5);
+              text-decoration: none; font-size: 0.6rem;
+              font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+              transition: 0.3s;
+          }
+          #bottom-nav ul li a i { font-size: 1.2rem; }
+          #bottom-nav ul li a.active,
+          #bottom-nav ul li a:hover { color: var(--primary); }
+          #bottom-nav ul li a.active i { text-shadow: 0 0 10px var(--primary); }
+
+          @media (max-width: 768px) {
+              #bottom-nav { display: block; }
+              #back-to-top { bottom: 80px; }
+              body { padding-bottom: 65px; }
+              .nav-toggle { display: none; } /* Hamburger auf Mobile ausblenden */
+          }
+
+          /* ===== TYPING CURSOR ===== */
+          .typing-cursor {
+              display: inline-block;
+              width: 2px; height: 0.9em;
+              background: var(--primary);
+              margin-left: 2px;
+              animation: blink 0.7s step-end infinite;
+              vertical-align: middle;
+          }
+          @keyframes blink {
+              50% { opacity: 0; }
+          }
+
+          /* ===== NAV ACTIVE HIGHLIGHT ===== */
+          .nav-overlay a.nav-active {
+              color: var(--primary);
+              text-shadow: 0 0 15px var(--primary);
+          }
      </style> 
 </head> 
 <body> 
+
+     <!-- SPLASH SCREEN -->
+     <div id="splash">
+         <img src="everbloomlogo.png" class="splash-logo" alt="Everbloom">
+         <div class="splash-title">EVERBLOOM</div>
+         <div class="splash-sub">BLOOM OR DECAY</div>
+         <div class="splash-bar"></div>
+     </div>
 
      <canvas id="particle-canvas" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;"></canvas>
 
      <video loop playsinline autoplay muted id="video-bg"><source src="valo background.mp4" type="video/mp4"></video> 
      <div class="video-overlay"></div>
-     <canvas id="particle-canvas"></canvas> 
+
+     <!-- BACK TO TOP -->
+     <button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+         <i class="fas fa-chevron-up"></i>
+     </button>
+
+     <!-- BOTTOM NAV (Mobile) -->
+     <nav id="bottom-nav">
+         <ul>
+             <li><a href="#home" class="bnav active"><i class="fas fa-house"></i>Home</a></li>
+             <li><a href="#about" class="bnav"><i class="fas fa-seedling"></i>About</a></li>
+             <li><a href="#roster" class="bnav"><i class="fas fa-users"></i>Roster</a></li>
+             <li><a href="#partners" class="bnav"><i class="fas fa-handshake"></i>Partners</a></li>
+         </ul>
+     </nav>
 
      <button class="nav-toggle" onclick="toggleNav()"><span></span><span></span><span></span></button> 
 
@@ -318,7 +457,7 @@
           <header> 
               <img src="everbloomlogo.png" alt="Everbloom Logo" class="logo-main"> 
               <h1><span class="glitch-text">EVERBLOOM</span></h1> 
-              <div style="color:var(--primary); letter-spacing:5px; font-weight:bold; font-size:0.8rem; margin-top: 10px;">EST. 2026 | BLOOM OR DECAY</div> 
+              <div id="typing-sub" style="color:var(--primary); letter-spacing:5px; font-weight:bold; font-size:0.8rem; margin-top: 10px;"></div>
           </header> 
 
           <div class="container"> 
@@ -599,28 +738,81 @@
      </footer> 
 
      <script>
+          // ===== SPLASH SCREEN =====
+          window.addEventListener('load', () => {
+              setTimeout(() => {
+                  document.getElementById('splash').classList.add('hidden');
+              }, 2800);
+          });
+
+          // ===== NAV TOGGLE =====
           function toggleNav() { 
               const nav = document.getElementById('navOverlay');
               const btn = document.querySelector('.nav-toggle');
               nav.classList.toggle('active'); 
               btn.classList.toggle('open'); 
-          } 
-
-          // Scroll Reveal Logic
-          function reveal() {
-            var reveals = document.querySelectorAll(".reveal");
-            for (var i = 0; i < reveals.length; i++) {
-              var windowHeight = window.innerHeight;
-              var elementTop = reveals[i].getBoundingClientRect().top;
-              var elementVisible = 150;
-              if (elementTop < windowHeight - elementVisible) {
-                reveals[i].classList.add("active");
-              }
-            }
           }
 
+          // ===== TYPING EFFECT =====
+          (function() {
+              const el = document.getElementById('typing-sub');
+              const text = 'EST. 2026 | BLOOM OR DECAY';
+              const cursor = document.createElement('span');
+              cursor.className = 'typing-cursor';
+              let i = 0;
+              setTimeout(() => {
+                  el.appendChild(cursor);
+                  const interval = setInterval(() => {
+                      if (i < text.length) {
+                          el.insertBefore(document.createTextNode(text[i]), cursor);
+                          i++;
+                      } else {
+                          clearInterval(interval);
+                      }
+                  }, 60);
+              }, 3000); // starts after splash
+          })();
+
+          // ===== SCROLL REVEAL =====
+          function reveal() {
+              document.querySelectorAll(".reveal").forEach(el => {
+                  if (el.getBoundingClientRect().top < window.innerHeight - 150) {
+                      el.classList.add("active");
+                  }
+              });
+          }
           window.addEventListener("scroll", reveal);
           window.onload = reveal;
+
+          // ===== BACK TO TOP =====
+          const btt = document.getElementById('back-to-top');
+          window.addEventListener('scroll', () => {
+              btt.classList.toggle('visible', window.scrollY > 300);
+          });
+
+          // ===== ACTIVE SECTION HIGHLIGHT (sidebar nav + bottom nav) =====
+          const sections = ['home', 'about', 'roster', 'partners'];
+          window.addEventListener('scroll', () => {
+              let current = 'home';
+              sections.forEach(id => {
+                  const el = document.getElementById(id);
+                  if (el && el.getBoundingClientRect().top <= window.innerHeight / 2) {
+                      current = id;
+                  }
+              });
+
+              // Sidebar nav
+              document.querySelectorAll('.nav-overlay a').forEach(a => {
+                  a.classList.remove('nav-active');
+                  if (a.getAttribute('href') === '#' + current) a.classList.add('nav-active');
+              });
+
+              // Bottom nav
+              document.querySelectorAll('.bnav').forEach(a => {
+                  a.classList.remove('active');
+                  if (a.getAttribute('href') === '#' + current) a.classList.add('active');
+              });
+          });
      </script>
 
      <!-- Partikel-Regen -->
@@ -649,7 +841,6 @@
           function rand(a, b) { return a + Math.random() * (b - a); }
 
           function drawPetal(ctx, size) {
-              // Realistisches Blütenblatt mit 5 Spitzen
               const petals = 5;
               const outerR = size;
               const innerR = size * 0.4;
@@ -663,8 +854,6 @@
               }
               ctx.closePath();
               ctx.fill();
-
-              // Kleiner Kern in der Mitte
               ctx.beginPath();
               ctx.arc(0, 0, size * 0.18, 0, Math.PI * 2);
               ctx.fillStyle = 'rgba(255,220,230,0.9)';
@@ -673,24 +862,22 @@
 
           class Particle {
               constructor() { this.reset(true); }
-
               reset(initial) {
-                  this.x          = rand(0, W);
-                  this.y          = initial ? rand(-H, H) : rand(-100, -10);
-                  this.size       = rand(3, 9);
-                  this.speedY     = rand(0.3, 1.2);
-                  this.speedX     = rand(-0.3, 0.3);
-                  this.opacity    = rand(0.25, 0.85);
-                  this.fade       = rand(0.0015, 0.005);
-                  this.rot        = rand(0, Math.PI * 2);
-                  this.rotSpeed   = rand(-0.025, 0.025);
-                  this.color      = COLORS[Math.floor(Math.random() * COLORS.length)];
-                  this.type       = TYPES[Math.floor(Math.random() * TYPES.length)];
-                  this.wobble     = rand(0, Math.PI * 2);
-                  this.wobbleSpd  = rand(0.008, 0.025);
-                  this.swing      = rand(0.3, 1.2);
+                  this.x         = rand(0, W);
+                  this.y         = initial ? rand(-H, H) : rand(-100, -10);
+                  this.size      = rand(3, 9);
+                  this.speedY    = rand(0.3, 1.2);
+                  this.speedX    = rand(-0.3, 0.3);
+                  this.opacity   = rand(0.25, 0.85);
+                  this.fade      = rand(0.0015, 0.005);
+                  this.rot       = rand(0, Math.PI * 2);
+                  this.rotSpeed  = rand(-0.025, 0.025);
+                  this.color     = COLORS[Math.floor(Math.random() * COLORS.length)];
+                  this.type      = TYPES[Math.floor(Math.random() * TYPES.length)];
+                  this.wobble    = rand(0, Math.PI * 2);
+                  this.wobbleSpd = rand(0.008, 0.025);
+                  this.swing     = rand(0.3, 1.2);
               }
-
               draw() {
                   ctx.save();
                   ctx.globalAlpha = Math.max(0, this.opacity);
@@ -699,7 +886,6 @@
                   ctx.fillStyle = this.color + this.opacity + ')';
                   ctx.shadowColor = this.color + '0.6)';
                   ctx.shadowBlur = this.size * 4;
-
                   if (this.type === 'petal') {
                       drawPetal(ctx, this.size);
                   } else if (this.type === 'circle') {
@@ -709,16 +895,12 @@
                   } else {
                       const s = this.size;
                       ctx.beginPath();
-                      ctx.moveTo(0, -s);
-                      ctx.lineTo(s * 0.55, 0);
-                      ctx.lineTo(0, s);
-                      ctx.lineTo(-s * 0.55, 0);
-                      ctx.closePath();
-                      ctx.fill();
+                      ctx.moveTo(0, -s); ctx.lineTo(s * 0.55, 0);
+                      ctx.lineTo(0, s); ctx.lineTo(-s * 0.55, 0);
+                      ctx.closePath(); ctx.fill();
                   }
                   ctx.restore();
               }
-
               update() {
                   this.wobble  += this.wobbleSpd;
                   this.x       += this.speedX + Math.sin(this.wobble) * this.swing;
@@ -737,7 +919,6 @@
               particles.forEach(p => { p.update(); p.draw(); });
               requestAnimationFrame(animate);
           }
-
           animate();
      </script>
 </body> 
