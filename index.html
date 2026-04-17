@@ -5,10 +5,6 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
      <title>EVERBLOOM | Valorant Team 🌸</title> 
 
-     <link rel="icon" type="image/svg+xml" href="everbloomlogo.svg">
-<link rel="shortcut icon" href="everbloomlogo.svg">
-<link rel="apple-touch-icon" href="everbloomlogo.svg">
-
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> 
      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
      
@@ -67,7 +63,7 @@
               background:
                   radial-gradient(circle at 15% 25%, rgba(212, 23, 91, 0.12) 0%, transparent 35%),
                   radial-gradient(circle at 85% 60%, rgba(212, 23, 91, 0.10) 0%, transparent 30%);
-              animation: orb-pulse 6s ease-in-out infinite alternate;
+              animation: orb-pulse 12s ease-in-out infinite alternate;
               pointer-events: none; z-index: -1;
           }
 
@@ -82,7 +78,7 @@
               position: fixed; top: 0; left: 0; width: 100%; height: 100%;
               background: linear-gradient(to bottom, transparent 0%, rgba(212, 23, 91, 0.07) 50%, transparent 100%);
               background-size: 100% 180px;
-              animation: scanline 5s linear infinite;
+              animation: scanline 10s linear infinite;
               pointer-events: none; z-index: 999;
           }
 
@@ -213,7 +209,7 @@
 
           .management-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; width: 100%; max-width: 900px; justify-items: center; }
 
-          .player-card { background: rgba(10, 15, 20, 0.8); border-radius: 10px; min-height: 420px; position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); transition: 0.4s; width: 100%; } 
+          .player-card { background: #0a0f14; border-radius: 10px; min-height: 420px; position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); transition: 0.4s; width: 100%; isolation: isolate; } 
           .player-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.35; z-index: 1; transition: 0.5s; } 
           .player-card:hover .player-img { opacity: 0.5; transform: scale(1.05); }
           
@@ -499,7 +495,7 @@
                     <div class="card-content">
                         <small style="color:var(--primary); font-weight: bold;">DUELIST</small>
                         <div style="font-weight:900; font-size:1.4rem;">Noctra</div>
-                        <div class="rank-tag rank-ascendant">Ascendant 2</div>
+                        <div class="rank-tag rank-ascendant">Ascendant 3</div>
                         <div class="player-links">
                             <a href="https://tracker.gg/valorant/profile/riot/Jocelyn%20Flores%23kev/overview" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
                             <a href="https://x.com/Noctravlr" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
