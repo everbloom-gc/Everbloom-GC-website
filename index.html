@@ -569,7 +569,6 @@
              <li><a href="#home" class="bnav active"><i class="fas fa-house"></i>Home</a></li>
              <li><a href="#about" class="bnav"><i class="fas fa-seedling"></i>About</a></li>
              <li><a href="#roster" class="bnav"><i class="fas fa-users"></i>Roster</a></li>
-             <li><a href="#partners" class="bnav"><i class="fas fa-handshake"></i>Partners</a></li>
          </ul>
      </nav>
 
@@ -578,9 +577,7 @@
      <div class="nav-overlay" id="navOverlay"> 
           <a href="#home" onclick="toggleNav()">Home</a> 
           <a href="#about" onclick="toggleNav()">About Us</a> 
-          <a href="#roster" onclick="toggleNav()">Roster</a> 
-          <a href="#partners" onclick="toggleNav()">Partners</a>
-          <a href="sponsor.html" onclick="toggleNav()">Become a Sponsor</a>
+          <a href="#roster" onclick="toggleNav()">Roster</a>
           <a href="legal.html" onclick="toggleNav()">Legal Notice</a>
 
           <div style="margin-top: auto; padding-top: 30px; border-top: 1px solid rgba(212,23,91,0.2);">
@@ -827,36 +824,6 @@
     </div>
 </section>
 
-     <section id="partners" class="reveal page-section">
-        <div class="container">
-            <h3 style="text-align:center; color:var(--primary); text-transform: uppercase; margin-bottom: 50px; letter-spacing: 3px;">Our Partners</h3>
-            
-            <div class="partners-list">
-                <div class="info-card partner-card-long reveal">
-                    <img src="rostered.png" alt="Rostered Logo" style="max-width: 180px;">
-                    <div style="flex: 1;">
-                        <h4 style="color:var(--primary); margin-bottom: 10px;">ROSTERED.GG</h4>
-                        <p style="font-size: 0.95rem;">The official platform for team management and professional esports organization.</p>
-                    </div>
-                    <a href="https://rostered.gg" target="_blank" class="apply-btn" style="padding: 12px 25px; font-size: 0.8rem; white-space: nowrap;">Visit Website</a>
-                </div>
-
-                <div class="info-card partner-card-long reveal">
-                    <div style="width: 180px; text-align: center;">
-                        <span style="font-size: 1.5rem; font-weight: 900; letter-spacing: 1px;">EVOLUPE<span style="color:var(--primary);">MEDIA</span></span>
-                    </div>
-                    <div style="flex: 1;">
-                        <h4 style="color:var(--primary); margin-bottom: 10px;">EVOLUPE MEDIA</h4>
-                        <p style="font-size: 0.95rem;">Providing digital excellence and creative media support for the next generation of gamers.</p>
-                    </div>
-                    <a href="https://discord.gg/bQ8phXAmSa" target="_blank" class="apply-btn" style="padding: 12px 25px; font-size: 0.8rem; border-color: #5865F2; background: rgba(88, 101, 242, 0.1); white-space: nowrap;">
-                        <i class="fab fa-discord"></i> Join Discord
-                    </a>
-                </div>
-            </div>
-        </div>
-     </section>
-
      <footer>
           <div class="container">
               <div class="footer-socials">
@@ -927,7 +894,7 @@
           });
 
           // ===== ACTIVE SECTION HIGHLIGHT (sidebar nav + bottom nav) =====
-          const sections = ['home', 'about', 'roster', 'partners'];
+          const sections = ['home', 'about', 'roster'];
           window.addEventListener('scroll', () => {
               let current = 'home';
               sections.forEach(id => {
