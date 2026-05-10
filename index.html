@@ -19,7 +19,6 @@
      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 
      <style>
-/* === DARK THEME VARIABLES (default) === */
 :root {
     --primary: #d4175b;
     --bg: #060b10;
@@ -58,7 +57,6 @@
     --rank-diamond-glow: rgba(183, 132, 242, 0.5);
 }
 
-/* === LIGHT THEME VARIABLES === */
 [data-theme="light"] {
     --bg: #faf5f7;
     --card-bg: rgba(255, 255, 255, 0.9);
@@ -82,10 +80,8 @@
     --video-overlay: rgba(250,245,247,0.93);
 }
 
-/* === SMOOTH THEME TRANSITION === */
 body, .nav-overlay, .player-card, footer, #bottom-nav, #splash { transition: background 0.35s ease, background-color 0.35s ease, color 0.35s ease; }
 
-/* === BASE RESET === */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 
@@ -293,10 +289,9 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
 .shape-sq5 { width: 60px; height: 60px; top: 60%; right: 5%; border-color: rgba(212,23,91,0.1); animation: rot-cw 16s linear infinite; transform-origin: center; }
 .shape-sq6 { width: 160px; height: 160px; top: 55%; right: 2%; border-color: rgba(212,23,91,0.06); animation: rot-ccw 38s linear infinite; transform-origin: center; }
 .shape-ring { width: 300px; height: 300px; border-radius: 50%; border-color: rgba(212,23,91,0.07); border-style: dashed; top: 50%; left: 50%; margin-left: -150px; margin-top: -150px; animation: rot-cw 60s linear infinite; transform-origin: center; }
-@keyframes rot-cw  { from { transform: rotate(0deg);   } to { transform: rotate(360deg);  } }
-@keyframes rot-ccw { from { transform: rotate(0deg);   } to { transform: rotate(-360deg); } }
+@keyframes rot-cw  { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes rot-ccw { from { transform: rotate(0deg); } to { transform: rotate(-360deg); } }
      </style>
-
 </head>
 <body>
 
@@ -319,7 +314,7 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
          <div class="bg-shape shape-ring"></div>
      </div>
 
-     <video loop playsinline autoplay muted id="video-bg"><source src="valo background.mp4" type="video/mp4"></video> 
+     <video loop playsinline autoplay muted id="video-bg"><source src="valo background.mp4" type="video/mp4"></video>
      <div class="video-overlay"></div>
 
      <button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fas fa-chevron-up"></i></button>
@@ -337,9 +332,9 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
 
      <button class="nav-toggle" onclick="toggleNav()"><span></span><span></span><span></span></button>
 
-     <div class="nav-overlay" id="navOverlay"> 
-          <a href="#home" onclick="toggleNav()">Home</a> 
-          <a href="#about" onclick="toggleNav()">About Us</a> 
+     <div class="nav-overlay" id="navOverlay">
+          <a href="#home" onclick="toggleNav()">Home</a>
+          <a href="#about" onclick="toggleNav()">About Us</a>
           <a href="#roster" onclick="toggleNav()">Roster</a>
           <a href="#partners" onclick="toggleNav()">Partners</a>
           <a href="legal.html" onclick="toggleNav()">Legal Notice</a>
@@ -353,35 +348,35 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
                   <a href="https://www.twitch.tv/everbloomvalorant" target="_blank" onclick="toggleNav()" style="color: #9146FF; font-size: 1.4rem;"><i class="fa-brands fa-twitch"></i></a>
               </div>
           </div>
-     </div> 
+     </div>
 
-     <section id="home"> 
-          <header> 
-              <img src="everbloomlogo.png" alt="Everbloom Logo" class="logo-main"> 
-              <h1><span class="glitch-text">EVERBLOOM</span></h1> 
+     <section id="home">
+          <header>
+              <img src="everbloomlogo.png" alt="Everbloom Logo" class="logo-main">
+              <h1><span class="glitch-text">EVERBLOOM</span></h1>
               <div id="typing-sub" style="color:var(--primary); letter-spacing:5px; font-weight:bold; font-size:0.8rem; margin-top: 10px;"></div>
-          </header> 
-          <div class="container"> 
-              <div class="info-card reveal active"> 
-                  <h3><i class="fas fa-seedling"></i> MISSION & VISION</h3> 
+          </header>
+          <div class="container">
+              <div class="info-card reveal active">
+                  <h3><i class="fas fa-seedling"></i> MISSION &amp; VISION</h3>
                   <p style="line-height: 1.8;"><strong>Everbloom Gaming</strong> was founded in 2026 as a highly structured esports organization. Our name is our promise: we create an environment where talent can <strong>bloom</strong> at any time and unfold its full potential.</p>
                   <p style="font-size: 0.85rem; opacity: 0.7; margin-top: 15px; cursor: pointer; color: var(--primary); font-weight: bold;"><a href="#about" style="color: inherit; text-decoration: none;">Read more about our philosophy →</a></p>
-              </div> 
-              <div class="apply-container reveal">
-                  <a href="https://forms.gle/VeNmZo9DkJo35PR5A" target="_blank" class="apply-btn">JOIN THE BLOOM</a> 
               </div>
-              <div class="home-grid"> 
+              <div class="apply-container reveal">
+                  <a href="https://forms.gle/VeNmZo9DkJo35PR5A" target="_blank" class="apply-btn">JOIN THE BLOOM</a>
+              </div>
+              <div class="home-grid">
                   <div class="news-column reveal">
-                      <div class="info-card"> 
-                          <h3>LATEST NEWS</h3> 
-                          <p style="line-height: 1.6;">• Dr0xvlr joined the Male Roster<br>• Vexa joined the FLINTA Roster<br>• Norwin joined the Male Roster<br>• Noctra joined the team</p> 
+                      <div class="info-card">
+                          <h3>LATEST NEWS</h3>
+                          <p style="line-height: 1.6;">• Dr0xvlr joined the Male Roster<br>• Vexa joined the FLINTA Roster<br>• Norwin joined the Male Roster<br>• Noctra joined the team</p>
                       </div>
-                      <div class="info-card reveal"> 
-                          <h3>CURRENT GOALS</h3> 
-                          <p style="line-height: 1.6;">• Full roster 2026<br>• Project V entry<br>• Premier Victory</p> 
+                      <div class="info-card reveal">
+                          <h3>CURRENT GOALS</h3>
+                          <p style="line-height: 1.6;">• Full roster 2026<br>• Project V entry<br>• Premier Victory</p>
                       </div>
-                  </div> 
-                  <!-- Elfsight Twitter Feed | Everbloom x feed -->
+                  </div>
+                  <!-- Elfsight Twitter Feed -->
                   <div class="info-card reveal">
                       <h3><i class="fa-brands fa-x-twitter"></i> FEED</h3>
                       <script src="https://elfsightcdn.com/platform.js" async></script>
@@ -419,29 +414,13 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
         </div>
      </section>
 
-     <section id="roster" class="reveal page-section"> 
-    <div class="container"> 
-        <h3 style="text-align:center; color:var(--primary); text-transform: uppercase; margin-bottom: 30px; letter-spacing: 3px;">Management</h3> 
-        <div style="display: flex; justify-content: center; margin-bottom: 60px;">
-            <div class="management-grid">
-                <div class="player-card reveal" style="max-width: 300px; min-height: 380px;">
-                    <img loading="lazy" src="reyna.webp" id="reyna-special">
-                    <div class="card-content">
-                        <small style="color:var(--primary); font-weight: bold; letter-spacing: 1px;">FOUNDER / MANAGER</small>
-                        <div style="font-weight:900; font-size:1.6rem; margin: 5px 0;">Raph</div>
-                        <div class="player-links">
-                            <a href="https://x.com/wavvybecci_" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <h3 style="text-align:center; color:var(--primary); text-transform: uppercase; margin-bottom: 20px;">FLINTA Roster</h3> 
+     <section id="roster" class="reveal page-section">
+    <div class="container">
+        <h3 style="text-align:center; color:var(--primary); text-transform: uppercase; margin-bottom: 20px;">FLINTA Roster</h3>
         <div class="roster-grid-container">
             <div class="roster-row-top">
                 <div class="player-card reveal">
-                    <img loading="lazy" src="astra.png" class="player-img"> 
+                    <img loading="lazy" src="astra.png" class="player-img">
                     <div class="card-content">
                         <small style="color:var(--primary); font-weight: bold;">CONTROLLER</small>
                         <div style="font-weight:900; font-size:1.4rem;">Ruby</div>
@@ -453,7 +432,7 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
                     </div>
                 </div>
                 <div class="player-card reveal">
-                    <img loading="lazy" src="jett.png" class="player-img"> 
+                    <img loading="lazy" src="jett.png" class="player-img">
                     <div class="card-content">
                         <small style="color:var(--primary); font-weight: bold;">DUELIST</small>
                         <div style="font-weight:900; font-size:1.4rem;">Archer</div>
@@ -464,23 +443,16 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
                         </div>
                     </div>
                 </div>
-                <div class="player-card reveal">
-                    <div class="card-content" style="top:0; height:100%; display:flex; flex-direction:column; justify-content:center; align-items:flex-start; background: linear-gradient(135deg, rgba(212,23,91,0.08), rgba(5,8,16,0.95));">
-                        <small style="color:var(--primary); font-weight: bold;">CONTROLLER</small>
-                        <div style="font-weight:900; font-size:1.4rem; margin: 5px 0;">OPEN SPOT</div>
-                        <div style="font-size:0.75rem; opacity:0.6; margin-bottom:10px; line-height:1.5;">Looking for a Controller<br>Silver → Gold</div>
-                        <div class="rank-tag rank-silver" style="margin-bottom:4px;">SLV+</div>
-                        <a href="https://forms.gle/VeNmZo9DkJo35PR5A" target="_blank" class="apply-btn" style="padding: 10px 20px; font-size: 0.7rem; letter-spacing: 2px; margin-top: 10px;">APPLY NOW</a>
-                    </div>
-                </div>
+
             </div>
-            <div class="roster-row-bottom roster-2nd-row">
+            <!-- FLINTA Bottom Row: Settie + Vexa + Raph -->
+            <div class="roster-row-bottom">
                 <div class="player-card reveal">
                     <img loading="lazy" src="Chamber.webp" class="player-img">
                     <div class="card-content">
                         <small style="color:var(--primary); font-weight: bold;">SENTINEL</small>
                         <div style="font-weight:900; font-size:1.4rem;">Settie</div>
-                        <div class="rank-tag rank-silver">Silver 1</div>
+                        <div class="rank-tag rank-bronze">Unranked</div>
                         <div class="player-links">
                             <a href="https://tracker.gg/valorant/profile/riot/settie%23TTV/" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
                             <a href="https://x.com/Suns3tt_VLR" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
@@ -492,47 +464,59 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
                     <div class="card-content">
                         <small style="color:var(--primary); font-weight: bold;">SENTINEL</small>
                         <div style="font-weight:900; font-size:1.4rem;">Vexa</div>
-                        <div class="rank-tag rank-silver">Silver 1</div>
+                        <div class="rank-tag rank-silver">Silver 2</div>
                         <div class="player-links">
                             <a href="https://tracker.gg/valorant/profile/riot/Vexa%23G220/overview" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
                             <a href="https://x.com/vexaizy" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
                         </div>
                     </div>
                 </div>
+                <div class="player-card reveal">
+                    <img loading="lazy" src="reyna.webp" class="player-img" style="object-fit: cover; object-position: top center;">
+                    <div class="card-content">
+                        <small style="color:var(--primary); font-weight: bold;">FLEX</small>
+                        <div style="font-weight:900; font-size:1.4rem;">Raph</div>
+                        <div class="rank-tag rank-bronze">Unranked</div>
+                        <div class="player-links">
+                            <a href="https://tracker.gg/valorant/profile/riot/WalmartReyna%23GOAT/overview?platform=pc&playlist=competitive&season=9d85c932-4820-c060-09c3-668636d4df1b" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
+                            <a href="https://x.com/wavvybecci_" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <h3 style="text-align:center; color:var(--primary); text-transform: uppercase; margin-top: 60px; margin-bottom: 20px;">Male Roster</h3> 
+        <h3 style="text-align:center; color:var(--primary); text-transform: uppercase; margin-top: 60px; margin-bottom: 20px;">Male Roster</h3>
         <div class="roster-grid-container">
             <div class="roster-row-top">
                 <div class="player-card reveal">
-                    <img loading="lazy" src="Omen_Artwork_Full.webp" class="player-img" style="object-fit: cover;"> 
+                    <img loading="lazy" src="Omen_Artwork_Full.webp" class="player-img" style="object-fit: cover;">
                     <div class="card-content">
                         <small style="color:var(--primary); font-weight: bold;">CONTROLLER</small>
                         <div style="font-weight:900; font-size:1.4rem;">JC</div>
-                        <div class="rank-tag rank-ascendant">Ascendant 2</div>
+                        <div class="rank-tag rank-ascendant">Ascendant 3</div>
                         <div class="player-links">
                             <a href="https://tracker.gg/valorant/profile/riot/jczera%23LG16/" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
                         </div>
                     </div>
                 </div>
                 <div class="player-card reveal">
-                    <img loading="lazy" src="clove.webp" class="player-img" style="object-fit: contain; transform: scale(1.6); transform-origin: center; transition: 0.5s ease;"> 
+                    <img loading="lazy" src="Chamber.webp" class="player-img">
                     <div class="card-content">
-                        <small style="color:var(--primary); font-weight: bold;">CONTROLLER</small>
-                        <div style="font-weight:900; font-size:1.4rem;">Dr0xvlr</div>
-                        <div class="rank-tag rank-platinum">Platinum 1</div>
+                        <small style="color:var(--primary); font-weight: bold;">INITIATOR</small>
+                        <div style="font-weight:900; font-size:1.4rem;">BluntDawg</div>
+                        <div class="rank-tag rank-ascendant">Ascendant 2</div>
                         <div class="player-links">
-                            <a href="https://tracker.gg/valorant/profile/riot/budhaFPS%23EGO/overview" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
-                            <a href="https://x.com/dr0xvlr" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="https://tracker.gg/valorant/profile/riot/BluntDawg51%23081z/overview?platform=pc&playlist=competitive&season=ce2783e8-44fc-dd48-3da3-33b5ba6c4a22" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
+                            <a href="https://x.com/dr0xvlr" style="display:none" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="player-card reveal">
-                    <img loading="lazy" src="Waylay_Artwork_Full.webp" class="player-img" style="object-fit: cover;"> 
+                    <img loading="lazy" src="Waylay_Artwork_Full.webp" class="player-img" style="object-fit: cover;">
                     <div class="card-content">
                         <small style="color:var(--primary); font-weight: bold;">DUELIST</small>
-                        <div style="font-weight:900; font-size:1.4rem;">Noctra</div>
+                        <div style="font-weight:900; font-size:1.4rem;">Sin</div>
                         <div class="rank-tag rank-ascendant">Ascendant 3</div>
                         <div class="player-links">
                             <a href="https://tracker.gg/valorant/profile/riot/Jocelyn%20Flores%23kev/overview" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
@@ -543,7 +527,7 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
             </div>
             <div class="roster-row-bottom roster-2nd-row">
                 <div class="player-card reveal">
-                    <img loading="lazy" src="jett.png" class="player-img"> 
+                    <img loading="lazy" src="jett.png" class="player-img">
                     <div class="card-content">
                         <small style="color:var(--primary); font-weight: bold;">DUELIST</small>
                         <div style="font-weight:900; font-size:1.4rem;">Envy</div>
@@ -555,11 +539,11 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
                     </div>
                 </div>
                 <div class="player-card reveal">
-                    <img loading="lazy" src="killjoy.png" class="player-img" style="object-fit: contain; transform: scale(1.6); transform-origin: center; transition: 0.5s ease;"> 
+                    <img loading="lazy" src="killjoy.png" class="player-img" style="object-fit: contain; transform: scale(1.6); transform-origin: center; transition: 0.5s ease;">
                     <div class="card-content">
                         <small style="color:var(--primary); font-weight: bold;">SENTINEL</small>
                         <div style="font-weight:900; font-size:1.4rem;">Aff3</div>
-                        <div class="rank-tag rank-diamond">Diamond 1</div>
+                        <div class="rank-tag rank-diamond">Diamond 2</div>
                         <div class="player-links">
                             <a href="https://tracker.gg/valorant/profile/riot/Aff3%23XuXu/overview" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
                             <a href="https://x.com/AffenstarkJo" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
@@ -613,10 +597,9 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
                   © 2026 EVERBLOOM GAMING | <a href="legal.html" style="color: white; text-decoration: none; opacity: 0.8;">Legal Notice</a>
               </div>
           </div>
-     </footer> 
+     </footer>
 
      <script>
-          // Theme toggle
           (function() {
               const toggle = document.getElementById('theme-toggle');
               const root = document.documentElement;
@@ -641,11 +624,11 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
               setTimeout(() => { document.getElementById('splash').classList.add('hidden'); }, 2800);
           });
 
-          function toggleNav() { 
+          function toggleNav() {
               const nav = document.getElementById('navOverlay');
               const btn = document.querySelector('.nav-toggle');
-              nav.classList.toggle('active'); 
-              btn.classList.toggle('open'); 
+              nav.classList.toggle('active');
+              btn.classList.toggle('open');
           }
 
           (function() {
@@ -755,6 +738,5 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
           function animate() { ctx.clearRect(0, 0, W, H); particles.forEach(p => { p.update(); p.draw(); }); requestAnimationFrame(animate); }
           animate();
      </script>
-</body> 
+</body>
 </html>
-
