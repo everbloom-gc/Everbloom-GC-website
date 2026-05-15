@@ -355,10 +355,11 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
 <body>
 
      <div id="splash">
-         <img src="everbloomlogo.png" class="splash-logo" alt="Everbloom">
-         <div class="splash-title">EVERBLOOM</div>
-         <div class="splash-sub">BLOOM OR DECAY</div>
-         <div class="splash-bar"></div>
+         <canvas id="splash-canvas" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;"></canvas>
+         <img src="everbloomlogo.png" class="splash-logo" alt="Everbloom" style="position:relative;z-index:1;">
+         <div class="splash-title" style="position:relative;z-index:1;">EVERBLOOM</div>
+         <div class="splash-sub" style="position:relative;z-index:1;">BLOOM OR DECAY</div>
+         <div class="splash-bar" style="position:relative;z-index:1;"></div>
      </div>
 
      <canvas id="particle-canvas" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:2;pointer-events:none;"></canvas>
@@ -843,9 +844,8 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
           function animate() { ctx.clearRect(0, 0, W, H); particles.forEach(p => { p.update(); p.draw(); }); requestAnimationFrame(animate); }
           animate();
      </script>
-</body>
-</html>
-     <script>
+
+<script>
           // Splash petal animation
           const splashCanvas = document.getElementById('splash-canvas');
           const splashCtx = splashCanvas.getContext('2d');
@@ -911,5 +911,5 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
           }
           splashLoop();
      </script>
-
-
+</body>
+</html>
