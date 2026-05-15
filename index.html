@@ -254,16 +254,21 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
     [data-theme="light"] .player-card .card-content[style*="top:0"] { background: linear-gradient(135deg, rgba(212,23,91,0.08), rgba(250,245,247,0.98)) !important; }
 }
 
-#splash { position: fixed; inset: 0; z-index: 9999; background: var(--splash-bg); display: flex; flex-direction: column; align-items: center; justify-content: center; transition: opacity 0.8s ease, visibility 0.8s ease; }
+/* ========== NEW SPLASH WITH PETALS ========== */
+#splash { position: fixed; inset: 0; z-index: 9999; background: radial-gradient(ellipse at 50% 50%, #1a0a16 0%, #060b10 70%); display: flex; flex-direction: column; align-items: center; justify-content: center; transition: opacity 0.8s ease, visibility 0.8s ease; }
 #splash.hidden { opacity: 0; visibility: hidden; }
-#splash .splash-logo { width: 120px; filter: drop-shadow(0 0 40px var(--primary)); animation: splash-bloom 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
-#splash .splash-title { font-size: 2rem; font-weight: 900; letter-spacing: 10px; text-transform: uppercase; color: var(--splash-text); margin-top: 20px; opacity: 0; animation: splash-fade 0.8s 0.6s ease forwards; }
-#splash .splash-sub { color: var(--primary); letter-spacing: 4px; font-size: 0.75rem; font-weight: bold; margin-top: 8px; opacity: 0; animation: splash-fade 0.8s 1s ease forwards; }
-#splash .splash-bar { width: 200px; height: 2px; background: rgba(128,64,96,0.2); margin-top: 30px; border-radius: 2px; overflow: hidden; opacity: 0; animation: splash-fade 0.5s 1.2s ease forwards; }
-#splash .splash-bar::after { content: ""; display: block; height: 100%; width: 0; background: var(--primary); animation: splash-load 1.2s 1.3s ease forwards; box-shadow: 0 0 10px var(--primary); }
-@keyframes splash-bloom { 0% { transform: scale(0.3) rotate(-15deg); opacity: 0; } 60% { transform: scale(1.15) rotate(5deg); opacity: 1; } 100% { transform: scale(1) rotate(0deg); opacity: 1; } }
-@keyframes splash-fade { to { opacity: 1; } }
-@keyframes splash-load  { to { width: 100%; } }
+#splash canvas { position: absolute; inset: 0; z-index: 1; }
+#splash .vign { position: absolute; inset: 0; z-index: 2; pointer-events: none; background: radial-gradient(circle at 50% 50%, transparent 30%, rgba(0, 0, 0, .55) 100%); }
+#splash .splash-center { position: relative; z-index: 5; display: flex; flex-direction: column; align-items: center; opacity: 0; animation: splash-fade-in 1.4s .4s forwards; }
+#splash .splash-logo { width: 120px; filter: drop-shadow(0 0 40px var(--primary)); animation: splash-bloom 1.6s cubic-bezier(.2, .8, .2, 1) .2s both; }
+#splash .splash-title { font-size: 2.5rem; margin-top: 28px; letter-spacing: 14px; font-weight: 900; text-transform: uppercase; opacity: 0; animation: splash-up .8s .8s forwards; }
+#splash .splash-sub { color: var(--primary); letter-spacing: 5px; font-weight: bold; font-size: 0.8rem; margin-top: 12px; opacity: 0; animation: splash-up .8s 1s forwards; }
+#splash .splash-bar { width: 240px; height: 3px; background: rgba(212, 23, 91, .15); margin-top: 30px; border-radius: 2px; overflow: hidden; opacity: 0; animation: splash-up .5s 1.2s forwards; }
+#splash .splash-bar::after { content: ""; display: block; height: 100%; width: 0; background: var(--primary); box-shadow: 0 0 12px var(--primary); animation: splash-load 1.8s 1.3s ease-out forwards; }
+@keyframes splash-bloom { 0% { transform: scale(.3) rotate(-30deg); opacity: 0; filter: drop-shadow(0 0 0 var(--primary)); } 60% { transform: scale(1.1) rotate(8deg); opacity: 1; } 100% { transform: scale(1) rotate(0); } }
+@keyframes splash-fade-in { to { opacity: 1; } }
+@keyframes splash-up { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes splash-load { to { width: 100%; } }
 
 #back-to-top { position: fixed; bottom: 90px; right: 20px; z-index: 1002; width: 44px; height: 44px; border-radius: 50%; background: var(--primary); border: none; color: white; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; opacity: 0; transform: translateY(20px); transition: 0.3s ease; pointer-events: none; box-shadow: 0 0 15px var(--primary); }
 #back-to-top.visible { opacity: 1; transform: translateY(0); pointer-events: all; }
@@ -840,3 +845,71 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
      </script>
 </body>
 </html>
+     <script>
+          // Splash petal animation
+          const splashCanvas = document.getElementById('splash-canvas');
+          const splashCtx = splashCanvas.getContext('2d');
+          let splashW = splashCanvas.width = window.innerWidth;
+          let splashH = splashCanvas.height = window.innerHeight;
+          window.addEventListener('resize', () => { 
+              splashW = splashCanvas.width = window.innerWidth; 
+              splashH = splashCanvas.height = window.innerHeight; 
+          });
+
+          function SplashPetal() {
+              this.x = Math.random() * splashW;
+              this.y = -20 - Math.random() * splashH;
+              this.s = 4 + Math.random() * 8;
+              this.vy = .3 + Math.random() * .9;
+              this.vx = -.4 + Math.random() * .8;
+              this.r = Math.random() * Math.PI * 2;
+              this.vr = (-.02 + Math.random() * .04);
+              this.a = .35 + Math.random() * .55;
+              this.hue = Math.random() < .15 ? '#ffd1e2' : (Math.random() < .5 ? '#d4175b' : '#ec5b8e');
+          }
+
+          SplashPetal.prototype.draw = function() {
+              this.x += this.vx + Math.sin(this.y / 40) * .3;
+              this.y += this.vy;
+              this.r += this.vr;
+              
+              if (this.y > splashH + 20) {
+                  Object.assign(this, new SplashPetal());
+                  this.y = -20;
+              }
+              
+              splashCtx.save();
+              splashCtx.translate(this.x, this.y);
+              splashCtx.rotate(this.r);
+              splashCtx.globalAlpha = this.a;
+              splashCtx.fillStyle = this.hue;
+              
+              splashCtx.beginPath();
+              splashCtx.ellipse(0, 0, this.s, this.s * 1.7, 0, 0, Math.PI * 2);
+              splashCtx.fill();
+              
+              splashCtx.globalAlpha = this.a * .5;
+              splashCtx.fillStyle = '#060b10';
+              splashCtx.beginPath();
+              splashCtx.ellipse(0, 0, this.s * .15, this.s * 1.5, 0, 0, Math.PI * 2);
+              splashCtx.fill();
+              
+              splashCtx.restore();
+          };
+
+          const splashPetals = [];
+          for (let i = 0; i < 70; i++) {
+              const p = new SplashPetal();
+              p.y = Math.random() * splashH;
+              splashPetals.push(p);
+          }
+
+          function splashLoop() {
+              splashCtx.clearRect(0, 0, splashW, splashH);
+              splashPetals.forEach(p => p.draw());
+              requestAnimationFrame(splashLoop);
+          }
+          splashLoop();
+     </script>
+
+
