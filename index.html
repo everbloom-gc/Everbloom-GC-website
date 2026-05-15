@@ -449,7 +449,7 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
                                   <option value="male">Male Roster</option>
                                   <option value="both">Both</option>
                               </select>
-                              <button onclick="sendScrimRequest()" style="background:transparent;border:2px solid var(--primary);color:var(--text);padding:14px;border-radius:4px;font-weight:900;text-transform:uppercase;letter-spacing:2px;font-size:0.75rem;cursor:pointer;transition:0.3s;font-family:inherit;" onmouseover="this.style.background='var(--primary)'" onmouseout="this.style.background='transparent'">
+                              <button id="scrim-btn" onclick="sendScrimRequest()" style="background:transparent;border:2px solid var(--primary);color:var(--text);padding:14px;border-radius:4px;font-weight:900;text-transform:uppercase;letter-spacing:2px;font-size:0.75rem;cursor:pointer;transition:0.3s;font-family:inherit;">
                                   SEND REQUEST
                               </button>
                               <div id="scrim-msg" style="font-size:0.7rem;text-align:center;min-height:14px;color:var(--primary);"></div>
@@ -976,7 +976,7 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
          const discord = document.getElementById('scrim-discord').value.trim();
          const time = document.getElementById('scrim-time').value.trim();
          const roster = document.getElementById('scrim-roster').value;
-         const btn = document.querySelector('[onclick="sendScrimRequest()"]');
+         const btn = document.getElementById('scrim-btn');
          const msg = document.getElementById('scrim-msg');
 
          btn.textContent = 'SENDING...';
