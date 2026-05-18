@@ -351,6 +351,65 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
 .glitch-divider span{font-size:.55rem;letter-spacing:4px;color:var(--primary);background:var(--bg);
   padding:0 18px;position:relative;font-weight:700;font-family:monospace}
 </style>
+
+     <script type="application/ld+json">
+     {
+       "@context": "https://schema.org",
+       "@type": "SportsOrganization",
+       "name": "Everbloom Gaming",
+       "alternateName": "Everbloom GC",
+       "url": "https://everbloom-gc.com",
+       "logo": "https://everbloom-gc.com/everbloomlogo.png",
+       "description": "Everbloom Gaming is a structured Valorant esports organization from the DACH region, founded in early 2026. We operate a FLINTA and Male roster competing at Silver to Immortal level.",
+       "sport": "Esports",
+       "foundingDate": "2026-01",
+       "areaServed": ["Germany", "Austria", "Switzerland"],
+       "sameAs": [
+         "https://x.com/everbloom_gc",
+         "https://www.instagram.com/everbloom.gc",
+         "https://www.tiktok.com/@everbloomgc",
+         "https://www.twitch.tv/everbloomvalorant",
+         "https://discord.gg/bQ8phXAmSa"
+       ],
+       "founder": [
+         { "@type": "Person", "name": "Raph" },
+         { "@type": "Person", "name": "Ruby" }
+       ],
+       "sponsor": [
+         { "@type": "Organization", "name": "Rostered.gg", "url": "https://rostered.gg" },
+         { "@type": "Organization", "name": "Evolupe Media", "url": "https://discord.gg/bQ8phXAmSa" }
+       ]
+     }
+     </script>
+
+     <script type="application/ld+json">
+     {
+       "@context": "https://schema.org",
+       "@type": "FAQPage",
+       "mainEntity": [
+         {
+           "@type": "Question",
+           "name": "How can I join Everbloom Gaming?",
+           "acceptedAnswer": { "@type": "Answer", "text": "Fill out our application form at everbloom-gc.com. We accept applications for our FLINTA and Male Valorant rosters." }
+         },
+         {
+           "@type": "Question",
+           "name": "What rank do I need to join Everbloom?",
+           "acceptedAnswer": { "@type": "Answer", "text": "For our FLINTA roster we look for Silver+ players. For our Male roster we look for Ascendant+ players." }
+         },
+         {
+           "@type": "Question",
+           "name": "Where is Everbloom Gaming based?",
+           "acceptedAnswer": { "@type": "Answer", "text": "Everbloom Gaming is based in the DACH region (Germany, Austria, Switzerland) and was founded in January 2026." }
+         },
+         {
+           "@type": "Question",
+           "name": "How can I request a scrim against Everbloom?",
+           "acceptedAnswer": { "@type": "Answer", "text": "You can use the Scrim Request form on our website at everbloom-gc.com or contact us via Discord." }
+         }
+       ]
+     }
+     </script>
 </head>
 <body>
 
@@ -428,7 +487,7 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
                   <div class="news-column reveal">
                       <div class="info-card">
                           <h3>LATEST NEWS</h3>
-                          <p style="line-height: 1.6;">• Full Male Roster<br>• Vexa joined the FLINTA Roster<br>• Norwin joined the Male Roster<br>• Noctra joined the team</p>
+                          <p style="line-height: 1.6;">• Dr0xvlr joined the Male Roster<br>• Vexa joined the FLINTA Roster<br>• Norwin joined the Male Roster<br>• Noctra joined the team</p>
                       </div>
                       <div class="info-card reveal">
                           <h3>CURRENT GOALS</h3>
@@ -688,6 +747,65 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
         </div>
      </section>
 
+     
+     <!-- FAQ SECTION -->
+     <div class="glitch-divider"><span>// FAQ //</span></div>
+     <section class="reveal page-section" id="faq">
+        <div class="container">
+            <div class="section-h">
+                <div class="kicker">GOT QUESTIONS?</div>
+                <h2>FAQ</h2>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:14px;max-width:800px;margin:0 auto;">
+                <div class="faq-item info-card" style="padding:22px 28px;cursor:pointer;" onclick="toggleFaq(this)">
+                    <div style="display:flex;justify-content:space-between;align-items:center;">
+                        <strong>How can I join Everbloom Gaming?</strong>
+                        <i class="fas fa-chevron-down faq-icon" style="color:var(--primary);transition:0.3s;"></i>
+                    </div>
+                    <div class="faq-answer" style="max-height:0;overflow:hidden;transition:max-height 0.4s ease;opacity:0;">
+                        <p style="margin-top:14px;opacity:0.75;line-height:1.7;font-size:0.9rem;">Fill out our application form via the "JOIN THE BLOOM" button on our website. We review every application and reach out within 48 hours.</p>
+                    </div>
+                </div>
+                <div class="faq-item info-card" style="padding:22px 28px;cursor:pointer;" onclick="toggleFaq(this)">
+                    <div style="display:flex;justify-content:space-between;align-items:center;">
+                        <strong>What rank do I need to join?</strong>
+                        <i class="fas fa-chevron-down faq-icon" style="color:var(--primary);transition:0.3s;"></i>
+                    </div>
+                    <div class="faq-answer" style="max-height:0;overflow:hidden;transition:max-height 0.4s ease;opacity:0;">
+                        <p style="margin-top:14px;opacity:0.75;line-height:1.7;font-size:0.9rem;">FLINTA Roster: Silver+. Male Roster: Ascendant+. We value attitude and coachability as much as rank.</p>
+                    </div>
+                </div>
+                <div class="faq-item info-card" style="padding:22px 28px;cursor:pointer;" onclick="toggleFaq(this)">
+                    <div style="display:flex;justify-content:space-between;align-items:center;">
+                        <strong>How can I scrim against Everbloom?</strong>
+                        <i class="fas fa-chevron-down faq-icon" style="color:var(--primary);transition:0.3s;"></i>
+                    </div>
+                    <div class="faq-answer" style="max-height:0;overflow:hidden;transition:max-height 0.4s ease;opacity:0;">
+                        <p style="margin-top:14px;opacity:0.75;line-height:1.7;font-size:0.9rem;">Use the Scrim Request form on our homepage or reach out directly via Discord. We're always open to structured scrim partnerships.</p>
+                    </div>
+                </div>
+                <div class="faq-item info-card" style="padding:22px 28px;cursor:pointer;" onclick="toggleFaq(this)">
+                    <div style="display:flex;justify-content:space-between;align-items:center;">
+                        <strong>Where is Everbloom Gaming based?</strong>
+                        <i class="fas fa-chevron-down faq-icon" style="color:var(--primary);transition:0.3s;"></i>
+                    </div>
+                    <div class="faq-answer" style="max-height:0;overflow:hidden;transition:max-height 0.4s ease;opacity:0;">
+                        <p style="margin-top:14px;opacity:0.75;line-height:1.7;font-size:0.9rem;">We are based in the DACH region (Germany, Austria, Switzerland), founded in January 2026 by Raph and Ruby.</p>
+                    </div>
+                </div>
+                <div class="faq-item info-card" style="padding:22px 28px;cursor:pointer;" onclick="toggleFaq(this)">
+                    <div style="display:flex;justify-content:space-between;align-items:center;">
+                        <strong>Are you looking for sponsors or partners?</strong>
+                        <i class="fas fa-chevron-down faq-icon" style="color:var(--primary);transition:0.3s;"></i>
+                    </div>
+                    <div class="faq-answer" style="max-height:0;overflow:hidden;transition:max-height 0.4s ease;opacity:0;">
+                        <p style="margin-top:14px;opacity:0.75;line-height:1.7;font-size:0.9rem;">Yes! Reach out to us via Discord or check our sponsor page. We're open to meaningful partnerships that align with our values.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </section>
+
      <footer>
           <div class="container">
               <div class="footer-socials">
@@ -843,6 +961,23 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
           function animate() { ctx.clearRect(0, 0, W, H); particles.forEach(p => { p.update(); p.draw(); }); requestAnimationFrame(animate); }
           animate();
      </script>
+
+     <script>
+     function toggleFaq(el) {
+         const answer = el.querySelector('.faq-answer');
+         const icon = el.querySelector('.faq-icon');
+         const isOpen = answer.style.maxHeight !== '0px' && answer.style.maxHeight !== '';
+         // Close all
+         document.querySelectorAll('.faq-answer').forEach(a => { a.style.maxHeight = '0'; a.style.opacity = '0'; });
+         document.querySelectorAll('.faq-icon').forEach(i => { i.style.transform = 'rotate(0deg)'; });
+         if (!isOpen) {
+             answer.style.maxHeight = answer.scrollHeight + 'px';
+             answer.style.opacity = '1';
+             icon.style.transform = 'rotate(180deg)';
+         }
+     }
+     </script>
+
 </body>
 </html>
      <script>
@@ -911,3 +1046,5 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
           }
           splashLoop();
      </script>
+
+
