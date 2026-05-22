@@ -582,8 +582,19 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
 
      <section id="roster" class="reveal page-section">
     <div class="container">
-        <h3 style="text-align:center; color:var(--primary); text-transform: uppercase; margin-bottom: 20px;">FLINTA Roster</h3>
-        <div class="roster-grid-container">
+        <!-- FLINTA PAUSED BANNER -->
+        <div style="text-align:center; margin-bottom: 24px;">
+            <h3 style="color:var(--primary); text-transform: uppercase; letter-spacing: 3px; margin-bottom: 14px;">FLINTA Roster</h3>
+            <div style="display:inline-flex; align-items:center; gap:12px; background:rgba(212,23,91,0.08); border:1px solid rgba(212,23,91,0.35); border-radius:8px; padding:14px 28px; backdrop-filter:blur(10px);">
+                <i class="fas fa-pause-circle" style="color:var(--primary); font-size:1.3rem;"></i>
+                <div style="text-align:left;">
+                    <div style="font-weight:900; font-size:0.75rem; letter-spacing:3px; color:var(--primary); text-transform:uppercase;">Roster Paused until 23.07.2026</div>
+                    <div style="font-size:0.78rem; opacity:0.6; margin-top:3px;">Applications still open — we'll review after the break.</div>
+                </div>
+                <a href="https://forms.gle/VeNmZo9DkJo35PR5A" target="_blank" class="apply-btn" style="padding:8px 18px; font-size:0.65rem; letter-spacing:2px; margin:0;">APPLY</a>
+            </div>
+        </div>
+        <div class="roster-grid-container" style="opacity:0.6; filter:grayscale(30%); pointer-events:none;">
             <div class="roster-row-top">
                 <div class="player-card reveal">
                     <img loading="lazy" src="astra.png" class="player-img">
@@ -598,18 +609,6 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
                     </div>
                 </div>
                 <div class="player-card reveal">
-                    <img loading="lazy" src="jett.png" class="player-img">
-                    <div class="card-content">
-                        <small style="color:var(--primary); font-weight: bold;">DUELIST</small>
-                        <div style="font-weight:900; font-size:1.4rem;">Archer</div>
-                        <div class="rank-tag rank-silver">Silver 2</div>
-                        <div class="player-links">
-                            <a href="https://tracker.gg/valorant/profile/riot/c9%20%EC%98%A5%EC%8B%9C%230001/" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
-                            <a href="https://x.com/archerhh0" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="player-card reveal">
                     <img loading="lazy" src="Chamber.webp" class="player-img">
                     <div class="card-content">
                         <small style="color:var(--primary); font-weight: bold;">SENTINEL</small>
@@ -618,20 +617,6 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
                         <div class="player-links">
                             <a href="https://tracker.gg/valorant/profile/riot/settie%23TTV/" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
                             <a href="https://x.com/Suns3tt_VLR" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="roster-row-bottom roster-2nd-row">
-                <div class="player-card reveal">
-                    <img loading="lazy" src="sage.webp" class="player-img" style="object-fit: contain; padding: 30px;">
-                    <div class="card-content">
-                        <small style="color:var(--primary); font-weight: bold;">SENTINEL</small>
-                        <div style="font-weight:900; font-size:1.4rem;">Vexa</div>
-                        <div class="rank-tag rank-silver">Silver 2</div>
-                        <div class="player-links">
-                            <a href="https://tracker.gg/valorant/profile/riot/Vexa%23G220/overview" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
-                            <a href="https://x.com/vexaizy" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
                         </div>
                     </div>
                 </div>
@@ -695,7 +680,7 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
                     <div class="card-content">
                         <small style="color:var(--primary); font-weight: bold;">DUELIST</small>
                         <div style="font-weight:900; font-size:1.4rem;">Envy</div>
-                        <div class="rank-tag rank-ascendant">Ascendant 1</div>
+                        <div class="rank-tag rank-diamond">Diamond 3</div>
                         <div class="player-links">
                             <a href="https://tracker.gg/valorant/profile/riot/envy%23grit/overview?platform=pc&playlist=competitive&season=9d85c932-4820-c060-09c3-668636d4df1b" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
                             <a href="https://x.com/envy_fpsss" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
@@ -1046,5 +1031,6 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
           }
           splashLoop();
      </script>
+
 
 
