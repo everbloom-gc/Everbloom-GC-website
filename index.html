@@ -351,73 +351,18 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
 .glitch-divider span{font-size:.55rem;letter-spacing:4px;color:var(--primary);background:var(--bg);
   padding:0 18px;position:relative;font-weight:700;font-family:monospace}
 </style>
-
-     <script type="application/ld+json">
-     {
-       "@context": "https://schema.org",
-       "@type": "SportsOrganization",
-       "name": "Everbloom Gaming",
-       "alternateName": "Everbloom GC",
-       "url": "https://everbloom-gc.com",
-       "logo": "https://everbloom-gc.com/everbloomlogo.png",
-       "description": "Everbloom Gaming is a structured Valorant esports organization from the DACH region, founded in early 2026. We operate a FLINTA and Male roster competing at Silver to Immortal level.",
-       "sport": "Esports",
-       "foundingDate": "2026-01",
-       "areaServed": ["Germany", "Austria", "Switzerland"],
-       "sameAs": [
-         "https://x.com/everbloom_gc",
-         "https://www.instagram.com/everbloom.gc",
-         "https://www.tiktok.com/@everbloomgc",
-         "https://www.twitch.tv/everbloomvalorant",
-         "https://discord.gg/bQ8phXAmSa"
-       ],
-       "founder": [
-         { "@type": "Person", "name": "Raph" },
-         { "@type": "Person", "name": "Ruby" }
-       ],
-       "sponsor": [
-         { "@type": "Organization", "name": "Rostered.gg", "url": "https://rostered.gg" },
-         { "@type": "Organization", "name": "Evolupe Media", "url": "https://discord.gg/bQ8phXAmSa" }
-       ]
-     }
-     </script>
-
-     <script type="application/ld+json">
-     {
-       "@context": "https://schema.org",
-       "@type": "FAQPage",
-       "mainEntity": [
-         {
-           "@type": "Question",
-           "name": "How can I join Everbloom Gaming?",
-           "acceptedAnswer": { "@type": "Answer", "text": "Fill out our application form at everbloom-gc.com. We accept applications for our FLINTA and Male Valorant rosters." }
-         },
-         {
-           "@type": "Question",
-           "name": "What rank do I need to join Everbloom?",
-           "acceptedAnswer": { "@type": "Answer", "text": "For our FLINTA roster we look for Silver+ players. For our Male roster we look for Ascendant+ players." }
-         },
-         {
-           "@type": "Question",
-           "name": "Where is Everbloom Gaming based?",
-           "acceptedAnswer": { "@type": "Answer", "text": "Everbloom Gaming is based in the DACH region (Germany, Austria, Switzerland) and was founded in January 2026." }
-         },
-         {
-           "@type": "Question",
-           "name": "How can I request a scrim against Everbloom?",
-           "acceptedAnswer": { "@type": "Answer", "text": "You can use the Scrim Request form on our website at everbloom-gc.com or contact us via Discord." }
-         }
-       ]
-     }
-     </script>
 </head>
 <body>
 
      <div id="splash">
-         <img src="everbloomlogo.png" class="splash-logo" alt="Everbloom">
-         <div class="splash-title">EVERBLOOM</div>
-         <div class="splash-sub">BLOOM OR DECAY</div>
-         <div class="splash-bar"></div>
+         <canvas id="splash-canvas" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1;"></canvas>
+         <div class="vign"></div>
+         <div class="splash-center">
+             <img src="everbloomlogo.png" class="splash-logo" alt="Everbloom">
+             <div class="splash-title">EVERBLOOM</div>
+             <div class="splash-sub">BLOOM OR DECAY</div>
+             <div class="splash-bar"></div>
+         </div>
      </div>
 
      <canvas id="particle-canvas" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:2;pointer-events:none;"></canvas>
@@ -492,6 +437,26 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
                       <div class="info-card reveal">
                           <h3>CURRENT GOALS</h3>
                           <p style="line-height: 1.6;">• <s>Full roster 2026</s><br>• Project V entry<br>• Premier Victory</p>
+                      </div>
+                      <div class="info-card reveal" style="margin-top:40px; min-height:600px; display:flex; flex-direction:column; justify-content:center;">
+                          <h3 style="margin-bottom:10px;"><i class="fas fa-crosshairs"></i> SCRIM REQUEST</h3>
+                          <p style="font-size:0.85rem;opacity:0.7;line-height:1.6;margin-bottom:20px;">Wanna scrim? Drop your info and we'll hit you up on Discord.</p>
+                          <div style="display:flex;flex-direction:column;gap:14px;">
+                              <input id="scrim-org" type="text" placeholder="Org / Team Name" style="background:rgba(255,255,255,0.05);border:1px solid rgba(212,23,91,0.3);border-radius:4px;padding:12px 14px;color:var(--text);font-family:inherit;font-size:0.85rem;outline:none;">
+                              <input id="scrim-rank" type="text" placeholder="Average Rank" style="background:rgba(255,255,255,0.05);border:1px solid rgba(212,23,91,0.3);border-radius:4px;padding:12px 14px;color:var(--text);font-family:inherit;font-size:0.85rem;outline:none;">
+                              <input id="scrim-discord" type="text" placeholder="Your Discord Tag" style="background:rgba(255,255,255,0.05);border:1px solid rgba(212,23,91,0.3);border-radius:4px;padding:12px 14px;color:var(--text);font-family:inherit;font-size:0.85rem;outline:none;">
+                              <input id="scrim-time" type="text" placeholder="Preferred Time (e.g. Mon 20:00 CET)" style="background:rgba(255,255,255,0.05);border:1px solid rgba(212,23,91,0.3);border-radius:4px;padding:12px 14px;color:var(--text);font-family:inherit;font-size:0.85rem;outline:none;">
+                              <select id="scrim-roster" style="background:rgba(12,18,28,0.95);border:1px solid rgba(212,23,91,0.3);border-radius:4px;padding:12px 14px;color:var(--text);font-family:inherit;font-size:0.85rem;outline:none;cursor:pointer;">
+                                  <option value="">vs. which roster?</option>
+                                  <option value="flinta">FLINTA Roster</option>
+                                  <option value="male">Male Roster</option>
+                                  <option value="both">Both</option>
+                              </select>
+                              <button id="scrim-btn" onclick="sendScrimRequest()" style="background:transparent;border:2px solid var(--primary);color:var(--text);padding:14px;border-radius:4px;font-weight:900;text-transform:uppercase;letter-spacing:2px;font-size:0.75rem;cursor:pointer;transition:0.3s;font-family:inherit;">
+                                  SEND REQUEST
+                              </button>
+                              <div id="scrim-msg" style="font-size:0.78rem;text-align:center;min-height:18px;color:var(--primary);"></div>
+                          </div>
                       </div>
                   </div>
                   <!-- Elfsight Twitter Feed -->
@@ -582,29 +547,30 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
 
      <section id="roster" class="reveal page-section">
     <div class="container">
-        <!-- FLINTA PAUSED BANNER -->
-        <div style="text-align:center; margin-bottom: 24px;">
-            <h3 style="color:var(--primary); text-transform: uppercase; letter-spacing: 3px; margin-bottom: 14px;">FLINTA Roster</h3>
-            <div style="display:inline-flex; align-items:center; gap:12px; background:rgba(212,23,91,0.08); border:1px solid rgba(212,23,91,0.35); border-radius:8px; padding:14px 28px; backdrop-filter:blur(10px);">
-                <i class="fas fa-pause-circle" style="color:var(--primary); font-size:1.3rem;"></i>
-                <div style="text-align:left;">
-                    <div style="font-weight:900; font-size:0.75rem; letter-spacing:3px; color:var(--primary); text-transform:uppercase;">Roster Paused until 23.07.2026</div>
-                    <div style="font-size:0.78rem; opacity:0.6; margin-top:3px;">Applications still open — we'll review after the break.</div>
-                </div>
-                <a href="https://forms.gle/VeNmZo9DkJo35PR5A" target="_blank" class="apply-btn" style="padding:8px 18px; font-size:0.65rem; letter-spacing:2px; margin:0;">APPLY</a>
-            </div>
-        </div>
-        <div class="roster-grid-container" style="opacity:0.6; filter:grayscale(30%); pointer-events:none;">
+        <h3 style="text-align:center; color:var(--primary); text-transform: uppercase; margin-bottom: 20px;">FLINTA Roster</h3>
+        <div class="roster-grid-container">
             <div class="roster-row-top">
                 <div class="player-card reveal">
                     <img loading="lazy" src="astra.png" class="player-img">
                     <div class="card-content">
                         <small style="color:var(--primary); font-weight: bold;">CONTROLLER</small>
                         <div style="font-weight:900; font-size:1.4rem;">Ruby</div>
-                        <div class="rank-tag rank-silver">Silver 3</div>
+                        <div class="rank-tag rank-silver">Silver 2</div>
                         <div class="player-links">
                             <a href="https://tracker.gg/valorant/profile/riot/Rubyxcube%23EBM/" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
                             <a href="https://x.com/x2_zelda" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="player-card reveal">
+                    <img loading="lazy" src="jett.png" class="player-img">
+                    <div class="card-content">
+                        <small style="color:var(--primary); font-weight: bold;">DUELIST</small>
+                        <div style="font-weight:900; font-size:1.4rem;">Archer</div>
+                        <div class="rank-tag rank-silver">Silver 2</div>
+                        <div class="player-links">
+                            <a href="https://tracker.gg/valorant/profile/riot/c9%20%EC%98%A5%EC%8B%9C%230001/" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
+                            <a href="https://x.com/archerhh0" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
                         </div>
                     </div>
                 </div>
@@ -620,14 +586,28 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="roster-row-bottom roster-2nd-row">
+                <div class="player-card reveal">
+                    <img loading="lazy" src="sage.webp" class="player-img" style="object-fit: contain; padding: 30px;">
+                    <div class="card-content">
+                        <small style="color:var(--primary); font-weight: bold;">SENTINEL</small>
+                        <div style="font-weight:900; font-size:1.4rem;">Vexa</div>
+                        <div class="rank-tag rank-silver">Silver 2</div>
+                        <div class="player-links">
+                            <a href="https://tracker.gg/valorant/profile/riot/Vexa%23G220/overview" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
+                            <a href="https://x.com/vexaizy" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
                 <div class="player-card reveal">
                     <img loading="lazy" src="reyna.webp" class="player-img" style="object-fit: cover; object-position: top center;">
                     <div class="card-content">
                         <small style="color:var(--primary); font-weight: bold;">FLEX</small>
                         <div style="font-weight:900; font-size:1.4rem;">Raph</div>
-                        <div class="rank-tag rank-bronze">Bronze 3</div>
+                        <div class="rank-tag rank-bronze">Unranked</div>
                         <div class="player-links">
-                            <a href="https://tracker.gg/valorant/profile/riot/DreamyDevour%23EBM/overview?playlist=competitive&platform=pc" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
+                            <a href="https://tracker.gg/valorant/profile/riot/WalmartReyna%23GOAT/overview?platform=pc&playlist=competitive&season=9d85c932-4820-c060-09c3-668636d4df1b" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
                             <a href="https://x.com/wavvybecci_" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
                         </div>
                     </div>
@@ -643,7 +623,7 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
                     <div class="card-content">
                         <small style="color:var(--primary); font-weight: bold;">CONTROLLER</small>
                         <div style="font-weight:900; font-size:1.4rem;">JC</div>
-                        <div class="rank-tag rank-ascendant">Ascendant 3</div>
+                        <div class="rank-tag rank-ascendant">Ascendant 2</div>
                         <div class="player-links">
                             <a href="https://tracker.gg/valorant/profile/riot/jczera%23LG16/" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
                         </div>
@@ -654,7 +634,7 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
                     <div class="card-content">
                         <small style="color:var(--primary); font-weight: bold;">INITIATOR</small>
                         <div style="font-weight:900; font-size:1.4rem;">BluntDawg</div>
-                        <div class="rank-tag rank-ascendant">Ascendant 3</div>
+                        <div class="rank-tag rank-ascendant">Ascendant 2</div>
                         <div class="player-links">
                             <a href="https://tracker.gg/valorant/profile/riot/BluntDawg51%23081z/overview?platform=pc&playlist=competitive&season=ce2783e8-44fc-dd48-3da3-33b5ba6c4a22" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
                             <a href="https://x.com/dr0xvlr" style="display:none" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
@@ -666,7 +646,7 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
                     <div class="card-content">
                         <small style="color:var(--primary); font-weight: bold;">DUELIST</small>
                         <div style="font-weight:900; font-size:1.4rem;">Sin</div>
-                        <div class="rank-tag rank-immortal">Immortal 2</div>
+                        <div class="rank-tag rank-immortal">Immortal 3</div>
                         <div class="player-links">
                             <a href="https://tracker.gg/valorant/profile/riot/feek%20dood%23diff/overview?platform=pc&playlist=competitive&season=ce2783e8-44fc-dd48-3da3-33b5ba6c4a22" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
                             <a href="https://x.com/Noctravlr" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
@@ -680,7 +660,7 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
                     <div class="card-content">
                         <small style="color:var(--primary); font-weight: bold;">DUELIST</small>
                         <div style="font-weight:900; font-size:1.4rem;">Envy</div>
-                        <div class="rank-tag rank-diamond">Diamond 3</div>
+                        <div class="rank-tag rank-ascendant">Ascendant 1</div>
                         <div class="player-links">
                             <a href="https://tracker.gg/valorant/profile/riot/envy%23grit/overview?platform=pc&playlist=competitive&season=9d85c932-4820-c060-09c3-668636d4df1b" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
                             <a href="https://x.com/envy_fpsss" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
@@ -727,65 +707,6 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
                     <a href="https://discord.gg/bQ8phXAmSa" target="_blank" class="apply-btn" style="padding: 12px 25px; font-size: 0.8rem; border-color: #5865F2; background: rgba(88, 101, 242, 0.1); white-space: nowrap;">
                         <i class="fab fa-discord"></i> Join Discord
                     </a>
-                </div>
-            </div>
-        </div>
-     </section>
-
-     
-     <!-- FAQ SECTION -->
-     <div class="glitch-divider"><span>// FAQ //</span></div>
-     <section class="reveal page-section" id="faq">
-        <div class="container">
-            <div class="section-h">
-                <div class="kicker">GOT QUESTIONS?</div>
-                <h2>FAQ</h2>
-            </div>
-            <div style="display:flex;flex-direction:column;gap:14px;max-width:800px;margin:0 auto;">
-                <div class="faq-item info-card" style="padding:22px 28px;cursor:pointer;" onclick="toggleFaq(this)">
-                    <div style="display:flex;justify-content:space-between;align-items:center;">
-                        <strong>How can I join Everbloom Gaming?</strong>
-                        <i class="fas fa-chevron-down faq-icon" style="color:var(--primary);transition:0.3s;"></i>
-                    </div>
-                    <div class="faq-answer" style="max-height:0;overflow:hidden;transition:max-height 0.4s ease;opacity:0;">
-                        <p style="margin-top:14px;opacity:0.75;line-height:1.7;font-size:0.9rem;">Fill out our application form via the "JOIN THE BLOOM" button on our website. We review every application and reach out within 48 hours.</p>
-                    </div>
-                </div>
-                <div class="faq-item info-card" style="padding:22px 28px;cursor:pointer;" onclick="toggleFaq(this)">
-                    <div style="display:flex;justify-content:space-between;align-items:center;">
-                        <strong>What rank do I need to join?</strong>
-                        <i class="fas fa-chevron-down faq-icon" style="color:var(--primary);transition:0.3s;"></i>
-                    </div>
-                    <div class="faq-answer" style="max-height:0;overflow:hidden;transition:max-height 0.4s ease;opacity:0;">
-                        <p style="margin-top:14px;opacity:0.75;line-height:1.7;font-size:0.9rem;">FLINTA Roster: Silver+. Male Roster: Ascendant+. We value attitude and coachability as much as rank.</p>
-                    </div>
-                </div>
-                <div class="faq-item info-card" style="padding:22px 28px;cursor:pointer;" onclick="toggleFaq(this)">
-                    <div style="display:flex;justify-content:space-between;align-items:center;">
-                        <strong>How can I scrim against Everbloom?</strong>
-                        <i class="fas fa-chevron-down faq-icon" style="color:var(--primary);transition:0.3s;"></i>
-                    </div>
-                    <div class="faq-answer" style="max-height:0;overflow:hidden;transition:max-height 0.4s ease;opacity:0;">
-                        <p style="margin-top:14px;opacity:0.75;line-height:1.7;font-size:0.9rem;">Use the Scrim Request form on our homepage or reach out directly via Discord. We're always open to structured scrim partnerships.</p>
-                    </div>
-                </div>
-                <div class="faq-item info-card" style="padding:22px 28px;cursor:pointer;" onclick="toggleFaq(this)">
-                    <div style="display:flex;justify-content:space-between;align-items:center;">
-                        <strong>Where is Everbloom Gaming based?</strong>
-                        <i class="fas fa-chevron-down faq-icon" style="color:var(--primary);transition:0.3s;"></i>
-                    </div>
-                    <div class="faq-answer" style="max-height:0;overflow:hidden;transition:max-height 0.4s ease;opacity:0;">
-                        <p style="margin-top:14px;opacity:0.75;line-height:1.7;font-size:0.9rem;">We are based in the DACH region (Germany, Austria, Switzerland), founded in January 2026 by Raph and Ruby.</p>
-                    </div>
-                </div>
-                <div class="faq-item info-card" style="padding:22px 28px;cursor:pointer;" onclick="toggleFaq(this)">
-                    <div style="display:flex;justify-content:space-between;align-items:center;">
-                        <strong>Are you looking for sponsors or partners?</strong>
-                        <i class="fas fa-chevron-down faq-icon" style="color:var(--primary);transition:0.3s;"></i>
-                    </div>
-                    <div class="faq-answer" style="max-height:0;overflow:hidden;transition:max-height 0.4s ease;opacity:0;">
-                        <p style="margin-top:14px;opacity:0.75;line-height:1.7;font-size:0.9rem;">Yes! Reach out to us via Discord or check our sponsor page. We're open to meaningful partnerships that align with our values.</p>
-                    </div>
                 </div>
             </div>
         </div>
@@ -947,25 +868,7 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
           animate();
      </script>
 
-     <script>
-     function toggleFaq(el) {
-         const answer = el.querySelector('.faq-answer');
-         const icon = el.querySelector('.faq-icon');
-         const isOpen = answer.style.maxHeight !== '0px' && answer.style.maxHeight !== '';
-         // Close all
-         document.querySelectorAll('.faq-answer').forEach(a => { a.style.maxHeight = '0'; a.style.opacity = '0'; });
-         document.querySelectorAll('.faq-icon').forEach(i => { i.style.transform = 'rotate(0deg)'; });
-         if (!isOpen) {
-             answer.style.maxHeight = answer.scrollHeight + 'px';
-             answer.style.opacity = '1';
-             icon.style.transform = 'rotate(180deg)';
-         }
-     }
-     </script>
-
-</body>
-</html>
-     <script>
+<script>
           // Splash petal animation
           const splashCanvas = document.getElementById('splash-canvas');
           const splashCtx = splashCanvas.getContext('2d');
@@ -1032,5 +935,77 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
           splashLoop();
      </script>
 
-
-
+     <script>
+     async function sendScrimRequest() {
+         const fields = [
+             { id: 'scrim-org', required: true },
+             { id: 'scrim-rank', required: false },
+             { id: 'scrim-discord', required: true },
+             { id: 'scrim-time', required: false },
+             { id: 'scrim-roster', required: true }
+         ];
+         fields.forEach(f => {
+             const el = document.getElementById(f.id);
+             el.style.border = '1px solid rgba(212,23,91,0.3)';
+             const existing = el.parentElement.querySelector('.scrim-err');
+             if (existing) existing.remove();
+         });
+         let valid = true;
+         fields.filter(f => f.required).forEach(f => {
+             const el = document.getElementById(f.id);
+             if (!el.value.trim()) {
+                 valid = false;
+                 el.style.border = '1px solid #e05544';
+                 el.style.boxShadow = '0 0 8px rgba(220,50,50,0.4)';
+                 const err = document.createElement('div');
+                 err.className = 'scrim-err';
+                 err.style.cssText = 'color:#e05544;font-size:0.65rem;margin-top:3px;display:flex;align-items:center;gap:4px;';
+                 err.innerHTML = '<i class="fas fa-exclamation-circle"></i> This field is required';
+                 el.parentElement.insertBefore(err, el.nextSibling);
+             }
+         });
+         if (!valid) return;
+         const org = document.getElementById('scrim-org').value.trim();
+         const rank = document.getElementById('scrim-rank').value.trim();
+         const discord = document.getElementById('scrim-discord').value.trim();
+         const time = document.getElementById('scrim-time').value.trim();
+         const roster = document.getElementById('scrim-roster').value;
+         const btn = document.getElementById('scrim-btn');
+         const msg = document.getElementById('scrim-msg');
+         btn.textContent = 'SENDING...';
+         btn.style.opacity = '0.6';
+         const webhookUrl = 'https://discordapp.com/api/webhooks/1504882060148478086/Qbhv0sUivEYO7pvHdNuyae8-R-pzchpvVg2JHGYsjpuzbS7GEK3P_Eq0doDUZgbOAz2r';
+         const rosterMap = { flinta: 'FLINTA Roster', male: 'Male Roster', both: 'Both Rosters' };
+         const payload = {
+             embeds: [{
+                 title: '\uD83C\uDF38 NEW SCRIM REQUEST',
+                 color: 0xd4175b,
+                 fields: [
+                     { name: '\uD83C\uDFF7\uFE0F Org / Team', value: org, inline: true },
+                     { name: '\uD83D\uDCCA Average Rank', value: rank || 'Not specified', inline: true },
+                     { name: '\uD83D\uDCAC Discord', value: discord, inline: true },
+                     { name: '\u23F0 Preferred Time', value: time || 'Not specified', inline: true },
+                     { name: '\u2694\uFE0F vs. Roster', value: rosterMap[roster] || roster, inline: true }
+                 ],
+                 footer: { text: 'Sent via everbloom-gc.com' },
+                 timestamp: new Date().toISOString()
+             }]
+         };
+         try {
+             const res = await fetch(webhookUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+             if (res.ok) {
+                 btn.innerHTML = '<i class="fas fa-check-circle" style="font-size:1.4rem;"></i>';
+                 btn.style.opacity = '1';
+                 btn.style.background = '#22a970';
+                 btn.style.border = '2px solid #22a970';
+                 btn.style.color = 'white';
+                 msg.style.color = '#22a970';
+                 msg.textContent = 'Request sent! We\'ll hit you up soon. \uD83C\uDF38';
+                 ['scrim-org','scrim-rank','scrim-discord','scrim-time','scrim-roster'].forEach(id => { document.getElementById(id).value = ''; });
+                 setTimeout(() => { btn.innerHTML = 'SEND REQUEST'; btn.style.background = 'transparent'; btn.style.border = '2px solid var(--primary)'; btn.style.color = 'var(--text)'; msg.textContent = ''; }, 4000);
+             } else { btn.textContent = 'SEND REQUEST'; btn.style.opacity = '1'; msg.style.color = '#e05'; msg.textContent = 'Something went wrong. DM us on Discord!'; }
+         } catch(e) { btn.textContent = 'SEND REQUEST'; btn.style.opacity = '1'; msg.style.color = '#e05'; msg.textContent = 'Error sending. DM us on Discord!'; }
+     }
+     </script>
+</body>
+</html>
