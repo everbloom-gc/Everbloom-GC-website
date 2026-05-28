@@ -428,11 +428,11 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
                   <div class="news-column reveal">
                       <div class="info-card">
                           <h3>LATEST NEWS</h3>
-                          <p style="line-height: 1.6;">• Dr0xvlr joined the Male Roster<br>• Vexa joined the FLINTA Roster<br>• Norwin joined the Male Roster<br>• Noctra joined the team</p>
+                          <p style="line-height: 1.6;">• Coach for FLINTA Roster found<br>• Discord server reworked<br>• Active player search for FLINTA Roster</p>
                       </div>
                       <div class="info-card reveal">
                           <h3>CURRENT GOALS</h3>
-                          <p style="line-height: 1.6;">• Full roster 2026<br>• Project V entry<br>• Premier Victory</p>
+                          <p style="line-height: 1.6;">• <s>Full roster 2026</s><br>• Project V entry<br>• Premier Victory</p>
                       </div>
                   </div>
                   <!-- Elfsight Twitter Feed -->
@@ -523,9 +523,20 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
 
      <section id="roster" class="reveal page-section">
     <div class="container">
-        <h3 style="text-align:center; color:var(--primary); text-transform: uppercase; margin-bottom: 20px;">FLINTA Roster</h3>
-        <div class="roster-grid-container">
-            <div class="roster-row-top">
+        <!-- FLINTA PAUSED BANNER -->
+        <div style="text-align:center; margin-bottom: 24px;">
+            <h3 style="color:var(--primary); text-transform: uppercase; letter-spacing: 3px; margin-bottom: 14px;">FLINTA Roster</h3>
+            <div style="display:inline-flex; align-items:center; gap:12px; background:rgba(212,23,91,0.08); border:1px solid rgba(212,23,91,0.35); border-radius:8px; padding:14px 28px; backdrop-filter:blur(10px); flex-wrap:wrap; justify-content:center;">
+                <i class="fas fa-pause-circle" style="color:var(--primary); font-size:1.3rem;"></i>
+                <div style="text-align:left;">
+                    <div style="font-weight:900; font-size:0.75rem; letter-spacing:3px; color:var(--primary); text-transform:uppercase;">Roster Paused until 23.07.2026</div>
+                    <div style="font-size:0.78rem; opacity:0.6; margin-top:3px;">Applications still open — we'll review after the break.</div>
+                </div>
+                <a href="https://forms.gle/VeNmZo9DkJo35PR5A" target="_blank" class="apply-btn" style="padding:8px 18px; font-size:0.65rem; letter-spacing:2px; margin:0;">APPLY</a>
+            </div>
+        </div>
+        <div class="roster-grid-container" style="opacity:0.6; filter:grayscale(30%); pointer-events:none;">
+            <div class="roster-2nd-row" style="display:grid; grid-template-columns:repeat(2,1fr); gap:20px; width:66%;">
                 <div class="player-card reveal">
                     <img loading="lazy" src="astra.png" class="player-img">
                     <div class="card-content">
@@ -535,18 +546,6 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
                         <div class="player-links">
                             <a href="https://tracker.gg/valorant/profile/riot/Rubyxcube%23EBM/" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
                             <a href="https://x.com/x2_zelda" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="player-card reveal">
-                    <img loading="lazy" src="jett.png" class="player-img">
-                    <div class="card-content">
-                        <small style="color:var(--primary); font-weight: bold;">DUELIST</small>
-                        <div style="font-weight:900; font-size:1.4rem;">Archer</div>
-                        <div class="rank-tag rank-silver">Silver 2</div>
-                        <div class="player-links">
-                            <a href="https://tracker.gg/valorant/profile/riot/c9%20%EC%98%A5%EC%8B%9C%230001/" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
-                            <a href="https://x.com/archerhh0" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
                         </div>
                     </div>
                 </div>
@@ -563,27 +562,15 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
                     </div>
                 </div>
             </div>
-            <div class="roster-row-bottom roster-2nd-row">
-                <div class="player-card reveal">
-                    <img loading="lazy" src="sage.webp" class="player-img" style="object-fit: contain; padding: 30px;">
-                    <div class="card-content">
-                        <small style="color:var(--primary); font-weight: bold;">SENTINEL</small>
-                        <div style="font-weight:900; font-size:1.4rem;">Vexa</div>
-                        <div class="rank-tag rank-silver">Silver 2</div>
-                        <div class="player-links">
-                            <a href="https://tracker.gg/valorant/profile/riot/Vexa%23G220/overview" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
-                            <a href="https://x.com/vexaizy" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
-                        </div>
-                    </div>
-                </div>
+            <div style="display:grid; grid-template-columns:repeat(1,1fr); gap:20px; width:33%;">
                 <div class="player-card reveal">
                     <img loading="lazy" src="reyna.webp" class="player-img" style="object-fit: cover; object-position: top center;">
                     <div class="card-content">
                         <small style="color:var(--primary); font-weight: bold;">FLEX</small>
                         <div style="font-weight:900; font-size:1.4rem;">Raph</div>
-                        <div class="rank-tag rank-bronze">Unranked</div>
+                        <div class="rank-tag rank-bronze">Bronze 2</div>
                         <div class="player-links">
-                            <a href="https://tracker.gg/valorant/profile/riot/WalmartReyna%23GOAT/overview?platform=pc&playlist=competitive&season=9d85c932-4820-c060-09c3-668636d4df1b" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
+                            <a href="https://tracker.gg/valorant/profile/riot/DreamyDevour%23EBM/overview?playlist=competitive&platform=pc" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
                             <a href="https://x.com/wavvybecci_" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
                         </div>
                     </div>
@@ -842,6 +829,54 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
           const particles = Array.from({ length: COUNT }, () => new Particle());
           function animate() { ctx.clearRect(0, 0, W, H); particles.forEach(p => { p.update(); p.draw(); }); requestAnimationFrame(animate); }
           animate();
+     </script>
+
+     <script>
+     async function sendScrimRequest() {
+         const fields = [
+             { id: 'scrim-org', required: true }, { id: 'scrim-rank', required: false },
+             { id: 'scrim-discord', required: true }, { id: 'scrim-time', required: false },
+             { id: 'scrim-roster', required: true }
+         ];
+         fields.forEach(f => {
+             const el = document.getElementById(f.id);
+             el.style.border = '1px solid rgba(212,23,91,0.3)';
+             const existing = el.parentElement.querySelector('.scrim-err');
+             if (existing) existing.remove();
+         });
+         let valid = true;
+         fields.filter(f => f.required).forEach(f => {
+             const el = document.getElementById(f.id);
+             if (!el.value.trim()) {
+                 valid = false; el.style.border = '1px solid #e05544';
+                 const err = document.createElement('div'); err.className = 'scrim-err';
+                 err.style.cssText = 'color:#e05544;font-size:0.65rem;margin-top:3px;';
+                 err.innerHTML = '<i class="fas fa-exclamation-circle"></i> This field is required';
+                 el.parentElement.insertBefore(err, el.nextSibling);
+             }
+         });
+         if (!valid) return;
+         const btn = document.getElementById('scrim-btn');
+         const msg = document.getElementById('scrim-msg');
+         btn.textContent = 'SENDING...'; btn.style.opacity = '0.6';
+         const payload = { embeds: [{ title: '🌸 NEW SCRIM REQUEST', color: 0xd4175b, fields: [
+             { name: 'Org / Team', value: document.getElementById('scrim-org').value.trim(), inline: true },
+             { name: 'Rank', value: document.getElementById('scrim-rank').value.trim() || 'Not specified', inline: true },
+             { name: 'Discord', value: document.getElementById('scrim-discord').value.trim(), inline: true },
+             { name: 'Time', value: document.getElementById('scrim-time').value.trim() || 'Not specified', inline: true },
+             { name: 'vs. Roster', value: {'flinta':'FLINTA','male':'Male','both':'Both'}[document.getElementById('scrim-roster').value] || document.getElementById('scrim-roster').value, inline: true }
+         ], footer: { text: 'Sent via everbloom-gc.com' }, timestamp: new Date().toISOString() }] };
+         try {
+             const res = await fetch('https://discordapp.com/api/webhooks/1504882060148478086/Qbhv0sUivEYO7pvHdNuyae8-R-pzchpvVg2JHGYsjpuzbS7GEK3P_Eq0doDUZgbOAz2r', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+             if (res.ok) {
+                 btn.innerHTML = '<i class="fas fa-check-circle" style="font-size:1.4rem;"></i>';
+                 btn.style.opacity='1'; btn.style.background='#22a970'; btn.style.border='2px solid #22a970'; btn.style.color='white';
+                 msg.style.color='#22a970'; msg.textContent="Request sent! We'll hit you up soon. 🌸";
+                 ['scrim-org','scrim-rank','scrim-discord','scrim-time','scrim-roster'].forEach(id=>document.getElementById(id).value='');
+                 setTimeout(()=>{ btn.innerHTML='SEND REQUEST'; btn.style.background='transparent'; btn.style.border='2px solid var(--primary)'; btn.style.color='var(--text)'; msg.textContent=''; }, 4000);
+             } else { btn.textContent='SEND REQUEST'; btn.style.opacity='1'; msg.style.color='#e05'; msg.textContent='Something went wrong!'; }
+         } catch(e) { btn.textContent='SEND REQUEST'; btn.style.opacity='1'; msg.style.color='#e05'; msg.textContent='Error. DM us on Discord!'; }
+     }
      </script>
 </body>
 </html>
