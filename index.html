@@ -350,6 +350,28 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
   background:linear-gradient(90deg,transparent,var(--primary),transparent);opacity:.35}
 .glitch-divider span{font-size:.55rem;letter-spacing:4px;color:var(--primary);background:var(--bg);
   padding:0 18px;position:relative;font-weight:700;font-family:monospace}
+
+/* ========== COOKIE BANNER V2 - PILL ========== */
+#cookie-banner {
+    position: fixed; bottom: 80px; left: 50%; transform: translateX(-50%) translateY(200px);
+    z-index: 99999; transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+    display: flex; align-items: center; gap: 14px; flex-wrap: wrap; justify-content: center;
+    background: rgba(11, 18, 27, 0.97); backdrop-filter: blur(20px);
+    border: 1px solid rgba(212, 23, 91, 0.4); border-radius: 50px;
+    padding: 12px 20px; white-space: nowrap;
+    box-shadow: 0 0 30px rgba(212, 23, 91, 0.15);
+}
+#cookie-banner.visible { transform: translateX(-50%) translateY(0); }
+@media (max-width: 600px) {
+    #cookie-banner { bottom: 80px; border-radius: 16px; padding: 14px 18px; white-space: normal; width: calc(100% - 32px); }
+}
+.cookie-text { font-size: 0.78rem; opacity: 0.65; line-height: 1.5; }
+.cookie-text a { color: var(--primary); text-decoration: underline; }
+.cookie-btns { display: flex; gap: 8px; flex-shrink: 0; }
+.cookie-accept { background: var(--primary); color: white; border: none; padding: 8px 20px; border-radius: 50px; font-weight: 900; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: 0.3s; font-family: inherit; box-shadow: 0 0 15px rgba(212,23,91,0.4); }
+.cookie-accept:hover { box-shadow: 0 0 25px var(--primary); transform: scale(1.05); }
+.cookie-decline { background: transparent; color: rgba(255,255,255,0.35); border: none; padding: 8px 14px; border-radius: 50px; font-weight: 700; font-size: 0.7rem; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; transition: 0.3s; font-family: inherit; }
+.cookie-decline:hover { color: var(--primary); }
 </style>
 </head>
 <body>
@@ -359,6 +381,17 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
          <div class="splash-title">EVERBLOOM</div>
          <div class="splash-sub">BLOOM OR DECAY</div>
          <div class="splash-bar"></div>
+     </div>
+
+
+     <!-- COOKIE BANNER V2 - PILL -->
+     <div id="cookie-banner">
+         <span style="font-size:1rem;">🌸</span>
+         <div class="cookie-text">We use cookies for external services. <a href="legal.html">Privacy Policy</a></div>
+         <div class="cookie-btns">
+             <button class="cookie-decline" onclick="cookieDecline()">Decline</button>
+             <button class="cookie-accept" onclick="cookieAccept()">Accept</button>
+         </div>
      </div>
 
      <canvas id="particle-canvas" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:2;pointer-events:none;"></canvas>
@@ -433,6 +466,24 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
                       <div class="info-card reveal">
                           <h3>CURRENT GOALS</h3>
                           <p style="line-height: 1.6;">• <s>Full roster 2026</s><br>• Project V entry<br>• Premier Victory<br>• Complete FLINTA Roster</p>
+                      </div>
+                      <div class="info-card reveal" style="min-height:600px; display:flex; flex-direction:column; justify-content:center;">
+                          <h3 style="margin-bottom:10px;"><i class="fas fa-crosshairs"></i> SCRIM REQUEST</h3>
+                          <p style="font-size:0.85rem;opacity:0.7;line-height:1.6;margin-bottom:20px;">Wanna scrim? Drop your info and we'll hit you up on Discord.</p>
+                          <div style="display:flex;flex-direction:column;gap:14px;">
+                              <input id="scrim-org" type="text" placeholder="Org / Team Name" style="background:rgba(255,255,255,0.05);border:1px solid rgba(212,23,91,0.3);border-radius:4px;padding:12px 14px;color:var(--text);font-family:inherit;font-size:0.85rem;outline:none;">
+                              <input id="scrim-rank" type="text" placeholder="Average Rank" style="background:rgba(255,255,255,0.05);border:1px solid rgba(212,23,91,0.3);border-radius:4px;padding:12px 14px;color:var(--text);font-family:inherit;font-size:0.85rem;outline:none;">
+                              <input id="scrim-discord" type="text" placeholder="Your Discord Tag" style="background:rgba(255,255,255,0.05);border:1px solid rgba(212,23,91,0.3);border-radius:4px;padding:12px 14px;color:var(--text);font-family:inherit;font-size:0.85rem;outline:none;">
+                              <input id="scrim-time" type="text" placeholder="Preferred Time (e.g. Mon 20:00 CET)" style="background:rgba(255,255,255,0.05);border:1px solid rgba(212,23,91,0.3);border-radius:4px;padding:12px 14px;color:var(--text);font-family:inherit;font-size:0.85rem;outline:none;">
+                              <select id="scrim-roster" style="background:rgba(12,18,28,0.95);border:1px solid rgba(212,23,91,0.3);border-radius:4px;padding:12px 14px;color:var(--text);font-family:inherit;font-size:0.85rem;outline:none;cursor:pointer;">
+                                  <option value="">vs. which roster?</option>
+                                  <option value="flinta">FLINTA Roster</option>
+                                  <option value="male">Male Roster</option>
+                                  <option value="both">Both</option>
+                              </select>
+                              <button id="scrim-btn" onclick="sendScrimRequest()" style="background:transparent;border:2px solid var(--primary);color:var(--text);padding:14px;border-radius:4px;font-weight:900;text-transform:uppercase;letter-spacing:2px;font-size:0.75rem;cursor:pointer;transition:0.3s;font-family:inherit;">SEND REQUEST</button>
+                              <div id="scrim-msg" style="font-size:0.78rem;text-align:center;min-height:18px;color:var(--primary);"></div>
+                          </div>
                       </div>
                   </div>
                   <!-- Elfsight Twitter Feed -->
@@ -872,6 +923,25 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
                  setTimeout(()=>{ btn.innerHTML='SEND REQUEST'; btn.style.background='transparent'; btn.style.border='2px solid var(--primary)'; btn.style.color='var(--text)'; msg.textContent=''; }, 4000);
              } else { btn.textContent='SEND REQUEST'; btn.style.opacity='1'; msg.style.color='#e05'; msg.textContent='Something went wrong!'; }
          } catch(e) { btn.textContent='SEND REQUEST'; btn.style.opacity='1'; msg.style.color='#e05'; msg.textContent='Error. DM us on Discord!'; }
+     }
+     </script>
+
+     <script>
+     (function() {
+         const consent = localStorage.getItem('ebCookieConsent');
+         if (!consent) {
+             setTimeout(() => {
+                 document.getElementById('cookie-banner').classList.add('visible');
+             }, 3000);
+         }
+     })();
+     function cookieAccept() {
+         localStorage.setItem('ebCookieConsent', 'accepted');
+         document.getElementById('cookie-banner').style.transform = 'translateY(100%)';
+     }
+     function cookieDecline() {
+         localStorage.setItem('ebCookieConsent', 'declined');
+         document.getElementById('cookie-banner').style.transform = 'translateY(100%)';
      }
      </script>
 </body>
