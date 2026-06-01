@@ -864,7 +864,8 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
              if(el){
                  el.style.border='1px solid rgba(212,23,91,0.3)';
                  el.style.boxShadow='none';
-                 el.style.animation='none';
+                 el.style.animation='';
+                 void el.offsetWidth;
                  const e=el.parentElement.querySelector('.scrim-err');
                  if(e)e.remove();
              }
@@ -878,6 +879,7 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
                  if(el){
                      el.style.border='1px solid #e05544';
                      el.style.boxShadow='0 0 10px rgba(224,85,68,0.6), 0 0 20px rgba(224,85,68,0.3)';
+                     void el.offsetWidth;
                      el.style.animation='scrim-shake 0.4s ease';
                  }
              }
@@ -885,7 +887,8 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
 
          if(!valid){
              msg.style.color='#e05544';
-             msg.textContent='\u26a0\ufe0f Please fill in all required fields.';
+             msg.style.opacity='1';
+             msg.textContent='⚠️ Please fill in all required fields.';
              return;
          }
 
