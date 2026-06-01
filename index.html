@@ -437,6 +437,24 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
                           <h3>CURRENT GOALS</h3>
                           <p style="line-height: 1.6;">• <s>Full roster 2026</s><br>• Project V entry<br>• Premier Victory<br>• Complete FLINTA Roster</p>
                       </div>
+                      <div class="info-card reveal" style="min-height:560px;display:flex;flex-direction:column;justify-content:center;">
+                          <h3 style="margin-bottom:10px;"><i class="fas fa-crosshairs"></i> SCRIM REQUEST</h3>
+                          <p style="font-size:0.85rem;opacity:0.7;line-height:1.6;margin-bottom:20px;">Wanna scrim? Drop your info and we'll hit you up on Discord.</p>
+                          <div style="display:flex;flex-direction:column;gap:14px;">
+                              <input id="scrim-org" type="text" placeholder="Org / Team Name" style="background:rgba(255,255,255,0.05);border:1px solid rgba(212,23,91,0.3);border-radius:4px;padding:12px 14px;color:var(--text);font-family:inherit;font-size:0.85rem;outline:none;">
+                              <input id="scrim-rank" type="text" placeholder="Average Rank" style="background:rgba(255,255,255,0.05);border:1px solid rgba(212,23,91,0.3);border-radius:4px;padding:12px 14px;color:var(--text);font-family:inherit;font-size:0.85rem;outline:none;">
+                              <input id="scrim-discord" type="text" placeholder="Your Discord Tag" style="background:rgba(255,255,255,0.05);border:1px solid rgba(212,23,91,0.3);border-radius:4px;padding:12px 14px;color:var(--text);font-family:inherit;font-size:0.85rem;outline:none;">
+                              <input id="scrim-time" type="text" placeholder="Preferred Time (e.g. Mon 20:00 CET)" style="background:rgba(255,255,255,0.05);border:1px solid rgba(212,23,91,0.3);border-radius:4px;padding:12px 14px;color:var(--text);font-family:inherit;font-size:0.85rem;outline:none;">
+                              <select id="scrim-roster" style="background:rgba(12,18,28,0.95);border:1px solid rgba(212,23,91,0.3);border-radius:4px;padding:12px 14px;color:var(--text);font-family:inherit;font-size:0.85rem;outline:none;cursor:pointer;">
+                                  <option value="">vs. which roster?</option>
+                                  <option value="flinta">FLINTA Roster</option>
+                                  <option value="male">Male Roster</option>
+                                  <option value="both">Both</option>
+                              </select>
+                              <button id="scrim-btn" onclick="sendScrimRequest()" style="background:transparent;border:2px solid var(--primary);color:var(--text);padding:14px;border-radius:4px;font-weight:900;text-transform:uppercase;letter-spacing:2px;font-size:0.75rem;cursor:pointer;transition:0.3s;font-family:inherit;">SEND REQUEST</button>
+                              <div id="scrim-msg" style="font-size:0.78rem;text-align:center;min-height:18px;color:var(--primary);"></div>
+                          </div>
+                      </div>
                   </div>
                   <!-- Elfsight Twitter Feed -->
                   <div class="info-card reveal">
@@ -831,6 +849,38 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
           const particles = Array.from({ length: COUNT }, () => new Particle());
           function animate() { ctx.clearRect(0, 0, W, H); particles.forEach(p => { p.update(); p.draw(); }); requestAnimationFrame(animate); }
           animate();
+     </script>
+
+     <script>
+     async function sendScrimRequest(){
+         const ids=['scrim-org','scrim-rank','scrim-discord','scrim-time','scrim-roster'];
+         const req=['scrim-org','scrim-discord','scrim-roster'];
+         const btn=document.getElementById('scrim-btn');
+         const msg=document.getElementById('scrim-msg');
+         ids.forEach(id=>{const el=document.getElementById(id);if(el){el.style.border='1px solid rgba(212,23,91,0.3)';const e=el.parentElement.querySelector('.scrim-err');if(e)e.remove();}});
+         let valid=true;
+         req.forEach(id=>{const el=document.getElementById(id);if(!el||!el.value.trim()){valid=false;if(el){el.style.border='1px solid #e05544';const e=document.createElement('div');e.className='scrim-err';e.style.cssText='color:#e05544;font-size:0.65rem;margin-top:3px;';e.innerHTML='<i class="fas fa-exclamation-circle"></i> Required';el.parentElement.insertBefore(e,el.nextSibling);}}});
+         if(!valid)return;
+         btn.textContent='SENDING...';btn.style.opacity='0.6';btn.disabled=true;
+         const v=id=>(document.getElementById(id)||{value:''}).value.trim();
+         const rm={flinta:'FLINTA Roster',male:'Male Roster',both:'Both Rosters'};
+         const payload={embeds:[{title:'\uD83C\uDF38 NEW SCRIM REQUEST',color:0xd4175b,fields:[
+             {name:'Org / Team',value:v('scrim-org')||'-',inline:true},
+             {name:'Rank',value:v('scrim-rank')||'Not specified',inline:true},
+             {name:'Discord',value:v('scrim-discord')||'-',inline:true},
+             {name:'Time',value:v('scrim-time')||'Not specified',inline:true},
+             {name:'vs.',value:rm[v('scrim-roster')]||v('scrim-roster')||'-',inline:true}
+         ],footer:{text:'Sent via everbloom-gc.com'},timestamp:new Date().toISOString()}]};
+         try{
+             const res=await fetch('https://discord.com/api/webhooks/1504882060148478086/Qbhv0sUivEYO7pvHdNuyae8-R-pzchpvVg2JHGYsjpuzbS7GEK3P_Eq0doDUZgbOAz2r',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+             if(res.ok||res.status===204){
+                 btn.innerHTML='<i class="fas fa-check-circle"></i> SENT';btn.style.opacity='1';btn.style.background='#22a970';btn.style.border='2px solid #22a970';btn.style.color='white';
+                 msg.style.color='#22a970';msg.textContent="Request sent! We'll hit you up soon. \uD83C\uDF38";
+                 ids.forEach(id=>{const el=document.getElementById(id);if(el)el.value='';});
+                 setTimeout(()=>{btn.innerHTML='SEND REQUEST';btn.style.background='transparent';btn.style.border='2px solid var(--primary)';btn.style.color='var(--text)';btn.disabled=false;msg.textContent='';},5000);
+             }else{throw new Error('Status '+res.status);}
+         }catch(e){btn.textContent='SEND REQUEST';btn.style.opacity='1';btn.disabled=false;msg.style.color='#e05';msg.textContent='Error: '+e.message;console.error(e);}
+     }
      </script>
 </body>
 </html>
