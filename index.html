@@ -857,20 +857,61 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
          const req=['scrim-org','scrim-discord','scrim-roster'];
          const btn=document.getElementById('scrim-btn');
          const msg=document.getElementById('scrim-msg');
-         ids.forEach(id=>{const el=document.getElementById(id);if(el){el.style.border='1px solid rgba(212,23,91,0.3)';const e=el.parentElement.querySelector('.scrim-err');if(e)e.remove();}});
+
+         // Reset all fields
+         ids.forEach(id=>{
+             const el=document.getElementById(id);
+             if(el){
+                 el.style.border='1px solid rgba(212,23,91,0.3)';
+                 el.style.boxShadow='none';
+                 el.style.animation='none';
+                 const e=el.parentElement.querySelector('.scrim-err');
+                 if(e)e.remove();
+             }
+         });
+
          let valid=true;
-         req.forEach(id=>{const el=document.getElementById(id);if(!el||!el.value.trim()){valid=false;if(el){el.style.border='1px solid #e05544';const e=document.createElement('div');e.className='scrim-err';e.style.cssText='color:#e05544;font-size:0.65rem;margin-top:3px;';e.innerHTML='<i class="fas fa-exclamation-circle"></i> Required';el.parentElement.insertBefore(e,el.nextSibling);}}});
-         if(!valid)return;
+         req.forEach(id=>{
+             const el=document.getElementById(id);
+             if(!el||!el.value.trim()){
+                 valid=false;
+                 if(el){
+                     el.style.border='1px solid #e05544';
+                     el.style.boxShadow='0 0 10px rgba(224,85,68,0.6), 0 0 20px rgba(224,85,68,0.3)';
+                     el.style.animation='scrim-shake 0.4s ease';
+                 }
+             }
+         });
+
+         if(!valid){
+             msg.style.color='#e05544';
+             msg.textContent='\u26a0\ufe0f Please fill in all required fields.';
+             return;
+         }
+
          btn.textContent='SENDING...';btn.style.opacity='0.6';btn.disabled=true;
+         msg.style.color='var(--primary)';msg.textContent='';
+
          const v=id=>(document.getElementById(id)||{value:''}).value.trim();
          const rm={flinta:'FLINTA Roster',male:'Male Roster',both:'Both Rosters'};
-         const payload={embeds:[{title:'\uD83C\uDF38 NEW SCRIM REQUEST',color:0xd4175b,fields:[
-             {name:'Org / Team',value:v('scrim-org')||'-',inline:true},
-             {name:'Rank',value:v('scrim-rank')||'Not specified',inline:true},
-             {name:'Discord',value:v('scrim-discord')||'-',inline:true},
-             {name:'Time',value:v('scrim-time')||'Not specified',inline:true},
-             {name:'vs.',value:rm[v('scrim-roster')]||v('scrim-roster')||'-',inline:true}
-         ],footer:{text:'Sent via everbloom-gc.com'},timestamp:new Date().toISOString()}]};
+
+         const payload={embeds:[{
+             title:'\uD83C\uDF38 Scrim Request',
+             color:0xd4175b,
+             thumbnail:{url:'https://everbloom-gc.com/everbloomlogo.png'},
+             fields:[
+                 {name:'\uD83C\uDFAE  Org / Team',value:v('scrim-org')||'—',inline:true},
+                 {name:'\uD83C\uDFC6  Avg. Rank',value:v('scrim-rank')||'Not specified',inline:true},
+                 {name:'\u200b',value:'\u200b',inline:false},
+                 {name:'\uD83D\uDCAC  Discord',value:v('scrim-discord')||'—',inline:true},
+                 {name:'\u23F0  Preferred Time',value:v('scrim-time')||'Not specified',inline:true},
+                 {name:'\u200b',value:'\u200b',inline:false},
+                 {name:'\u2694\ufe0f  vs.',value:rm[v('scrim-roster')]||v('scrim-roster')||'—',inline:false},
+             ],
+             footer:{text:'everbloom-gc.com  •  Scrim Request'},
+             timestamp:new Date().toISOString()
+         }]};
+
          try{
              const res=await fetch('https://discord.com/api/webhooks/1504882060148478086/Qbhv0sUivEYO7pvHdNuyae8-R-pzchpvVg2JHGYsjpuzbS7GEK3P_Eq0doDUZgbOAz2r',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
              if(res.ok||res.status===204){
@@ -879,9 +920,8 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
                  ids.forEach(id=>{const el=document.getElementById(id);if(el)el.value='';});
                  setTimeout(()=>{btn.innerHTML='SEND REQUEST';btn.style.background='transparent';btn.style.border='2px solid var(--primary)';btn.style.color='var(--text)';btn.disabled=false;msg.textContent='';},5000);
              }else{throw new Error('Status '+res.status);}
-         }catch(e){btn.textContent='SEND REQUEST';btn.style.opacity='1';btn.disabled=false;msg.style.color='#e05';msg.textContent='Error: '+e.message;console.error(e);}
-     }
-     </script>
+         }catch(e){btn.textContent='SEND REQUEST';btn.style.opacity='1';btn.disabled=false;msg.style.color='#e05';msg.textContent='Error: '+e.message;}
+     }</script>
 </body>
 </html>
      <script>
