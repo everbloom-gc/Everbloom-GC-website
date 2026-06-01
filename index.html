@@ -171,6 +171,9 @@ header { padding: 100px 20px 40px; display: flex; flex-direction: column; align-
 .roster-grid-container { display: flex; flex-direction: column; gap: 20px; align-items: center; width: 100%; }
 .roster-row-top, .roster-row-bottom { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; width: 100%; }
 .roster-2nd-row { grid-template-columns: repeat(2, 1fr); width: 66%; }
+.raph-container { display:grid; grid-template-columns:1fr; gap:20px; width:33%; margin:0 auto; }
+@media (max-width: 850px) { .raph-container { width:100%; } }
+
 @media (max-width: 850px) { .roster-row-top, .roster-row-bottom, .roster-2nd-row { grid-template-columns: 1fr; width: 100%; } }
 
 .management-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; width: 100%; max-width: 900px; justify-items: center; }
@@ -561,7 +564,7 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
                     </div>
                 </div>
             </div>
-            <div style="display:grid;grid-template-columns:1fr;gap:20px;width:33%;margin:0 auto;">
+            <div class="raph-container">
                 <div class="player-card reveal">
                     <img loading="lazy" src="reyna.webp" class="player-img" style="object-fit:cover;object-position:top center;">
                     <div class="card-content">
