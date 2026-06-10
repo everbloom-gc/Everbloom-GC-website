@@ -1,5 +1,5 @@
 {
-  "updated": "09.06.2026 20:03 UTC",
+  "updated": "10.06.2026 09:52 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -38,7 +38,7 @@
       "roster": "male",
       "role": "Controller",
       "rank": "Ascendant 3",
-      "rr": 22,
+      "rr": 0,
       "cssClass": "rank-ascendant"
     },
     "marwin": {
