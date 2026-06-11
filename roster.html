@@ -430,7 +430,7 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
                      <div class="card-content">
                          <small style="color:var(--primary);font-weight:bold;">CONTROLLER</small>
                          <div style="font-weight:900;font-size:1.4rem;">Ruby</div>
-                         <div class="rank-tag rank-silver" id="rank-ruby">Silver 2</div>
+                         <div class="rank-tag rank-silver" id="rank-ruby">Silver 3</div>
                          <div class="player-links">
                              <a href="https://tracker.gg/valorant/profile/riot/Rubyxcube%23EBM/" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
                              <a href="https://x.com/x2_zelda" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
@@ -442,7 +442,7 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
                      <div class="card-content">
                          <small style="color:var(--primary);font-weight:bold;">SENTINEL</small>
                          <div style="font-weight:900;font-size:1.4rem;">Settie</div>
-                         <div class="rank-tag rank-bronze" id="rank-settie">Unranked</div>
+                         <div class="rank-tag rank-silver" id="rank-settie">Silver 1</div>
                          <div class="player-links">
                              <a href="https://tracker.gg/valorant/profile/riot/settie%23TTV/" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
                              <a href="https://x.com/Suns3tt_VLR" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
@@ -456,7 +456,7 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
                      <div class="card-content">
                          <small style="color:var(--primary);font-weight:bold;">FLEX</small>
                          <div style="font-weight:900;font-size:1.4rem;">Raph</div>
-                         <div class="rank-tag rank-bronze" id="rank-raph">Bronze 2</div>
+                         <div class="rank-tag rank-bronze" id="rank-raph">Bronze 3</div>
                          <div class="player-links">
                              <a href="https://tracker.gg/valorant/profile/riot/DreamyDevour%23EBM/overview?playlist=competitive&platform=pc" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
                              <a href="https://x.com/wavvybecci_" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
@@ -497,7 +497,7 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
                      <div class="card-content">
                          <small style="color:var(--primary);font-weight:bold;">DUELIST</small>
                          <div style="font-weight:900;font-size:1.4rem;">Sin</div>
-                         <div class="rank-tag rank-immortal" id="rank-sin">Immortal 3</div>
+                         <div class="rank-tag rank-radiant" id="rank-sin">Radiant</div>
                          <div class="player-links">
                              <a href="https://tracker.gg/valorant/profile/riot/feek%20dood%23diff/overview?platform=pc&playlist=competitive&season=ce2783e8-44fc-dd48-3da3-33b5ba6c4a22" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
                              <a href="https://x.com/Noctravlr" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
@@ -511,7 +511,7 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
                      <div class="card-content">
                          <small style="color:var(--primary);font-weight:bold;">DUELIST</small>
                          <div style="font-weight:900;font-size:1.4rem;">Envy</div>
-                         <div class="rank-tag rank-ascendant" id="rank-envy">Ascendant 1</div>
+                         <div class="rank-tag rank-diamond" id="rank-envy">Diamond 2</div>
                          <div class="player-links">
                              <a href="https://tracker.gg/valorant/profile/riot/envy%23grit/overview?platform=pc&playlist=competitive&season=9d85c932-4820-c060-09c3-668636d4df1b" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
                              <a href="https://x.com/envy_fpsss" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
@@ -523,7 +523,7 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
                      <div class="card-content">
                          <small style="color:var(--primary);font-weight:bold;">SENTINEL</small>
                          <div style="font-weight:900;font-size:1.4rem;">Aff3</div>
-                         <div class="rank-tag rank-diamond" id="rank-aff3">Diamond 3</div>
+                         <div class="rank-tag rank-ascendant" id="rank-aff3">Ascendant 1</div>
                          <div class="player-links">
                              <a href="https://tracker.gg/valorant/profile/riot/Aff3%23XuXu/overview" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
                              <a href="https://x.com/AffenstarkJo" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
@@ -603,38 +603,6 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
           const particles=Array.from({length:COUNT},()=>new Particle());
           function animate(){ctx.clearRect(0,0,W,H);particles.forEach(p=>{p.update();p.draw();});requestAnimationFrame(animate);}
           animate();
-     </script>
-
-     <script>
-     // Auto-load ranks from ranks.json (updated by GitHub Action)
-     async function loadRanks() {
-         try {
-             const res = await fetch('./ranks.json?v=' + Date.now());
-             const data = await res.json();
-
-             const players = data.players;
-
-             // Update each rank tag
-             Object.values(players).forEach(p => {
-                 const el = document.getElementById('rank-' + p.id);
-                 if (!el) return;
-                 el.textContent = p.rank;
-                 // Remove old rank classes and add new one
-                 el.className = 'rank-tag ' + p.cssClass;
-                 // Update RR if shown
-                 const rrEl = document.getElementById('rr-' + p.id);
-                 if (rrEl) rrEl.textContent = p.rr > 0 ? p.rr + ' RR' : '';
-             });
-
-             // Show last updated
-             const updEl = document.getElementById('ranks-updated');
-             if (updEl) updEl.textContent = 'Last updated: ' + data.updated;
-
-         } catch(e) {
-             console.log('Could not load ranks.json:', e);
-         }
-     }
-     loadRanks();
      </script>
 </body>
 </html>
