@@ -609,7 +609,7 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
      // Auto-load ranks from ranks.json (updated by GitHub Action)
      async function loadRanks() {
          try {
-             const res = await fetch('ranks.json?nocache=' + Date.now());
+             const res = await fetch('./ranks.json?v=' + Date.now());
              const data = await res.json();
 
              const players = data.players;
