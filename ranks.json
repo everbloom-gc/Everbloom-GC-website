@@ -1,5 +1,5 @@
 {
-  "updated": "12.06.2026 10:05 UTC",
+  "updated": "12.06.2026 14:51 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -7,9 +7,9 @@
       "tag": "EBM",
       "roster": "flinta",
       "role": "Controller",
-      "rank": "Silver 3",
-      "rr": 45,
-      "cssClass": "rank-silver"
+      "rank": "\u2014",
+      "rr": 0,
+      "cssClass": "rank-bronze"
     },
     "settie": {
       "id": "settie",
@@ -17,9 +17,9 @@
       "tag": "TTV",
       "roster": "flinta",
       "role": "Sentinel",
-      "rank": "Silver 1",
+      "rank": "\u2014",
       "rr": 0,
-      "cssClass": "rank-silver"
+      "cssClass": "rank-bronze"
     },
     "raph": {
       "id": "raph",
@@ -27,8 +27,8 @@
       "tag": "EBM",
       "roster": "flinta",
       "role": "Flex",
-      "rank": "Bronze 3",
-      "rr": 52,
+      "rank": "\u2014",
+      "rr": 0,
       "cssClass": "rank-bronze"
     },
     "jc": {
@@ -37,9 +37,9 @@
       "tag": "LG16",
       "roster": "male",
       "role": "Controller",
-      "rank": "Ascendant 3",
+      "rank": "\u2014",
       "rr": 0,
-      "cssClass": "rank-ascendant"
+      "cssClass": "rank-bronze"
     },
     "marwin": {
       "id": "marwin",
@@ -68,7 +68,7 @@
       "roster": "male",
       "role": "Duelist",
       "rank": "Diamond 2",
-      "rr": 47,
+      "rr": 66,
       "cssClass": "rank-diamond"
     },
     "aff3": {
