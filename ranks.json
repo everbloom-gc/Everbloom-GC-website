@@ -1,5 +1,5 @@
 {
-  "updated": "12.06.2026 14:51 UTC",
+  "updated": "12.06.2026 20:05 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -7,9 +7,9 @@
       "tag": "EBM",
       "roster": "flinta",
       "role": "Controller",
-      "rank": "\u2014",
-      "rr": 0,
-      "cssClass": "rank-bronze"
+      "rank": "Silver 3",
+      "rr": 45,
+      "cssClass": "rank-silver"
     },
     "settie": {
       "id": "settie",
@@ -17,9 +17,9 @@
       "tag": "TTV",
       "roster": "flinta",
       "role": "Sentinel",
-      "rank": "\u2014",
+      "rank": "Silver 1",
       "rr": 0,
-      "cssClass": "rank-bronze"
+      "cssClass": "rank-silver"
     },
     "raph": {
       "id": "raph",
@@ -27,8 +27,8 @@
       "tag": "EBM",
       "roster": "flinta",
       "role": "Flex",
-      "rank": "\u2014",
-      "rr": 0,
+      "rank": "Bronze 3",
+      "rr": 52,
       "cssClass": "rank-bronze"
     },
     "jc": {
@@ -37,9 +37,9 @@
       "tag": "LG16",
       "roster": "male",
       "role": "Controller",
-      "rank": "\u2014",
+      "rank": "Ascendant 3",
       "rr": 0,
-      "cssClass": "rank-bronze"
+      "cssClass": "rank-ascendant"
     },
     "marwin": {
       "id": "marwin",
@@ -48,7 +48,7 @@
       "roster": "male",
       "role": "Initiator",
       "rank": "Ascendant 1",
-      "rr": 17,
+      "rr": 36,
       "cssClass": "rank-ascendant"
     },
     "sin": {
@@ -68,7 +68,7 @@
       "roster": "male",
       "role": "Duelist",
       "rank": "Diamond 2",
-      "rr": 66,
+      "rr": 25,
       "cssClass": "rank-diamond"
     },
     "aff3": {
@@ -78,7 +78,7 @@
       "roster": "male",
       "role": "Sentinel",
       "rank": "Ascendant 1",
-      "rr": 35,
+      "rr": 53,
       "cssClass": "rank-ascendant"
     }
   }
