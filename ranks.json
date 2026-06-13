@@ -1,5 +1,5 @@
 {
-  "updated": "13.06.2026 13:51 UTC",
+  "updated": "13.06.2026 19:20 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -28,7 +28,7 @@
       "roster": "flinta",
       "role": "Flex",
       "rank": "Bronze 3",
-      "rr": 82,
+      "rr": 51,
       "cssClass": "rank-bronze"
     },
     "jc": {
@@ -37,8 +37,8 @@
       "tag": "LG16",
       "roster": "male",
       "role": "Controller",
-      "rank": "Ascendant 3",
-      "rr": 0,
+      "rank": "Ascendant 2",
+      "rr": 60,
       "cssClass": "rank-ascendant"
     },
     "marwin": {
@@ -67,8 +67,8 @@
       "tag": "grit",
       "roster": "male",
       "role": "Duelist",
-      "rank": "Diamond 2",
-      "rr": 53,
+      "rank": "Diamond 3",
+      "rr": 10,
       "cssClass": "rank-diamond"
     },
     "aff3": {
