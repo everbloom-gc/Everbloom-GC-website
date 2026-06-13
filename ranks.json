@@ -1,5 +1,5 @@
 {
-  "updated": "12.06.2026 20:05 UTC",
+  "updated": "13.06.2026 08:53 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -8,7 +8,7 @@
       "roster": "flinta",
       "role": "Controller",
       "rank": "Silver 3",
-      "rr": 45,
+      "rr": 25,
       "cssClass": "rank-silver"
     },
     "settie": {
