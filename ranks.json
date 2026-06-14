@@ -1,5 +1,5 @@
 {
-  "updated": "14.06.2026 13:54 UTC",
+  "updated": "14.06.2026 19:20 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -28,7 +28,7 @@
       "roster": "flinta",
       "role": "Flex",
       "rank": "Bronze 3",
-      "rr": 51,
+      "rr": 64,
       "cssClass": "rank-bronze"
     },
     "jc": {
@@ -38,7 +38,7 @@
       "roster": "male",
       "role": "Controller",
       "rank": "Ascendant 2",
-      "rr": 23,
+      "rr": 0,
       "cssClass": "rank-ascendant"
     },
     "marwin": {
@@ -48,7 +48,7 @@
       "roster": "male",
       "role": "Initiator",
       "rank": "Ascendant 1",
-      "rr": 54,
+      "rr": 14,
       "cssClass": "rank-ascendant"
     },
     "sin": {
@@ -78,7 +78,7 @@
       "roster": "male",
       "role": "Sentinel",
       "rank": "Ascendant 1",
-      "rr": 55,
+      "rr": 19,
       "cssClass": "rank-ascendant"
     }
   }
