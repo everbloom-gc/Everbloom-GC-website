@@ -8,14 +8,21 @@ API_KEY = os.environ.get('HENRIK_API_KEY', '')
 REGION  = 'eu'
 
 PLAYERS = [
-    { "id": "ruby",   "name": "Rubyxcube",  "tag": "EBM",  "roster": "flinta", "role": "Controller" },
-    { "id": "settie", "name": "settie",      "tag": "TTV",  "roster": "flinta", "role": "Sentinel"   },
-    { "id": "raph",   "name": "DreamyDevour","tag": "EBM",  "roster": "flinta", "role": "Flex"       },
-    { "id": "jc",     "name": "jczera",      "tag": "LG16", "roster": "male",   "role": "Controller" },
-    { "id": "marwin", "name": "BluntDawg51", "tag": "081z", "roster": "male",   "role": "Initiator"  },
-    { "id": "sin",    "name": "feek dood",   "tag": "diff", "roster": "male",   "role": "Duelist"    },
-    { "id": "envy",   "name": "envy",        "tag": "grit", "roster": "male",   "role": "Duelist"    },
-    { "id": "aff3",   "name": "Aff3",        "tag": "XuXu", "roster": "male",   "role": "Sentinel"   },
+    # FLINTA
+    { "id": "ruby",   "name": "Rubyxcube",   "tag": "EBM",   "roster": "flinta", "role": "Controller" },
+    { "id": "settie", "name": "settie",       "tag": "TTV",   "roster": "flinta", "role": "Sentinel"   },
+    { "id": "raph",   "name": "DreamyDevour", "tag": "EBM",   "roster": "flinta", "role": "Flex"       },
+    # Male Roster 1
+    { "id": "jc",     "name": "jczera",       "tag": "LG16",  "roster": "male",   "role": "Controller" },
+    { "id": "marwin", "name": "BluntDawg51",  "tag": "081z",  "roster": "male",   "role": "Initiator"  },
+    { "id": "envy",   "name": "envy",         "tag": "grit",  "roster": "male",   "role": "Duelist"    },
+    { "id": "aff3",   "name": "Aff3",         "tag": "XuXu",  "roster": "male",   "role": "Sentinel"   },
+    # Male Roster 2
+    { "id": "banani", "name": "Kasane Teto",  "tag": "roses", "roster": "male2",  "role": "Sentinel"   },
+    { "id": "twony",  "name": "twony",        "tag": "111",   "roster": "male2",  "role": "Controller" },
+    { "id": "alex",   "name": "Alexolotl",    "tag": "2020",  "roster": "male2",  "role": "Initiator"  },
+    { "id": "kyoka",  "name": "Rem",          "tag": "Rero",  "roster": "male2",  "role": "Duelist"    },
+    { "id": "gustaf", "name": "Ram",          "tag": "Rero",  "roster": "male2",  "role": "Duelist"    },
 ]
 
 TIER_CLASSES = {
@@ -46,25 +53,14 @@ def get_rank(player):
 def update_html(results):
     with open('roster.html', 'r', encoding='utf-8') as f:
         html = f.read()
-
     for pid, data in results.items():
-        rank = data['rank']
-        css  = data['cssClass']
-        # Replace rank tag content and class
         html = re.sub(
             rf'<div class="rank-tag [^"]*" id="rank-{pid}">[^<]*</div>',
-            f'<div class="rank-tag {css}" id="rank-{pid}">{rank}</div>',
+            f'<div class="rank-tag {data["cssClass"]}" id="rank-{pid}">{data["rank"]}</div>',
             html
         )
-
-    # Update last updated text
     now = datetime.now(timezone.utc).strftime('%d.%m.%Y %H:%M UTC')
-    html = re.sub(
-        r'Last updated: [^<]*',
-        f'Last updated: {now}',
-        html
-    )
-
+    html = re.sub(r'Last updated: [^<]*', f'Last updated: {now}', html)
     with open('roster.html', 'w', encoding='utf-8') as f:
         f.write(html)
     print(f"✅ roster.html updated at {now}")
@@ -80,12 +76,9 @@ def main():
         else:
             results[player['id']] = {**player, "rank": "—", "rr": 0, "cssClass": "rank-bronze"}
 
-    # Save ranks.json
     output = {"updated": datetime.now(timezone.utc).strftime('%d.%m.%Y %H:%M UTC'), "players": results}
     with open('ranks.json', 'w') as f:
         json.dump(output, f, indent=2)
-
-    # Also directly update roster.html
     update_html(results)
 
 if __name__ == '__main__':
