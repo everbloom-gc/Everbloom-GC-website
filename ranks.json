@@ -1,5 +1,5 @@
 {
-  "updated": "16.06.2026 16:43 UTC",
+  "updated": "16.06.2026 20:46 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -48,7 +48,7 @@
       "roster": "male",
       "role": "Initiator",
       "rank": "Ascendant 1",
-      "rr": 0,
+      "rr": 38,
       "cssClass": "rank-ascendant"
     },
     "envy": {
@@ -58,7 +58,7 @@
       "roster": "male",
       "role": "Duelist",
       "rank": "Diamond 2",
-      "rr": 32,
+      "rr": 37,
       "cssClass": "rank-diamond"
     },
     "aff3": {
@@ -78,7 +78,7 @@
       "roster": "male2",
       "role": "Sentinel",
       "rank": "Ascendant 1",
-      "rr": 91,
+      "rr": 35,
       "cssClass": "rank-ascendant"
     },
     "twony": {
@@ -88,7 +88,7 @@
       "roster": "male2",
       "role": "Controller",
       "rank": "Immortal 1",
-      "rr": 3,
+      "rr": 0,
       "cssClass": "rank-immortal"
     },
     "alex": {
