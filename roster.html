@@ -3,7 +3,7 @@
 <head>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-     <meta name="description" content="EVERBLOOM — Meet our rosters. FLINTA, Male and upcoming 2nd Male team.">
+     <meta name="description" content="EVERBLOOM — Meet our rosters. FLINTA, Male and 2nd Male team.">
      <meta name="theme-color" content="#d4175b">
      <title>EVERBLOOM | Rosters 🌸</title>
      <link rel="icon" type="image/svg+xml" href="everbloomlogo.svg">
@@ -14,595 +14,415 @@
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
      <style>
-
 :root {
-    --primary: #d4175b;
-    --bg: #060b10;
-    --card-bg: rgba(17, 27, 36, 0.6);
-    --text: #ffffff;
-    --nav-bg: rgba(6, 11, 16, 0.98);
-    --card-gradient: #060b10;
-    --card-gradient-mobile: #050810;
-    --player-card-bg: #050810;
-    --footer-bg: rgba(0,0,0,0.3);
-    --footer-border: rgba(255,255,255,0.05);
-    --bottom-nav-bg: rgba(6, 11, 16, 0.97);
-    --bottom-nav-border: rgba(212, 23, 91, 0.3);
-    --bottom-nav-text: rgba(255,255,255,0.5);
-    --splash-bg: #060b10;
-    --splash-text: #ffffff;
-    --link-icon-color: white;
-    --grid-opacity: 0.18;
-    --grid-radial1: 0.35;
-    --grid-radial2: 0.15;
-    --grid-radial3: 0.10;
-    --video-overlay: rgba(6,11,16,0.95);
-    --color-x: #000000;
-    --color-insta: #E4405F;
-    --color-tiktok: #000000;
-    --color-twitch: #9146FF;
-    --color-discord: #5865F2;
-    --rank-bronze: #824a33;
-    --rank-silver: #ced4da;
-    --rank-gold: #ffcf4b;
-    --rank-ascendant: #22a970;
-    --rank-immortal: #b92f41;
-    --rank-diamond: #b784f2;
-    --rank-platinum: #38b6ff;
-    --rank-radiant: #ffeaae;
-    --rank-diamond-glow: rgba(183, 132, 242, 0.5);
+    --primary: #d4175b; --bg: #060b10; --card-bg: rgba(17,27,36,0.6); --text: #ffffff;
+    --nav-bg: rgba(6,11,16,0.98); --card-gradient: #060b10; --card-gradient-mobile: #050810;
+    --player-card-bg: #050810; --footer-bg: rgba(0,0,0,0.3); --footer-border: rgba(255,255,255,0.05);
+    --bottom-nav-bg: rgba(6,11,16,0.97); --bottom-nav-border: rgba(212,23,91,0.3);
+    --bottom-nav-text: rgba(255,255,255,0.5); --link-icon-color: white;
+    --grid-opacity: 0.18; --grid-radial1: 0.35; --grid-radial2: 0.15; --grid-radial3: 0.10;
+    --video-overlay: rgba(6,11,16,0.95); --color-x: #000000; --color-insta: #E4405F;
+    --color-tiktok: #000000; --color-twitch: #9146FF; --color-discord: #5865F2;
+    --rank-bronze: #824a33; --rank-silver: #ced4da; --rank-gold: #ffcf4b;
+    --rank-ascendant: #22a970; --rank-immortal: #b92f41; --rank-diamond: #b784f2;
+    --rank-platinum: #38b6ff; --rank-radiant: #ffeaae; --rank-diamond-glow: rgba(183,132,242,0.5);
 }
-
 [data-theme="light"] {
-    --bg: #faf5f7;
-    --card-bg: rgba(255, 255, 255, 0.9);
-    --text: #1a0a12;
-    --nav-bg: rgba(250, 245, 247, 0.98);
-    --card-gradient: #faf5f7;
-    --card-gradient-mobile: #f9f0f5;
-    --player-card-bg: #f0e4ec;
-    --footer-bg: rgba(212, 23, 91, 0.04);
-    --footer-border: rgba(212, 23, 91, 0.12);
-    --bottom-nav-bg: rgba(250, 245, 247, 0.97);
-    --bottom-nav-border: rgba(212, 23, 91, 0.2);
-    --bottom-nav-text: rgba(26, 10, 18, 0.45);
-    --splash-bg: #faf5f7;
-    --splash-text: #1a0a12;
-    --link-icon-color: #2a1020;
-    --grid-opacity: 0.07;
-    --grid-radial1: 0.10;
-    --grid-radial2: 0.05;
-    --grid-radial3: 0.04;
+    --bg: #faf5f7; --card-bg: rgba(255,255,255,0.9); --text: #1a0a12;
+    --nav-bg: rgba(250,245,247,0.98); --card-gradient: #faf5f7; --card-gradient-mobile: #f9f0f5;
+    --player-card-bg: #f0e4ec; --footer-bg: rgba(212,23,91,0.04); --footer-border: rgba(212,23,91,0.12);
+    --bottom-nav-bg: rgba(250,245,247,0.97); --bottom-nav-border: rgba(212,23,91,0.2);
+    --bottom-nav-text: rgba(26,10,18,0.45); --link-icon-color: #2a1020;
+    --grid-opacity: 0.07; --grid-radial1: 0.10; --grid-radial2: 0.05; --grid-radial3: 0.04;
     --video-overlay: rgba(250,245,247,0.93);
 }
-
-body, .nav-overlay, .player-card, footer, #bottom-nav, #splash { transition: background 0.35s ease, background-color 0.35s ease, color 0.35s ease; }
-
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-
-body {
-    width: 100%; overflow-x: hidden; background-color: var(--bg);
-    color: var(--text); font-family: 'Inter', sans-serif;
-    background-image:
-        linear-gradient(rgba(212, 23, 91, var(--grid-opacity)) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(212, 23, 91, var(--grid-opacity)) 1px, transparent 1px),
-        radial-gradient(circle at 50% 30%, rgba(212, 23, 91, var(--grid-radial1)) 0%, transparent 60%),
-        radial-gradient(circle at 80% 80%, rgba(212, 23, 91, var(--grid-radial2)) 0%, transparent 40%),
-        radial-gradient(circle at 20% 70%, rgba(212, 23, 91, var(--grid-radial3)) 0%, transparent 35%);
-    background-size: 50px 50px, 50px 50px, 100% 100%, 100% 100%, 100% 100%;
-    background-attachment: fixed;
+body,.nav-overlay,.player-card,footer,#bottom-nav{transition:background .35s ease,background-color .35s ease,color .35s ease;}
+*{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{width:100%;overflow-x:hidden;background-color:var(--bg);color:var(--text);font-family:'Inter',sans-serif;
+background-image:linear-gradient(rgba(212,23,91,var(--grid-opacity)) 1px,transparent 1px),linear-gradient(90deg,rgba(212,23,91,var(--grid-opacity)) 1px,transparent 1px),radial-gradient(circle at 50% 30%,rgba(212,23,91,var(--grid-radial1)) 0%,transparent 60%),radial-gradient(circle at 80% 80%,rgba(212,23,91,var(--grid-radial2)) 0%,transparent 40%),radial-gradient(circle at 20% 70%,rgba(212,23,91,var(--grid-radial3)) 0%,transparent 35%);
+background-size:50px 50px,50px 50px,100% 100%,100% 100%,100% 100%;background-attachment:fixed;}
+body::before{content:"";position:fixed;top:0;left:0;width:100%;height:100%;background:radial-gradient(circle at 15% 25%,rgba(212,23,91,.12) 0%,transparent 35%),radial-gradient(circle at 85% 60%,rgba(212,23,91,.10) 0%,transparent 30%);animation:orb-pulse 12s ease-in-out infinite alternate;pointer-events:none;z-index:-1;}
+@keyframes orb-pulse{0%{opacity:.5;transform:scale(1);}100%{opacity:1;transform:scale(1.08);}}
+body::after{content:"";position:fixed;top:0;left:0;width:100%;height:100%;background:linear-gradient(to bottom,transparent 0%,rgba(212,23,91,.07) 50%,transparent 100%);background-size:100% 180px;animation:scanline 10s linear infinite;pointer-events:none;z-index:999;}
+@keyframes scanline{0%{background-position:0 -180px;}100%{background-position:0 100vh;}}
+::-webkit-scrollbar{width:8px;}::-webkit-scrollbar-track{background:var(--bg);}::-webkit-scrollbar-thumb{background:var(--primary);border-radius:10px;}
+#video-bg{position:fixed;top:50%;left:50%;min-width:100%;min-height:100%;z-index:-2;transform:translateX(-50%) translateY(-50%);object-fit:cover;filter:brightness(.12);}
+.video-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:radial-gradient(circle,rgba(6,11,16,.1),var(--video-overlay));z-index:-1;}
+#particle-canvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1;}
+.nav-toggle{position:fixed;top:20px;left:20px;z-index:1001;background:var(--primary);border:none;width:45px;height:45px;border-radius:5px;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;}
+.nav-toggle span{display:block;width:22px;height:2px;background:white;transition:.3s cubic-bezier(.4,0,.2,1);}
+.nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav-toggle.open span:nth-child(2){opacity:0;transform:translateX(-10px);}
+.nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.nav-overlay{position:fixed;top:0;left:-300px;width:280px;height:100vh;background:var(--nav-bg);backdrop-filter:blur(25px);z-index:1000;transition:left .5s ease,background .35s ease;display:flex;flex-direction:column;padding:100px 30px 40px;border-right:1px solid rgba(212,23,91,.2);}
+.nav-overlay.active{left:0;}
+.nav-overlay a{font-size:1.5rem;color:var(--text);text-decoration:none;text-transform:uppercase;font-weight:900;margin:15px 0;cursor:pointer;transition:color .3s ease,transform .3s ease;letter-spacing:2px;}
+.nav-overlay a:hover{color:var(--primary);text-shadow:0 0 15px var(--primary);transform:translateX(10px);}
+.nav-overlay a.nav-active{color:var(--primary);text-shadow:0 0 15px var(--primary);}
+#theme-toggle{position:fixed;top:20px;right:20px;z-index:1002;background:var(--primary);border:none;width:45px;height:45px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;color:white;font-size:1.1rem;box-shadow:0 0 15px rgba(212,23,91,.4);transition:transform .3s,box-shadow .3s;}
+#theme-toggle:hover{transform:scale(1.1) rotate(20deg);box-shadow:0 0 25px var(--primary);}
+.logo-main{width:130px;filter:drop-shadow(0 0 25px var(--primary));margin-bottom:20px;transition:transform .3s ease;cursor:pointer;display:block;}
+.container{max-width:1100px;margin:auto;padding:20px;}
+.apply-btn{display:inline-block;background:transparent;color:var(--text);padding:18px 45px;border-radius:4px;text-decoration:none;font-weight:900;text-transform:uppercase;letter-spacing:3px;transition:background .4s,color .4s,box-shadow .4s,transform .4s;border:2px solid var(--primary);cursor:pointer;}
+.apply-btn:hover{background:var(--primary);color:white !important;box-shadow:0 0 35px var(--primary);transform:scale(1.05);}
+.roster-grid-container{display:flex;flex-direction:column;gap:20px;align-items:center;width:100%;}
+.roster-row-top,.roster-row-bottom{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;width:100%;}
+.roster-2nd-row{grid-template-columns:repeat(2,1fr);width:66%;}
+.raph-container{display:grid;grid-template-columns:1fr;gap:20px;width:33%;margin:0 auto;}
+@media(max-width:850px){.raph-container{width:100%;}.roster-row-top,.roster-row-bottom,.roster-2nd-row{grid-template-columns:1fr;width:100%;}}
+.player-card{background:var(--player-card-bg);border-radius:10px;min-height:420px;position:relative;overflow:hidden;border:1px solid rgba(212,23,91,.25);transition:border-color .4s,box-shadow .4s,background .35s;width:100%;isolation:isolate;box-shadow:0 0 0 2px rgba(0,0,0,.8),inset 0 0 40px rgba(0,0,0,.95);}
+.player-img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:.35;z-index:1;transition:.5s;}
+.player-card:hover .player-img{opacity:.5;transform:scale(1.05);}
+[data-theme="light"] .player-card{box-shadow:0 4px 20px rgba(212,23,91,.1),inset 0 0 40px rgba(255,255,255,.3);}
+[data-theme="light"] .player-img{opacity:.55;}
+[data-theme="light"] .player-card:hover .player-img{opacity:.7;}
+.card-content{position:absolute;bottom:0;width:100%;padding:20px;background:linear-gradient(transparent,var(--card-gradient) 85%);z-index:10;transition:background .35s ease;}
+.player-links{display:flex;gap:12px;align-items:center;margin-top:10px;}
+.tracker-icon{height:18px;filter:brightness(1.2);transition:.3s;}
+.player-link-icon{color:var(--link-icon-color);font-size:1.1rem;transition:color .3s;text-decoration:none;}
+.player-link-icon:hover{color:var(--primary);}
+.rank-tag{padding:5px 12px;border-radius:4px;font-size:.7rem;border:1px solid;font-weight:800;display:inline-block;margin:8px 0;text-transform:uppercase;}
+.rank-bronze{color:var(--rank-bronze);border-color:var(--rank-bronze);box-shadow:0 0 10px var(--rank-bronze);}
+.rank-silver{color:var(--rank-silver);border-color:var(--rank-silver);box-shadow:0 0 10px var(--rank-silver);}
+.rank-gold{color:var(--rank-gold);border-color:var(--rank-gold);box-shadow:0 0 10px var(--rank-gold);}
+.rank-diamond{color:var(--rank-diamond);border-color:var(--rank-diamond);box-shadow:0 0 15px var(--rank-diamond-glow);text-shadow:0 0 5px var(--rank-diamond-glow);}
+.rank-platinum{color:var(--rank-platinum);border-color:var(--rank-platinum);box-shadow:0 0 10px var(--rank-platinum);}
+.rank-ascendant{color:var(--rank-ascendant);border-color:var(--rank-ascendant);box-shadow:0 0 10px var(--rank-ascendant);}
+.rank-immortal{color:var(--rank-immortal);border-color:var(--rank-immortal);box-shadow:0 0 10px var(--rank-immortal);}
+.rank-radiant{color:var(--rank-radiant);border-color:var(--rank-radiant);box-shadow:0 0 10px var(--rank-radiant);}
+footer{text-align:center;padding:60px 20px;background:var(--footer-bg);border-top:1px solid var(--footer-border);}
+.footer-socials{display:flex;justify-content:center;gap:15px;margin-bottom:20px;flex-wrap:wrap;}
+.soc-link{width:50px;height:50px;display:flex;align-items:center;justify-content:center;border-radius:50%;color:white;text-decoration:none;font-size:1.5rem;transition:.3s;}
+.sl-discord{background:var(--color-discord);}.sl-x{background:var(--color-x);border:1px solid #333;}
+.sl-insta{background:var(--color-insta);}.sl-tiktok{background:var(--color-tiktok);border:1px solid #333;}
+.sl-twitch{background:var(--color-twitch);}
+.reveal{opacity:0;transform:translateY(30px);transition:all .8s cubic-bezier(.2,.8,.2,1);}
+.reveal.active{opacity:1;transform:translateY(0);}
+#back-to-top{position:fixed;bottom:90px;right:20px;z-index:1002;width:44px;height:44px;border-radius:50%;background:var(--primary);border:none;color:white;font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;transform:translateY(20px);transition:.3s ease;pointer-events:none;box-shadow:0 0 15px var(--primary);}
+#back-to-top.visible{opacity:1;transform:translateY(0);pointer-events:all;}
+#back-to-top:hover{transform:translateY(-3px);box-shadow:0 0 25px var(--primary);}
+#bottom-nav{display:none;position:fixed;bottom:0;left:0;width:100%;z-index:1002;background:var(--bottom-nav-bg);backdrop-filter:blur(20px);border-top:1px solid var(--bottom-nav-border);padding:8px 0 calc(8px + env(safe-area-inset-bottom));}
+#bottom-nav ul{display:flex;justify-content:space-around;list-style:none;margin:0;padding:0;}
+#bottom-nav ul li a{display:flex;flex-direction:column;align-items:center;gap:3px;color:var(--bottom-nav-text);text-decoration:none;font-size:.6rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;transition:.3s;}
+#bottom-nav ul li a i{font-size:1.2rem;}
+#bottom-nav ul li a.active,#bottom-nav ul li a:hover{color:var(--primary);}
+#bottom-nav ul li a.active i{text-shadow:0 0 10px var(--primary);}
+@media(max-width:768px){#bottom-nav{display:block;}#back-to-top{bottom:80px;}body{padding-bottom:65px;}.nav-toggle{display:none;}}
+#bg-shapes{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;overflow:hidden;}
+.bg-shape{position:absolute;border:1px solid rgba(212,23,91,.18);fill:none;}
+.shape-sq1{width:120px;height:120px;top:15%;left:8%;animation:rot-cw 20s linear infinite;transform-origin:center;}
+.shape-sq2{width:80px;height:80px;top:15%;left:8%;border-color:rgba(212,23,91,.1);animation:rot-ccw 28s linear infinite;transform-origin:center;}
+.shape-sq3{width:200px;height:200px;top:8%;left:2%;border-color:rgba(212,23,91,.06);animation:rot-cw 45s linear infinite;transform-origin:center;}
+.shape-sq4{width:100px;height:100px;top:60%;right:5%;animation:rot-ccw 22s linear infinite;transform-origin:center;}
+.shape-sq5{width:60px;height:60px;top:60%;right:5%;border-color:rgba(212,23,91,.1);animation:rot-cw 16s linear infinite;transform-origin:center;}
+.shape-sq6{width:160px;height:160px;top:55%;right:2%;border-color:rgba(212,23,91,.06);animation:rot-ccw 38s linear infinite;transform-origin:center;}
+.shape-ring{width:300px;height:300px;border-radius:50%;border-color:rgba(212,23,91,.07);border-style:dashed;top:50%;left:50%;margin-left:-150px;margin-top:-150px;animation:rot-cw 60s linear infinite;transform-origin:center;}
+@keyframes rot-cw{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
+@keyframes rot-ccw{from{transform:rotate(0deg);}to{transform:rotate(-360deg);}}
+@media(max-width:600px){
+.logo-main{width:90px;}.container{padding:12px;}
+.player-card{display:flex !important;flex-direction:row !important;min-height:130px !important;max-height:145px !important;overflow:hidden;}
+.player-img{position:relative !important;top:auto !important;left:auto !important;width:120px !important;height:145px !important;object-fit:cover !important;object-position:top center !important;flex-shrink:0 !important;opacity:.95 !important;transform:none !important;}
+.card-content{position:relative !important;background:linear-gradient(to right,var(--card-gradient-mobile) 50%,rgba(5,8,16,.85)) !important;display:flex !important;flex-direction:column !important;justify-content:center !important;padding:12px 14px !important;flex:1 !important;width:auto !important;z-index:10;}
+.player-links{margin-top:5px;}.card-content small{font-size:.58rem;}
+.rank-tag{font-size:.62rem;padding:2px 7px;margin:4px 0;}
+.roster-row-top,.roster-row-bottom,.roster-2nd-row{grid-template-columns:1fr !important;width:100% !important;}
+.footer-socials{gap:10px;}.soc-link{width:42px;height:42px;font-size:1.2rem;}
+.nav-overlay{width:100%;left:-100%;}.nav-overlay.active{left:0;}.nav-overlay a{font-size:1.3rem;}
+#theme-toggle{width:38px;height:38px;font-size:.9rem;top:16px;right:16px;}
 }
-
-body::before {
-    content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background: radial-gradient(circle at 15% 25%, rgba(212, 23, 91, 0.12) 0%, transparent 35%),
-                radial-gradient(circle at 85% 60%, rgba(212, 23, 91, 0.10) 0%, transparent 30%);
-    animation: orb-pulse 12s ease-in-out infinite alternate;
-    pointer-events: none; z-index: -1;
-}
-@keyframes orb-pulse { 0% { opacity: 0.5; transform: scale(1); } 100% { opacity: 1; transform: scale(1.08); } }
-
-body::after {
-    content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(to bottom, transparent 0%, rgba(212, 23, 91, 0.07) 50%, transparent 100%);
-    background-size: 100% 180px; animation: scanline 10s linear infinite;
-    pointer-events: none; z-index: 999;
-}
-@keyframes scanline { 0% { background-position: 0 -180px; } 100% { background-position: 0 100vh; } }
-
-::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 10px; }
-
-#video-bg { position: fixed; top: 50%; left: 50%; min-width: 100%; min-height: 100%; z-index: -2; transform: translateX(-50%) translateY(-50%); object-fit: cover; filter: brightness(0.12); }
-.video-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle, rgba(6,11,16,0.1), var(--video-overlay)); z-index: -1; }
-#particle-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; }
-
-.nav-toggle { position: fixed; top: 20px; left: 20px; z-index: 1001; background: var(--primary); border: none; width: 45px; height: 45px; border-radius: 5px; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; }
-.nav-toggle span { display: block; width: 22px; height: 2px; background: white; transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1); position: relative; }
-.nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.nav-toggle.open span:nth-child(2) { opacity: 0; transform: translateX(-10px); }
-.nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-.nav-overlay { position: fixed; top: 0; left: -300px; width: 280px; height: 100vh; background: var(--nav-bg); backdrop-filter: blur(25px); z-index: 1000; transition: left 0.5s ease, background 0.35s ease; display: flex; flex-direction: column; padding: 100px 30px 40px; border-right: 1px solid rgba(212, 23, 91, 0.2); }
-.nav-overlay.active { left: 0; }
-.nav-overlay a { font-size: 1.5rem; color: var(--text); text-decoration: none; text-transform: uppercase; font-weight: 900; margin: 15px 0; cursor: pointer; transition: color 0.3s ease, transform 0.3s ease; letter-spacing: 2px; }
-.nav-overlay a:hover { color: var(--primary); text-shadow: 0 0 15px var(--primary); transform: translateX(10px); }
-.nav-overlay a.nav-active { color: var(--primary); text-shadow: 0 0 15px var(--primary); }
-
-#theme-toggle { position: fixed; top: 20px; right: 20px; z-index: 1002; background: var(--primary); border: none; width: 45px; height: 45px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.1rem; box-shadow: 0 0 15px rgba(212, 23, 91, 0.4); transition: transform 0.3s, box-shadow 0.3s; }
-#theme-toggle:hover { transform: scale(1.1) rotate(20deg); box-shadow: 0 0 25px var(--primary); }
-
-header { padding: 100px 20px 40px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; width: 100%; }
-.logo-main { width: 130px; filter: drop-shadow(0 0 25px var(--primary)); margin-bottom: 20px; transition: transform 0.3s ease; cursor: pointer; display: block; }
-
-.glitch-text { font-size: clamp(2.5rem, 8vw, 4.5rem); font-weight: 900; text-transform: uppercase; position: relative; display: inline-block; letter-spacing: 12px; padding-left: 12px; color: var(--text); animation: glitch 500ms infinite; margin: 0 auto; }
-@keyframes glitch {
-    0%   { text-shadow: 0.05em 0 0 rgba(255,0,0,0.75), -0.05em -0.025em 0 rgba(0,255,0,0.75), -0.025em 0.05em 0 rgba(0,0,255,0.75); }
-    14%  { text-shadow: 0.05em 0 0 rgba(255,0,0,0.75), -0.05em -0.025em 0 rgba(0,255,0,0.75), -0.025em 0.05em 0 rgba(0,0,255,0.75); }
-    15%  { text-shadow: -0.05em -0.025em 0 rgba(255,0,0,0.75), 0.025em 0.025em 0 rgba(0,255,0,0.75), -0.05em -0.05em 0 rgba(0,0,255,0.75); }
-    49%  { text-shadow: -0.05em -0.025em 0 rgba(255,0,0,0.75), 0.025em 0.025em 0 rgba(0,255,0,0.75), -0.05em -0.05em 0 rgba(0,0,255,0.75); }
-    50%  { text-shadow: 0.025em 0.05em 0 rgba(255,0,0,0.75), 0.05em 0 0 rgba(0,255,0,0.75), 0 -0.05em 0 rgba(0,0,255,0.75); }
-    99%  { text-shadow: 0.025em 0.05em 0 rgba(255,0,0,0.75), 0.05em 0 0 rgba(0,255,0,0.75), 0 -0.05em 0 rgba(0,0,255,0.75); }
-    100% { text-shadow: -0.025em 0 0 rgba(255,0,0,0.75), -0.025em -0.025em 0 rgba(0,255,0,0.75), -0.025em -0.05em 0 rgba(0,255,0,0.75); }
-}
-
-.container { max-width: 1100px; margin: auto; padding: 20px; }
-.info-card { background: var(--card-bg); padding: 35px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1); border-top: 4px solid var(--primary); margin-bottom: 25px; backdrop-filter: blur(15px); transition: background 0.35s ease; }
-.info-card h3 { margin-top: 0; color: var(--primary); text-transform: uppercase; margin-bottom: 20px; }
-[data-theme="light"] .info-card { border-color: rgba(212, 23, 91, 0.15); }
-
-.apply-container { text-align: center; margin: 20px 0 40px; }
-.apply-btn { display: inline-block; background: transparent; color: var(--text); padding: 18px 45px; border-radius: 4px; text-decoration: none; font-weight: 900; text-transform: uppercase; letter-spacing: 3px; transition: background 0.4s, color 0.4s, box-shadow 0.4s, transform 0.4s; border: 2px solid var(--primary); cursor: pointer; }
-.apply-btn:hover { background: var(--primary); color: white !important; box-shadow: 0 0 35px var(--primary); transform: scale(1.05); }
-
-.home-grid { display: grid; grid-template-columns: 1fr 380px; gap: 25px; align-items: start; }
-@media (max-width: 1000px) { .home-grid { grid-template-columns: 1fr; } }
-
-.partners-list { display: flex; flex-direction: column; gap: 25px; width: 100%; }
-.partner-card-long { display: flex; align-items: center; justify-content: space-between; gap: 30px; text-align: left; }
-@media (max-width: 768px) { .partner-card-long { flex-direction: column; text-align: center; } }
-
-.roster-grid-container { display: flex; flex-direction: column; gap: 20px; align-items: center; width: 100%; }
-.roster-row-top, .roster-row-bottom { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; width: 100%; }
-.roster-2nd-row { grid-template-columns: repeat(2, 1fr); width: 66%; }
-.raph-container { display:grid; grid-template-columns:1fr; gap:20px; width:33%; margin:0 auto; }
-@media (max-width: 850px) { .raph-container { width:100%; } }
-
-@media (max-width: 850px) { .roster-row-top, .roster-row-bottom, .roster-2nd-row { grid-template-columns: 1fr; width: 100%; } }
-
-.management-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; width: 100%; max-width: 900px; justify-items: center; }
-
-.player-card { background: var(--player-card-bg); border-radius: 10px; min-height: 420px; position: relative; overflow: hidden; border: 1px solid rgba(212, 23, 91, 0.25); transition: border-color 0.4s, box-shadow 0.4s, background 0.35s; width: 100%; isolation: isolate; box-shadow: 0 0 0 2px rgba(0,0,0,0.8), inset 0 0 40px rgba(0,0,0,0.95); }
-.player-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.35; z-index: 1; transition: 0.5s; }
-.player-card:hover .player-img { opacity: 0.5; transform: scale(1.05); }
-[data-theme="light"] .player-card { box-shadow: 0 4px 20px rgba(212,23,91,0.1), inset 0 0 40px rgba(255,255,255,0.3); }
-[data-theme="light"] .player-img { opacity: 0.55; }
-[data-theme="light"] .player-card:hover .player-img { opacity: 0.7; }
-
-#reyna-special { position: absolute; top: 35%; left: 50%; transform: translate(-50%, -50%) scale(1.4); width: 100%; height: 100%; object-fit: contain; opacity: 0.45; z-index: 1; transition: 0.5s ease; }
-.player-card:hover #reyna-special { transform: translate(-50%, -50%) scale(1.55); opacity: 0.6; }
-[data-theme="light"] #reyna-special { opacity: 0.6; }
-
-.card-content { position: absolute; bottom: 0; width: 100%; padding: 20px; background: linear-gradient(transparent, var(--card-gradient) 85%); z-index: 10; transition: background 0.35s ease; }
-.player-links { display: flex; gap: 12px; align-items: center; margin-top: 10px; }
-.tracker-icon { height: 18px; filter: brightness(1.2); transition: 0.3s; }
-.player-link-icon { color: var(--link-icon-color); font-size: 1.1rem; transition: color 0.3s; text-decoration: none; }
-.player-link-icon:hover { color: var(--primary); }
-
-.rank-tag { padding: 5px 12px; border-radius: 4px; font-size: 0.7rem; border: 1px solid; font-weight: 800; display: inline-block; margin: 8px 0; text-transform: uppercase; }
-.rank-bronze   { color: var(--rank-bronze);   border-color: var(--rank-bronze);   box-shadow: 0 0 10px var(--rank-bronze); }
-.rank-silver   { color: var(--rank-silver);   border-color: var(--rank-silver);   box-shadow: 0 0 10px var(--rank-silver); }
-.rank-gold     { color: var(--rank-gold);     border-color: var(--rank-gold);     box-shadow: 0 0 10px var(--rank-gold); }
-.rank-diamond  { color: var(--rank-diamond);  border-color: var(--rank-diamond);  box-shadow: 0 0 15px var(--rank-diamond-glow); text-shadow: 0 0 5px var(--rank-diamond-glow); }
-.rank-platinum { color: var(--rank-platinum); border-color: var(--rank-platinum); box-shadow: 0 0 10px var(--rank-platinum); }
-.rank-ascendant{ color: var(--rank-ascendant);border-color: var(--rank-ascendant);box-shadow: 0 0 10px var(--rank-ascendant); }
-.rank-immortal { color: var(--rank-immortal); border-color: var(--rank-immortal); box-shadow: 0 0 10px var(--rank-immortal); }
-.rank-radiant  { color: var(--rank-radiant);  border-color: var(--rank-radiant);  box-shadow: 0 0 10px var(--rank-radiant); }
-
-footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); border-top: 1px solid var(--footer-border); }
-.footer-socials { display: flex; justify-content: center; gap: 15px; margin-bottom: 20px; flex-wrap: wrap; }
-.soc-link { width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 50%; color: white; text-decoration: none; font-size: 1.5rem; transition: 0.3s; }
-.sl-discord { background: var(--color-discord); }
-.sl-x        { background: var(--color-x); border: 1px solid #333; }
-.sl-insta    { background: var(--color-insta); }
-.sl-tiktok   { background: var(--color-tiktok); border: 1px solid #333; }
-.sl-twitch   { background: var(--color-twitch); }
-
-.reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); }
-.reveal.active { opacity: 1; transform: translateY(0); }
-.page-section { display: block; padding: 60px 0; }
-#home { min-height: 100vh; padding-top: 0; }
-
-@media (max-width: 600px) {
-    header { padding: 80px 15px 30px; }
-    .logo-main { width: 90px; }
-    .glitch-text { font-size: clamp(1.8rem, 11vw, 3rem); letter-spacing: 6px; }
-    .container { padding: 12px; }
-    .info-card { padding: 20px 16px; }
-    .apply-btn { padding: 14px 28px; font-size: 0.8rem; letter-spacing: 2px; }
-    .home-grid { grid-template-columns: 1fr !important; gap: 15px; }
-    .player-card { display: flex !important; flex-direction: row !important; min-height: 130px !important; max-height: 145px !important; overflow: hidden; }
-    .player-img { position: relative !important; top: auto !important; left: auto !important; width: 120px !important; height: 145px !important; object-fit: cover !important; object-position: top center !important; flex-shrink: 0 !important; opacity: 0.95 !important; transform: none !important; }
-    #reyna-special { position: relative !important; top: auto !important; left: auto !important; transform: none !important; width: 120px !important; height: 145px !important; object-fit: cover !important; object-position: top center !important; flex-shrink: 0 !important; opacity: 0.95 !important; }
-    .card-content { position: relative !important; background: linear-gradient(to right, var(--card-gradient-mobile) 50%, rgba(5,8,16,0.85)) !important; display: flex !important; flex-direction: column !important; justify-content: center !important; padding: 12px 14px !important; flex: 1 !important; width: auto !important; z-index: 10; }
-    .player-links { margin-top: 5px; }
-    .card-content small { font-size: 0.58rem; }
-    .rank-tag { font-size: 0.62rem; padding: 2px 7px; margin: 4px 0; }
-    .player-card .card-content[style*="top:0"] { position: relative !important; background: linear-gradient(135deg, rgba(212,23,91,0.1), rgba(5,8,16,0.98)) !important; padding: 10px 12px !important; justify-content: center !important; min-height: 130px; }
-    .player-card .card-content[style*="top:0"] .apply-btn { padding: 6px 12px !important; font-size: 0.6rem !important; margin-top: 6px !important; letter-spacing: 1px !important; }
-    .player-card .card-content[style*="top:0"] div[style*="font-size:1.4rem"],
-    .player-card .card-content[style*="top:0"] div[style*="font-size: 1.4rem"] { font-size: 1rem !important; }
-    .player-card .card-content[style*="top:0"] div[style*="font-size:0.75rem"] { font-size: 0.65rem !important; margin-bottom: 4px !important; }
-    .roster-row-top, .roster-row-bottom, .roster-2nd-row { grid-template-columns: 1fr !important; width: 100% !important; }
-    .management-grid { grid-template-columns: 1fr; max-width: 100%; }
-    .partner-card-long { flex-direction: column; text-align: center; gap: 15px; }
-    .partner-card-long img { max-width: 130px !important; }
-    .footer-socials { gap: 10px; }
-    .soc-link { width: 42px; height: 42px; font-size: 1.2rem; }
-    .page-section { padding: 40px 0; }
-    .nav-overlay { width: 100%; left: -100%; }
-    .nav-overlay.active { left: 0; }
-    .nav-overlay a { font-size: 1.3rem; }
-    #theme-toggle { width: 38px; height: 38px; font-size: 0.9rem; top: 16px; right: 16px; }
-}
-
-@media (max-width: 600px) {
-    [data-theme="light"] .card-content { background: linear-gradient(to right, var(--card-gradient-mobile) 50%, rgba(250,245,247,0.85)) !important; }
-    [data-theme="light"] .player-card .card-content[style*="top:0"] { background: linear-gradient(135deg, rgba(212,23,91,0.08), rgba(250,245,247,0.98)) !important; }
-}
-
-/* ========== NEW SPLASH WITH PETALS ========== */
-#splash { position: fixed; inset: 0; z-index: 9999; background: radial-gradient(ellipse at 50% 50%, #1a0a16 0%, #060b10 70%); display: flex; flex-direction: column; align-items: center; justify-content: center; transition: opacity 0.8s ease, visibility 0.8s ease; }
-#splash.hidden { opacity: 0; visibility: hidden; }
-#splash canvas { position: absolute; inset: 0; z-index: 1; }
-#splash .vign { position: absolute; inset: 0; z-index: 2; pointer-events: none; background: radial-gradient(circle at 50% 50%, transparent 30%, rgba(0, 0, 0, .55) 100%); }
-#splash .splash-center { position: relative; z-index: 5; display: flex; flex-direction: column; align-items: center; opacity: 0; animation: splash-fade-in 1.4s .4s forwards; }
-#splash .splash-logo { width: 120px; filter: drop-shadow(0 0 40px var(--primary)); animation: splash-bloom 1.6s cubic-bezier(.2, .8, .2, 1) .2s both; }
-#splash .splash-title { font-size: 2.5rem; margin-top: 28px; letter-spacing: 14px; font-weight: 900; text-transform: uppercase; opacity: 0; animation: splash-up .8s .8s forwards; }
-#splash .splash-sub { color: var(--primary); letter-spacing: 5px; font-weight: bold; font-size: 0.8rem; margin-top: 12px; opacity: 0; animation: splash-up .8s 1s forwards; }
-#splash .splash-bar { width: 240px; height: 3px; background: rgba(212, 23, 91, .15); margin-top: 30px; border-radius: 2px; overflow: hidden; opacity: 0; animation: splash-up .5s 1.2s forwards; }
-#splash .splash-bar::after { content: ""; display: block; height: 100%; width: 0; background: var(--primary); box-shadow: 0 0 12px var(--primary); animation: splash-load 1.8s 1.3s ease-out forwards; }
-@keyframes splash-bloom { 0% { transform: scale(.3) rotate(-30deg); opacity: 0; filter: drop-shadow(0 0 0 var(--primary)); } 60% { transform: scale(1.1) rotate(8deg); opacity: 1; } 100% { transform: scale(1) rotate(0); } }
-@keyframes splash-fade-in { to { opacity: 1; } }
-@keyframes splash-up { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes splash-load { to { width: 100%; } }
-
-#back-to-top { position: fixed; bottom: 90px; right: 20px; z-index: 1002; width: 44px; height: 44px; border-radius: 50%; background: var(--primary); border: none; color: white; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; opacity: 0; transform: translateY(20px); transition: 0.3s ease; pointer-events: none; box-shadow: 0 0 15px var(--primary); }
-#back-to-top.visible { opacity: 1; transform: translateY(0); pointer-events: all; }
-#back-to-top:hover { transform: translateY(-3px); box-shadow: 0 0 25px var(--primary); }
-
-#bottom-nav { display: none; position: fixed; bottom: 0; left: 0; width: 100%; z-index: 1002; background: var(--bottom-nav-bg); backdrop-filter: blur(20px); border-top: 1px solid var(--bottom-nav-border); padding: 8px 0 calc(8px + env(safe-area-inset-bottom)); }
-#bottom-nav ul { display: flex; justify-content: space-around; list-style: none; margin: 0; padding: 0; }
-#bottom-nav ul li a { display: flex; flex-direction: column; align-items: center; gap: 3px; color: var(--bottom-nav-text); text-decoration: none; font-size: 0.6rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; transition: 0.3s; }
-#bottom-nav ul li a i { font-size: 1.2rem; }
-#bottom-nav ul li a.active, #bottom-nav ul li a:hover { color: var(--primary); }
-#bottom-nav ul li a.active i { text-shadow: 0 0 10px var(--primary); }
-@media (max-width: 768px) { #bottom-nav { display: block; } #back-to-top { bottom: 80px; } body { padding-bottom: 65px; } .nav-toggle { display: none; } }
-
-.typing-cursor { display: inline-block; width: 2px; height: 0.9em; background: var(--primary); margin-left: 2px; animation: blink 0.7s step-end infinite; vertical-align: middle; }
-@keyframes blink { 50% { opacity: 0; } }
-
-#bg-shapes { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
-.bg-shape { position: absolute; border: 1px solid rgba(212,23,91,0.18); fill: none; }
-.shape-sq1 { width: 120px; height: 120px; top: 15%; left: 8%; animation: rot-cw 20s linear infinite; transform-origin: center; }
-.shape-sq2 { width: 80px; height: 80px; top: 15%; left: 8%; border-color: rgba(212,23,91,0.1); animation: rot-ccw 28s linear infinite; transform-origin: center; }
-.shape-sq3 { width: 200px; height: 200px; top: 8%; left: 2%; border-color: rgba(212,23,91,0.06); animation: rot-cw 45s linear infinite; transform-origin: center; }
-.shape-sq4 { width: 100px; height: 100px; top: 60%; right: 5%; animation: rot-ccw 22s linear infinite; transform-origin: center; }
-.shape-sq5 { width: 60px; height: 60px; top: 60%; right: 5%; border-color: rgba(212,23,91,0.1); animation: rot-cw 16s linear infinite; transform-origin: center; }
-.shape-sq6 { width: 160px; height: 160px; top: 55%; right: 2%; border-color: rgba(212,23,91,0.06); animation: rot-ccw 38s linear infinite; transform-origin: center; }
-.shape-ring { width: 300px; height: 300px; border-radius: 50%; border-color: rgba(212,23,91,0.07); border-style: dashed; top: 50%; left: 50%; margin-left: -150px; margin-top: -150px; animation: rot-cw 60s linear infinite; transform-origin: center; }
-@keyframes rot-cw  { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-@keyframes rot-ccw { from { transform: rotate(0deg); } to { transform: rotate(-360deg); } }
-     
-/* ========== TIMELINE ========== */
-.timeline{position:relative;padding:20px 0}
-.timeline::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:2px;
-  background:linear-gradient(to bottom,transparent,var(--primary) 10%,var(--primary) 90%,transparent);
-  transform:translateX(-50%)}
-@media(max-width:760px){.timeline::before{left:30px}}
-.tl-row{display:grid;grid-template-columns:1fr 80px 1fr;gap:0;margin-bottom:40px;align-items:center}
-.tl-row:nth-child(odd) .tl-card{grid-column:1;text-align:right}
-.tl-row:nth-child(even) .tl-card{grid-column:3}
-.tl-row:nth-child(odd) .tl-spacer{grid-column:3}
-.tl-row:nth-child(even) .tl-spacer{grid-column:1}
-.tl-dot{grid-column:2;width:18px;height:18px;border-radius:50%;background:var(--primary);justify-self:center;
-  box-shadow:0 0 0 4px var(--bg),0 0 16px var(--primary);position:relative;z-index:2}
-.tl-card{background:var(--card-bg);border:1px solid rgba(212,23,91,.2);border-radius:8px;padding:22px;
-  backdrop-filter:blur(10px)}
-.tl-date{font-size:.7rem;color:var(--primary);letter-spacing:2px;font-weight:700;margin-bottom:6px;font-family:monospace}
-.tl-title{font-weight:900;font-size:1rem;letter-spacing:1px;margin-bottom:6px}
-.tl-desc{font-size:.82rem;opacity:.75;line-height:1.6}
-@media(max-width:760px){
-  .tl-row{grid-template-columns:60px 1fr;gap:18px;margin-bottom:30px}
-  .tl-row .tl-card,.tl-row:nth-child(odd) .tl-card,.tl-row:nth-child(even) .tl-card{grid-column:2;text-align:left}
-  .tl-row .tl-spacer{display:none}
-  .tl-dot{grid-column:1;justify-self:center}
-}
-
-/* ========== MANIFESTO ========== */
-.manifesto-section{padding:100px 20px;position:relative;overflow:hidden;text-align:center}
-.manifesto-section::before{content:"";position:absolute;inset:0;
-  background:radial-gradient(ellipse at center,rgba(212,23,91,.15) 0%,transparent 65%),
-  linear-gradient(180deg,transparent,rgba(0,0,0,.4),transparent);z-index:-1}
-.manifesto-stamp{font-size:.6rem;letter-spacing:6px;color:var(--primary);margin-bottom:30px;font-weight:700;font-family:monospace}
-.manifesto-title{font-size:clamp(2.2rem,7vw,5rem);font-weight:900;letter-spacing:6px;line-height:1.1;margin-bottom:50px}
-.manifesto-title .bloom{display:inline-block}
-.manifesto-title .or-txt{font-style:italic;color:var(--primary);font-weight:400;font-size:.8em;margin:0 12px;opacity:.7}
-.manifesto-title .decay{display:inline-block;color:#5a6470;text-shadow:0 0 18px rgba(0,0,0,.6)}
-[data-theme="light"] .manifesto-title .decay{color:#aaa}
-.manifesto-body{max-width:680px;margin:0 auto;font-size:1rem;line-height:1.85;opacity:.85}
-.manifesto-body p+p{margin-top:18px}
-.manifesto-body em{color:var(--primary);font-style:normal;font-weight:700}
-.manifesto-sig{margin-top:50px;font-size:.7rem;letter-spacing:3px;color:var(--primary);opacity:.7;font-family:monospace}
-
-/* ========== SECTION HEADER ========== */
-.section-h{text-align:center;margin-bottom:50px}
-.section-h .kicker{font-size:.65rem;letter-spacing:5px;color:var(--primary);font-weight:900;text-transform:uppercase;margin-bottom:12px}
-.section-h h2{font-size:clamp(1.6rem,4vw,2.4rem);font-weight:900;letter-spacing:6px;text-transform:uppercase}
-.section-h p{font-size:.9rem;opacity:.6;margin-top:14px;max-width:560px;margin-left:auto;margin-right:auto;line-height:1.7}
-
-/* ========== DIVIDER ========== */
-.glitch-divider{height:60px;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
-.glitch-divider::before{content:"";position:absolute;left:0;right:0;top:50%;height:1px;
-  background:linear-gradient(90deg,transparent,var(--primary),transparent);opacity:.35}
-.glitch-divider span{font-size:.55rem;letter-spacing:4px;color:var(--primary);background:var(--bg);
-  padding:0 18px;position:relative;font-weight:700;font-family:monospace}
-
+@media(max-width:600px){[data-theme="light"] .card-content{background:linear-gradient(to right,var(--card-gradient-mobile) 50%,rgba(250,245,247,.85)) !important;}}
      </style>
 </head>
 <body>
 
-     <canvas id="particle-canvas" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:2;pointer-events:none;"></canvas>
+<canvas id="particle-canvas" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:2;pointer-events:none;"></canvas>
+<div id="bg-shapes">
+    <div class="bg-shape shape-sq1"></div><div class="bg-shape shape-sq2"></div>
+    <div class="bg-shape shape-sq3"></div><div class="bg-shape shape-sq4"></div>
+    <div class="bg-shape shape-sq5"></div><div class="bg-shape shape-sq6"></div>
+    <div class="bg-shape shape-ring"></div>
+</div>
 
-     <div id="bg-shapes">
-         <div class="bg-shape shape-sq1"></div>
-         <div class="bg-shape shape-sq2"></div>
-         <div class="bg-shape shape-sq3"></div>
-         <div class="bg-shape shape-sq4"></div>
-         <div class="bg-shape shape-sq5"></div>
-         <div class="bg-shape shape-sq6"></div>
-         <div class="bg-shape shape-ring"></div>
-     </div>
+<video loop playsinline autoplay muted id="video-bg"><source src="valo background.mp4" type="video/mp4"></video>
+<div class="video-overlay"></div>
 
-     <video loop playsinline autoplay muted id="video-bg"><source src="valo background.mp4" type="video/mp4"></video>
-     <div class="video-overlay"></div>
+<button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fas fa-chevron-up"></i></button>
 
-     <button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fas fa-chevron-up"></i></button>
+<nav id="bottom-nav">
+    <ul>
+        <li><a href="index.html" class="bnav"><i class="fas fa-house"></i>Home</a></li>
+        <li><a href="index.html#about" class="bnav"><i class="fas fa-seedling"></i>About</a></li>
+        <li><a href="roster.html" class="bnav active"><i class="fas fa-users"></i>Roster</a></li>
+        <li><a href="index.html#partners" class="bnav"><i class="fas fa-handshake"></i>Partners</a></li>
+    </ul>
+</nav>
 
-     <nav id="bottom-nav">
-         <ul>
-             <li><a href="index.html" class="bnav"><i class="fas fa-house"></i>Home</a></li>
-             <li><a href="index.html#about" class="bnav"><i class="fas fa-seedling"></i>About</a></li>
-             <li><a href="roster.html" class="bnav active"><i class="fas fa-users"></i>Roster</a></li>
-             <li><a href="index.html#partners" class="bnav"><i class="fas fa-handshake"></i>Partners</a></li>
-         </ul>
-     </nav>
+<button id="theme-toggle" title="Toggle theme"><i class="fas fa-sun"></i></button>
+<button class="nav-toggle" onclick="toggleNav()"><span></span><span></span><span></span></button>
 
-     <button id="theme-toggle" title="Toggle theme" aria-label="Toggle light/dark theme"><i class="fas fa-sun"></i></button>
-     <button class="nav-toggle" onclick="toggleNav()"><span></span><span></span><span></span></button>
+<div class="nav-overlay" id="navOverlay">
+    <a href="index.html" onclick="toggleNav()">Home</a>
+    <a href="index.html#about" onclick="toggleNav()">About Us</a>
+    <a href="roster.html" onclick="toggleNav()" class="nav-active">Roster</a>
+    <a href="index.html#partners" onclick="toggleNav()">Partners</a>
+    <a href="legal.html" onclick="toggleNav()">Legal Notice</a>
+    <div style="margin-top:auto;padding-top:30px;border-top:1px solid rgba(212,23,91,.2);">
+        <div style="font-size:.6rem;letter-spacing:3px;color:var(--primary);opacity:.6;font-weight:700;text-transform:uppercase;margin-bottom:15px;">Follow Us</div>
+        <div style="display:flex;gap:14px;flex-wrap:wrap;">
+            <a href="https://discord.gg/bQ8phXAmSa" target="_blank" onclick="toggleNav()" style="color:#5865F2;font-size:1.4rem;"><i class="fa-brands fa-discord"></i></a>
+            <a href="https://x.com/everbloom_gc" target="_blank" onclick="toggleNav()" style="color:white;font-size:1.4rem;"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.instagram.com/everbloom.gc" target="_blank" onclick="toggleNav()" style="color:#E4405F;font-size:1.4rem;"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@everbloomgc" target="_blank" onclick="toggleNav()" style="color:white;font-size:1.4rem;"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://www.twitch.tv/everbloomvalorant" target="_blank" onclick="toggleNav()" style="color:#9146FF;font-size:1.4rem;"><i class="fa-brands fa-twitch"></i></a>
+        </div>
+    </div>
+</div>
 
-     <div class="nav-overlay" id="navOverlay">
-          <a href="index.html" onclick="toggleNav()">Home</a>
-          <a href="index.html#about" onclick="toggleNav()">About Us</a>
-          <a href="roster.html" onclick="toggleNav()" class="nav-active">Roster</a>
-          <a href="index.html#partners" onclick="toggleNav()">Partners</a>
-          <a href="legal.html" onclick="toggleNav()">Legal Notice</a>
-          <div style="margin-top: auto; padding-top: 30px; border-top: 1px solid rgba(212,23,91,0.2);">
-              <div style="font-size: 0.6rem; letter-spacing: 3px; color: var(--primary); opacity: 0.6; font-weight: 700; text-transform: uppercase; margin-bottom: 15px;">Follow Us</div>
-              <div style="display: flex; gap: 14px; flex-wrap: wrap;">
-                  <a href="https://discord.gg/bQ8phXAmSa" target="_blank" onclick="toggleNav()" style="color: #5865F2; font-size: 1.4rem;"><i class="fa-brands fa-discord"></i></a>
-                  <a href="https://x.com/everbloom_gc" target="_blank" onclick="toggleNav()" style="color: white; font-size: 1.4rem;"><i class="fa-brands fa-x-twitter"></i></a>
-                  <a href="https://www.instagram.com/everbloom.gc" target="_blank" onclick="toggleNav()" style="color: #E4405F; font-size: 1.4rem;"><i class="fa-brands fa-instagram"></i></a>
-                  <a href="https://www.tiktok.com/@everbloomgc" target="_blank" onclick="toggleNav()" style="color: white; font-size: 1.4rem;"><i class="fa-brands fa-tiktok"></i></a>
-                  <a href="https://www.twitch.tv/everbloomvalorant" target="_blank" onclick="toggleNav()" style="color: #9146FF; font-size: 1.4rem;"><i class="fa-brands fa-twitch"></i></a>
-              </div>
-          </div>
-     </div>
+<header style="padding:100px 20px 40px;text-align:center;">
+    <a href="index.html"><img src="everbloomlogo.png" alt="Everbloom" class="logo-main"></a>
+    <h1 style="font-size:clamp(1.8rem,5vw,3rem);font-weight:900;letter-spacing:8px;text-transform:uppercase;margin-top:10px;">OUR ROSTERS</h1>
+    <p style="color:var(--primary);letter-spacing:4px;font-size:.8rem;font-weight:700;margin-top:8px;">EVERBLOOM GAMING · DACH</p>
+    <p id="ranks-updated" style="font-size:.65rem;opacity:.35;margin-top:8px;letter-spacing:1px;">Last updated: 15.06.2026 17:14 UTC</p>
+</header>
 
-     <!-- PAGE HEADER -->
-     <header style="padding:100px 20px 40px;text-align:center;">
-         <a href="index.html"><img src="everbloomlogo.png" alt="Everbloom" class="logo-main"></a>
-         <h1 style="font-size:clamp(1.8rem,5vw,3rem);font-weight:900;letter-spacing:8px;text-transform:uppercase;margin-top:10px;">OUR ROSTERS</h1>
-         <p style="color:var(--primary);letter-spacing:4px;font-size:0.8rem;font-weight:700;margin-top:8px;">EVERBLOOM GAMING · DACH</p>
-         <p id="ranks-updated" style="font-size:0.65rem;opacity:0.35;margin-top:8px;letter-spacing:1px;">Loading ranks...</p>
-     </header>
+<div class="container" style="padding-bottom:60px;">
 
-     <div class="container" style="padding-bottom:60px;">
+    <!-- FLINTA ROSTER -->
+    <div style="text-align:center;margin-bottom:24px;" class="reveal">
+        <h3 style="color:var(--primary);text-transform:uppercase;letter-spacing:3px;margin-bottom:14px;">FLINTA Roster</h3>
+        <div style="display:inline-flex;align-items:center;gap:12px;background:rgba(212,23,91,.08);border:1px solid rgba(212,23,91,.35);border-radius:8px;padding:14px 28px;backdrop-filter:blur(10px);flex-wrap:wrap;justify-content:center;">
+            <i class="fas fa-pause-circle" style="color:var(--primary);font-size:1.3rem;"></i>
+            <div style="text-align:left;">
+                <div style="font-weight:900;font-size:.75rem;letter-spacing:3px;color:var(--primary);text-transform:uppercase;">Roster Paused until 23.07.2026</div>
+                <div style="font-size:.78rem;opacity:.6;margin-top:3px;">Applications still open — we'll review after the break.</div>
+            </div>
+            <a href="https://forms.gle/VeNmZo9DkJo35PR5A" target="_blank" class="apply-btn" style="padding:8px 18px;font-size:.65rem;letter-spacing:2px;margin:0;">APPLY</a>
+        </div>
+    </div>
+    <div class="roster-grid-container reveal" style="opacity:.6;filter:grayscale(30%);pointer-events:none;margin-bottom:60px;">
+        <div class="roster-2nd-row" style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px;width:66%;">
+            <div class="player-card">
+                <img loading="lazy" src="astra.png" class="player-img">
+                <div class="card-content">
+                    <small style="color:var(--primary);font-weight:bold;">CONTROLLER</small>
+                    <div style="font-weight:900;font-size:1.4rem;">Ruby</div>
+                    <div class="rank-tag rank-gold" id="rank-ruby">Gold 1</div>
+                    <div class="player-links">
+                        <a href="https://tracker.gg/valorant/profile/riot/Rubyxcube%23EBM/" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
+                        <a href="https://x.com/x2_zelda" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="player-card">
+                <img loading="lazy" src="Chamber.webp" class="player-img">
+                <div class="card-content">
+                    <small style="color:var(--primary);font-weight:bold;">SENTINEL</small>
+                    <div style="font-weight:900;font-size:1.4rem;">Settie</div>
+                    <div class="rank-tag rank-silver" id="rank-settie">Silver 1</div>
+                    <div class="player-links">
+                        <a href="https://tracker.gg/valorant/profile/riot/settie%23TTV/" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
+                        <a href="https://x.com/Suns3tt_VLR" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="raph-container">
+            <div class="player-card">
+                <img loading="lazy" src="reyna.webp" class="player-img" style="object-fit:cover;object-position:top center;">
+                <div class="card-content">
+                    <small style="color:var(--primary);font-weight:bold;">FLEX</small>
+                    <div style="font-weight:900;font-size:1.4rem;">Raph</div>
+                    <div class="rank-tag rank-silver" id="rank-raph">Silver 1</div>
+                    <div class="player-links">
+                        <a href="https://tracker.gg/valorant/profile/riot/DreamyDevour%23EBM/overview?playlist=competitive&platform=pc" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
+                        <a href="https://x.com/wavvybecci_" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-         <!-- FLINTA ROSTER -->
-         <div style="text-align:center;margin-bottom:24px;" class="reveal">
-             <h3 style="color:var(--primary);text-transform:uppercase;letter-spacing:3px;margin-bottom:14px;">FLINTA Roster</h3>
-             <div style="display:inline-flex;align-items:center;gap:12px;background:rgba(212,23,91,0.08);border:1px solid rgba(212,23,91,0.35);border-radius:8px;padding:14px 28px;backdrop-filter:blur(10px);flex-wrap:wrap;justify-content:center;">
-                 <i class="fas fa-pause-circle" style="color:var(--primary);font-size:1.3rem;"></i>
-                 <div style="text-align:left;">
-                     <div style="font-weight:900;font-size:0.75rem;letter-spacing:3px;color:var(--primary);text-transform:uppercase;">Roster Paused until 23.07.2026</div>
-                     <div style="font-size:0.78rem;opacity:0.6;margin-top:3px;">Applications still open — we'll review after the break.</div>
-                 </div>
-                 <a href="https://forms.gle/VeNmZo9DkJo35PR5A" target="_blank" class="apply-btn" style="padding:8px 18px;font-size:0.65rem;letter-spacing:2px;margin:0;">APPLY</a>
-             </div>
-         </div>
-         <div class="roster-grid-container reveal" style="opacity:0.6;filter:grayscale(30%);pointer-events:none;margin-bottom:60px;">
-             <div class="roster-2nd-row" style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px;width:66%;">
-                 <div class="player-card">
-                     <img loading="lazy" src="astra.png" class="player-img">
-                     <div class="card-content">
-                         <small style="color:var(--primary);font-weight:bold;">CONTROLLER</small>
-                         <div style="font-weight:900;font-size:1.4rem;">Ruby</div>
-                         <div class="rank-tag rank-silver" id="rank-ruby">Silver 3</div>
-                         <div class="player-links">
-                             <a href="https://tracker.gg/valorant/profile/riot/Rubyxcube%23EBM/" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
-                             <a href="https://x.com/x2_zelda" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
-                         </div>
-                     </div>
-                 </div>
-                 <div class="player-card">
-                     <img loading="lazy" src="Chamber.webp" class="player-img">
-                     <div class="card-content">
-                         <small style="color:var(--primary);font-weight:bold;">SENTINEL</small>
-                         <div style="font-weight:900;font-size:1.4rem;">Settie</div>
-                         <div class="rank-tag rank-silver" id="rank-settie">Silver 1</div>
-                         <div class="player-links">
-                             <a href="https://tracker.gg/valorant/profile/riot/settie%23TTV/" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
-                             <a href="https://x.com/Suns3tt_VLR" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
-                         </div>
-                     </div>
-                 </div>
-             </div>
-             <div class="raph-container">
-                 <div class="player-card">
-                     <img loading="lazy" src="reyna.webp" class="player-img" style="object-fit:cover;object-position:top center;">
-                     <div class="card-content">
-                         <small style="color:var(--primary);font-weight:bold;">FLEX</small>
-                         <div style="font-weight:900;font-size:1.4rem;">Raph</div>
-                         <div class="rank-tag rank-bronze" id="rank-raph">Bronze 3</div>
-                         <div class="player-links">
-                             <a href="https://tracker.gg/valorant/profile/riot/DreamyDevour%23EBM/overview?playlist=competitive&platform=pc" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
-                             <a href="https://x.com/wavvybecci_" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
-                         </div>
-                     </div>
-                 </div>
-             </div>
-         </div>
+    <!-- MALE ROSTER -->
+    <h3 style="text-align:center;color:var(--primary);text-transform:uppercase;margin-bottom:20px;letter-spacing:3px;" class="reveal">Male Roster</h3>
+    <div class="roster-grid-container reveal" style="margin-bottom:60px;">
+        <div class="roster-row-bottom roster-2nd-row">
+            <div class="player-card">
+                <img loading="lazy" src="Omen_Artwork_Full.webp" class="player-img" style="object-fit:cover;">
+                <div class="card-content">
+                    <small style="color:var(--primary);font-weight:bold;">CONTROLLER</small>
+                    <div style="font-weight:900;font-size:1.4rem;">JC</div>
+                    <div class="rank-tag rank-ascendant" id="rank-jc">Ascendant 2</div>
+                    <div class="player-links">
+                        <a href="https://tracker.gg/valorant/profile/riot/jczera%23LG16/" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="player-card">
+                <img loading="lazy" src="Chamber.webp" class="player-img">
+                <div class="card-content">
+                    <small style="color:var(--primary);font-weight:bold;">INITIATOR</small>
+                    <div style="font-weight:900;font-size:1.4rem;">Marwin</div>
+                    <div class="rank-tag rank-ascendant" id="rank-marwin">Ascendant 1</div>
+                    <div class="player-links">
+                        <a href="https://tracker.gg/valorant/profile/riot/BluntDawg51%23081z/overview?platform=pc&playlist=competitive&season=ce2783e8-44fc-dd48-3da3-33b5ba6c4a22" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="roster-row-bottom roster-2nd-row">
+            <div class="player-card">
+                <img loading="lazy" src="jett.png" class="player-img">
+                <div class="card-content">
+                    <small style="color:var(--primary);font-weight:bold;">DUELIST</small>
+                    <div style="font-weight:900;font-size:1.4rem;">Envy</div>
+                    <div class="rank-tag rank-diamond" id="rank-envy">Diamond 3</div>
+                    <div class="player-links">
+                        <a href="https://tracker.gg/valorant/profile/riot/envy%23grit/overview?platform=pc&playlist=competitive&season=9d85c932-4820-c060-09c3-668636d4df1b" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
+                        <a href="https://x.com/envy_fpsss" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="player-card">
+                <img loading="lazy" src="killjoy.png" class="player-img" style="object-fit:contain;transform:scale(1.6);transform-origin:center;transition:.5s ease;">
+                <div class="card-content">
+                    <small style="color:var(--primary);font-weight:bold;">SENTINEL</small>
+                    <div style="font-weight:900;font-size:1.4rem;">Aff3</div>
+                    <div class="rank-tag rank-ascendant" id="rank-aff3">Ascendant 1</div>
+                    <div class="player-links">
+                        <a href="https://tracker.gg/valorant/profile/riot/Aff3%23XuXu/overview" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
+                        <a href="https://x.com/AffenstarkJo" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-         <!-- MALE ROSTER 1 -->
-         <h3 style="text-align:center;color:var(--primary);text-transform:uppercase;margin-bottom:20px;letter-spacing:3px;" class="reveal">Male Roster</h3>
-         <div class="roster-grid-container reveal" style="margin-bottom:60px;">
-             <div class="roster-row-top">
-                 <div class="player-card">
-                     <img loading="lazy" src="Omen_Artwork_Full.webp" class="player-img" style="object-fit:cover;">
-                     <div class="card-content">
-                         <small style="color:var(--primary);font-weight:bold;">CONTROLLER</small>
-                         <div style="font-weight:900;font-size:1.4rem;">JC</div>
-                         <div class="rank-tag rank-ascendant" id="rank-jc">Ascendant 3</div>
-                         <div class="player-links">
-                             <a href="https://tracker.gg/valorant/profile/riot/jczera%23LG16/" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
-                         </div>
-                     </div>
-                 </div>
-                 <div class="player-card">
-                     <img loading="lazy" src="Chamber.webp" class="player-img">
-                     <div class="card-content">
-                         <small style="color:var(--primary);font-weight:bold;">INITIATOR</small>
-                         <div style="font-weight:900;font-size:1.4rem;">Marwin</div>
-                         <div class="rank-tag rank-ascendant" id="rank-marwin">Ascendant 1</div>
-                         <div class="player-links">
-                             <a href="https://tracker.gg/valorant/profile/riot/BluntDawg51%23081z/overview?platform=pc&playlist=competitive&season=ce2783e8-44fc-dd48-3da3-33b5ba6c4a22" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
-                         </div>
-                     </div>
-                 </div>
-                 <div class="player-card">
-                     <img loading="lazy" src="Waylay_Artwork_Full.webp" class="player-img" style="object-fit:cover;">
-                     <div class="card-content">
-                         <small style="color:var(--primary);font-weight:bold;">DUELIST</small>
-                         <div style="font-weight:900;font-size:1.4rem;">Sin</div>
-                         <div class="rank-tag rank-radiant" id="rank-sin">Radiant</div>
-                         <div class="player-links">
-                             <a href="https://tracker.gg/valorant/profile/riot/feek%20dood%23diff/overview?platform=pc&playlist=competitive&season=ce2783e8-44fc-dd48-3da3-33b5ba6c4a22" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
-                             <a href="https://x.com/Noctravlr" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
-                         </div>
-                     </div>
-                 </div>
-             </div>
-             <div class="roster-row-bottom roster-2nd-row">
-                 <div class="player-card">
-                     <img loading="lazy" src="jett.png" class="player-img">
-                     <div class="card-content">
-                         <small style="color:var(--primary);font-weight:bold;">DUELIST</small>
-                         <div style="font-weight:900;font-size:1.4rem;">Envy</div>
-                         <div class="rank-tag rank-diamond" id="rank-envy">Diamond 2</div>
-                         <div class="player-links">
-                             <a href="https://tracker.gg/valorant/profile/riot/envy%23grit/overview?platform=pc&playlist=competitive&season=9d85c932-4820-c060-09c3-668636d4df1b" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
-                             <a href="https://x.com/envy_fpsss" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
-                         </div>
-                     </div>
-                 </div>
-                 <div class="player-card">
-                     <img loading="lazy" src="killjoy.png" class="player-img" style="object-fit:contain;transform:scale(1.6);transform-origin:center;transition:0.5s ease;">
-                     <div class="card-content">
-                         <small style="color:var(--primary);font-weight:bold;">SENTINEL</small>
-                         <div style="font-weight:900;font-size:1.4rem;">Aff3</div>
-                         <div class="rank-tag rank-ascendant" id="rank-aff3">Ascendant 1</div>
-                         <div class="player-links">
-                             <a href="https://tracker.gg/valorant/profile/riot/Aff3%23XuXu/overview" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
-                             <a href="https://x.com/AffenstarkJo" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
-                         </div>
-                     </div>
-                 </div>
-             </div>
-         </div>
+    <!-- MALE ROSTER 2 -->
+    <h3 style="text-align:center;color:var(--primary);text-transform:uppercase;margin-bottom:20px;letter-spacing:3px;" class="reveal">Male Roster 2</h3>
+    <div class="roster-grid-container reveal" style="margin-bottom:60px;">
+        <div class="roster-row-top">
+            <div class="player-card">
+                <img loading="lazy" src="Chamber.webp" class="player-img">
+                <div class="card-content">
+                    <small style="color:var(--primary);font-weight:bold;">SENTINEL</small>
+                    <div style="font-weight:900;font-size:1.4rem;">Banani</div>
+                    <div class="rank-tag rank-ascendant" id="rank-banani">Ascendant 1</div>
+                    <div class="player-links">
+                        <a href="https://tracker.gg/valorant/profile/riot/Kasane%20Teto%23roses/overview?platform=pc&playlist=competitive&season=ce2783e8-44fc-dd48-3da3-33b5ba6c4a22" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="player-card">
+                <img loading="lazy" src="viper.png" class="player-img">
+                <div class="card-content">
+                    <small style="color:var(--primary);font-weight:bold;">CONTROLLER</small>
+                    <div style="font-weight:900;font-size:1.4rem;">Twony</div>
+                    <div class="rank-tag rank-immortal" id="rank-twony">Immortal 1</div>
+                    <div class="player-links">
+                        <a href="https://tracker.gg/valorant/profile/riot/twony%23111/overview" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
+                        <a href="https://x.com/twonyyx" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="player-card">
+                <img loading="lazy" src="kayo.png" class="player-img">
+                <div class="card-content">
+                    <small style="color:var(--primary);font-weight:bold;">INITIATOR</small>
+                    <div style="font-weight:900;font-size:1.4rem;">Alex</div>
+                    <div class="rank-tag rank-platinum" id="rank-alex">Platinum 2</div>
+                    <div class="player-links">
+                        <a href="https://tracker.gg/valorant/profile/riot/Alexolotl%232020/overview?platform=pc&playlist=competitive" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="roster-row-bottom roster-2nd-row">
+            <div class="player-card">
+                <img loading="lazy" src="jett.png" class="player-img">
+                <div class="card-content">
+                    <small style="color:var(--primary);font-weight:bold;">DUELIST</small>
+                    <div style="font-weight:900;font-size:1.4rem;">Kyoka</div>
+                    <div class="rank-tag rank-ascendant" id="rank-kyoka">Ascendant 2</div>
+                    <div class="player-links">
+                        <a href="https://tracker.gg/valorant/profile/riot/Rem%23Rero/overview?platform=pc&playlist=competitive&season=ce2783e8-44fc-dd48-3da3-33b5ba6c4a22" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="player-card">
+                <img loading="lazy" src="neon.png" class="player-img">
+                <div class="card-content">
+                    <small style="color:var(--primary);font-weight:bold;">DUELIST</small>
+                    <div style="font-weight:900;font-size:1.4rem;">Gustaf</div>
+                    <div class="rank-tag rank-ascendant" id="rank-gustaf">Ascendant 3</div>
+                    <div class="player-links">
+                        <a href="https://tracker.gg/valorant/profile/riot/Ram%23Rero/overview?platform=pc&playlist=competitive&season=ce2783e8-44fc-dd48-3da3-33b5ba6c4a22" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
+                        <a href="https://x.com/gustafdiekatze" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-         <!-- MALE ROSTER 2 — COMING SOON -->
-         <h3 style="text-align:center;color:var(--primary);text-transform:uppercase;margin-bottom:20px;letter-spacing:3px;" class="reveal">Male Roster 2</h3>
-         <div class="reveal" style="text-align:center;margin-bottom:40px;">
-             <div style="display:inline-flex;align-items:center;gap:12px;background:rgba(212,23,91,0.06);border:1px dashed rgba(212,23,91,0.4);border-radius:8px;padding:40px 60px;flex-direction:column;">
-                 <i class="fas fa-seedling" style="color:var(--primary);font-size:2rem;opacity:0.7;"></i>
-                 <div style="font-weight:900;font-size:0.8rem;letter-spacing:4px;color:var(--primary);text-transform:uppercase;">Coming Soon</div>
-                 <div style="font-size:0.85rem;opacity:0.5;margin-top:4px;max-width:320px;line-height:1.6;">Due to overwhelming demand we're opening a 2nd Male Roster. Applications open soon.</div>
-                 <a href="https://forms.gle/VeNmZo9DkJo35PR5A" target="_blank" class="apply-btn" style="padding:10px 24px;font-size:0.7rem;letter-spacing:2px;margin-top:8px;">STAY UPDATED</a>
-             </div>
-         </div>
+</div>
 
-     </div>
+<footer>
+    <div class="container">
+        <div class="footer-socials">
+            <a href="https://www.gamertransfer.com" target="_blank"><img src="https://gamertransfer.com/banner/v5_373.png" alt="GamerTransfer" style="height:50px;"></a>
+            <a href="https://discord.gg/bQ8phXAmSa" class="soc-link sl-discord" target="_blank"><i class="fa-brands fa-discord"></i></a>
+            <a href="https://x.com/everbloom_gc" class="soc-link sl-x" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.instagram.com/everbloom.gc" class="soc-link sl-insta" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@everbloomgc" class="soc-link sl-tiktok" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://www.twitch.tv/everbloomvalorant" class="soc-link sl-twitch" target="_blank"><i class="fa-brands fa-twitch"></i></a>
+        </div>
+        <div style="opacity:.4;font-size:.8rem;margin-top:20px;">
+            © 2026 EVERBLOOM GAMING | <a href="legal.html" style="color:white;text-decoration:none;opacity:.8;">Legal Notice</a>
+        </div>
+    </div>
+</footer>
 
-     <footer>
-          <div class="container">
-              <div class="footer-socials">
-                   <a href="https://www.gamertransfer.com" target="_blank"><img src="https://gamertransfer.com/banner/v5_373.png" alt="GamerTransfer" style="height:50px;"></a>
-                   <a href="https://discord.gg/bQ8phXAmSa" class="soc-link sl-discord" target="_blank"><i class="fa-brands fa-discord"></i></a>
-                   <a href="https://x.com/everbloom_gc" class="soc-link sl-x" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
-                   <a href="https://www.instagram.com/everbloom.gc" class="soc-link sl-insta" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                   <a href="https://www.tiktok.com/@everbloomgc" class="soc-link sl-tiktok" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
-                   <a href="https://www.twitch.tv/everbloomvalorant" class="soc-link sl-twitch" target="_blank"><i class="fa-brands fa-twitch"></i></a>
-              </div>
-              <div style="opacity:0.4;font-size:0.8rem;margin-top:20px;">
-                  © 2026 EVERBLOOM GAMING | <a href="legal.html" style="color:white;text-decoration:none;opacity:0.8;">Legal Notice</a>
-              </div>
-          </div>
-     </footer>
-
-     <script>
-          (function() {
-              const toggle = document.getElementById('theme-toggle');
-              const root = document.documentElement;
-              if (localStorage.getItem('ebThemeVer') !== '2') { localStorage.setItem('ebThemeVer', '2'); localStorage.removeItem('ebTheme'); }
-              const saved = localStorage.getItem('ebTheme') || 'dark';
-              if (saved === 'light') { root.setAttribute('data-theme', 'light'); toggle.innerHTML = '<i class="fas fa-moon"></i>'; }
-              toggle.addEventListener('click', () => {
-                  const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-                  root.setAttribute('data-theme', next);
-                  localStorage.setItem('ebTheme', next);
-                  toggle.innerHTML = next === 'light' ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
-              });
-          })();
-          function toggleNav() {
-              document.getElementById('navOverlay').classList.toggle('active');
-              document.querySelector('.nav-toggle').classList.toggle('open');
-          }
-          function reveal() {
-              document.querySelectorAll(".reveal").forEach(el => {
-                  if (el.getBoundingClientRect().top < window.innerHeight - 100) el.classList.add("active");
-              });
-          }
-          window.addEventListener("scroll", reveal); window.onload = reveal;
-          const btt = document.getElementById('back-to-top');
-          window.addEventListener('scroll', () => { btt.classList.toggle('visible', window.scrollY > 300); });
-     </script>
-     <script>
-          const canvas = document.getElementById('particle-canvas');
-          const ctx = canvas.getContext('2d');
-          let W = canvas.width = window.innerWidth, H = canvas.height = window.innerHeight;
-          window.addEventListener('resize', () => { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; });
-          const COLORS = ['rgba(212, 23, 91,','rgba(255, 80, 140,','rgba(255, 140, 180,','rgba(255, 200, 220,','rgba(255,255,255,'];
-          const TYPES = ['petal','petal','petal','circle','diamond'];
-          function rand(a,b){return a+Math.random()*(b-a);}
-          function drawPetal(ctx,size){const petals=5,outerR=size,innerR=size*0.4;ctx.beginPath();for(let i=0;i<petals*2;i++){const angle=(i*Math.PI)/petals-Math.PI/2;const r=i%2===0?outerR:innerR;const x=Math.cos(angle)*r;const y=Math.sin(angle)*r;i===0?ctx.moveTo(x,y):ctx.lineTo(x,y);}ctx.closePath();ctx.fill();ctx.beginPath();ctx.arc(0,0,size*0.18,0,Math.PI*2);ctx.fillStyle='rgba(255,220,230,0.9)';ctx.fill();}
-          class Particle{constructor(){this.reset(true);}reset(initial){this.x=rand(0,W);this.y=initial?rand(-H,H):rand(-100,-10);this.size=rand(3,9);this.speedY=rand(0.3,1.2);this.speedX=rand(-0.3,0.3);this.opacity=rand(0.25,0.85);this.fade=rand(0.0015,0.005);this.rot=rand(0,Math.PI*2);this.rotSpeed=rand(-0.025,0.025);this.color=COLORS[Math.floor(Math.random()*COLORS.length)];this.type=TYPES[Math.floor(Math.random()*TYPES.length)];this.wobble=rand(0,Math.PI*2);this.wobbleSpd=rand(0.008,0.025);this.swing=rand(0.3,1.2);}draw(){ctx.save();ctx.globalAlpha=Math.max(0,this.opacity);ctx.translate(this.x,this.y);ctx.rotate(this.rot);ctx.fillStyle=this.color+this.opacity+')';ctx.shadowColor=this.color+'0.6)';ctx.shadowBlur=this.size*4;if(this.type==='petal'){drawPetal(ctx,this.size);}else if(this.type==='circle'){ctx.beginPath();ctx.arc(0,0,this.size*0.6,0,Math.PI*2);ctx.fill();}else{const s=this.size;ctx.beginPath();ctx.moveTo(0,-s);ctx.lineTo(s*0.55,0);ctx.lineTo(0,s);ctx.lineTo(-s*0.55,0);ctx.closePath();ctx.fill();}ctx.restore();}update(){this.wobble+=this.wobbleSpd;this.x+=this.speedX+Math.sin(this.wobble)*this.swing;this.y+=this.speedY;this.rot+=this.rotSpeed;this.opacity-=this.fade;if(this.y>H+20||this.opacity<=0)this.reset(false);}}
-          const COUNT=window.innerWidth<600?45:100;
-          const particles=Array.from({length:COUNT},()=>new Particle());
-          function animate(){ctx.clearRect(0,0,W,H);particles.forEach(p=>{p.update();p.draw();});requestAnimationFrame(animate);}
-          animate();
-     </script>
+<script>
+(function(){
+    const toggle=document.getElementById('theme-toggle');
+    const root=document.documentElement;
+    if(localStorage.getItem('ebThemeVer')!=='2'){localStorage.setItem('ebThemeVer','2');localStorage.removeItem('ebTheme');}
+    const saved=localStorage.getItem('ebTheme')||'dark';
+    if(saved==='light'){root.setAttribute('data-theme','light');toggle.innerHTML='<i class="fas fa-moon"></i>';}
+    toggle.addEventListener('click',()=>{
+        const next=root.getAttribute('data-theme')==='light'?'dark':'light';
+        root.setAttribute('data-theme',next);
+        localStorage.setItem('ebTheme',next);
+        toggle.innerHTML=next==='light'?'<i class="fas fa-moon"></i>':'<i class="fas fa-sun"></i>';
+    });
+})();
+function toggleNav(){
+    document.getElementById('navOverlay').classList.toggle('active');
+    document.querySelector('.nav-toggle').classList.toggle('open');
+}
+function reveal(){
+    document.querySelectorAll(".reveal").forEach(el=>{
+        if(el.getBoundingClientRect().top<window.innerHeight-100)el.classList.add("active");
+    });
+}
+window.addEventListener("scroll",reveal);window.onload=reveal;
+const btt=document.getElementById('back-to-top');
+window.addEventListener('scroll',()=>{btt.classList.toggle('visible',window.scrollY>300);});
+</script>
+<script>
+const canvas=document.getElementById('particle-canvas');
+const ctx=canvas.getContext('2d');
+let W=canvas.width=window.innerWidth,H=canvas.height=window.innerHeight;
+window.addEventListener('resize',()=>{W=canvas.width=window.innerWidth;H=canvas.height=window.innerHeight;});
+const COLORS=['rgba(212,23,91,','rgba(255,80,140,','rgba(255,140,180,','rgba(255,200,220,','rgba(255,255,255,'];
+const TYPES=['petal','petal','petal','circle','diamond'];
+function rand(a,b){return a+Math.random()*(b-a);}
+function drawPetal(ctx,size){const petals=5,outerR=size,innerR=size*0.4;ctx.beginPath();for(let i=0;i<petals*2;i++){const angle=(i*Math.PI)/petals-Math.PI/2;const r=i%2===0?outerR:innerR;const x=Math.cos(angle)*r;const y=Math.sin(angle)*r;i===0?ctx.moveTo(x,y):ctx.lineTo(x,y);}ctx.closePath();ctx.fill();ctx.beginPath();ctx.arc(0,0,size*0.18,0,Math.PI*2);ctx.fillStyle='rgba(255,220,230,0.9)';ctx.fill();}
+class Particle{constructor(){this.reset(true);}reset(initial){this.x=rand(0,W);this.y=initial?rand(-H,H):rand(-100,-10);this.size=rand(3,9);this.speedY=rand(0.3,1.2);this.speedX=rand(-0.3,0.3);this.opacity=rand(0.25,0.85);this.fade=rand(0.0015,0.005);this.rot=rand(0,Math.PI*2);this.rotSpeed=rand(-0.025,0.025);this.color=COLORS[Math.floor(Math.random()*COLORS.length)];this.type=TYPES[Math.floor(Math.random()*TYPES.length)];this.wobble=rand(0,Math.PI*2);this.wobbleSpd=rand(0.008,0.025);this.swing=rand(0.3,1.2);}draw(){ctx.save();ctx.globalAlpha=Math.max(0,this.opacity);ctx.translate(this.x,this.y);ctx.rotate(this.rot);ctx.fillStyle=this.color+this.opacity+')';ctx.shadowColor=this.color+'0.6)';ctx.shadowBlur=this.size*4;if(this.type==='petal'){drawPetal(ctx,this.size);}else if(this.type==='circle'){ctx.beginPath();ctx.arc(0,0,this.size*0.6,0,Math.PI*2);ctx.fill();}else{const s=this.size;ctx.beginPath();ctx.moveTo(0,-s);ctx.lineTo(s*0.55,0);ctx.lineTo(0,s);ctx.lineTo(-s*0.55,0);ctx.closePath();ctx.fill();}ctx.restore();}update(){this.wobble+=this.wobbleSpd;this.x+=this.speedX+Math.sin(this.wobble)*this.swing;this.y+=this.speedY;this.rot+=this.rotSpeed;this.opacity-=this.fade;if(this.y>H+20||this.opacity<=0)this.reset(false);}}
+const COUNT=window.innerWidth<600?45:100;
+const particles=Array.from({length:COUNT},()=>new Particle());
+function animate(){ctx.clearRect(0,0,W,H);particles.forEach(p=>{p.update();p.draw();});requestAnimationFrame(animate);}
+animate();
+</script>
 </body>
 </html>
