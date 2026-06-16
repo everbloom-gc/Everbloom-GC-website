@@ -1,5 +1,5 @@
 {
-  "updated": "16.06.2026 11:04 UTC",
+  "updated": "16.06.2026 16:43 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -58,7 +58,7 @@
       "roster": "male",
       "role": "Duelist",
       "rank": "Diamond 2",
-      "rr": 68,
+      "rr": 32,
       "cssClass": "rank-diamond"
     },
     "aff3": {
@@ -78,7 +78,7 @@
       "roster": "male2",
       "role": "Sentinel",
       "rank": "Ascendant 1",
-      "rr": 73,
+      "rr": 91,
       "cssClass": "rank-ascendant"
     },
     "twony": {
