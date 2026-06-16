@@ -3,18 +3,22 @@
 <head>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-     <meta name="description" content="EVERBLOOM — Meet our rosters. FLINTA, Male and upcoming 2nd Male team.">
+     <meta name="description" content="EVERBLOOM — an up-and-coming Valorant esports collective from the DACH region. Join the Bloom. Apply now to our FLINTA or Male roster.">
      <meta name="theme-color" content="#d4175b">
-     <title>EVERBLOOM | Rosters 🌸</title>
+     <title>EVERBLOOM | Valorant Team 🌸</title>
+
      <link rel="icon" type="image/svg+xml" href="everbloomlogo.svg">
      <link rel="shortcut icon" href="everbloomlogo.svg">
      <link rel="apple-touch-icon" href="everbloomlogo.svg">
+
      <link rel="preconnect" href="https://fonts.googleapis.com">
      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
-     <style>
 
+     <style>
 :root {
     --primary: #d4175b;
     --bg: #060b10;
@@ -169,6 +173,7 @@ header { padding: 100px 20px 40px; display: flex; flex-direction: column; align-
 .roster-2nd-row { grid-template-columns: repeat(2, 1fr); width: 66%; }
 .raph-container { display:grid; grid-template-columns:1fr; gap:20px; width:33%; margin:0 auto; }
 @media (max-width: 850px) { .raph-container { width:100%; } }
+@media (max-width: 768px) { .roster-teaser-grid { grid-template-columns: 1fr !important; } }
 
 @media (max-width: 850px) { .roster-row-top, .roster-row-bottom, .roster-2nd-row { grid-template-columns: 1fr; width: 100%; } }
 
@@ -349,10 +354,16 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
   background:linear-gradient(90deg,transparent,var(--primary),transparent);opacity:.35}
 .glitch-divider span{font-size:.55rem;letter-spacing:4px;color:var(--primary);background:var(--bg);
   padding:0 18px;position:relative;font-weight:700;font-family:monospace}
-
-     </style>
+</style>
 </head>
 <body>
+
+     <div id="splash">
+         <img src="everbloomlogo.png" class="splash-logo" alt="Everbloom">
+         <div class="splash-title">EVERBLOOM</div>
+         <div class="splash-sub">BLOOM OR DECAY</div>
+         <div class="splash-bar"></div>
+     </div>
 
      <canvas id="particle-canvas" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:2;pointer-events:none;"></canvas>
 
@@ -373,21 +384,22 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
 
      <nav id="bottom-nav">
          <ul>
-             <li><a href="index.html" class="bnav"><i class="fas fa-house"></i>Home</a></li>
-             <li><a href="index.html#about" class="bnav"><i class="fas fa-seedling"></i>About</a></li>
-             <li><a href="roster.html" class="bnav active"><i class="fas fa-users"></i>Roster</a></li>
-             <li><a href="index.html#partners" class="bnav"><i class="fas fa-handshake"></i>Partners</a></li>
+             <li><a href="#home" class="bnav active"><i class="fas fa-house"></i>Home</a></li>
+             <li><a href="#about" class="bnav"><i class="fas fa-seedling"></i>About</a></li>
+             <li><a href="roster.html" class="bnav"><i class="fas fa-users"></i>Roster</a></li>
+             <li><a href="#partners" class="bnav"><i class="fas fa-handshake"></i>Partners</a></li>
          </ul>
      </nav>
 
      <button id="theme-toggle" title="Toggle theme" aria-label="Toggle light/dark theme"><i class="fas fa-sun"></i></button>
+
      <button class="nav-toggle" onclick="toggleNav()"><span></span><span></span><span></span></button>
 
      <div class="nav-overlay" id="navOverlay">
-          <a href="index.html" onclick="toggleNav()">Home</a>
-          <a href="index.html#about" onclick="toggleNav()">About Us</a>
-          <a href="roster.html" onclick="toggleNav()" class="nav-active">Roster</a>
-          <a href="index.html#partners" onclick="toggleNav()">Partners</a>
+          <a href="#home" onclick="toggleNav()">Home</a>
+          <a href="#about" onclick="toggleNav()">About Us</a>
+          <a href="roster.html" onclick="toggleNav()">Roster</a>
+          <a href="#partners" onclick="toggleNav()">Partners</a>
           <a href="legal.html" onclick="toggleNav()">Legal Notice</a>
           <div style="margin-top: auto; padding-top: 30px; border-top: 1px solid rgba(212,23,91,0.2);">
               <div style="font-size: 0.6rem; letter-spacing: 3px; color: var(--primary); opacity: 0.6; font-weight: 700; text-transform: uppercase; margin-bottom: 15px;">Follow Us</div>
@@ -401,207 +413,178 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
           </div>
      </div>
 
-     <!-- PAGE HEADER -->
-     <header style="padding:100px 20px 40px;text-align:center;">
-         <a href="index.html"><img src="everbloomlogo.png" alt="Everbloom" class="logo-main"></a>
-         <h1 style="font-size:clamp(1.8rem,5vw,3rem);font-weight:900;letter-spacing:8px;text-transform:uppercase;margin-top:10px;">OUR ROSTERS</h1>
-         <p style="color:var(--primary);letter-spacing:4px;font-size:0.8rem;font-weight:700;margin-top:8px;">EVERBLOOM GAMING · DACH</p>
-         <p id="ranks-updated" style="font-size:0.65rem;opacity:0.35;margin-top:8px;letter-spacing:1px;">Loading ranks...</p>
-     </header>
+     <section id="home">
+          <header>
+              <img src="everbloomlogo.png" alt="Everbloom Logo" class="logo-main">
+              <h1><span class="glitch-text">EVERBLOOM</span></h1>
+              <div id="typing-sub" style="color:var(--primary); letter-spacing:5px; font-weight:bold; font-size:0.8rem; margin-top: 10px;"></div>
+          </header>
+          <div class="container">
+              <div class="info-card reveal active">
+                  <h3><i class="fas fa-seedling"></i> MISSION &amp; VISION</h3>
+                  <p style="line-height: 1.8;"><strong>Everbloom Gaming</strong> was founded in 2026 as a highly structured esports organization. Our name is our promise: we create an environment where talent can <strong>bloom</strong> at any time and unfold its full potential.</p>
+                  <p style="font-size: 0.85rem; opacity: 0.7; margin-top: 15px; cursor: pointer; color: var(--primary); font-weight: bold;"><a href="#about" style="color: inherit; text-decoration: none;">Read more about our philosophy →</a></p>
+              </div>
+              <div class="apply-container reveal">
+                  <a href="https://forms.gle/VeNmZo9DkJo35PR5A" target="_blank" class="apply-btn">JOIN THE BLOOM</a>
+              </div>
+              <div class="home-grid">
+                  <div class="news-column reveal">
+                      <div class="info-card">
+                          <h3>LATEST NEWS</h3>
+                          <p style="line-height: 1.6;">• Coach for FLINTA Roster found<br>• Discord server reworked<br>• Active player search for FLINTA Roster</p>
+                      </div>
+                      <div class="info-card reveal">
+                          <h3>CURRENT GOALS</h3>
+                          <p style="line-height: 1.6;">• <s>Full roster 2026</s><br>• Project V entry<br>• Premier Victory<br>• Complete FLINTA Roster</p>
+                      </div>
+                      <div class="info-card reveal" style="min-height:560px;display:flex;flex-direction:column;justify-content:center;">
+                          <h3 style="margin-bottom:10px;"><i class="fas fa-crosshairs"></i> SCRIM REQUEST</h3>
+                          <p style="font-size:0.85rem;opacity:0.7;line-height:1.6;margin-bottom:20px;">Wanna scrim? Drop your info and we'll hit you up on Discord.</p>
+                          <div style="display:flex;flex-direction:column;gap:14px;">
+                              <input id="scrim-org" type="text" placeholder="Org / Team Name" style="background:rgba(255,255,255,0.05);border:1px solid rgba(212,23,91,0.3);border-radius:4px;padding:12px 14px;color:var(--text);font-family:inherit;font-size:0.85rem;outline:none;">
+                              <input id="scrim-rank" type="text" placeholder="Average Rank" style="background:rgba(255,255,255,0.05);border:1px solid rgba(212,23,91,0.3);border-radius:4px;padding:12px 14px;color:var(--text);font-family:inherit;font-size:0.85rem;outline:none;">
+                              <input id="scrim-discord" type="text" placeholder="Your Discord Tag" style="background:rgba(255,255,255,0.05);border:1px solid rgba(212,23,91,0.3);border-radius:4px;padding:12px 14px;color:var(--text);font-family:inherit;font-size:0.85rem;outline:none;">
+                              <input id="scrim-time" type="text" placeholder="Preferred Time (e.g. Mon 20:00 CET)" style="background:rgba(255,255,255,0.05);border:1px solid rgba(212,23,91,0.3);border-radius:4px;padding:12px 14px;color:var(--text);font-family:inherit;font-size:0.85rem;outline:none;">
+                              <select id="scrim-roster" style="background:rgba(12,18,28,0.95);border:1px solid rgba(212,23,91,0.3);border-radius:4px;padding:12px 14px;color:var(--text);font-family:inherit;font-size:0.85rem;outline:none;cursor:pointer;">
+                                  <option value="">vs. which roster?</option>
+                                  <option value="flinta">FLINTA Roster</option>
+                                  <option value="male">Male Roster</option>
+                                  <option value="both">Both</option>
+                              </select>
+                              <button id="scrim-btn" onclick="sendScrimRequest()" style="background:transparent;border:2px solid var(--primary);color:var(--text);padding:14px;border-radius:4px;font-weight:900;text-transform:uppercase;letter-spacing:2px;font-size:0.75rem;cursor:pointer;transition:0.3s;font-family:inherit;">SEND REQUEST</button>
+                              <div id="scrim-msg" style="font-size:0.78rem;text-align:center;min-height:18px;color:var(--primary);"></div>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- Elfsight Twitter Feed -->
+                  <div class="info-card reveal">
+                      <h3><i class="fa-brands fa-x-twitter"></i> FEED</h3>
+                      <script src="https://elfsightcdn.com/platform.js" async></script>
+                      <div class="elfsight-app-b9958379-f4dc-4204-9774-e259b3a7f1bf" data-elfsight-app-lazy></div>
+                  </div>
+              </div>
+          </div>
+     </section>
 
-     <div class="container" style="padding-bottom:60px;">
+     <!-- ORIGIN TIMELINE -->
+     <div class="glitch-divider"><span>// ORIGIN //</span></div>
+     <section id="about" class="reveal page-section">
+        <div class="container">
+            <div class="section-h">
+                <div class="kicker">THE STORY SO FAR</div>
+                <h2>From Seed to Bloom</h2>
+                <p>A young collective with a clear arc. Every step a deliberate choice toward something bigger.</p>
+            </div>
+            <div class="timeline">
+                <div class="tl-row reveal">
+                    <div class="tl-card">
+                        <div class="tl-date">JAN 2026</div>
+                        <div class="tl-title">Two People, One Idea</div>
+                        <div class="tl-desc">Raph and Ruby found Everbloom together — a Discord call, a name, and the conviction that the DACH scene needs a different kind of org.</div>
+                    </div>
+                    <div class="tl-dot"></div>
+                    <div class="tl-spacer"></div>
+                </div>
+                <div class="tl-row reveal">
+                    <div class="tl-spacer"></div>
+                    <div class="tl-dot"></div>
+                    <div class="tl-card">
+                        <div class="tl-date">FEB 2026</div>
+                        <div class="tl-title">Identity & First Partners</div>
+                        <div class="tl-desc">Branding, logo, site — the visual identity takes shape. Evolupe Media and Rostered.gg sign on as the first partners. Suddenly it's a real org, not a Discord server.</div>
+                    </div>
+                </div>
+                <div class="tl-row reveal">
+                    <div class="tl-card">
+                        <div class="tl-date">MAR 2026</div>
+                        <div class="tl-title">Male Roster Opens</div>
+                        <div class="tl-desc">Tryouts go public. Application form drops, DMs flood in, the first conversations with Ascendant-level talent begin.</div>
+                    </div>
+                    <div class="tl-dot"></div>
+                    <div class="tl-spacer"></div>
+                </div>
+                <div class="tl-row reveal">
+                    <div class="tl-spacer"></div>
+                    <div class="tl-dot" style="background:transparent;border:2px solid rgba(212,23,91,.4);box-shadow:0 0 0 4px var(--bg)"></div>
+                    <div class="tl-card" style="opacity:.65">
+                        <div class="tl-date">APR 2026</div>
+                        <div class="tl-title">Quiet Month</div>
+                        <div class="tl-desc">Honestly? Nothing. Easter, exams, real life. The seed was in the soil — sometimes that's the work.</div>
+                    </div>
+                </div>
+                <div class="tl-row reveal">
+                    <div class="tl-card">
+                        <div class="tl-date">MAY 2026</div>
+                        <div class="tl-title">Both Rosters Full</div>
+                        <div class="tl-desc">FLINTA and Male — the last seats lock in. Ten players, one collective. Now the actual season starts.</div>
+                    </div>
+                    <div class="tl-dot" style="background:#22a970;box-shadow:0 0 0 4px var(--bg),0 0 16px #22a970"></div>
+                    <div class="tl-spacer"></div>
+                </div>
+            </div>
+        </div>
+     </section>
 
-         <!-- FLINTA ROSTER -->
-         <div style="text-align:center;margin-bottom:24px;" class="reveal">
-             <h3 style="color:var(--primary);text-transform:uppercase;letter-spacing:3px;margin-bottom:14px;">FLINTA Roster</h3>
-             <div style="display:inline-flex;align-items:center;gap:12px;background:rgba(212,23,91,0.08);border:1px solid rgba(212,23,91,0.35);border-radius:8px;padding:14px 28px;backdrop-filter:blur(10px);flex-wrap:wrap;justify-content:center;">
-                 <i class="fas fa-pause-circle" style="color:var(--primary);font-size:1.3rem;"></i>
-                 <div style="text-align:left;">
-                     <div style="font-weight:900;font-size:0.75rem;letter-spacing:3px;color:var(--primary);text-transform:uppercase;">Roster Paused until 23.07.2026</div>
-                     <div style="font-size:0.78rem;opacity:0.6;margin-top:3px;">Applications still open — we'll review after the break.</div>
-                 </div>
-                 <a href="https://forms.gle/VeNmZo9DkJo35PR5A" target="_blank" class="apply-btn" style="padding:8px 18px;font-size:0.65rem;letter-spacing:2px;margin:0;">APPLY</a>
-             </div>
-         </div>
-         <div class="roster-grid-container reveal" style="opacity:0.6;filter:grayscale(30%);pointer-events:none;margin-bottom:60px;">
-             <div class="roster-2nd-row" style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px;width:66%;">
-                 <div class="player-card">
-                     <img loading="lazy" src="astra.png" class="player-img">
-                     <div class="card-content">
-                         <small style="color:var(--primary);font-weight:bold;">CONTROLLER</small>
-                         <div style="font-weight:900;font-size:1.4rem;">Ruby</div>
-                         <div class="rank-tag rank-gold" id="rank-ruby">Gold 1</div>
-                         <div class="player-links">
-                             <a href="https://tracker.gg/valorant/profile/riot/Rubyxcube%23EBM/" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
-                             <a href="https://x.com/x2_zelda" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
-                         </div>
-                     </div>
-                 </div>
-                 <div class="player-card">
-                     <img loading="lazy" src="Chamber.webp" class="player-img">
-                     <div class="card-content">
-                         <small style="color:var(--primary);font-weight:bold;">SENTINEL</small>
-                         <div style="font-weight:900;font-size:1.4rem;">Settie</div>
-                         <div class="rank-tag rank-silver" id="rank-settie">Silver 1</div>
-                         <div class="player-links">
-                             <a href="https://tracker.gg/valorant/profile/riot/settie%23TTV/" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
-                             <a href="https://x.com/Suns3tt_VLR" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
-                         </div>
-                     </div>
-                 </div>
-             </div>
-             <div class="raph-container">
-                 <div class="player-card">
-                     <img loading="lazy" src="reyna.webp" class="player-img" style="object-fit:cover;object-position:top center;">
-                     <div class="card-content">
-                         <small style="color:var(--primary);font-weight:bold;">FLEX</small>
-                         <div style="font-weight:900;font-size:1.4rem;">Raph</div>
-                         <div class="rank-tag rank-silver" id="rank-raph">Silver 1</div>
-                         <div class="player-links">
-                             <a href="https://tracker.gg/valorant/profile/riot/DreamyDevour%23EBM/overview?playlist=competitive&platform=pc" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
-                             <a href="https://x.com/wavvybecci_" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
-                         </div>
-                     </div>
-                 </div>
-             </div>
-         </div>
+     <!-- MANIFESTO -->
+     <div class="glitch-divider"><span>// MANIFESTO //</span></div>
+     <section class="manifesto-section reveal">
+        <div class="container">
+            <div class="manifesto-stamp">EVERBLOOM // EST. 2026 // DACH</div>
+            <h2 class="manifesto-title">
+                <span class="bloom">BLOOM</span><span class="or-txt">or</span><span class="decay">DECAY</span>
+            </h2>
+            <div class="manifesto-body">
+                <p>Two paths. No third option. You either show up — for the scrim, for the comms call, for the teammate having a rough night — or you don't. <em>That's it.</em></p>
+                <p>Everbloom isn't a hashtag. It's a habit. It's the Tuesday VOD review nobody wants to do. The hold you take that doesn't get the kill but wins the round. The DM that says <em>good game</em> when you lost.</p>
+                <p>We don't promise titles. We promise the room — structured, kind, sharp — where you get to find out what you're actually capable of. <em>The rest is on you.</em></p>
+            </div>
+            <div class="manifesto-sig">— RAPH & RUBY · FOUNDERS</div>
+        </div>
+     </section>
 
-         <!-- MALE ROSTER 1 -->
-         <h3 style="text-align:center;color:var(--primary);text-transform:uppercase;margin-bottom:20px;letter-spacing:3px;" class="reveal">Male Roster</h3>
-         <div class="roster-grid-container reveal" style="margin-bottom:60px;">
-             <div class="roster-row-bottom roster-2nd-row">
-                 <div class="player-card">
-                     <img loading="lazy" src="Omen_Artwork_Full.webp" class="player-img" style="object-fit:cover;">
-                     <div class="card-content">
-                         <small style="color:var(--primary);font-weight:bold;">CONTROLLER</small>
-                         <div style="font-weight:900;font-size:1.4rem;">JC</div>
-                         <div class="rank-tag rank-ascendant" id="rank-jc">Ascendant 3</div>
-                         <div class="player-links">
-                             <a href="https://tracker.gg/valorant/profile/riot/jczera%23LG16/" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
-                         </div>
-                     </div>
-                 </div>
-                 <div class="player-card">
-                     <img loading="lazy" src="Chamber.webp" class="player-img">
-                     <div class="card-content">
-                         <small style="color:var(--primary);font-weight:bold;">INITIATOR</small>
-                         <div style="font-weight:900;font-size:1.4rem;">Marwin</div>
-                         <div class="rank-tag rank-ascendant" id="rank-marwin">Ascendant 1</div>
-                         <div class="player-links">
-                             <a href="https://tracker.gg/valorant/profile/riot/BluntDawg51%23081z/overview?platform=pc&playlist=competitive&season=ce2783e8-44fc-dd48-3da3-33b5ba6c4a22" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
-                         </div>
-                     </div>
-                 </div>
-             </div>
-             <div class="roster-row-bottom roster-2nd-row">
-                 <div class="player-card">
-                     <img loading="lazy" src="jett.png" class="player-img">
-                     <div class="card-content">
-                         <small style="color:var(--primary);font-weight:bold;">DUELIST</small>
-                         <div style="font-weight:900;font-size:1.4rem;">Envy</div>
-                         <div class="rank-tag rank-diamond" id="rank-envy">Diamond 2</div>
-                         <div class="player-links">
-                             <a href="https://tracker.gg/valorant/profile/riot/envy%23grit/overview?platform=pc&playlist=competitive&season=9d85c932-4820-c060-09c3-668636d4df1b" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
-                             <a href="https://x.com/envy_fpsss" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
-                         </div>
-                     </div>
-                 </div>
-                 <div class="player-card">
-                     <img loading="lazy" src="killjoy.png" class="player-img" style="object-fit:contain;transform:scale(1.6);transform-origin:center;transition:0.5s ease;">
-                     <div class="card-content">
-                         <small style="color:var(--primary);font-weight:bold;">SENTINEL</small>
-                         <div style="font-weight:900;font-size:1.4rem;">Aff3</div>
-                         <div class="rank-tag rank-ascendant" id="rank-aff3">Ascendant 1</div>
-                         <div class="player-links">
-                             <a href="https://tracker.gg/valorant/profile/riot/Aff3%23XuXu/overview" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
-                             <a href="https://x.com/AffenstarkJo" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
-                         </div>
-                     </div>
-                 </div>
-             </div>
-         </div>
+     
 
-         <!-- MALE ROSTER 2 -->
-         <h3 style="text-align:center;color:var(--primary);text-transform:uppercase;margin-bottom:20px;letter-spacing:3px;" class="reveal">Male Roster 2</h3>
-         <div class="roster-grid-container reveal" style="margin-bottom:60px;">
-             <div class="roster-row-top">
-                 <div class="player-card">
-                     <img loading="lazy" src="Chamber.webp" class="player-img">
-                     <div class="card-content">
-                         <small style="color:var(--primary);font-weight:bold;">SENTINEL</small>
-                         <div style="font-weight:900;font-size:1.4rem;">Banani</div>
-                         <div class="rank-tag rank-ascendant" id="rank-banani">Ascendant 1</div>
-                         <div class="player-links">
-                             <a href="https://tracker.gg/valorant/profile/riot/Kasane%20Teto%23roses/overview?platform=pc&playlist=competitive&season=ce2783e8-44fc-dd48-3da3-33b5ba6c4a22" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
-                         </div>
-                     </div>
-                 </div>
-                 <div class="player-card">
-                     <img loading="lazy" src="viper.png" class="player-img">
-                     <div class="card-content">
-                         <small style="color:var(--primary);font-weight:bold;">CONTROLLER</small>
-                         <div style="font-weight:900;font-size:1.4rem;">Twony</div>
-                         <div class="rank-tag rank-immortal" id="rank-twony">Immortal 1</div>
-                         <div class="player-links">
-                             <a href="https://tracker.gg/valorant/profile/riot/twony%23111/overview" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
-                             <a href="https://x.com/twonyyx" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
-                         </div>
-                     </div>
-                 </div>
-                 <div class="player-card">
-                     <img loading="lazy" src="kayo.png" class="player-img">
-                     <div class="card-content">
-                         <small style="color:var(--primary);font-weight:bold;">INITIATOR</small>
-                         <div style="font-weight:900;font-size:1.4rem;">Alex</div>
-                         <div class="rank-tag rank-platinum" id="rank-alex">Platinum 2</div>
-                         <div class="player-links">
-                             <a href="https://tracker.gg/valorant/profile/riot/Alexolotl%232020/overview?platform=pc&playlist=competitive" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
-                         </div>
-                     </div>
-                 </div>
-             </div>
-             <div class="roster-row-bottom roster-2nd-row">
-                 <div class="player-card">
-                     <img loading="lazy" src="jett.png" class="player-img">
-                     <div class="card-content">
-                         <small style="color:var(--primary);font-weight:bold;">DUELIST</small>
-                         <div style="font-weight:900;font-size:1.4rem;">Kyoka</div>
-                         <div class="rank-tag rank-ascendant" id="rank-kyoka">Ascendant 2</div>
-                         <div class="player-links">
-                             <a href="https://tracker.gg/valorant/profile/riot/Rem%23Rero/overview?platform=pc&playlist=competitive&season=ce2783e8-44fc-dd48-3da3-33b5ba6c4a22" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
-                         </div>
-                     </div>
-                 </div>
-                 <div class="player-card">
-                     <img loading="lazy" src="neon.png" class="player-img">
-                     <div class="card-content">
-                         <small style="color:var(--primary);font-weight:bold;">DUELIST</small>
-                         <div style="font-weight:900;font-size:1.4rem;">Gustaf</div>
-                         <div class="rank-tag rank-ascendant" id="rank-gustaf">Ascendant 3</div>
-                         <div class="player-links">
-                             <a href="https://tracker.gg/valorant/profile/riot/Ram%23Rero/overview?platform=pc&playlist=competitive&season=ce2783e8-44fc-dd48-3da3-33b5ba6c4a22" target="_blank"><img src="valotrackerlog.png" class="tracker-icon"></a>
-                             <a href="https://x.com/gustafdiekatze" target="_blank" class="player-link-icon"><i class="fa-brands fa-x-twitter"></i></a>
-                         </div>
-                     </div>
-                 </div>
-             </div>
-         </div>
-
-
-     </div>
+     <section id="partners" class="reveal page-section">
+        <div class="container">
+            <h3 style="text-align:center; color:var(--primary); text-transform: uppercase; margin-bottom: 50px; letter-spacing: 3px;">Our Partners</h3>
+            <div class="partners-list">
+                <div class="info-card partner-card-long reveal">
+                    <img src="rostered.png" alt="Rostered Logo" style="max-width: 180px;">
+                    <div style="flex: 1;">
+                        <h4 style="color:var(--primary); margin-bottom: 10px;">ROSTERED.GG</h4>
+                        <p style="font-size: 0.95rem;">The official platform for team management and professional esports organization.</p>
+                    </div>
+                    <a href="https://rostered.gg" target="_blank" class="apply-btn" style="padding: 12px 25px; font-size: 0.8rem; white-space: nowrap;">Visit Website</a>
+                </div>
+                <div class="info-card partner-card-long reveal">
+                    <div style="width: 180px; text-align: center;">
+                        <span style="font-size: 1.5rem; font-weight: 900; letter-spacing: 1px;">EVOLUPE<span style="color:var(--primary);">MEDIA</span></span>
+                    </div>
+                    <div style="flex: 1;">
+                        <h4 style="color:var(--primary); margin-bottom: 10px;">EVOLUPE MEDIA</h4>
+                        <p style="font-size: 0.95rem;">Providing digital excellence and creative media support for the next generation of gamers.</p>
+                    </div>
+                    <a href="https://discord.gg/bQ8phXAmSa" target="_blank" class="apply-btn" style="padding: 12px 25px; font-size: 0.8rem; border-color: #5865F2; background: rgba(88, 101, 242, 0.1); white-space: nowrap;">
+                        <i class="fab fa-discord"></i> Join Discord
+                    </a>
+                </div>
+            </div>
+        </div>
+     </section>
 
      <footer>
           <div class="container">
               <div class="footer-socials">
-                   <a href="https://www.gamertransfer.com" target="_blank"><img src="https://gamertransfer.com/banner/v5_373.png" alt="GamerTransfer" style="height:50px;"></a>
+                   <a href="https://www.gamertransfer.com" target="_blank"><img src="https://gamertransfer.com/banner/v5_373.png" alt="GamerTransfer Recruitment Partner" style="height: 50px;"></a>
                    <a href="https://discord.gg/bQ8phXAmSa" class="soc-link sl-discord" target="_blank"><i class="fa-brands fa-discord"></i></a>
                    <a href="https://x.com/everbloom_gc" class="soc-link sl-x" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
                    <a href="https://www.instagram.com/everbloom.gc" class="soc-link sl-insta" target="_blank"><i class="fa-brands fa-instagram"></i></a>
                    <a href="https://www.tiktok.com/@everbloomgc" class="soc-link sl-tiktok" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
                    <a href="https://www.twitch.tv/everbloomvalorant" class="soc-link sl-twitch" target="_blank"><i class="fa-brands fa-twitch"></i></a>
               </div>
-              <div style="opacity:0.4;font-size:0.8rem;margin-top:20px;">
-                  © 2026 EVERBLOOM GAMING | <a href="legal.html" style="color:white;text-decoration:none;opacity:0.8;">Legal Notice</a>
+              <div style="opacity: 0.4; font-size: 0.8rem; margin-top: 20px;">
+                  © 2026 EVERBLOOM GAMING | <a href="legal.html" style="color: white; text-decoration: none; opacity: 0.8;">Legal Notice</a>
               </div>
           </div>
      </footer>
@@ -610,9 +593,15 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
           (function() {
               const toggle = document.getElementById('theme-toggle');
               const root = document.documentElement;
-              if (localStorage.getItem('ebThemeVer') !== '2') { localStorage.setItem('ebThemeVer', '2'); localStorage.removeItem('ebTheme'); }
+              if (localStorage.getItem('ebThemeVer') !== '2') {
+                  localStorage.setItem('ebThemeVer', '2');
+                  localStorage.removeItem('ebTheme');
+              }
               const saved = localStorage.getItem('ebTheme') || 'dark';
-              if (saved === 'light') { root.setAttribute('data-theme', 'light'); toggle.innerHTML = '<i class="fas fa-moon"></i>'; }
+              if (saved === 'light') {
+                  root.setAttribute('data-theme', 'light');
+                  toggle.innerHTML = '<i class="fas fa-moon"></i>';
+              }
               toggle.addEventListener('click', () => {
                   const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
                   root.setAttribute('data-theme', next);
@@ -620,33 +609,288 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
                   toggle.innerHTML = next === 'light' ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
               });
           })();
+
+          window.addEventListener('load', () => {
+              setTimeout(() => { document.getElementById('splash').classList.add('hidden'); }, 2800);
+          });
+
           function toggleNav() {
-              document.getElementById('navOverlay').classList.toggle('active');
-              document.querySelector('.nav-toggle').classList.toggle('open');
+              const nav = document.getElementById('navOverlay');
+              const btn = document.querySelector('.nav-toggle');
+              nav.classList.toggle('active');
+              btn.classList.toggle('open');
           }
+
+          (function() {
+              const el = document.getElementById('typing-sub');
+              const text = 'EST. 2026 | BLOOM OR DECAY';
+              const cursor = document.createElement('span');
+              cursor.className = 'typing-cursor';
+              let i = 0;
+              setTimeout(() => {
+                  el.appendChild(cursor);
+                  const interval = setInterval(() => {
+                      if (i < text.length) {
+                          el.insertBefore(document.createTextNode(text[i]), cursor);
+                          i++;
+                      } else { clearInterval(interval); }
+                  }, 60);
+              }, 3000);
+          })();
+
           function reveal() {
               document.querySelectorAll(".reveal").forEach(el => {
-                  if (el.getBoundingClientRect().top < window.innerHeight - 100) el.classList.add("active");
+                  if (el.getBoundingClientRect().top < window.innerHeight - 150) {
+                      el.classList.add("active");
+                  }
               });
           }
-          window.addEventListener("scroll", reveal); window.onload = reveal;
+          window.addEventListener("scroll", reveal);
+          window.onload = reveal;
+
           const btt = document.getElementById('back-to-top');
           window.addEventListener('scroll', () => { btt.classList.toggle('visible', window.scrollY > 300); });
+
+          const sections = ['home', 'about', 'roster', 'partners'];
+          window.addEventListener('scroll', () => {
+              let current = 'home';
+              sections.forEach(id => {
+                  const el = document.getElementById(id);
+                  if (el && el.getBoundingClientRect().top <= window.innerHeight / 2) current = id;
+              });
+              document.querySelectorAll('.nav-overlay a').forEach(a => {
+                  a.classList.remove('nav-active');
+                  if (a.getAttribute('href') === '#' + current) a.classList.add('nav-active');
+              });
+              document.querySelectorAll('.bnav').forEach(a => {
+                  a.classList.remove('active');
+                  if (a.getAttribute('href') === '#' + current) a.classList.add('active');
+              });
+          });
      </script>
+
      <script>
           const canvas = document.getElementById('particle-canvas');
           const ctx = canvas.getContext('2d');
-          let W = canvas.width = window.innerWidth, H = canvas.height = window.innerHeight;
+          let W = canvas.width = window.innerWidth;
+          let H = canvas.height = window.innerHeight;
           window.addEventListener('resize', () => { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; });
+
           const COLORS = ['rgba(212, 23, 91,','rgba(255, 80, 140,','rgba(255, 140, 180,','rgba(255, 200, 220,','rgba(255,255,255,'];
-          const TYPES = ['petal','petal','petal','circle','diamond'];
-          function rand(a,b){return a+Math.random()*(b-a);}
-          function drawPetal(ctx,size){const petals=5,outerR=size,innerR=size*0.4;ctx.beginPath();for(let i=0;i<petals*2;i++){const angle=(i*Math.PI)/petals-Math.PI/2;const r=i%2===0?outerR:innerR;const x=Math.cos(angle)*r;const y=Math.sin(angle)*r;i===0?ctx.moveTo(x,y):ctx.lineTo(x,y);}ctx.closePath();ctx.fill();ctx.beginPath();ctx.arc(0,0,size*0.18,0,Math.PI*2);ctx.fillStyle='rgba(255,220,230,0.9)';ctx.fill();}
-          class Particle{constructor(){this.reset(true);}reset(initial){this.x=rand(0,W);this.y=initial?rand(-H,H):rand(-100,-10);this.size=rand(3,9);this.speedY=rand(0.3,1.2);this.speedX=rand(-0.3,0.3);this.opacity=rand(0.25,0.85);this.fade=rand(0.0015,0.005);this.rot=rand(0,Math.PI*2);this.rotSpeed=rand(-0.025,0.025);this.color=COLORS[Math.floor(Math.random()*COLORS.length)];this.type=TYPES[Math.floor(Math.random()*TYPES.length)];this.wobble=rand(0,Math.PI*2);this.wobbleSpd=rand(0.008,0.025);this.swing=rand(0.3,1.2);}draw(){ctx.save();ctx.globalAlpha=Math.max(0,this.opacity);ctx.translate(this.x,this.y);ctx.rotate(this.rot);ctx.fillStyle=this.color+this.opacity+')';ctx.shadowColor=this.color+'0.6)';ctx.shadowBlur=this.size*4;if(this.type==='petal'){drawPetal(ctx,this.size);}else if(this.type==='circle'){ctx.beginPath();ctx.arc(0,0,this.size*0.6,0,Math.PI*2);ctx.fill();}else{const s=this.size;ctx.beginPath();ctx.moveTo(0,-s);ctx.lineTo(s*0.55,0);ctx.lineTo(0,s);ctx.lineTo(-s*0.55,0);ctx.closePath();ctx.fill();}ctx.restore();}update(){this.wobble+=this.wobbleSpd;this.x+=this.speedX+Math.sin(this.wobble)*this.swing;this.y+=this.speedY;this.rot+=this.rotSpeed;this.opacity-=this.fade;if(this.y>H+20||this.opacity<=0)this.reset(false);}}
-          const COUNT=window.innerWidth<600?45:100;
-          const particles=Array.from({length:COUNT},()=>new Particle());
-          function animate(){ctx.clearRect(0,0,W,H);particles.forEach(p=>{p.update();p.draw();});requestAnimationFrame(animate);}
+          const TYPES = ['petal', 'petal', 'petal', 'circle', 'diamond'];
+          function rand(a, b) { return a + Math.random() * (b - a); }
+
+          function drawPetal(ctx, size) {
+              const petals = 5, outerR = size, innerR = size * 0.4;
+              ctx.beginPath();
+              for (let i = 0; i < petals * 2; i++) {
+                  const angle = (i * Math.PI) / petals - Math.PI / 2;
+                  const r = i % 2 === 0 ? outerR : innerR;
+                  const x = Math.cos(angle) * r;
+                  const y = Math.sin(angle) * r;
+                  i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+              }
+              ctx.closePath(); ctx.fill();
+              ctx.beginPath(); ctx.arc(0, 0, size * 0.18, 0, Math.PI * 2);
+              ctx.fillStyle = 'rgba(255,220,230,0.9)'; ctx.fill();
+          }
+
+          class Particle {
+              constructor() { this.reset(true); }
+              reset(initial) {
+                  this.x = rand(0, W); this.y = initial ? rand(-H, H) : rand(-100, -10);
+                  this.size = rand(3, 9); this.speedY = rand(0.3, 1.2); this.speedX = rand(-0.3, 0.3);
+                  this.opacity = rand(0.25, 0.85); this.fade = rand(0.0015, 0.005);
+                  this.rot = rand(0, Math.PI * 2); this.rotSpeed = rand(-0.025, 0.025);
+                  this.color = COLORS[Math.floor(Math.random() * COLORS.length)];
+                  this.type = TYPES[Math.floor(Math.random() * TYPES.length)];
+                  this.wobble = rand(0, Math.PI * 2); this.wobbleSpd = rand(0.008, 0.025); this.swing = rand(0.3, 1.2);
+              }
+              draw() {
+                  ctx.save(); ctx.globalAlpha = Math.max(0, this.opacity);
+                  ctx.translate(this.x, this.y); ctx.rotate(this.rot);
+                  ctx.fillStyle = this.color + this.opacity + ')';
+                  ctx.shadowColor = this.color + '0.6)'; ctx.shadowBlur = this.size * 4;
+                  if (this.type === 'petal') { drawPetal(ctx, this.size); }
+                  else if (this.type === 'circle') { ctx.beginPath(); ctx.arc(0, 0, this.size * 0.6, 0, Math.PI * 2); ctx.fill(); }
+                  else { const s = this.size; ctx.beginPath(); ctx.moveTo(0, -s); ctx.lineTo(s * 0.55, 0); ctx.lineTo(0, s); ctx.lineTo(-s * 0.55, 0); ctx.closePath(); ctx.fill(); }
+                  ctx.restore();
+              }
+              update() {
+                  this.wobble += this.wobbleSpd; this.x += this.speedX + Math.sin(this.wobble) * this.swing;
+                  this.y += this.speedY; this.rot += this.rotSpeed; this.opacity -= this.fade;
+                  if (this.y > H + 20 || this.opacity <= 0) this.reset(false);
+              }
+          }
+
+          const COUNT = window.innerWidth < 600 ? 45 : 100;
+          const particles = Array.from({ length: COUNT }, () => new Particle());
+          function animate() { ctx.clearRect(0, 0, W, H); particles.forEach(p => { p.update(); p.draw(); }); requestAnimationFrame(animate); }
           animate();
      </script>
+
+     <script>
+     async function sendScrimRequest(){
+         const btn = document.getElementById('scrim-btn');
+         const msg = document.getElementById('scrim-msg');
+         const req = ['scrim-org','scrim-discord','scrim-roster'];
+         const all = ['scrim-org','scrim-rank','scrim-discord','scrim-time','scrim-roster'];
+
+         // Reset styling
+         all.forEach(id => {
+             const el = document.getElementById(id);
+             if (!el) return;
+             el.style.border = '1px solid rgba(212,23,91,0.3)';
+             el.style.boxShadow = 'none';
+         });
+         msg.textContent = '';
+
+         // Validate required
+         let hasError = false;
+         req.forEach(id => {
+             const el = document.getElementById(id);
+             if (!el || !el.value.trim()) {
+                 hasError = true;
+                 if (el) {
+                     el.style.border = '1px solid #e05544';
+                     el.style.boxShadow = '0 0 12px rgba(224,85,68,0.7)';
+                     el.style.animation = 'none';
+                     requestAnimationFrame(() => {
+                         el.style.animation = 'scrim-shake 0.4s ease';
+                     });
+                 }
+             }
+         });
+
+         if (hasError) {
+             msg.style.color = '#e05544';
+             msg.textContent = '⚠️ Please fill in all required fields.';
+             return;
+         }
+
+         // All good — send
+         btn.textContent = 'SENDING...';
+         btn.style.opacity = '0.6';
+         btn.disabled = true;
+
+         const v = id => (document.getElementById(id) || {value:''}).value.trim();
+         const rm = {flinta:'FLINTA Roster', male:'Male Roster', both:'Both Rosters'};
+
+         const payload = {embeds:[{
+             title: '🌸 Scrim Request',
+             color: 0xd4175b,
+             fields: [
+                 {name:'🎮  Org / Team', value: v('scrim-org') || '—', inline: true},
+                 {name:'🏆  Avg. Rank',  value: v('scrim-rank') || 'Not specified', inline: true},
+                 {name:'​', value: '​', inline: false},
+                 {name:'💬  Discord',    value: v('scrim-discord') || '—', inline: true},
+                 {name:'⏰  Time',       value: v('scrim-time') || 'Not specified', inline: true},
+                 {name:'​', value: '​', inline: false},
+                 {name:'⚔️  vs.',        value: rm[v('scrim-roster')] || v('scrim-roster') || '—', inline: false},
+             ],
+             footer: {text: 'everbloom-gc.com  •  Scrim Request'},
+             timestamp: new Date().toISOString()
+         }]};
+
+         try {
+             const res = await fetch('https://discord.com/api/webhooks/1504882060148478086/Qbhv0sUivEYO7pvHdNuyae8-R-pzchpvVg2JHGYsjpuzbS7GEK3P_Eq0doDUZgbOAz2r', {
+                 method: 'POST',
+                 headers: {'Content-Type':'application/json'},
+                 body: JSON.stringify(payload)
+             });
+             if (res.ok || res.status === 204) {
+                 btn.innerHTML = '<i class="fas fa-check-circle"></i> SENT';
+                 btn.style.opacity = '1';
+                 btn.style.background = '#22a970';
+                 btn.style.border = '2px solid #22a970';
+                 btn.style.color = 'white';
+                 msg.style.color = '#22a970';
+                 msg.textContent = "Request sent! We'll hit you up soon. 🌸";
+                 all.forEach(id => { const el = document.getElementById(id); if(el) el.value=''; });
+                 setTimeout(() => {
+                     btn.innerHTML = 'SEND REQUEST';
+                     btn.style.background = 'transparent';
+                     btn.style.border = '2px solid var(--primary)';
+                     btn.style.color = 'var(--text)';
+                     btn.disabled = false;
+                     msg.textContent = '';
+                 }, 5000);
+             } else { throw new Error('Status ' + res.status); }
+         } catch(e) {
+             btn.textContent = 'SEND REQUEST';
+             btn.style.opacity = '1';
+             btn.disabled = false;
+             msg.style.color = '#e05';
+             msg.textContent = 'Error: ' + e.message;
+         }
+     }</script>
 </body>
 </html>
+     <script>
+          // Splash petal animation
+          const splashCanvas = document.getElementById('splash-canvas');
+          const splashCtx = splashCanvas.getContext('2d');
+          let splashW = splashCanvas.width = window.innerWidth;
+          let splashH = splashCanvas.height = window.innerHeight;
+          window.addEventListener('resize', () => { 
+              splashW = splashCanvas.width = window.innerWidth; 
+              splashH = splashCanvas.height = window.innerHeight; 
+          });
+
+          function SplashPetal() {
+              this.x = Math.random() * splashW;
+              this.y = -20 - Math.random() * splashH;
+              this.s = 4 + Math.random() * 8;
+              this.vy = .3 + Math.random() * .9;
+              this.vx = -.4 + Math.random() * .8;
+              this.r = Math.random() * Math.PI * 2;
+              this.vr = (-.02 + Math.random() * .04);
+              this.a = .35 + Math.random() * .55;
+              this.hue = Math.random() < .15 ? '#ffd1e2' : (Math.random() < .5 ? '#d4175b' : '#ec5b8e');
+          }
+
+          SplashPetal.prototype.draw = function() {
+              this.x += this.vx + Math.sin(this.y / 40) * .3;
+              this.y += this.vy;
+              this.r += this.vr;
+              
+              if (this.y > splashH + 20) {
+                  Object.assign(this, new SplashPetal());
+                  this.y = -20;
+              }
+              
+              splashCtx.save();
+              splashCtx.translate(this.x, this.y);
+              splashCtx.rotate(this.r);
+              splashCtx.globalAlpha = this.a;
+              splashCtx.fillStyle = this.hue;
+              
+              splashCtx.beginPath();
+              splashCtx.ellipse(0, 0, this.s, this.s * 1.7, 0, 0, Math.PI * 2);
+              splashCtx.fill();
+              
+              splashCtx.globalAlpha = this.a * .5;
+              splashCtx.fillStyle = '#060b10';
+              splashCtx.beginPath();
+              splashCtx.ellipse(0, 0, this.s * .15, this.s * 1.5, 0, 0, Math.PI * 2);
+              splashCtx.fill();
+              
+              splashCtx.restore();
+          };
+
+          const splashPetals = [];
+          for (let i = 0; i < 70; i++) {
+              const p = new SplashPetal();
+              p.y = Math.random() * splashH;
+              splashPetals.push(p);
+          }
+
+          function splashLoop() {
+              splashCtx.clearRect(0, 0, splashW, splashH);
+              splashPetals.forEach(p => p.draw());
+              requestAnimationFrame(splashLoop);
+          }
+          splashLoop();
+     </script>
+
+
