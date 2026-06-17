@@ -1,5 +1,5 @@
 {
-  "updated": "17.06.2026 10:48 UTC",
+  "updated": "17.06.2026 15:17 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -58,7 +58,7 @@
       "roster": "male",
       "role": "Duelist",
       "rank": "Diamond 2",
-      "rr": 37,
+      "rr": 38,
       "cssClass": "rank-diamond"
     },
     "aff3": {
