@@ -1,5 +1,5 @@
 {
-  "updated": "18.06.2026 20:21 UTC",
+  "updated": "19.06.2026 10:20 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -7,9 +7,9 @@
       "tag": "EBM",
       "roster": "flinta",
       "role": "Controller",
-      "rank": "Gold 1",
+      "rank": "\u2014",
       "rr": 0,
-      "cssClass": "rank-gold"
+      "cssClass": "rank-bronze"
     },
     "settie": {
       "id": "settie",
@@ -107,9 +107,9 @@
       "tag": "Rero",
       "roster": "male2",
       "role": "Duelist",
-      "rank": "\u2014",
-      "rr": 0,
-      "cssClass": "rank-bronze"
+      "rank": "Ascendant 1",
+      "rr": 56,
+      "cssClass": "rank-ascendant"
     },
     "gustaf": {
       "id": "gustaf",
