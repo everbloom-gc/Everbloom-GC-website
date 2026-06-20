@@ -1,5 +1,5 @@
 {
-  "updated": "20.06.2026 08:49 UTC",
+  "updated": "20.06.2026 13:53 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -48,7 +48,7 @@
       "roster": "male",
       "role": "Initiator",
       "rank": "Ascendant 1",
-      "rr": 94,
+      "rr": 34,
       "cssClass": "rank-ascendant"
     },
     "envy": {
@@ -58,7 +58,7 @@
       "roster": "male",
       "role": "Duelist",
       "rank": "Diamond 3",
-      "rr": 18,
+      "rr": 0,
       "cssClass": "rank-diamond"
     },
     "aff3": {
@@ -68,7 +68,7 @@
       "roster": "male",
       "role": "Sentinel",
       "rank": "Ascendant 1",
-      "rr": 74,
+      "rr": 54,
       "cssClass": "rank-ascendant"
     },
     "banani": {
@@ -78,7 +78,7 @@
       "roster": "male2",
       "role": "Sentinel",
       "rank": "Ascendant 1",
-      "rr": 74,
+      "rr": 56,
       "cssClass": "rank-ascendant"
     },
     "twony": {
@@ -107,8 +107,8 @@
       "tag": "Rero",
       "roster": "male2",
       "role": "Duelist",
-      "rank": "Ascendant 2",
-      "rr": 0,
+      "rank": "Ascendant 1",
+      "rr": 81,
       "cssClass": "rank-ascendant"
     },
     "gustaf": {
