@@ -359,6 +359,7 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
 <body>
 
      <div id="splash">
+         <canvas id="splash-canvas"></canvas>
          <img src="everbloomlogo.png" class="splash-logo" alt="Everbloom">
          <div class="splash-title">EVERBLOOM</div>
          <div class="splash-sub">BLOOM OR DECAY</div>
@@ -436,7 +437,7 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
                       </div>
                       <div class="info-card reveal">
                           <h3>CURRENT GOALS</h3>
-                          <p style="line-height: 1.6;">• <s>Full roster 2026</s><br>• Project V entry<br>• Premier Victory<br>• Complete FLINTA Roster</p>
+                          <p style="line-height: 1.6;">• <s>Full roster 2026</s><br>• Project V entry<br>• Premier Victory<br>• <s>Complete FLINTA Roster</s></p>
                       </div>
                       <div class="info-card reveal" style="min-height:560px;display:flex;flex-direction:column;justify-content:center;">
                           <h3 style="margin-bottom:10px;"><i class="fas fa-crosshairs"></i> SCRIM REQUEST</h3>
@@ -824,9 +825,7 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
              msg.textContent = 'Error: ' + e.message;
          }
      }</script>
-</body>
-</html>
-     <script>
+<script>
           // Splash petal animation
           const splashCanvas = document.getElementById('splash-canvas');
           const splashCtx = splashCanvas.getContext('2d');
@@ -892,5 +891,5 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
           }
           splashLoop();
      </script>
-
-
+</body>
+</html>
