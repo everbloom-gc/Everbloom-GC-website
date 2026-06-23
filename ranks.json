@@ -1,5 +1,5 @@
 {
-  "updated": "23.06.2026 09:32 UTC",
+  "updated": "23.06.2026 14:40 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -98,7 +98,7 @@
       "roster": "male2",
       "role": "Initiator",
       "rank": "Platinum 2",
-      "rr": 65,
+      "rr": 48,
       "cssClass": "rank-platinum"
     },
     "kyoka": {
