@@ -1,5 +1,5 @@
 {
-  "updated": "24.06.2026 14:22 UTC",
+  "updated": "24.06.2026 19:41 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -57,9 +57,9 @@
       "tag": "grit",
       "roster": "male",
       "role": "Duelist",
-      "rank": "Unrated",
-      "rr": 0,
-      "cssClass": "rank-bronze"
+      "rank": "Diamond 1",
+      "rr": 97,
+      "cssClass": "rank-diamond"
     },
     "aff3": {
       "id": "aff3",
@@ -87,9 +87,9 @@
       "tag": "111",
       "roster": "male2",
       "role": "Controller",
-      "rank": "Immortal 1",
-      "rr": 13,
-      "cssClass": "rank-immortal"
+      "rank": "Unrated",
+      "rr": 0,
+      "cssClass": "rank-bronze"
     },
     "alex": {
       "id": "alex",
@@ -97,9 +97,9 @@
       "tag": "2020",
       "roster": "male2",
       "role": "Initiator",
-      "rank": "Unrated",
-      "rr": 0,
-      "cssClass": "rank-bronze"
+      "rank": "Gold 1",
+      "rr": 50,
+      "cssClass": "rank-gold"
     },
     "kyoka": {
       "id": "kyoka",
