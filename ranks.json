@@ -1,5 +1,5 @@
 {
-  "updated": "25.06.2026 19:54 UTC",
+  "updated": "25.06.2026 20:36 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -57,8 +57,8 @@
       "tag": "grit",
       "roster": "male",
       "role": "Duelist",
-      "rank": "Diamond 1",
-      "rr": 81,
+      "rank": "Diamond 2",
+      "rr": 10,
       "cssClass": "rank-diamond"
     },
     "aff3": {
@@ -98,7 +98,7 @@
       "roster": "male2",
       "role": "Initiator",
       "rank": "Gold 1",
-      "rr": 50,
+      "rr": 37,
       "cssClass": "rank-gold"
     },
     "kyoka": {
