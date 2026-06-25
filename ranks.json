@@ -1,5 +1,5 @@
 {
-  "updated": "25.06.2026 08:55 UTC",
+  "updated": "25.06.2026 14:23 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -37,9 +37,9 @@
       "tag": "LG16",
       "roster": "male",
       "role": "Controller",
-      "rank": "Unrated",
-      "rr": 0,
-      "cssClass": "rank-bronze"
+      "rank": "Diamond 3",
+      "rr": 50,
+      "cssClass": "rank-diamond"
     },
     "marwin": {
       "id": "marwin",
@@ -47,9 +47,9 @@
       "tag": "081z",
       "roster": "male",
       "role": "Initiator",
-      "rank": "Ascendant 1",
-      "rr": 51,
-      "cssClass": "rank-ascendant"
+      "rank": "Unrated",
+      "rr": 0,
+      "cssClass": "rank-bronze"
     },
     "envy": {
       "id": "envy",
@@ -57,8 +57,8 @@
       "tag": "grit",
       "roster": "male",
       "role": "Duelist",
-      "rank": "Diamond 1",
-      "rr": 97,
+      "rank": "Diamond 2",
+      "rr": 0,
       "cssClass": "rank-diamond"
     },
     "aff3": {
@@ -67,9 +67,9 @@
       "tag": "XuXu",
       "roster": "male",
       "role": "Sentinel",
-      "rank": "Ascendant 1",
-      "rr": 92,
-      "cssClass": "rank-ascendant"
+      "rank": "Unrated",
+      "rr": 0,
+      "cssClass": "rank-bronze"
     },
     "banani": {
       "id": "banani",
@@ -87,9 +87,9 @@
       "tag": "111",
       "roster": "male2",
       "role": "Controller",
-      "rank": "Unrated",
-      "rr": 0,
-      "cssClass": "rank-bronze"
+      "rank": "Diamond 3",
+      "rr": 58,
+      "cssClass": "rank-diamond"
     },
     "alex": {
       "id": "alex",
@@ -98,7 +98,7 @@
       "roster": "male2",
       "role": "Initiator",
       "rank": "Gold 1",
-      "rr": 50,
+      "rr": 36,
       "cssClass": "rank-gold"
     },
     "kyoka": {
