@@ -1,5 +1,5 @@
 {
-  "updated": "24.06.2026 19:41 UTC",
+  "updated": "25.06.2026 08:55 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -37,9 +37,9 @@
       "tag": "LG16",
       "roster": "male",
       "role": "Controller",
-      "rank": "Ascendant 1",
-      "rr": 68,
-      "cssClass": "rank-ascendant"
+      "rank": "Unrated",
+      "rr": 0,
+      "cssClass": "rank-bronze"
     },
     "marwin": {
       "id": "marwin",
@@ -77,9 +77,9 @@
       "tag": "roses",
       "roster": "male2",
       "role": "Sentinel",
-      "rank": "Ascendant 2",
-      "rr": 17,
-      "cssClass": "rank-ascendant"
+      "rank": "Unrated",
+      "rr": 0,
+      "cssClass": "rank-bronze"
     },
     "twony": {
       "id": "twony",
@@ -107,9 +107,9 @@
       "tag": "Rero",
       "roster": "male2",
       "role": "Duelist",
-      "rank": "Ascendant 2",
-      "rr": 44,
-      "cssClass": "rank-ascendant"
+      "rank": "Unrated",
+      "rr": 0,
+      "cssClass": "rank-bronze"
     },
     "gustaf": {
       "id": "gustaf",
