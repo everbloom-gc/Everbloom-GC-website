@@ -1,5 +1,5 @@
 {
-  "updated": "25.06.2026 14:23 UTC",
+  "updated": "25.06.2026 19:54 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -57,8 +57,8 @@
       "tag": "grit",
       "roster": "male",
       "role": "Duelist",
-      "rank": "Diamond 2",
-      "rr": 0,
+      "rank": "Diamond 1",
+      "rr": 81,
       "cssClass": "rank-diamond"
     },
     "aff3": {
@@ -77,9 +77,9 @@
       "tag": "roses",
       "roster": "male2",
       "role": "Sentinel",
-      "rank": "Unrated",
-      "rr": 0,
-      "cssClass": "rank-bronze"
+      "rank": "Diamond 2",
+      "rr": 38,
+      "cssClass": "rank-diamond"
     },
     "twony": {
       "id": "twony",
@@ -88,7 +88,7 @@
       "roster": "male2",
       "role": "Controller",
       "rank": "Diamond 3",
-      "rr": 58,
+      "rr": 28,
       "cssClass": "rank-diamond"
     },
     "alex": {
@@ -98,7 +98,7 @@
       "roster": "male2",
       "role": "Initiator",
       "rank": "Gold 1",
-      "rr": 36,
+      "rr": 50,
       "cssClass": "rank-gold"
     },
     "kyoka": {
@@ -107,9 +107,9 @@
       "tag": "Rero",
       "roster": "male2",
       "role": "Duelist",
-      "rank": "Unrated",
-      "rr": 0,
-      "cssClass": "rank-bronze"
+      "rank": "Diamond 2",
+      "rr": 59,
+      "cssClass": "rank-diamond"
     },
     "gustaf": {
       "id": "gustaf",
