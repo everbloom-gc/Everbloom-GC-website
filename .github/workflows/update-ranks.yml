@@ -29,10 +29,8 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          git fetch origin main
+          git reset --hard origin/main
           git add ranks.json roster.html
           git diff --staged --quiet || git commit -m "chore: update player ranks [skip ci]"
-          git fetch origin main
-          git checkout origin/main -- ranks.json roster.html || true
-          git add ranks.json roster.html
-          git commit --amend --no-edit || true
-          git push --force-with-lease
+          git push origin main
