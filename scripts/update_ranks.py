@@ -9,7 +9,7 @@ REGION  = 'eu'
 
 PLAYERS = [
     # FLINTA
-    { "id": "ruby",   "name": "Rubyxcube",   "tag": "EBM",   "roster": "flinta", "role": "Controller" },
+    { "id": "ruby",   "name": "akaruby",     "tag": "EBM",   "roster": "flinta", "role": "Duelist"    },
     { "id": "settie", "name": "settie",       "tag": "TTV",   "roster": "flinta", "role": "Sentinel"   },
     { "id": "raph",   "name": "DreamyDevour", "tag": "EBM",   "roster": "flinta", "role": "Flex"       },
     # Male Roster 1
