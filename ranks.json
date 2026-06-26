@@ -1,5 +1,5 @@
 {
-  "updated": "26.06.2026 21:20 UTC",
+  "updated": "26.06.2026 21:29 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -107,9 +107,9 @@
       "tag": "roses",
       "roster": "male2",
       "role": "Sentinel",
-      "rank": "\u2014",
+      "rank": "Diamond 3",
       "rr": 0,
-      "cssClass": "rank-bronze"
+      "cssClass": "rank-diamond"
     },
     "alex": {
       "id": "alex",
