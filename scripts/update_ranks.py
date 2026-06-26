@@ -2,6 +2,7 @@ import requests
 import json
 import os
 import re
+import time
 from datetime import datetime, timezone
 
 API_KEY = os.environ.get('HENRIK_API_KEY', '')
@@ -77,6 +78,7 @@ def main():
             print(f"  → {rank_data['rank']} ({rank_data['rr']} RR)")
         else:
             results[player['id']] = {**player, "rank": "—", "rr": 0, "cssClass": "rank-bronze"}
+        time.sleep(1.5)
 
     output = {"updated": datetime.now(timezone.utc).strftime('%d.%m.%Y %H:%M UTC'), "players": results}
     with open('ranks.json', 'w') as f:
