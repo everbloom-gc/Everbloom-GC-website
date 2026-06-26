@@ -1,5 +1,5 @@
 {
-  "updated": "26.06.2026 21:10 UTC",
+  "updated": "26.06.2026 21:20 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -117,9 +117,9 @@
       "tag": "2020",
       "roster": "male2",
       "role": "Initiator",
-      "rank": "\u2014",
-      "rr": 0,
-      "cssClass": "rank-bronze"
+      "rank": "Gold 1",
+      "rr": 48,
+      "cssClass": "rank-gold"
     },
     "kyoka": {
       "id": "kyoka",
@@ -127,9 +127,9 @@
       "tag": "Rero",
       "roster": "male2",
       "role": "Duelist",
-      "rank": "\u2014",
-      "rr": 0,
-      "cssClass": "rank-bronze"
+      "rank": "Diamond 3",
+      "rr": 22,
+      "cssClass": "rank-diamond"
     },
     "gustaf": {
       "id": "gustaf",
@@ -137,9 +137,9 @@
       "tag": "Rero",
       "roster": "male2",
       "role": "Duelist",
-      "rank": "\u2014",
-      "rr": 0,
-      "cssClass": "rank-bronze"
+      "rank": "Diamond 3",
+      "rr": 18,
+      "cssClass": "rank-diamond"
     }
   }
 }
