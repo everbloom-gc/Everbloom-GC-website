@@ -37,10 +37,13 @@ TIER_CLASSES = {
 
 def get_rank(player):
     headers = {'Authorization': API_KEY} if API_KEY else {}
-    url = f"https://api.henrikdev.xyz/valorant/v2/mmr/{REGION}/{requests.utils.quote(player['name'])}/{player['tag']}"
+    url = f"https://api.henrikdev.xyz/valorant/v2/mmr/{REGION}/{requests.utils.quote(player['name'])}/{requests.utils.quote(player['tag'])}"
     try:
         r = requests.get(url, headers=headers, timeout=10)
         data = r.json()
+        if r.status_code == 404:
+            print(f"  {player['name']} not found (404) → Unranked")
+            return {"rank": "Unranked", "rr": 0, "cssClass": "rank-bronze"}
         if r.status_code != 200 or data.get('status') != 200:
             print(f"  Error for {player['name']}: {data.get('message', r.status_code)}")
             return None
