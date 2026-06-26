@@ -7,6 +7,7 @@ from datetime import datetime, timezone
 
 API_KEY = os.environ.get('HENRIK_API_KEY', '')
 REGION  = 'eu'
+PLATFORM = 'pc'
 
 PLAYERS = [
     # FLINTA
@@ -37,20 +38,21 @@ TIER_CLASSES = {
 
 def get_rank(player):
     headers = {'Authorization': API_KEY} if API_KEY else {}
-    url = f"https://api.henrikdev.xyz/valorant/v2/mmr/{REGION}/{requests.utils.quote(player['name'])}/{requests.utils.quote(player['tag'])}"
+    url = f"https://api.henrikdev.xyz/valorant/v3/mmr/{REGION}/{PLATFORM}/{requests.utils.quote(player['name'])}/{requests.utils.quote(player['tag'])}"
     try:
         r = requests.get(url, headers=headers, timeout=10)
         data = r.json()
         if r.status_code == 404:
-            print(f"  {player['name']} not found (404) → Unranked")
+            print(f"  {player['name']} not found → Unranked")
             return {"rank": "Unranked", "rr": 0, "cssClass": "rank-bronze"}
         if r.status_code != 200 or data.get('status') != 200:
             print(f"  Error for {player['name']}: {data.get('message', r.status_code)}")
             return None
-        current = data['data']['current_data']
-        tier_name = current.get('currenttierpatched', 'Unranked')
-        rr = current.get('ranking_in_tier', 0)
-        base_tier = tier_name.split()[0] if tier_name != 'Unranked' else 'Unranked'
+        current = data['data'].get('current', {})
+        tier = current.get('tier', {})
+        tier_name = tier.get('name', 'Unranked')
+        rr = current.get('rr', 0)
+        base_tier = tier_name.split()[0] if tier_name and tier_name != 'Unranked' else 'Unranked'
         return {"rank": tier_name, "rr": rr, "cssClass": TIER_CLASSES.get(base_tier, 'rank-bronze')}
     except Exception as e:
         print(f"  Exception for {player['name']}: {e}")
