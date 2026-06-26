@@ -1,15 +1,15 @@
 {
-  "updated": "25.06.2026 20:36 UTC",
+  "updated": "26.06.2026 20:59 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
       "name": "akaruby",
       "tag": "EBM",
       "roster": "flinta",
-      "role": "Controller",
-      "rank": "\u2014",
-      "rr": 0,
-      "cssClass": "rank-bronze"
+      "role": "Duelist",
+      "rank": "Gold 1",
+      "rr": 19,
+      "cssClass": "rank-gold"
     },
     "settie": {
       "id": "settie",
@@ -31,6 +31,26 @@
       "rr": 0,
       "cssClass": "rank-silver"
     },
+    "mari": {
+      "id": "mari",
+      "name": "rteurma",
+      "tag": "rt13",
+      "roster": "flinta",
+      "role": "Flex",
+      "rank": "Silver 1",
+      "rr": 30,
+      "cssClass": "rank-silver"
+    },
+    "lena": {
+      "id": "lena",
+      "name": "Zylicent",
+      "tag": "2005",
+      "roster": "flinta",
+      "role": "Flex",
+      "rank": "Unrated",
+      "rr": 0,
+      "cssClass": "rank-bronze"
+    },
     "jc": {
       "id": "jc",
       "name": "jczera",
@@ -38,7 +58,7 @@
       "roster": "male",
       "role": "Controller",
       "rank": "Diamond 3",
-      "rr": 50,
+      "rr": 37,
       "cssClass": "rank-diamond"
     },
     "marwin": {
@@ -47,18 +67,18 @@
       "tag": "081z",
       "roster": "male",
       "role": "Initiator",
-      "rank": "Unrated",
-      "rr": 0,
-      "cssClass": "rank-bronze"
-    },
-    "envy": {
-      "id": "envy",
-      "name": "envy",
-      "tag": "grit",
-      "roster": "male",
-      "role": "Duelist",
       "rank": "Diamond 2",
-      "rr": 10,
+      "rr": 50,
+      "cssClass": "rank-diamond"
+    },
+    "twony": {
+      "id": "twony",
+      "name": "twony",
+      "tag": "111",
+      "roster": "male",
+      "role": "Controller",
+      "rank": "Diamond 3",
+      "rr": 31,
       "cssClass": "rank-diamond"
     },
     "aff3": {
@@ -67,9 +87,19 @@
       "tag": "XuXu",
       "roster": "male",
       "role": "Sentinel",
-      "rank": "Unrated",
+      "rank": "Diamond 2",
+      "rr": 50,
+      "cssClass": "rank-diamond"
+    },
+    "kenkaneki": {
+      "id": "kenkaneki",
+      "name": "Cas k",
+      "tag": "Ken",
+      "roster": "male",
+      "role": "Duelist",
+      "rank": "Ascendant 2",
       "rr": 0,
-      "cssClass": "rank-bronze"
+      "cssClass": "rank-ascendant"
     },
     "banani": {
       "id": "banani",
@@ -77,19 +107,9 @@
       "tag": "roses",
       "roster": "male2",
       "role": "Sentinel",
-      "rank": "Diamond 2",
-      "rr": 38,
-      "cssClass": "rank-diamond"
-    },
-    "twony": {
-      "id": "twony",
-      "name": "twony",
-      "tag": "111",
-      "roster": "male2",
-      "role": "Controller",
-      "rank": "Diamond 3",
-      "rr": 28,
-      "cssClass": "rank-diamond"
+      "rank": "\u2014",
+      "rr": 0,
+      "cssClass": "rank-bronze"
     },
     "alex": {
       "id": "alex",
@@ -97,9 +117,9 @@
       "tag": "2020",
       "roster": "male2",
       "role": "Initiator",
-      "rank": "Gold 1",
-      "rr": 37,
-      "cssClass": "rank-gold"
+      "rank": "\u2014",
+      "rr": 0,
+      "cssClass": "rank-bronze"
     },
     "kyoka": {
       "id": "kyoka",
@@ -107,9 +127,9 @@
       "tag": "Rero",
       "roster": "male2",
       "role": "Duelist",
-      "rank": "Diamond 2",
-      "rr": 59,
-      "cssClass": "rank-diamond"
+      "rank": "\u2014",
+      "rr": 0,
+      "cssClass": "rank-bronze"
     },
     "gustaf": {
       "id": "gustaf",
