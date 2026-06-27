@@ -42,6 +42,7 @@ def get_rank(player):
     try:
         r = requests.get(url, headers=headers, timeout=10)
         data = r.json()
+        print(f"  RAW: {json.dumps(data)}")  # temporär
         if r.status_code == 404:
             print(f"  {player['name']} not found → Unranked")
             return {"rank": "Unranked", "rr": 0, "cssClass": "rank-bronze"}
