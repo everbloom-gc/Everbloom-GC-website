@@ -1,5 +1,5 @@
 {
-  "updated": "27.06.2026 10:29 UTC",
+  "updated": "27.06.2026 10:46 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -7,9 +7,9 @@
       "tag": "EBM",
       "roster": "flinta",
       "role": "Duelist",
-      "rank": "Gold 1",
-      "rr": 19,
-      "cssClass": "rank-gold"
+      "rank": "Unranked",
+      "rr": 0,
+      "cssClass": "rank-bronze"
     },
     "settie": {
       "id": "settie",
@@ -17,9 +17,9 @@
       "tag": "TTV",
       "roster": "flinta",
       "role": "Sentinel",
-      "rank": "Silver 1",
+      "rank": "Unranked",
       "rr": 0,
-      "cssClass": "rank-silver"
+      "cssClass": "rank-bronze"
     },
     "raph": {
       "id": "raph",
@@ -27,9 +27,9 @@
       "tag": "EBM",
       "roster": "flinta",
       "role": "Flex",
-      "rank": "Silver 1",
+      "rank": "Unranked",
       "rr": 0,
-      "cssClass": "rank-silver"
+      "cssClass": "rank-bronze"
     },
     "mari": {
       "id": "mari",
@@ -47,7 +47,7 @@
       "tag": "2005",
       "roster": "flinta",
       "role": "Flex",
-      "rank": "Unrated",
+      "rank": "Unranked",
       "rr": 0,
       "cssClass": "rank-bronze"
     },
