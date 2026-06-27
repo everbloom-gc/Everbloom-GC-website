@@ -42,7 +42,6 @@ def get_rank(player):
     try:
         r = requests.get(url, headers=headers, timeout=10)
         data = r.json()
-        print(f"  RAW: {json.dumps(data)}")  # temporär
         if r.status_code == 404:
             print(f"  {player['name']} not found → Unranked")
             return {"rank": "Unranked", "rr": 0, "cssClass": "rank-bronze"}
@@ -50,10 +49,16 @@ def get_rank(player):
             print(f"  Error for {player['name']}: {data.get('message', r.status_code)}")
             return None
         current = data['data'].get('current', {})
+        games_needed = current.get('games_needed_for_rating', 0)
+        if games_needed > 0:
+            print(f"  {player['name']} has {games_needed} placements remaining → Unranked")
+            return {"rank": "Unranked", "rr": 0, "cssClass": "rank-bronze"}
         tier = current.get('tier', {})
         tier_name = tier.get('name', 'Unranked')
         rr = current.get('rr', 0)
-        base_tier = tier_name.split()[0] if tier_name and tier_name != 'Unranked' else 'Unranked'
+        if not tier_name or tier_name == 'Unrated':
+            tier_name = 'Unranked'
+        base_tier = tier_name.split()[0] if tier_name != 'Unranked' else 'Unranked'
         return {"rank": tier_name, "rr": rr, "cssClass": TIER_CLASSES.get(base_tier, 'rank-bronze')}
     except Exception as e:
         print(f"  Exception for {player['name']}: {e}")
