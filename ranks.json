@@ -1,5 +1,5 @@
 {
-  "updated": "28.06.2026 08:41 UTC",
+  "updated": "28.06.2026 13:18 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -58,7 +58,7 @@
       "roster": "male",
       "role": "Controller",
       "rank": "Diamond 3",
-      "rr": 63,
+      "rr": 49,
       "cssClass": "rank-diamond"
     },
     "marwin": {
@@ -67,8 +67,8 @@
       "tag": "081z",
       "roster": "male",
       "role": "Initiator",
-      "rank": "Diamond 2",
-      "rr": 97,
+      "rank": "Diamond 3",
+      "rr": 10,
       "cssClass": "rank-diamond"
     },
     "twony": {
@@ -118,7 +118,7 @@
       "roster": "male2",
       "role": "Initiator",
       "rank": "Gold 1",
-      "rr": 62,
+      "rr": 79,
       "cssClass": "rank-gold"
     },
     "kyoka": {
