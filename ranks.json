@@ -1,5 +1,5 @@
 {
-  "updated": "28.06.2026 19:04 UTC",
+  "updated": "29.06.2026 10:24 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -58,7 +58,7 @@
       "roster": "male",
       "role": "Controller",
       "rank": "Diamond 3",
-      "rr": 23,
+      "rr": 64,
       "cssClass": "rank-diamond"
     },
     "marwin": {
@@ -117,8 +117,8 @@
       "tag": "2020",
       "roster": "male2",
       "role": "Initiator",
-      "rank": "Gold 1",
-      "rr": 79,
+      "rank": "Gold 2",
+      "rr": 0,
       "cssClass": "rank-gold"
     },
     "kyoka": {
