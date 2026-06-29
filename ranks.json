@@ -1,5 +1,5 @@
 {
-  "updated": "29.06.2026 10:24 UTC",
+  "updated": "29.06.2026 15:32 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -58,7 +58,7 @@
       "roster": "male",
       "role": "Controller",
       "rank": "Diamond 3",
-      "rr": 64,
+      "rr": 61,
       "cssClass": "rank-diamond"
     },
     "marwin": {
@@ -98,7 +98,7 @@
       "roster": "male",
       "role": "Duelist",
       "rank": "Ascendant 2",
-      "rr": 71,
+      "rr": 63,
       "cssClass": "rank-ascendant"
     },
     "banani": {
@@ -108,7 +108,7 @@
       "roster": "male2",
       "role": "Sentinel",
       "rank": "Diamond 3",
-      "rr": 50,
+      "rr": 75,
       "cssClass": "rank-diamond"
     },
     "alex": {
@@ -128,7 +128,7 @@
       "roster": "male2",
       "role": "Duelist",
       "rank": "Diamond 3",
-      "rr": 43,
+      "rr": 61,
       "cssClass": "rank-diamond"
     },
     "gustaf": {
@@ -138,7 +138,7 @@
       "roster": "male2",
       "role": "Duelist",
       "rank": "Diamond 3",
-      "rr": 50,
+      "rr": 73,
       "cssClass": "rank-diamond"
     }
   }
