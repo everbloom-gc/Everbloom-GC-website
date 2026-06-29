@@ -111,6 +111,13 @@
       "rr": 18,
       "cssClass": "rank-ascendant"
     },
+    "pegasus": { 
+      "id": "pegasus",
+      "name": "Pegasus2912",
+      "tag": "VTM",
+      "roster": "male2",
+      "role": "Duelist" 
+    },
     "alex": {
       "id": "alex",
       "name": "Alexolotl",
