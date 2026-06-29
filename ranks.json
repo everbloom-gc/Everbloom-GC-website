@@ -1,5 +1,5 @@
 {
-  "updated": "29.06.2026 16:22 UTC",
+  "updated": "29.06.2026 17:26 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -57,9 +57,9 @@
       "tag": "LG16",
       "roster": "male",
       "role": "Controller",
-      "rank": "Diamond 3",
-      "rr": 83,
-      "cssClass": "rank-diamond"
+      "rank": "Ascendant 1",
+      "rr": 10,
+      "cssClass": "rank-ascendant"
     },
     "marwin": {
       "id": "marwin",
@@ -78,7 +78,7 @@
       "roster": "male",
       "role": "Controller",
       "rank": "Diamond 3",
-      "rr": 27,
+      "rr": 34,
       "cssClass": "rank-diamond"
     },
     "aff3": {
@@ -98,7 +98,7 @@
       "roster": "male",
       "role": "Duelist",
       "rank": "Ascendant 2",
-      "rr": 83,
+      "rr": 74,
       "cssClass": "rank-ascendant"
     },
     "banani": {
@@ -110,13 +110,6 @@
       "rank": "Ascendant 1",
       "rr": 18,
       "cssClass": "rank-ascendant"
-    },
-    "pegasus": { 
-      "id": "pegasus",
-      "name": "Pegasus2912",
-      "tag": "VTM",
-      "roster": "male2",
-      "role": "Duelist" 
     },
     "alex": {
       "id": "alex",
