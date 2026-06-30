@@ -11,22 +11,22 @@ PLATFORM = 'pc'
 
 PLAYERS = [
     # FLINTA
-    { "id": "ruby",   "name": "akaruby",     "tag": "EBM",   "roster": "flinta", "role": "Duelist"    },
-    { "id": "settie", "name": "settie",       "tag": "TTV",   "roster": "flinta", "role": "Sentinel"   },
-    { "id": "raph",   "name": "DreamyDevour", "tag": "EBM",   "roster": "flinta", "role": "Flex"       },
-    { "id": "mari",   "name": "rteurma",      "tag": "rt13",  "roster": "flinta", "role": "Flex"       },
-    { "id": "lena",   "name": "Zylicent",     "tag": "2005",  "roster": "flinta", "role": "Flex"       },
+    { "id": "ruby",      "name": "akaruby",     "tag": "EBM",   "roster": "flinta", "role": "Duelist"    },
+    { "id": "settie",    "name": "settie",       "tag": "TTV",   "roster": "flinta", "role": "Sentinel"   },
+    { "id": "raph",      "name": "DreamyDevour", "tag": "EBM",   "roster": "flinta", "role": "Flex"       },
+    { "id": "mari",      "name": "rteurma",      "tag": "rt13",  "roster": "flinta", "role": "Flex"       },
     # Male Roster 1
-    { "id": "jc",     "name": "jczera",       "tag": "LG16",  "roster": "male",   "role": "Controller" },
-    { "id": "marwin", "name": "BluntDawg51",  "tag": "081z",  "roster": "male",   "role": "Initiator"  },
-    { "id": "twony",  "name": "twony",        "tag": "111",   "roster": "male",   "role": "Controller" },
-    { "id": "aff3",   "name": "Aff3",         "tag": "XuXu",  "roster": "male",   "role": "Sentinel"   },
-    { "id": "kenkaneki", "name": "Cas k",     "tag": "Ken",   "roster": "male",   "role": "Duelist"    },
+    { "id": "jc",        "name": "jczera",       "tag": "LG16",  "roster": "male",   "role": "Controller" },
+    { "id": "marwin",    "name": "BluntDawg51",  "tag": "081z",  "roster": "male",   "role": "Initiator"  },
+    { "id": "twony",     "name": "twony",        "tag": "111",   "roster": "male",   "role": "Controller" },
+    { "id": "aff3",      "name": "Aff3",         "tag": "XuXu",  "roster": "male",   "role": "Sentinel"   },
+    { "id": "kenkaneki", "name": "Cas k",        "tag": "Ken",   "roster": "male",   "role": "Duelist"    },
     # Male Roster 2
-    { "id": "banani", "name": "Kasane Teto",  "tag": "roses", "roster": "male2",  "role": "Sentinel"   },
-    { "id": "alex",   "name": "Alexolotl",    "tag": "2020",  "roster": "male2",  "role": "Initiator"  },
-    { "id": "kyoka",  "name": "Rem",          "tag": "Rero",  "roster": "male2",  "role": "Duelist"    },
-    { "id": "gustaf", "name": "Ram",          "tag": "Rero",  "roster": "male2",  "role": "Duelist"    },
+    { "id": "banani",    "name": "Kasane Teto",  "tag": "roses", "roster": "male2",  "role": "Sentinel"   },
+    { "id": "pegasus",   "name": "Pegasus2912",  "tag": "VTM",   "roster": "male2",  "role": "Controller" },
+    { "id": "alex",      "name": "Alexolotl",    "tag": "2020",  "roster": "male2",  "role": "Initiator"  },
+    { "id": "kyoka",     "name": "Rem",          "tag": "Rero",  "roster": "male2",  "role": "Duelist"    },
+    { "id": "gustaf",    "name": "Ram",          "tag": "Rero",  "roster": "male2",  "role": "Duelist"    },
 ]
 
 TIER_CLASSES = {
