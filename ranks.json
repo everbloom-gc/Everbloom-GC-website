@@ -41,16 +41,6 @@
       "rr": 42,
       "cssClass": "rank-silver"
     },
-    "lena": {
-      "id": "lena",
-      "name": "Zylicent",
-      "tag": "2005",
-      "roster": "flinta",
-      "role": "Flex",
-      "rank": "Unranked",
-      "rr": 0,
-      "cssClass": "rank-bronze"
-    },
     "jc": {
       "id": "jc",
       "name": "jczera",
@@ -110,6 +100,16 @@
       "rank": "Ascendant 1",
       "rr": 61,
       "cssClass": "rank-ascendant"
+    },
+    "pegasus": {
+      "id": "pegasus",
+      "name": "Pegasus2912",
+      "tag": "VTM",
+      "roster": "male2",
+      "role": "Controller",
+      "rank": "—",
+      "rr": 0,
+      "cssClass": "rank-bronze"
     },
     "alex": {
       "id": "alex",
