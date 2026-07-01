@@ -1,5 +1,5 @@
 {
-  "updated": "01.07.2026 14:10 UTC",
+  "updated": "01.07.2026 19:31 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -37,8 +37,8 @@
       "tag": "rt13",
       "roster": "flinta",
       "role": "Flex",
-      "rank": "Silver 2",
-      "rr": 83,
+      "rank": "Silver 3",
+      "rr": 10,
       "cssClass": "rank-silver"
     },
     "jc": {
@@ -58,7 +58,7 @@
       "roster": "male",
       "role": "Initiator",
       "rank": "Diamond 3",
-      "rr": 62,
+      "rr": 63,
       "cssClass": "rank-diamond"
     },
     "twony": {
@@ -88,7 +88,7 @@
       "roster": "male",
       "role": "Duelist",
       "rank": "Ascendant 2",
-      "rr": 58,
+      "rr": 31,
       "cssClass": "rank-ascendant"
     },
     "banani": {
