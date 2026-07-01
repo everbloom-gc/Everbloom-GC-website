@@ -1,5 +1,5 @@
 {
-  "updated": "01.07.2026 09:31 UTC",
+  "updated": "01.07.2026 14:10 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -38,7 +38,7 @@
       "roster": "flinta",
       "role": "Flex",
       "rank": "Silver 2",
-      "rr": 42,
+      "rr": 83,
       "cssClass": "rank-silver"
     },
     "jc": {
