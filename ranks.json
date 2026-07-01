@@ -1,5 +1,5 @@
 {
-  "updated": "30.06.2026 19:44 UTC",
+  "updated": "01.07.2026 09:31 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -107,9 +107,9 @@
       "tag": "VTM",
       "roster": "male2",
       "role": "Controller",
-      "rank": "—",
-      "rr": 0,
-      "cssClass": "rank-bronze"
+      "rank": "Diamond 3",
+      "rr": 10,
+      "cssClass": "rank-diamond"
     },
     "alex": {
       "id": "alex",
