@@ -1,5 +1,5 @@
 {
-  "updated": "02.07.2026 08:43 UTC",
+  "updated": "02.07.2026 13:31 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -108,7 +108,7 @@
       "roster": "male2",
       "role": "Controller",
       "rank": "Diamond 3",
-      "rr": 10,
+      "rr": 30,
       "cssClass": "rank-diamond"
     },
     "alex": {
