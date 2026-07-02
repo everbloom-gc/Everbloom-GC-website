@@ -1,5 +1,5 @@
 {
-  "updated": "02.07.2026 13:31 UTC",
+  "updated": "02.07.2026 19:11 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -38,7 +38,7 @@
       "roster": "flinta",
       "role": "Flex",
       "rank": "Silver 3",
-      "rr": 23,
+      "rr": 33,
       "cssClass": "rank-silver"
     },
     "jc": {
@@ -58,7 +58,7 @@
       "roster": "male",
       "role": "Initiator",
       "rank": "Diamond 3",
-      "rr": 63,
+      "rr": 47,
       "cssClass": "rank-diamond"
     },
     "twony": {
@@ -78,7 +78,7 @@
       "roster": "male",
       "role": "Sentinel",
       "rank": "Diamond 2",
-      "rr": 52,
+      "rr": 76,
       "cssClass": "rank-diamond"
     },
     "kenkaneki": {
@@ -88,7 +88,7 @@
       "roster": "male",
       "role": "Duelist",
       "rank": "Ascendant 2",
-      "rr": 31,
+      "rr": 28,
       "cssClass": "rank-ascendant"
     },
     "banani": {
@@ -128,7 +128,7 @@
       "roster": "male2",
       "role": "Duelist",
       "rank": "Diamond 3",
-      "rr": 53,
+      "rr": 20,
       "cssClass": "rank-diamond"
     },
     "gustaf": {
