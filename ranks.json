@@ -1,5 +1,5 @@
 {
-  "updated": "04.07.2026 08:25 UTC",
+  "updated": "04.07.2026 13:02 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -58,7 +58,7 @@
       "roster": "male",
       "role": "Initiator",
       "rank": "Diamond 3",
-      "rr": 47,
+      "rr": 70,
       "cssClass": "rank-diamond"
     },
     "twony": {
