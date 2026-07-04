@@ -1,5 +1,5 @@
 {
-  "updated": "04.07.2026 18:58 UTC",
+  "updated": "04.07.2026 21:16 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -48,7 +48,7 @@
       "roster": "male",
       "role": "Controller",
       "rank": "Ascendant 1",
-      "rr": 44,
+      "rr": 73,
       "cssClass": "rank-ascendant"
     },
     "marwin": {
@@ -58,7 +58,7 @@
       "roster": "male",
       "role": "Initiator",
       "rank": "Diamond 3",
-      "rr": 80,
+      "rr": 95,
       "cssClass": "rank-diamond"
     },
     "twony": {
@@ -87,8 +87,8 @@
       "tag": "Ken",
       "roster": "male",
       "role": "Duelist",
-      "rank": "Ascendant 2",
-      "rr": 72,
+      "rank": "Ascendant 3",
+      "rr": 0,
       "cssClass": "rank-ascendant"
     },
     "banani": {
