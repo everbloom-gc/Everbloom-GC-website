@@ -1,5 +1,5 @@
 {
-  "updated": "04.07.2026 21:16 UTC",
+  "updated": "05.07.2026 08:42 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -108,7 +108,7 @@
       "roster": "male2",
       "role": "Controller",
       "rank": "Diamond 3",
-      "rr": 30,
+      "rr": 41,
       "cssClass": "rank-diamond"
     },
     "alex": {
@@ -128,7 +128,7 @@
       "roster": "male2",
       "role": "Duelist",
       "rank": "Diamond 3",
-      "rr": 6,
+      "rr": 18,
       "cssClass": "rank-diamond"
     },
     "gustaf": {
@@ -138,7 +138,7 @@
       "roster": "male2",
       "role": "Duelist",
       "rank": "Ascendant 1",
-      "rr": 64,
+      "rr": 72,
       "cssClass": "rank-ascendant"
     }
   }
