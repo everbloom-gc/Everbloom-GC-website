@@ -1,5 +1,5 @@
 {
-  "updated": "05.07.2026 13:10 UTC",
+  "updated": "05.07.2026 19:03 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -48,7 +48,7 @@
       "roster": "male",
       "role": "Controller",
       "rank": "Ascendant 1",
-      "rr": 73,
+      "rr": 61,
       "cssClass": "rank-ascendant"
     },
     "marwin": {
@@ -78,7 +78,7 @@
       "roster": "male",
       "role": "Sentinel",
       "rank": "Diamond 2",
-      "rr": 76,
+      "rr": 83,
       "cssClass": "rank-diamond"
     },
     "kenkaneki": {
@@ -88,7 +88,7 @@
       "roster": "male",
       "role": "Duelist",
       "rank": "Ascendant 3",
-      "rr": 0,
+      "rr": 15,
       "cssClass": "rank-ascendant"
     },
     "banani": {
@@ -98,7 +98,7 @@
       "roster": "male2",
       "role": "Sentinel",
       "rank": "Ascendant 1",
-      "rr": 72,
+      "rr": 12,
       "cssClass": "rank-ascendant"
     },
     "pegasus": {
@@ -108,7 +108,7 @@
       "roster": "male2",
       "role": "Controller",
       "rank": "Diamond 3",
-      "rr": 41,
+      "rr": 0,
       "cssClass": "rank-diamond"
     },
     "alex": {
@@ -128,7 +128,7 @@
       "roster": "male2",
       "role": "Duelist",
       "rank": "Diamond 3",
-      "rr": 18,
+      "rr": 38,
       "cssClass": "rank-diamond"
     },
     "gustaf": {
@@ -138,7 +138,7 @@
       "roster": "male2",
       "role": "Duelist",
       "rank": "Ascendant 1",
-      "rr": 72,
+      "rr": 10,
       "cssClass": "rank-ascendant"
     }
   }
