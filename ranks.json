@@ -1,5 +1,5 @@
 {
-  "updated": "06.07.2026 15:01 UTC",
+  "updated": "06.07.2026 19:44 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -58,7 +58,7 @@
       "roster": "male",
       "role": "Initiator",
       "rank": "Ascendant 1",
-      "rr": 34,
+      "rr": 54,
       "cssClass": "rank-ascendant"
     },
     "twony": {
@@ -118,7 +118,7 @@
       "roster": "male2",
       "role": "Initiator",
       "rank": "Gold 2",
-      "rr": 18,
+      "rr": 3,
       "cssClass": "rank-gold"
     },
     "kyoka": {
