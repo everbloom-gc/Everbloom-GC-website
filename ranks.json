@@ -1,5 +1,5 @@
 {
-  "updated": "06.07.2026 09:58 UTC",
+  "updated": "06.07.2026 15:01 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -38,7 +38,7 @@
       "roster": "flinta",
       "role": "Flex",
       "rank": "Gold 1",
-      "rr": 0,
+      "rr": 33,
       "cssClass": "rank-gold"
     },
     "jc": {
@@ -57,9 +57,9 @@
       "tag": "081z",
       "roster": "male",
       "role": "Initiator",
-      "rank": "Diamond 3",
-      "rr": 95,
-      "cssClass": "rank-diamond"
+      "rank": "Ascendant 1",
+      "rr": 34,
+      "cssClass": "rank-ascendant"
     },
     "twony": {
       "id": "twony",
@@ -108,7 +108,7 @@
       "roster": "male2",
       "role": "Controller",
       "rank": "Diamond 3",
-      "rr": 0,
+      "rr": 82,
       "cssClass": "rank-diamond"
     },
     "alex": {
@@ -117,8 +117,8 @@
       "tag": "2020",
       "roster": "male2",
       "role": "Initiator",
-      "rank": "Gold 1",
-      "rr": 79,
+      "rank": "Gold 2",
+      "rr": 18,
       "cssClass": "rank-gold"
     },
     "kyoka": {
