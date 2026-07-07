@@ -13,7 +13,7 @@ PLAYERS = [
     # FLINTA
     { "id": "ruby",      "name": "akaruby",     "tag": "EBM",   "roster": "flinta", "role": "Duelist"    },
     { "id": "settie",    "name": "settie",       "tag": "TTV",   "roster": "flinta", "role": "Sentinel"   },
-    { "id": "vievi",      "name": "クラゲ", "tag": "06731",   "roster": "flinta", "role": "Sentinal/Controller"       },
+    { "id": "Vivien",    "name": "クラゲ", "tag": "06731",   "roster": "flinta", "role": "Sentinal/Controller"},
     { "id": "mari",      "name": "rteurma",      "tag": "rt13",  "roster": "flinta", "role": "Flex"       },
     # Male Roster 1
     { "id": "jc",        "name": "jczera",       "tag": "LG16",  "roster": "male",   "role": "Controller" },
