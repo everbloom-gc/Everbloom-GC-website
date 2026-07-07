@@ -22,14 +22,14 @@
       "cssClass": "rank-bronze"
     },
     "raph": {
-      "id": "raph",
-      "name": "DreamyDevour",
-      "tag": "EBM",
+      "id": "Vievi",
+      "name": "クラゲ",
+      "tag": "06731",
       "roster": "flinta",
-      "role": "Flex",
-      "rank": "Bronze 2",
-      "rr": 50,
-      "cssClass": "rank-bronze"
+      "role": "Sentinal/Controller",
+      "rank": "Silver 2",
+      "rr": 0,
+      "cssClass": "rank-silver"
     },
     "mari": {
       "id": "mari",
