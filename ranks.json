@@ -1,5 +1,5 @@
 {
-  "updated": "07.07.2026 16:53 UTC",
+  "updated": "07.07.2026 19:43 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -21,9 +21,9 @@
       "rr": 0,
       "cssClass": "rank-bronze"
     },
-    "raph": {
+    "Vivien": {
       "id": "Vivien",
-      "name": "クラゲ",
+      "name": "\u30af\u30e9\u30b2",
       "tag": "06731",
       "roster": "flinta",
       "role": "Sentinal/Controller",
@@ -58,7 +58,7 @@
       "roster": "male",
       "role": "Initiator",
       "rank": "Ascendant 1",
-      "rr": 37,
+      "rr": 39,
       "cssClass": "rank-ascendant"
     },
     "twony": {
@@ -108,7 +108,7 @@
       "roster": "male2",
       "role": "Controller",
       "rank": "Diamond 3",
-      "rr": 30,
+      "rr": 19,
       "cssClass": "rank-diamond"
     },
     "alex": {
