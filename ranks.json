@@ -1,5 +1,5 @@
 {
-  "updated": "08.07.2026 13:42 UTC",
+  "updated": "08.07.2026 19:09 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -7,8 +7,8 @@
       "tag": "EBM",
       "roster": "flinta",
       "role": "Duelist",
-      "rank": "Silver 1",
-      "rr": 75,
+      "rank": "Silver 2",
+      "rr": 19,
       "cssClass": "rank-silver"
     },
     "settie": {
@@ -28,7 +28,7 @@
       "roster": "flinta",
       "role": "Sentinal/Controller",
       "rank": "Silver 2",
-      "rr": 0,
+      "rr": 15,
       "cssClass": "rank-silver"
     },
     "mari": {
@@ -98,7 +98,7 @@
       "roster": "male2",
       "role": "Sentinel",
       "rank": "Ascendant 1",
-      "rr": 12,
+      "rr": 0,
       "cssClass": "rank-ascendant"
     },
     "pegasus": {
@@ -108,7 +108,7 @@
       "roster": "male2",
       "role": "Controller",
       "rank": "Diamond 3",
-      "rr": 27,
+      "rr": 0,
       "cssClass": "rank-diamond"
     },
     "alex": {
@@ -138,7 +138,7 @@
       "roster": "male2",
       "role": "Duelist",
       "rank": "Ascendant 1",
-      "rr": 10,
+      "rr": 0,
       "cssClass": "rank-ascendant"
     }
   }
