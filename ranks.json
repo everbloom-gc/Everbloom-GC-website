@@ -1,5 +1,5 @@
 {
-  "updated": "09.07.2026 14:34 UTC",
+  "updated": "09.07.2026 19:24 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -47,8 +47,8 @@
       "tag": "LG16",
       "roster": "male",
       "role": "Controller",
-      "rank": "Ascendant 2",
-      "rr": 0,
+      "rank": "Ascendant 1",
+      "rr": 92,
       "cssClass": "rank-ascendant"
     },
     "marwin": {
@@ -88,7 +88,7 @@
       "roster": "male",
       "role": "Duelist",
       "rank": "Ascendant 3",
-      "rr": 53,
+      "rr": 35,
       "cssClass": "rank-ascendant"
     },
     "banani": {
