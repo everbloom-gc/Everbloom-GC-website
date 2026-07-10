@@ -51,12 +51,12 @@
       "rr": 75,
       "cssClass": "rank-ascendant"
     },
-    "marwin": {
-      "id": "marwin",
-      "name": "BluntDawg51",
-      "tag": "081z",
+    "tyler": {
+      "id": "tyler",
+      "name": "Tyler",
+      "tag": "AXSN",
       "roster": "male",
-      "role": "Initiator",
+      "role": "flex",
       "rank": "Ascendant 1",
       "rr": 41,
       "cssClass": "rank-ascendant"
