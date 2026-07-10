@@ -17,7 +17,7 @@ PLAYERS = [
     { "id": "mari",      "name": "rteurma",      "tag": "rt13",  "roster": "flinta", "role": "Flex"       },
     # Male Roster 1
     { "id": "jc",        "name": "jczera",       "tag": "LG16",  "roster": "male",   "role": "Controller" },
-    { "id": "marwin",    "name": "BluntDawg51",  "tag": "081z",  "roster": "male",   "role": "Initiator"  },
+    { "id": "tyler",    "name": "Tyler",         "tag": "AXSN",  "roster": "male",   "role": "Flex"       },
     { "id": "twony",     "name": "twony",        "tag": "111",   "roster": "male",   "role": "Controller" },
     { "id": "aff3",      "name": "Aff3",         "tag": "XuXu",  "roster": "male",   "role": "Sentinel"   },
     { "id": "kenkaneki", "name": "Cas k",        "tag": "Ken",   "roster": "male",   "role": "Duelist"    },
