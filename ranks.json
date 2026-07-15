@@ -1,5 +1,5 @@
 {
-  "updated": "15.07.2026 07:52 UTC",
+  "updated": "15.07.2026 13:14 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -38,7 +38,7 @@
       "roster": "flinta",
       "role": "Flex",
       "rank": "Gold 1",
-      "rr": 1,
+      "rr": 0,
       "cssClass": "rank-gold"
     },
     "jc": {
@@ -118,7 +118,7 @@
       "roster": "male2",
       "role": "Initiator",
       "rank": "Gold 2",
-      "rr": 20,
+      "rr": 38,
       "cssClass": "rank-gold"
     },
     "kyoka": {
