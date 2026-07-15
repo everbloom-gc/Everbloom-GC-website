@@ -1,5 +1,5 @@
 {
-  "updated": "14.07.2026 19:04 UTC",
+  "updated": "15.07.2026 07:52 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -38,7 +38,7 @@
       "roster": "flinta",
       "role": "Flex",
       "rank": "Gold 1",
-      "rr": 23,
+      "rr": 1,
       "cssClass": "rank-gold"
     },
     "jc": {
@@ -48,7 +48,7 @@
       "roster": "male",
       "role": "Controller",
       "rank": "Ascendant 1",
-      "rr": 64,
+      "rr": 83,
       "cssClass": "rank-ascendant"
     },
     "tyler": {
@@ -97,9 +97,9 @@
       "tag": "roses",
       "roster": "male2",
       "role": "Sentinel",
-      "rank": "Ascendant 1",
-      "rr": 0,
-      "cssClass": "rank-ascendant"
+      "rank": "Diamond 3",
+      "rr": 83,
+      "cssClass": "rank-diamond"
     },
     "pegasus": {
       "id": "pegasus",
@@ -118,7 +118,7 @@
       "roster": "male2",
       "role": "Initiator",
       "rank": "Gold 2",
-      "rr": 13,
+      "rr": 20,
       "cssClass": "rank-gold"
     },
     "kyoka": {
@@ -138,7 +138,7 @@
       "roster": "male2",
       "role": "Duelist",
       "rank": "Ascendant 1",
-      "rr": 25,
+      "rr": 17,
       "cssClass": "rank-ascendant"
     }
   }
