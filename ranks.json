@@ -1,5 +1,5 @@
 {
-  "updated": "15.07.2026 18:57 UTC",
+  "updated": "16.07.2026 07:57 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -28,7 +28,7 @@
       "roster": "flinta",
       "role": "Sentinal/Controller",
       "rank": "Silver 2",
-      "rr": 19,
+      "rr": 14,
       "cssClass": "rank-silver"
     },
     "mari": {
@@ -38,7 +38,7 @@
       "roster": "flinta",
       "role": "Flex",
       "rank": "Gold 1",
-      "rr": 0,
+      "rr": 11,
       "cssClass": "rank-gold"
     },
     "jc": {
@@ -107,8 +107,8 @@
       "tag": "VTM",
       "roster": "male2",
       "role": "Controller",
-      "rank": "Diamond 3",
-      "rr": 0,
+      "rank": "Diamond 2",
+      "rr": 84,
       "cssClass": "rank-diamond"
     },
     "alex": {
