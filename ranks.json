@@ -1,5 +1,5 @@
 {
-  "updated": "17.07.2026 07:54 UTC",
+  "updated": "17.07.2026 13:06 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -8,7 +8,7 @@
       "roster": "flinta",
       "role": "Duelist",
       "rank": "Silver 3",
-      "rr": 77,
+      "rr": 59,
       "cssClass": "rank-silver"
     },
     "settie": {
@@ -38,7 +38,7 @@
       "roster": "flinta",
       "role": "Flex",
       "rank": "Gold 1",
-      "rr": 0,
+      "rr": 4,
       "cssClass": "rank-gold"
     },
     "jc": {
@@ -108,7 +108,7 @@
       "roster": "male2",
       "role": "Controller",
       "rank": "Diamond 2",
-      "rr": 72,
+      "rr": 90,
       "cssClass": "rank-diamond"
     },
     "alex": {
