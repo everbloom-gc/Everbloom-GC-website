@@ -1,5 +1,5 @@
 {
-  "updated": "17.07.2026 18:54 UTC",
+  "updated": "18.07.2026 07:29 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -28,7 +28,7 @@
       "roster": "flinta",
       "role": "Sentinal/Controller",
       "rank": "Silver 2",
-      "rr": 44,
+      "rr": 69,
       "cssClass": "rank-silver"
     },
     "mari": {
@@ -48,7 +48,7 @@
       "roster": "male",
       "role": "Controller",
       "rank": "Ascendant 2",
-      "rr": 10,
+      "rr": 12,
       "cssClass": "rank-ascendant"
     },
     "tyler": {
@@ -68,7 +68,7 @@
       "roster": "male",
       "role": "Controller",
       "rank": "Diamond 3",
-      "rr": 42,
+      "rr": 49,
       "cssClass": "rank-diamond"
     },
     "aff3": {
@@ -88,7 +88,7 @@
       "roster": "male",
       "role": "Duelist",
       "rank": "Ascendant 2",
-      "rr": 58,
+      "rr": 60,
       "cssClass": "rank-ascendant"
     },
     "banani": {
