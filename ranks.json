@@ -1,5 +1,5 @@
 {
-  "updated": "18.07.2026 12:54 UTC",
+  "updated": "18.07.2026 18:48 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -8,7 +8,7 @@
       "roster": "flinta",
       "role": "Duelist",
       "rank": "Silver 3",
-      "rr": 10,
+      "rr": 17,
       "cssClass": "rank-silver"
     },
     "settie": {
@@ -28,7 +28,7 @@
       "roster": "flinta",
       "role": "Sentinal/Controller",
       "rank": "Silver 2",
-      "rr": 69,
+      "rr": 75,
       "cssClass": "rank-silver"
     },
     "mari": {
@@ -38,7 +38,7 @@
       "roster": "flinta",
       "role": "Flex",
       "rank": "Gold 1",
-      "rr": 32,
+      "rr": 34,
       "cssClass": "rank-gold"
     },
     "jc": {
@@ -47,8 +47,8 @@
       "tag": "LG16",
       "roster": "male",
       "role": "Controller",
-      "rank": "Ascendant 2",
-      "rr": 12,
+      "rank": "Ascendant 1",
+      "rr": 83,
       "cssClass": "rank-ascendant"
     },
     "tyler": {
@@ -87,8 +87,8 @@
       "tag": "Ken",
       "roster": "male",
       "role": "Duelist",
-      "rank": "Ascendant 2",
-      "rr": 5,
+      "rank": "Ascendant 1",
+      "rr": 69,
       "cssClass": "rank-ascendant"
     },
     "banani": {
@@ -108,7 +108,7 @@
       "roster": "male2",
       "role": "Controller",
       "rank": "Diamond 3",
-      "rr": 19,
+      "rr": 0,
       "cssClass": "rank-diamond"
     },
     "alex": {
@@ -118,7 +118,7 @@
       "roster": "male2",
       "role": "Initiator",
       "rank": "Gold 2",
-      "rr": 24,
+      "rr": 48,
       "cssClass": "rank-gold"
     },
     "kyoka": {
@@ -128,7 +128,7 @@
       "roster": "male2",
       "role": "Duelist",
       "rank": "Ascendant 1",
-      "rr": 0,
+      "rr": 17,
       "cssClass": "rank-ascendant"
     },
     "gustaf": {
