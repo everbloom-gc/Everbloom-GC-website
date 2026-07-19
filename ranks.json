@@ -1,5 +1,5 @@
 {
-  "updated": "18.07.2026 18:48 UTC",
+  "updated": "19.07.2026 08:00 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -47,8 +47,8 @@
       "tag": "LG16",
       "roster": "male",
       "role": "Controller",
-      "rank": "Ascendant 1",
-      "rr": 83,
+      "rank": "Ascendant 2",
+      "rr": 10,
       "cssClass": "rank-ascendant"
     },
     "tyler": {
@@ -107,8 +107,8 @@
       "tag": "VTM",
       "roster": "male2",
       "role": "Controller",
-      "rank": "Diamond 3",
-      "rr": 0,
+      "rank": "Diamond 2",
+      "rr": 83,
       "cssClass": "rank-diamond"
     },
     "alex": {
@@ -118,7 +118,7 @@
       "roster": "male2",
       "role": "Initiator",
       "rank": "Gold 2",
-      "rr": 48,
+      "rr": 24,
       "cssClass": "rank-gold"
     },
     "kyoka": {
@@ -128,7 +128,7 @@
       "roster": "male2",
       "role": "Duelist",
       "rank": "Ascendant 1",
-      "rr": 17,
+      "rr": 12,
       "cssClass": "rank-ascendant"
     },
     "gustaf": {
