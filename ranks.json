@@ -1,5 +1,5 @@
 {
-  "updated": "20.07.2026 13:49 UTC",
+  "updated": "20.07.2026 19:27 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -28,7 +28,7 @@
       "roster": "flinta",
       "role": "Sentinal/Controller",
       "rank": "Silver 2",
-      "rr": 75,
+      "rr": 95,
       "cssClass": "rank-silver"
     },
     "mari": {
@@ -37,8 +37,8 @@
       "tag": "rt13",
       "roster": "flinta",
       "role": "Flex",
-      "rank": "Gold 1",
-      "rr": 78,
+      "rank": "Gold 2",
+      "rr": 0,
       "cssClass": "rank-gold"
     },
     "jc": {
@@ -48,7 +48,7 @@
       "roster": "male",
       "role": "Controller",
       "rank": "Ascendant 2",
-      "rr": 51,
+      "rr": 35,
       "cssClass": "rank-ascendant"
     },
     "tyler": {
@@ -68,7 +68,7 @@
       "roster": "male",
       "role": "Controller",
       "rank": "Diamond 3",
-      "rr": 49,
+      "rr": 43,
       "cssClass": "rank-diamond"
     },
     "aff3": {
@@ -78,7 +78,7 @@
       "roster": "male",
       "role": "Sentinel",
       "rank": "Diamond 3",
-      "rr": 10,
+      "rr": 33,
       "cssClass": "rank-diamond"
     },
     "kenkaneki": {
@@ -87,8 +87,8 @@
       "tag": "Ken",
       "roster": "male",
       "role": "Duelist",
-      "rank": "Ascendant 1",
-      "rr": 88,
+      "rank": "Ascendant 2",
+      "rr": 10,
       "cssClass": "rank-ascendant"
     },
     "banani": {
