@@ -1,5 +1,5 @@
 {
-  "updated": "19.07.2026 18:53 UTC",
+  "updated": "20.07.2026 08:42 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -38,7 +38,7 @@
       "roster": "flinta",
       "role": "Flex",
       "rank": "Gold 1",
-      "rr": 72,
+      "rr": 78,
       "cssClass": "rank-gold"
     },
     "jc": {
@@ -48,7 +48,7 @@
       "roster": "male",
       "role": "Controller",
       "rank": "Ascendant 2",
-      "rr": 68,
+      "rr": 51,
       "cssClass": "rank-ascendant"
     },
     "tyler": {
