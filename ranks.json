@@ -1,5 +1,5 @@
 {
-  "updated": "23.07.2026 08:13 UTC",
+  "updated": "23.07.2026 13:26 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -38,7 +38,7 @@
       "roster": "flinta",
       "role": "Flex",
       "rank": "Gold 1",
-      "rr": 76,
+      "rr": 81,
       "cssClass": "rank-gold"
     },
     "jc": {
@@ -107,8 +107,8 @@
       "tag": "VTM",
       "roster": "male2",
       "role": "Controller",
-      "rank": "Diamond 2",
-      "rr": 66,
+      "rank": "Diamond 3",
+      "rr": 29,
       "cssClass": "rank-diamond"
     },
     "alex": {
@@ -118,7 +118,7 @@
       "roster": "male2",
       "role": "Initiator",
       "rank": "Gold 2",
-      "rr": 49,
+      "rr": 59,
       "cssClass": "rank-gold"
     },
     "kyoka": {
