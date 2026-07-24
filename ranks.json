@@ -1,5 +1,5 @@
 {
-  "updated": "23.07.2026 19:00 UTC",
+  "updated": "24.07.2026 08:09 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -8,7 +8,7 @@
       "roster": "flinta",
       "role": "Duelist",
       "rank": "Silver 3",
-      "rr": 23,
+      "rr": 44,
       "cssClass": "rank-silver"
     },
     "settie": {
@@ -118,7 +118,7 @@
       "roster": "male2",
       "role": "Initiator",
       "rank": "Gold 2",
-      "rr": 59,
+      "rr": 41,
       "cssClass": "rank-gold"
     },
     "kyoka": {
