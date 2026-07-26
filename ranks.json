@@ -1,149 +1,5 @@
 {
-  "updated": "15.06.2026 17:14 UTC",
-  "players": {
-    "ruby": {
-      "id": "ruby",
-      "name": "Rubyxcube",
-      "tag": "EBM",
-      "roster": "flinta",
-      "role": "Controller",
-      "rank": "Gold 1",
-      "rr": 10,
-      "cssClass": "rank-gold"
-    },
-    "settie": {
-      "id": "settie",
-      "name": "settie",
-      "tag": "TTV",
-      "roster": "flinta",
-      "role": "Sentinel",
-      "rank": "Silver 1",
-      "rr": 0,
-      "cssClass": "rank-silver"
-    },
-    "raph": {
-      "id": "raph",
-      "name": "DreamyDevour",
-      "tag": "EBM",
-      "roster": "flinta",
-      "role": "Flex",
-      "rank": "Silver 1",
-      "rr": 10,
-      "cssClass": "rank-silver"
-    },
-    "jc": {
-      "id": "jc",
-      "name": "jczera",
-      "tag": "LG16",
-      "roster": "male",
-      "role": "Controller",
-      "rank": "Ascendant 2",
-      "rr": 0,
-      "cssClass": "rank-ascendant"
-    },
-    "marwin": {
-      "id": "marwin",
-      "name": "BluntDawg51",
-      "tag": "081z",
-      "roster": "male",
-      "role": "Initiator",
-      "rank": "Ascendant 1",
-      "rr": 0,
-      "cssClass": "rank-ascendant"
-    },
-    "envy": {
-      "id": "envy",
-      "name": "envy",
-      "tag": "grit",
-      "roster": "male",
-      "role": "Duelist",
-      "rank": "Diamond 3",
-      "rr": 37,
-      "cssClass": "rank-diamond"
-    },
-    "aff3": {
-      "id": "aff3",
-      "name": "Aff3",
-      "tag": "XuXu",
-      "roster": "male",
-      "role": "Sentinel",
-      "rank": "Ascendant 1",
-      "rr": 19,
-      "cssClass": "rank-ascendant"
-    },
-    "banani": {
-      "id": "banani",
-      "name": "Kasane Teto",
-      "tag": "roses",
-      "roster": "male2",
-      "role": "Sentinel",
-      "rank": "Ascendant 1",
-      "rr": 0,
-      "cssClass": "rank-ascendant"
-    },
-    "twony": {
-      "id": "twony",
-      "name": "twony",
-      "tag": "111",
-      "roster": "male2",
-      "role": "Controller",
-      "rank": "Immortal 1",
-      "rr": 0,
-      "cssClass": "rank-immortal"
-    },
-    "alex": {
-      "id": "alex",
-      "name": "Alexolotl",
-      "tag": "2020",
-      "roster": "male2",
-      "role": "Initiator",
-      "rank": "Platinum 2",
-      "rr": 0,
-      "cssClass": "rank-platinum"
-    },
-    "kyoka": {
-      "id": "kyoka",
-      "name": "Rem",
-      "tag": "Rero",
-      "roster": "male2",
-      "role": "Duelist",
-      "rank": "Ascendant 2",
-      "rr": 0,
-      "cssClass": "rank-ascendant"
-    },
-    "gustaf": {
-      "id": "gustaf",
-      "name": "Ram",
-      "tag": "Rero",
-      "roster": "male2",
-      "role": "Duelist",
-      "rank": "Ascendant 3",
-      "rr": 0,
-      "cssClass": "rank-ascendant"
-    },
-    "ryu": {
-      "id": "ryu",
-      "name": "Ryu",
-      "tag": "L2P",
-      "roster": "flinta",
-      "role": "Flex",
-      "rank": "Unranked",
-      "rr": 0,
-      "cssClass": "rank-bronze"
-    },
-    "squishy": {
-      "id": "squishy",
-      "name": "squshy09K",
-      "tag": "1243",
-      "roster": "flinta",
-      "role": "Flex",
-      "rank": "Unranked",
-      "rr": 0,
-      "cssClass": "rank-bronze"
-    }
-  }
-}{
-  "updated": "26.07.2026 12:58 UTC",
+  "updated": "26.07.2026 16:32 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -152,7 +8,7 @@
       "roster": "flinta",
       "role": "Duelist",
       "rank": "Silver 3",
-      "rr": 44,
+      "rr": 52,
       "cssClass": "rank-silver"
     },
     "settie": {
@@ -202,8 +58,18 @@
       "roster": "flinta",
       "role": "Flex",
       "rank": "Silver 3",
-      "rr": 27,
+      "rr": 7,
       "cssClass": "rank-silver"
+    },
+    "squishy": {
+      "id": "squishy",
+      "name": "squshy09K",
+      "tag": "1243",
+      "roster": "flinta",
+      "role": "Flex",
+      "rank": "Gold 1",
+      "rr": 53,
+      "cssClass": "rank-gold"
     },
     "jc": {
       "id": "jc",
@@ -251,8 +117,8 @@
       "tag": "Ken",
       "roster": "male",
       "role": "Duelist",
-      "rank": "Ascendant 3",
-      "rr": 10,
+      "rank": "Ascendant 2",
+      "rr": 82,
       "cssClass": "rank-ascendant"
     },
     "banani": {
@@ -282,7 +148,7 @@
       "roster": "male2",
       "role": "Initiator",
       "rank": "Gold 3",
-      "rr": 38,
+      "rr": 44,
       "cssClass": "rank-gold"
     },
     "kyoka": {
@@ -291,9 +157,9 @@
       "tag": "Rero",
       "roster": "male2",
       "role": "Duelist",
-      "rank": "Ascendant 1",
-      "rr": 12,
-      "cssClass": "rank-ascendant"
+      "rank": "\u2014",
+      "rr": 0,
+      "cssClass": "rank-bronze"
     },
     "gustaf": {
       "id": "gustaf",
