@@ -1,5 +1,5 @@
 {
-  "updated": "27.07.2026 09:32 UTC",
+  "updated": "27.07.2026 14:11 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -58,7 +58,7 @@
       "roster": "flinta",
       "role": "Flex",
       "rank": "Silver 3",
-      "rr": 7,
+      "rr": 34,
       "cssClass": "rank-silver"
     },
     "squishy": {
@@ -108,7 +108,7 @@
       "roster": "male",
       "role": "Sentinel",
       "rank": "Diamond 3",
-      "rr": 93,
+      "rr": 77,
       "cssClass": "rank-diamond"
     },
     "kenkaneki": {
@@ -148,7 +148,7 @@
       "roster": "male2",
       "role": "Initiator",
       "rank": "Gold 3",
-      "rr": 51,
+      "rr": 69,
       "cssClass": "rank-gold"
     },
     "kyoka": {
