@@ -1,5 +1,5 @@
 {
-  "updated": "27.07.2026 14:11 UTC",
+  "updated": "27.07.2026 19:13 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -8,7 +8,7 @@
       "roster": "flinta",
       "role": "Duelist",
       "rank": "Silver 3",
-      "rr": 52,
+      "rr": 67,
       "cssClass": "rank-silver"
     },
     "settie": {
@@ -98,7 +98,7 @@
       "roster": "male",
       "role": "Controller",
       "rank": "Ascendant 1",
-      "rr": 0,
+      "rr": 24,
       "cssClass": "rank-ascendant"
     },
     "aff3": {
@@ -117,8 +117,8 @@
       "tag": "Ken",
       "roster": "male",
       "role": "Duelist",
-      "rank": "Ascendant 2",
-      "rr": 82,
+      "rank": "Ascendant 3",
+      "rr": 18,
       "cssClass": "rank-ascendant"
     },
     "banani": {
@@ -147,9 +147,9 @@
       "tag": "2020",
       "roster": "male2",
       "role": "Initiator",
-      "rank": "Gold 3",
-      "rr": 69,
-      "cssClass": "rank-gold"
+      "rank": "Platinum 1",
+      "rr": 0,
+      "cssClass": "rank-platinum"
     },
     "kyoka": {
       "id": "kyoka",
