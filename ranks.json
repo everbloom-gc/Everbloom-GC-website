@@ -1,5 +1,5 @@
 {
-  "updated": "27.07.2026 19:13 UTC",
+  "updated": "28.07.2026 08:15 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -47,8 +47,8 @@
       "tag": "2005",
       "roster": "flinta",
       "role": "Flex",
-      "rank": "Silver 2",
-      "rr": 0,
+      "rank": "Silver 1",
+      "rr": 57,
       "cssClass": "rank-silver"
     },
     "ryu": {
@@ -148,7 +148,7 @@
       "roster": "male2",
       "role": "Initiator",
       "rank": "Platinum 1",
-      "rr": 0,
+      "rr": 19,
       "cssClass": "rank-platinum"
     },
     "kyoka": {
