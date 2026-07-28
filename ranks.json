@@ -1,5 +1,5 @@
 {
-  "updated": "28.07.2026 08:15 UTC",
+  "updated": "28.07.2026 13:40 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -58,7 +58,7 @@
       "roster": "flinta",
       "role": "Flex",
       "rank": "Silver 3",
-      "rr": 34,
+      "rr": 61,
       "cssClass": "rank-silver"
     },
     "squishy": {
@@ -137,8 +137,8 @@
       "tag": "VTM",
       "roster": "male2",
       "role": "Duelist",
-      "rank": "Diamond 3",
-      "rr": 0,
+      "rank": "Diamond 2",
+      "rr": 52,
       "cssClass": "rank-diamond"
     },
     "alex": {
@@ -148,7 +148,7 @@
       "roster": "male2",
       "role": "Initiator",
       "rank": "Platinum 1",
-      "rr": 19,
+      "rr": 27,
       "cssClass": "rank-platinum"
     },
     "kyoka": {
