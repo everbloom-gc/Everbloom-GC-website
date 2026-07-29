@@ -1,5 +1,5 @@
 {
-  "updated": "29.07.2026 13:46 UTC",
+  "updated": "29.07.2026 18:58 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -8,7 +8,7 @@
       "roster": "flinta",
       "role": "Duelist",
       "rank": "Gold 1",
-      "rr": 3,
+      "rr": 21,
       "cssClass": "rank-gold"
     },
     "settie": {
@@ -37,8 +37,8 @@
       "tag": "rt13",
       "roster": "flinta",
       "role": "Flex",
-      "rank": "Gold 1",
-      "rr": 95,
+      "rank": "Gold 2",
+      "rr": 13,
       "cssClass": "rank-gold"
     },
     "lena": {
@@ -58,7 +58,7 @@
       "roster": "flinta",
       "role": "Flex",
       "rank": "Silver 3",
-      "rr": 71,
+      "rr": 88,
       "cssClass": "rank-silver"
     },
     "squishy": {
@@ -68,7 +68,7 @@
       "roster": "flinta",
       "role": "Flex",
       "rank": "Gold 1",
-      "rr": 46,
+      "rr": 67,
       "cssClass": "rank-gold"
     },
     "jc": {
@@ -78,7 +78,7 @@
       "roster": "male",
       "role": "Controller",
       "rank": "Ascendant 3",
-      "rr": 10,
+      "rr": 0,
       "cssClass": "rank-ascendant"
     },
     "marwin": {
@@ -98,7 +98,7 @@
       "roster": "male",
       "role": "Controller",
       "rank": "Ascendant 1",
-      "rr": 51,
+      "rr": 4,
       "cssClass": "rank-ascendant"
     },
     "aff3": {
@@ -117,8 +117,8 @@
       "tag": "Ken",
       "roster": "male",
       "role": "Duelist",
-      "rank": "Ascendant 3",
-      "rr": 18,
+      "rank": "Ascendant 2",
+      "rr": 82,
       "cssClass": "rank-ascendant"
     },
     "banani": {
@@ -138,7 +138,7 @@
       "roster": "male2",
       "role": "Duelist",
       "rank": "Diamond 2",
-      "rr": 52,
+      "rr": 70,
       "cssClass": "rank-diamond"
     },
     "alex": {
