@@ -1,5 +1,5 @@
 {
-  "updated": "29.07.2026 08:21 UTC",
+  "updated": "29.07.2026 13:46 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -28,7 +28,7 @@
       "roster": "flinta",
       "role": "Flex",
       "rank": "Silver 2",
-      "rr": 76,
+      "rr": 81,
       "cssClass": "rank-silver"
     },
     "mari": {
@@ -38,7 +38,7 @@
       "roster": "flinta",
       "role": "Flex",
       "rank": "Gold 1",
-      "rr": 45,
+      "rr": 95,
       "cssClass": "rank-gold"
     },
     "lena": {
@@ -58,7 +58,7 @@
       "roster": "flinta",
       "role": "Flex",
       "rank": "Silver 3",
-      "rr": 85,
+      "rr": 71,
       "cssClass": "rank-silver"
     },
     "squishy": {
@@ -68,7 +68,7 @@
       "roster": "flinta",
       "role": "Flex",
       "rank": "Gold 1",
-      "rr": 62,
+      "rr": 46,
       "cssClass": "rank-gold"
     },
     "jc": {
