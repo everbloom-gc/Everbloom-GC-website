@@ -1,5 +1,5 @@
 {
-  "updated": "31.07.2026 19:09 UTC",
+  "updated": "31.07.2026 22:33 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -8,7 +8,7 @@
       "roster": "flinta",
       "role": "Duelist",
       "rank": "Gold 1",
-      "rr": 13,
+      "rr": 61,
       "cssClass": "rank-gold"
     },
     "settie": {
@@ -48,7 +48,7 @@
       "roster": "flinta",
       "role": "Flex",
       "rank": "Silver 1",
-      "rr": 57,
+      "rr": 40,
       "cssClass": "rank-silver"
     },
     "ryu": {
@@ -57,9 +57,9 @@
       "tag": "L2P",
       "roster": "flinta",
       "role": "Flex",
-      "rank": "Silver 3",
-      "rr": 66,
-      "cssClass": "rank-silver"
+      "rank": "Gold 1",
+      "rr": 10,
+      "cssClass": "rank-gold"
     },
     "squishy": {
       "id": "squishy",
@@ -68,7 +68,7 @@
       "roster": "flinta",
       "role": "Flex",
       "rank": "Gold 1",
-      "rr": 36,
+      "rr": 51,
       "cssClass": "rank-gold"
     },
     "jc": {
@@ -88,7 +88,7 @@
       "roster": "male",
       "role": "Initiator",
       "rank": "Ascendant 1",
-      "rr": 56,
+      "rr": 76,
       "cssClass": "rank-ascendant"
     },
     "twony": {
