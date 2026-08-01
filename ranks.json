@@ -1,5 +1,5 @@
 {
-  "updated": "31.07.2026 22:33 UTC",
+  "updated": "01.08.2026 08:04 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -108,7 +108,7 @@
       "roster": "male",
       "role": "Sentinel",
       "rank": "Diamond 3",
-      "rr": 77,
+      "rr": 58,
       "cssClass": "rank-diamond"
     },
     "kenkaneki": {
