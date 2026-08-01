@@ -1,6 +1,26 @@
 {
-  "updated": "01.08.2026 08:23 UTC",
+  "updated": "01.08.2026 08:58 UTC",
   "players": {
+    "kyoka": {
+      "id": "kyoka",
+      "name": "Rem",
+      "tag": "Rero",
+      "roster": "male2",
+      "role": "Duelist",
+      "rank": "Ascendant 1",
+      "rr": 12,
+      "cssClass": "rank-ascendant"
+    },
+    "gustaf": {
+      "id": "gustaf",
+      "name": "Ram",
+      "tag": "Rero",
+      "roster": "male2",
+      "role": "Duelist",
+      "rank": "Ascendant 1",
+      "rr": 3,
+      "cssClass": "rank-ascendant"
+    },
     "ruby": {
       "id": "ruby",
       "name": "akaruby",
@@ -21,16 +41,6 @@
       "rr": 0,
       "cssClass": "rank-silver"
     },
-    "raph": {
-      "id": "raph",
-      "name": "DreamyDevour",
-      "tag": "EBM",
-      "roster": "flinta",
-      "role": "Flex",
-      "rank": "Silver 2",
-      "rr": 84,
-      "cssClass": "rank-silver"
-    },
     "mari": {
       "id": "mari",
       "name": "rteurma",
@@ -40,16 +50,6 @@
       "rank": "Gold 2",
       "rr": 28,
       "cssClass": "rank-gold"
-    },
-    "lena": {
-      "id": "lena",
-      "name": "Zylicent",
-      "tag": "2005",
-      "roster": "flinta",
-      "role": "Flex",
-      "rank": "Silver 1",
-      "rr": 40,
-      "cssClass": "rank-silver"
     },
     "ryu": {
       "id": "ryu",
@@ -79,16 +79,6 @@
       "role": "Controller",
       "rank": "Ascendant 3",
       "rr": 31,
-      "cssClass": "rank-ascendant"
-    },
-    "marwin": {
-      "id": "marwin",
-      "name": "BluntDawg51",
-      "tag": "081z",
-      "roster": "male",
-      "role": "Initiator",
-      "rank": "Ascendant 1",
-      "rr": 76,
       "cssClass": "rank-ascendant"
     },
     "twony": {
@@ -150,26 +140,6 @@
       "rank": "Platinum 1",
       "rr": 8,
       "cssClass": "rank-platinum"
-    },
-    "kyoka": {
-      "id": "kyoka",
-      "name": "Rem",
-      "tag": "Rero",
-      "roster": "male2",
-      "role": "Duelist",
-      "rank": "\u2014",
-      "rr": 0,
-      "cssClass": "rank-bronze"
-    },
-    "gustaf": {
-      "id": "gustaf",
-      "name": "Ram",
-      "tag": "Rero",
-      "roster": "male2",
-      "role": "Duelist",
-      "rank": "\u2014",
-      "rr": 0,
-      "cssClass": "rank-bronze"
     }
   }
 }
