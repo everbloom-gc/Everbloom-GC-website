@@ -1,5 +1,5 @@
 {
-  "updated": "01.08.2026 12:58 UTC",
+  "updated": "01.08.2026 18:55 UTC",
   "players": {
     "kyoka": {
       "id": "kyoka",
@@ -98,7 +98,7 @@
       "roster": "male",
       "role": "Sentinel",
       "rank": "Diamond 3",
-      "rr": 42,
+      "rr": 64,
       "cssClass": "rank-diamond"
     },
     "kenkaneki": {
@@ -138,7 +138,7 @@
       "roster": "male2",
       "role": "Initiator",
       "rank": "Platinum 1",
-      "rr": 8,
+      "rr": 0,
       "cssClass": "rank-platinum"
     }
   }
