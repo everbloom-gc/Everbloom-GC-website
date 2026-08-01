@@ -9,26 +9,24 @@ API_KEY = os.environ.get('HENRIK_API_KEY', '')
 REGION  = 'eu'
 
 PLAYERS = [
+    # Male Roster 2 - Rero accounts first to avoid rate limit
+    { "id": "kyoka",    "name": "Rem",          "tag": "Rero",  "roster": "male2",  "role": "Duelist"    },
+    { "id": "gustaf",   "name": "Ram",          "tag": "Rero",  "roster": "male2",  "role": "Duelist"    },
     # FLINTA
     { "id": "ruby",   "name": "akaruby",     "tag": "EBM",   "roster": "flinta", "role": "Duelist"    },
     { "id": "settie", "name": "settie",       "tag": "TTV",   "roster": "flinta", "role": "Sentinel"   },
-    { "id": "raph",   "name": "DreamyDevour", "tag": "EBM",   "roster": "flinta", "role": "Flex"       },
     { "id": "mari",   "name": "rteurma",      "tag": "rt13",  "roster": "flinta", "role": "Flex"       },
-    { "id": "lena",   "name": "Zylicent",     "tag": "2005",  "roster": "flinta", "role": "Flex"       },
     { "id": "ryu",    "name": "Ryu",           "tag": "L2P",   "roster": "flinta", "role": "Flex"       },
     { "id": "squishy","name": "squshy09K",     "tag": "1243",  "roster": "flinta", "role": "Flex"       },
     # Male Roster 1
     { "id": "jc",     "name": "jczera",       "tag": "LG16",  "roster": "male",   "role": "Controller" },
-    { "id": "marwin", "name": "BluntDawg51",  "tag": "081z",  "roster": "male",   "role": "Initiator"  },
     { "id": "twony",  "name": "twony",        "tag": "111",   "roster": "male",   "role": "Controller" },
     { "id": "aff3",   "name": "Aff3",         "tag": "XuXu",  "roster": "male",   "role": "Sentinel"   },
     { "id": "kenkaneki", "name": "Cas k",     "tag": "Ken",   "roster": "male",   "role": "Duelist"    },
-    # Male Roster 2
+    # Male Roster 2 (rest)
     { "id": "banani",   "name": "Kasane Teto",  "tag": "roses", "roster": "male2",  "role": "Sentinel"   },
     { "id": "pegasus",  "name": "Pegasus2912",   "tag": "VTM",   "roster": "male2",  "role": "Duelist"    },
     { "id": "alex",     "name": "Alexolotl",     "tag": "2020",  "roster": "male2",  "role": "Initiator"  },
-    { "id": "kyoka",    "name": "Rem",            "tag": "Rero",  "roster": "male2",  "role": "Duelist"    },
-    { "id": "gustaf",   "name": "Ram",            "tag": "Rero",  "roster": "male2",  "role": "Duelist"    },
 ]
 
 TIER_CLASSES = {
@@ -72,6 +70,14 @@ def update_html(results):
     print(f"✅ roster.html updated at {now}")
 
 def main():
+    # Load existing ranks.json to preserve ranks on API failure
+    existing = {}
+    try:
+        with open('ranks.json', 'r') as f:
+            existing = json.load(f).get('players', {})
+    except:
+        pass
+
     results = {}
     for player in PLAYERS:
         print(f"Fetching {player['name']}#{player['tag']}...")
@@ -80,8 +86,16 @@ def main():
             results[player['id']] = {**player, **rank_data}
             print(f"  → {rank_data['rank']} ({rank_data['rr']} RR)")
         else:
-            results[player['id']] = {**player, "rank": "—", "rr": 0, "cssClass": "rank-bronze"}
-        time.sleep(2)  # 2 second delay between requests
+            # Keep existing rank if API fails
+            old = existing.get(player['id'], {})
+            results[player['id']] = {
+                **player,
+                "rank":     old.get('rank', 'Unranked'),
+                "rr":       old.get('rr', 0),
+                "cssClass": old.get('cssClass', 'rank-bronze'),
+            }
+            print(f"  → Kept existing: {results[player['id']]['rank']}")
+        time.sleep(5)
 
     output = {"updated": datetime.now(timezone.utc).strftime('%d.%m.%Y %H:%M UTC'), "players": results}
     with open('ranks.json', 'w') as f:
