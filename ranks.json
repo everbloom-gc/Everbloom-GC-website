@@ -1,5 +1,5 @@
 {
-  "updated": "02.08.2026 08:06 UTC",
+  "updated": "02.08.2026 13:00 UTC",
   "players": {
     "kyoka": {
       "id": "kyoka",
@@ -28,7 +28,7 @@
       "roster": "flinta",
       "role": "Duelist",
       "rank": "Gold 1",
-      "rr": 9,
+      "rr": 31,
       "cssClass": "rank-gold"
     },
     "settie": {
@@ -107,9 +107,9 @@
       "tag": "Ken",
       "roster": "male",
       "role": "Duelist",
-      "rank": "Ascendant 3",
-      "rr": 60,
-      "cssClass": "rank-ascendant"
+      "rank": "Immortal 1",
+      "rr": 44,
+      "cssClass": "rank-immortal"
     },
     "banani": {
       "id": "banani",
@@ -128,7 +128,7 @@
       "roster": "male2",
       "role": "Duelist",
       "rank": "Diamond 2",
-      "rr": 79,
+      "rr": 63,
       "cssClass": "rank-diamond"
     },
     "alex": {
@@ -138,7 +138,7 @@
       "roster": "male2",
       "role": "Initiator",
       "rank": "Platinum 1",
-      "rr": 17,
+      "rr": 35,
       "cssClass": "rank-platinum"
     }
   }
