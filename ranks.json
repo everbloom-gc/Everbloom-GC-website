@@ -1,5 +1,5 @@
 {
-  "updated": "02.08.2026 13:00 UTC",
+  "updated": "02.08.2026 18:56 UTC",
   "players": {
     "kyoka": {
       "id": "kyoka",
@@ -28,7 +28,7 @@
       "roster": "flinta",
       "role": "Duelist",
       "rank": "Gold 1",
-      "rr": 31,
+      "rr": 4,
       "cssClass": "rank-gold"
     },
     "settie": {
@@ -47,8 +47,8 @@
       "tag": "rt13",
       "roster": "flinta",
       "role": "Flex",
-      "rank": "Gold 2",
-      "rr": 0,
+      "rank": "Gold 1",
+      "rr": 59,
       "cssClass": "rank-gold"
     },
     "ryu": {
@@ -68,7 +68,7 @@
       "roster": "flinta",
       "role": "Flex",
       "rank": "Gold 1",
-      "rr": 51,
+      "rr": 34,
       "cssClass": "rank-gold"
     },
     "jc": {
@@ -108,7 +108,7 @@
       "roster": "male",
       "role": "Duelist",
       "rank": "Immortal 1",
-      "rr": 44,
+      "rr": 24,
       "cssClass": "rank-immortal"
     },
     "banani": {
