@@ -1,5 +1,5 @@
 {
-  "updated": "03.08.2026 19:20 UTC",
+  "updated": "04.08.2026 08:22 UTC",
   "players": {
     "kyoka": {
       "id": "kyoka",
@@ -68,7 +68,7 @@
       "roster": "flinta",
       "role": "Flex",
       "rank": "Gold 1",
-      "rr": 69,
+      "rr": 53,
       "cssClass": "rank-gold"
     },
     "jc": {
@@ -78,7 +78,7 @@
       "roster": "male",
       "role": "Controller",
       "rank": "Ascendant 3",
-      "rr": 51,
+      "rr": 50,
       "cssClass": "rank-ascendant"
     },
     "twony": {
