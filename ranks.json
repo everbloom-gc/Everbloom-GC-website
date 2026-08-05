@@ -1,5 +1,5 @@
 {
-  "updated": "05.08.2026 13:44 UTC",
+  "updated": "05.08.2026 19:16 UTC",
   "players": {
     "kyoka": {
       "id": "kyoka",
@@ -108,7 +108,7 @@
       "roster": "male",
       "role": "Duelist",
       "rank": "Immortal 1",
-      "rr": 24,
+      "rr": 5,
       "cssClass": "rank-immortal"
     },
     "banani": {
