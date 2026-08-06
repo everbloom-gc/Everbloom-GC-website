@@ -1,5 +1,5 @@
 {
-  "updated": "06.08.2026 13:43 UTC",
+  "updated": "06.08.2026 23:51 UTC",
   "players": {
     "kyoka": {
       "id": "kyoka",
@@ -28,7 +28,7 @@
       "roster": "flinta",
       "role": "Duelist",
       "rank": "Gold 1",
-      "rr": 39,
+      "rr": 55,
       "cssClass": "rank-gold"
     },
     "settie": {
@@ -51,6 +51,16 @@
       "rr": 10,
       "cssClass": "rank-gold"
     },
+    "lena": {
+      "id": "lena",
+      "name": "Zylicent",
+      "tag": "2005",
+      "roster": "flinta",
+      "role": "Flex",
+      "rank": "Silver 1",
+      "rr": 83,
+      "cssClass": "rank-silver"
+    },
     "ryu": {
       "id": "ryu",
       "name": "Ryu",
@@ -58,7 +68,7 @@
       "roster": "flinta",
       "role": "Flex",
       "rank": "Gold 1",
-      "rr": 20,
+      "rr": 52,
       "cssClass": "rank-gold"
     },
     "squishy": {
@@ -76,10 +86,20 @@
       "name": "jczera",
       "tag": "LG16",
       "roster": "male",
-      "role": "Controller",
-      "rank": "Ascendant 3",
-      "rr": 0,
+      "role": "Flex",
+      "rank": "Ascendant 2",
+      "rr": 82,
       "cssClass": "rank-ascendant"
+    },
+    "kenkaneki": {
+      "id": "kenkaneki",
+      "name": "sunless LfL",
+      "tag": "Fated",
+      "roster": "male",
+      "role": "Initiator",
+      "rank": "Immortal 1",
+      "rr": 5,
+      "cssClass": "rank-immortal"
     },
     "twony": {
       "id": "twony",
@@ -91,25 +111,25 @@
       "rr": 37,
       "cssClass": "rank-ascendant"
     },
-    "aff3": {
-      "id": "aff3",
-      "name": "Aff3",
-      "tag": "XuXu",
+    "justus": {
+      "id": "justus",
+      "name": "flairrr",
+      "tag": "1611",
       "roster": "male",
-      "role": "Sentinel",
-      "rank": "Diamond 3",
-      "rr": 64,
-      "cssClass": "rank-diamond"
+      "role": "Initiator",
+      "rank": "Ascendant 1",
+      "rr": 66,
+      "cssClass": "rank-ascendant"
     },
-    "kenkaneki": {
-      "id": "kenkaneki",
-      "name": "Cas k",
-      "tag": "Ken",
+    "pithaa": {
+      "id": "pithaa",
+      "name": "Pithaa",
+      "tag": "7942",
       "roster": "male",
-      "role": "Duelist",
-      "rank": "Immortal 1",
-      "rr": 5,
-      "cssClass": "rank-immortal"
+      "role": "Flex",
+      "rank": "Ascendant 3",
+      "rr": 18,
+      "cssClass": "rank-ascendant"
     },
     "banani": {
       "id": "banani",
