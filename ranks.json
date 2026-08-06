@@ -1,5 +1,5 @@
 {
-  "updated": "06.08.2026 08:16 UTC",
+  "updated": "06.08.2026 13:43 UTC",
   "players": {
     "kyoka": {
       "id": "kyoka",
@@ -127,8 +127,8 @@
       "tag": "VTM",
       "roster": "male2",
       "role": "Duelist",
-      "rank": "Diamond 2",
-      "rr": 61,
+      "rank": "Diamond 3",
+      "rr": 14,
       "cssClass": "rank-diamond"
     },
     "alex": {
