@@ -1,5 +1,5 @@
 {
-  "updated": "07.08.2026 12:41 UTC",
+  "updated": "07.08.2026 18:41 UTC",
   "players": {
     "kyoka": {
       "id": "kyoka",
@@ -68,7 +68,7 @@
       "roster": "flinta",
       "role": "Flex",
       "rank": "Gold 1",
-      "rr": 52,
+      "rr": 64,
       "cssClass": "rank-gold"
     },
     "squishy": {
@@ -87,8 +87,8 @@
       "tag": "LG16",
       "roster": "male",
       "role": "Flex",
-      "rank": "Ascendant 2",
-      "rr": 82,
+      "rank": "Ascendant 3",
+      "rr": 10,
       "cssClass": "rank-ascendant"
     },
     "kenkaneki": {
@@ -98,7 +98,7 @@
       "roster": "male",
       "role": "Initiator",
       "rank": "Immortal 1",
-      "rr": 5,
+      "rr": 23,
       "cssClass": "rank-immortal"
     },
     "twony": {
@@ -118,7 +118,7 @@
       "roster": "male",
       "role": "Initiator",
       "rank": "Ascendant 1",
-      "rr": 66,
+      "rr": 88,
       "cssClass": "rank-ascendant"
     },
     "pithaa": {
