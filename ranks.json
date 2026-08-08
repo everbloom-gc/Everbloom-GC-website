@@ -1,5 +1,5 @@
 {
-  "updated": "08.08.2026 06:36 UTC",
+  "updated": "08.08.2026 12:28 UTC",
   "players": {
     "kyoka": {
       "id": "kyoka",
@@ -78,7 +78,7 @@
       "roster": "flinta",
       "role": "Flex",
       "rank": "Gold 2",
-      "rr": 0,
+      "rr": 10,
       "cssClass": "rank-gold"
     },
     "jc": {
@@ -118,7 +118,7 @@
       "roster": "male",
       "role": "Initiator",
       "rank": "Ascendant 1",
-      "rr": 88,
+      "rr": 47,
       "cssClass": "rank-ascendant"
     },
     "pithaa": {
