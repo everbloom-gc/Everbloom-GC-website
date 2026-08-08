@@ -1,5 +1,5 @@
 {
-  "updated": "08.08.2026 12:28 UTC",
+  "updated": "08.08.2026 17:22 UTC",
   "players": {
     "kyoka": {
       "id": "kyoka",
@@ -78,7 +78,7 @@
       "roster": "flinta",
       "role": "Flex",
       "rank": "Gold 2",
-      "rr": 10,
+      "rr": 0,
       "cssClass": "rank-gold"
     },
     "jc": {
@@ -148,7 +148,7 @@
       "roster": "male2",
       "role": "Duelist",
       "rank": "Diamond 3",
-      "rr": 14,
+      "rr": 0,
       "cssClass": "rank-diamond"
     },
     "alex": {
