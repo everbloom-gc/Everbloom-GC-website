@@ -1,5 +1,5 @@
 {
-  "updated": "08.08.2026 18:23 UTC",
+  "updated": "09.08.2026 18:26 UTC",
   "players": {
     "kyoka": {
       "id": "kyoka",
@@ -28,7 +28,7 @@
       "roster": "flinta",
       "role": "Duelist",
       "rank": "Gold 1",
-      "rr": 55,
+      "rr": 74,
       "cssClass": "rank-gold"
     },
     "settie": {
@@ -71,15 +71,15 @@
       "rr": 10,
       "cssClass": "rank-gold"
     },
-    "squishy": {
-      "id": "squishy",
-      "name": "squshy09K",
-      "tag": "1243",
+    "liora": {
+      "id": "liora",
+      "name": "pretty pink",
+      "tag": "diana",
       "roster": "flinta",
-      "role": "Flex",
-      "rank": "Gold 2",
-      "rr": 18,
-      "cssClass": "rank-gold"
+      "role": "Controller",
+      "rank": "Platinum 1",
+      "rr": 6,
+      "cssClass": "rank-platinum"
     },
     "jc": {
       "id": "jc",
@@ -98,7 +98,7 @@
       "roster": "male",
       "role": "Initiator",
       "rank": "Immortal 1",
-      "rr": 0,
+      "rr": 19,
       "cssClass": "rank-immortal"
     },
     "twony": {
@@ -118,7 +118,7 @@
       "roster": "male",
       "role": "Initiator",
       "rank": "Ascendant 1",
-      "rr": 47,
+      "rr": 29,
       "cssClass": "rank-ascendant"
     },
     "pithaa": {
@@ -127,8 +127,8 @@
       "tag": "7942",
       "roster": "male",
       "role": "Flex",
-      "rank": "Ascendant 3",
-      "rr": 0,
+      "rank": "Ascendant 2",
+      "rr": 82,
       "cssClass": "rank-ascendant"
     },
     "banani": {
@@ -139,16 +139,6 @@
       "role": "Sentinel",
       "rank": "Diamond 3",
       "rr": 83,
-      "cssClass": "rank-diamond"
-    },
-    "pegasus": {
-      "id": "pegasus",
-      "name": "Pegasus2912",
-      "tag": "VTM",
-      "roster": "male2",
-      "role": "Duelist",
-      "rank": "Diamond 2",
-      "rr": 81,
       "cssClass": "rank-diamond"
     },
     "alex": {
