@@ -1,5 +1,5 @@
 {
-  "updated": "10.08.2026 12:45 UTC",
+  "updated": "10.08.2026 18:43 UTC",
   "players": {
     "kyoka": {
       "id": "kyoka",
@@ -28,7 +28,7 @@
       "roster": "flinta",
       "role": "Duelist",
       "rank": "Gold 1",
-      "rr": 74,
+      "rr": 97,
       "cssClass": "rank-gold"
     },
     "settie": {
@@ -98,7 +98,7 @@
       "roster": "male",
       "role": "Initiator",
       "rank": "Immortal 1",
-      "rr": 19,
+      "rr": 0,
       "cssClass": "rank-immortal"
     },
     "twony": {
