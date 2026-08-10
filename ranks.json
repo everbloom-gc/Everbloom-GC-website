@@ -1,5 +1,5 @@
 {
-  "updated": "09.08.2026 18:26 UTC",
+  "updated": "10.08.2026 07:12 UTC",
   "players": {
     "kyoka": {
       "id": "kyoka",
@@ -118,7 +118,7 @@
       "roster": "male",
       "role": "Initiator",
       "rank": "Ascendant 1",
-      "rr": 29,
+      "rr": 48,
       "cssClass": "rank-ascendant"
     },
     "pithaa": {
