@@ -1,5 +1,5 @@
 {
-  "updated": "10.08.2026 18:43 UTC",
+  "updated": "11.08.2026 06:50 UTC",
   "players": {
     "kyoka": {
       "id": "kyoka",
@@ -58,7 +58,7 @@
       "roster": "flinta",
       "role": "Flex",
       "rank": "Silver 1",
-      "rr": 38,
+      "rr": 81,
       "cssClass": "rank-silver"
     },
     "ryu": {
@@ -88,7 +88,7 @@
       "roster": "male",
       "role": "Flex",
       "rank": "Ascendant 2",
-      "rr": 44,
+      "rr": 62,
       "cssClass": "rank-ascendant"
     },
     "kenkaneki": {
