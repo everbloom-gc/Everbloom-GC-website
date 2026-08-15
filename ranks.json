@@ -1,5 +1,5 @@
 {
-  "updated": "15.08.2026 06:21 UTC",
+  "updated": "15.08.2026 12:19 UTC",
   "players": {
     "kyoka": {
       "id": "kyoka",
@@ -58,7 +58,7 @@
       "roster": "flinta",
       "role": "Flex",
       "rank": "Silver 1",
-      "rr": 81,
+      "rr": 98,
       "cssClass": "rank-silver"
     },
     "ryu": {
@@ -98,7 +98,7 @@
       "roster": "male",
       "role": "Initiator",
       "rank": "Ascendant 3",
-      "rr": 38,
+      "rr": 20,
       "cssClass": "rank-ascendant"
     },
     "twony": {
@@ -127,8 +127,8 @@
       "tag": "7942",
       "roster": "male",
       "role": "Flex",
-      "rank": "Ascendant 2",
-      "rr": 82,
+      "rank": "Ascendant 3",
+      "rr": 34,
       "cssClass": "rank-ascendant"
     },
     "banani": {
