@@ -1,5 +1,5 @@
 {
-  "updated": "16.08.2026 06:24 UTC",
+  "updated": "16.08.2026 12:20 UTC",
   "players": {
     "kyoka": {
       "id": "kyoka",
@@ -68,7 +68,7 @@
       "roster": "flinta",
       "role": "Flex",
       "rank": "Gold 2",
-      "rr": 29,
+      "rr": 0,
       "cssClass": "rank-gold"
     },
     "liora": {
