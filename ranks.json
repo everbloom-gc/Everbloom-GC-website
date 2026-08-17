@@ -1,5 +1,5 @@
 {
-  "updated": "17.08.2026 12:23 UTC",
+  "updated": "17.08.2026 18:29 UTC",
   "players": {
     "kyoka": {
       "id": "kyoka",
@@ -108,7 +108,7 @@
       "roster": "male",
       "role": "Controller",
       "rank": "Ascendant 1",
-      "rr": 26,
+      "rr": 29,
       "cssClass": "rank-ascendant"
     },
     "justus": {
@@ -118,7 +118,7 @@
       "roster": "male",
       "role": "Initiator",
       "rank": "Ascendant 1",
-      "rr": 45,
+      "rr": 48,
       "cssClass": "rank-ascendant"
     },
     "pithaa": {
