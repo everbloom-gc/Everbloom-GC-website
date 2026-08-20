@@ -1,5 +1,5 @@
 {
-  "updated": "19.08.2026 18:20 UTC",
+  "updated": "20.08.2026 06:29 UTC",
   "players": {
     "kyoka": {
       "id": "kyoka",
@@ -27,8 +27,8 @@
       "tag": "EBM",
       "roster": "flinta",
       "role": "Duelist",
-      "rank": "Gold 1",
-      "rr": 52,
+      "rank": "Gold 2",
+      "rr": 27,
       "cssClass": "rank-gold"
     },
     "settie": {
@@ -57,8 +57,8 @@
       "tag": "2005",
       "roster": "flinta",
       "role": "Flex",
-      "rank": "Silver 1",
-      "rr": 98,
+      "rank": "Silver 2",
+      "rr": 17,
       "cssClass": "rank-silver"
     },
     "ryu": {
@@ -88,7 +88,7 @@
       "roster": "male",
       "role": "Flex",
       "rank": "Ascendant 3",
-      "rr": 21,
+      "rr": 0,
       "cssClass": "rank-ascendant"
     },
     "kenkaneki": {
@@ -98,7 +98,7 @@
       "roster": "male",
       "role": "Initiator",
       "rank": "Ascendant 3",
-      "rr": 19,
+      "rr": 0,
       "cssClass": "rank-ascendant"
     },
     "twony": {
