@@ -1,5 +1,5 @@
 {
-  "updated": "20.08.2026 18:24 UTC",
+  "updated": "21.08.2026 06:29 UTC",
   "players": {
     "kyoka": {
       "id": "kyoka",
@@ -27,8 +27,8 @@
       "tag": "EBM",
       "roster": "flinta",
       "role": "Duelist",
-      "rank": "Gold 2",
-      "rr": 0,
+      "rank": "Gold 1",
+      "rr": 86,
       "cssClass": "rank-gold"
     },
     "settie": {
@@ -118,7 +118,7 @@
       "roster": "male",
       "role": "Initiator",
       "rank": "Ascendant 1",
-      "rr": 48,
+      "rr": 0,
       "cssClass": "rank-ascendant"
     },
     "pithaa": {
@@ -128,7 +128,7 @@
       "roster": "male",
       "role": "Flex",
       "rank": "Ascendant 3",
-      "rr": 51,
+      "rr": 12,
       "cssClass": "rank-ascendant"
     },
     "banani": {
