@@ -1,5 +1,5 @@
 {
-  "updated": "23.08.2026 12:20 UTC",
+  "updated": "23.08.2026 18:16 UTC",
   "players": {
     "kyoka": {
       "id": "kyoka",
@@ -28,7 +28,7 @@
       "roster": "flinta",
       "role": "Duelist",
       "rank": "Gold 1",
-      "rr": 35,
+      "rr": 80,
       "cssClass": "rank-gold"
     },
     "settie": {
@@ -98,7 +98,7 @@
       "roster": "male",
       "role": "Initiator",
       "rank": "Ascendant 3",
-      "rr": 45,
+      "rr": 0,
       "cssClass": "rank-ascendant"
     },
     "twony": {
@@ -108,7 +108,7 @@
       "roster": "male",
       "role": "Controller",
       "rank": "Ascendant 1",
-      "rr": 29,
+      "rr": 48,
       "cssClass": "rank-ascendant"
     },
     "justus": {
@@ -128,7 +128,7 @@
       "roster": "male",
       "role": "Flex",
       "rank": "Ascendant 3",
-      "rr": 12,
+      "rr": 0,
       "cssClass": "rank-ascendant"
     },
     "banani": {
