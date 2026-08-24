@@ -1,5 +1,5 @@
 {
-  "updated": "23.08.2026 18:16 UTC",
+  "updated": "24.08.2026 06:37 UTC",
   "players": {
     "kyoka": {
       "id": "kyoka",
@@ -108,7 +108,7 @@
       "roster": "male",
       "role": "Controller",
       "rank": "Ascendant 1",
-      "rr": 48,
+      "rr": 82,
       "cssClass": "rank-ascendant"
     },
     "justus": {
