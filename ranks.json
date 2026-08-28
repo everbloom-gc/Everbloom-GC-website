@@ -1,5 +1,5 @@
 {
-  "updated": "28.08.2026 01:55 UTC",
+  "updated": "28.08.2026 17:54 UTC",
   "players": {
     "kyoka": {
       "id": "kyoka",
@@ -98,7 +98,7 @@
       "roster": "male",
       "role": "Initiator",
       "rank": "Ascendant 3",
-      "rr": 34,
+      "rr": 52,
       "cssClass": "rank-ascendant"
     },
     "twony": {
