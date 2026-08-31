@@ -1,5 +1,5 @@
 {
-  "updated": "31.08.2026 20:39 UTC",
+  "updated": "31.08.2026 22:12 UTC",
   "players": {
     "kyoka": {
       "id": "kyoka",
@@ -88,7 +88,7 @@
       "roster": "male",
       "role": "Flex",
       "rank": "Ascendant 3",
-      "rr": 48,
+      "rr": 28,
       "cssClass": "rank-ascendant"
     },
     "kenkaneki": {
