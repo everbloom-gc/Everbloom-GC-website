@@ -1,5 +1,5 @@
 {
-  "updated": "30.08.2026 20:19 UTC",
+  "updated": "31.08.2026 12:11 UTC",
   "players": {
     "kyoka": {
       "id": "kyoka",
@@ -77,9 +77,9 @@
       "tag": "diana",
       "roster": "flinta",
       "role": "Controller",
-      "rank": "Platinum 3",
-      "rr": 98,
-      "cssClass": "rank-platinum"
+      "rank": "Diamond 1",
+      "rr": 10,
+      "cssClass": "rank-diamond"
     },
     "jc": {
       "id": "jc",
@@ -88,7 +88,7 @@
       "roster": "male",
       "role": "Flex",
       "rank": "Ascendant 3",
-      "rr": 31,
+      "rr": 48,
       "cssClass": "rank-ascendant"
     },
     "kenkaneki": {
