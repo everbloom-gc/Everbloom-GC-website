@@ -15,7 +15,7 @@ PLAYERS = [
     # FLINTA
     { "id": "ruby",   "name": "akaruby",     "tag": "EBM",   "roster": "flinta", "role": "Duelist"    },
     { "id": "settie", "name": "settie",       "tag": "TTV",   "roster": "flinta", "role": "Sentinel"   },
-    { "id": "mari",   "name": "rteurma",      "tag": "rt13",  "roster": "flinta", "role": "Flex"       },
+    { "id": "cat",    "name": "Catッ",        "tag": "0w0",   "roster": "flinta", "role": "Sentinel"   },
     { "id": "lena",   "name": "Zylicent",     "tag": "2005",  "roster": "flinta", "role": "Flex"       },
     { "id": "ryu",    "name": "Ryu",           "tag": "L2P",   "roster": "flinta", "role": "Flex"       },
     { "id": "liora",  "name": "pretty pink",  "tag": "diana", "roster": "flinta", "role": "Controller" },
