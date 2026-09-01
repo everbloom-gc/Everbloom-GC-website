@@ -1,5 +1,5 @@
 {
-  "updated": "01.09.2026 10:47 UTC",
+  "updated": "01.09.2026 15:47 UTC",
   "players": {
     "kyoka": {
       "id": "kyoka",
@@ -48,7 +48,7 @@
       "roster": "flinta",
       "role": "Sentinel",
       "rank": "Gold 3",
-      "rr": 84,
+      "rr": 66,
       "cssClass": "rank-gold"
     },
     "lena": {
