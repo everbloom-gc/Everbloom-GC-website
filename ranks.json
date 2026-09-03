@@ -1,5 +1,5 @@
 {
-  "updated": "02.09.2026 20:18 UTC",
+  "updated": "03.09.2026 10:24 UTC",
   "players": {
     "kyoka": {
       "id": "kyoka",
@@ -88,7 +88,7 @@
       "roster": "male",
       "role": "Flex",
       "rank": "Ascendant 3",
-      "rr": 7,
+      "rr": 24,
       "cssClass": "rank-ascendant"
     },
     "kenkaneki": {
@@ -118,7 +118,7 @@
       "roster": "male",
       "role": "Initiator",
       "rank": "Ascendant 1",
-      "rr": 41,
+      "rr": 19,
       "cssClass": "rank-ascendant"
     },
     "pithaa": {
@@ -128,7 +128,7 @@
       "roster": "male",
       "role": "Flex",
       "rank": "Ascendant 2",
-      "rr": 82,
+      "rr": 43,
       "cssClass": "rank-ascendant"
     },
     "banani": {
