@@ -1,5 +1,5 @@
 {
-  "updated": "03.09.2026 10:24 UTC",
+  "updated": "03.09.2026 15:30 UTC",
   "players": {
     "kyoka": {
       "id": "kyoka",
@@ -28,7 +28,7 @@
       "roster": "flinta",
       "role": "Duelist",
       "rank": "Gold 2",
-      "rr": 66,
+      "rr": 52,
       "cssClass": "rank-gold"
     },
     "settie": {
@@ -48,7 +48,7 @@
       "roster": "flinta",
       "role": "Sentinel",
       "rank": "Gold 3",
-      "rr": 50,
+      "rr": 33,
       "cssClass": "rank-gold"
     },
     "lena": {
@@ -118,7 +118,7 @@
       "roster": "male",
       "role": "Initiator",
       "rank": "Ascendant 1",
-      "rr": 19,
+      "rr": 0,
       "cssClass": "rank-ascendant"
     },
     "pithaa": {
