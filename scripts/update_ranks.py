@@ -18,7 +18,6 @@ PLAYERS = [
     { "id": "cat",    "name": "Catッ",        "tag": "0w0",   "roster": "flinta", "role": "Sentinel"   },
     { "id": "lena",   "name": "Zylicent",     "tag": "2005",  "roster": "flinta", "role": "Flex"       },
     { "id": "ryu",    "name": "Ryu",           "tag": "L2P",   "roster": "flinta", "role": "Flex"       },
-    { "id": "liora",  "name": "pretty pink",  "tag": "diana", "roster": "flinta", "role": "Controller" },
     # Male Roster 1
     { "id": "jc",        "name": "jczera",      "tag": "LG16",  "roster": "male",   "role": "Flex"       },
     { "id": "kenkaneki", "name": "sunless LfL", "tag": "Fated", "roster": "male",   "role": "Initiator"  },
