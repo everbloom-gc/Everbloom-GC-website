@@ -1,5 +1,5 @@
 {
-  "updated": "05.09.2026 09:40 UTC",
+  "updated": "05.09.2026 10:01 UTC",
   "players": {
     "kyoka": {
       "id": "kyoka",
@@ -70,16 +70,6 @@
       "rank": "Gold 2",
       "rr": 0,
       "cssClass": "rank-gold"
-    },
-    "liora": {
-      "id": "liora",
-      "name": "pretty pink",
-      "tag": "diana",
-      "roster": "flinta",
-      "role": "Controller",
-      "rank": "Diamond 2",
-      "rr": 26,
-      "cssClass": "rank-diamond"
     },
     "jc": {
       "id": "jc",
