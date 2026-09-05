@@ -1,5 +1,5 @@
 {
-  "updated": "05.09.2026 10:01 UTC",
+  "updated": "05.09.2026 10:18 UTC",
   "players": {
     "kyoka": {
       "id": "kyoka",
@@ -33,13 +33,13 @@
     },
     "settie": {
       "id": "settie",
-      "name": "settie",
-      "tag": "TTV",
+      "name": "Sett",
+      "tag": "A320",
       "roster": "flinta",
       "role": "Sentinel",
-      "rank": "Silver 1",
-      "rr": 0,
-      "cssClass": "rank-silver"
+      "rank": "Iron 3",
+      "rr": 63,
+      "cssClass": "rank-iron"
     },
     "cat": {
       "id": "cat",
