@@ -1,5 +1,5 @@
 {
-  "updated": "05.09.2026 10:18 UTC",
+  "updated": "05.09.2026 14:15 UTC",
   "players": {
     "kyoka": {
       "id": "kyoka",
@@ -67,8 +67,8 @@
       "tag": "L2P",
       "roster": "flinta",
       "role": "Flex",
-      "rank": "Gold 2",
-      "rr": 0,
+      "rank": "Gold 1",
+      "rr": 70,
       "cssClass": "rank-gold"
     },
     "jc": {
