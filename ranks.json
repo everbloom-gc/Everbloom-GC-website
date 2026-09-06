@@ -1,5 +1,5 @@
 {
-  "updated": "06.09.2026 09:55 UTC",
+  "updated": "06.09.2026 14:39 UTC",
   "players": {
     "kyoka": {
       "id": "kyoka",
@@ -87,9 +87,9 @@
       "tag": "Fated",
       "roster": "male",
       "role": "Initiator",
-      "rank": "Ascendant 3",
-      "rr": 71,
-      "cssClass": "rank-ascendant"
+      "rank": "Immortal 1",
+      "rr": 10,
+      "cssClass": "rank-immortal"
     },
     "twony": {
       "id": "twony",
@@ -138,7 +138,7 @@
       "roster": "male2",
       "role": "Initiator",
       "rank": "Platinum 2",
-      "rr": 30,
+      "rr": 49,
       "cssClass": "rank-platinum"
     }
   }
