@@ -1,5 +1,5 @@
 {
-  "updated": "06.09.2026 14:39 UTC",
+  "updated": "06.09.2026 19:47 UTC",
   "players": {
     "kyoka": {
       "id": "kyoka",
@@ -28,7 +28,7 @@
       "roster": "flinta",
       "role": "Duelist",
       "rank": "Gold 3",
-      "rr": 0,
+      "rr": 35,
       "cssClass": "rank-gold"
     },
     "settie": {
@@ -48,7 +48,7 @@
       "roster": "flinta",
       "role": "Sentinel",
       "rank": "Platinum 1",
-      "rr": 10,
+      "rr": 29,
       "cssClass": "rank-platinum"
     },
     "lena": {
@@ -58,7 +58,7 @@
       "roster": "flinta",
       "role": "Flex",
       "rank": "Silver 2",
-      "rr": 17,
+      "rr": 43,
       "cssClass": "rank-silver"
     },
     "ryu": {
@@ -78,7 +78,7 @@
       "roster": "male",
       "role": "Flex",
       "rank": "Ascendant 3",
-      "rr": 13,
+      "rr": 49,
       "cssClass": "rank-ascendant"
     },
     "kenkaneki": {
@@ -88,7 +88,7 @@
       "roster": "male",
       "role": "Initiator",
       "rank": "Immortal 1",
-      "rr": 10,
+      "rr": 17,
       "cssClass": "rank-immortal"
     },
     "twony": {
@@ -98,7 +98,7 @@
       "roster": "male",
       "role": "Controller",
       "rank": "Ascendant 1",
-      "rr": 71,
+      "rr": 90,
       "cssClass": "rank-ascendant"
     },
     "justus": {
@@ -138,7 +138,7 @@
       "roster": "male2",
       "role": "Initiator",
       "rank": "Platinum 2",
-      "rr": 49,
+      "rr": 47,
       "cssClass": "rank-platinum"
     }
   }
