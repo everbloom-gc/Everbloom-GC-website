@@ -1,5 +1,5 @@
 {
-  "updated": "07.09.2026 11:03 UTC",
+  "updated": "07.09.2026 16:52 UTC",
   "players": {
     "kyoka": {
       "id": "kyoka",
@@ -28,7 +28,7 @@
       "roster": "flinta",
       "role": "Duelist",
       "rank": "Gold 3",
-      "rr": 35,
+      "rr": 21,
       "cssClass": "rank-gold"
     },
     "claire": {
@@ -48,7 +48,7 @@
       "roster": "flinta",
       "role": "Sentinel",
       "rank": "Platinum 1",
-      "rr": 29,
+      "rr": 51,
       "cssClass": "rank-platinum"
     },
     "jc": {
@@ -78,7 +78,7 @@
       "roster": "male",
       "role": "Controller",
       "rank": "Ascendant 1",
-      "rr": 90,
+      "rr": 72,
       "cssClass": "rank-ascendant"
     },
     "justus": {
