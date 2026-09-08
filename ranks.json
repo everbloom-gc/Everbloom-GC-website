@@ -1,5 +1,5 @@
 {
-  "updated": "08.09.2026 15:40 UTC",
+  "updated": "08.09.2026 20:30 UTC",
   "players": {
     "kyoka": {
       "id": "kyoka",
@@ -8,7 +8,7 @@
       "roster": "male2",
       "role": "Duelist",
       "rank": "Ascendant 1",
-      "rr": 51,
+      "rr": 23,
       "cssClass": "rank-ascendant"
     },
     "gustaf": {
@@ -28,7 +28,7 @@
       "roster": "flinta",
       "role": "Duelist",
       "rank": "Gold 3",
-      "rr": 21,
+      "rr": 24,
       "cssClass": "rank-gold"
     },
     "claire": {
@@ -48,7 +48,7 @@
       "roster": "flinta",
       "role": "Sentinel",
       "rank": "Platinum 1",
-      "rr": 51,
+      "rr": 84,
       "cssClass": "rank-platinum"
     },
     "jc": {
@@ -88,7 +88,7 @@
       "roster": "male",
       "role": "Initiator",
       "rank": "Ascendant 1",
-      "rr": 41,
+      "rr": 79,
       "cssClass": "rank-ascendant"
     },
     "pithaa": {
@@ -108,7 +108,7 @@
       "roster": "male2",
       "role": "Sentinel",
       "rank": "Ascendant 1",
-      "rr": 11,
+      "rr": 20,
       "cssClass": "rank-ascendant"
     },
     "alex": {
