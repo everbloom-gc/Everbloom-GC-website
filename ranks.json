@@ -1,5 +1,5 @@
 {
-  "updated": "08.09.2026 20:30 UTC",
+  "updated": "09.09.2026 10:25 UTC",
   "players": {
     "kyoka": {
       "id": "kyoka",
@@ -58,7 +58,7 @@
       "roster": "male",
       "role": "Flex",
       "rank": "Ascendant 3",
-      "rr": 57,
+      "rr": 33,
       "cssClass": "rank-ascendant"
     },
     "kenkaneki": {
@@ -67,9 +67,9 @@
       "tag": "Fated",
       "roster": "male",
       "role": "Initiator",
-      "rank": "Immortal 1",
-      "rr": 0,
-      "cssClass": "rank-immortal"
+      "rank": "Ascendant 3",
+      "rr": 60,
+      "cssClass": "rank-ascendant"
     },
     "twony": {
       "id": "twony",
