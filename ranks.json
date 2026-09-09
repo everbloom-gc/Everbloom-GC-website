@@ -1,5 +1,5 @@
 {
-  "updated": "09.09.2026 10:25 UTC",
+  "updated": "09.09.2026 15:34 UTC",
   "players": {
     "kyoka": {
       "id": "kyoka",
@@ -28,7 +28,7 @@
       "roster": "flinta",
       "role": "Duelist",
       "rank": "Gold 3",
-      "rr": 24,
+      "rr": 2,
       "cssClass": "rank-gold"
     },
     "claire": {
@@ -68,7 +68,7 @@
       "roster": "male",
       "role": "Initiator",
       "rank": "Ascendant 3",
-      "rr": 60,
+      "rr": 40,
       "cssClass": "rank-ascendant"
     },
     "twony": {
@@ -87,8 +87,8 @@
       "tag": "1611",
       "roster": "male",
       "role": "Initiator",
-      "rank": "Ascendant 1",
-      "rr": 79,
+      "rank": "Ascendant 2",
+      "rr": 1,
       "cssClass": "rank-ascendant"
     },
     "pithaa": {
