@@ -1,5 +1,5 @@
 {
-  "updated": "11.09.2026 10:53 UTC",
+  "updated": "11.09.2026 15:33 UTC",
   "players": {
     "kyoka": {
       "id": "kyoka",
@@ -48,7 +48,7 @@
       "roster": "flinta",
       "role": "Smoker",
       "rank": "Platinum 1",
-      "rr": 6,
+      "rr": 18,
       "cssClass": "rank-platinum"
     },
     "mia": {
@@ -58,7 +58,7 @@
       "roster": "flinta",
       "role": "Duelist",
       "rank": "Gold 3",
-      "rr": 3,
+      "rr": 5,
       "cssClass": "rank-gold"
     },
     "cat": {
