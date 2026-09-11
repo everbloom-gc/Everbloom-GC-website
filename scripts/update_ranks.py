@@ -16,6 +16,7 @@ PLAYERS = [
     { "id": "ruby",   "name": "akaruby",     "tag": "EBM",   "roster": "flinta", "role": "Duelist"    },
     { "id": "claire", "name": "dreamgirlwallahi", "tag": "yumz", "roster": "flinta", "role": "Smoker"   },
     { "id": "laura",  "name": "GAARA",            "tag": "ETN",  "roster": "flinta", "role": "Smoker"   },
+    { "id": "mia",    "name": "aloe",             "tag": "nom",  "roster": "flinta", "role": "Duelist"  },
     { "id": "cat",    "name": "Catッ",        "tag": "0w0",   "roster": "flinta", "role": "Sentinel"   },
     # Male Roster 1
     { "id": "jc",        "name": "jczera",      "tag": "LG16",  "roster": "male",   "role": "Flex"       },
