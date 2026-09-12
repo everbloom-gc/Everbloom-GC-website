@@ -1,5 +1,5 @@
 {
-  "updated": "12.09.2026 14:39 UTC",
+  "updated": "12.09.2026 19:53 UTC",
   "players": {
     "kyoka": {
       "id": "kyoka",
@@ -67,8 +67,8 @@
       "tag": "0w0",
       "roster": "flinta",
       "role": "Sentinel",
-      "rank": "Platinum 2",
-      "rr": 0,
+      "rank": "Platinum 1",
+      "rr": 86,
       "cssClass": "rank-platinum"
     },
     "jc": {
@@ -108,7 +108,7 @@
       "roster": "male",
       "role": "Initiator",
       "rank": "Ascendant 1",
-      "rr": 63,
+      "rr": 81,
       "cssClass": "rank-ascendant"
     },
     "pithaa": {
