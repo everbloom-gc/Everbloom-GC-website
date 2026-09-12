@@ -1,5 +1,5 @@
 {
-  "updated": "12.09.2026 09:49 UTC",
+  "updated": "12.09.2026 14:39 UTC",
   "players": {
     "kyoka": {
       "id": "kyoka",
@@ -28,7 +28,7 @@
       "roster": "flinta",
       "role": "Duelist",
       "rank": "Gold 3",
-      "rr": 38,
+      "rr": 19,
       "cssClass": "rank-gold"
     },
     "claire": {
@@ -48,7 +48,7 @@
       "roster": "flinta",
       "role": "Smoker",
       "rank": "Platinum 1",
-      "rr": 3,
+      "rr": 0,
       "cssClass": "rank-platinum"
     },
     "mia": {
@@ -68,7 +68,7 @@
       "roster": "flinta",
       "role": "Sentinel",
       "rank": "Platinum 2",
-      "rr": 10,
+      "rr": 0,
       "cssClass": "rank-platinum"
     },
     "jc": {
@@ -88,7 +88,7 @@
       "roster": "male",
       "role": "Initiator",
       "rank": "Ascendant 3",
-      "rr": 40,
+      "rr": 60,
       "cssClass": "rank-ascendant"
     },
     "twony": {
