@@ -1,5 +1,5 @@
 {
-  "updated": "12.09.2026 19:53 UTC",
+  "updated": "13.09.2026 10:49 UTC",
   "players": {
     "kyoka": {
       "id": "kyoka",
@@ -38,7 +38,7 @@
       "roster": "flinta",
       "role": "Smoker",
       "rank": "Platinum 1",
-      "rr": 71,
+      "rr": 41,
       "cssClass": "rank-platinum"
     },
     "laura": {
@@ -88,7 +88,7 @@
       "roster": "male",
       "role": "Initiator",
       "rank": "Ascendant 3",
-      "rr": 60,
+      "rr": 40,
       "cssClass": "rank-ascendant"
     },
     "twony": {
@@ -98,7 +98,7 @@
       "roster": "male",
       "role": "Controller",
       "rank": "Ascendant 2",
-      "rr": 74,
+      "rr": 93,
       "cssClass": "rank-ascendant"
     },
     "justus": {
