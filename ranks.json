@@ -1,5 +1,5 @@
 {
-  "updated": "14.09.2026 17:16 UTC",
+  "updated": "14.09.2026 21:11 UTC",
   "players": {
     "kyoka": {
       "id": "kyoka",
@@ -7,9 +7,9 @@
       "tag": "Rero",
       "roster": "male2",
       "role": "Duelist",
-      "rank": "Diamond 3",
-      "rr": 81,
-      "cssClass": "rank-diamond"
+      "rank": "Ascendant 1",
+      "rr": 18,
+      "cssClass": "rank-ascendant"
     },
     "gustaf": {
       "id": "gustaf",
@@ -18,7 +18,7 @@
       "roster": "male2",
       "role": "Duelist",
       "rank": "Ascendant 1",
-      "rr": 0,
+      "rr": 36,
       "cssClass": "rank-ascendant"
     },
     "ruby": {
@@ -27,8 +27,8 @@
       "tag": "EBM",
       "roster": "flinta",
       "role": "Duelist",
-      "rank": "Gold 3",
-      "rr": 10,
+      "rank": "Gold 2",
+      "rr": 83,
       "cssClass": "rank-gold"
     },
     "claire": {
@@ -57,8 +57,8 @@
       "tag": "nom",
       "roster": "flinta",
       "role": "Duelist",
-      "rank": "Gold 2",
-      "rr": 99,
+      "rank": "Gold 3",
+      "rr": 0,
       "cssClass": "rank-gold"
     },
     "cat": {
@@ -68,7 +68,7 @@
       "roster": "flinta",
       "role": "Sentinel",
       "rank": "Platinum 1",
-      "rr": 73,
+      "rr": 59,
       "cssClass": "rank-platinum"
     },
     "jc": {
@@ -128,7 +128,7 @@
       "roster": "male2",
       "role": "Sentinel",
       "rank": "Ascendant 1",
-      "rr": 0,
+      "rr": 36,
       "cssClass": "rank-ascendant"
     },
     "alex": {
@@ -138,7 +138,7 @@
       "roster": "male2",
       "role": "Initiator",
       "rank": "Platinum 2",
-      "rr": 74,
+      "rr": 53,
       "cssClass": "rank-platinum"
     }
   }
