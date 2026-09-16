@@ -9,24 +9,21 @@ API_KEY = os.environ.get('HENRIK_API_KEY', '')
 REGION  = 'eu'
 
 PLAYERS = [
-    # Male Roster 2 - Rero accounts first to avoid rate limit
-    { "id": "kyoka",    "name": "Rem",          "tag": "Rero",  "roster": "male2",  "role": "Duelist"    },
-    { "id": "gustaf",   "name": "Ram",          "tag": "Rero",  "roster": "male2",  "role": "Duelist"    },
     # FLINTA
-    { "id": "ruby",   "name": "akaruby",     "tag": "EBM",   "roster": "flinta", "role": "Duelist"    },
-    { "id": "claire", "name": "dreamgirlwallahi", "tag": "yumz", "roster": "flinta", "role": "Smoker"   },
-    { "id": "laura",  "name": "GAARA",            "tag": "ETN",  "roster": "flinta", "role": "Smoker"   },
-    { "id": "mia",    "name": "aloe",             "tag": "nom",  "roster": "flinta", "role": "Duelist"  },
-    { "id": "cat",    "name": "Catッ",        "tag": "0w0",   "roster": "flinta", "role": "Sentinel"   },
+    { "id": "ruby",        "name": "akaruby",          "tag": "EBM",   "roster": "flinta", "role": "Duelist"    },
+    { "id": "cat",         "name": "Catッ",             "tag": "0w0",   "roster": "flinta", "role": "Sentinel"   },
+    { "id": "claire",      "name": "dreamgirlwallahi",  "tag": "yumz",  "roster": "flinta", "role": "Smoker"     },
+    { "id": "laura",       "name": "GAARA",             "tag": "ETN",   "roster": "flinta", "role": "Smoker"     },
+    { "id": "mia",         "name": "aloe",              "tag": "nom",   "roster": "flinta", "role": "Duelist"    },
     # Male Roster 1
-    { "id": "jc",        "name": "jczera",      "tag": "LG16",  "roster": "male",   "role": "Flex"       },
-    { "id": "kenkaneki", "name": "sunless LfL", "tag": "Fated", "roster": "male",   "role": "Initiator"  },
-    { "id": "twony",     "name": "twony",        "tag": "111",   "roster": "male",   "role": "Controller" },
-    { "id": "justus",    "name": "flairrr",      "tag": "1611",  "roster": "male",   "role": "Initiator"  },
-    { "id": "pithaa",    "name": "Pithaa",       "tag": "7942",  "roster": "male",   "role": "Flex"       },
-    # Male Roster 2 (rest)
-    { "id": "banani",   "name": "Kasane Teto",  "tag": "roses", "roster": "male2",  "role": "Sentinel"   },
-    { "id": "alex",     "name": "Alexolotl",     "tag": "2020",  "roster": "male2",  "role": "Initiator"  },
+    { "id": "jc",          "name": "jczera",            "tag": "LG16",  "roster": "male",   "role": "Flex"       },
+    { "id": "kenkaneki",   "name": "sunless LfL",       "tag": "Fated", "roster": "male",   "role": "Initiator"  },
+    { "id": "twony",       "name": "twony",             "tag": "111",   "roster": "male",   "role": "Controller" },
+    { "id": "justus",      "name": "flairrr",           "tag": "1611",  "roster": "male",   "role": "Initiator"  },
+    { "id": "pithaa",      "name": "Pithaa",            "tag": "7942",  "roster": "male",   "role": "Flex"       },
+    # Male Roster 2
+    { "id": "heisenzwerg", "name": "Your the Emperor",  "tag": "9999",  "roster": "male2",  "role": "Flex"       },
+    { "id": "alpakama",    "name": "shoya",             "tag": "3911",  "roster": "male2",  "role": "Duelist"    },
 ]
 
 TIER_CLASSES = {
