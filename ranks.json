@@ -1,5 +1,5 @@
 {
-  "updated": "16.09.2026 15:47 UTC",
+  "updated": "16.09.2026 17:45 UTC",
   "players": {
     "kyoka": {
       "id": "kyoka",
@@ -27,9 +27,9 @@
       "tag": "EBM",
       "roster": "flinta",
       "role": "Duelist",
-      "rank": "Gold 3",
-      "rr": 95,
-      "cssClass": "rank-gold"
+      "rank": "Platinum 1",
+      "rr": 6,
+      "cssClass": "rank-platinum"
     },
     "claire": {
       "id": "claire",
@@ -67,8 +67,8 @@
       "tag": "0w0",
       "roster": "flinta",
       "role": "Sentinel",
-      "rank": "Platinum 1",
-      "rr": 93,
+      "rank": "Platinum 2",
+      "rr": 0,
       "cssClass": "rank-platinum"
     },
     "jc": {
