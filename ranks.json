@@ -1,5 +1,5 @@
 {
-  "updated": "16.09.2026 19:36 UTC",
+  "updated": "07.09.2026 00:00 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -7,9 +7,9 @@
       "tag": "EBM",
       "roster": "flinta",
       "role": "Duelist",
-      "rank": "Platinum 1",
-      "rr": 6,
-      "cssClass": "rank-platinum"
+      "rank": "Silver 3",
+      "rr": 0,
+      "cssClass": "rank-silver"
     },
     "cat": {
       "id": "cat",
@@ -17,9 +17,9 @@
       "tag": "0w0",
       "roster": "flinta",
       "role": "Sentinel",
-      "rank": "Platinum 2",
+      "rank": "Unranked",
       "rr": 0,
-      "cssClass": "rank-platinum"
+      "cssClass": "rank-bronze"
     },
     "claire": {
       "id": "claire",
@@ -27,29 +27,9 @@
       "tag": "yumz",
       "roster": "flinta",
       "role": "Smoker",
-      "rank": "Platinum 1",
-      "rr": 87,
-      "cssClass": "rank-platinum"
-    },
-    "laura": {
-      "id": "laura",
-      "name": "GAARA",
-      "tag": "ETN",
-      "roster": "flinta",
-      "role": "Smoker",
-      "rank": "Platinum 1",
-      "rr": 70,
-      "cssClass": "rank-platinum"
-    },
-    "mia": {
-      "id": "mia",
-      "name": "aloe",
-      "tag": "nom",
-      "roster": "flinta",
-      "role": "Duelist",
-      "rank": "Gold 3",
+      "rank": "Unranked",
       "rr": 0,
-      "cssClass": "rank-gold"
+      "cssClass": "rank-bronze"
     },
     "jc": {
       "id": "jc",
@@ -57,8 +37,8 @@
       "tag": "LG16",
       "roster": "male",
       "role": "Flex",
-      "rank": "Ascendant 3",
-      "rr": 33,
+      "rank": "Ascendant 1",
+      "rr": 0,
       "cssClass": "rank-ascendant"
     },
     "kenkaneki": {
@@ -67,8 +47,8 @@
       "tag": "Fated",
       "roster": "male",
       "role": "Initiator",
-      "rank": "Ascendant 3",
-      "rr": 59,
+      "rank": "Ascendant 2",
+      "rr": 0,
       "cssClass": "rank-ascendant"
     },
     "twony": {
@@ -77,9 +57,9 @@
       "tag": "111",
       "roster": "male",
       "role": "Controller",
-      "rank": "Ascendant 2",
-      "rr": 11,
-      "cssClass": "rank-ascendant"
+      "rank": "Diamond 3",
+      "rr": 0,
+      "cssClass": "rank-diamond"
     },
     "justus": {
       "id": "justus",
@@ -87,9 +67,9 @@
       "tag": "1611",
       "roster": "male",
       "role": "Initiator",
-      "rank": "Ascendant 1",
-      "rr": 81,
-      "cssClass": "rank-ascendant"
+      "rank": "Unranked",
+      "rr": 0,
+      "cssClass": "rank-bronze"
     },
     "pithaa": {
       "id": "pithaa",
@@ -97,9 +77,29 @@
       "tag": "7942",
       "roster": "male",
       "role": "Flex",
-      "rank": "Ascendant 2",
-      "rr": 25,
-      "cssClass": "rank-ascendant"
+      "rank": "Unranked",
+      "rr": 0,
+      "cssClass": "rank-bronze"
+    },
+    "laura": {
+      "id": "laura",
+      "name": "GAARA",
+      "tag": "ETN",
+      "roster": "flinta",
+      "role": "Smoker",
+      "rank": "Unranked",
+      "rr": 0,
+      "cssClass": "rank-bronze"
+    },
+    "mia": {
+      "id": "mia",
+      "name": "aloe",
+      "tag": "nom",
+      "roster": "flinta",
+      "role": "Duelist",
+      "rank": "Unranked",
+      "rr": 0,
+      "cssClass": "rank-bronze"
     },
     "heisenzwerg": {
       "id": "heisenzwerg",
@@ -107,14 +107,14 @@
       "tag": "9999",
       "roster": "male2",
       "role": "Flex",
-      "rank": "Platinum 3",
-      "rr": 37,
-      "cssClass": "rank-platinum"
+      "rank": "Unranked",
+      "rr": 0,
+      "cssClass": "rank-bronze"
     },
     "alpakama": {
       "id": "alpakama",
       "name": "shoya",
-      "tag": "3911",
+      "tag": "911",
       "roster": "male2",
       "role": "Duelist",
       "rank": "Unranked",
