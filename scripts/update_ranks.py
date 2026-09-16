@@ -23,7 +23,7 @@ PLAYERS = [
     { "id": "pithaa",      "name": "Pithaa",            "tag": "7942",  "roster": "male",   "role": "Flex"       },
     # Male Roster 2
     { "id": "heisenzwerg", "name": "Your the Emperor",  "tag": "9999",  "roster": "male2",  "role": "Flex"       },
-    { "id": "alpakama",    "name": "shoya",             "tag": "3911",  "roster": "male2",  "role": "Duelist"    },
+    { "id": "alpakama",    "name": "shoya",             "tag": "911" ,  "roster": "male2",  "role": "Duelist"    },
 ]
 
 TIER_CLASSES = {
