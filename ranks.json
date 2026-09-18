@@ -1,5 +1,5 @@
 {
-  "updated": "18.09.2026 15:28 UTC",
+  "updated": "18.09.2026 20:10 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -28,7 +28,7 @@
       "roster": "flinta",
       "role": "Smoker",
       "rank": "Platinum 1",
-      "rr": 87,
+      "rr": 88,
       "cssClass": "rank-platinum"
     },
     "laura": {
@@ -37,8 +37,8 @@
       "tag": "ETN",
       "roster": "flinta",
       "role": "Smoker",
-      "rank": "Platinum 1",
-      "rr": 91,
+      "rank": "Platinum 2",
+      "rr": 10,
       "cssClass": "rank-platinum"
     },
     "mia": {
