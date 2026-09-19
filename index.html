@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
      <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <meta name="description" content="EVERBLOOM — a growing esports org from the DACH region. Competing in Valorant,  and beyond. Join the Bloom.">
      <meta name="theme-color" content="#d4175b">
      <title>EVERBLOOM | Esports Org 🌸</title>
@@ -300,7 +300,7 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
 .shape-ring { width: 300px; height: 300px; border-radius: 50%; border-color: rgba(212,23,91,0.07); border-style: dashed; top: 50%; left: 50%; margin-left: -150px; margin-top: -150px; animation: rot-cw 60s linear infinite; transform-origin: center; }
 @keyframes rot-cw  { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 @keyframes rot-ccw { from { transform: rotate(0deg); } to { transform: rotate(-360deg); } }
-     
+
 /* ========== TIMELINE ========== */
 .timeline{position:relative;padding:20px 0}
 .timeline::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:2px;
@@ -355,18 +355,15 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
 .glitch-divider span{font-size:.55rem;letter-spacing:4px;color:var(--primary);background:var(--bg);
   padding:0 18px;position:relative;font-weight:700;font-family:monospace}
 </style>
+<link rel="stylesheet" href="enhancements.css">
+<script src="enhancements.js" defer></script>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to content</a>
 
-     <div id="splash">
-         <canvas id="splash-canvas"></canvas>
-         <img src="everbloomlogo.png" class="splash-logo" alt="Everbloom">
-         <div class="splash-title">EVERBLOOM</div>
-         <div class="splash-sub">BLOOM OR DECAY</div>
-         <div class="splash-bar"></div>
-     </div>
 
-     <canvas id="particle-canvas" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:2;pointer-events:none;"></canvas>
+
+
 
      <div id="bg-shapes">
          <div class="bg-shape shape-sq1"></div>
@@ -378,15 +375,15 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
          <div class="bg-shape shape-ring"></div>
      </div>
 
-     <video loop playsinline autoplay muted id="video-bg"><source src="valo background.mp4" type="video/mp4"></video>
+
      <div class="video-overlay"></div>
 
-     <button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fas fa-chevron-up"></i></button>
+     <button id="back-to-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fas fa-chevron-up"></i></button>
 
      <nav id="bottom-nav">
          <ul>
              <li><a href="#home" class="bnav active"><i class="fas fa-house"></i>Home</a></li>
-             <li><a href="#about" class="bnav"><i class="fas fa-seedling"></i>About</a></li>
+             <li><a href="join.html" class="bnav"><i class="fas fa-user-plus"></i>Join</a></li>
              <li><a href="roster.html" class="bnav"><i class="fas fa-users"></i>Roster</a></li>
              <li><a href="#partners" class="bnav"><i class="fas fa-handshake"></i>Partners</a></li>
          </ul>
@@ -394,9 +391,10 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
 
      <button id="theme-toggle" title="Toggle theme" aria-label="Toggle light/dark theme"><i class="fas fa-sun"></i></button>
 
-     <button class="nav-toggle" onclick="toggleNav()"><span></span><span></span><span></span></button>
+     <button class="nav-toggle" aria-label="Open navigation" aria-controls="navOverlay" aria-expanded="false" onclick="toggleNav()"><span></span><span></span><span></span></button>
 
-     <div class="nav-overlay" id="navOverlay">
+     <div class="nav-overlay" id="navOverlay" inert>
+<a href="join.html" onclick="toggleNav()">Join the team</a>
           <a href="#home" onclick="toggleNav()">Home</a>
           <a href="#about" onclick="toggleNav()">About Us</a>
           <a href="roster.html" onclick="toggleNav()">Roster</a>
@@ -416,7 +414,7 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
      </div>
 
      <section id="home">
-          <header>
+          <header id="main-content" tabindex="-1">
               <img src="everbloomlogo.png" alt="Everbloom Logo" class="logo-main">
               <h1><span class="glitch-text">EVERBLOOM</span></h1>
               <div id="typing-sub" style="color:var(--primary); letter-spacing:5px; font-weight:bold; font-size:0.8rem; margin-top: 10px;"></div>
@@ -428,13 +426,16 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
                   <p style="font-size: 0.85rem; opacity: 0.7; margin-top: 15px; cursor: pointer; color: var(--primary); font-weight: bold;"><a href="#about" style="color: inherit; text-decoration: none;">Read more about our philosophy →</a></p>
               </div>
               <div class="apply-container reveal">
-                  <a href="https://forms.gle/VeNmZo9DkJo35PR5A" target="_blank" class="apply-btn">JOIN THE BLOOM</a>
+                  <a href="join.html" class="apply-btn">JOIN THE BLOOM</a>
               </div>
-              <div class="home-grid">
+              <!-- BEGIN RECRUITMENT -->
+<div class="recruitment-teaser"><div><p class="eyebrow">JOIN THE BLOOM</p><h2>Find your place at Everbloom.</h2><p>Explore our advertised roles, requirements and application process.</p></div><a class="apply-btn" href="join.html">Open roles →</a></div>
+<!-- END RECRUITMENT -->
+<div class="home-grid">
                   <div class="news-column reveal">
                       <div class="info-card">
                           <h3>LATEST NEWS</h3>
-                          <p style="line-height: 1.6;">• Full FLINTA Roster<br>• Looking for FLINTA coaches<br>• Three active rosters competing</p>
+                          <p style="line-height: 1.6;">• Full FLINTA Roster<br>• 3 player spots open in Male Roster 2<br>• Three active rosters competing</p>
                       </div>
                       <div class="info-card reveal">
                           <h3>CURRENT GOALS</h3>
@@ -464,7 +465,7 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
                   <!-- Elfsight Twitter Feed -->
                   <div class="info-card reveal">
                       <h3><i class="fa-brands fa-x-twitter"></i> FEED</h3>
-                      <script src="https://elfsightcdn.com/platform.js" async></script>
+                      <button class="feed-load apply-btn" type="button">Load X feed</button><p class="feed-notice">Loading the feed connects to Elfsight. <a href="https://x.com/everbloom_gc" target="_blank" rel="noopener noreferrer">View Everbloom on X instead ↗</a></p>
                       <div class="elfsight-app-b9958379-f4dc-4204-9774-e259b3a7f1bf" data-elfsight-app-lazy></div>
                   </div>
               </div>
@@ -472,11 +473,11 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
      </section>
 
      <!-- ORIGIN TIMELINE -->
-     
+
 
      <!-- MANIFESTO -->
      <div class="glitch-divider"><span>// MANIFESTO //</span></div>
-     <section class="manifesto-section reveal">
+     <section id="about" class="manifesto-section reveal">
         <div class="container">
             <div class="manifesto-stamp">EVERBLOOM // EST. 2026 // DACH</div>
             <h2 class="manifesto-title">
@@ -491,14 +492,14 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
         </div>
      </section>
 
-     
+
 
      <section id="partners" class="reveal page-section">
         <div class="container">
             <h3 style="text-align:center; color:var(--primary); text-transform: uppercase; margin-bottom: 50px; letter-spacing: 3px;">Our Partners</h3>
             <div class="partners-list">
                 <div class="info-card partner-card-long reveal">
-                    <img src="rostered.png" alt="Rostered Logo" style="max-width: 180px;">
+                    <img loading="lazy" decoding="async" src="rostered.png" alt="Rostered Logo" style="max-width: 180px;">
                     <div style="flex: 1;">
                         <h4 style="color:var(--primary); margin-bottom: 10px;">ROSTERED.GG</h4>
                         <p style="font-size: 0.95rem;">The official platform for team management and professional esports organization.</p>
@@ -506,7 +507,7 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
                     <a href="https://rostered.gg" target="_blank" class="apply-btn" style="padding: 12px 25px; font-size: 0.8rem; white-space: nowrap;">Visit Website</a>
                 </div>
                 <div class="info-card partner-card-long reveal">
-                    <img src="hnvr_neu_white.png" alt="HNVR Esports Logo" style="max-width: 180px;">
+                    <img loading="lazy" decoding="async" src="hnvr_neu_white.png" alt="HNVR Esports Logo" style="max-width: 180px;">
                     <div style="flex: 1;">
                         <h4 style="color:var(--primary); margin-bottom: 10px;">HNVR ESPORTS</h4>
                         <p style="font-size: 0.95rem;">Everbloom Gaming — powered by HNVR Esports. Supporting the next generation of competitive talent in the DACH region.</p>
@@ -517,7 +518,7 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
                     </div>
                 </div>
                 <div class="info-card partner-card-long reveal">
-                    <img src="evolupe white.png" alt="Evolupe Media Logo" style="max-width: 180px;">
+                    <img loading="lazy" decoding="async" src="evolupe white.png" alt="Evolupe Media Logo" style="max-width: 180px;">
                     <div style="flex: 1;">
                         <h4 style="color:var(--primary); margin-bottom: 10px;">EVOLUPE MEDIA</h4>
                         <p style="font-size: 0.95rem;">Providing digital excellence and creative media support for the next generation of gamers.</p>
@@ -536,7 +537,7 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
      <footer>
           <div class="container">
               <div class="footer-socials">
-                   <a href="https://www.gamertransfer.com" target="_blank"><img src="https://gamertransfer.com/banner/v5_373.png" alt="GamerTransfer Recruitment Partner" style="height: 50px;"></a>
+                   <a href="https://www.gamertransfer.com" target="_blank"><img loading="lazy" decoding="async" src="https://gamertransfer.com/banner/v5_373.png" alt="GamerTransfer Recruitment Partner" style="height: 50px;"></a>
                    <a href="https://discord.gg/bQ8phXAmSa" class="soc-link sl-discord" target="_blank"><i class="fa-brands fa-discord"></i></a>
                    <a href="https://x.com/everbloom_gc" class="soc-link sl-x" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
                    <a href="https://www.instagram.com/everbloom.gc" class="soc-link sl-insta" target="_blank"><i class="fa-brands fa-instagram"></i></a>
@@ -570,9 +571,7 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
               });
           })();
 
-          window.addEventListener('load', () => {
-              setTimeout(() => { document.getElementById('splash').classList.add('hidden'); }, 2800);
-          });
+
 
           function toggleNav() {
               const nav = document.getElementById('navOverlay');
@@ -595,7 +594,7 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
                           i++;
                       } else { clearInterval(interval); }
                   }, 60);
-              }, 3000);
+              }, 0);
           })();
 
           function reveal() {
@@ -629,65 +628,7 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
           });
      </script>
 
-     <script>
-          const canvas = document.getElementById('particle-canvas');
-          const ctx = canvas.getContext('2d');
-          let W = canvas.width = window.innerWidth;
-          let H = canvas.height = window.innerHeight;
-          window.addEventListener('resize', () => { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; });
 
-          const COLORS = ['rgba(212, 23, 91,','rgba(255, 80, 140,','rgba(255, 140, 180,','rgba(255, 200, 220,','rgba(255,255,255,'];
-          const TYPES = ['petal', 'petal', 'petal', 'circle', 'diamond'];
-          function rand(a, b) { return a + Math.random() * (b - a); }
-
-          function drawPetal(ctx, size) {
-              const petals = 5, outerR = size, innerR = size * 0.4;
-              ctx.beginPath();
-              for (let i = 0; i < petals * 2; i++) {
-                  const angle = (i * Math.PI) / petals - Math.PI / 2;
-                  const r = i % 2 === 0 ? outerR : innerR;
-                  const x = Math.cos(angle) * r;
-                  const y = Math.sin(angle) * r;
-                  i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
-              }
-              ctx.closePath(); ctx.fill();
-              ctx.beginPath(); ctx.arc(0, 0, size * 0.18, 0, Math.PI * 2);
-              ctx.fillStyle = 'rgba(255,220,230,0.9)'; ctx.fill();
-          }
-
-          class Particle {
-              constructor() { this.reset(true); }
-              reset(initial) {
-                  this.x = rand(0, W); this.y = initial ? rand(-H, H) : rand(-100, -10);
-                  this.size = rand(3, 9); this.speedY = rand(0.3, 1.2); this.speedX = rand(-0.3, 0.3);
-                  this.opacity = rand(0.25, 0.85); this.fade = rand(0.0015, 0.005);
-                  this.rot = rand(0, Math.PI * 2); this.rotSpeed = rand(-0.025, 0.025);
-                  this.color = COLORS[Math.floor(Math.random() * COLORS.length)];
-                  this.type = TYPES[Math.floor(Math.random() * TYPES.length)];
-                  this.wobble = rand(0, Math.PI * 2); this.wobbleSpd = rand(0.008, 0.025); this.swing = rand(0.3, 1.2);
-              }
-              draw() {
-                  ctx.save(); ctx.globalAlpha = Math.max(0, this.opacity);
-                  ctx.translate(this.x, this.y); ctx.rotate(this.rot);
-                  ctx.fillStyle = this.color + this.opacity + ')';
-                  ctx.shadowColor = this.color + '0.6)'; ctx.shadowBlur = this.size * 4;
-                  if (this.type === 'petal') { drawPetal(ctx, this.size); }
-                  else if (this.type === 'circle') { ctx.beginPath(); ctx.arc(0, 0, this.size * 0.6, 0, Math.PI * 2); ctx.fill(); }
-                  else { const s = this.size; ctx.beginPath(); ctx.moveTo(0, -s); ctx.lineTo(s * 0.55, 0); ctx.lineTo(0, s); ctx.lineTo(-s * 0.55, 0); ctx.closePath(); ctx.fill(); }
-                  ctx.restore();
-              }
-              update() {
-                  this.wobble += this.wobbleSpd; this.x += this.speedX + Math.sin(this.wobble) * this.swing;
-                  this.y += this.speedY; this.rot += this.rotSpeed; this.opacity -= this.fade;
-                  if (this.y > H + 20 || this.opacity <= 0) this.reset(false);
-              }
-          }
-
-          const COUNT = window.innerWidth < 600 ? 45 : 100;
-          const particles = Array.from({ length: COUNT }, () => new Particle());
-          function animate() { ctx.clearRect(0, 0, W, H); particles.forEach(p => { p.update(); p.draw(); }); requestAnimationFrame(animate); }
-          animate();
-     </script>
 
      <script>
      async function sendScrimRequest(){
@@ -784,71 +725,6 @@ footer { text-align: center; padding: 60px 20px; background: var(--footer-bg); b
              msg.textContent = 'Error: ' + e.message;
          }
      }</script>
-<script>
-          // Splash petal animation
-          const splashCanvas = document.getElementById('splash-canvas');
-          const splashCtx = splashCanvas.getContext('2d');
-          let splashW = splashCanvas.width = window.innerWidth;
-          let splashH = splashCanvas.height = window.innerHeight;
-          window.addEventListener('resize', () => { 
-              splashW = splashCanvas.width = window.innerWidth; 
-              splashH = splashCanvas.height = window.innerHeight; 
-          });
 
-          function SplashPetal() {
-              this.x = Math.random() * splashW;
-              this.y = -20 - Math.random() * splashH;
-              this.s = 4 + Math.random() * 8;
-              this.vy = .3 + Math.random() * .9;
-              this.vx = -.4 + Math.random() * .8;
-              this.r = Math.random() * Math.PI * 2;
-              this.vr = (-.02 + Math.random() * .04);
-              this.a = .35 + Math.random() * .55;
-              this.hue = Math.random() < .15 ? '#ffd1e2' : (Math.random() < .5 ? '#d4175b' : '#ec5b8e');
-          }
-
-          SplashPetal.prototype.draw = function() {
-              this.x += this.vx + Math.sin(this.y / 40) * .3;
-              this.y += this.vy;
-              this.r += this.vr;
-              
-              if (this.y > splashH + 20) {
-                  Object.assign(this, new SplashPetal());
-                  this.y = -20;
-              }
-              
-              splashCtx.save();
-              splashCtx.translate(this.x, this.y);
-              splashCtx.rotate(this.r);
-              splashCtx.globalAlpha = this.a;
-              splashCtx.fillStyle = this.hue;
-              
-              splashCtx.beginPath();
-              splashCtx.ellipse(0, 0, this.s, this.s * 1.7, 0, 0, Math.PI * 2);
-              splashCtx.fill();
-              
-              splashCtx.globalAlpha = this.a * .5;
-              splashCtx.fillStyle = '#060b10';
-              splashCtx.beginPath();
-              splashCtx.ellipse(0, 0, this.s * .15, this.s * 1.5, 0, 0, Math.PI * 2);
-              splashCtx.fill();
-              
-              splashCtx.restore();
-          };
-
-          const splashPetals = [];
-          for (let i = 0; i < 70; i++) {
-              const p = new SplashPetal();
-              p.y = Math.random() * splashH;
-              splashPetals.push(p);
-          }
-
-          function splashLoop() {
-              splashCtx.clearRect(0, 0, splashW, splashH);
-              splashPetals.forEach(p => p.draw());
-              requestAnimationFrame(splashLoop);
-          }
-          splashLoop();
-     </script>
 </body>
 </html>

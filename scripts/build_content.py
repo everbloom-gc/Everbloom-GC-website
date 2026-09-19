@@ -1,0 +1,62 @@
+"""Generate static team and recruitment sections from data/site.json (stdlib only)."""
+import json
+import re
+from html import escape
+from pathlib import Path
+from urllib.parse import urlsplit
+
+ROOT = Path(__file__).resolve().parent.parent
+
+def text(value):
+    return escape(str(value), quote=True)
+
+def link(value):
+    if urlsplit(value).scheme != 'https':
+        raise ValueError('External links must use HTTPS: ' + value)
+    return text(value)
+
+def replace_section(page, name, content):
+    path = ROOT / page
+    html = path.read_text(encoding='utf-8')
+    pattern = rf'<!-- BEGIN {name} -->.*?<!-- END {name} -->'
+    result, count = re.subn(pattern, lambda _: f'<!-- BEGIN {name} -->\n{content}\n<!-- END {name} -->', html, flags=re.S)
+    if count != 1:
+        raise ValueError(f'Missing or duplicate {name} markers in {page}')
+    path.write_text(result, encoding='utf-8')
+
+def build():
+    data = json.loads((ROOT / 'data/site.json').read_text(encoding='utf-8'))
+    ranks = json.loads((ROOT / 'ranks.json').read_text(encoding='utf-8'))
+    cards = []
+    ids = set()
+    for team in data['teams']:
+        players = []
+        for p in team['players']:
+            if p['id'] in ids:
+                raise ValueError('Duplicate player id')
+            ids.add(p['id'])
+            asset = (ROOT / p['image']).resolve()
+            if not asset.is_relative_to(ROOT) or not asset.is_file():
+                raise ValueError('Missing/invalid image: ' + p['image'])
+            rank = ranks['players'].get(p['id'], {}).get('rank', p['rank'])
+            socials = ''.join(f'<a href="{link(s["url"])}" target="_blank" rel="noopener noreferrer" aria-label="{text(p["name"])} on {text(s["label"])}">{text(s["label"])}</a>' for s in p['links'])
+            players.append(f'''<article class="team-player">
+              <img src="{text(p['image'])}" width="300" height="360" loading="lazy" decoding="async" alt="">
+              <div class="team-player-info"><p class="eyebrow">{text(p['role'])}</p><h3>{text(p['name'])}</h3>
+              <p class="team-rank" id="rank-{text(p['id'])}">{text(rank)}</p><div class="team-links">{socials}</div></div>
+            </article>''')
+        cards.append(f'<section class="team-section" id="{text(team["id"])}"><div class="team-heading"><h2>{text(team["name"])}</h2><span>{len(players)} players · Valorant</span></div><div class="team-grid">{"".join(players)}</div></section>')
+    jump = '<nav class="team-jump" aria-label="Choose a team">' + ''.join(f'<a href="#{text(t["id"])}">{text(t["name"])}</a>' for t in data['teams']) + '</nav>'
+    replace_section('roster.html', 'TEAMS', jump + ''.join(cards) + '<aside class="join-callout"><h2>Your next chapter starts here.</h2><p>Discover open roles and get to know our application process.</p><a class="apply-btn" href="join.html">Explore open roles</a></aside>')
+    openings = []
+    for role in data['openings']:
+        if not role.get('open', True):
+            continue
+        requirements = ''.join(f'<li>{text(r)}</li>' for r in role['requirements'])
+        openings.append(f'<article class="opening"><p class="eyebrow">{text(role["team"])}</p><h2>{text(role["title"])}</h2><p>{text(role["description"])}</p><h3>Requirements</h3><ul>{requirements}</ul><a class="apply-btn" href="{link(data["applicationUrl"])}" target="_blank" rel="noopener noreferrer">Apply via Google Forms ↗</a></article>')
+    replace_section('join.html', 'OPENINGS', '<div class="openings-grid">' + (''.join(openings) or '<p>No advertised openings right now. Check back soon.</p>') + '</div>')
+    replace_section('index.html', 'RECRUITMENT', '<div class="recruitment-teaser"><div><p class="eyebrow">JOIN THE BLOOM</p><h2>Find your place at Everbloom.</h2><p>Explore our advertised roles, requirements and application process.</p></div><a class="apply-btn" href="join.html">Open roles →</a></div>')
+    print(f'Built {len(ids)} players, {len(openings)} openings.')
+
+if __name__ == '__main__':
+    build()
