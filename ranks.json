@@ -1,5 +1,5 @@
 {
-  "updated": "19.09.2026 15:03 UTC",
+  "updated": "19.09.2026 19:47 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -8,7 +8,7 @@
       "roster": "flinta",
       "role": "Duelist",
       "rank": "Platinum 1",
-      "rr": 10,
+      "rr": 0,
       "cssClass": "rank-platinum"
     },
     "cat": {
@@ -38,7 +38,7 @@
       "roster": "flinta",
       "role": "Smoker",
       "rank": "Platinum 2",
-      "rr": 31,
+      "rr": 64,
       "cssClass": "rank-platinum"
     },
     "mia": {
