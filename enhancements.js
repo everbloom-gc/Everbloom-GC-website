@@ -1,4 +1,20 @@
 'use strict';
+const themeButton = document.getElementById('site-theme');
+if (themeButton) {
+  let saved = 'dark';
+  try { saved = localStorage.getItem('ebTheme') || 'dark'; } catch {}
+  const applyTheme = theme => {
+    document.documentElement.setAttribute('data-theme', theme);
+    themeButton.textContent = theme === 'light' ? 'Dark mode' : 'Light mode';
+    themeButton.setAttribute('aria-label', 'Switch to ' + (theme === 'light' ? 'dark' : 'light') + ' mode');
+  };
+  applyTheme(saved === 'light' ? 'light' : 'dark');
+  themeButton.addEventListener('click', () => {
+    const theme = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+    applyTheme(theme);
+    try { localStorage.setItem('ebTheme', theme); } catch {}
+  });
+}
 const navigation = document.getElementById('navOverlay');
 const navigationToggle = document.querySelector('.nav-toggle');
 if (navigation && navigationToggle) {

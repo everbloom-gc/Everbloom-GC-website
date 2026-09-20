@@ -28,10 +28,14 @@ Der Generator benötigt nur Python, keine zusätzlichen Pakete. `roster.html`, `
 
 ## Veröffentlichung
 
-Die Änderungen sind zunächst auf einem separaten Branch vorbereitet. Die bestehenden GitHub-Pages-Einstellungen müssen bei der Veröffentlichung geprüft werden: von `GITHUB_TOKEN` erzeugte Commits lösen nicht jeden Pages-Build automatisch aus. Bei einem manuellen Upload die generierten HTML-Dateien hochladen. CSS und JavaScript werden direkt eingebettet, weil der aktuelle Live-Host die neuen Asset-Pfade nicht zuverlässig ausliefert. Änderungen weiterhin zentral in `enhancements.css` und `enhancements.js` pflegen; der Generator übernimmt sie in alle drei Seiten.
+Die Änderungen sind zunächst auf einem separaten Branch vorbereitet. Die bestehenden GitHub-Pages-Einstellungen müssen bei der Veröffentlichung geprüft werden: von `GITHUB_TOKEN` erzeugte Commits lösen nicht jeden Pages-Build automatisch aus. Bei einem manuellen Upload die generierten HTML-Dateien hochladen. CSS und JavaScript werden direkt eingebettet, weil der aktuelle Live-Host die neuen Asset-Pfade nicht zuverlässig ausliefert. Änderungen weiterhin zentral in `enhancements.css` und `enhancements.js` pflegen; der Generator übernimmt sie in alle fünf Seiten.
 
 ## Performance
 
 Keine blockierende Splash-Seite oder permanenten Canvas-Animationen mehr auf Start- und Teamseite. Der X-Feed lädt erst nach Klick. Bilder unterhalb des Seitenanfangs werden verzögert geladen. Die mobile Navigation bietet direkten Zugang zu Bewerbungen.
 
 Die nicht aktivierte KI-/Cloudflare-Konfiguration gehört nicht zu diesem Website-Update. Der vorhandene öffentliche Scrim-Webhook wurde nicht verändert; dessen separate Absicherung und Austausch stehen noch aus.
+
+## Einheitliche Seiten
+
+Die vom Nutzer eingefügten Versionen von Startseite, Roster, Bootcamp und Legal wurden als Grundlage übernommen. Alle fünf Seiten einschließlich Join verwenden dieselbe Navigation und einen persistenten Hell-/Dunkelmodus. Die Rechtstexte wurden inhaltlich nicht überarbeitet. Bootcamp verweist auf die drei bestätigten offenen Plätze in Male Roster 2.
