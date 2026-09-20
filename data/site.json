@@ -1,0 +1,243 @@
+{
+  "applicationUrl": "https://forms.gle/VeNmZo9DkJo35PR5A",
+  "teams": [
+    {
+      "id": "flinta",
+      "name": "FLINTA Roster",
+      "players": [
+        {
+          "id": "ruby",
+          "name": "Ruby",
+          "role": "DUELIST",
+          "image": "jett.png",
+          "rank": "Platinum 1",
+          "riotName": "akaruby",
+          "riotTag": "EBM",
+          "links": [
+            {
+              "label": "Tracker",
+              "url": "https://tracker.gg/valorant/profile/riot/Rubyxcube%23EBM/"
+            },
+            {
+              "label": "X",
+              "url": "https://x.com/x2_zelda"
+            }
+          ]
+        },
+        {
+          "id": "cat",
+          "name": "Cat",
+          "role": "SENTINEL",
+          "image": "killjoy.png",
+          "rank": "Platinum 2",
+          "riotName": "Catッ",
+          "riotTag": "0w0",
+          "links": [
+            {
+              "label": "Tracker",
+              "url": "https://tracker.gg/valorant/profile/riot/Cat%E3%83%83%230w0/overview?platform=pc&playlist=competitive&season=8102cd81-43a0-d0d7-bd59-47b8fe9bed1b"
+            }
+          ]
+        },
+        {
+          "id": "claire",
+          "name": "Claire",
+          "role": "SMOKER",
+          "image": "clove.webp",
+          "rank": "Platinum 1",
+          "riotName": "dreamgirlwallahi",
+          "riotTag": "yumz",
+          "links": [
+            {
+              "label": "Tracker",
+              "url": "https://tracker.gg/valorant/profile/riot/dreamgirlwallahi%23yumz/overview?platform=pc&playlist=competitive"
+            },
+            {
+              "label": "X",
+              "url": "https://x.com/Hqdzxo"
+            }
+          ]
+        },
+        {
+          "id": "laura",
+          "name": "Laura",
+          "role": "SMOKER",
+          "image": "Omen_Artwork_Full.webp",
+          "rank": "Platinum 2",
+          "riotName": "GAARA",
+          "riotTag": "ETN",
+          "links": [
+            {
+              "label": "Tracker",
+              "url": "https://tracker.gg/valorant/profile/riot/GAARA%23ETN/overview"
+            },
+            {
+              "label": "X",
+              "url": "https://x.com/KazekageGaarasj"
+            }
+          ]
+        },
+        {
+          "id": "mia",
+          "name": "Mia",
+          "role": "DUELIST",
+          "image": "Phoenix_Artwork_Full.webp",
+          "rank": "Gold 2",
+          "riotName": "aloe",
+          "riotTag": "nom",
+          "links": [
+            {
+              "label": "Tracker",
+              "url": "https://tracker.gg/valorant/profile/riot/aloe%23nom/overview?platform=pc&playlist=competitive"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "male",
+      "name": "Male Roster 1",
+      "players": [
+        {
+          "id": "jc",
+          "name": "JC",
+          "role": "FLEX",
+          "image": "Omen_Artwork_Full.webp",
+          "rank": "Ascendant 3",
+          "riotName": "jczera",
+          "riotTag": "LG16",
+          "links": [
+            {
+              "label": "Tracker",
+              "url": "https://tracker.gg/valorant/profile/riot/jczera%23LG16/overview?platform=pc&playlist=competitive&season=4f0864e2-40af-28a4-de2c-0e9e64e75f23"
+            }
+          ]
+        },
+        {
+          "id": "kenkaneki",
+          "name": "Ken Kaneki",
+          "role": "INITIATOR",
+          "image": "jett.png",
+          "rank": "Ascendant 3",
+          "riotName": "sunless LfL",
+          "riotTag": "Fated",
+          "links": [
+            {
+              "label": "Tracker",
+              "url": "https://tracker.gg/valorant/profile/riot/sunless%20LfL%23Fated/overview?playlist=competitive&platform=pc"
+            },
+            {
+              "label": "X",
+              "url": "https://x.com/umi_vlt"
+            }
+          ]
+        },
+        {
+          "id": "twony",
+          "name": "Twony",
+          "role": "CONTROLLER",
+          "image": "viper.png",
+          "rank": "Ascendant 2",
+          "riotName": "twony",
+          "riotTag": "111",
+          "links": [
+            {
+              "label": "Tracker",
+              "url": "https://tracker.gg/valorant/profile/riot/twony%23111/overview?playlist=competitive&platform=pc"
+            },
+            {
+              "label": "X",
+              "url": "https://x.com/twonyyx"
+            }
+          ]
+        },
+        {
+          "id": "justus",
+          "name": "Justus",
+          "role": "INITIATOR",
+          "image": "Fade_Artwork_Full.webp",
+          "rank": "Ascendant 1",
+          "riotName": "flairrr",
+          "riotTag": "1611",
+          "links": [
+            {
+              "label": "Tracker",
+              "url": "https://tracker.gg/valorant/profile/riot/flairrr%231611/overview?platform=pc&playlist=competitive&season=4f0864e2-40af-28a4-de2c-0e9e64e75f23"
+            },
+            {
+              "label": "X",
+              "url": "https://x.com/flairrr_valo"
+            }
+          ]
+        },
+        {
+          "id": "pithaa",
+          "name": "Pithaa",
+          "role": "FLEX",
+          "image": "Chamber.webp",
+          "rank": "Ascendant 2",
+          "riotName": "Pithaa",
+          "riotTag": "7942",
+          "links": [
+            {
+              "label": "Tracker",
+              "url": "https://tracker.gg/valorant/profile/riot/Pithaa%237942/overview?platform=pc&playlist=competitive&season=4f0864e2-40af-28a4-de2c-0e9e64e75f23"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "male2",
+      "name": "Male Roster 2",
+      "players": [
+        {
+          "id": "heisenzwerg",
+          "name": "Heisenzwerg",
+          "role": "FLEX / LURKER",
+          "image": "Chamber.webp",
+          "rank": "Platinum 3",
+          "riotName": "Your the Emperor",
+          "riotTag": "9999",
+          "links": [
+            {
+              "label": "Tracker",
+              "url": "https://tracker.gg/valorant/profile/riot/Your%20the%20Emperor%239999/overview?platform=pc&playlist=competitive"
+            }
+          ]
+        },
+        {
+          "id": "alpakama",
+          "name": "Alpakama",
+          "role": "DUELIST",
+          "image": "jett.png",
+          "rank": "Diamond 1",
+          "riotName": "shoya",
+          "riotTag": "911",
+          "links": [
+            {
+              "label": "Tracker",
+              "url": "https://tracker.gg/valorant/profile/riot/shoya%23911/overview?platform=pc&playlist=competitive"
+            },
+            {
+              "label": "X",
+              "url": "https://x.com/DasAlpakama"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "openings": [
+    {
+      "open": true,
+      "team": "Male Roster 2 · Valorant",
+      "title": "3 player spots open",
+      "description": "Join our second male roster in the EU region. Apply through our existing application form.",
+      "requirements": [
+        "Region: EU.",
+        "Roles, minimum rank, age requirements and training availability will be clarified with the team."
+      ]
+    }
+  ]
+}
