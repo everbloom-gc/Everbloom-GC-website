@@ -1,5 +1,36 @@
 /* Shared mobile, navigation and editorial components. */
 :root { --accent-accessible: #ff82b1; }
+.unified-site { --primary: #d4175b; --text: #fff; --player-card-bg: #111b24; --content-muted: #c0c6ce; margin: 0; padding: 0; }
+.unified-site *, .unified-site *::before, .unified-site *::after { box-sizing: border-box; }
+.site-nav { max-width: 1140px; margin: auto; padding: 18px 20px; display: flex; flex-wrap: wrap; align-items: center; gap: 20px; border-bottom: 1px solid #d4175b55; position: relative; z-index: 10; }
+.site-brand { display: flex; align-items: center; gap: 10px; font-weight: 900; letter-spacing: .1em; text-decoration: none; color: var(--accent-accessible); }
+.site-nav-links { display: flex; flex-wrap: wrap; gap: 4px; margin-left: auto; }
+.site-nav-links a { color: var(--text); text-decoration: none; padding: 10px 12px; border-radius: 6px; min-height: 44px; }
+.site-nav-links a:hover, .site-nav-links a[aria-current] { background: #d4175b22; color: var(--accent-accessible); }
+#site-theme { background: transparent; color: var(--text); border: 1px solid #d4175b77; border-radius: 6px; padding: 10px 12px; min-height: 44px; cursor: pointer; font: inherit; font-size: .8rem; }
+.unified-site .container { width: min(100%,1100px); }
+.unified-site header { padding-top: 48px !important; }
+.legal-page { background: var(--bg,#060b10); color: var(--text); }
+.legal-page .container { width: min(calc(100% - 32px),900px); margin: 40px auto; padding: clamp(20px,5vw,40px); background: var(--player-card-bg); }
+.legal-page h1 { font-size: clamp(1.7rem,5vw,2.5rem); }
+.legal-page h1, .legal-page h2, .legal-page a { color: var(--accent-accessible); }
+.legal-page .container a { color: var(--accent-accessible) !important; overflow-wrap: anywhere; }
+.legal-page p, .legal-page li { color: var(--content-muted); }
+.legal-page strong { color: var(--text); }
+.legal-page .address-box { overflow-wrap: anywhere; font-size: 1rem; }
+.legal-page footer { padding: 24px; color: var(--content-muted); }
+.bootcamp-page .info-card { margin-bottom: 24px; }
+[data-theme="light"] .unified-site { --text: #1a0a12; --player-card-bg: #fff; --content-muted: #514550; --bg: #faf5f7; }
+[data-theme="light"] .opening, [data-theme="light"] .application-steps li { background: #fff; }
+[data-theme="light"] .join-hero > p:not(.eyebrow) { color: var(--content-muted); }
+@media(max-width:700px) {
+ .site-nav { gap: 10px; padding: 12px; }
+ .site-brand { font-size: .9rem; }
+ .site-nav-links { order: 3; flex: 1 0 100%; margin: 0; justify-content: space-between; gap: 0; }
+ .site-nav-links a { padding: 10px 8px; font-size: .8rem; }
+ #site-theme { margin-left: auto; }
+ .unified-site header { padding-top: 32px !important; }
+}
 [data-theme="light"] { --accent-accessible: #a60c49; }
 html { scroll-padding-top: 85px; }
 body { line-height: 1.6; }

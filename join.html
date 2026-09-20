@@ -1,19 +1,20 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <meta name="description" content="Explore open player roles at Everbloom Gaming and apply to our Valorant roster.">
-     <meta name="theme-color" content="#d4175b">
-     <title>Join Everbloom | Open Valorant roles</title>
-     <link rel="icon" type="image/svg+xml" href="everbloomlogo.svg">
-     <link rel="shortcut icon" href="everbloomlogo.svg">
-     <link rel="apple-touch-icon" href="everbloomlogo.svg">
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
-     <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Explore open player roles at Everbloom Gaming and apply to our Valorant roster." name="description"/>
+<meta content="#d4175b" name="theme-color"/>
+<title>Join Everbloom | Open Valorant roles</title>
+<link href="everbloomlogo.svg" rel="icon" type="image/svg+xml"/>
+<link href="everbloomlogo.svg" rel="shortcut icon"/>
+<link href="everbloomlogo.svg" rel="apple-touch-icon"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&amp;display=swap" rel="stylesheet"/>
+<style>
 :root {
     --primary: #d4175b; --bg: #060b10; --card-bg: rgba(17,27,36,0.6); --text: #ffffff;
     --nav-bg: rgba(6,11,16,0.98); --card-gradient: #060b10; --card-gradient-mobile: #050810;
@@ -137,6 +138,37 @@ footer{text-align:center;padding:60px 20px;background:var(--footer-bg);border-to
 <style>
 /* Shared mobile, navigation and editorial components. */
 :root { --accent-accessible: #ff82b1; }
+.unified-site { --primary: #d4175b; --text: #fff; --player-card-bg: #111b24; --content-muted: #c0c6ce; margin: 0; padding: 0; }
+.unified-site *, .unified-site *::before, .unified-site *::after { box-sizing: border-box; }
+.site-nav { max-width: 1140px; margin: auto; padding: 18px 20px; display: flex; flex-wrap: wrap; align-items: center; gap: 20px; border-bottom: 1px solid #d4175b55; position: relative; z-index: 10; }
+.site-brand { display: flex; align-items: center; gap: 10px; font-weight: 900; letter-spacing: .1em; text-decoration: none; color: var(--accent-accessible); }
+.site-nav-links { display: flex; flex-wrap: wrap; gap: 4px; margin-left: auto; }
+.site-nav-links a { color: var(--text); text-decoration: none; padding: 10px 12px; border-radius: 6px; min-height: 44px; }
+.site-nav-links a:hover, .site-nav-links a[aria-current] { background: #d4175b22; color: var(--accent-accessible); }
+#site-theme { background: transparent; color: var(--text); border: 1px solid #d4175b77; border-radius: 6px; padding: 10px 12px; min-height: 44px; cursor: pointer; font: inherit; font-size: .8rem; }
+.unified-site .container { width: min(100%,1100px); }
+.unified-site header { padding-top: 48px !important; }
+.legal-page { background: var(--bg,#060b10); color: var(--text); }
+.legal-page .container { width: min(calc(100% - 32px),900px); margin: 40px auto; padding: clamp(20px,5vw,40px); background: var(--player-card-bg); }
+.legal-page h1 { font-size: clamp(1.7rem,5vw,2.5rem); }
+.legal-page h1, .legal-page h2, .legal-page a { color: var(--accent-accessible); }
+.legal-page .container a { color: var(--accent-accessible) !important; overflow-wrap: anywhere; }
+.legal-page p, .legal-page li { color: var(--content-muted); }
+.legal-page strong { color: var(--text); }
+.legal-page .address-box { overflow-wrap: anywhere; font-size: 1rem; }
+.legal-page footer { padding: 24px; color: var(--content-muted); }
+.bootcamp-page .info-card { margin-bottom: 24px; }
+[data-theme="light"] .unified-site { --text: #1a0a12; --player-card-bg: #fff; --content-muted: #514550; --bg: #faf5f7; }
+[data-theme="light"] .opening, [data-theme="light"] .application-steps li { background: #fff; }
+[data-theme="light"] .join-hero > p:not(.eyebrow) { color: var(--content-muted); }
+@media(max-width:700px) {
+ .site-nav { gap: 10px; padding: 12px; }
+ .site-brand { font-size: .9rem; }
+ .site-nav-links { order: 3; flex: 1 0 100%; margin: 0; justify-content: space-between; gap: 0; }
+ .site-nav-links a { padding: 10px 8px; font-size: .8rem; }
+ #site-theme { margin-left: auto; }
+ .unified-site header { padding-top: 32px !important; }
+}
 [data-theme="light"] { --accent-accessible: #a60c49; }
 html { scroll-padding-top: 85px; }
 body { line-height: 1.6; }
@@ -221,22 +253,37 @@ body::after { display: none; }
 
 </style>
 <!-- END SHARED CSS -->
-
 </head>
-<body class="join-page">
+<body class="join-page unified-site">
 <a class="skip-link" href="#main-content">Skip to content</a>
-<nav class="simple-nav" aria-label="Main navigation"><a href="index.html">EVERBLOOM</a><div><a href="index.html">Home</a><a href="roster.html">Teams</a><a href="join.html" aria-current="page">Join</a></div></nav>
-<main id="main-content" tabindex="-1" class="container">
-<header class="join-hero"><p class="eyebrow">GROW WITH US · VALORANT · EU</p><h1>Your next team.<br>Your next chapter.</h1><p>Find your place in Everbloom. Explore our open roles and tell us what you bring to the team.</p><a href="#open-roles" class="apply-btn">Explore open roles ↓</a></header>
-<section id="open-roles" aria-label="Open roles"><!-- BEGIN OPENINGS -->
+<nav aria-label="Main navigation" class="site-nav"><a class="site-brand" href="index.html"><img alt="" height="32" src="everbloomlogo.svg" width="32"/>EVERBLOOM</a><div class="site-nav-links"><a href="index.html">Home</a><a href="roster.html">Teams</a><a href="bootcamp.html">Bootcamp</a><a aria-current="page" href="join.html">Join</a><a href="legal.html">Legal</a></div><button aria-label="Switch colour theme" id="site-theme" type="button">Light / dark</button></nav>
+<main class="container" id="main-content" tabindex="-1">
+<header class="join-hero"><p class="eyebrow">GROW WITH US · VALORANT · EU</p><h1>Your next team.<br/>Your next chapter.</h1><p>Find your place in Everbloom. Explore our open roles and tell us what you bring to the team.</p><a class="apply-btn" href="#open-roles">Explore open roles ↓</a></header>
+<section aria-label="Open roles" id="open-roles"><!-- BEGIN OPENINGS -->
 <div class="openings-grid"><article class="opening"><p class="eyebrow">Male Roster 2 · Valorant</p><h2>3 player spots open</h2><p>Join our second male roster in the EU region. Apply through our existing application form.</p><h3>Requirements</h3><ul><li>Region: EU.</li><li>Roles, minimum rank, age requirements and training availability will be clarified with the team.</li></ul><a class="apply-btn" href="https://forms.gle/VeNmZo9DkJo35PR5A" target="_blank" rel="noopener noreferrer">Apply via Google Forms ↗</a></article></div>
 <!-- END OPENINGS --></section>
 <section class="application-steps"><h2>How to join</h2><ol><li><h3>Find your role</h3><p>Read the opening and note any questions for the team.</p></li><li><h3>Introduce yourself</h3><p>Complete our Google Form. Have your Riot ID, preferred roles and availability ready.</p></li><li><h3>Discuss the next steps</h3><p>The team will clarify expectations and whether there is a suitable place for you. An application does not guarantee a spot.</p></li></ol></section>
 <section class="join-faq"><h2>Before you apply</h2><details><summary>What rank do I need?</summary><p>A minimum rank has not been published for these openings. The team will clarify the requirements with you.</p></details><details><summary>When does the team train?</summary><p>Training times are arranged with the team. Include your availability in your application.</p></details><details><summary>Where does my application go?</summary><p>The application opens our existing Google Form in a new tab. <a href="legal.html">Read our privacy information.</a></p></details></section>
-</main><footer><a href="index.html">Everbloom Gaming</a> · <a href="legal.html">Legal notice & privacy</a></footer>
+</main><footer><a href="index.html">Everbloom Gaming</a> · <a href="legal.html">Legal notice &amp; privacy</a></footer>
 <!-- BEGIN SHARED JS -->
 <script>
 'use strict';
+const themeButton = document.getElementById('site-theme');
+if (themeButton) {
+  let saved = 'dark';
+  try { saved = localStorage.getItem('ebTheme') || 'dark'; } catch {}
+  const applyTheme = theme => {
+    document.documentElement.setAttribute('data-theme', theme);
+    themeButton.textContent = theme === 'light' ? 'Dark mode' : 'Light mode';
+    themeButton.setAttribute('aria-label', 'Switch to ' + (theme === 'light' ? 'dark' : 'light') + ' mode');
+  };
+  applyTheme(saved === 'light' ? 'light' : 'dark');
+  themeButton.addEventListener('click', () => {
+    const theme = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+    applyTheme(theme);
+    try { localStorage.setItem('ebTheme', theme); } catch {}
+  });
+}
 const navigation = document.getElementById('navOverlay');
 const navigationToggle = document.querySelector('.nav-toggle');
 if (navigation && navigationToggle) {
@@ -294,3 +341,4 @@ if (document.querySelector('.team-grid')) {
 </script>
 <!-- END SHARED JS -->
 </body></html>
+

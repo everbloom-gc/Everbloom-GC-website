@@ -65,7 +65,7 @@ def build():
     # missing CSS/JS paths. Maintain sources centrally but embed generated copies.
     css = (ROOT / 'enhancements.css').read_text(encoding='utf-8')
     js = (ROOT / 'enhancements.js').read_text(encoding='utf-8')
-    for page in ['index.html', 'roster.html', 'join.html']:
+    for page in ['index.html', 'roster.html', 'join.html', 'bootcamp.html', 'legal.html']:
         path = ROOT / page
         html = path.read_text(encoding='utf-8')
         html = html.replace('<link rel="stylesheet" href="enhancements.css">', '<!-- BEGIN SHARED CSS --><!-- END SHARED CSS -->')
