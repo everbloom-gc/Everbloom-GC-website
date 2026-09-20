@@ -61,7 +61,21 @@ def build():
         openings.append(f'<article class="opening"><p class="eyebrow">{text(role["team"])}</p><h2>{text(role["title"])}</h2><p>{text(role["description"])}</p><h3>Requirements</h3><ul>{requirements}</ul><a class="apply-btn" href="{link(data["applicationUrl"])}" target="_blank" rel="noopener noreferrer">Apply via Google Forms ↗</a></article>')
     replace_section('join.html', 'OPENINGS', '<div class="openings-grid">' + (''.join(openings) or '<p>No advertised openings right now. Check back soon.</p>') + '</div>')
     replace_section('index.html', 'RECRUITMENT', '<div class="recruitment-teaser"><div><p class="eyebrow">JOIN THE BLOOM</p><h2>Find your place at Everbloom.</h2><p>Explore our advertised roles, requirements and application process.</p></div><a class="apply-btn" href="join.html">Open roles →</a></div>')
-    print(f'Built {len(ids)} players, {len(openings)} openings.')
+    # Keep deployment self-contained: the live host currently returns HTML for
+    # missing CSS/JS paths. Maintain sources centrally but embed generated copies.
+    css = (ROOT / 'enhancements.css').read_text(encoding='utf-8')
+    js = (ROOT / 'enhancements.js').read_text(encoding='utf-8')
+    for page in ['index.html', 'roster.html', 'join.html']:
+        path = ROOT / page
+        html = path.read_text(encoding='utf-8')
+        html = html.replace('<link rel="stylesheet" href="enhancements.css">', '<!-- BEGIN SHARED CSS --><!-- END SHARED CSS -->')
+        html = html.replace('<script src="enhancements.js" defer></script>', '')
+        if '<!-- BEGIN SHARED JS -->' not in html:
+            html = html.replace('</body>', '<!-- BEGIN SHARED JS --><!-- END SHARED JS -->\n</body>')
+        path.write_text(html, encoding='utf-8')
+        replace_section(page, 'SHARED CSS', '<style>\n' + css + '\n</style>')
+        replace_section(page, 'SHARED JS', '<script>\n' + js + '\n</script>')
+    print(f'Built {len(ids)} players, {len(openings)} openings with embedded shared assets.')
 
 if __name__ == '__main__':
     build()

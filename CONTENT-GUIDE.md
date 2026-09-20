@@ -28,7 +28,7 @@ Der Generator benötigt nur Python, keine zusätzlichen Pakete. `roster.html`, `
 
 ## Veröffentlichung
 
-Die Änderungen sind zunächst auf einem separaten Branch vorbereitet. Die bestehenden GitHub-Pages-Einstellungen müssen bei der Veröffentlichung geprüft werden: von `GITHUB_TOKEN` erzeugte Commits lösen nicht jeden Pages-Build automatisch aus. Bei einem manuellen Upload die generierten HTML-Dateien sowie `enhancements.css` und `enhancements.js` gemeinsam hochladen.
+Die Änderungen sind zunächst auf einem separaten Branch vorbereitet. Die bestehenden GitHub-Pages-Einstellungen müssen bei der Veröffentlichung geprüft werden: von `GITHUB_TOKEN` erzeugte Commits lösen nicht jeden Pages-Build automatisch aus. Bei einem manuellen Upload die generierten HTML-Dateien hochladen. CSS und JavaScript werden direkt eingebettet, weil der aktuelle Live-Host die neuen Asset-Pfade nicht zuverlässig ausliefert. Änderungen weiterhin zentral in `enhancements.css` und `enhancements.js` pflegen; der Generator übernimmt sie in alle drei Seiten.
 
 ## Performance
 

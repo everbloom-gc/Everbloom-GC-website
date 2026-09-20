@@ -2,7 +2,7 @@ name: Build team and recruitment pages
 on:
   push:
     branches: [main]
-    paths: ['data/site.json', 'scripts/build_content.py']
+    paths: ['data/site.json', 'scripts/build_content.py', 'enhancements.css', 'enhancements.js']
   workflow_dispatch:
 permissions:
   contents: write
