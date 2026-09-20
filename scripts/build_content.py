@@ -48,6 +48,11 @@ def build():
         cards.append(f'<section class="team-section" id="{text(team["id"])}"><div class="team-heading"><h2>{text(team["name"])}</h2><span>{len(players)} players · Valorant</span></div><div class="team-grid">{"".join(players)}</div></section>')
     jump = '<nav class="team-jump" aria-label="Choose a team">' + ''.join(f'<a href="#{text(t["id"])}">{text(t["name"])}</a>' for t in data['teams']) + '</nav>'
     replace_section('roster.html', 'TEAMS', jump + ''.join(cards) + '<aside class="join-callout"><h2>Your next chapter starts here.</h2><p>Discover open roles and get to know our application process.</p><a class="apply-btn" href="join.html">Explore open roles</a></aside>')
+    roster_path = ROOT / 'roster.html'
+    roster_html = roster_path.read_text(encoding='utf-8')
+    roster_html = re.sub(r'(<p\b[^>]*\bid="ranks-updated"[^>]*>)[^<]*(</p>)',
+                         lambda m: m[1] + 'Last rank update: ' + text(ranks['updated']) + m[2], roster_html)
+    roster_path.write_text(roster_html, encoding='utf-8')
     openings = []
     for role in data['openings']:
         if not role.get('open', True):
