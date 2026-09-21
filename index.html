@@ -469,13 +469,6 @@ body::after { display: none; }
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
 
-/* Chat launcher — Elfsight only loads after a click */
-.chat-launcher { position: fixed; right: 20px; bottom: 20px; z-index: 1003; display: flex; flex-direction: column; align-items: flex-end; gap: 6px; max-width: 230px; }
-.chat-launcher .chat-notice { margin: 0; font-size: .72rem; line-height: 1.35; color: var(--content-muted); background: var(--player-card-bg); border: 1px solid #d4175b55; border-radius: 6px; padding: 6px 8px; text-align: right; }
-.chat-load { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 10px 18px; border-radius: 999px; border: none; background: var(--primary); color: #fff; font: inherit; font-weight: 700; cursor: pointer; box-shadow: 0 0 15px rgba(212,23,91,.45); }
-.chat-load:disabled { opacity: .7; cursor: wait; }
-@media(max-width:700px) { .chat-launcher { right: 12px; bottom: 12px; } }
-
 </style>
 <!-- END SHARED CSS --></head>
 <body class="unified-site index-page"><a class="skip-link" href="#main-content">Skip to content</a><nav aria-label="Main navigation" class="site-nav"><a class="site-brand" href="index.html"><img alt="" height="32" src="everbloomlogo.svg" width="32"/>EVERBLOOM</a><div class="site-nav-links"><a aria-current="page" href="index.html">Home</a><a href="roster.html">Teams</a><a href="bootcamp.html">Bootcamp</a><a href="join.html">Join</a><a href="legal.html">Legal</a></div><button aria-label="Switch colour theme" id="site-theme" type="button">Light / dark</button></nav>
@@ -779,28 +772,16 @@ document.querySelectorAll('a').forEach(a => {
   }
 });
 const feedButton = document.querySelector('.feed-load');
-const chatButton = document.querySelector('.chat-load');
-const chatLauncher = document.querySelector('.chat-launcher');
-let elfsightLoading = false;
-function loadElfsight() {
-  if (elfsightLoading) return;
-  elfsightLoading = true;
+feedButton?.addEventListener('click', () => {
   const script = document.createElement('script');
   script.src = 'https://elfsightcdn.com/platform.js';
   script.async = true;
-  if (feedButton) { feedButton.disabled = true; feedButton.textContent = 'Loading feed…'; }
-  if (chatButton) { chatButton.disabled = true; chatButton.lastChild.textContent = ' Loading…'; }
-  script.onload = () => { feedButton?.remove(); chatLauncher?.remove(); };
-  script.onerror = () => {
-    elfsightLoading = false;
-    if (feedButton) { feedButton.disabled = false; feedButton.textContent = 'Retry loading feed'; }
-    if (chatButton) { chatButton.disabled = false; chatButton.lastChild.textContent = ' Retry chat'; }
-    script.remove();
-  };
+  feedButton.disabled = true;
+  feedButton.textContent = 'Loading feed…';
+  script.onload = () => feedButton.remove();
+  script.onerror = () => { feedButton.disabled = false; feedButton.textContent = 'Retry loading feed'; script.remove(); };
   document.head.append(script);
-}
-feedButton?.addEventListener('click', loadElfsight);
-chatButton?.addEventListener('click', loadElfsight);
+});
 if (document.querySelector('.team-grid')) {
   fetch('ranks.json').then(r => { if (!r.ok) throw new Error('Ranks unavailable'); return r.json(); }).then(data => {
     for (const p of Object.values(data.players || {})) {
