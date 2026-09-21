@@ -679,7 +679,13 @@ body::after { display: none; }
              const res = await fetch('https://everbloom-scrims.everbloomgc.workers.dev', {
                  method: 'POST',
                  headers: {'Content-Type':'application/json'},
-                 body: JSON.stringify(payload)
+                 body: JSON.stringify({
+    org: v('scrim-org'),
+    rank: v('scrim-rank'),
+    discord: v('scrim-discord'),
+    time: v('scrim-time'),
+    roster: v('scrim-roster')
+})
              });
              if (res.ok || res.status === 204) {
                  btn.innerHTML = '<i class="fas fa-check-circle"></i> SENT';
