@@ -1,5 +1,5 @@
 {
-  "updated": "22.09.2026 15:58 UTC",
+  "updated": "22.09.2026 20:40 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -8,7 +8,7 @@
       "roster": "flinta",
       "role": "DUELIST",
       "rank": "Platinum 1",
-      "rr": 51,
+      "rr": 68,
       "cssClass": "rank-platinum"
     },
     "cat": {
@@ -18,7 +18,7 @@
       "roster": "flinta",
       "role": "SENTINEL",
       "rank": "Platinum 2",
-      "rr": 38,
+      "rr": 55,
       "cssClass": "rank-platinum"
     },
     "claire": {
@@ -87,8 +87,8 @@
       "tag": "1611",
       "roster": "male",
       "role": "INITIATOR",
-      "rank": "Ascendant 1",
-      "rr": 81,
+      "rank": "Ascendant 2",
+      "rr": 29,
       "cssClass": "rank-ascendant"
     },
     "pithaa": {
