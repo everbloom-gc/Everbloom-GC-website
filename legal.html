@@ -2,6 +2,7 @@
 
 <html lang="en">
 <head>
+<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="54d300ce-7e9c-478a-9c9d-a1e8c9fdfa95" data-blockingmode="auto" type="text/javascript"></script>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="index, follow" name="robots"/>
@@ -236,14 +237,21 @@ body::after { display: none; }
 </ul>
 <p>This data is transmitted directly to our Discord server via a webhook and is used solely for the purpose of coordinating practice matches. It is not stored on our servers and not passed on to third parties.</p>
 <h2>4. External Services — Elfsight</h2>
-<p>Our website uses the Elfsight widget service to display our X (Twitter) feed. When you visit this page, Elfsight may collect technical data such as your IP address and browser information. This is subject to <a href="https://elfsight.com/privacy-policy/" rel="noopener noreferrer" style="color: var(--main-pink);" target="_blank">Elfsight's Privacy Policy</a>. We have no influence over data collected by Elfsight.</p>
-<h2>5. External Services — Google Fonts</h2>
+<p>Our website uses the Elfsight widget service to display our X (Twitter) feed and an AI chat assistant. These widgets are only loaded once you have given your consent via the cookie banner. Once loaded, Elfsight may collect technical data such as your IP address and browser information.</p>
+<p>If you use the chat assistant, the messages you type are transmitted to Elfsight and processed by an AI service in order to generate a response. Please do not enter sensitive personal information into the chat. The assistant is automated — its answers may be inaccurate and do not constitute binding statements by Everbloom Gaming.</p>
+<p>This is subject to <a href="https://elfsight.com/privacy-policy/" rel="noopener noreferrer" style="color: var(--main-pink);" target="_blank">Elfsight's Privacy Policy</a>. We have no influence over the data collected by Elfsight.</p>
+<h2>5. Cookies and Consent</h2>
+<p>We use Cookiebot by Usercentrics to obtain and manage your consent for cookies and third-party services. When you first visit our site, a banner lets you accept or decline. Services that are not strictly necessary — such as the Elfsight widgets described above — remain blocked until you consent.</p>
+<p>Cookiebot stores your choice so the banner does not reappear on every visit, and processes a hashed identifier together with technical data for this purpose. You can withdraw or change your consent at any time using the link in the banner. For details see <a href="https://www.cookiebot.com/en/privacy-policy/" rel="noopener noreferrer" style="color: var(--main-pink);" target="_blank">Cookiebot's Privacy Policy</a>.</p>
+<p>The list below is generated automatically and shows which cookies and services are currently in use:</p>
+<script id="CookieDeclaration" src="https://consent.cookiebot.com/54d300ce-7e9c-478a-9c9d-a1e8c9fdfa95/cd.js" type="text/javascript" async></script>
+<h2>6. External Services — Google Fonts</h2>
 <p>This website loads fonts from Google Fonts. When the page is loaded, your browser connects to Google's servers, which may log your IP address. This is subject to <a href="https://policies.google.com/privacy" rel="noopener noreferrer" style="color: var(--main-pink);" target="_blank">Google's Privacy Policy</a>.</p>
-<h2>6. Purpose of Processing</h2>
+<h2>7. Purpose of Processing</h2>
 <p>All data collected via this website is used exclusively for the establishment and management of Everbloom Gaming's esports teams. No data is sold or shared with uninvolved third parties.</p>
-<h2>7. Data Retention</h2>
+<h2>8. Data Retention</h2>
 <p>Application data is stored for the duration of the selection process and deleted thereafter unless you become a member of our team. Scrim request data is not stored beyond the Discord message transmission.</p>
-<h2>8. Your Rights (GDPR)</h2>
+<h2>9. Your Rights (GDPR)</h2>
 <p>Under the GDPR you have the right to:</p>
 <ul>
 <li>Access the personal data we hold about you</li>
@@ -309,17 +317,6 @@ document.querySelectorAll('a').forEach(a => {
     if (label) a.setAttribute('aria-label', label === 'x-twitter' ? 'Everbloom on X' : `Everbloom on ${label}`);
   }
 });
-const feedButton = document.querySelector('.feed-load');
-feedButton?.addEventListener('click', () => {
-  const script = document.createElement('script');
-  script.src = 'https://elfsightcdn.com/platform.js';
-  script.async = true;
-  feedButton.disabled = true;
-  feedButton.textContent = 'Loading feed…';
-  script.onload = () => feedButton.remove();
-  script.onerror = () => { feedButton.disabled = false; feedButton.textContent = 'Retry loading feed'; script.remove(); };
-  document.head.append(script);
-});
 if (document.querySelector('.team-grid')) {
   fetch('ranks.json').then(r => { if (!r.ok) throw new Error('Ranks unavailable'); return r.json(); }).then(data => {
     for (const p of Object.values(data.players || {})) {
@@ -332,5 +329,8 @@ if (document.querySelector('.team-grid')) {
 }
 
 </script>
-<!-- END SHARED JS --></body>
+<!-- END SHARED JS --><!-- Elfsight AI Chatbot -->
+<div class="elfsight-app-d8f0209f-d476-4436-90d7-c00e72aff90f"></div>
+<script src="https://elfsightcdn.com/platform.js" async type="text/plain" data-cookieconsent="marketing"></script>
+</body>
 </html>
