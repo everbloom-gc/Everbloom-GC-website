@@ -353,11 +353,7 @@ body::after { display: none; }
 
 
 
-<!-- Elfsight AI Chatbot (loads only after consent click) -->
-<div class="chat-launcher">
-<p class="chat-notice" id="chat-notice">Opening the chat connects to Elfsight.</p>
-<button class="chat-load" type="button" aria-describedby="chat-notice"><i class="fas fa-comment-dots" aria-hidden="true"></i> Chat</button>
-</div>
+<!-- Elfsight AI Chatbot -->
 <div class="elfsight-app-d8f0209f-d476-4436-90d7-c00e72aff90f"></div>
 <!-- BEGIN SHARED JS -->
 <script>
@@ -410,29 +406,6 @@ document.querySelectorAll('a').forEach(a => {
     if (label) a.setAttribute('aria-label', label === 'x-twitter' ? 'Everbloom on X' : `Everbloom on ${label}`);
   }
 });
-const feedButton = document.querySelector('.feed-load');
-const chatButton = document.querySelector('.chat-load');
-const chatLauncher = document.querySelector('.chat-launcher');
-let elfsightLoading = false;
-function loadElfsight() {
-  if (elfsightLoading) return;
-  elfsightLoading = true;
-  const script = document.createElement('script');
-  script.src = 'https://elfsightcdn.com/platform.js';
-  script.async = true;
-  if (feedButton) { feedButton.disabled = true; feedButton.textContent = 'Loading feed…'; }
-  if (chatButton) { chatButton.disabled = true; chatButton.lastChild.textContent = ' Loading…'; }
-  script.onload = () => { feedButton?.remove(); chatLauncher?.remove(); };
-  script.onerror = () => {
-    elfsightLoading = false;
-    if (feedButton) { feedButton.disabled = false; feedButton.textContent = 'Retry loading feed'; }
-    if (chatButton) { chatButton.disabled = false; chatButton.lastChild.textContent = ' Retry chat'; }
-    script.remove();
-  };
-  document.head.append(script);
-}
-feedButton?.addEventListener('click', loadElfsight);
-chatButton?.addEventListener('click', loadElfsight);
 if (document.querySelector('.team-grid')) {
   fetch('ranks.json').then(r => { if (!r.ok) throw new Error('Ranks unavailable'); return r.json(); }).then(data => {
     for (const p of Object.values(data.players || {})) {
@@ -445,5 +418,6 @@ if (document.querySelector('.team-grid')) {
 }
 
 </script>
-<!-- END SHARED JS --></body>
+<!-- END SHARED JS --><script src="https://elfsightcdn.com/platform.js" async></script>
+</body>
 </html>
