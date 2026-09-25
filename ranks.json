@@ -1,5 +1,5 @@
 {
-  "updated": "25.09.2026 10:50 UTC",
+  "updated": "25.09.2026 16:09 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -57,9 +57,9 @@
       "tag": "Fated",
       "roster": "male",
       "role": "Initiator",
-      "rank": "Ascendant 3",
-      "rr": 55,
-      "cssClass": "rank-ascendant"
+      "rank": "Immortal 1",
+      "rr": 10,
+      "cssClass": "rank-immortal"
     },
     "twony": {
       "id": "twony",
