@@ -57,28 +57,12 @@
               "url": "https://x.com/Hqdzxo"
             }
           ]
-        },
-        {
-          "id": "laura",
-          "name": "Laura",
-          "role": "SMOKER",
-          "image": "Omen_Artwork_Full.webp",
-          "rank": "Platinum 2",
-          "riotName": "GAARA",
-          "riotTag": "ETN",
-          "links": [
-            {
-              "label": "Tracker",
-              "url": "https://tracker.gg/valorant/profile/riot/GAARA%23ETN/overview"
-            },
-            {
-              "label": "X",
-              "url": "https://x.com/KazekageGaarasj"
-            }
-          ]
         }
       ],
       "openSlots": [
+        {
+          "role": "Open role"
+        },
         {
           "role": "DUELIST"
         }
