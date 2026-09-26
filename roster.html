@@ -252,6 +252,21 @@ body::after { display: none; }
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
 
+.team-open { display: flex; flex-direction: column; border-style: dashed; }
+.team-open-art { height: 210px; display: flex; align-items: center; justify-content: center; font-size: 2.4rem; color: var(--accent-accessible); background: radial-gradient(ellipse at bottom,#d4175b33,transparent); }
+.team-open .team-links a { color: var(--accent-accessible); }
+
+/* Chat launcher — Elfsight only loads after a click */
+.chat-launcher { position: fixed; right: 20px; bottom: 20px; z-index: 1003; display: flex; flex-direction: column; align-items: flex-end; gap: 6px; max-width: 230px; }
+.chat-launcher .chat-notice { margin: 0; font-size: .72rem; line-height: 1.35; color: var(--content-muted); background: var(--player-card-bg); border: 1px solid #d4175b55; border-radius: 6px; padding: 6px 8px; text-align: right; }
+.chat-load { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 10px 18px; border-radius: 999px; border: none; background: var(--primary); color: #fff; font: inherit; font-weight: 700; cursor: pointer; box-shadow: 0 0 15px rgba(212,23,91,.45); }
+.chat-load:disabled { opacity: .7; cursor: wait; }
+@media(max-width:700px) {
+  .team-open-art { height: 150px; }
+  .chat-launcher { right: 12px; bottom: 12px; }
+  body:has(#bottom-nav) .chat-launcher { bottom: calc(88px + env(safe-area-inset-bottom)); }
+}
+
 </style>
 <!-- END SHARED CSS --></head>
 <body class="unified-site roster-page"><a class="skip-link" href="#main-content">Skip to content</a><nav aria-label="Main navigation" class="site-nav"><a class="site-brand" href="index.html"><img alt="" height="32" src="everbloomlogo.svg" width="32"/>EVERBLOOM</a><div class="site-nav-links"><a href="index.html">Home</a><a aria-current="page" href="roster.html">Teams</a><a href="bootcamp.html">Bootcamp</a><a href="join.html">Join</a><a href="legal.html">Legal</a></div><button aria-label="Switch colour theme" id="site-theme" type="button">Light / dark</button></nav>
@@ -271,7 +286,7 @@ body::after { display: none; }
 <p id="ranks-updated" style="font-size:.65rem;opacity:.35;margin-top:8px;letter-spacing:1px;">Last rank update: 26.09.2026 15:23 UTC</p>
 </header>
 <div class="container" style="padding-bottom:60px;"><!-- BEGIN TEAMS -->
-<nav class="team-jump" aria-label="Choose a team"><a href="#flinta">FLINTA Roster</a><a href="#male">Male Roster 1</a><a href="#male2">Male Roster 2</a></nav><section class="team-section" id="flinta"><div class="team-heading"><h2>FLINTA Roster</h2><span>4 players · Valorant</span></div><div class="team-grid"><article class="team-player">
+<nav class="team-jump" aria-label="Choose a team"><a href="#flinta">FLINTA Roster</a><a href="#male">Male Roster 1</a><a href="#male2">Male Roster 2</a></nav><section class="team-section" id="flinta"><div class="team-heading"><h2>FLINTA Roster</h2><span>3 players · 2 open</span></div><div class="team-grid"><article class="team-player">
               <img src="jett.png" width="300" height="360" loading="lazy" decoding="async" alt="">
               <div class="team-player-info"><p class="eyebrow">DUELIST</p><h3>Ruby</h3>
               <p class="team-rank" id="rank-ruby">Platinum 1</p><div class="team-links"><a href="https://tracker.gg/valorant/profile/riot/Rubyxcube%23EBM/" target="_blank" rel="noopener noreferrer" aria-label="Ruby on Tracker">Tracker</a><a href="https://x.com/x2_zelda" target="_blank" rel="noopener noreferrer" aria-label="Ruby on X">X</a></div></div>
@@ -283,11 +298,7 @@ body::after { display: none; }
               <img src="clove.webp" width="300" height="360" loading="lazy" decoding="async" alt="">
               <div class="team-player-info"><p class="eyebrow">SMOKER</p><h3>Claire</h3>
               <p class="team-rank" id="rank-claire">Platinum 1</p><div class="team-links"><a href="https://tracker.gg/valorant/profile/riot/dreamgirlwallahi%23yumz/overview?platform=pc&amp;playlist=competitive" target="_blank" rel="noopener noreferrer" aria-label="Claire on Tracker">Tracker</a><a href="https://x.com/Hqdzxo" target="_blank" rel="noopener noreferrer" aria-label="Claire on X">X</a></div></div>
-            </article><article class="team-player">
-              <img src="Omen_Artwork_Full.webp" width="300" height="360" loading="lazy" decoding="async" alt="">
-              <div class="team-player-info"><p class="eyebrow">SMOKER</p><h3>Laura</h3>
-              <p class="team-rank" id="rank-laura">Platinum 2</p><div class="team-links"><a href="https://tracker.gg/valorant/profile/riot/GAARA%23ETN/overview" target="_blank" rel="noopener noreferrer" aria-label="Laura on Tracker">Tracker</a><a href="https://x.com/KazekageGaarasj" target="_blank" rel="noopener noreferrer" aria-label="Laura on X">X</a></div></div>
-            </article><article class="team-player"><div class="team-player-info"><p class="eyebrow">DUELIST</p><h3>Looking for Player</h3><p>Open spot · EU</p><a class="apply-btn" href="join.html">Apply now</a></div></article></div></section><section class="team-section" id="male"><div class="team-heading"><h2>Male Roster 1</h2><span>5 players · Valorant</span></div><div class="team-grid"><article class="team-player">
+            </article><article class="team-player team-open"><div class="team-open-art" aria-hidden="true"><i class="fas fa-plus"></i></div><div class="team-player-info"><p class="eyebrow">Open role</p><h3>Looking for player</h3><p class="team-rank">1 spot · EU</p><div class="team-links"><a href="join.html">See open roles</a></div></div></article><article class="team-player team-open"><div class="team-open-art" aria-hidden="true"><i class="fas fa-plus"></i></div><div class="team-player-info"><p class="eyebrow">DUELIST</p><h3>Looking for player</h3><p class="team-rank">1 spot · EU</p><div class="team-links"><a href="join.html">See open roles</a></div></div></article></div></section><section class="team-section" id="male"><div class="team-heading"><h2>Male Roster 1</h2><span>5 players · Valorant</span></div><div class="team-grid"><article class="team-player">
               <img src="Omen_Artwork_Full.webp" width="300" height="360" loading="lazy" decoding="async" alt="">
               <div class="team-player-info"><p class="eyebrow">FLEX</p><h3>JC</h3>
               <p class="team-rank" id="rank-jc">Ascendant 3</p><div class="team-links"><a href="https://tracker.gg/valorant/profile/riot/jczera%23LG16/overview?platform=pc&amp;playlist=competitive&amp;season=4f0864e2-40af-28a4-de2c-0e9e64e75f23" target="_blank" rel="noopener noreferrer" aria-label="JC on Tracker">Tracker</a></div></div>

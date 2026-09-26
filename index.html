@@ -470,6 +470,21 @@ body::after { display: none; }
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
 
+.team-open { display: flex; flex-direction: column; border-style: dashed; }
+.team-open-art { height: 210px; display: flex; align-items: center; justify-content: center; font-size: 2.4rem; color: var(--accent-accessible); background: radial-gradient(ellipse at bottom,#d4175b33,transparent); }
+.team-open .team-links a { color: var(--accent-accessible); }
+
+/* Chat launcher — Elfsight only loads after a click */
+.chat-launcher { position: fixed; right: 20px; bottom: 20px; z-index: 1003; display: flex; flex-direction: column; align-items: flex-end; gap: 6px; max-width: 230px; }
+.chat-launcher .chat-notice { margin: 0; font-size: .72rem; line-height: 1.35; color: var(--content-muted); background: var(--player-card-bg); border: 1px solid #d4175b55; border-radius: 6px; padding: 6px 8px; text-align: right; }
+.chat-load { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 10px 18px; border-radius: 999px; border: none; background: var(--primary); color: #fff; font: inherit; font-weight: 700; cursor: pointer; box-shadow: 0 0 15px rgba(212,23,91,.45); }
+.chat-load:disabled { opacity: .7; cursor: wait; }
+@media(max-width:700px) {
+  .team-open-art { height: 150px; }
+  .chat-launcher { right: 12px; bottom: 12px; }
+  body:has(#bottom-nav) .chat-launcher { bottom: calc(88px + env(safe-area-inset-bottom)); }
+}
+
 </style>
 <!-- END SHARED CSS --></head>
 <body class="unified-site index-page"><a class="skip-link" href="#main-content">Skip to content</a><nav aria-label="Main navigation" class="site-nav"><a class="site-brand" href="index.html"><img alt="" height="32" src="everbloomlogo.svg" width="32"/>EVERBLOOM</a><div class="site-nav-links"><a aria-current="page" href="index.html">Home</a><a href="roster.html">Teams</a><a href="bootcamp.html">Bootcamp</a><a href="join.html">Join</a><a href="legal.html">Legal</a></div><button aria-label="Switch colour theme" id="site-theme" type="button">Light / dark</button></nav>
