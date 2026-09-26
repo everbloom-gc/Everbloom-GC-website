@@ -1,5 +1,5 @@
 {
-  "updated": "26.09.2026 10:31 UTC",
+  "updated": "26.09.2026 15:23 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -18,7 +18,7 @@
       "roster": "flinta",
       "role": "Sentinel",
       "rank": "Platinum 2",
-      "rr": 38,
+      "rr": 56,
       "cssClass": "rank-platinum"
     },
     "claire": {
@@ -38,7 +38,7 @@
       "roster": "flinta",
       "role": "Duelist",
       "rank": "Gold 3",
-      "rr": 30,
+      "rr": 12,
       "cssClass": "rank-gold"
     },
     "jc": {
@@ -58,7 +58,7 @@
       "roster": "male",
       "role": "Initiator",
       "rank": "Immortal 1",
-      "rr": 10,
+      "rr": 17,
       "cssClass": "rank-immortal"
     },
     "twony": {
