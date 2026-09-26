@@ -317,6 +317,17 @@ document.querySelectorAll('a').forEach(a => {
     if (label) a.setAttribute('aria-label', label === 'x-twitter' ? 'Everbloom on X' : `Everbloom on ${label}`);
   }
 });
+const feedButton = document.querySelector('.feed-load');
+feedButton?.addEventListener('click', () => {
+  const script = document.createElement('script');
+  script.src = 'https://elfsightcdn.com/platform.js';
+  script.async = true;
+  feedButton.disabled = true;
+  feedButton.textContent = 'Loading feed…';
+  script.onload = () => feedButton.remove();
+  script.onerror = () => { feedButton.disabled = false; feedButton.textContent = 'Retry loading feed'; script.remove(); };
+  document.head.append(script);
+});
 if (document.querySelector('.team-grid')) {
   fetch('ranks.json').then(r => { if (!r.ok) throw new Error('Ranks unavailable'); return r.json(); }).then(data => {
     for (const p of Object.values(data.players || {})) {
