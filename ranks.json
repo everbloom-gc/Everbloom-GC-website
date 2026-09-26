@@ -31,16 +31,6 @@
       "rr": 24,
       "cssClass": "rank-platinum"
     },
-    "mia": {
-      "id": "mia",
-      "name": "aloe",
-      "tag": "nom",
-      "roster": "flinta",
-      "role": "Duelist",
-      "rank": "Gold 3",
-      "rr": 12,
-      "cssClass": "rank-gold"
-    },
     "jc": {
       "id": "jc",
       "name": "jczera",

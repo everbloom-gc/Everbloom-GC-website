@@ -76,21 +76,11 @@
               "url": "https://x.com/KazekageGaarasj"
             }
           ]
-        },
+        }
+      ],
+      "openSlots": [
         {
-          "id": "mia",
-          "name": "Mia",
-          "role": "DUELIST",
-          "image": "Phoenix_Artwork_Full.webp",
-          "rank": "Gold 2",
-          "riotName": "aloe",
-          "riotTag": "nom",
-          "links": [
-            {
-              "label": "Tracker",
-              "url": "https://tracker.gg/valorant/profile/riot/aloe%23nom/overview?platform=pc&playlist=competitive"
-            }
-          ]
+          "role": "DUELIST"
         }
       ]
     },
@@ -229,6 +219,17 @@
     }
   ],
   "openings": [
+    {
+      "open": true,
+      "team": "FLINTA Roster · Valorant",
+      "title": "Duelist wanted",
+      "description": "One player spot is open in our FLINTA roster. Apply through our application form.",
+      "requirements": [
+        "Region: EU.",
+        "Duelist role.",
+        "Minimum rank, age requirements and training availability will be clarified with the team."
+      ]
+    },
     {
       "open": true,
       "team": "Male Roster 2 · Valorant",

@@ -45,7 +45,10 @@ def build():
               <div class="team-player-info"><p class="eyebrow">{text(p['role'])}</p><h3>{text(p['name'])}</h3>
               <p class="team-rank" id="rank-{text(p['id'])}">{text(rank)}</p><div class="team-links">{socials}</div></div>
             </article>''')
-        cards.append(f'<section class="team-section" id="{text(team["id"])}"><div class="team-heading"><h2>{text(team["name"])}</h2><span>{len(players)} players · Valorant</span></div><div class="team-grid">{"".join(players)}</div></section>')
+        filled_count = len(players)
+        for slot in team.get('openSlots', []):
+            players.append(f'<article class="team-player"><div class="team-player-info"><p class="eyebrow">{text(slot["role"])}</p><h3>Looking for Player</h3><p>Open spot · EU</p><a class="apply-btn" href="join.html">Apply now</a></div></article>')
+        cards.append(f'<section class="team-section" id="{text(team["id"])}"><div class="team-heading"><h2>{text(team["name"])}</h2><span>{filled_count} players · Valorant</span></div><div class="team-grid">{"".join(players)}</div></section>')
     jump = '<nav class="team-jump" aria-label="Choose a team">' + ''.join(f'<a href="#{text(t["id"])}">{text(t["name"])}</a>' for t in data['teams']) + '</nav>'
     replace_section('roster.html', 'TEAMS', jump + ''.join(cards) + '<aside class="join-callout"><h2>Your next chapter starts here.</h2><p>Discover open roles and get to know our application process.</p><a class="apply-btn" href="join.html">Explore open roles</a></aside>')
     roster_path = ROOT / 'roster.html'
