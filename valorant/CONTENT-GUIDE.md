@@ -1,10 +1,12 @@
 # Everbloom: Teams und Bewerbungen pflegen
 
-Alle Spieler, Rollen, Profil-Links, Riot-IDs und offenen Stellen werden in `data/site.json` gepflegt. Keine HTML-Karten mehr kopieren.
+Die Valorant-Website liegt vollständig unter `valorant/`. Die `index.html` im Hauptordner leitet zu `valorant/` weiter und erhält dabei URL-Parameter und Sprungmarken. Domain-Datei, Suchmaschinen-Konfiguration und GitHub-Workflows bleiben im Hauptordner; `overwatch/` bleibt ein eigener Bereich.
+
+Alle Spieler, Rollen, Profil-Links, Riot-IDs und offenen Stellen werden in `valorant/data/site.json` gepflegt. Keine HTML-Karten mehr kopieren.
 
 ## Spieler ändern
 
-1. In GitHub `data/site.json` öffnen und den Stift wählen.
+1. In GitHub `valorant/data/site.json` öffnen und den Stift wählen.
 2. Unter `teams` das Team und den Spieler suchen.
 3. `name` ist der sichtbare Name; `role` die Rolle; `image` der Dateiname des Bildes. `links` enthält beschriftete HTTPS-Links.
 4. `riotName` und `riotTag` werden für die automatischen Rang-Abfragen verwendet. `id` muss eindeutig sein und sollte bei bestehenden Spielern unverändert bleiben.
@@ -20,7 +22,7 @@ Aktueller Stand laut Lena: FLINTA-Coaches sind besetzt; Male Roster 2 hat drei f
 ## Lokal bauen
 
 ```sh
-python scripts/build_content.py
+python valorant/scripts/build_content.py
 python -m http.server 8080
 ```
 

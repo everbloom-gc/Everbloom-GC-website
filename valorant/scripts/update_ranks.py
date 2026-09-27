@@ -4,6 +4,9 @@ import os
 import re
 import time
 from datetime import datetime, timezone
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
 
 API_KEY = os.environ.get('HENRIK_API_KEY', '')
 REGION  = 'eu'
@@ -51,7 +54,7 @@ def get_rank(player):
         return None
 
 def update_html(results):
-    with open('roster.html', 'r', encoding='utf-8') as f:
+    with (ROOT / 'roster.html').open('r', encoding='utf-8') as f:
         html = f.read()
     for pid, data in results.items():
         html = re.sub(
@@ -61,7 +64,7 @@ def update_html(results):
         )
     now = datetime.now(timezone.utc).strftime('%d.%m.%Y %H:%M UTC')
     html = re.sub(r'Last updated: [^<]*', f'Last updated: {now}', html)
-    with open('roster.html', 'w', encoding='utf-8') as f:
+    with (ROOT / 'roster.html').open('w', encoding='utf-8') as f:
         f.write(html)
     print(f"✅ roster.html updated at {now}")
 
@@ -69,7 +72,7 @@ def main():
     # Load existing ranks.json to preserve ranks on API failure
     existing = {}
     try:
-        with open('ranks.json', 'r') as f:
+        with (ROOT / 'ranks.json').open('r') as f:
             existing = json.load(f).get('players', {})
     except:
         pass
@@ -94,7 +97,7 @@ def main():
         time.sleep(5)
 
     output = {"updated": datetime.now(timezone.utc).strftime('%d.%m.%Y %H:%M UTC'), "players": results}
-    with open('ranks.json', 'w') as f:
+    with (ROOT / 'ranks.json').open('w') as f:
         json.dump(output, f, indent=2)
     update_html(results)
 

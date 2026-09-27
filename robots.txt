@@ -11,6 +11,7 @@ Allow: /
 Disallow: /impressum
 Disallow: /datenschutz
 Disallow: /legal.html
+Disallow: /valorant/legal.html
 Disallow: /admin/
 Disallow: /private/
 
