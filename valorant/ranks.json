@@ -1,5 +1,5 @@
 {
-  "updated": "03.10.2026 15:26 UTC",
+  "updated": "03.10.2026 20:21 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -38,7 +38,7 @@
       "roster": "flinta",
       "role": "Duelist",
       "rank": "Gold 3",
-      "rr": 54,
+      "rr": 93,
       "cssClass": "rank-gold"
     },
     "jc": {
@@ -68,7 +68,7 @@
       "roster": "male",
       "role": "Controller",
       "rank": "Ascendant 2",
-      "rr": 11,
+      "rr": 6,
       "cssClass": "rank-ascendant"
     },
     "justus": {
@@ -98,7 +98,7 @@
       "roster": "male2",
       "role": "Flex",
       "rank": "Platinum 3",
-      "rr": 37,
+      "rr": 17,
       "cssClass": "rank-platinum"
     },
     "alpakama": {
