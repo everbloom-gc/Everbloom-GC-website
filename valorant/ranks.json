@@ -1,5 +1,5 @@
 {
-  "updated": "03.10.2026 20:21 UTC",
+  "updated": "04.10.2026 11:32 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -18,7 +18,7 @@
       "roster": "flinta",
       "role": "Sentinel",
       "rank": "Platinum 1",
-      "rr": 52,
+      "rr": 69,
       "cssClass": "rank-platinum"
     },
     "claire": {
@@ -68,7 +68,7 @@
       "roster": "male",
       "role": "Controller",
       "rank": "Ascendant 2",
-      "rr": 6,
+      "rr": 19,
       "cssClass": "rank-ascendant"
     },
     "justus": {
