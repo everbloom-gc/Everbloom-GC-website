@@ -1,5 +1,5 @@
 {
-  "updated": "04.10.2026 20:39 UTC",
+  "updated": "05.10.2026 13:02 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -48,7 +48,7 @@
       "roster": "male",
       "role": "Flex",
       "rank": "Ascendant 3",
-      "rr": 49,
+      "rr": 66,
       "cssClass": "rank-ascendant"
     },
     "kenkaneki": {
