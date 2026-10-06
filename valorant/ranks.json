@@ -1,5 +1,5 @@
 {
-  "updated": "06.10.2026 12:26 UTC",
+  "updated": "06.10.2026 22:02 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -18,7 +18,7 @@
       "roster": "flinta",
       "role": "Sentinel",
       "rank": "Platinum 2",
-      "rr": 67,
+      "rr": 54,
       "cssClass": "rank-platinum"
     },
     "claire": {
@@ -48,7 +48,7 @@
       "roster": "male",
       "role": "Flex",
       "rank": "Ascendant 3",
-      "rr": 64,
+      "rr": 56,
       "cssClass": "rank-ascendant"
     },
     "kenkaneki": {
