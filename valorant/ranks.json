@@ -1,5 +1,5 @@
 {
-  "updated": "14.10.2026 16:11 UTC",
+  "updated": "14.10.2026 21:07 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -8,7 +8,7 @@
       "roster": "flinta",
       "role": "Duelist",
       "rank": "Platinum 1",
-      "rr": 49,
+      "rr": 12,
       "cssClass": "rank-platinum"
     },
     "cat": {
@@ -48,7 +48,7 @@
       "roster": "male",
       "role": "Flex",
       "rank": "Ascendant 3",
-      "rr": 8,
+      "rr": 25,
       "cssClass": "rank-ascendant"
     },
     "kenkaneki": {
