@@ -1,5 +1,5 @@
 {
-  "updated": "19.10.2026 11:35 UTC",
+  "updated": "19.10.2026 17:58 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -8,7 +8,7 @@
       "roster": "flinta",
       "role": "Duelist",
       "rank": "Platinum 1",
-      "rr": 62,
+      "rr": 85,
       "cssClass": "rank-platinum"
     },
     "cat": {
