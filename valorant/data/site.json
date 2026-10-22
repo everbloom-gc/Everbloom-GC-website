@@ -38,25 +38,6 @@
               "url": "https://tracker.gg/valorant/profile/riot/Cat%E3%83%83%230w0/overview?platform=pc&playlist=competitive&season=8102cd81-43a0-d0d7-bd59-47b8fe9bed1b"
             }
           ]
-        },
-        {
-          "id": "claire",
-          "name": "Claire",
-          "role": "SMOKER",
-          "image": "clove.webp",
-          "rank": "Platinum 1",
-          "riotName": "dreamgirlwallahi",
-          "riotTag": "yumz",
-          "links": [
-            {
-              "label": "Tracker",
-              "url": "https://tracker.gg/valorant/profile/riot/dreamgirlwallahi%23yumz/overview?platform=pc&playlist=competitive"
-            },
-            {
-              "label": "X",
-              "url": "https://x.com/Hqdzxo"
-            }
-          ]
         }
       ],
       "openSlots": [
@@ -65,6 +46,9 @@
         },
         {
           "role": "DUELIST"
+        },
+        {
+          "role": "SMOKER"
         }
       ]
     },
@@ -206,11 +190,11 @@
     {
       "open": true,
       "team": "FLINTA Roster · Valorant",
-      "title": "Duelist wanted",
-      "description": "One player spot is open in our FLINTA roster. Apply through our application form.",
+      "title": "3 player spots open",
+      "description": "Three player spots are open in our FLINTA roster: Duelist, Smoker and one open role. Apply through our application form.",
       "requirements": [
         "Region: EU.",
-        "Duelist role.",
+        "Duelist, Smoker or open role.",
         "Minimum rank, age requirements and training availability will be clarified with the team."
       ]
     },
