@@ -1,5 +1,5 @@
 {
-  "updated": "24.10.2026 15:04 UTC",
+  "updated": "24.10.2026 19:59 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -18,7 +18,7 @@
       "roster": "flinta",
       "role": "Sentinel",
       "rank": "Platinum 2",
-      "rr": 1,
+      "rr": 0,
       "cssClass": "rank-platinum"
     },
     "mia": {
