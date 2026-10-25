@@ -38,17 +38,41 @@
               "url": "https://tracker.gg/valorant/profile/riot/Cat%E3%83%83%230w0/overview?platform=pc&playlist=competitive&season=8102cd81-43a0-d0d7-bd59-47b8fe9bed1b"
             }
           ]
+        },
+        {
+          "id": "celestial",
+          "name": "Celestial",
+          "role": "FLEX",
+          "image": "astra.png",
+          "rank": "Unranked",
+          "riotName": "Alpha Male",
+          "riotTag": "Alien",
+          "links": [
+            {
+              "label": "Tracker",
+              "url": "https://tracker.gg/valorant/profile/riot/Alpha%20Male%23Alien/overview?platform=pc&playlist=competitive"
+            }
+          ]
+        },
+        {
+          "id": "loona",
+          "name": "Loona",
+          "role": "FLEX",
+          "image": "sage.webp",
+          "rank": "Unranked",
+          "riotName": "KRAPAO",
+          "riotTag": "PAD",
+          "links": [
+            {
+              "label": "Tracker",
+              "url": "https://tracker.gg/valorant/profile/riot/KRAPAO%23PAD/overview?platform=pc&playlist=competitive"
+            }
+          ]
         }
       ],
       "openSlots": [
         {
           "role": "Open role"
-        },
-        {
-          "role": "DUELIST"
-        },
-        {
-          "role": "SMOKER"
         }
       ]
     },
@@ -190,11 +214,11 @@
     {
       "open": true,
       "team": "FLINTA Roster · Valorant",
-      "title": "3 player spots open",
-      "description": "Three player spots are open in our FLINTA roster: Duelist, Smoker and one open role. Apply through our application form.",
+      "title": "1 player spot open",
+      "description": "One player spot is open in our FLINTA roster. Apply through our application form.",
       "requirements": [
         "Region: EU.",
-        "Duelist, Smoker or open role.",
+        "Any role.",
         "Minimum rank, age requirements and training availability will be clarified with the team."
       ]
     },
