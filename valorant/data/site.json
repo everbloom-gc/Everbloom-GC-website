@@ -68,11 +68,21 @@
               "url": "https://tracker.gg/valorant/profile/riot/KRAPAO%23PAD/overview?platform=pc&playlist=competitive"
             }
           ]
-        }
-      ],
-      "openSlots": [
+        },
         {
-          "role": "Open role"
+          "id": "noodle",
+          "name": "Noodle",
+          "role": "CONTROLLER",
+          "image": "Omen_Artwork_Full.webp",
+          "rank": "Gold 1",
+          "riotName": "noodlethief",
+          "riotTag": "euw",
+          "links": [
+            {
+              "label": "Tracker",
+              "url": "https://tracker.gg/valorant/profile/riot/noodlethief%23euw/overview?platform=pc&playlist=competitive"
+            }
+          ]
         }
       ]
     },
@@ -212,7 +222,7 @@
   ],
   "openings": [
     {
-      "open": true,
+      "open": false,
       "team": "FLINTA Roster · Valorant",
       "title": "1 player spot open",
       "description": "One player spot is open in our FLINTA roster. Apply through our application form.",

@@ -1,31 +1,27 @@
 import requests
 import json
 import os
-import re
 import time
 from datetime import datetime, timezone
 from pathlib import Path
+
+from build_content import build
 
 ROOT = Path(__file__).resolve().parent.parent
 
 API_KEY = os.environ.get('HENRIK_API_KEY', '')
 REGION  = 'eu'
 
-PLAYERS = [
-    # FLINTA
-    { "id": "ruby",        "name": "akaruby",          "tag": "EBM",   "roster": "flinta", "role": "Duelist"    },
-    { "id": "cat",         "name": "Catッ",             "tag": "0w0",   "roster": "flinta", "role": "Sentinel"   },
-    { "id": "mia",         "name": "aloe",              "tag": "nom",   "roster": "flinta", "role": "Duelist"    },
-    # Male Roster 1
-    { "id": "jc",          "name": "jczera",            "tag": "LG16",  "roster": "male",   "role": "Flex"       },
-    { "id": "kenkaneki",   "name": "sunless LfL",       "tag": "Fated", "roster": "male",   "role": "Initiator"  },
-    { "id": "twony",       "name": "twony",             "tag": "111",   "roster": "male",   "role": "Controller" },
-    { "id": "justus",      "name": "flairrr",           "tag": "1611",  "roster": "male",   "role": "Initiator"  },
-    { "id": "pithaa",      "name": "Pithaa",            "tag": "7942",  "roster": "male",   "role": "Flex"       },
-    # Male Roster 2
-    { "id": "heisenzwerg", "name": "Your the Emperor",  "tag": "9999",  "roster": "male2",  "role": "Flex"       },
-    { "id": "alpakama",    "name": "shoya",             "tag": "911" ,  "roster": "male2",  "role": "Duelist"    },
-]
+def load_players():
+    """Players come from data/site.json, so new roster entries get rank updates automatically."""
+    site = json.loads((ROOT / 'data' / 'site.json').read_text(encoding='utf-8'))
+    players = []
+    for team in site['teams']:
+        for p in team['players']:
+            if p.get('riotName') and p.get('riotTag'):
+                players.append({"id": p['id'], "name": p['riotName'], "tag": p['riotTag'],
+                                "roster": team['id'], "role": p['role'].title(), "fallback": p.get('rank', 'Unranked')})
+    return players
 
 TIER_CLASSES = {
     "Iron": "rank-iron", "Bronze": "rank-bronze", "Silver": "rank-silver",
@@ -36,7 +32,7 @@ TIER_CLASSES = {
 
 def get_rank(player):
     headers = {'Authorization': API_KEY} if API_KEY else {}
-    url = f"https://api.henrikdev.xyz/valorant/v2/mmr/{REGION}/{requests.utils.quote(player['name'])}/{player['tag']}"
+    url = f"https://api.henrikdev.xyz/valorant/v2/mmr/{REGION}/{requests.utils.quote(player['name'])}/{requests.utils.quote(player['tag'])}"
     try:
         r = requests.get(url, headers=headers, timeout=10)
         data = r.json()
@@ -52,21 +48,6 @@ def get_rank(player):
         print(f"  Exception for {player['name']}: {e}")
         return None
 
-def update_html(results):
-    with (ROOT / 'roster.html').open('r', encoding='utf-8') as f:
-        html = f.read()
-    for pid, data in results.items():
-        html = re.sub(
-            rf'<div class="rank-tag [^"]*" id="rank-{pid}">[^<]*</div>',
-            f'<div class="rank-tag {data["cssClass"]}" id="rank-{pid}">{data["rank"]}</div>',
-            html
-        )
-    now = datetime.now(timezone.utc).strftime('%d.%m.%Y %H:%M UTC')
-    html = re.sub(r'Last updated: [^<]*', f'Last updated: {now}', html)
-    with (ROOT / 'roster.html').open('w', encoding='utf-8') as f:
-        f.write(html)
-    print(f"✅ roster.html updated at {now}")
-
 def main():
     # Load existing ranks.json to preserve ranks on API failure
     existing = {}
@@ -77,7 +58,7 @@ def main():
         pass
 
     results = {}
-    for player in PLAYERS:
+    for player in load_players():
         print(f"Fetching {player['name']}#{player['tag']}...")
         rank_data = get_rank(player)
         if rank_data:
@@ -88,7 +69,7 @@ def main():
             old = existing.get(player['id'], {})
             results[player['id']] = {
                 **player,
-                "rank":     old.get('rank', 'Unranked'),
+                "rank":     old.get('rank', player['fallback']),
                 "rr":       old.get('rr', 0),
                 "cssClass": old.get('cssClass', 'rank-bronze'),
             }
@@ -96,9 +77,10 @@ def main():
         time.sleep(5)
 
     output = {"updated": datetime.now(timezone.utc).strftime('%d.%m.%Y %H:%M UTC'), "players": results}
-    with (ROOT / 'ranks.json').open('w') as f:
-        json.dump(output, f, indent=2)
-    update_html(results)
+    with (ROOT / 'ranks.json').open('w', encoding='utf-8') as f:
+        json.dump(output, f, indent=2, ensure_ascii=False)
+    # Regenerate the pages so the new ranks show up on the website
+    build()
 
 if __name__ == '__main__':
     main()
