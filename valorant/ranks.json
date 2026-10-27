@@ -1,5 +1,5 @@
 {
-  "updated": "27.10.2026 21:37 UTC",
+  "updated": "27.10.2026 22:48 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -7,29 +7,54 @@
       "tag": "EBM",
       "roster": "flinta",
       "role": "Duelist",
+      "fallback": "Platinum 1",
       "rank": "Platinum 1",
       "rr": 3,
       "cssClass": "rank-platinum"
     },
     "cat": {
       "id": "cat",
-      "name": "Cat\u30c3",
+      "name": "Catッ",
       "tag": "0w0",
       "roster": "flinta",
       "role": "Sentinel",
+      "fallback": "Platinum 2",
       "rank": "Platinum 2",
       "rr": 0,
       "cssClass": "rank-platinum"
     },
-    "mia": {
-      "id": "mia",
-      "name": "aloe",
-      "tag": "nom",
+    "celestial": {
+      "id": "celestial",
+      "name": "Alpha Male",
+      "tag": "Alien",
       "roster": "flinta",
-      "role": "Duelist",
+      "role": "Flex",
+      "fallback": "Unranked",
       "rank": "Platinum 1",
-      "rr": 86,
+      "rr": 0,
       "cssClass": "rank-platinum"
+    },
+    "loona": {
+      "id": "loona",
+      "name": "KRAPAO",
+      "tag": "PAD",
+      "roster": "flinta",
+      "role": "Flex",
+      "fallback": "Unranked",
+      "rank": "Gold 2",
+      "rr": 92,
+      "cssClass": "rank-gold"
+    },
+    "noodle": {
+      "id": "noodle",
+      "name": "noodlethief",
+      "tag": "euw",
+      "roster": "flinta",
+      "role": "Controller",
+      "fallback": "Gold 1",
+      "rank": "Gold 1",
+      "rr": 10,
+      "cssClass": "rank-gold"
     },
     "jc": {
       "id": "jc",
@@ -37,6 +62,7 @@
       "tag": "LG16",
       "roster": "male",
       "role": "Flex",
+      "fallback": "Ascendant 3",
       "rank": "Ascendant 3",
       "rr": 46,
       "cssClass": "rank-ascendant"
@@ -47,6 +73,7 @@
       "tag": "Fated",
       "roster": "male",
       "role": "Initiator",
+      "fallback": "Ascendant 3",
       "rank": "Immortal 1",
       "rr": 0,
       "cssClass": "rank-immortal"
@@ -57,8 +84,9 @@
       "tag": "111",
       "roster": "male",
       "role": "Controller",
+      "fallback": "Ascendant 2",
       "rank": "Ascendant 1",
-      "rr": 80,
+      "rr": 43,
       "cssClass": "rank-ascendant"
     },
     "justus": {
@@ -67,6 +95,7 @@
       "tag": "1611",
       "roster": "male",
       "role": "Initiator",
+      "fallback": "Ascendant 1",
       "rank": "Ascendant 2",
       "rr": 46,
       "cssClass": "rank-ascendant"
@@ -77,6 +106,7 @@
       "tag": "7942",
       "roster": "male",
       "role": "Flex",
+      "fallback": "Ascendant 2",
       "rank": "Ascendant 2",
       "rr": 25,
       "cssClass": "rank-ascendant"
@@ -86,7 +116,8 @@
       "name": "Your the Emperor",
       "tag": "9999",
       "roster": "male2",
-      "role": "Flex",
+      "role": "Flex / Lurker",
+      "fallback": "Platinum 3",
       "rank": "Platinum 3",
       "rr": 17,
       "cssClass": "rank-platinum"
@@ -97,6 +128,7 @@
       "tag": "911",
       "roster": "male2",
       "role": "Duelist",
+      "fallback": "Diamond 1",
       "rank": "Diamond 2",
       "rr": 41,
       "cssClass": "rank-diamond"
