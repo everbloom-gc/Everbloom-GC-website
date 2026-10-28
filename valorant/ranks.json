@@ -1,5 +1,5 @@
 {
-  "updated": "27.10.2026 22:48 UTC",
+  "updated": "28.10.2026 11:51 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -86,7 +86,7 @@
       "role": "Controller",
       "fallback": "Ascendant 2",
       "rank": "Ascendant 1",
-      "rr": 43,
+      "rr": 27,
       "cssClass": "rank-ascendant"
     },
     "justus": {
