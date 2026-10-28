@@ -1,5 +1,5 @@
 {
-  "updated": "28.10.2026 17:40 UTC",
+  "updated": "28.10.2026 22:01 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -9,7 +9,7 @@
       "role": "Duelist",
       "fallback": "Platinum 1",
       "rank": "Platinum 1",
-      "rr": 3,
+      "rr": 17,
       "cssClass": "rank-platinum"
     },
     "cat": {
@@ -41,8 +41,8 @@
       "roster": "flinta",
       "role": "Flex",
       "fallback": "Unranked",
-      "rank": "Gold 2",
-      "rr": 92,
+      "rank": "Gold 3",
+      "rr": 14,
       "cssClass": "rank-gold"
     },
     "noodle": {
@@ -53,7 +53,7 @@
       "role": "Controller",
       "fallback": "Gold 1",
       "rank": "Gold 1",
-      "rr": 44,
+      "rr": 24,
       "cssClass": "rank-gold"
     },
     "jc": {
