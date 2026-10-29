@@ -1,5 +1,5 @@
 {
-  "updated": "29.10.2026 11:59 UTC",
+  "updated": "29.10.2026 18:02 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -9,7 +9,7 @@
       "role": "Duelist",
       "fallback": "Platinum 1",
       "rank": "Platinum 1",
-      "rr": 17,
+      "rr": 0,
       "cssClass": "rank-platinum"
     },
     "cat": {
@@ -20,7 +20,7 @@
       "role": "Sentinel",
       "fallback": "Platinum 2",
       "rank": "Platinum 2",
-      "rr": 0,
+      "rr": 10,
       "cssClass": "rank-platinum"
     },
     "celestial": {
@@ -53,7 +53,7 @@
       "role": "Controller",
       "fallback": "Gold 1",
       "rank": "Gold 1",
-      "rr": 51,
+      "rr": 67,
       "cssClass": "rank-gold"
     },
     "jc": {
