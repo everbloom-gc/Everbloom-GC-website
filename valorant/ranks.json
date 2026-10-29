@@ -1,5 +1,5 @@
 {
-  "updated": "28.10.2026 22:01 UTC",
+  "updated": "29.10.2026 11:59 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -53,7 +53,7 @@
       "role": "Controller",
       "fallback": "Gold 1",
       "rank": "Gold 1",
-      "rr": 24,
+      "rr": 51,
       "cssClass": "rank-gold"
     },
     "jc": {
