@@ -1,5 +1,5 @@
 {
-  "updated": "30.10.2026 17:28 UTC",
+  "updated": "30.10.2026 21:49 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -42,7 +42,7 @@
       "role": "Flex",
       "fallback": "Unranked",
       "rank": "Gold 3",
-      "rr": 14,
+      "rr": 58,
       "cssClass": "rank-gold"
     },
     "noodle": {
@@ -53,7 +53,7 @@
       "role": "Controller",
       "fallback": "Gold 1",
       "rank": "Gold 1",
-      "rr": 4,
+      "rr": 10,
       "cssClass": "rank-gold"
     },
     "jc": {
