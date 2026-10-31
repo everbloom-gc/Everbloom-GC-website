@@ -1,5 +1,5 @@
 {
-  "updated": "31.10.2026 16:32 UTC",
+  "updated": "31.10.2026 20:48 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -41,9 +41,9 @@
       "roster": "flinta",
       "role": "Flex",
       "fallback": "Unranked",
-      "rank": "Gold 3",
-      "rr": 60,
-      "cssClass": "rank-gold"
+      "rank": "Platinum 1",
+      "rr": 26,
+      "cssClass": "rank-platinum"
     },
     "noodle": {
       "id": "noodle",
@@ -53,7 +53,7 @@
       "role": "Controller",
       "fallback": "Gold 1",
       "rank": "Gold 1",
-      "rr": 12,
+      "rr": 57,
       "cssClass": "rank-gold"
     },
     "jc": {
