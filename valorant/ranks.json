@@ -1,5 +1,5 @@
 {
-  "updated": "30.10.2026 21:49 UTC",
+  "updated": "31.10.2026 11:26 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -42,7 +42,7 @@
       "role": "Flex",
       "fallback": "Unranked",
       "rank": "Gold 3",
-      "rr": 58,
+      "rr": 60,
       "cssClass": "rank-gold"
     },
     "noodle": {
@@ -53,7 +53,7 @@
       "role": "Controller",
       "fallback": "Gold 1",
       "rank": "Gold 1",
-      "rr": 10,
+      "rr": 12,
       "cssClass": "rank-gold"
     },
     "jc": {
@@ -64,7 +64,7 @@
       "role": "Flex",
       "fallback": "Ascendant 3",
       "rank": "Ascendant 3",
-      "rr": 46,
+      "rr": 66,
       "cssClass": "rank-ascendant"
     },
     "kenkaneki": {
