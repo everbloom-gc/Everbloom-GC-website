@@ -1,5 +1,5 @@
 {
-  "updated": "31.10.2026 20:48 UTC",
+  "updated": "01.11.2026 12:20 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -52,8 +52,8 @@
       "roster": "flinta",
       "role": "Controller",
       "fallback": "Gold 1",
-      "rank": "Gold 1",
-      "rr": 57,
+      "rank": "Gold 2",
+      "rr": 50,
       "cssClass": "rank-gold"
     },
     "jc": {
