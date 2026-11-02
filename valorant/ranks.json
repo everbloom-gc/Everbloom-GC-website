@@ -1,5 +1,5 @@
 {
-  "updated": "01.11.2026 21:30 UTC",
+  "updated": "02.11.2026 14:14 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -53,7 +53,7 @@
       "role": "Controller",
       "fallback": "Gold 1",
       "rank": "Gold 1",
-      "rr": 86,
+      "rr": 66,
       "cssClass": "rank-gold"
     },
     "jc": {
@@ -63,9 +63,9 @@
       "roster": "male",
       "role": "Flex",
       "fallback": "Ascendant 3",
-      "rank": "Ascendant 3",
-      "rr": 66,
-      "cssClass": "rank-ascendant"
+      "rank": "Immortal 1",
+      "rr": 10,
+      "cssClass": "rank-immortal"
     },
     "kenkaneki": {
       "id": "kenkaneki",
