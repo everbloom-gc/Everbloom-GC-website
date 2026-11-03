@@ -1,5 +1,5 @@
 {
-  "updated": "03.11.2026 13:17 UTC",
+  "updated": "03.11.2026 22:42 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -19,8 +19,8 @@
       "roster": "flinta",
       "role": "Sentinel",
       "fallback": "Platinum 2",
-      "rank": "Platinum 2",
-      "rr": 0,
+      "rank": "Platinum 1",
+      "rr": 83,
       "cssClass": "rank-platinum"
     },
     "celestial": {
@@ -42,7 +42,7 @@
       "role": "Flex",
       "fallback": "Unranked",
       "rank": "Platinum 1",
-      "rr": 26,
+      "rr": 35,
       "cssClass": "rank-platinum"
     },
     "noodle": {
@@ -53,7 +53,7 @@
       "role": "Controller",
       "fallback": "Gold 1",
       "rank": "Gold 1",
-      "rr": 32,
+      "rr": 61,
       "cssClass": "rank-gold"
     },
     "jc": {
