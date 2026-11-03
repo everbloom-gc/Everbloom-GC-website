@@ -1,5 +1,5 @@
 {
-  "updated": "02.11.2026 14:14 UTC",
+  "updated": "03.11.2026 00:12 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -20,7 +20,7 @@
       "role": "Sentinel",
       "fallback": "Platinum 2",
       "rank": "Platinum 2",
-      "rr": 10,
+      "rr": 0,
       "cssClass": "rank-platinum"
     },
     "celestial": {
@@ -53,7 +53,7 @@
       "role": "Controller",
       "fallback": "Gold 1",
       "rank": "Gold 1",
-      "rr": 66,
+      "rr": 32,
       "cssClass": "rank-gold"
     },
     "jc": {
@@ -64,7 +64,7 @@
       "role": "Flex",
       "fallback": "Ascendant 3",
       "rank": "Immortal 1",
-      "rr": 10,
+      "rr": 0,
       "cssClass": "rank-immortal"
     },
     "kenkaneki": {
@@ -74,9 +74,9 @@
       "roster": "male",
       "role": "Initiator",
       "fallback": "Ascendant 3",
-      "rank": "Immortal 1",
-      "rr": 0,
-      "cssClass": "rank-immortal"
+      "rank": "Ascendant 3",
+      "rr": 77,
+      "cssClass": "rank-ascendant"
     },
     "twony": {
       "id": "twony",
