@@ -1,5 +1,5 @@
 {
-  "updated": "05.11.2026 23:02 UTC",
+  "updated": "06.11.2026 13:28 UTC",
   "players": {
     "ruby": {
       "id": "ruby",
@@ -9,7 +9,7 @@
       "role": "Duelist",
       "fallback": "Platinum 1",
       "rank": "Platinum 1",
-      "rr": 30,
+      "rr": 0,
       "cssClass": "rank-platinum"
     },
     "cat": {
@@ -53,7 +53,7 @@
       "role": "Controller",
       "fallback": "Gold 1",
       "rank": "Gold 1",
-      "rr": 70,
+      "rr": 25,
       "cssClass": "rank-gold"
     },
     "jc": {
@@ -108,7 +108,7 @@
       "role": "Flex",
       "fallback": "Ascendant 2",
       "rank": "Ascendant 2",
-      "rr": 25,
+      "rr": 46,
       "cssClass": "rank-ascendant"
     },
     "heisenzwerg": {
